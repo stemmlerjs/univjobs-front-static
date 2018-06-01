@@ -1,0 +1,17 @@
+
+
+.container {
+        margin-top: 22%;
+}
+
+.rightSnip {
+        height: 164px;
+    background: white;
+    width: 443px;
+    position: relative;
+    right: -56px;
+    z-index: 5;
+    transform: rotate(-25deg);
+    float: right;
+    top: -98px;
+}

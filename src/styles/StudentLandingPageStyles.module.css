@@ -1,0 +1,127 @@
+
+.backgroundFallback {
+    background: linear-gradient(90deg,#0a26ca,#1ae8e7);
+}
+
+.hero {
+    min-height: calc(100vh - 50px)!important;
+    position: relative;
+    width: 100%;
+    background-image: url(https://s3.amazonaws.com/assets.univjobs/images/front/gradphotos.jpeg);
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    color: #fff;
+    position: absolute;
+    top: -36px;
+}
+
+.heroMask {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    opacity: .86;
+    z-index: 2;
+    background: linear-gradient(90deg,#0022de,#00fff3);
+    top: -86px;
+}
+
+.heroContainer {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    /* left: 0; */
+    /* right: 0; */
+    padding-left: 15%;
+    /* padding-right: 20%; */
+    text-align: left;
+    max-width: 47%;
+    /* margin: 0 auto; */
+    top: 115px;
+}
+
+.title {
+        font-size: 2.5em;
+    font-weight: bold;
+    line-height: 1.2em;
+    color: white;
+}
+
+.subTitle {
+        font-size: 17px;
+    color: #d2eaff;
+    padding-top: 18px;
+}
+
+.getStartedButton {
+        background: #0dd4d2;
+    border: none;
+    border-radius: 60px;
+    color: white;
+    font-size: 20px;
+    padding: 4px;
+    padding-left: 20px;
+    padding-right: 22px;
+     font-weight: 500;
+     transition: 0.2s ease-out;
+}
+
+.getStartedButton:hover {
+    box-shadow: 0 4px 6px 0 rgba(0,0,0,.2);
+}
+
+.employerButton {
+    border: none;
+    border-radius: 60px;
+    color: white;
+    font-size: 20px;
+    padding: 4px;
+    padding-left: 20px;
+    padding-right: 22px;
+    font-weight: 500;
+    background: none;
+    border: solid 2px white;
+    transition: 0.2s ease-out;
+}
+
+.employerButton:hover {
+    background: #fbfbfb;
+    color: #0ac1e8;
+    font-weight: bold;
+    letter-spacing: 0.6px;
+}
+
+.ctaContainer {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    margin-top: 20px;
+    justify-content: flex-start;
+}
+
+.buttonContainer {
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 12px;
+}
+
+.buttonContainer button {
+    cursor: pointer;
+}
+
+.alreadyOn {
+        font-size: 12px;
+    color: white;
+    padding-top: 10px;
+}
+
+.alreadyOn span {
+        cursor: pointer;
+    color: #0dd4d2;
+    font-weight: bold;
+}
