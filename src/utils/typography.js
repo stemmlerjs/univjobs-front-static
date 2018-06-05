@@ -7,7 +7,8 @@ const typography = new Typography({
     "Roboto",
     "sans-serif",
   ],
-  bodyFontFamily: ["Roboto", "sans-serif"],
+  headerColor: '#2B2B2B',
+  bodyFontFamily: ['Nunito', "Roboto", "sans-serif"],
 });
 
 typography.injectStyles()

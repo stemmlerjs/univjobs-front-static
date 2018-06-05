@@ -1,0 +1,51 @@
+
+.container {
+    padding: 3em;
+    color: #fff;
+    display: -ms-flexbox;
+    display: flex;
+    max-width: 1260px;
+    margin: 0 auto;
+    padding-bottom: 1em;
+}
+
+.quoteContainer {
+font-size: 18px;
+    color: #506c80;
+        width: 50%;
+    padding-right: 24px;
+}
+
+.personContainer {
+    display: flex;
+    margin-top: 21px;
+}
+
+.personImgContainer {}
+.personImgContainer img {
+        border-radius: 5px;
+    height: 75px;
+    min-width: 75px;
+}
+
+.personDetailsContainer {
+    flex-direction: column;
+    display: flex;
+    text-align: left;
+    margin-left: 15px;
+}
+
+.personDetailsContainer div:nth-of-type(1) {
+    font-weight: bold;
+}
+
+.personDetailsContainer:nth-child(2) {
+    font-size: 14px;
+}
+
+.personCompanyImgContainer {}
+.personCompanyImgContainer img {
+    width: 31px;
+    position: relative;
+    left: -4px;
+}

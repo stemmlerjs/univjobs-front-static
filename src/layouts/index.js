@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
 import Header from '../components/header'
+import Footer from '../components/footer'
 
 const Layout = ({ children, data }) => (
   <div>
@@ -40,6 +41,7 @@ const Layout = ({ children, data }) => (
       link={[
         { href: "https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900", rel: "stylesheet" },
         { href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css", rel:"stylesheet", type:"text/css" },
+        { href: 'https://fonts.googleapis.com/css?family=Nunito:400,700"', rel:"stylesheet", type:"text/css" }
       ]}
 
       /**
@@ -53,19 +55,22 @@ const Layout = ({ children, data }) => (
         { id: "facebook-jssdk", src:"//connect.facebook.net/en_US/sdk.js" },
         { type:"text/javascript", async:"", src:"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js" },
         { async:"", src:"https://www.google-analytics.com/analytics.js" }
-
       ]}
 
     />
     <Header siteTitle={data.site.siteMetadata.title} />
     <div
       style={{
-        margin: '0px auto',
-        marginTop: '67px'
+        margin: '0px auto'
       }}
     >
       {children()}
     </div>
+    {
+      /**
+       * <Footer/>
+       */
+    }
   </div>
 )
 
