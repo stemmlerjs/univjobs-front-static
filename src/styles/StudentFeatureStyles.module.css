@@ -53,3 +53,41 @@ padding-left: 50px;
     color: #2B2B2B;
         font-size: 2rem;
 }
+
+@media (max-width:600px) {
+  .container {
+        padding-left: 0px;
+    padding-right: 0px;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .flexContainerLeft {
+    width: 100%;
+    display: block;
+  }
+
+  .flexItem {
+    width: 100%;
+    padding: 0 !important;
+  }
+
+  .flexItem img {
+    height: unset;
+    width: 50%;
+  }
+
+  .flexContainerRight {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .flexContainerRight > div {
+        padding: 0;
+  }
+
+  .flexContainerRight img {
+    height: unset;
+    width: 50%;
+  }
+}

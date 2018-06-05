@@ -92,3 +92,44 @@ margin-bottom: 0;
     text-align: right;
   }
 }
+
+.tinyScreens {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  .graphicsContainer {
+    display: none;
+  }
+
+  .textContainer {
+        width: 60%;
+    margin: 0 auto;
+  }
+
+  .resizedWhosOn {
+    position: inherit;
+    width: 60%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 800px) {
+  .resizedWhosOn > img {
+    display: none;
+  }
+
+  .tinyScreens {
+    display: block;
+  }
+
+  .andMore {
+    padding: 0px;
+    padding-bottom:2em;
+        text-align: center;
+  }
+
+  .whosOnContainer {
+    padding: 0px;
+  }
+}

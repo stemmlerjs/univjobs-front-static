@@ -156,3 +156,9 @@
       display: none;
     }
 }
+
+@media (max-width: 320px) {
+  .title {
+        font-size: 27px;
+  }
+}

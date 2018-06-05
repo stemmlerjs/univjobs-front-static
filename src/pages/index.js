@@ -11,6 +11,11 @@ import backers from '../styles/BackersStyles.module.css'
 
 import leftside from '../assets/leftside.png'
 import companies from '../assets/companies.png'
+
+import companySmallOne from '../assets/companies-resized-1.png'
+import companySmallTwo from '../assets/companies-resized-2.png'
+import companySmallThree from '../assets/companies-resized-3.png'
+
 import featureOneImage from '../assets/undraw_mail_2_tqip.png'
 import featureTwoImage from '../assets/undraw_job_hunt_byf9.png'
 import workingStudent from '../assets/leaf-wall-office-space_925x.png'
@@ -78,6 +83,14 @@ const StudentShowCaseSection = (props) => {
           <h1 className={studentShowCaseStyles.whosOn}>Who's on our platform?</h1>
         </div>
         <img className={studentShowCaseStyles.companiesShowCase} src={companies}></img>
+        
+
+        <div className={studentShowCaseStyles.tinyScreens}>
+          <img src={companySmallOne}></img>
+          <img src={companySmallTwo}></img>
+          <img src={companySmallThree}></img>
+        </div>
+
         <div style={{ margin: '0'}} className={studentShowCaseStyles.andMore}>...and many more!</div>
       </div>
     </div>
@@ -177,7 +190,7 @@ const Backers = (props) => {
 }
 
 /**
- * 
+ * <StudentShowCaseSection/>
     <StudentCallToAction/>
     <StudentFeatures/>
     <AltStudentCallToAction/>
@@ -188,6 +201,11 @@ const Backers = (props) => {
 export default () =>
   <div>
     <StudentLandingPage/>
-    
+    <StudentShowCaseSection/>
+    <StudentCallToAction/>
+    <StudentFeatures/>
+    <AltStudentCallToAction/>
+    <StudentBrandRecognition/>
+    <Backers/>
   </div>
   

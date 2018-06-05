@@ -66,11 +66,7 @@ const Layout = ({ children, data }) => (
     >
       {children()}
     </div>
-    {
-      /**
-       * <Footer/>
-       */
-    }
+    <Footer/>
   </div>
 )
 
