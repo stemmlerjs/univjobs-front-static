@@ -3,9 +3,9 @@ import Link from 'gatsby-link'
 
 import styles from "../styles/FooterStyles.module.css";
 
-import facebook from '../assets/facebook-logo.png'
-import twitter from '../assets/twitter-logo-silhouette.png'
-import linkedin from '../assets/linkedin-logo.png'
+import facebook from '../img/facebook-logo.png'
+import twitter from '../img/twitter-logo-silhouette.png'
+import linkedin from '../img/linkedin-logo.png'
 
 const Strip = () => {
   return (
