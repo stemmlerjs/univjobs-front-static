@@ -88,18 +88,13 @@ const Employers = () => (
     </section>
 
     <CallToAction
-        header='Try it now!'
-        subHeader='Companies have already started interviewing students.'
-        buttonText='Post a job'
+        header='Show your brand in front of students '
+        subHeader='UnivJobs advertises your job listing & logo in front of thousands of early career talent.'
+        buttonText='Post a job now'
         alt={true}
     />
-
-    <CallToAction
-      header='Get started!'
-      subHeader='Post a job now and gain early access to students.'
-      buttonText='Try it now!'
-      alt={false}
-    />
+  
+    
 
     
 
