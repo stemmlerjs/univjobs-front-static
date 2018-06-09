@@ -23,7 +23,9 @@
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-helmet": "^5.2.0",
-    "uuid": "^3.2.1"
+    "uuid": "^3.2.1",
+    "react-slick": "^0.23.1",
+    "slick-carousel": "^1.8.1"
   },
   "keywords": [
     "gatsby"

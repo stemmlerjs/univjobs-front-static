@@ -1,0 +1,26 @@
+
+.backgroundFallback {
+    background: linear-gradient(90deg,#0a26ca,#1ae8e7);
+    min-height: calc(50vh - 50px)!important;
+}
+
+
+.heroMask {
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    opacity: .86;
+    z-index: 2;
+    background: linear-gradient(90deg,#0022de,#00fff3);
+    top: -86px;
+}
+
+.title {
+    font-size: 2.5em;
+    font-weight: bold;
+    line-height: 1.2em;
+    color: white;
+}

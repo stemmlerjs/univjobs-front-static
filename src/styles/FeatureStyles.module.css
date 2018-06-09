@@ -1,0 +1,93 @@
+.container {
+    padding: 3em;
+    padding-left: 1em;
+    padding-right: 2em;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.flexContainerLeft {
+    display: flex;
+    width: 70%;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding-bottom: 30px;
+}
+
+.flexContainerLeft > div {
+        padding-right: 50px;
+}
+
+.flexContainerRight {
+    display: flex;
+    width: 70%;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.flexContainerRight > div {
+padding-left: 50px;
+}
+
+.flexItem {
+    width: 50%;
+    max-width: 510px;
+}
+
+.container img {
+        height: 13em;
+}
+
+
+.container div {
+    font-size: 18px;
+    color: #506c80;
+    margin-bottom: 17px;
+}
+
+.container h1 {
+    font-size: 18px;
+    color: #2B2B2B;
+        font-size: 2rem;
+}
+
+@media (max-width:600px) {
+  .container {
+        padding-left: 0px;
+    padding-right: 0px;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .flexContainerLeft {
+    width: 100%;
+    display: block;
+  }
+
+  .flexItem {
+    width: 100%;
+    padding: 0 !important;
+  }
+
+  .flexItem img {
+    height: unset;
+    width: 50%;
+  }
+
+  .flexContainerRight {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .flexContainerRight > div {
+        padding: 0;
+  }
+
+  .flexContainerRight img {
+    height: unset;
+    width: 50%;
+  }
+}

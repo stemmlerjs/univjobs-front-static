@@ -1,0 +1,47 @@
+
+.container {
+    background: #ffffff;
+    padding: 3em;
+    padding-bottom: 1em;
+    margin: 0,auto;
+
+}
+
+.innerContainer {
+    text-align: center;
+    margin: 0;
+}
+
+.innerContainer h1 {
+    text-align: center;
+    margin: 0;
+}
+
+.backersList {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row wrap;
+}
+
+.backersList > div {
+    /* width: 20%; */
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 13px;
+}
+
+.logos {
+    max-width: 200px;
+    padding-top: 25px;
+    padding-right: 25px;
+    padding-bottom: 0px;
+    padding-left: 25px;
+
+}
