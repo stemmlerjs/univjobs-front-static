@@ -97,6 +97,7 @@ margin-bottom: 0;
   display: none;
 }
 
+
 @media (max-width: 1000px) {
   .graphicsContainer {
     display: none;
@@ -132,4 +133,27 @@ margin-bottom: 0;
   .whosOnContainer {
     padding: 0px;
   }
+}
+
+@media (max-width: 475px) {
+  .textContainer {
+        width: 100%;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 7em;
+    text-align: center !important;
+  }
+
+  .resizedWhosOn {
+    width: 100%;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 1em;
+    text-align: center !important;
+  }
+
+  .whosOn {
+    text-align: center;
+  }
+
 }

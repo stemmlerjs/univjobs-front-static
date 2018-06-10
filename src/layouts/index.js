@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
-import Header from '../components/header'
+import Header from '../components/Header'
 import Footer from '../components/footer'
 
 const Layout = ({ children, data }) => (
@@ -53,8 +53,8 @@ const Layout = ({ children, data }) => (
         { type:"text/javascript", async:"", src:"https://js.driftt.com/include/1527753900000/uvrdu82um6f9.js" },
         { async:"", src:"https://www.googletagmanager.com/gtm.js?id=GTM-53RBHNC" },
         { id: "facebook-jssdk", src:"//connect.facebook.net/en_US/sdk.js" },
-        { type:"text/javascript", async:"", src:"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js" },
-        { async:"", src:"https://www.google-analytics.com/analytics.js" }
+        // { type:"text/javascript", async:"", src:"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js" },
+        // { async:"", src:"https://www.google-analytics.com/analytics.js" }
       ]}
 
     />

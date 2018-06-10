@@ -35,3 +35,21 @@
     align-items: center;
     padding: 13px;
 }
+
+@media (max-width: 770px) {
+    .container {
+        background: #f6f6f6;
+        padding: 1em;
+        border-bottom: 1px solid #d8d8d8;
+        padding-bottom: 1em;
+        padding-top: 2em;
+        text-align: center;
+    }
+
+    .backersList {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+}

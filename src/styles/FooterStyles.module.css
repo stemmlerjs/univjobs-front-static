@@ -60,3 +60,44 @@ background: #2b2b2b;
     display: block;
     margin-right: 7px;
 }
+
+.linksContainer > section {
+    display: flex;
+    flex-direction: row;
+}
+
+@media (max-width: 850px) {
+    .linksContainer {
+    padding: 1em;
+    padding-top: 3em;
+    padding-bottom: 3em;
+    }
+
+    .menuSection {
+        width: 100%;
+        padding: 0;
+        padding-top: 2em;
+    }
+
+    .menuSection:nth-of-type(1) {
+        padding-top:0px;
+    }
+
+    .linksContainer > section {
+        width: 50%;
+        display: block;
+        flex-direction: unset;
+    }
+
+    .socialLinksContainer {
+        padding-top: 2em;
+    }
+
+    .bottomStrip {
+            padding: 1em;
+    padding-top: 1em;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    }
+}

@@ -8,10 +8,9 @@ import s from '../../img/merchant.jpg'
 
 export default () =>
   <div>
-      <ShortHero
-         heroTitle= 'Job Test'
-         heroSubTitle= ''
-         image={s}
-      />
-   
+    <ShortHero
+        heroTitle= 'Job Test'
+        heroSubTitle= ''
+        image={s}
+    />
   </div>
