@@ -18,6 +18,10 @@
     z-index: 25;
 }
 
+
+/*TODO:
+    Make media queries
+*/
 .hero {
     min-height: calc(50vh - 50px)!important;
     width: 100%;
@@ -50,4 +54,12 @@
         font-size: 17px;
     color: #d2eaff;
     padding-top: 18px;
+}
+
+.employerInfoContainer {
+    width: 100%;
+    background-color: white;
+    min-height: calc(50vh - 50px)!important;
+
+
 }

@@ -1,0 +1,90 @@
+.jobHeaderContainer {
+    min-height: calc(20vh - 20px)!important;
+    width: 100%;
+    color: #fff;
+    box-shadow: 0 2px 7px 0 rgba(0,0,0,0.2);
+}
+
+
+.centeredJobContainer {
+    margin-right: auto;
+    margin-left: auto;
+    padding: 15px 15px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: space-between;
+}
+
+.jobTitle {
+    font-weight: bold;
+    line-height: 1.2em;
+    color: black;
+    margin-left: 1%;
+}
+
+.subTitle {
+    font-size: 17px;
+    color: #d2eaff;
+    padding-top: 18px;
+}
+
+.companyBrandImageContainer {
+    position: relative;
+    margin: -100px 0 0 75px;
+    background-color: #fff;
+    box-shadow: 0 5px 5px #ddd;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    padding: 5px!important;
+    vertical-align: bottom;
+
+}
+
+.companyBrandImage {
+   height: 70%;
+   width: 70%;
+   margin: 10% 15% 10% 15%;
+}
+
+.jobHeaderInfo{
+    font-size: 15px;
+    white-space: nowrap
+}
+
+.icons {
+    width: 50px;
+    height: 25px;
+    margin-left: 40%;
+    margin-right: 1%;
+}
+
+.iconText {
+    width: 8%;
+    margin-left: 1%;
+    color: black;
+    font-size: 18px;
+}
+
+.applyHeaderButton {
+    background: #0dd4d2;
+    border: none;
+    border-radius: 60px;
+    color: white;
+    font-size: 20px;
+    padding: 4px;
+    padding-left: 20px;
+    padding-right: 22px;
+    font-weight: 500;
+    transition: 0.2s ease-out;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    margin-bottom: 1.45rem;
+}
+
+.applyHeaderButton:hover {
+    box-shadow: 0 4px 6px 0 rgba(0,0,0,.2);
+    cursor: pointer;
+    
+}
