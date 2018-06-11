@@ -5,6 +5,37 @@ import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
 import Content, { HTMLContent } from '../components/Content'
 
+import BlogCategoriesHeader from '../components/BlogCategoriesHeader'
+import Divider from '../components/Divider'
+
+import styles from '../styles/Blog/BlogPostPage.module.css'
+
+import ReactDisqusComments from 'react-disqus-comments';
+import CallToAction from '../components/CallToAction'
+
+const BlogPostHeader = (props) => {
+  console.log("blog post header props", props)
+  return (
+    <div className={styles.header}>
+      <h1>{props.title}</h1>
+      <div className={styles.subHeader}>{`${props.tags[0]} • ${props.timeToRead} minute read`}</div>
+      <div>
+        <img src={props.image}/>
+      </div>
+    </div>
+  )
+}
+
+const BlogPostContent = (props) => {
+  const PostContent = props.contentComponent;
+
+  return (
+    <div>
+      <PostContent content={props.content} />
+    </div>
+  )
+}
+
 export const BlogPostTemplate = ({
   content,
   contentComponent,
@@ -12,35 +43,41 @@ export const BlogPostTemplate = ({
   tags,
   title,
   helmet,
+  image,
+  timeToRead
 }) => {
-  const PostContent = contentComponent || Content
-
   return (
-    <section className="section">
+    <section>
+
       {helmet || ''}
-      <div className="container content">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-              {title}
-            </h1>
-            <p>{description}</p>
-            <PostContent content={content} />
-            {tags && tags.length ? (
-              <div style={{ marginTop: `4rem` }}>
-                <h4>Tags</h4>
-                <ul className="taglist">
-                  {tags.map(tag => (
-                    <li key={tag + `tag`}>
-                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
-          </div>
-        </div>
+
+      <BlogCategoriesHeader/>
+      <Divider/>
+
+      <div className={styles.container}>
+        <BlogPostHeader 
+          title={title} 
+          image={image}
+          timeToRead={timeToRead}
+          tags={tags}
+        />
+        <BlogPostContent 
+          content={content}
+          contentComponent={contentComponent}/>
+
+        <ReactDisqusComments
+          shortname="univjobs"
+          identifier={title}
+          title={title}
+          url="https://nostalgic-bhaskara-eea0ad.netlify.com"
+          />
       </div>
+      <CallToAction
+          header={'Find your next job'}
+          subHeader={'Students are already finding meaningful employment. Create your profile today!'}
+          buttonText={'Sign up'}
+          alt={true}
+        />
     </section>
   )
 }
@@ -53,8 +90,9 @@ BlogPostTemplate.propTypes = {
   helmet: PropTypes.instanceOf(Helmet),
 }
 
-const BlogPost = ({ data }) => {
+const BlogPost = ({ data, pathContext }) => {
   const { markdownRemark: post } = data
+  console.log(data, 'data')
 
   return (
     <BlogPostTemplate
@@ -64,6 +102,8 @@ const BlogPost = ({ data }) => {
       helmet={<Helmet title={`${post.frontmatter.title} | Blog`} />}
       tags={post.frontmatter.tags}
       title={post.frontmatter.title}
+      image={post.frontmatter.image}
+      timeToRead={post.timeToRead}
     />
   )
 }
@@ -81,11 +121,14 @@ export const pageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       id
       html
+      timeToRead
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
         title
+        date(formatString: "MMMM DD, YYYY")
         description
         tags
+        featured
+        image
       }
     }
   }

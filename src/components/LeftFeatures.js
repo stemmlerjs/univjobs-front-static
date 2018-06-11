@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import features from '../styles/StudentFeatureStyles.module.css'
+import features from '../styles/FeatureStyles.module.css'
 
 class LeftFeatures extends React.Component {
     constructor () {
@@ -17,7 +17,7 @@ render = () => {
             <div>{this.props.paragraphOne}</div>
             <div>{this.props.paragraphTwo}</div>
           </div>
-          <img style={{maxWidth: '40%', height: 'auto'}} src={this.props.picture}></img>
+          <img src={this.props.picture}></img>
         </section>
      )
     }

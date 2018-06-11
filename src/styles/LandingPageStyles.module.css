@@ -1,6 +1,8 @@
 .backgroundFallback {
     background: linear-gradient(90deg,#0a26ca,#1ae8e7);
     min-height: calc(87vh - 50px)!important;
+    justify-content: center;
+    align-items: center;
 }
 
 /* 
@@ -198,9 +200,10 @@
     .heroContainer {
       max-width: 100%;
       padding-right: 15%;
+      top: 2em;
     }
     .title {
-      font-size: 2em;
+      font-size: 1.5em;
     }
 
     .ctaContainer {
@@ -236,8 +239,32 @@
     }
 }
 
-@media (max-width: 350px) {
+@media (max-width: 360px) {
   .title {
-        font-size: 27px;
+        font-size: 25px;
   }
+
+  .subTitle {
+    font-size: 15px;
+    color: #d2eaff;
+    padding-top: 0px;
+    }
+
+  .centeredHeroContainer {    
+    top: 2em;
+    max-width: 75%;
+  }
+
+  .centeredCtaContainer {
+    flex-direction: column;
+  }
+
+  .getStartedButton {
+    font-size: 15px;
+  }
+
+  .reRouteButton {
+    font-size: 15px;
+  }
+  
 }

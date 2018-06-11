@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import features from '../styles/StudentFeatureStyles.module.css'
+import features from '../styles/FeatureStyles.module.css'
 
 class RightFeatures extends React.Component {
     constructor () {
@@ -12,7 +12,7 @@ class RightFeatures extends React.Component {
 render = () => {
     return (
         <section className={features.flexContainerRight}>
-            <img  style={{width: '40%', height: 'auto'}} src={this.props.picture}></img>
+            <img src={this.props.picture}></img>
           <div className={features.flexItem}>
             <h1>{this.props.header}</h1>
             <div>{this.props.paragraphOne}</div>
