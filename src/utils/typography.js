@@ -15,6 +15,9 @@ const typography = new Typography({
   },
   a : {
     fontSize: '18px'
+  },
+  ul: {
+    fontSize: '18px'
   }
 })
 });

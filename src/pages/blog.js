@@ -6,44 +6,17 @@ import Link from 'gatsby-link'
 import Divider from '../components/Divider'
 import Slidy from '../components/Slidy'
 import CallToAction from '../components/CallToAction'
+import BlogCategoriesHeader from '../components/BlogCategoriesHeader'
 
 import styles from '../styles/Blog.module.css'
-import headerStyles from '../styles/Blog/Header.module.css'
-import postStyles from '../styles/Blog/Post.module.css'
 
-const Tags = [
-  { tag: 'All', menu: null }, 
-  { tag: 'Adulting 101', 
-    menu: [
-      { tag: 'Communication & Relationships' },
-      { tag: "How To's"},
-      { tag: 'Personal Finance' },
-      { tag: 'Productivity'}
-    ] 
-  }, 
-  { tag: 'Guides', menu: null }, 
-  { tag: "Employer's Corner", menu: null }
-]
+import postStyles from '../styles/Blog/Post.module.css'
 
 const FeaturedPostsItems = [
   { image: '' }
 ]
 
-const BlogTagItem = (props) => {
-  return (
-    <div>{ props.tag.tag }</div>
-  )
-}
 
-const Header = (props) => (
-  <div className={headerStyles.container}>
-    {
-      props.tags.map((tag, index) => {
-        return <BlogTagItem key={index} tag={tag}/>
-      })
-    }
-  </div>
-)
 
 const FeaturedPosts = (props) => {
   return (
@@ -133,9 +106,7 @@ class Blog extends React.Component {
 
     return (
       <section>
-        <Header 
-          tags={Tags}
-        />
+        <BlogCategoriesHeader/>
         <FeaturedPosts
           posts={featuredPosts}
         />
