@@ -1,4 +1,5 @@
 ---
-templateKey: 'category'
+templateKey: category
 title: Guides
 ---
+
