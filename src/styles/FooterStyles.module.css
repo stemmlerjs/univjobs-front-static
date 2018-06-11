@@ -44,6 +44,8 @@
 
 .menuItem {
     cursor: pointer;
+    text-decoration: none;
+    color: #6d6d6d;
 }
 
 .socialLinksContainer {

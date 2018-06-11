@@ -33,7 +33,9 @@ const FooterMenuSection = (props) => {
       <div className={styles.menuHeader}>{props.title}</div>
       {
         props.links.map((link, index) => {
-          return <div className={styles.menuItem} key={index}>{link.name}</div>
+          return <Link className={styles.menuItem}  to={link.url}>
+            <div key={index}>{link.name}</div>
+          </Link>
         })
       }
     </div>

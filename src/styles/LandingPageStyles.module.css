@@ -171,6 +171,7 @@
 
 .centeredButtonContainer button {
     cursor: pointer;
+    outline: none;
 }
 
 .alreadyOn {

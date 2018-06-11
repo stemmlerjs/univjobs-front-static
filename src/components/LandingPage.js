@@ -24,7 +24,7 @@ class LandingPage extends React.Component {
                 <div className={landingePageStyles.alreadyOn}>Already on Univjobs? <span>Sign in.</span></div>
               </div>
               <div className={this.props.centerHeroContainer ? landingePageStyles.centeredButtonContainer : landingePageStyles.buttonContainer}>
-                <button className={landingePageStyles.reRouteButton}>{this.props.reRouteButton}</button>
+                <button className={landingePageStyles.reRouteButton}>{this.props.reRouteButton ? this.props.reRouteButton : "I'm an employer"}</button>
               </div>
             </div>
           </div>
