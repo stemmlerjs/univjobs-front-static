@@ -67,9 +67,15 @@ export const BlogPostTemplate = ({
 
         <ReactDisqusComments
           shortname="univjobs"
-          identifier={title}
+          identifier={ window 
+            ? window.location.href 
+            : 'https://nostalgic-bhaskara-eea0ad.netlify.com'
+          }
           title={title}
-          url="https://nostalgic-bhaskara-eea0ad.netlify.com"
+          url={ window 
+            ? window.location.href 
+            : 'https://nostalgic-bhaskara-eea0ad.netlify.com'
+          }
           />
       </div>
       <CallToAction
