@@ -14,7 +14,7 @@ class ShortHero extends React.Component {
 render = () => {
     return (
       <section className={shortHero.backgroundFallback}>
-        <div className={shortHero.hero}>
+        <div className={this.props.isFixedHero ? shortHero.fixedHero : shortHero.hero}>
         <div className={shortHero.centeredHeroContainer}>
           <h1 className={shortHero.title}>{this.props.heroTitle}</h1>
           <div className={shortHero.subTitle}>{this.props.heroSubTitle}</div>
@@ -29,5 +29,6 @@ ShortHero.defaultProps = {
     heroTitle: '',
     heroSubTitle: '',
     image: '',
+    isFixedHero: false
   };
 export default ShortHero

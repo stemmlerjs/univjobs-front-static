@@ -34,6 +34,19 @@
     padding-top: 10%;
 }
 
+.fixedHero {
+    min-height: calc(50vh - 50px)!important;
+    width: 100%;
+    background-size: cover;
+    background-position: 25% 10%;
+    background-repeat: no-repeat;
+    color: #fff;
+    position: absolute;
+    background-image: linear-gradient(rgba(47, 57, 78, 0.4), rgba(47, 57, 78, 0.8)), url('../img/business-people-walking.jpg');
+    padding-top: 10%;
+    position: fixed;
+}
+
 
 .centeredHeroContainer {
     margin-right: auto;

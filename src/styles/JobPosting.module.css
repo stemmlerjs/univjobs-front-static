@@ -3,6 +3,8 @@
     width: 100%;
     color: #fff;
     box-shadow: 0 2px 7px 0 rgba(0,0,0,0.2);
+    position: fixed;
+    background-color: white;
 }
 
 
@@ -87,4 +89,33 @@
     box-shadow: 0 4px 6px 0 rgba(0,0,0,.2);
     cursor: pointer;
     
+}
+
+.jobInfoContainer {
+    padding-top: 120px;
+    min-height: calc(20vh - 20px)!important;
+    width: 100%;
+    color: black;
+}
+
+.jobInfo {
+    margin-right: 8.33333%;
+    margin-left: 8.33333%;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: black;
+
+}
+
+.jobInfoTitle {
+    font-size: 25px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 2em 0;
+}
+
+.jobInfoText {
+    text-align: left;
+    font-size: 20px;
+
 }
