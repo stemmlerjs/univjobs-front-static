@@ -52,3 +52,12 @@
 .timeToRead {
     
 }
+
+@media (max-width: 850px) {
+    .postContainer {
+    width: 90%;
+    margin: 0 auto;
+    /* padding-bottom: 16em; */
+    margin-bottom: 2em;
+    }
+}
