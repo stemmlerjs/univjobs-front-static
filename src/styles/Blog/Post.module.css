@@ -1,0 +1,39 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 3em;
+    font-size: 16px;
+}
+
+.postContainer {
+    width: 26%;
+    display: inline-flex;
+    flex-direction: column;
+    margin: 2em;
+    border: solid 1px #cacaca;
+    border-radius: 4px;
+}
+
+.imageContainer {
+    
+}
+
+.textContainer {
+    text-align: left;
+    padding: 1.5em;
+    text-decoration: none !important;
+}
+
+.textContainer > h3 {
+    font-size: 21px;
+}
+
+.textContainer > div {
+    font-size: 16px;
+    color: #535353;
+}
+
+.timeToRead {
+    
+}

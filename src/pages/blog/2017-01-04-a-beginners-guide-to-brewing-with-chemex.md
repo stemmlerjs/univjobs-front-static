@@ -7,7 +7,7 @@ tags:
   - brewing
   - chemex
 featured: false
-image: null
+image: /img/room-to-live.jpg
 ---
 ![chemex](/img/chemex.jpg)
 

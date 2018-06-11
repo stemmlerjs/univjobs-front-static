@@ -7,7 +7,7 @@ tags:
   - flavor
   - tasting
 featured: false
-image: null
+image: /img/room-to-live.jpg
 ---
 
 ![flavor wheel](/img/flavor_wheel.jpg)
