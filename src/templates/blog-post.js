@@ -135,6 +135,7 @@ export const pageQuery = graphql`
         tags
         featured
         image
+        category
       }
     }
   }

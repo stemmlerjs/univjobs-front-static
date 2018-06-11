@@ -143,6 +143,7 @@ export const blogPagesQuery = graphql`
               tags
               featured
               image
+              category
             }
             fields {
               slug

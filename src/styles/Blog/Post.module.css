@@ -15,6 +15,7 @@
     flex-direction: column;
     margin: 6px;
     border: 1px solid #cacaca;
+    margin-bottom: 2em;
 }
 
 .imageContainer {
