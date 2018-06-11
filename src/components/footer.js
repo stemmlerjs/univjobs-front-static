@@ -17,6 +17,8 @@ const Strip = () => {
   )
 }
 
+
+
 const SocialLinks = (props) => {
   return (
     <div className={styles.socialLinksContainer}>
