@@ -2,12 +2,15 @@ import React from 'react'
 import Link from 'gatsby-link'
 
 import ShortHero from '../../components/ShortHero'
+import CTA from '../../components/CallToAction'
+
 import job from '../../styles/JobPosting.module.css'
 
 import haltech from '../../img/haltech.png'
 import briefcase from '../../img/briefcase.svg'
 import money from '../../img/money.svg'
 import place from '../../img/place.svg'
+
 
 
 
@@ -42,6 +45,7 @@ const JobHeader = (props) => {
     )
 
 }
+
 
 const JobDetails = (props) => {
     return(
@@ -93,9 +97,14 @@ export default () =>
          heroTitle= 'Job Test'
          heroSubTitle= ''
          image=""
-         isFixedHero={true}
       />
       <JobHeader/>
       <JobDetails/>
+      <CTA
+        header="Want to apply to this job?"
+        subHeader="Signup now to get started."
+        buttonText="Apply now"
+        alt={true}
+      />
      
   </div>
