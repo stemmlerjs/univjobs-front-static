@@ -12,4 +12,17 @@
     margin-left: 2em;
     margin-top: 2em;
     color: #768484;
+    font-size: 1.6em;
+}
+
+@media (max-width: 700px) {
+
+}
+
+@media (max-width: 650px) {
+    .how {
+            margin-left: 0;
+    padding-left: 0.7em;
+    font-size: 1.3em;
+    }
 }
