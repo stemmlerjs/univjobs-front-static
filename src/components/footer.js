@@ -65,6 +65,7 @@ const Footer = ({ siteTitle }) => (
         <FooterMenuSection title={'For employers'} links={
           [
             { name: 'Register', url: 'https://app.univjobs.ca/register/employer' },
+            { name: 'Small Businesses', url: '/small-business' },
             { name: 'How to be successful on Univjobs', url: '/blog/how-to-be-most-successful-on-univjobs'}
           ]
         }/>
