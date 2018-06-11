@@ -19,6 +19,7 @@
 .introContainer > img {
     border-radius: 100%;
     margin-top: 2em;
+        max-width: 180px;
 }
 
 .content {

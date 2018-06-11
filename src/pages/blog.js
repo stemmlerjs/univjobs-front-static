@@ -2,6 +2,7 @@
 import React from 'react'
 
 import Divider from '../components/Divider'
+import Slidy from '../components/Slidy'
 
 import styles from '../styles/Blog.module.css'
 import headerStyles from '../styles/Blog/Header.module.css'
@@ -40,10 +41,13 @@ const Header = (props) => (
   </div>
 )
 
-const FeaturedPosts = () => {
+const FeaturedPosts = (props) => {
   return (
     <div>
-
+      <Slidy
+        elements={props.posts}
+        component={'Featured posts'}
+      />
     </div>
   )
 }
