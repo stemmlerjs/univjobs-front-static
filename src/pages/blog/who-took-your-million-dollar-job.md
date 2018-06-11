@@ -13,7 +13,7 @@ tags:
   - strike interest and gain the HR executive's attention
   - univjobs.ca
 featured: false
-image: /img/sample.png
+image: /img/hr-2308519_960_720.png
 ---
 It is obvious that many people go to colleges; universities get their degrees and thought that life is going to be good and the future is going to be great. It is after struggling to find a job for months do they realize that it is not as straight forward as it seems. You might be a graduate from U of T or even Harvard but if you don't have a good and professional resume, it will kill you.
 
