@@ -1,0 +1,32 @@
+.container {
+    
+}
+
+.imageContainer {
+    width: 100%;
+    min-height: 100px;
+    min-height: 400px;
+    background-position-x: 50%;
+    background-position-y: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.mask {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    opacity: .86;
+    z-index: 2;
+    background: rgba(0,0,0,.5);
+}
+
+.textContent {
+    position: absolute;
+    z-index: 99;
+}

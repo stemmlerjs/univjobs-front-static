@@ -59,7 +59,7 @@ const Footer = ({ siteTitle }) => (
           [
             { name: 'About', url: '/about' },
             { name: 'Contact', url: 'mailto:univjobscanada@gmail.com?Subject=Inquiry', mail: true },
-            { name: 'Why Univjobs', url: '/why-univjobs' }
+            { name: 'Why Univjobs', url: '/blog/why-univjobs/' }
           ]
         }/>
         <FooterMenuSection title={'Product'} links={
