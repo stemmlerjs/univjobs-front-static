@@ -21,14 +21,13 @@ collections:
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
 
-  - name: "pages"
-    label: "Pages"
-    files:
-      - folder: "src/pages/team"
-        label: "Team"
-        name: "team"
-        fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "team-member"}
-          - {label: Name, name: name, widget: string}
-          - {label: Image, name: image, widget: image}
-          - {label: Role, name: role, widget: string}
+  - name: "team"
+    label: "Team"
+    folder: "src/pages/team"
+    create: true
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "team-member"}
+      - {label: Name, name: name, widget: string}
+      - {label: Image, name: image, widget: image}
+      - {label: Role, name: role, widget: string}
+
