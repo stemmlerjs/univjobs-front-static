@@ -20,6 +20,8 @@ collections:
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
+      - {label: Featured, name: featured, widget: boolean}
+      - {label: "Featured Image", name: image, widget: image}
 
   - name: "team"
     label: "Team"

@@ -1,0 +1,125 @@
+
+import React from 'react'
+
+import Divider from '../components/Divider'
+
+import styles from '../styles/Blog.module.css'
+import headerStyles from '../styles/Blog/Header.module.css'
+
+const Tags = [
+  { tag: 'All', menu: null }, 
+  { tag: 'Adulting 101', 
+    menu: [
+      { tag: 'Communication & Relationships' },
+      { tag: "How To's"},
+      { tag: 'Personal Finance' },
+      { tag: 'Productivity'}
+    ] 
+  }, 
+  { tag: 'Guides', menu: null }, 
+  { tag: "Employer's Corner", menu: null }
+]
+
+const FeaturedPostsItems = [
+  { image: '' }
+]
+
+const BlogTagItem = (props) => {
+  return (
+    <div>{ props.tag.tag }</div>
+  )
+}
+
+const Header = (props) => (
+  <div className={headerStyles.container}>
+    {
+      props.tags.map((tag, index) => {
+        return <BlogTagItem key={index} tag={tag}/>
+      })
+    }
+  </div>
+)
+
+const FeaturedPosts = () => {
+  return (
+    <div>
+
+    </div>
+  )
+}
+
+const Posts = (props) => (
+  <section>
+
+  </section>
+)
+
+class Blog extends React.Component {
+  constructor () {
+    super();
+  }
+
+  render () {
+
+    /**
+     * Extract the featured posts, posts, tags, etc.
+     */
+
+    const data = this.props.data;
+    const featuredPosts = data.allMarkdownRemark
+      .edges.map((edge) => edge.node)
+      .map((node) => Object.assign(
+        {}, { excerpt: node.excerpt }, node.frontmatter, node.fields)
+      )
+      .filter((node) => node.featured)
+
+    const regularPosts = data.allMarkdownRemark
+      .edges.map((edge) => edge.node)
+      .map((node) => Object.assign(
+        {}, { excerpt: node.excerpt }, node.frontmatter, node.fields)
+      )
+      .filter((node) => !node.featured)
+
+    return (
+      <section>
+        <Header 
+          tags={Tags}
+        />
+        <FeaturedPosts
+          posts={featuredPosts}
+        />
+        <Divider/>
+        <Posts
+          posts={regularPosts}
+        />
+      </section>
+    )
+  }
+}
+
+export default Blog
+
+export const blogPagesQuery = graphql`
+  query Blog {
+    allMarkdownRemark(filter: { 
+      frontmatter:  { templateKey: {eq: "blog-post"} } }
+    ){
+        edges {
+          node {
+            excerpt(pruneLength: 250)
+            frontmatter {
+              title
+              date 
+              description
+              tags
+              featured
+              image
+            }
+            fields {
+              slug
+            }
+          }
+        }
+    }
+  }
+`

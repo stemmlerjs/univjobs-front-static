@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 18px;
+        padding-top: 1em;
+    padding-bottom: 1em;
+        max-width: 1200px;
+    margin: 0 auto;
+}
+
+.container > div {
+    margin-right: 2em;
+    cursor: pointer;
+}
