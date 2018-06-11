@@ -5,6 +5,7 @@ import Link from 'gatsby-link'
 
 import Divider from '../components/Divider'
 import Slidy from '../components/Slidy'
+import CallToAction from '../components/CallToAction'
 
 import styles from '../styles/Blog.module.css'
 import headerStyles from '../styles/Blog/Header.module.css'
@@ -72,7 +73,10 @@ const Post = (props) => {
       className={postStyles.postContainer}>
       <div 
         className={postStyles.imageContainer}>
-          <img src={props.post.image}/>
+        <div style={{
+          backgroundImage: `url('${props.post.image}')`
+        }}>
+        </div>
       </div>
       <div className={postStyles.textContainer}>
         <TimeToRead time={props.post.timeToRead}/>
@@ -85,6 +89,11 @@ const Post = (props) => {
 
 const Posts = (props) => (
   <section className={postStyles.container}>
+    <Divider/>
+    <div style={{
+          marginBottom: '3em',
+          marginTop: '1em'
+    }}/>
     {
       props.posts.map((post, index) => {
         return <Post key={index} post={post}/>
@@ -131,12 +140,15 @@ class Blog extends React.Component {
           posts={featuredPosts}
         />
 
-        <div>
-          <Divider/>
-          <Posts
-            posts={regularPosts}
-          />
-        </div>
+        <Posts
+          posts={regularPosts}
+        />
+        <CallToAction
+          header={'Find your next job'}
+          subHeader={'Students are already finding meaningful employment. Create your profile today!'}
+          buttonText={'Sign up'}
+          alt={true}
+        />
       </section>
     )
   }
