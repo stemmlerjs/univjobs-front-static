@@ -90,8 +90,9 @@ BlogPostTemplate.propTypes = {
   helmet: PropTypes.instanceOf(Helmet),
 }
 
-const BlogPost = ({ data }) => {
+const BlogPost = ({ data, pathContext }) => {
   const { markdownRemark: post } = data
+  console.log(data, 'data')
 
   return (
     <BlogPostTemplate

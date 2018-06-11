@@ -4,7 +4,6 @@ import Link from 'gatsby-link'
 import styles from '../styles/Blog/FeaturedBlogPost.module.css'
 
 const FeaturedBlogPost = (props) => {
-  console.log(props, "prop")
   return (
     <div className={styles.container}>
       <Link 
