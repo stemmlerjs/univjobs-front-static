@@ -12,6 +12,8 @@ import backers from '../styles/BackersStyles.module.css'
 import leftside from '../img/leftside.png'
 import companies from '../img/companies.png'
 
+import grad from '../img/gradphotos.jpeg'
+
 import companySmallOne from '../img/companies-resized-1.png'
 import companySmallTwo from '../img/companies-resized-2.png'
 import companySmallThree from '../img/companies-resized-3.png'
@@ -25,6 +27,8 @@ import haltech from '../img/haltech.png'
 import icube from '../img/icube.png'
 import startupSchool from '../img/startupschool.png'
 import sheridanEntrepreneurs from '../img/sheridanentrepreneurs.png'
+
+import LandingPage from '../components/LandingPage'
 
 const StudentLandingPage = (props) => {
   return (
@@ -136,7 +140,7 @@ const AltStudentCallToAction = (props) => {
     <section className={altStudentCTA.container}>
       <h1>Start now!</h1>
       <div>Students are already applying to jobs. Create your profile and find meaningful work today.</div>
-      <button className={`${landingePageStyles.getStartedButton} ${studentCTA.button}`}>Signup</button>
+      <button className={`${landingePageStyles.getStartedButton} ${studentCTA.button}`}>Sign up</button>
     </section>
   )
 }
@@ -179,28 +183,27 @@ const Backers = (props) => {
       <div className={backers.innerContainer}>
         <h1>Who's backing us?</h1>
         <div className={backers.backersList}>
-          <div><a href="http://haltech.ca/"><img style={{    maxWidth: '220px'}} src={haltech}></img></a></div>
+          <div><a href="http://haltech.ca/"><img src={haltech}></img></a></div>
           <div><a href="http://icubeutm.ca/"><img src={icube}></img></a></div>
           <div><a href="https://www.startupschool.org/"><img style={{ paddingLeft: '23px'}} src={startupSchool}></img></a></div>
-          <div><a href="https://www.sheridancollege.ca/research/entrepreneurs"><img style={{ maxWidth: '178px'}} src={sheridanEntrepreneurs}></img></a></div>
+          <div><a href="https://www.sheridancollege.ca/research/entrepreneurs"><img src={sheridanEntrepreneurs}></img></a></div>
         </div>
       </div>
     </section>
   )
 }
 
-/**
- * <StudentShowCaseSection/>
-    <StudentCallToAction/>
-    <StudentFeatures/>
-    <AltStudentCallToAction/>
-    <StudentBrandRecognition/>
-    <Backers/>
- */
-
 export default () =>
   <div>
-    <StudentLandingPage/>
+    <LandingPage 
+      heroTitle="Quickly apply to student and recent grad jobs"
+      heroSubTitle="A place where you can find jobs to earn cash and launch your career"
+      reRouteButton="I'm an employer"
+      image={grad}
+      showHeroMask={true}
+      centerHeroContainer={false}
+      hasPolygon={false}
+    />
     <StudentShowCaseSection/>
     <StudentCallToAction/>
     <StudentFeatures/>

@@ -49,3 +49,24 @@ font-size: 18px;
     position: relative;
     left: -4px;
 }
+
+
+@media (max-width: 730px) {
+    .container {
+      padding: 1em;
+      display: -ms-flexbox;
+      display: flex;
+      padding-top: 2em;
+      -ms-flex-direction: column;
+      flex-direction: column-reverse;
+      text-align: center;
+    }
+
+    .quoteContainer {
+        width: 100%;
+    }
+
+    .personContainer {
+      margin-top: 3em;
+    }
+}

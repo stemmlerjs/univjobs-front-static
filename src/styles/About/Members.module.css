@@ -1,0 +1,55 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2.5em;
+}
+
+.imageContainer {
+    margin-right: 1.4em;
+}
+
+.imageContainer img {
+    border-radius: 100%;
+    max-height: 130px;
+    max-width: 130px;
+    min-width: 130px;
+    min-height: 130px;
+}
+
+.textContainer > h3 {
+        margin-bottom: 0;
+}
+
+.textContainer > div {
+    font-size: 16px;
+    margin-bottom: 1em;
+}
+
+.learnMore {
+        color: #1dc9cb;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+@media (max-width: 475px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .imageContainer {
+        margin-right: 0px;
+    text-align: center;
+    }
+
+    .textContainer > h3 {
+        text-align: center;
+    }
+
+    .textContainer > div {
+        text-align: center;
+    }
+
+    .container > a {
+        text-align: center;
+    }
+}

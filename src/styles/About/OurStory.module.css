@@ -1,0 +1,29 @@
+.flexContainer {
+    display: flex;
+    align-items: center;
+}
+
+.imageContainer {
+    width: 30%;
+    padding-right: 3em;
+    /* padding-left: 3em; */
+}
+
+.textContainer {
+    width: 70%;
+}
+
+@media (max-width: 475px) {
+    .flexContainer {
+        flex-direction: column;
+    }
+
+    .imageContainer {
+            width: 68%;
+        padding-right: 0px;
+    }
+
+    .textContainer {
+            width: 100%;
+    }
+}

@@ -28,9 +28,11 @@ class Header extends React.Component {
     return (
     <div className={styles.container}>
       <div className={styles.logoContainer}>
+        <Link to="/">
         <img 
           className={styles.univjobsLogo}
           src="https://s3.amazonaws.com/assets.univjobs/images/front/justtransparency.png"/>
+        </Link>
       </div>
       <div className={styles.navItems}>
         <Link className={styles.navItem} to="https://blog.univjobs.ca">Blog</Link>

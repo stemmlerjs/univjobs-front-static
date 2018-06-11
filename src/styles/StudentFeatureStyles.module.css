@@ -38,7 +38,7 @@ padding-left: 50px;
 }
 
 .container img {
-        height: 13em;
+    max-height: 8em;;
 }
 
 
@@ -54,7 +54,7 @@ padding-left: 50px;
         font-size: 2rem;
 }
 
-@media (max-width:600px) {
+@media (max-width:890px) {
   .container {
         padding-left: 0px;
     padding-right: 0px;
@@ -89,5 +89,22 @@ padding-left: 50px;
   .flexContainerRight img {
     height: unset;
     width: 50%;
+  }
+}
+
+@media (max-width: 475px) {
+  .container {
+        padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 1em;
+    padding-right: 1em;
+    text-align: center;
+  }
+
+  .flexContainerRight img {
+    width: unset;
+    height: unset;
   }
 }

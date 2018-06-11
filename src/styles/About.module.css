@@ -24,3 +24,23 @@
     line-height: 1.2em;
     color: white;
 }
+
+.sectionContainer {
+    padding: 3em;
+    /* border-bottom: solid 1px #d4d4d4; */
+    /* padding-left: 3em; */
+    /* padding-right: 3em; */
+    max-width: 1260px;
+    margin: 0 auto;
+}
+
+@media (max-width: 475px) {
+    .sectionContainer {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+
+    .sectionContainer h1 {
+            text-align: center;
+    }
+}

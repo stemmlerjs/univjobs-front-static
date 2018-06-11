@@ -34,7 +34,7 @@ const Employers = () => (
     <LandingPage
       heroTitle="Early access to young talent from any post-secondary school"
       heroSubTitle="A network of affordable qualified students for your growing team"
-      reRouteButton="I'm an employer"
+      reRouteButton="I'm a student"
       image={gotJob}
       showHeroMask={false}
       centerHeroContainer={true}

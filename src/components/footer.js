@@ -33,7 +33,9 @@ const FooterMenuSection = (props) => {
       <div className={styles.menuHeader}>{props.title}</div>
       {
         props.links.map((link, index) => {
-          return <div className={styles.menuItem} key={index}>{link.name}</div>
+          return <Link key={index} className={styles.menuItem}  to={link.url}>
+            <div>{link.name}</div>
+          </Link>
         })
       }
     </div>
@@ -43,26 +45,32 @@ const FooterMenuSection = (props) => {
 const Footer = ({ siteTitle }) => (
   <div className={styles.container}>
     <div className={styles.linksContainer}>
-      <FooterMenuSection title={'Company'} links={
-        [
-          { name: 'About', url: '/about' },
-          { name: 'Contact Us', url: '/contact'},
-          { name: 'Why Univjobs', url: '/why-univjobs' }
-        ]
-      }/>
-      <FooterMenuSection title={'Product'} links={
-        [
-          { name: 'Blog', url: '/blog' },
-          { name: 'Pricing', url: '/pricing'}
-        ]
-      }/>
-      <FooterMenuSection title={'For employers'} links={
-        [
-          { name: 'Register', url: 'https://app.univjobs.ca/register/employer' },
-          { name: 'How to be successful on Univjobs', url: '/blog/how-to-be-most-successful-on-univjobs'}
-        ]
-      }/>
-      <SocialLinks/>
+      <section>
+        <FooterMenuSection title={'Company'} links={
+          [
+            { name: 'About', url: '/about' },
+            { name: 'Contact Us', url: '/contact'},
+            { name: 'Why Univjobs', url: '/why-univjobs' }
+          ]
+        }/>
+        <FooterMenuSection title={'Product'} links={
+          [
+            { name: 'Blog', url: '/blog' },
+            { name: 'Pricing', url: '/pricing'}
+          ]
+        }/>
+      </section>
+
+      <section>
+        <FooterMenuSection title={'For employers'} links={
+          [
+            { name: 'Register', url: 'https://app.univjobs.ca/register/employer' },
+            { name: 'How to be successful on Univjobs', url: '/blog/how-to-be-most-successful-on-univjobs'}
+          ]
+        }/>
+        <SocialLinks/>
+      </section>
+      
     </div>
     <Strip/>
   </div>
