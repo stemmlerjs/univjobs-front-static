@@ -1,6 +1,8 @@
 
 import React from 'react'
 
+import Divider from './Divider'
+
 import headerStyles from '../styles/Blog/Header.module.css'
 
 const Tags = [
@@ -24,12 +26,15 @@ const BlogTagItem = (props) => {
 }
 
 const BlogCategoriesHeader = (props) => (
-  <div className={headerStyles.container}>
-    {
-      Tags.map((tag, index) => {
-        return <BlogTagItem key={index} tag={tag}/>
-      })
-    }
+  <div className={headerStyles.outerContainer}>
+    <div className={headerStyles.container}>
+      {
+        Tags.map((tag, index) => {
+          return <BlogTagItem key={index} tag={tag}/>
+        })
+      }
+    </div>
+    <Divider/>
   </div>
 )
 

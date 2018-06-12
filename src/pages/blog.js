@@ -16,14 +16,16 @@ const FeaturedPostsItems = [
   { image: '' }
 ]
 
-
-
 const FeaturedPosts = (props) => {
   return (
     <div>
       <Slidy
+        class={styles.sliderOverride}
         elements={props.posts}
         component={'Featured posts'}
+        settings={{
+          centerMode: false
+        }}
       />
     </div>
   )
@@ -38,7 +40,6 @@ const TimeToRead = (props) => {
 }
 
 const Post = (props) => {
-  console.log('post', props.post)
   return (
     <Link 
       to={props.post.slug} 
