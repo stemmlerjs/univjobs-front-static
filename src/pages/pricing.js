@@ -125,8 +125,9 @@ const Plans = (props) => {
 
 const UsedBy = () => {
   return (
-    <div>
+    <div className={styles.usedByContainer}>
       <img src={womanMobile}/>
+      <h3>Used by forward thinking companies</h3>
     </div>
   )
 }
@@ -162,9 +163,18 @@ class Pricing extends React.Component {
             forEachElement(DRIFT_CHAT_SELECTOR, function(el) {
               el.addEventListener('click', handleClick);
             });
-            console.log("[Drift]: Drift loaded");
+            console.log("[Drift]: Drift loaded [via ready state]");
             clearInterval(loadingDrift);
           });
+
+          if (window.drift.api) {
+            var handleClick = openSidebar.bind(this, window.drift.api)
+            forEachElement(DRIFT_CHAT_SELECTOR, function(el) {
+              el.addEventListener('click', handleClick);
+            });
+            console.log("[Drift]: Drift loaded [via api]");
+            clearInterval(loadingDrift);
+          }
         }
       }
 
