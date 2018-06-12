@@ -15,6 +15,12 @@ import CallToAction from '../components/CallToAction';
 
 import SEO from '../components/SEO'
 
+function getUniquePageIdentifier () {
+  return typeof window !== 'undefined' && window.location.href
+      ? typeof window !== 'undefined' && window.location.href
+      : 'https://nostalgic-bhaskara-eea0ad.netlify.com'
+}
+
 const BlogPostHeader = (props) => {
   console.log("blog post header props", props)
   return (
@@ -38,18 +44,28 @@ const BlogPostContent = (props) => {
   )
 }
 
-export const BlogPostTemplate = ({
-  content,
-  contentComponent,
-  description,
-  tags,
-  title,
-  helmet,
-  image,
-  timeToRead,
-  frontmatter
-}) => {
-  return (
+export class BlogPostTemplate extends React.Component {
+  constructor () {
+    super();
+  }
+
+  componentDidMount () {
+  }
+
+  render () {
+    const {
+      content,
+      contentComponent,
+      description,
+      tags,
+      title,
+      helmet,
+      image,
+      timeToRead,
+      frontmatter
+    } = this.props;
+
+    return (
     <section>
 
       {helmet || ''}
@@ -78,16 +94,12 @@ export const BlogPostTemplate = ({
 
         <ReactDisqusComments
           shortname="univjobs"
-          identifier={ window 
-            ? window.location.href 
-            : 'https://nostalgic-bhaskara-eea0ad.netlify.com'
-          }
+          identifier={ getUniquePageIdentifier() }
           title={title}
-          url={ window 
-            ? window.location.href 
-            : 'https://nostalgic-bhaskara-eea0ad.netlify.com'
-          }
+          url={ getUniquePageIdentifier() }
           />
+=
+        
       </div>
       <CallToAction
           header={'Find your next job'}
@@ -97,6 +109,7 @@ export const BlogPostTemplate = ({
         />
     </section>
   )
+  }
 }
 
 BlogPostTemplate.propTypes = {
