@@ -61,7 +61,24 @@ between classes.</p>
 const Milestones = (props) => {
   return (
     <section>
-      milestones section
+      <h1>Milestones</h1>
+
+      <div className={styles.milestonesContainer}>
+        <div className={styles.milestoneItem}>
+          <div>Students from</div>
+          <h3>40+</h3>
+          <div>post-secondary institutions</div>
+        </div>
+        <div className={styles.milestoneItem}>
+          <div>Active user base</div>
+          <h3>1.5K</h3>
+        </div>
+        <div className={styles.milestoneItem}>
+          <div>Forward-thinking employers onboard</div>
+          <h3>100+</h3>
+        </div>
+      </div>
+      
     </section>
   )
 }
@@ -159,6 +176,12 @@ const Mentions = () => {
   )
 }
 
+const Download = () => {
+  return (
+    <a href="https://drive.google.com/open?id=1JWrGWVoBImg-eOCg4H6jxb7N45a-sAye">Download our press kit</a>
+  )
+}
+
 
 class PressPage extends React.Component {
   constructor () {
@@ -185,14 +208,15 @@ class PressPage extends React.Component {
         />
         
         <Body>
+          <Download/>
           <About/>
           <Divider/>
           <Milestones/>
-          <DownloadPressKit/>
           <Divider/>
           <Founders/>
           <Divider/>
           <Mentions/>
+          <Download/>
         </Body>
         
         
