@@ -1,6 +1,9 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
+import LeftFeatures from '../components/LeftFeatures'
+import RightFeatures from '../components/RightFeatures'
+
 import landingePageStyles from '../styles/StudentLandingPageStyles.module.css'
 import studentShowCaseStyles from '../styles/StudentShowCaseSectionStyles.module.css'
 import studentCTA from '../styles/StudentCallToActionStyles.module.css'
@@ -8,6 +11,7 @@ import studentFeatures from '../styles/StudentFeatureStyles.module.css'
 import altStudentCTA from '../styles/AltStudentCallToActionStyles.module.css'
 import recognition from '../styles/BrandRecognitionStyles.module.css'
 import backers from '../styles/BackersStyles.module.css'
+import features from '../styles/FeatureStyles.module.css'
 
 import leftside from '../img/leftside.png'
 import companies from '../img/companies.png'
@@ -65,8 +69,7 @@ const StudentShowCaseSection = (props) => {
       </div>
       <div className={studentShowCaseStyles.textContainer}>
         <div>
-          <h1>One profile,</h1>
-          <h1>One resume</h1>
+          <h1>One profile, one resume</h1>
         </div>
 
         <div className={studentShowCaseStyles.standardParagraph}>Making multiple cover letters and resumes can be stressful and time consuming on top of your exams and projects.</div>
@@ -107,30 +110,6 @@ const StudentCallToAction = (props) => {
       <h1>Get started now!</h1>
       <div>Create your profile and get access to student-friendly jobs.</div>
       <button className={`${landingePageStyles.getStartedButton} ${studentCTA.button}`}>Try it now</button>
-    </section>
-  )
-}
-
-const StudentFeatures = (props) => {
-  return (
-    <section className={studentFeatures.container}>
-      <section className={studentFeatures.flexContainerLeft}>
-        <div className={studentFeatures.flexItem}>
-          <h1>Get invited to jobs by employers</h1>
-          <div>Traditional networking events can be dreadful and overwhelming; we understand this. The good news is that you don't have to go to them anymore.</div>
-          <div>We let employers invite you to a job and let you build meaningful connections, <span>fast</span>.</div>
-        </div>
-        <img src={featureOneImage}></img>
-      </section>
-
-      <section className={studentFeatures.flexContainerRight}>
-        <img src={featureTwoImage}></img>
-        <div>
-          <h1>Track all your job applications</h1>
-          <div>Not receiving updates can cause anxiety.</div>
-          <div>UnivJobs can reduce the anxiety by showing the "progress" of your job applications whether you're being considered, whether you're invited for an interview or whether you get hired.</div>
-        </div>
-      </section>
     </section>
   )
 }
@@ -193,20 +172,49 @@ const Backers = (props) => {
   )
 }
 
+/**
+ * heroTitle="Early access to young talent from any post-secondary school"
+      heroSubTitle="A network of affordable qualified students for your growing team"
+     
+ */
+
 export default () =>
   <div>
     <LandingPage 
       heroTitle="Quickly apply to student and recent grad jobs"
       heroSubTitle="A place where you can find jobs to earn cash and launch your career"
-      reRouteButton="I'm an employer"
-      image={grad}
-      showHeroMask={true}
-      centerHeroContainer={false}
-      hasPolygon={false}
+      options={{
+        centerHeroContainer:false,
+        image: grad,
+        hasPolygon: false,
+        buttons: {
+          hasButtons: true,
+          reRouteButtonText: "I'm an employer",
+        },
+        hero: {
+          showHeroMask: true,
+          color: ''
+        }
+      }}
     />
     <StudentShowCaseSection/>
     <StudentCallToAction/>
-    <StudentFeatures/>
+    <section className={features.container}>
+      <LeftFeatures
+        header="Get invited to jobs by employers"
+        paragraphOne="Not receiving updates can cause anxiety."
+        paragraphTwo='We let employers invite you to a job and let you build meaningful connections, fast.'
+        picture= {featureOneImage}
+      />
+
+      <RightFeatures
+        header= 'Track all your job applications'
+        paragraphOne= 'Going to career fairs can be time-consuming and costly, especially when you have limited time and budget.'
+        paragraphTwo= "UnivJobs can reduce the anxiety by showing the 'progress' of your job applications whether you're being considered, whether you're invited for an interview or whether you get hired."
+        picture={featureTwoImage}
+      />
+    </section>
+
     <AltStudentCallToAction/>
     <StudentBrandRecognition/>
     <Backers/>

@@ -13,7 +13,7 @@ font-size: 18px;
 .container h1 {
     font-size: 18px;
     color: #2B2B2B;
-        font-size: 2rem;
+    font-size: 2rem;
     margin-bottom: 15px;
 }
 
@@ -30,4 +30,34 @@ font-size: 18px;
     cursor: pointer;
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+
+@media (max-width: 430px) {
+    .container > h1 {
+        font-size: 1.5em;
+   }
+
+   .container > div {
+        font-size: 1em;
+    }
+
+    .button {
+       font-size: 1em;
+    }
+    
+ }
+
+
+@media (max-width: 350px) {
+   .container > h1 {
+        font-size: 1em;
+   }
+
+   .container > div {
+        font-size: 0.5em;
+    }
+    .button {
+        font-size: 1em;
+     }
 }

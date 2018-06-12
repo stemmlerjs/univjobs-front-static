@@ -42,7 +42,7 @@ const Employers = () => (
         },
         hero: {
           showHeroMask: false,
-          color: '#555555'
+          color: ''
         }
       }}
     />

@@ -12,7 +12,7 @@ class LandingPage extends React.Component {
     render = () => {
       return (
         <section className={landingePageStyles.backgroundFallback}>
-          <div style={{backgroundImage: `url(${this.props.options.image})`}} className={landingePageStyles.hero}></div>
+          <div style={{ backgroundImage: `url(${this.props.options.image})`, backgroundColor: this.props.options.hero.color }} className={landingePageStyles.hero}></div>
           <div className={this.props.options.hero.showHeroMask ? landingePageStyles.heroMask : landingePageStyles.darkMask}></div>
           <div className={this.props.options.centerHeroContainer ? landingePageStyles.centeredHeroContainer : landingePageStyles.heroContainer}>
             <h1 className={landingePageStyles.title}>{this.props.heroTitle}</h1>

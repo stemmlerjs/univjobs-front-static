@@ -63,7 +63,7 @@ padding-left: 50px;
   }
 
   .flexContainerLeft {
-    width: 100%;
+    width: 75%;
     display: block;
   }
 
@@ -88,23 +88,34 @@ padding-left: 50px;
 
   .flexContainerRight img {
     height: unset;
-    width: 50%;
+    width: 75%;
   }
+
+  .flexItem > h1 {
+    font-size: 1.5em;
 }
 
-.container > div {
-    font-size: 18px;
-    margin-bottom: 15px;
+.flexItem > div {
+    font-size: 1em;
 }
+
+.container img {
+ height: 6em;
+}
+
+ 
+}
+
+
 
 
 @media (max-width: 360px) {
   .flexItem > h1 {
-       font-size: 20px;
+       font-size: 1em;
   }
 
   .flexItem > div {
-       font-size: 13px;
+       font-size: 0.5em;
    }
 
    .container img {
