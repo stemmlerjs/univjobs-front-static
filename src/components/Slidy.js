@@ -67,13 +67,20 @@ class Slidy extends React.Component {
     }
 
   render = () => {
+
+    const instanceSettings = Object.assign({}, settings, this.props.settings)
+
     switch (this.props.component) {
 
       case "Featured posts":
         return (
-          <section className={slidy.container}>
+          <section className={
+            this.props.class 
+              ? `${this.props.class} ${slidy.container}` 
+              : slidy.container
+          }>
             <Slider {
-              ...settings
+              ...instanceSettings
             }>
               {
                 this.props.elements.map((element, index) => {

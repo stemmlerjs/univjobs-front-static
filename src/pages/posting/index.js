@@ -19,35 +19,35 @@ const JobHeader = (props) => {
     return(
         <section className={job.jobHeaderContainer}>
             <div className={job.centeredJobContainer}>
-                    <div className={job.companyBrandImageContainer}>
-                        <img className={job.companyBrandImage} src={haltech}/>
+                <div className={job.companyBrandImageContainer}>
+                  <img className={job.companyBrandImage} src={haltech}/>
+                </div>
+                <div className={job.iconsInfo}>
+                    <h3 className={job.jobTitle}>Haltech</h3>
+                  </div>
+                
+                <div className={job.jobHeaderIconsContainer}>
+                  
+                    <div className={job.iconsInfo}>
+                        <img className={job.icons}src={place}/>
                     </div>
                     <div className={job.iconsInfo}>
-                        <h3 className={job.jobTitle}>Haltech</h3>
-                     </div>
-                    
-                    <div className={job.jobHeaderIconsContainer}>
-                     
-                            <div className={job.iconsInfo}>
-                                <img className={job.icons}src={place}/>
-                            </div>
-                            <div className={job.iconsInfo}>
-                                <p className={job.iconText}>Toronto, ON</p>
-                            </div>
-                            <div className={job.iconsInfo}>
-                                    <img className={job.icons}src={briefcase}/>
-                            </div>
-                            <div className={job.iconsInfo}>
-                                <p className={job.iconText}>Entry-level</p>
-                            </div>
-                            <div className={job.iconsInfo}>
-                                <img className={job.icons}src={money}/>
-                            </div>
-                            <div className={job.iconsInfo}>
-                                <p className={job.iconText}>$15/h</p>
-                            </div>
-                            <div className={job.iconsInfo}>
-                                <button className={job.applyHeaderButton}>APPLY NOW</button>
+                        <p className={job.iconText}>Toronto, ON</p>
+                    </div>
+                    <div className={job.iconsInfo}>
+                            <img className={job.icons}src={briefcase}/>
+                    </div>
+                    <div className={job.iconsInfo}>
+                        <p className={job.iconText}>Entry-level</p>
+                    </div>
+                    <div className={job.iconsInfo}>
+                        <img className={job.icons}src={money}/>
+                    </div>
+                    <div className={job.iconsInfo}>
+                        <p className={job.iconText}>$15/h</p>
+                    </div>
+                    <div className={job.iconsInfo}>
+                        <button className={job.applyHeaderButton}>APPLY NOW</button>
                 </div>
                            
                  </div>   

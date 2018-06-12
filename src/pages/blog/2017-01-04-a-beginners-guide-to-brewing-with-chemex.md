@@ -8,6 +8,7 @@ tags:
   - chemex
 featured: false
 image: /img/room-to-live.jpg
+category: Guides
 ---
 ![chemex](/img/chemex.jpg)
 

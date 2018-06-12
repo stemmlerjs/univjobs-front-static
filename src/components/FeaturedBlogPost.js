@@ -10,14 +10,14 @@ const FeaturedBlogPost = (props) => {
         style={{ textDecoration: 'none' }}
         to={props.post.slug}>
         <div className={styles.mask}></div>
+        <div className={styles.textContent}>
+            <h2>{props.post.title}</h2>
+            <p>{props.post.description}</p>
+          </div>
         <div className={styles.imageContainer} 
           style={{
             backgroundImage: `url("${props.post.image}")`
           }}>
-          <div className={styles.textContent}>
-            <h2>{props.post.title}</h2>
-            <p>{props.post.description}</p>
-          </div>
         </div>
       </Link>
     </div>

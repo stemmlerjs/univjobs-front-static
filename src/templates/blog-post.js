@@ -11,7 +11,15 @@ import Divider from '../components/Divider'
 import styles from '../styles/Blog/BlogPostPage.module.css'
 
 import ReactDisqusComments from 'react-disqus-comments';
-import CallToAction from '../components/CallToAction'
+import CallToAction from '../components/CallToAction';
+
+import SEO from '../components/SEO'
+
+function getUniquePageIdentifier () {
+  return typeof window !== 'undefined' && window.location.href
+      ? typeof window !== 'undefined' && window.location.href
+      : 'https://nostalgic-bhaskara-eea0ad.netlify.com'
+}
 
 const BlogPostHeader = (props) => {
   console.log("blog post header props", props)
@@ -36,23 +44,42 @@ const BlogPostContent = (props) => {
   )
 }
 
-export const BlogPostTemplate = ({
-  content,
-  contentComponent,
-  description,
-  tags,
-  title,
-  helmet,
-  image,
-  timeToRead
-}) => {
-  return (
+export class BlogPostTemplate extends React.Component {
+  constructor () {
+    super();
+  }
+
+  componentDidMount () {
+  }
+
+  render () {
+    const {
+      content,
+      contentComponent,
+      description,
+      tags,
+      title,
+      helmet,
+      image,
+      timeToRead,
+      frontmatter
+    } = this.props;
+
+    return (
     <section>
 
       {helmet || ''}
 
+      <SEO
+        isBlogPost={true}
+        postData= {{
+          frontmatter: frontmatter,
+          excerpt: description,
+        }}
+        postImage={image}
+      />
+
       <BlogCategoriesHeader/>
-      <Divider/>
 
       <div className={styles.container}>
         <BlogPostHeader 
@@ -67,10 +94,12 @@ export const BlogPostTemplate = ({
 
         <ReactDisqusComments
           shortname="univjobs"
-          identifier={title}
+          identifier={ getUniquePageIdentifier() }
           title={title}
-          url="https://nostalgic-bhaskara-eea0ad.netlify.com"
+          url={ getUniquePageIdentifier() }
           />
+=
+        
       </div>
       <CallToAction
           header={'Find your next job'}
@@ -80,6 +109,7 @@ export const BlogPostTemplate = ({
         />
     </section>
   )
+  }
 }
 
 BlogPostTemplate.propTypes = {
@@ -104,6 +134,7 @@ const BlogPost = ({ data, pathContext }) => {
       title={post.frontmatter.title}
       image={post.frontmatter.image}
       timeToRead={post.timeToRead}
+      frontmatter={post.frontmatter}
     />
   )
 }
@@ -129,6 +160,7 @@ export const pageQuery = graphql`
         tags
         featured
         image
+        category
       }
     }
   }

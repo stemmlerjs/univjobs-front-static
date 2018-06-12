@@ -23,6 +23,17 @@ collections:
       - {label: "Tags", name: "tags", widget: "list"}
       - {label: Featured, name: featured, widget: boolean}
       - {label: "Featured Image", name: image, widget: image}
+      - {label: Category, name: category, widget: relation, collection: category, searchFields: [title], valueField: title,  displayFields: title }
+      
+
+  - name: category
+    label: "Category"
+    folder: "src/pages/categories"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "category"}
+      - {label: "Title", name: "title", widget: "string"}
 
   - name: "team"
     label: "Team Member"

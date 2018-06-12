@@ -1,0 +1,41 @@
+.lastUpdated {
+    font-size: 14px;
+    color:grey;
+}
+
+.section {
+        margin-bottom: 3em;
+}
+
+.founderContainer {
+    padding-left: 1.4em;
+    padding-right: 1.4em;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    max-width: 829px;
+    margin: 0 auto;
+    padding-top: 1em;
+}
+
+.founderContainer > div {
+    width: 50%;
+}
+
+.founderContainerRight {
+    text-align: right;
+}
+
+.mention { 
+    display: flex;
+    flex-direction: row;
+}
+
+.mention > div {
+    padding-left: 1em;
+}
+
+.mentionAuthor {
+    color: black;
+}

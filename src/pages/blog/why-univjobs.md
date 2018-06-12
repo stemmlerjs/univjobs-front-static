@@ -7,5 +7,6 @@ tags:
   - Guide
 featured: true
 image: /img/sample.png
+category: null
 ---
 This is the body of this post.

@@ -1,15 +1,69 @@
-.container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    font-size: 18px;
-        padding-top: 1em;
-    padding-bottom: 1em;
-        max-width: 1200px;
-    margin: 0 auto;
+
+.outerContainer {
+        margin-bottom: 2.4em;
 }
 
-.container > div {
+.container {
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 18px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1em;
+    padding-left: 3em;
+    padding-right: 3em;
+}
+.navItem {
     margin-right: 2em;
     cursor: pointer;
+    
+}
+
+.navItem a {
+    text-decoration: none;
+    color: hsla(0,0%,0%,0.8)
+}
+
+.subList {
+    position: absolute;
+    display: -ms-flexbox;
+    font-size: 15px;
+    margin-left: 0;
+    display: none;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    background: #fff;
+    /* margin-top: 19px; */
+    border: 1px solid white;
+    padding: 1.3em;
+    list-style: none;
+    box-shadow: 0 2px 2px rgba(12,13,14,0.2);
+    padding-bottom: 0;
+    display: none;
+        z-index: 99;
+}
+
+.subList > li {
+    padding-left: 0;
+    padding-right: 1.5em;
+
+    font-size: 15px;
+}
+
+.subList > li > a {
+    font-size: 15px;
+    text-decoration: none;
+    transition: 0.1s ease-in;
+}
+
+.subList > li > a:hover {
+    color: #0776de;
+}
+
+.navItem:hover .subList {
+    display: flex;
 }

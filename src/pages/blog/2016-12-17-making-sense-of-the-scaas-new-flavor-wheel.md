@@ -8,6 +8,7 @@ tags:
   - tasting
 featured: false
 image: /img/room-to-live.jpg
+category: null
 ---
 
 ![flavor wheel](/img/flavor_wheel.jpg)

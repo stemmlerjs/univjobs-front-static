@@ -1,10 +1,13 @@
 .container {
-    max-width: 1200px;
+max-width: 1200px;
     margin: 0 auto;
     text-align: center;
-    padding-top: 5em;
+    /* padding-top: 5em; */
     font-size: 16px;
-    padding-bottom: 5em;
+    /* padding-bottom: 5em;
+    padding-left: 3em;
+    padding-right: 3em; */
+    /* text-align: left; */
 }
 
 .postContainer {
@@ -15,6 +18,7 @@
     flex-direction: column;
     margin: 6px;
     border: 1px solid #cacaca;
+    margin-bottom: 2em;
 }
 
 .imageContainer {
@@ -51,4 +55,13 @@
 
 .timeToRead {
     
+}
+
+@media (max-width: 850px) {
+    .postContainer {
+    width: 90%;
+    margin: 0 auto;
+    /* padding-bottom: 16em; */
+    margin-bottom: 2em;
+    }
 }
