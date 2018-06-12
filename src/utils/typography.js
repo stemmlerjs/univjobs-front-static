@@ -6,9 +6,10 @@ const typography = new Typography({
   headerFontFamily: [
     "Roboto",
     "sans-serif",
+    'Roboto Mono'
   ],
   headerColor: '#2B2B2B',
-  bodyFontFamily: ['Nunito', "Roboto", "sans-serif"],
+  bodyFontFamily: ['Nunito', "Roboto", "sans-serif", 'Roboto Mono'],
   overrideStyles: ({ adjustFontSizeTo, rhythm }, options, styles) => ({
   p: {
     fontSize: '18px'
