@@ -2,41 +2,51 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
 
+import BlogCategoriesHeader from '../components/BlogCategoriesHeader'
+import Posts from '../components/Posts'
+import styles from '../styles/Blog/Category.module.css'
+
+const NotFound = () => {
+  return (
+    <div style={{
+          maxWidth: '1200px',
+    margin: '0 auto',
+    paddingLeft: '1em',
+    paddingRight: '1em'
+    }}>
+      <div>There aren't any posts in this category yet!</div>
+      <Link to="/blog">Browse all posts</Link>
+    </div>
+  )
+}
+
 class CategoryPage extends React.Component {
   render() {
-    return <div>categorioes</div>;
-    // const posts = this.props.data.allMarkdownRemark.edges
-    // const postLinks = posts.map(post => (
-    //   <li key={post.node.fields.slug}>
-    //     <Link to={post.node.fields.slug}>
-    //       <h2 className="is-size-2">{post.node.frontmatter.title}</h2>
-    //     </Link>
-    //   </li>
-    // ))
-    // const tag = this.props.pathContext.tag
-    // const title = this.props.data.site.siteMetadata.title
-    // const totalCount = this.props.data.allMarkdownRemark.totalCount
-    // const tagHeader = `${totalCount} post${
-    //   totalCount === 1 ? '' : 's'
-    // } tagged with “${tag}”`
+    console.log(this.props, "got categories page props")
+
+    const category = this.props.pathContext.category;
+    const posts = this.props.data.allMarkdownRemark
+      .edges.map((edge) => edge.node)
+      .map((node) => Object.assign(
+        {}, { excerpt: node.excerpt }, node.frontmatter, node.fields, 
+        { timeToRead: node.timeToRead })
+      )
+      .filter((post) => post.category == category);
 
     return (
-      <section className="section">
-        <Helmet title={`${tag} | ${title}`} />
-        <div className="container content">
-          <div className="columns">
-            <div
-              className="column is-10 is-offset-1"
-              style={{ marginBottom: '6rem' }}
-            >
-              <h3 className="title is-size-4 is-bold-light">{tagHeader}</h3>
-              <ul className="taglist">{postLinks}</ul>
-              <p>
-                <Link to="/categories/">Browse all tags</Link>
-              </p>
-            </div>
-          </div>
-        </div>
+      <section>
+        <BlogCategoriesHeader/>
+        <section>
+          {
+            posts.length == 0
+              ? <NotFound/>
+              : <h1 className={styles.title}>{category}</h1>
+          }
+          
+          <Posts
+            posts={posts}
+          />
+        </section>
       </section>
     )
   }
@@ -44,29 +54,36 @@ class CategoryPage extends React.Component {
 
 export default CategoryPage
 
-// export const categoryPageQuery = graphql`
-//   query CategoryPage($category: String) {
-//     site {
-//       siteMetadata {
-//         title
-//       }
-//     }
-//     allMarkdownRemark(
-//       limit: 1000
-//       sort: { fields: [frontmatter___date], order: DESC }
-//       filter: { frontmatter: { title: { eq: $category } } }
-//     ) {
-//       totalCount
-//       edges {
-//         node {
-//           fields {
-//             slug
-//           }
-//           frontmatter {
-//             title
-//           }
-//         }
-//       }
-//     }
-//   }
-// `
+export const categoryPageQuery = graphql`
+  query CategoryPage($category: String) {
+      allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }
+        filter: { 
+          frontmatter:  { 
+            templateKey: {eq: "blog-post"},
+            category: { eq: $category },
+            category: { ne: null }
+          } 
+        }
+      ){
+          edges {
+            node {
+              excerpt(pruneLength: 250)
+              timeToRead
+              frontmatter {
+                title
+                date 
+                description
+                tags
+                featured
+                image
+                category
+              }
+              fields {
+                slug
+              }
+            }
+          }
+      }
+    }
+`

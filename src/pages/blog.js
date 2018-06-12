@@ -7,10 +7,9 @@ import Divider from '../components/Divider'
 import Slidy from '../components/Slidy'
 import CallToAction from '../components/CallToAction'
 import BlogCategoriesHeader from '../components/BlogCategoriesHeader'
+import Posts from '../components/Posts'
 
 import styles from '../styles/Blog.module.css'
-
-import postStyles from '../styles/Blog/Post.module.css'
 
 const FeaturedPostsItems = [
   { image: '' }
@@ -30,51 +29,6 @@ const FeaturedPosts = (props) => {
     </div>
   )
 }
-
-const TimeToRead = (props) => {
-  return (
-    <div className={postStyles.timeToRead}>
-      {props.time} minute read
-    </div>
-  )
-}
-
-const Post = (props) => {
-  return (
-    <Link 
-      to={props.post.slug} 
-      style={{ textDecoration: 'none' }}
-      className={postStyles.postContainer}>
-      <div 
-        className={postStyles.imageContainer}>
-        <div style={{
-          backgroundImage: `url('${props.post.image}')`
-        }}>
-        </div>
-      </div>
-      <div className={postStyles.textContainer}>
-        <TimeToRead time={props.post.timeToRead}/>
-        <h3>{props.post.title}</h3>
-        <div>{ props.post.description }</div>
-      </div>
-    </Link>
-  )
-}
-
-const Posts = (props) => (
-  <section className={postStyles.container}>
-    <Divider/>
-    <div style={{
-          marginBottom: '3em',
-          marginTop: '1em'
-    }}/>
-    {
-      props.posts.map((post, index) => {
-        return <Post key={index} post={post}/>
-      })
-    }
-  </section>
-)
 
 class Blog extends React.Component {
   constructor () {
@@ -111,7 +65,7 @@ class Blog extends React.Component {
         <FeaturedPosts
           posts={featuredPosts}
         />
-
+        
         <Posts
           posts={regularPosts}
         />
@@ -130,8 +84,10 @@ export default Blog
 
 export const blogPagesQuery = graphql`
   query Blog {
-    allMarkdownRemark(filter: { 
-      frontmatter:  { templateKey: {eq: "blog-post"} } }
+    allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      filter: { 
+      frontmatter:  { templateKey: {eq: "blog-post" } } }
     ){
         edges {
           node {

@@ -11,7 +11,9 @@ import Divider from '../components/Divider'
 import styles from '../styles/Blog/BlogPostPage.module.css'
 
 import ReactDisqusComments from 'react-disqus-comments';
-import CallToAction from '../components/CallToAction'
+import CallToAction from '../components/CallToAction';
+
+import SEO from '../components/SEO'
 
 const BlogPostHeader = (props) => {
   console.log("blog post header props", props)
@@ -44,15 +46,24 @@ export const BlogPostTemplate = ({
   title,
   helmet,
   image,
-  timeToRead
+  timeToRead,
+  frontmatter
 }) => {
   return (
     <section>
 
       {helmet || ''}
 
+      <SEO
+        isBlogPost={true}
+        postData= {{
+          frontmatter: frontmatter,
+          excerpt: description,
+        }}
+        postImage={image}
+      />
+
       <BlogCategoriesHeader/>
-      <Divider/>
 
       <div className={styles.container}>
         <BlogPostHeader 
@@ -110,6 +121,7 @@ const BlogPost = ({ data, pathContext }) => {
       title={post.frontmatter.title}
       image={post.frontmatter.image}
       timeToRead={post.timeToRead}
+      frontmatter={post.frontmatter}
     />
   )
 }

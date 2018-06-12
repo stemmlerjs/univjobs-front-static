@@ -17,6 +17,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
             frontmatter {
               tags
               templateKey
+              category
             }
           }
         }
@@ -48,14 +49,29 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 
     // Tag pages:
     let tags = []
+    let categories = [];
+
     // Iterate through each post, putting all found tags into `tags`
     posts.forEach(edge => {
       if (_.get(edge, `node.frontmatter.tags`)) {
         tags = tags.concat(edge.node.frontmatter.tags)
+
+
+        /**
+         * Additionally, add all categories to an array
+         */
+
+        let category = edge.node.frontmatter.category
+
+        if (category) {
+          categories.push(category)
+        }
+        
       }
     })
     // Eliminate duplicate tags
     tags = _.uniq(tags)
+    categories = _.uniq(categories)
 
     // Make tag pages
     tags.forEach(tag => {
@@ -69,6 +85,20 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         },
       })
     })
+
+    // Make categories pages
+    categories.forEach(category => {
+      const categoryPath = `/blog/categories/${_.kebabCase(category)}/`
+      
+      createPage({
+        path: categoryPath,
+        component: path.resolve('src/templates/category.js'),
+        context: {
+          category
+        }
+      })
+    })
+
   })
 }
 
@@ -76,7 +106,24 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
   const { createNodeField } = boundActionCreators
 
   if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
+    
+    /**
+     * Create slugs
+     */
+
+    let value = createFilePath({ node, getNode })
+
+    /**
+     * Create category slugs.
+     * 
+     * They exist in /blog/category/{category} rather
+     * than /category/{category}.
+     */
+
+    if (node.frontmatter.templateKey == "category") {
+      value = "/blog" + value;
+    }
+    
     createNodeField({
       name: `slug`,
       node,
