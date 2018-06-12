@@ -18,6 +18,7 @@ var settings = {
   autoplaySpeed: 3000,
   className:"center",
   centerMode:true,
+  adaptiveHeight: true,
   responsive: [
     {
       breakpoint: 1024,

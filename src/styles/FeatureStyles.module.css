@@ -126,4 +126,8 @@ padding-left: 50px;
     height: unset;
     width: 100%;
   }
+
+  .flexItem {
+    width: 75%;
+}
 }
