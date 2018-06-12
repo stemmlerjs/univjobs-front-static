@@ -21,6 +21,9 @@ const typography = new Typography({
   },
   ol: {
     fontSize: '18px'
+  },
+  section: {
+    marginTop: '1em'
   }
 })
 });
