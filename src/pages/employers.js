@@ -27,18 +27,24 @@ import ymca from '../img/ymca.svg'
 import airmiles from '../img/airmiles.svg'
 
 
-
-
 const Employers = () => (
   <div>
     <LandingPage
       heroTitle="Early access to young talent from any post-secondary school"
       heroSubTitle="A network of affordable qualified students for your growing team"
-      reRouteButton="I'm a student"
-      image={gotJob}
-      showHeroMask={false}
-      centerHeroContainer={true}
-      hasPolygon={false}
+      options={{
+        centerHeroContainer:true,
+        image: gotJob,
+        hasPolygon: false,
+        buttons: {
+          hasButtons: true,
+          reRouteButtonText: "I'm a student",
+        },
+        hero: {
+          showHeroMask: false,
+          color: '#555555'
+        }
+      }}
     />
 
     <SocialValidation

@@ -28,16 +28,40 @@ import airmiles from '../img/airmiles.svg'
 
 
 
+/**
+ *  options={{
+ *        centerHeroContainer:true,
+ *        image: gotJob,
+ *        hasPolygon: false,
+ *         buttons: {
+ *          hasButtons: true,
+ *          reRouteButtonText: "I'm a student",
+ *        },
+ *        hero: {
+ *          showHeroMask: false,
+ *          color: '#555555'
+ *        }
+ *      }}
+ */
+
 const SmallBusiness = () => (
   <div>
     <LandingPage
       heroTitle="Easily access, and hire local young talent"
       heroSubTitle="We have thousands of candidates ready and waiting"
-      reRouteButton="I'm a student"
-      image={merchant}
-      showHeroMask={false}
-      centerHeroContainer={true}
-      hasPolygon={false}
+      options={{
+        centerHeroContainer:true,
+        image: merchant,
+        hasPolygon: false,
+        buttons: {
+          hasButtons: true,
+          reRouteButtonText: "I'm a student",
+        },
+        hero: {
+          showHeroMask: false,
+          color: ''
+        }
+      }}
     />
 
 
