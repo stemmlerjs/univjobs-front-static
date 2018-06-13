@@ -15,7 +15,7 @@ class LandingPage extends React.Component {
           <div 
             style={{ 
               backgroundImage: `url(${this.props.options.image})`, 
-              backgroundColor: this.props.options.hero.color ? this.props.options.hero.color : '' }} 
+              backgroundColor: this.props.options.hero ? this.props.options.hero.color : '' }} 
             className={landingePageStyles.hero}></div>
           <div className={this.props.options.hero.showHeroMask ? landingePageStyles.heroMask : landingePageStyles.darkMask}></div>
           <div className={this.props.options.centerHeroContainer ? landingePageStyles.centeredHeroContainer : landingePageStyles.heroContainer}>
