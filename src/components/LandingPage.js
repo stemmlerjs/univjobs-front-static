@@ -18,19 +18,27 @@ class LandingPage extends React.Component {
           hasPolygon: false,
           buttons: {
             hasButtons: true,
-            reRouteButtonText: "I'm a student",
+            mainButtonText: 'GET STARTED',
+            reRouteButtonText: "",
+            reRouteButtonLocation: null
          },
          hero: {
            showHeroMask: false,
            color: '#555555'
-         }
+         },
+         overrideClass: null
        }
       }
 
       settings = Object.assign({}, settings, this.props)
 
+      console.log(settings.options.overrideClass)
+
       return (
-        <section style={{ marginTop: '0px !important'}} className={landingePageStyles.backgroundFallback}>
+        <section style={{ marginTop: '0px !important'}} 
+          className={settings.options.overrideClass 
+            ? `${landingePageStyles.backgroundFallback} ${settings.options.overrideClass }`
+            : landingePageStyles.backgroundFallback }>
           <div 
             style={{ 
               backgroundImage: `url(${settings.options.image})`, 
@@ -44,11 +52,32 @@ class LandingPage extends React.Component {
           { settings.options.buttons.hasButtons ? 
             <div className={settings.options.centerHeroContainer ? landingePageStyles.centeredCtaContainer : landingePageStyles.ctaContainer}>
               <div className={landingePageStyles.buttonContainer}>
-                <button className={landingePageStyles.getStartedButton}>GET STARTED</button>
-                <div className={landingePageStyles.alreadyOn}>Already on Univjobs? <span>Sign in.</span></div>
+                <button 
+                  onClick={() => {
+                    if (typeof window !== undefined && settings.options.buttons.mainButtonLocation) {
+                      window.location.href = settings.options.buttons.mainButtonLocation;
+                    }
+                  }}
+                  className={landingePageStyles.getStartedButton}>{settings.options.buttons.mainButtonText}</button>
+                <div className={landingePageStyles.alreadyOn}>Already on Univjobs? 
+                  <span 
+                    onClick={() => {
+                      if (typeof window !== undefined) {
+                        window.location.href = "https://app.univjobs.ca/login/"
+                      }
+                    }}
+                  > Sign in.</span>
+                </div>
               </div>
               <div className={settings.options.centerHeroContainer ? landingePageStyles.centeredButtonContainer : landingePageStyles.buttonContainer}>
-                <button className={landingePageStyles.reRouteButton}>{settings.options.buttons.reRouteButtonText}</button>
+                <button 
+                  onClick={() => {
+                    if (typeof window !== undefined && settings.options.buttons.reRouteButtonLocation) {
+                      window.location.href = settings.options.buttons.reRouteButtonLocation;
+                    }
+                  }}
+                  className={landingePageStyles.reRouteButton}>{settings.options.buttons.reRouteButtonText}
+                </button>
               </div>
             </div> : ''
           }

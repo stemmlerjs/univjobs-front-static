@@ -57,12 +57,12 @@
 }
 
 .heroContainer {
-    position: relative;
+position: relative;
     z-index: 3;
     width: 100%;
     padding-left: 15%;
     text-align: left;
-    top: 7em;
+    top: 12vh;
     padding-right: 11em;
     max-width: 963px;
 }
@@ -103,6 +103,7 @@
      font-weight: 500;
      transition: 0.2s ease-out;
     font-family: 'Roboto', sans-serif;
+    outline: none
 }
 
 .getStartedButton:hover {
@@ -121,13 +122,15 @@
     background: none;
     border: solid 2px white;
     transition: 0.2s ease-out;
+    outline: none
 }
 
 .reRouteButton:hover {
-    background: #fbfbfb;
+background: #fbfbfb;
     color: #0ac1e8;
-    font-weight: bold;
-    letter-spacing: 0.6px;
+    font-weight: 700;
+    letter-spacing: .6px;
+    outline: none;
 }
 
 .ctaContainer {
@@ -188,6 +191,12 @@
     font-weight: bold;
 }
 
+@media (min-width: 1900px) {
+    .heroContainer {
+        padding-right: 0px;
+    }
+}
+
 @media (max-width: 830px) {
     .darkMask {
             top: -69px;
@@ -197,11 +206,11 @@
     }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
     .heroContainer {
-      max-width: 100%;
-      padding-right: 15%;
-      top: 2em;
+    max-width: 100%;
+    padding-right: 15%;
+    top: 15vh;
     }
     .title {
       font-size: 1.5em;
@@ -221,14 +230,14 @@
 }
 
 @media (max-width: 735px) {
-    .heroMask {
-            top: -69px;
-    }
+    /* .heroMask {
+        top: -69px;
+    } */
 }
 
 @media(max-width: 430px) {
     .hero {
-        min-height: calc(100vh - 0px)!important;
+        /* min-height: calc(100vh - 0px)!important; */
     }
 
     .title {
@@ -262,13 +271,13 @@
     }
 
     .heroMask {
-        top: -17px;
+        /* top: -17px; */
     }
 }
 
 @media (max-width: 375px) {
   .hero {
-    min-height: calc(104vh - 0px)!important;
+    /* min-height: calc(104vh - 0px)!important; */
   }
 
   .title {
@@ -307,11 +316,11 @@
 
 @media (max-width: 360px) {
   .hero {
-    min-height: calc(104vh - 0px)!important;
+    /* min-height: calc(104vh - 0px)!important; */
   }
 
   .heroMask {
-      top: -10px;
+      /* top: -10px; */
   }
 
   .title {

@@ -163,3 +163,11 @@
         font-size: 27px;
   }
 }
+
+/*
+ * Override styles
+ */
+
+.overrideLandingPage {
+    outline: none;
+}

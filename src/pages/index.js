@@ -189,12 +189,16 @@ export default () =>
         hasPolygon: false,
         buttons: {
           hasButtons: true,
+          mainButtonText: 'GET STARTED',
+          mainButtonLocation: 'https://app.univjobs.ca/register/',
           reRouteButtonText: "I'm an employer",
+          reRouteButtonLocation: '/employers'
         },
         hero: {
           showHeroMask: true,
           color: ''
-        }
+        },
+        overrideClass: landingePageStyles.overrideLandingPage
       }}
     />
     <StudentShowCaseSection/>
