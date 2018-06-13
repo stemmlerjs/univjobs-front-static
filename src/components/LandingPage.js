@@ -10,32 +10,51 @@ class LandingPage extends React.Component {
     }
 
     render = () => {
+
+      let settings = {
+        options: {
+          centerHeroContainer:true,
+          image: null,
+          hasPolygon: false,
+          buttons: {
+            hasButtons: true,
+            reRouteButtonText: "I'm a student",
+         },
+         hero: {
+           showHeroMask: false,
+           color: '#555555'
+         }
+       }
+      }
+
+      settings = Object.assign({}, settings, this.props)
+
       return (
         <section style={{ marginTop: '0px !important'}} className={landingePageStyles.backgroundFallback}>
           <div 
             style={{ 
-              backgroundImage: `url(${this.props.options.image})`, 
-              backgroundColor: this.props.options.hero ? this.props.options.hero.color : '' }} 
+              backgroundImage: `url(${settings.options.image})`, 
+              backgroundColor: settings.options.hero ? settings.options.hero.color : '' }} 
             className={landingePageStyles.hero}></div>
-          <div className={this.props.options.hero.showHeroMask ? landingePageStyles.heroMask : landingePageStyles.darkMask}></div>
-          <div className={this.props.options.centerHeroContainer ? landingePageStyles.centeredHeroContainer : landingePageStyles.heroContainer}>
-            <h1 className={landingePageStyles.title}>{this.props.heroTitle}</h1>
-            <div className={landingePageStyles.subTitle}>{this.props.heroSubTitle}</div>
+          <div className={settings.options.hero.showHeroMask ? landingePageStyles.heroMask : landingePageStyles.darkMask}></div>
+          <div className={settings.options.centerHeroContainer ? landingePageStyles.centeredHeroContainer : landingePageStyles.heroContainer}>
+            <h1 className={landingePageStyles.title}>{settings.heroTitle}</h1>
+            <div className={landingePageStyles.subTitle}>{settings.heroSubTitle}</div>
     
-          { this.props.options.buttons.hasButtons ? 
-            <div className={this.props.options.centerHeroContainer ? landingePageStyles.centeredCtaContainer : landingePageStyles.ctaContainer}>
+          { settings.options.buttons.hasButtons ? 
+            <div className={settings.options.centerHeroContainer ? landingePageStyles.centeredCtaContainer : landingePageStyles.ctaContainer}>
               <div className={landingePageStyles.buttonContainer}>
                 <button className={landingePageStyles.getStartedButton}>GET STARTED</button>
                 <div className={landingePageStyles.alreadyOn}>Already on Univjobs? <span>Sign in.</span></div>
               </div>
-              <div className={this.props.options.centerHeroContainer ? landingePageStyles.centeredButtonContainer : landingePageStyles.buttonContainer}>
-                <button className={landingePageStyles.reRouteButton}>{this.props.options.buttons.reRouteButtonText}</button>
+              <div className={settings.options.centerHeroContainer ? landingePageStyles.centeredButtonContainer : landingePageStyles.buttonContainer}>
+                <button className={landingePageStyles.reRouteButton}>{settings.options.buttons.reRouteButtonText}</button>
               </div>
             </div> : ''
           }
 
           </div>
-          { this.props.options.hasPolygon ?
+          { settings.options.hasPolygon ?
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 70" preserveAspectRatio="none">
                 <polygon fill="white" points="0,200 200,0 200,200"></polygon>
               </svg>
