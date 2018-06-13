@@ -90,7 +90,7 @@ const Founders = () => {
 
       <div className={styles.founderContainer}>
 
-        <div><img src={charles}/></div>
+        <div><img style={{paddingRight: '1em'}} src={charles}/></div>
 
         <div>
           <h3>Charles Javelona</h3>
@@ -128,7 +128,7 @@ scalable, secure, and mobile friendly
 for employers and students.</p>
         </div>
 
-        <div className={styles.founderContainerRight}><img src={khalil}/></div>
+        <div className={styles.founderContainerRight}><img style={{paddingLeft: '1em'}} src={khalil}/></div>
       </div>
 
 
@@ -138,7 +138,7 @@ for employers and students.</p>
 
 const Mention = (props) => {
   return (
-    <Link className={styles.mention} to={props.link}
+    <a className={styles.mention} href={props.link}
       style={{ textDecoration: 'none'}}
     >
       <img src={props.img}/>
@@ -146,7 +146,7 @@ const Mention = (props) => {
         <div>{props.title}</div>
         <div className={styles.mentionAuthor}>{props.author}</div>
       </div>
-    </Link>
+    </a>
   )
 }
 
@@ -158,19 +158,19 @@ const Mentions = () => {
         title={"There's a new way for students to look for jobs in Toronto"} 
         img={press1}
         author={'Blog Toronto'}
-        link={'https://google.com'}
+        link={'https://www.blogto.com/tech/2018/04/students-jobs-toronto/'}
       />
       <Mention 
         title={"Where do college students in Toronto go to find internships and part-time jobs?"} 
         img={press2}
         author={'Info 51'}
-        link={'https://google.com'}
+        link={'http://info.51.ca/life/study/2018-04/638154.html'}
       />
       <Mention 
         title={"Univjobs app dedicated to boosting the Oakville job market"} 
         img={press3}
         author={'Oakville News'}
-        link={'https://google.com'}
+        link={'https://oakvillenews.org/univjobs-boosts-job-opportunities-ontario/'}
       />
     </section>
   )

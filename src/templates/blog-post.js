@@ -36,10 +36,11 @@ const BlogPostHeader = (props) => {
 
 const BlogPostContent = (props) => {
   const PostContent = props.contentComponent;
+  console.log(PostContent, "content")
 
   return (
     <div>
-      <PostContent content={props.content} />
+      <div dangerouslySetInnerHTML={{ __html: props.content }} />
     </div>
   )
 }

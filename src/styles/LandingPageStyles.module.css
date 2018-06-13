@@ -3,6 +3,7 @@
     min-height: calc(87vh - 50px)!important;
     justify-content: center;
     align-items: center;
+    margin: 0 !important;
 }
 
 /* 
