@@ -32,7 +32,7 @@ const ProductImage = (props) => {
 
 const EmployerReviews = (props) => {
   return (
-    <section>
+    <section className={styles.sectionContainer}>
       <Review
         quote={`"UnivJobs enabled our small team to 
 reach, recruit and engage early 

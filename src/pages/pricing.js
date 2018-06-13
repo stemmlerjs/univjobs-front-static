@@ -1,10 +1,11 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-import woman from '../img/pricing/business-woman.jpg'
+import woman from '../img/pricing/woman-mask.jpg'
 import womanMobile from '../img/pricing/business-woman-mobile.jpg'
 import companies1 from '../img/companies-resized-2.png'
 import companies2 from '../img/companies-4-alt.png'
+import desktopCompanies from '../img/pricing/desktop-companies.png'
 import uLogo from '../img/u-logo-circle.png'
 
 import CallToAction from '../components/CallToAction'
@@ -126,10 +127,13 @@ const Plans = (props) => {
 const UsedBy = () => {
   return (
     <div className={styles.usedByContainer}>
-      <img src={womanMobile}/>
+      <img className={styles.womanMobile} src={womanMobile}/>
+      <div className={styles.woman} style={{ backgroundImage: `url("${woman}")`}}/>
       <h3>Used by forward thinking companies</h3>
-      <img className={styles.companies} src={companies1}></img>
-      <img className={styles.companies} src={companies2}></img>
+      <div className={styles.mobileCompaniesContainer}>
+        <img className={styles.companies} src={companies1}></img>
+        <img className={styles.companies} src={companies2}></img>
+      </div>
     </div>
   )
 }
@@ -191,10 +195,17 @@ class Pricing extends React.Component {
   render () {
     return (
       <div>
-        
-        <Plans/>
         <ULogo/>
-        <UsedBy/>
+
+        <div className={styles.heroFlex}>
+          <Plans/>
+          <UsedBy/>
+        </div>
+        <div className={styles.desktopCompanies}>
+          <img src={desktopCompanies}></img>
+        </div>
+        
+        
         <EmployerReviews/>
         <CallToAction
           header={'Post your first job'}

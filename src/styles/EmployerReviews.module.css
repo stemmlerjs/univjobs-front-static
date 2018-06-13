@@ -47,3 +47,16 @@ text-align: center;
        border-radius: 5px;
     border: solid 1px #ececec;
 }
+
+.sectionContainer {
+  max-width: 1000px;
+
+}
+
+@media (min-width: 800px) {
+  .sectionContainer {
+        margin: 0 auto;
+    padding-top: 4em;
+    padding-bottom: 1em;
+  }
+}
