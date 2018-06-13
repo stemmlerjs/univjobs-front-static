@@ -53,37 +53,40 @@ class LandingPage extends React.Component {
             <h1 className={landingePageStyles.title}>{settings.heroTitle}</h1>
             <div className={landingePageStyles.subTitle}>{settings.heroSubTitle}</div>
     
-          { settings.options.buttons.hasButtons ? 
-            <div className={settings.options.centerHeroContainer ? landingePageStyles.centeredCtaContainer : landingePageStyles.ctaContainer}>
-              <div className={landingePageStyles.buttonContainer}>
-                <button 
-                  onClick={() => {
-                    if (typeof window !== undefined && settings.options.buttons.mainButtonLocation) {
-                      window.location.href = settings.options.buttons.mainButtonLocation;
-                    }
-                  }}
-                  className={landingePageStyles.getStartedButton}>{settings.options.buttons.mainButtonText}</button>
-                <div className={landingePageStyles.alreadyOn}>Already on Univjobs? 
-                  <span 
+          { settings.options.buttons
+            ? settings.options.buttons.hasButtons 
+              ? <div className={settings.options.centerHeroContainer ? landingePageStyles.centeredCtaContainer : landingePageStyles.ctaContainer}>
+                <div className={landingePageStyles.buttonContainer}>
+                  <button 
                     onClick={() => {
-                      if (typeof window !== undefined) {
-                        window.location.href = "https://app.univjobs.ca/login/"
+                      if (typeof window !== undefined && settings.options.buttons.mainButtonLocation) {
+                        window.location.href = settings.options.buttons.mainButtonLocation;
                       }
                     }}
-                  > Sign in.</span>
+                    className={landingePageStyles.getStartedButton}>{settings.options.buttons ? settings.options.buttons.mainButtonText : ''}</button>
+                  <div className={landingePageStyles.alreadyOn}>Already on Univjobs? 
+                    <span 
+                      onClick={() => {
+                        if (typeof window !== undefined) {
+                          window.location.href = "https://app.univjobs.ca/login/"
+                        }
+                      }}
+                    > Sign in.</span>
+                  </div>
                 </div>
-              </div>
-              <div className={settings.options.centerHeroContainer ? landingePageStyles.centeredButtonContainer : landingePageStyles.buttonContainer}>
-                <button 
-                  onClick={() => {
-                    if (typeof window !== undefined && settings.options.buttons.reRouteButtonLocation) {
-                      window.location.href = settings.options.buttons.reRouteButtonLocation;
-                    }
-                  }}
-                  className={landingePageStyles.reRouteButton}>{settings.options.buttons.reRouteButtonText}
-                </button>
-              </div>
-            </div> : ''
+                <div className={settings.options.centerHeroContainer ? landingePageStyles.centeredButtonContainer : landingePageStyles.buttonContainer}>
+                  <button 
+                    onClick={() => {
+                      if (typeof window !== undefined && settings.options.buttons.reRouteButtonLocation) {
+                        window.location.href = settings.options.buttons.reRouteButtonLocation;
+                      }
+                    }}
+                    className={landingePageStyles.reRouteButton}>{settings.options.buttons.reRouteButtonText}
+                  </button>
+                </div>
+              </div> 
+              : ''
+            : ''
           }
 
           </div>
