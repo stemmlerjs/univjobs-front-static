@@ -39,6 +39,7 @@ padding-left: 50px;
 
 .container img {
         height: 13em;
+          max-width: 350px;
 }
 
 

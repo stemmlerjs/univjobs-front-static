@@ -3,12 +3,16 @@ import Link from 'gatsby-link'
 
 import woman from '../img/pricing/business-woman.jpg'
 import womanMobile from '../img/pricing/business-woman-mobile.jpg'
+import companies1 from '../img/companies-resized-2.png'
+import companies2 from '../img/companies-4-alt.png'
 import uLogo from '../img/u-logo-circle.png'
 
 import CallToAction from '../components/CallToAction'
 import LandingPage from '../components/LandingPage'
 
 import Divider from '../components/Divider'
+
+import EmployerReviews from '../components/EmployerReviews'
 
 import styles from '../styles/Pricing.module.css'
 
@@ -54,7 +58,7 @@ const Plan = (props) => {
                   <div className={styles.price}>{props.price}</div>
                 </div>
                 <Features features={props.features}/>
-                <button className={styles.planButton}>{props.buttonText}</button>
+                <button onClick={props.onClick} className={styles.planButton}>{props.buttonText}</button>
               </div>
               
             : <div className={styles.priceContainer}>
@@ -75,7 +79,7 @@ const Plans = (props) => {
   return (
     <section className={styles.plansContainer}>
       <h1>SIMPLE PLANS FOR EVERYONE</h1>
-      <div className={styles.planSubTitle}>Choose the plan that work for you. Our pricing is flexible so you can pay for exactly what you need. No hidden costs.</div>
+      <div className={styles.planSubTitle}>Choose the plan that works for you. Our pricing is flexible so you can pay for exactly what you need.</div>
 
       <div className={styles.planCards}>
         <Plan 
@@ -85,12 +89,11 @@ const Plans = (props) => {
           features={
             [
               'Job marketplace access',
-              '1 job posting',
+              '1 public job posting',
               'Unlimited applicants',
               'Target students by school',
-              'Public job for social media sharing',
               'Applicant tracking system',
-              'Custom question',
+              'Custom questions',
               'Access to student database',
               'Invite students'
             ]
@@ -106,11 +109,6 @@ const Plans = (props) => {
           title={'Enterprise'}
           price={undefined}
           headerColor={'#03d597'}
-          onClick={() => {
-            if ( typeof window !== 'undefined') {
-              window.location.href = "mailto:contact@univjobs.ca?Subject=Enterprise Pricing Inquiry";
-            }
-          }}
           features={[
             'Immediate access to new features',
             'Become a member of the Early Adopters Program'
@@ -118,6 +116,8 @@ const Plans = (props) => {
           buttonText={'Request a demo'}
         />
       </div>
+
+      <div className={styles.disclaimer}>No setup or monthly fees.</div>
 
     </section>
   )
@@ -128,6 +128,8 @@ const UsedBy = () => {
     <div className={styles.usedByContainer}>
       <img src={womanMobile}/>
       <h3>Used by forward thinking companies</h3>
+      <img className={styles.companies} src={companies1}></img>
+      <img className={styles.companies} src={companies2}></img>
     </div>
   )
 }
@@ -193,6 +195,13 @@ class Pricing extends React.Component {
         <Plans/>
         <ULogo/>
         <UsedBy/>
+        <EmployerReviews/>
+        <CallToAction
+          header={'Post your first job'}
+          subHeader={'Students are already applying to jobs. Post a job to over 50 post-secondary schools in Ontario.'}
+          buttonText={'Start'}
+          alt={true}
+        />
       </div>
     )
   }

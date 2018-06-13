@@ -1,0 +1,49 @@
+.reviewContainer {
+text-align: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.quote {
+  font-size: 16px;
+  text-align: center;
+  font-family: 'Roboto Mono', 'Roboto', sans-serif;
+}
+
+.author {
+    font-size: 16px;
+    margin-top: 1.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Roboto Mono', 'Roboto', sans-serif;
+}
+
+.title {
+    font-size: 16px;
+    /* margin-top: 1.5em; */
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: Roboto Mono,Roboto,sans-serif;
+    color: #a2a2a2;
+}
+
+.image {
+    max-width: 137px;
+    margin-top: 1em;
+}
+
+.productImageContainer {
+text-align: center;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.productImage {
+      /* margin-left: 1em; */
+    /* padding-right: 1em; */
+    box-shadow: 1px 1px 1px 1px;
+    box-shadow: 0 20px 40px 0 rgba(0,0,0,.12);
+    max-width: 80%;
+       border-radius: 5px;
+    border: solid 1px #ececec;
+}

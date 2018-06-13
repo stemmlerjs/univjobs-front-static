@@ -76,10 +76,11 @@
      font-weight: 500;
      transition: 0.2s ease-out;
     font-family: 'Roboto', sans-serif;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 20px 40px 0px;
 }
 
 .getStartedButton:hover {
-    box-shadow: 0 4px 6px 0 rgba(0,0,0,.2);
+    box-shadow: 0;
 }
 
 .employerButton {
