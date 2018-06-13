@@ -69,18 +69,18 @@ const SmallBusiness = () => (
       header=""
       logos={ 
         {
-          'one': ['#', scribble], 
-          'two': ['#', chartwells], 
-          'three': ['#', homedepot], 
-          'four': ['#', instacart],
-          'five': ['#', ymca], 
-          'six': ['#', airmiles], 
+          'one': ['https://www.scribblelive.com/', scribble], 
+          'two': ['http://www.dineoncampus.ca/', chartwells], 
+          'three': ['https://www.homedepot.ca/en/home.html', homedepot], 
+          'four': ['https://www.instacart.com/', instacart],
+          'five': ['http://ymcaofoakville.org/', ymca], 
+          'six': ['https://www.airmiles.ca/arrow/Home', airmiles], 
  
         } 
       }
     />
      <CallToAction
-      header='Get help and save money with UnivJobs'
+      header='Get help and save money with Univjobs'
       subHeader='UnivJobs makes it easy to find affordable talent locally'
       buttonText='Try it now!'
       alt={true}
@@ -89,7 +89,7 @@ const SmallBusiness = () => (
     <Benefits/>
 
     <CallToAction
-        header='Get local brand awareness virtually with UnivJobs'
+        header='Get local brand awareness virtually with Univjobs'
         subHeader='UnivJobs shows your company logo in front of thousands of job seekers.'
         buttonText='Post a job now'
         alt={true}

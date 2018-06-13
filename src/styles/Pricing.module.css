@@ -1,0 +1,212 @@
+.plansContainer {
+    background: #f5f5f5;
+    margin-top: 0;
+    padding: 7em 1em 2em;
+}
+
+.plansContainer > h1 {
+    font-family: 'Roboto Mono', sans-serif;
+}
+
+.planSubTitle {
+    font-family: Roboto Mono,Roboto,sans-serif;
+    color: #5c5c5c;
+    font-size: 16px;
+}
+
+.uLogo {
+ position: absolute;
+    left: 15px;
+    top: 121px;
+
+}
+
+.uLogo > img {
+    width: 75px;
+}
+
+.plan {
+    background-color: #fff;
+padding: 2em;
+    margin-top: 1em;
+    /* box-shadow: 0 2px 2px 0 rgba(0,0,0,.2); */
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 20px 40px 0px;
+}
+
+.planTitle {
+        font-family: 'Roboto Mono', 'Roboto', sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.priceContainer {
+    display: flex;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: #0bbce7;
+    font-size: 1.1em;
+    flex-direction: column;
+}
+
+.price {
+    font-size: 2em;
+    font-family: 'Roboto Mono', 'Roboto', sans-serif;
+}
+
+.planCards {
+margin-top: 2.5em;
+}
+
+.contactUs {
+    font-weight: bold;
+    font-style: italic;
+    line-height: 0.9em;
+    text-align: center;
+}
+
+.priceFlex {
+        display: flex;
+    justify-content: center;
+    margin-bottom: 36px;
+
+}
+
+
+.featuresContainer {
+
+}
+
+.featuresContainer > div {
+        font-size: 16px;
+    text-align: center;
+    color: #3e3e3e;
+    font-family: 'Roboto Mono', 'Roboto', sans-serif;
+        margin-bottom: 5px;
+}
+
+.planButton {
+        width: 80%;
+    margin: 0 auto;
+    margin-top: 1em;
+    background: #0dd4ea;
+    border: none;
+    color: white;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-family: 'Roboto Mono', 'Roboto', sans-serif;
+    padding: 1em;
+    font-weight: bold;
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,.2);
+    cursor: pointer;
+}
+
+.usedByContainer {
+    position: relative;
+}
+
+.usedByContainer > h3 {
+    position: absolute;
+    left: 16px;
+    top: 3em;
+    color: white;
+    padding: 1em;
+    font-family: 'Roboto Mono', 'Roboto', sans-serif;
+    text-align: center;
+    text-shadow: 0px 2px #21545a;
+}
+
+.companies {
+        margin: 0 auto;
+    padding: 1em;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.disclaimer {
+    text-align: center;
+    margin-top: 2em;
+    text-decoration: underline;
+    text-decoration-color: #0dd4ea;
+    font-family: 'Roboto Mono', 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 0.8em;
+}
+
+.heroFlex {
+
+}
+
+.womanMobile {
+    
+}
+
+.woman {
+        height: 100%;
+    background-position-x: 32%;
+    background-position-y: 50%;
+    display: none;
+        background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.mobileCompaniesContainer {
+
+}
+
+.desktopCompanies {
+    display: none;
+}
+
+@media (min-width: 1150px) {
+    .planCards {
+            display: flex;
+        flex-direction: row;
+            justify-content: center;
+    }
+
+    .plan {
+        margin: 0 auto;
+        max-width: 385px;
+        margin: 1em;
+    }
+}
+
+@media (min-width: 800px) {
+    .desktopCompanies {
+        display: block;
+        text-align: center;
+    }
+
+    .heroFlex {
+          display: flex;
+    flex-direction: row-reverse;
+    }
+
+    .plansContainer {
+            width: 70%;
+            text-align: center;
+            padding-top: 3em;
+    }
+    .usedByContainer {
+        width: 30%;
+    }
+
+    .usedByContainer > h3 {
+            top: 9em;
+    }
+
+    .womanMobile {
+        display: none;
+    }
+
+    .woman {
+        display: block;
+    }
+
+    .mobileCompaniesContainer {
+        display: none;
+    }
+}
