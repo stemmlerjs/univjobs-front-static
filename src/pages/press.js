@@ -230,6 +230,7 @@ class PressPage extends React.Component {
           subHeader={'Students are already applying to jobs. Create your profile and find meaningful work today!'}
           buttonText={'Sign up'}
           alt={true}
+          location={'https://app.univjobs.ca/register/'}
         />
       </div>
     )

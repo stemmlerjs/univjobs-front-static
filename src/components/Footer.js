@@ -35,7 +35,7 @@ const FooterMenuSection = (props) => {
       <div className={styles.menuHeader}>{props.title}</div>
       {
         props.links.map((link, index) => {
-          return link.mail 
+          return link.mail || link.external
             ? (
               <a key={index} className={styles.menuItem}  href={link.url}>
                 <div>{link.name}</div>
@@ -74,7 +74,7 @@ const Footer = ({ siteTitle }) => (
       <section>
         <FooterMenuSection title={'For employers'} links={
           [
-            { name: 'Register', url: 'https://app.univjobs.ca/register/employer' },
+            { name: 'Register', url: 'https://app.univjobs.ca/register/employer', external: true },
             { name: 'Small Businesses', url: '/small-business' },
             { name: 'How to be successful on Univjobs', url: '/blog/how-to-be-most-successful-on-univjobs'}
           ]

@@ -245,7 +245,6 @@ background: #fbfbfb;
     }
 
   .subTitle {
-        font-size: 15px;
         color: #d2eaff;
         padding-top: 0px;
     }
@@ -254,13 +253,6 @@ background: #fbfbfb;
         flex-direction: column;
       }
     
-      .getStartedButton {
-        font-size: 15px;
-      }
-    
-      .reRouteButton {
-        font-size: 15px;
-      }
 
     .centeredHeroContainer {    
         max-width: 75%;
@@ -285,7 +277,7 @@ background: #fbfbfb;
   }
 
   .subTitle {
-    font-size: 0.5em;
+
     color: #d2eaff;
     padding-top: 0px;
     }
@@ -300,14 +292,6 @@ background: #fbfbfb;
   }
   .centeredCtaContainer {
     flex-direction: column;
-  }
-
-  .getStartedButton {
-    font-size: 0.5em;
-  }
-
-  .reRouteButton {
-    font-size: 0.5em;
   }
   
 }
@@ -328,7 +312,6 @@ background: #fbfbfb;
   }
 
   .subTitle {
-    font-size: 0.5em;
     color: #d2eaff;
     padding-top: 0px;
     }
@@ -345,12 +328,5 @@ background: #fbfbfb;
     flex-direction: column;
   }
 
-  .getStartedButton {
-    font-size: 0.5em;
-  }
-
-  .reRouteButton {
-    font-size: 0.5em;
-  }
   
 }

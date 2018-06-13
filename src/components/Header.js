@@ -40,7 +40,11 @@ class Header extends React.Component {
         <Link className={styles.navItem} to="/pricing">Pricing</Link>
         <Link className={styles.navItem} to="/blog">Blog</Link>
         <Link className={styles.navItem} to="/employers">Employers</Link>
-        <div className={styles.signInButton}>
+        <div onClick={() => {
+          if(typeof window !== undefined) {
+            window.location.href = "https://app.univjobs.ca/login"
+          }
+        }} className={styles.signInButton}>
           SIGN IN
         </div>
         <div className={styles.burgerMenuNavItem} href="javascript:void(0);" onClick={this.toggleBurgerMenu}>

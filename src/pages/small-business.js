@@ -27,23 +27,6 @@ import ymca from '../img/ymca.svg'
 import airmiles from '../img/airmiles.svg'
 
 
-
-/**
- *  options={{
- *        centerHeroContainer:true,
- *        image: gotJob,
- *        hasPolygon: false,
- *         buttons: {
- *          hasButtons: true,
- *          reRouteButtonText: "I'm a student",
- *        },
- *        hero: {
- *          showHeroMask: false,
- *          color: '#555555'
- *        }
- *      }}
- */
-
 const SmallBusiness = () => (
   <div>
     <LandingPage
@@ -84,6 +67,7 @@ const SmallBusiness = () => (
       subHeader='UnivJobs makes it easy to find affordable talent locally'
       buttonText='Try it now!'
       alt={true}
+      location={'https://app.univjobs.ca/register/employer/'}
     />
 
     <Benefits/>
@@ -93,6 +77,7 @@ const SmallBusiness = () => (
         subHeader='UnivJobs shows your company logo in front of thousands of job seekers.'
         buttonText='Post a job now'
         alt={true}
+        location={'https://app.univjobs.ca/register/employer/'}
     />
 
     <Slidy/>

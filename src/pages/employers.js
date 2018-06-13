@@ -67,6 +67,7 @@ const Employers = () => (
       subHeader='UnivJobs makes it easy to find early career talent'
       buttonText='Try it now!'
       alt={true}
+      location={'https://app.univjobs.ca/register/employer/'}
     />
 
    
@@ -98,6 +99,7 @@ const Employers = () => (
         subHeader='UnivJobs advertises your job listing & logo in front of thousands of early career talent.'
         buttonText='Post a job now'
         alt={true}
+        location={'https://app.univjobs.ca/register/employer/'}
     />
   
     

@@ -102,7 +102,7 @@ const Plans = (props) => {
           buttonText={'Get started - $20'}
           onClick={() => {
             if ( typeof window !== 'undefined') {
-              window.location.href = "https://app.univjobs.ca/register/"
+              window.location.href = "https://app.univjobs.ca/register/employer/"
             }
           }}
         />
@@ -212,6 +212,7 @@ class Pricing extends React.Component {
           subHeader={'Students are already applying to jobs. Post a job to over 50 post-secondary schools in Ontario.'}
           buttonText={'Start'}
           alt={true}
+          location={'https://app.univjobs.ca/register/'}
         />
       </div>
     )

@@ -21,10 +21,7 @@
     .container > h1 {
          font-size: 1.5em;
     }
- 
-    .container > div {
-         font-size: 0.8em;
-     }
+
  }
 
 
@@ -33,7 +30,4 @@
         font-size: 1em;
    }
 
-   .container > div {
-        font-size: 0.5em;
-    }
 }
