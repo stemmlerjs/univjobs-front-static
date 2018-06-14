@@ -107,7 +107,6 @@
 }
 
 .jobInfoContainer {
-    padding-top: 120px;
     min-height: calc(20vh - 20px)!important;
     width: 100%;
     color: black;
