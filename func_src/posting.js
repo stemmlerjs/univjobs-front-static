@@ -8,8 +8,10 @@ var striptags = require("striptags");
 exports.handler = function(event, context, callback) {
 	//exports.handler = async function(event, context, callback) {
 
-	console.log();
-	axios.get(`https://api.univjobs.ca/api/v1/public/job/${event.path.split("/")[2]}`).then((r) => {
+	var splits = event.path.split("/");
+	var job_id = splits[splits.length-1];
+
+	axios.get(`https://api.univjobs.ca/api/v1/public/job/${job_id}`).then((r) => {
 
 		axios.get('http://app.univjobs.ca').then((t) => {
 
@@ -18,7 +20,7 @@ exports.handler = function(event, context, callback) {
 			var job = r.data.job;
 
 			var title = `${job.title} @ ${job.Employer.company_name}`;
-			var url = `http://app.univjobs.ca/posting/${event.path.split("/")[2]}`;
+			var url = `http://app.univjobs.ca/posting/${job_id}`;
 			var description = striptags(job.compensation);
 			var image = job.Employer.logo_url;
 
