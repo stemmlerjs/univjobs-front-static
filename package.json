@@ -5,6 +5,7 @@
   "author": "Khalil Stemmler <khalilstemmler@gmail.com>",
   "dependencies": {
     "axios": "^0.18.0",
+    "bufferutil": "^3.0.5",
     "bulma": "^0.6.0",
     "gatsby": "^1.9.213",
     "gatsby-link": "^1.6.37",
@@ -31,7 +32,9 @@
     "react-slick": "^0.23.1",
     "slick-carousel": "^1.8.1",
     "striptags": "^3.1.1",
-    "uuid": "^3.2.1"
+    "utf-8-validate": "^4.0.2",
+    "uuid": "^3.2.1",
+    "ws": "^5.2.0"
   },
   "keywords": [
     "gatsby"
