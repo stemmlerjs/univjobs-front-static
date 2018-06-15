@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'Univjobs - Simplifying hiring post-secondary students',
+    siteUrl: `https://univjobs.ca`,
   },
   plugins: [
     {
