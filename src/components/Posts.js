@@ -29,6 +29,7 @@ const Post = (props) => {
       <div className={postStyles.textContainer}>
         <TimeToRead time={props.post.timeToRead}/>
         <h3>{props.post.title}</h3>
+        <div className={postStyles.readButton}>Read</div>
       </div>
     </Link>
   )
