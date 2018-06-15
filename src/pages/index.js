@@ -184,15 +184,15 @@ export default () =>
       heroTitle="Quickly apply to student and recent grad jobs"
       heroSubTitle="A place where you can find jobs to earn cash and launch your career"
       options={{
-        centerHeroContainer:false,
+        alignment: 'left',
         image: grad,
-        hasPolygon: false,
         buttons: {
           hasButtons: true,
-          mainButtonText: 'GET STARTED',
+          mainButtonText: 'Get hired',
           mainButtonLocation: 'https://app.univjobs.ca/register/',
           reRouteButtonText: "I'm an employer",
-          reRouteButtonLocation: '/employers'
+          reRouteButtonLocation: '/employers',
+          alreadyOnComponentActive: true
         },
         hero: {
           showHeroMask: true,

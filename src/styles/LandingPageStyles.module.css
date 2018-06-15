@@ -255,11 +255,11 @@ background: #fbfbfb;
     
 
     .centeredHeroContainer {    
-        max-width: 75%;
-      }
+      max-width: 75%;
+    }
 
     .darkMask {
-        top: -35px;
+      top: -35px;
     }
 
     .heroMask {
@@ -273,14 +273,13 @@ background: #fbfbfb;
   }
 
   .title {
-        font-size: 1em;
+    font-size: 1em;
   }
 
   .subTitle {
-
     color: #d2eaff;
     padding-top: 0px;
-    }
+  }
 
   .centeredHeroContainer {    
     top: 5em;
@@ -293,7 +292,6 @@ background: #fbfbfb;
   .centeredCtaContainer {
     flex-direction: column;
   }
-  
 }
 
 
@@ -327,6 +325,5 @@ background: #fbfbfb;
   .centeredCtaContainer {
     flex-direction: column;
   }
-
-  
 }
+

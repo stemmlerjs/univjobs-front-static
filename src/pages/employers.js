@@ -33,15 +33,19 @@ const Employers = () => (
       heroTitle="Early access to young talent from any post-secondary school"
       heroSubTitle="A network of affordable qualified students for your growing team"
       options={{
-        centerHeroContainer:true,
+        alignment: 'center',
         image: gotJob,
         hasPolygon: false,
         buttons: {
-          hasButtons: true,
-          reRouteButtonText: "I'm a student",
+          mainButtonText: 'Post a job',
+          mainButtonLocation: 'https://app.univjobs.ca/register/employer/',
+          reRouteButtonText: "I'm an student",
+          reRouteButtonLocation: '/',
+          alreadyOnComponentActive: true
         },
         hero: {
           showHeroMask: false,
+          showDarkMask: true,
           color: ''
         }
       }}
