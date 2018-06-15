@@ -71,15 +71,6 @@ export class BlogPostTemplate extends React.Component {
 
       {helmet || ''}
 
-      <SEO
-        isBlogPost={true}
-        postData= {{
-          frontmatter: frontmatter,
-          excerpt: description,
-        }}
-        postImage={image}
-      />
-
       <BlogCategoriesHeader/>
 
       <div className={styles.container}>
@@ -125,7 +116,7 @@ const BlogPost = ({ data, pathContext }) => {
   let { markdownRemark: post } = data;
 
   post = Object.assign({}, post, post.fields, post.frontmatter)
-
+  debugger;
   return (
     <BlogPostTemplate
       content={post.html}
