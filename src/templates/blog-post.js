@@ -26,7 +26,7 @@ const BlogPostHeader = (props) => {
   return (
     <div className={styles.header}>
       <h1>{props.title}</h1>
-      <div className={styles.subHeader}>{`${props.tags[0]} • ${props.timeToRead} minute read`}</div>
+      <div className={styles.subHeader}>{`${props.category} • ${props.timeToRead} minute read`}</div>
       <div className={styles.headerImageContainer}>
         <img src={props.image}/>
       </div>
@@ -63,7 +63,8 @@ export class BlogPostTemplate extends React.Component {
       helmet,
       image,
       timeToRead,
-      frontmatter
+      frontmatter,
+      category
     } = this.props;
 
     return (
@@ -79,6 +80,7 @@ export class BlogPostTemplate extends React.Component {
           image={image}
           timeToRead={timeToRead}
           tags={tags}
+          category={category}
         />
         <BlogPostContent 
           content={content}
@@ -134,6 +136,7 @@ const BlogPost = ({ data, pathContext }) => {
       image={post.image}
       timeToRead={post.timeToRead}
       frontmatter={post}
+      category={post.category}
     />
   )
 }
