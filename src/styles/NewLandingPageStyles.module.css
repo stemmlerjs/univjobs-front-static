@@ -94,6 +94,7 @@
     padding-bottom: 11px;
         min-width: 193px;
     text-align: center;
+        min-height: 51px;
 }
 
 .getStartedButton:hover {
@@ -118,6 +119,7 @@
     padding-bottom: 11px;
         min-width: 193px;
     text-align: center;
+        min-height: 51px;
 }
 
 .reRouteButton:hover {
@@ -168,5 +170,15 @@ background: #fbfbfb;
 
     .buttonContainer {
             margin-bottom: 1em;
+    }
+}
+
+@media (max-width: 600px) {
+    .title {
+             font-size: 4vh;
+    }
+
+    .subTitle {
+        font-size: 2.4vh;
     }
 }

@@ -147,12 +147,10 @@ margin-bottom: 0;
   }
 
   .textContainer > div > h1 {
-    font-size: 1.3em;
-
   }
 
   .standardParagraph {
-    font-size: 0.7em;
+
     color: #506C80;
     padding-top: 14px;
     max-width: 400px;
@@ -168,7 +166,6 @@ margin-bottom: 0;
 
   .whosOn {
     text-align: center;
-    font-size: 1.5em;
 
   }
 
@@ -182,12 +179,10 @@ margin-bottom: 0;
   }
 
   .textContainer > div > h1 {
-    font-size: 1em;
 
   }
 
   .standardParagraph {
-    font-size: 0.5em;
     color: #506C80;
     padding-top: 14px;
     max-width: 400px;
@@ -203,12 +198,12 @@ margin-bottom: 0;
 
   .whosOn {
     text-align: center;
-    font-size: 1em;
+
     padding-right: 20px;
   }
 
   .andMore {
-    font-size: 1em;
+
 
   }
 

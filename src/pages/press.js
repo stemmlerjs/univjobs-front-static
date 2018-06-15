@@ -197,15 +197,8 @@ class PressPage extends React.Component {
           heroSubTitle="The latest news, updates and resources on Univjobs"
           options={{
             centerHeroContainer:true,
-            image: '',
-            hasPolygon: false,
-            buttons: {
-              hasButtons: false,
-              reRouteButtonText: "",
-            },
             hero: {
               showHeroMask: true,
-              color: ''
             }
           }}
           

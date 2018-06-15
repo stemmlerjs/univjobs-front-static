@@ -37,11 +37,12 @@ const SmallBusiness = () => (
         image: merchant,
         hasPolygon: false,
         buttons: {
-          hasButtons: true,
-          reRouteButtonText: "I'm a student",
+          mainButtonText: 'Hire local talent',
+          mainButtonLocation: 'https://app.univjobs.ca/register/employer/',
         },
         hero: {
           showHeroMask: false,
+          showDarkMask: true,
           color: ''
         }
       }}

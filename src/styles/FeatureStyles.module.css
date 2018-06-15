@@ -59,8 +59,11 @@ padding-left: 50px;
   .container {
         padding-left: 0px;
     padding-right: 0px;
-    width: 80%;
     margin: 0 auto;
+  }
+
+  .container h1 {
+        font-size: 1.6em;
   }
 
   .flexContainerLeft {
@@ -93,11 +96,11 @@ padding-left: 50px;
   }
 
   .flexItem > h1 {
-    font-size: 1.5em;
+
 }
 
 .flexItem > div {
-    font-size: 1em;
+
 }
 
 .container img {
@@ -112,11 +115,11 @@ padding-left: 50px;
 
 @media (max-width: 360px) {
   .flexItem > h1 {
-       font-size: 1em;
+
   }
 
   .flexItem > div {
-       font-size: 0.5em;
+
    }
 
    .container img {
@@ -129,6 +132,6 @@ padding-left: 50px;
   }
 
   .flexItem {
-    width: 75%;
+    width: 100%;
 }
 }
