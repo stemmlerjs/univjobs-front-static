@@ -27,7 +27,7 @@ const BlogPostHeader = (props) => {
     <div className={styles.header}>
       <h1>{props.title}</h1>
       <div className={styles.subHeader}>{`${props.tags[0]} • ${props.timeToRead} minute read`}</div>
-      <div>
+      <div className={styles.headerImageContainer}>
         <img src={props.image}/>
       </div>
     </div>

@@ -21,19 +21,11 @@ collections:
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
-      - {label: Featured, name: featured, widget: boolean}
+      - {label: "Featured Post", name: featured, widget: boolean, default: false}
       - {label: "Featured Image", name: image, widget: image}
-      - {label: Category, name: category, widget: relation, collection: category, searchFields: [title], valueField: title,  displayFields: title }
-      
+      - {label: Category, name: category, widget: string, default: "Student Life"}
+      - {label: "Parent Category", name: parentcategory, widget: string }
 
-  - name: category
-    label: "Category"
-    folder: "src/pages/categories"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "category"}
-      - {label: "Title", name: "title", widget: "string"}
 
   - name: "team"
     label: "Team Member"
