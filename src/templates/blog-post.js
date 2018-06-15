@@ -40,7 +40,7 @@ const BlogPostContent = (props) => {
 
   return (
     <div>
-      <div dangerouslySetInnerHTML={{ __html: props.content }} />
+      <div className={styles.content} dangerouslySetInnerHTML={{ __html: props.content }} />
     </div>
   )
 }
@@ -122,23 +122,27 @@ BlogPostTemplate.propTypes = {
 }
 
 const BlogPost = ({ data, pathContext }) => {
-  let { markdownRemark: post } = data
+  let { markdownRemark: post } = data;
+
+  post = Object.assign({}, post, post.fields, post.frontmatter)
+
   return (
     <BlogPostTemplate
       content={post.html}
       contentComponent={HTMLContent}
-      description={post.frontmatter.description}
+      description={post.description}
       helmet={
         <SEO 
           isBlogPost={true}
           postData={post}
           postImage={post.image}
+          title={post.title}
         />}
-      tags={post.frontmatter.tags}
-      title={post.frontmatter.title}
-      image={post.frontmatter.image}
+      tags={post.tags}
+      title={post.title}
+      image={post.image}
       timeToRead={post.timeToRead}
-      frontmatter={post.frontmatter}
+      frontmatter={post}
     />
   )
 }
@@ -157,6 +161,9 @@ export const pageQuery = graphql`
       id
       html
       timeToRead
+      fields {
+        slug
+      }
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
