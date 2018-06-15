@@ -1,8 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: 'Univjobs',
+    title: 'Univjobs - Simplifying hiring post-secondary students',
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-sitemap`
+    },
+    `gatsby-plugin-compression`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {
