@@ -43,7 +43,8 @@ class Blog extends React.Component {
 
     const data = this.props.data;
     console.log(data)
-    const featuredPosts = data.allMarkdownRemark
+
+    const featuredPosts = data.posts
       .edges.map((edge) => edge.node)
       .map((node) => Object.assign(
         {}, { excerpt: node.excerpt }, node.frontmatter, node.fields, 
@@ -51,7 +52,7 @@ class Blog extends React.Component {
       )
       .filter((node) => node.featured)
 
-    const regularPosts = data.allMarkdownRemark
+    const regularPosts = data.posts
       .edges.map((edge) => edge.node)
       .map((node) => Object.assign(
         {}, { excerpt: node.excerpt }, node.frontmatter, node.fields, 
@@ -62,9 +63,6 @@ class Blog extends React.Component {
     return (
       <section>
         <BlogCategoriesHeader/>
-        <FeaturedPosts
-          posts={featuredPosts}
-        />
         
         <Posts
           posts={regularPosts}
@@ -84,7 +82,7 @@ export default Blog
 
 export const blogPagesQuery = graphql`
   query Blog {
-    allMarkdownRemark(
+    posts: allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
       filter: { 
       frontmatter:  { templateKey: {eq: "blog-post" } } }

@@ -122,15 +122,18 @@ BlogPostTemplate.propTypes = {
 }
 
 const BlogPost = ({ data, pathContext }) => {
-  const { markdownRemark: post } = data
-  console.log(data, 'data')
-
+  let { markdownRemark: post } = data
   return (
     <BlogPostTemplate
       content={post.html}
       contentComponent={HTMLContent}
       description={post.frontmatter.description}
-      helmet={<Helmet title={`${post.frontmatter.title} | Blog`} />}
+      helmet={
+        <SEO 
+          isBlogPost={true}
+          postData={post}
+          postImage={post.image}
+        />}
       tags={post.frontmatter.tags}
       title={post.frontmatter.title}
       image={post.frontmatter.image}

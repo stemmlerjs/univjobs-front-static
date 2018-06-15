@@ -29,9 +29,6 @@ const Post = (props) => {
       <div className={postStyles.textContainer}>
         <TimeToRead time={props.post.timeToRead}/>
         <h3>{props.post.title}</h3>
-        <div>{ props.post.description.length >= 185
-        ? props.post.description.substring(0, 185) + "..."
-        : props.post.description }</div>
       </div>
     </Link>
   )
