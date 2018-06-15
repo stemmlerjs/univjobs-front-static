@@ -45,19 +45,23 @@ class Blog extends React.Component {
     const data = this.props.data;
     console.log(data)
 
-    const featuredPosts = data.featuredPosts
+    const featuredPosts = data.featuredPosts 
+      ? data.featuredPosts
       .edges.map((edge) => edge.node)
       .map((node) => Object.assign(
         {}, { excerpt: node.excerpt }, node.frontmatter, node.fields, 
         { timeToRead: node.timeToRead })
       )
+      : [];
 
-    const posts = data.posts
+    const posts = data.posts 
+      ? data.posts
       .edges.map((edge) => edge.node)
       .map((node) => Object.assign(
         {}, { excerpt: node.excerpt }, node.frontmatter, node.fields, 
         { timeToRead: node.timeToRead })
       )
+      : [];
 
     const tags = helpers.blog.getTagsFromQuery(data.tags);
 
