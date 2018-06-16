@@ -118,7 +118,7 @@ const BlogPost = ({ data, pathContext }) => {
   let { markdownRemark: post } = data;
 
   post = Object.assign({}, post, post.fields, post.frontmatter)
-  debugger;
+
   return (
     <BlogPostTemplate
       content={post.html}

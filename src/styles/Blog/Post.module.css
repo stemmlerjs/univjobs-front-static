@@ -82,7 +82,7 @@ max-width: 1200px;
     background:#0dd4d2;
 }
 
-@media (max-width: 1020px) {
+@media (max-width: 1130px) {
     .container {
             text-align: center;
     }
