@@ -6,13 +6,17 @@ import BlogCategoriesHeader from '../components/BlogCategoriesHeader'
 import Posts from '../components/Posts'
 import styles from '../styles/Blog/Category.module.css'
 
+import CallToAction from '../components/CallToAction'
+
+import helpers from '../helpers'
+
 const NotFound = () => {
   return (
     <div style={{
-          maxWidth: '1200px',
-    margin: '0 auto',
-    paddingLeft: '1em',
-    paddingRight: '1em'
+      maxWidth: '1200px',
+      margin: '0 auto',
+      paddingLeft: '1em',
+      paddingRight: '1em'
     }}>
       <div>There aren't any posts in this category yet!</div>
       <Link to="/blog">Browse all posts</Link>
@@ -25,17 +29,21 @@ class CategoryPage extends React.Component {
     console.log(this.props, "got categories page props")
 
     const category = this.props.pathContext.category;
-    const posts = this.props.data.allMarkdownRemark
+    const posts = this.props.data.posts
       .edges.map((edge) => edge.node)
       .map((node) => Object.assign(
         {}, { excerpt: node.excerpt }, node.frontmatter, node.fields, 
         { timeToRead: node.timeToRead })
       )
       .filter((post) => post.category == category);
+    
+    const categories = helpers.blog.getCategoriesFromQuery(this.props.data.categories);
 
     return (
       <section>
-        <BlogCategoriesHeader/>
+        <BlogCategoriesHeader
+          categories={categories}
+        />
         <section>
           {
             posts.length == 0
@@ -45,6 +53,12 @@ class CategoryPage extends React.Component {
           
           <Posts
             posts={posts}
+          />
+          <CallToAction
+            header={'Find your next job'}
+            subHeader={'Students are already finding meaningful employment. Create your profile today!'}
+            buttonText={'Sign up'}
+            alt={true}
           />
         </section>
       </section>
@@ -56,7 +70,7 @@ export default CategoryPage
 
 export const categoryPageQuery = graphql`
   query CategoryPage($category: String) {
-      allMarkdownRemark(
+    posts: allMarkdownRemark(
         sort: { order: DESC, fields: [frontmatter___date] }
         filter: { 
           frontmatter:  { 
@@ -84,6 +98,26 @@ export const categoryPageQuery = graphql`
               }
             }
           }
+      }
+
+      categories: allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }
+        filter: { 
+          frontmatter: { 
+            templateKey: { eq: "blog-post" }
+            category: { ne: null }
+          }
+        }
+        limit: 1000
+      ) {
+        edges {
+          node {
+            frontmatter {
+              category
+              parentcategory
+            }
+          }
+        }
       }
     }
 `

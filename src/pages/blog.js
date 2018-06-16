@@ -50,7 +50,9 @@ class Blog extends React.Component {
 
     return (
       <section>
-        <BlogCategoriesHeader/>
+        <BlogCategoriesHeader
+          categories={categories}
+        />
 
         <FeaturedPost
           posts={featuredPosts}
@@ -146,6 +148,7 @@ export const blogPagesQuery = graphql`
         node {
           frontmatter {
             category
+            parentcategory
           }
         }
       }

@@ -13,7 +13,6 @@ const TimeToRead = (props) => {
 }
 
 const Post = (props) => {
-  console.log(props, "post props")
   return (
     <Link 
       to={props.post.slug} 

@@ -25,18 +25,33 @@ export default {
     },
 
     getCategoriesFromQuery: (categories) => {
+      let map = {};
+
       if (categories) {
-        return _.uniq(
+        categories = _.uniq(
           categories.edges.map((edge) => edge.node)
           .map((node) => Object.assign(
             {}, node.frontmatter
           ))
-          .map((c) => c.category)
-          .filter((c) => !!c == true)
-          .sort()
+          .map((c) => {
+            return {
+              category: c.category,
+              parent: c.parentcategory
+            }
+          })
+          // .filter((c) => !!c == true)
+          // .sort()
         )
+
+        for (let obj of categories) {
+          if (!map.hasOwnProperty(obj.parent)) map[obj.parent] = [];
+          if (!!~map[obj.parent].indexOf(obj.parent) == false) map[obj.parent].push(obj.category);
+          map[obj.parent] = _.uniq(map[obj.parent])
+        }
+
+        delete map.null;
       }
-      return [];
+      return map;
     },
 
     getTagsFromQuery: (tags) => {
