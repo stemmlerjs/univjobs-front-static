@@ -80,3 +80,12 @@
     color: #0ddeeb;
     background: white;
 }
+
+@media (max-width: 850px) {
+    .container {
+        width: 90%;
+        margin: 0 auto;
+        /* padding-bottom: 16em; */
+        margin-bottom: 2em;
+    }
+}
