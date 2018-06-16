@@ -57,7 +57,6 @@ const BlogTagItem = (props) => {
  
 
 const MobileCategoriesNav = ({ categories, navOpen, handleToggleNav }) => {
-  console.log(categories, " catt")
   return (
     <div className={styles.mobileCategoriesNav}>
         
@@ -74,25 +73,33 @@ const MobileCategoriesNav = ({ categories, navOpen, handleToggleNav }) => {
           </div>
 
           {
-            Object.keys(categories).sort().map((key, index) => {
-              return (
-                <div key={index} className={styles.mobileCategoryListParent}>
-                  <div className={styles.parentTitle}>{ key }</div>
-                  <div>
-                    {
-                      categories[key].map((childKey, index) => {
-                        return (
-                          <Link 
-                            to={`/blog/categories/${kebabCase(childKey)}`} 
-                            className={styles.childTitle} 
-                            key={index}>{childKey}</Link>
-                        )
-                      })
-                    }
-                  </div>
-                </div>
+
+            !!categories == true
+              ? (
+                Object.keys(categories).sort().map((key, index) => {
+                  return (
+                    <div key={index} className={styles.mobileCategoryListParent}>
+                      <div className={styles.parentTitle}>{ key }</div>
+                      <div>
+                        {
+                          categories[key].map((childKey, index) => {
+                            return (
+                              <Link 
+                                to={`/blog/categories/${kebabCase(childKey)}`} 
+                                className={styles.childTitle} 
+                                key={index}>{childKey}</Link>
+                            )
+                          })
+                        }
+                      </div>
+                    </div>
+                  )
+                })
+              ) : (
+                ''
               )
-            })
+
+            
           }
         </div>
       
