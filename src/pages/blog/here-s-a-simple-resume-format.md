@@ -3,7 +3,10 @@ templateKey: blog-post
 title: Here's A Simple Resume Format
 author: Charles Javelona
 date: '2018-06-16T11:34:18-04:00'
-description: A Free Tool For Your Next Internship
+description: >-
+  Have you ever gone through many google searches looking for the perfect resume
+  format? Only to feel overwhelmed with so many choices and conflicting advice
+  on how to make one?
 tags:
   - resume template
   - free resume template
@@ -12,8 +15,6 @@ image: /img/screen-shot-2018-05-27-at-10.40.21-pm.png
 category: Resume
 parentcategory: Resources
 ---
-Have you ever gone through many google searches looking for the perfect resume format? Only to feel overwhelmed with so many choices and conflicting advice on how to make one?
-
 Here's a tool that solves that! [ineedaru.me](http://ineedaresu.me/#/) takes all your info and gives you a perfect resume format professionally.
 
 When you finish making the resume, come signup at [univjobs.ca](https://univjobs.ca) to find student friendly jobs such as part-time work, internships, and entry-level jobs.
