@@ -131,11 +131,16 @@ class BlogCategoriesHeader extends React.Component {
       <div className={styles.outerContainer}>
         <div className={styles.container}>
           
-          <MobileCategoriesNav
-            categories={this.props.categories}
-            navOpen={this.state.navOpen}
-            handleToggleNav={this.toggleNav}
-          />
+          {
+            this.props.categories
+              ?  <MobileCategoriesNav
+                  categories={this.props.categories}
+                  navOpen={this.state.navOpen}
+                  handleToggleNav={this.toggleNav}
+                />
+              : ''
+          }
+          
 
         </div>
         <Divider/>
