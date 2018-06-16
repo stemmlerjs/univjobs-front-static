@@ -5,31 +5,12 @@ import Link from 'gatsby-link'
 import helpers from '../helpers'
 
 import Divider from '../components/Divider'
-import Slidy from '../components/Slidy'
 import CallToAction from '../components/CallToAction'
 import BlogCategoriesHeader from '../components/BlogCategoriesHeader'
 import Posts from '../components/Posts'
+import FeaturedPost from '../components/FeaturedPost'
 
 import styles from '../styles/Blog.module.css'
-
-const FeaturedPostsItems = [
-  { image: '' }
-]
-
-const FeaturedPosts = (props) => {
-  return (
-    <div>
-      <Slidy
-        class={styles.sliderOverride}
-        elements={props.posts}
-        component={'Featured posts'}
-        settings={{
-          centerMode: false
-        }}
-      />
-    </div>
-  )
-}
 
 class Blog extends React.Component {
   constructor () {
@@ -70,6 +51,10 @@ class Blog extends React.Component {
     return (
       <section>
         <BlogCategoriesHeader/>
+
+        <FeaturedPost
+          posts={featuredPosts}
+        />
         
         <Posts
           posts={posts}

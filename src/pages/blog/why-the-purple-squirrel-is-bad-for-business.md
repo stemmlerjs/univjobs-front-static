@@ -14,7 +14,7 @@ tags:
   - growth mindset
   - it will kill you
   - Purple Squirrel
-featured: false
+featured: true
 image: /img/purple-squirrel-copy.jpg
 category: Hiring
 parentcategory: Employers

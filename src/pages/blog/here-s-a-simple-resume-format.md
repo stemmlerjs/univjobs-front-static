@@ -10,7 +10,7 @@ description: >-
 tags:
   - resume template
   - free resume template
-featured: false
+featured: true
 image: /img/screen-shot-2018-05-27-at-10.40.21-pm.png
 category: Resume
 parentcategory: Resources
