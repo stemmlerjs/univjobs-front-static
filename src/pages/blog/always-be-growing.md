@@ -10,7 +10,7 @@ tags:
   - growth
   - learning
 featured: false
-image: /img/466170-636247550235009559-16x9.jpg
+image: /img/markus-spiske-104913-unsplash.jpg
 category: Productivity
 parentcategory: Adulting 101
 ---
