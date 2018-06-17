@@ -15,7 +15,7 @@ tags:
   - Getting the Interview
   - Getting to the interview
 featured: true
-image: /img/women-in-business-meeting_4460x4460.jpg
+image: /img/adult-blur-boss-288477.jpg
 category: Job Hunt
 parentcategory: Career
 ---
