@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: 3 Survival Tips That Ensure You Will Get To The Interview
+title: 3 Ways That Ensure You Will Get To The Interview
 author: Charles Javelona
 date: '2018-06-16T21:15:49-04:00'
 description: >-
@@ -23,7 +23,7 @@ parentcategory: Career
 
 I know, you were probably expecting some life changing tips that require you to gather a lot of ingredients for a magical potion. Well, I've got news for you, it is not too hard to get results. Copying certain points from the job description is key to getting the job because the HR person takes the time to write this intricate job description, so if you think you fit for the role, they have basically done the work for you. Additionally, if you're applying to big organizations, they tend to run resumes through resume scanners which highlight the keywords from the job description.
 
-## ** **2. Outline Both Your Accomplishments & The Benefits 
+## 2. Outline Both Your Accomplishments & The Benefits
 
 You won an award or achieved something and that's great, you truly are awesome, but the one thing an employer is looking for is how you winning that award or accomplishing that achievement helped the organization. This is due to the fact that these employers are usually looking out for themselves and often want to know how hiring you can benefit the company in the most efficient way possible. The way to do this is by adding a because statement or an outcome statement. So for example, if you have reached X goal, include a point about how you achieving the goal contributed to overall success.
 
