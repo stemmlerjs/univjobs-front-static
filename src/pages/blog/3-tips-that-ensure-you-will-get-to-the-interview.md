@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: 3 Tips That Ensure You Will Get To The Interview
+title: 3 Survival Tips That Ensure You Will Get To The Interview
 author: Charles Javelona
 date: '2018-06-16T21:15:49-04:00'
 description: >-
@@ -14,7 +14,7 @@ tags:
   - Getting the job
   - Getting the Interview
   - Getting to the interview
-featured: false
+featured: true
 image: /img/women-in-business-meeting_4460x4460.jpg
 category: Job Hunt
 parentcategory: Career
