@@ -10,7 +10,7 @@ description: >-
 tags:
   - positive language
 featured: false
-image: /img/1_6sfcfhbn2e89w4ylunhk7g.jpeg
+image: /img/laughter-in-the-sun_4460x4460.jpg
 category: Communication & Relationships
 parentcategory: Adulting 101
 ---
