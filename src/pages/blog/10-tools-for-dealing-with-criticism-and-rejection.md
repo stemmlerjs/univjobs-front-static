@@ -17,7 +17,7 @@ tags:
   - criticism
   - ''
 featured: false
-image: /img/7035075623_225719afdd.jpg
+image: /img/blur-close-up-color-850216-1-.jpg
 category: Communication & Relationships
 parentcategory: Adulting 101
 ---
