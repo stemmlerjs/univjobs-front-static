@@ -127,6 +127,7 @@ export class BlogPostTemplate extends React.Component {
 }
 
 // Test
+// Test again and compress all images
 
 BlogPostTemplate.propTypes = {
   content: PropTypes.string.isRequired,
