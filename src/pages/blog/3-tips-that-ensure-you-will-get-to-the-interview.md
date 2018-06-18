@@ -4,12 +4,12 @@ title: 3 Ways That Ensure You Get To The Interview
 author: Charles Javelona
 date: '2018-06-16T21:15:49-04:00'
 description: >-
-  SO, you just graduated and the one thing on your mind is get a job but you're
-  not even getting your foot in the door or you just started school and you're
-  looking to get an edge over everyone else in your class... and we know it is
-  hard to get into a company unless you know someone. So here are a couple
-  suggestions to potentially take you to the next level at least (and by that we
-  mean the interview).
+  So, you just graduated and the one thing on your mind is where can I get a
+  job, but you're not even getting your foot in the door. You're looking to get
+  an edge over everyone else in your class... and we know it's hard to get into
+  a company unless you know someone. So here are a couple suggestions to
+  potentially take you to the next level at least (and by that we mean the
+  interview).
 tags:
   - Getting the job
   - Getting the Interview
@@ -21,7 +21,7 @@ parentcategory: Career
 ---
 ## **1. Copy elements of the job description in your resume (where it makes sense to add it)**
 
-I know, you were probably expecting some life changing tips that require you to gather a lot of ingredients for a magical potion. Well, I've got news for you, it is not too hard to get results. Copying certain points from the job description is key to getting the job because the HR person takes the time to write this intricate job description, so if you think you fit for the role, they have basically done the work for you. Additionally, if you're applying to big organizations, they tend to run resumes through resume scanners which highlight the keywords from the job description.
+I know, you were probably expecting some life changing tips that require you to gather a lot of ingredients for a magical potion. Well, I've got news for you, it's not too hard to get results. Copying certain points from the job description is key to getting the job, as the HR department take the time to write intricate job descriptions, so if you think you fit for the role, they have basically done the work for you. Additionally, if you're applying to big organizations, they tend to run resumes through resume scanners, which highlight the keywords from the job description.
 
 ## 2. Outline both your accomplishments & the benefits
 
@@ -29,10 +29,10 @@ You won an award or achieved something and that's great, you truly are awesome, 
 
 ## 3. Ask a friend to read your resume
 
-Now hear me out, asking someone to read your resume may not be ideal, but it is definitely necessary because the friend/friends reading your resume wants you to succeed. When you are asking a friend to read your resume, the two elements you should be looking for include the following; 
+Now hear me out, asking someone to read your resume may not be ideal, but it is definitely necessary because the friend reading your resume wants you to succeed. When you are asking a friend to read your resume, the two elements you should be looking for include ; 
 
 Is your resume boring or does your friend want to read on, because odds are your resume will probably end up being passed on to the next level if you have good action words in there. 
 
-The second element to look for is your resume too long, again the individuals that screen resumes for a living often looking at thousands of similarly talented people so your ultimate goal like any book title to catch their attention from the beginning and have your career highlights read in a clear and concise way. 
+Is your resume too long, again the individual that screens your resume for a living, often looking at thousands of similarly talented people. So your ultimate goal like any book title to catch their attention from the beginning and have your career highlights outlined in a clear and concise way. 
 
 Test these tips out and let us know what you think, because hopefully these tips  should give you an edge that most may not have and if you're looking for additional experience to get started on your career check out [Univjobs.ca  ](https://univjobs.ca/join)
