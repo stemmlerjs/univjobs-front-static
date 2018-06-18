@@ -15,6 +15,8 @@ import CallToAction from '../components/CallToAction';
 
 import SEO from '../components/SEO'
 
+import helpers from '../helpers'
+
 function getUniquePageIdentifier () {
   return typeof window !== 'undefined' && window.location.href
       ? typeof window !== 'undefined' && window.location.href
@@ -26,7 +28,11 @@ const BlogPostHeader = (props) => {
   return (
     <div className={styles.header}>
       <h1>{props.title}</h1>
-      <div className={styles.subHeader}>{`${props.category} • ${props.timeToRead} minute read`}</div>
+      <div className={styles.subHeader}>{`${
+        !!props.parentCategory == true
+        ? props.parentCategory + " > "
+        : ''}${props.category} • ${props.timeToRead} minute read`}</div>
+      <p>By {props.author}</p>
       <div className={styles.headerImageContainer}>
         <img src={props.image}/>
       </div>
@@ -40,7 +46,15 @@ const BlogPostContent = (props) => {
 
   return (
     <div>
-      <div className={styles.content} dangerouslySetInnerHTML={{ __html: props.content }} />
+      <div 
+        className={styles.content} 
+        dangerouslySetInnerHTML={{ __html: props.description }} 
+      />
+      <br/>
+      <div 
+        className={styles.content} 
+        dangerouslySetInnerHTML={{ __html: props.content }} 
+      />
     </div>
   )
 }
@@ -64,7 +78,10 @@ export class BlogPostTemplate extends React.Component {
       image,
       timeToRead,
       frontmatter,
-      category
+      category,
+      author,
+      parentCategory,
+      categories
     } = this.props;
 
     return (
@@ -72,7 +89,9 @@ export class BlogPostTemplate extends React.Component {
 
       {helmet || ''}
 
-      <BlogCategoriesHeader/>
+      <BlogCategoriesHeader
+        categories={categories}
+      />
 
       <div className={styles.container}>
         <BlogPostHeader 
@@ -81,9 +100,12 @@ export class BlogPostTemplate extends React.Component {
           timeToRead={timeToRead}
           tags={tags}
           category={category}
+          parentCategory={parentCategory}
+          author={author}
         />
         <BlogPostContent 
           content={content}
+          description={description}
           contentComponent={contentComponent}/>
 
         <ReactDisqusComments
@@ -92,8 +114,6 @@ export class BlogPostTemplate extends React.Component {
           title={title}
           url={ getUniquePageIdentifier() }
           />
-=
-        
       </div>
       <CallToAction
           header={'Find your next job'}
@@ -115,9 +135,10 @@ BlogPostTemplate.propTypes = {
 }
 
 const BlogPost = ({ data, pathContext }) => {
-  let { markdownRemark: post } = data;
+  let { post, categories } = data;
 
   post = Object.assign({}, post, post.fields, post.frontmatter)
+  categories = helpers.blog.getCategoriesFromQuery(categories);
 
   return (
     <BlogPostTemplate
@@ -137,6 +158,9 @@ const BlogPost = ({ data, pathContext }) => {
       timeToRead={post.timeToRead}
       frontmatter={post}
       category={post.category}
+      parentCategory={post.parentCategory}
+      author={post.author}
+      categories={categories}
     />
   )
 }
@@ -151,7 +175,7 @@ export default BlogPost
 
 export const pageQuery = graphql`
   query BlogPostByID($id: String!) {
-    markdownRemark(id: { eq: $id }) {
+    post: markdownRemark(id: { eq: $id }) {
       id
       html
       timeToRead
@@ -166,6 +190,28 @@ export const pageQuery = graphql`
         featured
         image
         category
+        parentcategory
+        author
+      }
+    }
+
+    categories: allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      filter: { 
+        frontmatter: { 
+          templateKey: { eq: "blog-post" }
+          category: { ne: null }
+        }
+      }
+      limit: 1000
+    ) {
+      edges {
+        node {
+          frontmatter {
+            category
+            parentcategory
+          }
+        }
       }
     }
   }

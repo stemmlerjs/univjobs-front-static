@@ -25,6 +25,12 @@ const typography = new Typography({
   },
   section: {
     marginTop: '1em'
+  },
+  div: {
+    fontSize: '18px'
+  },
+  h1: {
+    fontSize: '1.5rem'
   }
 })
 });
