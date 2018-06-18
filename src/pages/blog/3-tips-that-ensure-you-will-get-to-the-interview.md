@@ -27,8 +27,12 @@ I know, you were probably expecting some life changing tips that require you to 
 
 You won an award or achieved something and that's great, you truly are awesome, but the one thing an employer is looking for is how you winning that award or accomplishing that achievement helped the organization. This is due to the fact that these employers are usually looking out for themselves and often want to know how hiring you can benefit the company in the most efficient way possible. The way to do this is by adding a because statement or an outcome statement. So for example, if you have reached X goal, include a point about how you achieving the goal contributed to overall success.
 
-## 3. Ask a friend to read your resume 
+## 3. Ask a friend to read your resume
 
-Now hear me out, asking someone to read your resume may not be ideal for you but it is definitely necessary because the friend/friends reading your resume wants you to succeed. when you are asking a friend to read your resume the two things you should be looking for is your ; one is your resume boring or does your friend want to read on, because odds are your resume will probably end up being passed on to the next level if you have good action words in there. The second element to look for is your resume too long, again the individuals that screen resumes for a living often looking at thousands of similarly talented people so your ultimate goal like any book title to catch their attention from the beginning and have your career highlights read in a clear and concise way. 
+Now hear me out, asking someone to read your resume may not be ideal, but it is definitely necessary because the friend/friends reading your resume wants you to succeed. When you are asking a friend to read your resume, the two elements you should be looking for include the following; 
+
+Is your resume boring or does your friend want to read on, because odds are your resume will probably end up being passed on to the next level if you have good action words in there. 
+
+The second element to look for is your resume too long, again the individuals that screen resumes for a living often looking at thousands of similarly talented people so your ultimate goal like any book title to catch their attention from the beginning and have your career highlights read in a clear and concise way. 
 
 Test these tips out and let us know what you think, because hopefully these tips  should give you an edge that most may not have and if you're looking for additional experience to get started on your career check out [Univjobs.ca  ](https://univjobs.ca/join)
