@@ -68,7 +68,11 @@ const Plan = (props) => {
                 </div>
                 
                 <Features features={props.features}/>
-                <button className={`${styles.planButton} drift-open-chat`}>{props.buttonText}</button>
+                <button onClick={props.onClick} className={`${styles.planButton} drift-open-chat`}>{props.buttonText}</button>
+                <div style={{
+                  fontSize: '16px',
+                  marginTop: '12px'
+                }}>or chat with us below (bottom-right)</div>
               </div>
         }
         
@@ -115,6 +119,11 @@ const Plans = (props) => {
             'Become a member of the Early Adopters Program'
           ]}
           buttonText={'Request a demo'}
+          onClick={() => {
+            if (typeof window !== undefined) {
+              window.location.href = 'mailto:contact@univjobs.ca?Subject=Enterprise Inquiry'
+            }
+          }}
         />
       </div>
 
@@ -144,52 +153,50 @@ class Pricing extends React.Component {
   }
 
   componentDidMount () {
-    let loadingDrift;
-    var DRIFT_CHAT_SELECTOR = '.drift-open-chat'
+    // let loadingDrift;
+    // var DRIFT_CHAT_SELECTOR = '.drift-open-chat'
 
-    function forEachElement(selector, fn) {
-      var elements = document.querySelectorAll(selector);
-      for (var i = 0; i < elements.length; i++)
-        fn(elements[i], i);
-    }
+    // function forEachElement(selector, fn) {
+    //   var elements = document.querySelectorAll(selector);
+    //   for (var i = 0; i < elements.length; i++)
+    //     fn(elements[i], i);
+    // }
 
-    function openSidebar(driftApi, event) {
-      event.preventDefault();
-      driftApi.sidebar.open();
-      return false;
-    }
+    // function openSidebar(driftApi, event) {
+    //   event.preventDefault();
+    //   driftApi.sidebar.open();
+    //   return false;
+    // }
 
-    function loadDrift () {
-      console.log("[Drift]: Attempting to load Drift.");
+    // function loadDrift () {
+    //   console.log("[Drift]: Attempting to load Drift.");
 
-      if (typeof window !== undefined) {
-        if (window.drift) {
-          window.drift.on('ready', function(api) {
-            var handleClick = openSidebar.bind(this, api)
-            forEachElement(DRIFT_CHAT_SELECTOR, function(el) {
-              el.addEventListener('click', handleClick);
-            });
-            console.log("[Drift]: Drift loaded [via ready state]");
-            clearInterval(loadingDrift);
-          });
+    //   if (typeof window !== undefined) {
+    //     if (window.drift) {
+    //       window.drift.on('ready', function(api) {
+    //         var handleClick = openSidebar.bind(this, api)
+    //         forEachElement(DRIFT_CHAT_SELECTOR, function(el) {
+    //           el.addEventListener('click', handleClick);
+    //         });
+    //         console.log("[Drift]: Drift loaded [via ready state]");
+    //         clearInterval(loadingDrift);
+    //       });
 
-          if (window.drift.api) {
-            var handleClick = openSidebar.bind(this, window.drift.api)
-            forEachElement(DRIFT_CHAT_SELECTOR, function(el) {
-              el.addEventListener('click', handleClick);
-            });
-            console.log("[Drift]: Drift loaded [via api]");
-            clearInterval(loadingDrift);
-          }
-        }
-      }
+    //       if (window.drift.api) {
+    //         var handleClick = openSidebar.bind(this, window.drift.api)
+    //         forEachElement(DRIFT_CHAT_SELECTOR, function(el) {
+    //           el.addEventListener('click', handleClick);
+    //         });
+    //         console.log("[Drift]: Drift loaded [via api]");
+    //         clearInterval(loadingDrift);
+    //       }
+    //     }
+    //   }
 
-      console.log("[Drift]: Trying again in 1 second.");
-    }
+    //   console.log("[Drift]: Trying again in 1 second.");
+    // }
     
-    loadingDrift = setInterval(loadDrift, 1000);
-
-
+    // loadingDrift = setInterval(loadDrift, 1000);
   }
 
   render () {
