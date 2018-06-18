@@ -127,6 +127,8 @@ export class BlogPostTemplate extends React.Component {
 }
 
 
+// Test
+
 BlogPostTemplate.propTypes = {
   content: PropTypes.string.isRequired,
   contentComponent: PropTypes.func,
