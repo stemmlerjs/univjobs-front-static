@@ -1,15 +1,14 @@
 ---
 templateKey: blog-post
-title: 3 Ways That Ensure You Get To The Interview
+title: 3 Tips to Getting an Interview
 author: Charles Javelona
 date: '2018-06-16T21:15:49-04:00'
-description: >-
-  So, you just graduated and the one thing on your mind is where can I get a
-  job, but you're not even getting your foot in the door. You're looking to get
-  an edge over everyone else in your class... and we know it's hard to get into
-  a company unless you know someone. So here are a couple suggestions to
-  potentially take you to the next level at least (and by that we mean the
-  interview).
+description: >
+
+  Whether you’re a student or recent graduate, it can be challenging to get your
+  foot in the door and make it to the interview stage. It doesn’t have to be;
+  Here are a few tips to take your resume to the next level and get that
+  interview!
 tags:
   - Getting the job
   - Getting the Interview
@@ -19,20 +18,22 @@ image: /img/adult-blur-boss-288477.jpg
 category: Job Hunt
 parentcategory: Career
 ---
-## **1. Copy elements of the job description in your resume (where it makes sense to add it)**
+# **1. Copy elements of the job description in your resume**
 
-I know, you were probably expecting some life changing tips that require you to gather a lot of ingredients for a magical potion. Well, I've got news for you, it's not too hard to get results. Copying certain points from the job description is key to getting the job, as the HR department take the time to write intricate job descriptions, so if you think you fit for the role, they have basically done the work for you. Additionally, if you're applying to big organizations, they tend to run resumes through resume scanners, which highlight the keywords from the job description.
+The job description in any job posting contains vital information that you can use to your advantage. This is where the employer is telling you exactly who they are looking for. Many organizations even use resume scanners that are looking for words that match with the job posting. 
 
-## 2. Outline both your accomplishments & the benefits
+The best part of the job description is that whoever wrote it did the work for you. All you need to do is see how you fit into that description. Pick the descriptive words or skills that resonate with you and make sure to include those in your resume. This is especially effective if you can back it up with relevant experience. 
 
-You won an award or achieved something and that's great, you truly are awesome, but the one thing an employer is looking for is how you winning that award or accomplishing that achievement helped the organization. This is due to the fact that these employers are usually looking out for themselves and often want to know how hiring you can benefit the company in the most efficient way possible. The way to do this is by adding a because statement or an outcome statement. So for example, if you have reached X goal, include a point about how you achieving the goal contributed to overall success.
+# 2. Leverage your accomplishments
 
-## 3. Ask a friend to read your resume
+Many people list their awards or achievements on their resume, but few elaborate on how those accomplishments are relevant to a potential employer. You need to explain how these accomplishments will make you a valuable employee in order to make an impact and impress the hiring manager. This is a great opportunity to tie in some of those descriptive words and skills from the job posting. 
 
-Now hear me out, asking someone to read your resume may not be ideal, but it is definitely necessary because the friend reading your resume wants you to succeed. When you are asking a friend to read your resume, the two elements you should be looking for include ; 
+# 3. Ask a friend to read your resume
 
-Is your resume boring or does your friend want to read on, because odds are your resume will probably end up being passed on to the next level if you have good action words in there. 
+Ask someone you trust to give you constructive criticism on your resume. One element you can get them to watch out for is if your resume captures their attention. If you packed some good descriptors and action words in there, it will make you stand out to future employers and help you get to the interview stage. 
 
-Is your resume too long, again the individual that screens your resume for a living, often looking at thousands of similarly talented people. So your ultimate goal like any book title to catch their attention from the beginning and have your career highlights outlined in a clear and concise way. 
+Another element to look out for is clarity. Employers have read countless resumes from people skill sets similar to you, so you need to ensure that you can get your point across in a clear way for the most effective result. Avoid being repetitive or overly wordy. Your career highlights need to be laid out in a concise manner with well placed descriptors. 
 
-Test these tips out and let us know what you think, because hopefully these tips  should give you an edge that most may not have and if you're looking for additional experience to get started on your career check out [Univjobs.ca  ](https://univjobs.ca/join)
+
+
+Give these tips a try, and let us know what you think! If you’re looking for additional ways to get started on your career check out [our blog](https://univjobs.ca/blog/)!
