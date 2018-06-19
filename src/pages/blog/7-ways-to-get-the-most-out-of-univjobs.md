@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: 7 Ways To Get The Most Out Of Univjobs
+title: 7 Ways Employers Can Get the Most Out of Univjobs
 author: Charles Javelona
 date: '2018-06-15T17:51:42-04:00'
 description: >-
