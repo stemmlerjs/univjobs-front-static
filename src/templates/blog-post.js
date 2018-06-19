@@ -24,7 +24,6 @@ function getUniquePageIdentifier () {
 }
 
 const BlogPostHeader = (props) => {
-  console.log("blog post header props", props)
   return (
     <div className={styles.header}>
       <h1>{props.title}</h1>
@@ -42,7 +41,7 @@ const BlogPostHeader = (props) => {
 
 const BlogPostContent = (props) => {
   const PostContent = props.contentComponent;
-  console.log(PostContent, "content")
+  console.log(props, "content")
 
   return (
     <div>
@@ -126,8 +125,8 @@ export class BlogPostTemplate extends React.Component {
   }
 }
 
+
 // Test
-// Test again and compress all images
 
 BlogPostTemplate.propTypes = {
   content: PropTypes.string.isRequired,
