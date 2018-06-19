@@ -20,15 +20,13 @@ It’s important to consider the work environment of a company before you decide
 
 ![Glassdoor Reviews.](/img/screen-shot-2018-05-27-at-9.56.38-pm.png)
 
-# ** 2. Networking Tools (Ten Thousand Coffees)**
+# 2. Networking Tools (Ten Thousand Coffees)
 
 The idea of networking can be intimidating, but thanks to sites like [Ten Thousand Coffees](https://www.tenthousandcoffees.com), you can connect with individuals from your chosen career path and pick their brain about topics relating to that field.
 
 ![null](/img/coffee-chat-illustration.png)
 
-# 
-
-3. Resume Builder (Ineedaresume)
+# 3. Resume Builder (Ineedaresume)
 
 The resume is perhaps the most crucial element when it comes to applying for jobs, but the task of writing one can seem daunting.  [Ineedaresume](http://ineedaresu.me/#/) is an easy to use website that will help you make your resume in minutes.
 
