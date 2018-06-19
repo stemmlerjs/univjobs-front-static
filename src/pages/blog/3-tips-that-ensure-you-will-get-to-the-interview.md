@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: 10 Quick Tips To Take Your Resume To The Next Level
+title: 3 Quick Tips To Take Your Resume To The Next Level
 author: Charles Javelona
 date: '2018-06-16T21:15:49-04:00'
 description: >
