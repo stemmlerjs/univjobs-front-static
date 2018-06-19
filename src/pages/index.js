@@ -3,6 +3,7 @@ import Link from 'gatsby-link'
 
 import LeftFeatures from '../components/LeftFeatures'
 import RightFeatures from '../components/RightFeatures'
+import Slidy from '../components/Slidy'
 
 import landingePageStyles from '../styles/StudentLandingPageStyles.module.css'
 import studentShowCaseStyles from '../styles/StudentShowCaseSectionStyles.module.css'
@@ -134,6 +135,11 @@ const StudentBrandRecognition = (props) => {
   truly want to foster the best in their 
   abilities. We use it to find the best talent." </div>
 
+        {
+          true == false 
+            ? ''
+            : ''
+        }
         <div className={recognition.personContainer}>
           <div className={recognition.personImgContainer}>
             <img src={asud}></img>
@@ -220,7 +226,13 @@ export default () =>
     </section>
 
     <AltStudentCallToAction/>
-    <StudentBrandRecognition/>
+
+    {
+      "Asud signed off = true" === "Asud signed off = false"
+        ? <StudentBrandRecognition/>
+        : <Slidy/>
+    }
+    
     <Backers/>
   </div>
   

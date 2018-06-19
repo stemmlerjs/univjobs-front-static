@@ -13,6 +13,7 @@ featured: false
 image: /img/laughter-in-the-sun_4460x4460.jpg
 category: Communication & Relationships
 parentcategory: Adulting 101
+public: true
 ---
 Some time ago, I edited the marketing materials produced by a London hotel. One of the hotel's attractions was its leisure centre, which included a well-equipped gym. The original script referred to a 'large satellite TV to give some relief from the torture.' Now, I have to admit that I agree with the sentiment. The strange machines in gyms are as painful as they are boring. Nevertheless, this was an unwise piece of ironic humour.
 

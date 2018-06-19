@@ -204,6 +204,7 @@ export const pageQuery = graphql`
         frontmatter: { 
           templateKey: { eq: "blog-post" }
           category: { ne: null }
+          public: { eq: true }
         }
       }
       limit: 1000

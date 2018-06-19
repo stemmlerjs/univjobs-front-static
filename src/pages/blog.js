@@ -82,6 +82,7 @@ export const blogPagesQuery = graphql`
         frontmatter: {
           templateKey: { eq: "blog-post"},
           featured: { eq: true }
+          public: { eq: true }
         }
       }
     ) {
@@ -110,6 +111,7 @@ export const blogPagesQuery = graphql`
         frontmatter:  { 
           templateKey: {eq: "blog-post"},
           featured: { ne: true }
+          public: { eq: true }
         } 
       }
       
@@ -140,6 +142,7 @@ export const blogPagesQuery = graphql`
         frontmatter: { 
           templateKey: { eq: "blog-post" }
           category: { ne: null }
+          public: { eq: true }
         }
       }
       limit: 1000

@@ -15,10 +15,10 @@
 }
 
 .uLogo {
- position: absolute;
+    position: absolute;
     left: 15px;
-    top: 121px;
-
+    top: 99px;
+    z-index: 40;
 }
 
 .uLogo > img {
@@ -168,13 +168,18 @@ margin-top: 2.5em;
     }
 
     .plan {
-        margin: 0 auto;
-        max-width: 385px;
-        margin: 1em;
+            margin: 1em !important;
     }
+
 }
 
 @media (min-width: 800px) {
+    .plan {
+    margin: 0 auto;
+    max-width: 389px;
+        margin-bottom: 1em;
+    }
+
     .desktopCompanies {
         display: block;
         text-align: center;

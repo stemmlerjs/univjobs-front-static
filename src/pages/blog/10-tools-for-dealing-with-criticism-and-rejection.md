@@ -20,6 +20,7 @@ featured: false
 image: /img/blur-close-up-color-850216-1-.jpg
 category: Communication & Relationships
 parentcategory: Adulting 101
+public: true
 ---
 Other times we constantly adapt what we create, focusing only on the "market" and what they seem to be liking or disliking this week. Then we end up feeling like we're not truly expressing our creative impulses.
 
