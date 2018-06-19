@@ -13,6 +13,7 @@ featured: false
 image: /img/0.jpeg
 category: Student Life
 parentcategory: Stories
+public: true
 ---
 I am a woman in my early twenties soon to be graduating from the University of Toronto. You see, the past four years of my school life is not entirely reflected in my resume or my GPA. And why you will overlook someone like me. I will take you on a journey which each one of us has and you will decide if I am worth working for your company.
 

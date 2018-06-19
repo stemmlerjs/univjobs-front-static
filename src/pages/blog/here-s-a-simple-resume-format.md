@@ -14,6 +14,7 @@ featured: true
 image: /img/screen-shot-2018-05-27-at-10.40.21-pm.png
 category: Resume
 parentcategory: Resources
+public: true
 ---
 Here's a tool that solves that! [ineedaru.me](http://ineedaresu.me/#/) takes all your info and gives you a perfect resume format professionally.
 

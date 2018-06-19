@@ -15,6 +15,7 @@ featured: false
 image: /img/man-woman-video-chat_4460x4460.jpg
 category: Job Hunt
 parentcategory: Career
+public: true
 ---
 Before we get to the best careers for introverts, let's take a look into what an introvert actually is.
 

@@ -13,6 +13,7 @@ featured: false
 image: /img/markus-spiske-104913-unsplash.jpg
 category: Productivity
 parentcategory: Adulting 101
+public: true
 ---
 # Don't Be Afraid To Learn
 

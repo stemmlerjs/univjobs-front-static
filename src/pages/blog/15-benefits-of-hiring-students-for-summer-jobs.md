@@ -16,6 +16,7 @@ featured: false
 image: /img/business-women-working_4460x4460.jpg
 category: Hiring
 parentcategory: Employers
+public: true
 ---
 But has anyone ever explored the idea that hiring students can be beneficial for the employers as well ? With that being said, here are the 15 benefits of hiring students for summer jobs.
 

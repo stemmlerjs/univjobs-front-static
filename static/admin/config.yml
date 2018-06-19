@@ -25,6 +25,7 @@ collections:
       - {label: "Featured Image", name: image, widget: image}
       - {label: Category, name: category, widget: string, default: "Student Life"}
       - {label: "Parent Category", name: parentcategory, widget: string }
+      - {label: Public, name: public, widget: boolean, default: false}
 
 
   - name: "team"

@@ -16,6 +16,7 @@ featured: false
 image: /img/smiling-woman-portrait_925x.jpg
 category: Employers
 parentcategory: Guides
+public: true
 ---
 # 1.) Have a nice logo for brand awareness
 

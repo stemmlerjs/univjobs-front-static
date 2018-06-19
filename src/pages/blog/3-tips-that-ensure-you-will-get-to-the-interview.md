@@ -17,6 +17,7 @@ featured: true
 image: /img/adult-blur-boss-288477.jpg
 category: Job Hunt
 parentcategory: Career
+public: true
 ---
 # **1. Copy elements of the job description in your resume**
 
