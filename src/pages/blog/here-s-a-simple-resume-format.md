@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: Here's A Simple Resume Format
+title: Here's a Simple Resume Format
 author: Charles Javelona
 date: '2018-06-16T11:34:18-04:00'
 description: >
