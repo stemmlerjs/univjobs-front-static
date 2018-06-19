@@ -3,9 +3,7 @@ templateKey: blog-post
 title: Top 3 Myths About Volunteering
 author: Charles Javelona
 date: '2018-06-16T12:11:15-04:00'
-description: >-
-  We are taking a look at the top myths about volunteering. Here are the 3 myths
-  that come up the most frequently. 
+description: Let's take a look at some of the myths surrounding volunteer work.
 tags:
   - volunteering
 featured: false
