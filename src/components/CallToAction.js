@@ -19,7 +19,12 @@ class CallToAction extends React.Component {
         <section className={this.props.alt ? altStudentCTA.container : studentCTA.container}>
             <h1>{this.props.header}</h1>
             <div>{this.props.subHeader}</div>
-            <button className={`${landingePageStyles.getStartedButton} ${studentCTA.button}`}>{this.props.buttonText}</button>
+            <a 
+                href={this.props.url}
+                className={`${landingePageStyles.getStartedButton} ${studentCTA.button}`}
+            >
+             {this.props.buttonText}
+            </a>
         </section>
         )
     }
@@ -29,7 +34,8 @@ CallToAction.defaultProps = {
     header: '',
     subHeader: '',
     buttonText: '',
-    alt: false
+    alt: false,
+    url: ''
   };
 
 export default CallToAction

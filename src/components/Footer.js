@@ -60,7 +60,7 @@ const Footer = ({ siteTitle }) => (
             { name: 'About', url: '/about' },
             { name: 'Contact', url: 'mailto:contact@univjobs.ca?Subject=Inquiry', mail: true },
             { name: 'Press', url: '/press' },
-            { name: 'Why Univjobs', url: '/blog/why-univjobs/' }
+            //{ name: 'Why Univjobs', url: '/blog/why-univjobs/' }
           ]
         }/>
         <FooterMenuSection title={'Product'} links={
@@ -75,8 +75,8 @@ const Footer = ({ siteTitle }) => (
         <FooterMenuSection title={'For employers'} links={
           [
             { name: 'Register', url: 'https://app.univjobs.ca/register/employer' },
-            { name: 'Small Businesses', url: '/small-business' },
-            { name: 'How to be successful on Univjobs', url: '/blog/how-to-be-most-successful-on-univjobs'}
+           // { name: 'Small Businesses', url: '/small-business' },
+           // { name: 'How to be successful on Univjobs', url: '/blog/how-to-be-most-successful-on-univjobs'}
           ]
         }/>
         <SocialLinks/>

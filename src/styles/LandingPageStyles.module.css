@@ -92,7 +92,7 @@
 }
 
 .getStartedButton {
-        background: #0dd4d2;
+    background: #0dd4d2;
     border: none;
     border-radius: 60px;
     color: white;
@@ -103,6 +103,8 @@
      font-weight: 500;
      transition: 0.2s ease-out;
     font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+
 }
 
 .getStartedButton:hover {
@@ -121,6 +123,9 @@
     background: none;
     border: solid 2px white;
     transition: 0.2s ease-out;
+    text-decoration: none;
+    margin-bottom: 10px;
+
 }
 
 .reRouteButton:hover {
@@ -138,6 +143,7 @@
     margin-top: 20px;
     justify-content: flex-start;
 }
+
 
 .centeredCtaContainer {
     display: -ms-flexbox;
@@ -177,16 +183,24 @@
 }
 
 .alreadyOn {
-        font-size: 12px;
+    font-size: 12px;
     color: white;
     padding-top: 10px;
 }
 
-.alreadyOn span {
-        cursor: pointer;
+.alreadyOn a {
+    cursor: pointer;
     color: #0dd4d2;
     font-weight: bold;
+    text-decoration: none;
+
 }
+
+.alreadyOn a:hover {
+    text-decoration: underline;
+    color: blue;
+}
+
 
 @media (max-width: 830px) {
     .darkMask {
@@ -335,6 +349,7 @@
   .centeredCtaContainer {
     flex-direction: column;
   }
+  
 
   .getStartedButton {
     font-size: 0.5em;

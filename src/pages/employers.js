@@ -39,6 +39,8 @@ const Employers = () => (
         buttons: {
           hasButtons: true,
           reRouteButtonText: "I'm a student",
+          reRouteButtonURL: "https://univjobs.ca/register",
+          getStartedURL: "https://app.univjobs.ca/register/employer",
         },
         hero: {
           showHeroMask: false,
@@ -66,7 +68,8 @@ const Employers = () => (
       header='Get help quickly with UnivJobs'
       subHeader='UnivJobs makes it easy to find early career talent'
       buttonText='Try it now!'
-      alt={true}
+      alt={false}
+      url="https://app.univjobs.ca/register/employer"
     />
 
    
@@ -98,6 +101,8 @@ const Employers = () => (
         subHeader='UnivJobs advertises your job listing & logo in front of thousands of early career talent.'
         buttonText='Post a job now'
         alt={true}
+        url="https://app.univjobs.ca/register/employer"
+
     />
   
     

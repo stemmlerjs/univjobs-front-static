@@ -127,10 +127,19 @@ const AboutPage = ({ data }) => {
       <LandingPage
         heroTitle="About"
         heroSubTitle="Learn more about the team behind Univjobs"
-        image={aboutImage}
-        showHeroMask={false}
-        centerHeroContainer={true}
-        hasPolygon={false}
+        options={{
+          centerHeroContainer:true,
+          image: aboutImage,
+          hasPolygon: false,
+          buttons: {
+            hasButtons: false,
+            reRouteButtonText: "I'm a student",
+          },
+          hero: {
+            showHeroMask: false,
+            color: ''
+          }
+        }}
       />
       <Description/>
       <Divider/>

@@ -84,6 +84,8 @@ const SmallBusiness = () => (
       subHeader='UnivJobs makes it easy to find affordable talent locally'
       buttonText='Try it now!'
       alt={true}
+      url="https://app.univjobs.ca/register/employer"
+
     />
 
     <Benefits/>
@@ -93,6 +95,8 @@ const SmallBusiness = () => (
         subHeader='UnivJobs shows your company logo in front of thousands of job seekers.'
         buttonText='Post a job now'
         alt={true}
+        url="https://app.univjobs.ca/register/employer"
+
     />
 
     <Slidy/>

@@ -21,11 +21,20 @@ class LandingPage extends React.Component {
           { this.props.options.buttons.hasButtons ? 
             <div className={this.props.options.centerHeroContainer ? landingePageStyles.centeredCtaContainer : landingePageStyles.ctaContainer}>
               <div className={landingePageStyles.buttonContainer}>
-                <button className={landingePageStyles.getStartedButton}>GET STARTED</button>
-                <div className={landingePageStyles.alreadyOn}>Already on Univjobs? <span>Sign in.</span></div>
+                <a 
+                  href={this.props.options.buttons.getStartedURL}
+                   className={landingePageStyles.getStartedButton}
+                >
+                  GET STARTED
+                </a>
+               
+                <div className={landingePageStyles.alreadyOn}>Already on Univjobs? <a className={landingePageStyles.alreadyOnButton} href="https://app.univjobs.ca/join">Sign in.</a></div>
               </div>
               <div className={this.props.options.centerHeroContainer ? landingePageStyles.centeredButtonContainer : landingePageStyles.buttonContainer}>
-                <button className={landingePageStyles.reRouteButton}>{this.props.options.buttons.reRouteButtonText}</button>
+                <a 
+                  href={this.props.options.buttons.reRouteButtonURL}
+                  className={landingePageStyles.reRouteButton}>{this.props.options.buttons.reRouteButtonText}
+                </a>
               </div>
             </div> : ''
           }
