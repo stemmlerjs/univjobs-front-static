@@ -9,8 +9,8 @@
 
 [context.master.environment]
   APP_URL = "https://app.01-staging.univjobs.ca/"
-  STATIC_URL = 'https://01-staging.univjobs.ca/'
+  STATIC_URL = "https://01-staging.univjobs.ca/"
 
 [context.production.environment]
-  APP_URL = https://app.univjobs.ca/
-  STATIC_URL = 'https://univjobs.ca/'
+  APP_URL = "https://app.univjobs.ca/"
+  STATIC_URL = "https://univjobs.ca/"
