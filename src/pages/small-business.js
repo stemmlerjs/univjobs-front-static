@@ -26,6 +26,8 @@ import instacart from '../img/instacart.svg'
 import ymca from '../img/ymca.svg'
 import airmiles from '../img/airmiles.svg'
 
+import config from '../config'
+
 
 const SmallBusiness = () => (
   <div>
@@ -38,7 +40,7 @@ const SmallBusiness = () => (
         hasPolygon: false,
         buttons: {
           mainButtonText: 'Hire local talent',
-          mainButtonLocation: 'https://app.univjobs.ca/register/employer/',
+          mainButtonLocation: `${config.appUrl}register/employer`,
         },
         hero: {
           showHeroMask: false,
@@ -68,7 +70,7 @@ const SmallBusiness = () => (
       subHeader='UnivJobs makes it easy to find affordable talent locally'
       buttonText='Try it now!'
       alt={true}
-      location={'https://app.univjobs.ca/register/employer/'}
+      location={`${config.appUrl}register/employer`}
     />
 
     <Benefits/>
@@ -78,7 +80,7 @@ const SmallBusiness = () => (
         subHeader='UnivJobs shows your company logo in front of thousands of job seekers.'
         buttonText='Post a job now'
         alt={true}
-        location={'https://app.univjobs.ca/register/employer/'}
+        location={`${config.appUrl}register/employer`}
     />
 
     <Slidy/>

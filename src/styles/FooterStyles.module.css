@@ -13,6 +13,13 @@
     padding-right: 10em;
 }
 
+.bottomStrip > a {
+     padding-right: 2em;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+}
+
 .bottomStrip > div {
     padding-right: 2em;
     cursor: pointer;

@@ -17,6 +17,9 @@ import EmployerReviews from '../components/EmployerReviews'
 
 import styles from '../styles/Pricing.module.css'
 
+import config from '../config' 
+import { redirectTo } from '../helpers'
+
 
 const ULogo = () => {
   return (
@@ -71,7 +74,8 @@ const Plan = (props) => {
                 <button onClick={props.onClick} className={`${styles.planButton} drift-open-chat`}>{props.buttonText}</button>
                 <div style={{
                   fontSize: '16px',
-                  marginTop: '12px'
+                  marginTop: '12px',
+                  textAlign: 'center'
                 }}>or chat with us below (bottom-right)</div>
               </div>
         }
@@ -104,11 +108,7 @@ const Plans = (props) => {
             ]
           }
           buttonText={'Get started - $20'}
-          onClick={() => {
-            if ( typeof window !== 'undefined') {
-              window.location.href = "https://app.univjobs.ca/register/employer/"
-            }
-          }}
+          onClick={() => redirectTo(`${config.appUrl}register/employer`)}
         />
         <Plan 
           title={'Enterprise'}
@@ -152,53 +152,6 @@ class Pricing extends React.Component {
     super();
   }
 
-  componentDidMount () {
-    // let loadingDrift;
-    // var DRIFT_CHAT_SELECTOR = '.drift-open-chat'
-
-    // function forEachElement(selector, fn) {
-    //   var elements = document.querySelectorAll(selector);
-    //   for (var i = 0; i < elements.length; i++)
-    //     fn(elements[i], i);
-    // }
-
-    // function openSidebar(driftApi, event) {
-    //   event.preventDefault();
-    //   driftApi.sidebar.open();
-    //   return false;
-    // }
-
-    // function loadDrift () {
-    //   console.log("[Drift]: Attempting to load Drift.");
-
-    //   if (typeof window !== undefined) {
-    //     if (window.drift) {
-    //       window.drift.on('ready', function(api) {
-    //         var handleClick = openSidebar.bind(this, api)
-    //         forEachElement(DRIFT_CHAT_SELECTOR, function(el) {
-    //           el.addEventListener('click', handleClick);
-    //         });
-    //         console.log("[Drift]: Drift loaded [via ready state]");
-    //         clearInterval(loadingDrift);
-    //       });
-
-    //       if (window.drift.api) {
-    //         var handleClick = openSidebar.bind(this, window.drift.api)
-    //         forEachElement(DRIFT_CHAT_SELECTOR, function(el) {
-    //           el.addEventListener('click', handleClick);
-    //         });
-    //         console.log("[Drift]: Drift loaded [via api]");
-    //         clearInterval(loadingDrift);
-    //       }
-    //     }
-    //   }
-
-    //   console.log("[Drift]: Trying again in 1 second.");
-    // }
-    
-    // loadingDrift = setInterval(loadDrift, 1000);
-  }
-
   render () {
     return (
       <div>
@@ -219,7 +172,7 @@ class Pricing extends React.Component {
           subHeader={'Students are already applying to jobs. Post a job to over 50 post-secondary schools in Ontario.'}
           buttonText={'Start'}
           alt={true}
-          location={'https://app.univjobs.ca/register/'}
+          location={`${config.appUrl}register`}
         />
       </div>
     )

@@ -26,6 +26,7 @@ import instacart from '../img/instacart.svg'
 import ymca from '../img/ymca.svg'
 import airmiles from '../img/airmiles.svg'
 
+import config from '../config'
 
 const Employers = () => (
   <div>
@@ -38,7 +39,7 @@ const Employers = () => (
         hasPolygon: false,
         buttons: {
           mainButtonText: 'Post a job',
-          mainButtonLocation: 'https://app.univjobs.ca/register/employer/',
+          mainButtonLocation: `${config.appUrl}register/employer`,
           reRouteButtonText: "I'm an student",
           reRouteButtonLocation: '/',
           alreadyOnComponentActive: true
@@ -71,7 +72,7 @@ const Employers = () => (
       subHeader='UnivJobs makes it easy to find early career talent'
       buttonText='Try it now!'
       alt={true}
-      location={'https://app.univjobs.ca/register/employer/'}
+      location={`${config.appUrl}register/employer`}
     />
 
    
@@ -103,13 +104,8 @@ const Employers = () => (
         subHeader='UnivJobs advertises your job listing & logo in front of thousands of early career talent.'
         buttonText='Post a job now'
         alt={true}
-        location={'https://app.univjobs.ca/register/employer/'}
+        location={`${config.appUrl}register/employer`}
     />
-  
-    
-
-    
-
     <Slidy/>
    </div>
 

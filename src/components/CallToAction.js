@@ -11,6 +11,11 @@ class CallToAction extends React.Component {
   constructor() {
     super()
     this.state = {}
+    this.onClickButton = this.onClickButton.bind(this);
+  }
+
+  onClickButton () {
+    redirectTo(this.props.location)
   }
 
   render = () => {
@@ -23,7 +28,7 @@ class CallToAction extends React.Component {
         <h1>{this.props.header}</h1>
         <div>{this.props.subHeader}</div>
         <button
-          onClick={() => redirectTo(this.props.location)}
+          onClick={this.onClickButton}
           className={`${landingePageStyles.getStartedButton} ${
             studentCTA.button
           }`}

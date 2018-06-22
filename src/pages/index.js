@@ -36,6 +36,9 @@ import sheridanEntrepreneurs from '../img/sheridanentrepreneurs.png'
 
 import LandingPage from '../components/LandingPage'
 
+import config from '../config'
+import { redirectTo } from '../helpers'
+
 const StudentShowCaseSection = (props) => {
   return (
     <div>
@@ -85,7 +88,9 @@ const StudentCallToAction = (props) => {
     <section className={studentCTA.container}>
       <h1>Get started now!</h1>
       <div>Create your profile and get access to student-friendly jobs.</div>
-      <button className={`${landingePageStyles.getStartedButton} ${studentCTA.button}`}>Try it now</button>
+      <button 
+        onClick={() => redirectTo(`${config.appUrl}register`)}
+        className={`${landingePageStyles.getStartedButton} ${studentCTA.button}`}>Try it now</button>
     </section>
   )
 }
@@ -95,7 +100,9 @@ const AltStudentCallToAction = (props) => {
     <section className={altStudentCTA.container}>
       <h1>Start now!</h1>
       <div>Students are already applying to jobs. Create your profile and find meaningful work today.</div>
-      <button className={`${landingePageStyles.getStartedButton} ${studentCTA.button}`}>Sign up</button>
+      <button 
+        onClick={() => redirectTo(`${config.appUrl}register`)}
+        className={`${landingePageStyles.getStartedButton} ${studentCTA.button}`}>Sign up</button>
     </section>
   )
 }
@@ -170,7 +177,7 @@ export default () =>
         buttons: {
           hasButtons: true,
           mainButtonText: 'Get hired',
-          mainButtonLocation: 'https://app.univjobs.ca/register/',
+          mainButtonLocation: `${config.appUrl}register`,
           reRouteButtonText: "I'm an employer",
           reRouteButtonLocation: '/employers',
           alreadyOnComponentActive: true
@@ -188,7 +195,7 @@ export default () =>
        subHeader= 'Create your profile and get access to student-friendly jobs.'
        buttonText= 'Sign me up'
        alt= {false}
-       url= 'https://app.univjobs.ca/register'
+       location={`${config.appUrl}register`}
     
     />
   

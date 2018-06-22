@@ -7,12 +7,14 @@ import facebook from '../img/facebook-logo.png'
 import twitter from '../img/twitter-logo-silhouette.png'
 import linkedin from '../img/linkedin-logo.png'
 
+import config from '../config'
+
 const Strip = () => {
   return (
     <div className={styles.bottomStrip}>
       <div>DCommons, Inc. © 2018</div>
-      <div>Privacy Policy</div>
-      <div>Terms of Service</div>
+      <Link to="/privacy-policy">Privacy Policy</Link>
+      <Link to="/terms-of-service">Terms of Service</Link>
     </div>
   )
 }
@@ -73,7 +75,7 @@ const Footer = ({ siteTitle }) => (
       <section>
         <FooterMenuSection title={'For employers'} links={
           [
-            { name: 'Register', url: 'https://app.univjobs.ca/register/employer', external: true },
+            { name: 'Register', url: `${config.appUrl}register/employer`, external: true },
             { name: 'Small Businesses', url: '/small-business' },
           ]
         }/>

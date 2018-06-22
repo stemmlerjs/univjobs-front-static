@@ -17,6 +17,8 @@ import Divider from '../components/Divider'
 
 import styles from '../styles/Press.module.css'
 
+import config from '../config'
+
 const Body = (props) => {
   return (
     <div style={{
@@ -223,7 +225,7 @@ class PressPage extends React.Component {
           subHeader={'Students are already applying to jobs. Create your profile and find meaningful work today!'}
           buttonText={'Sign up'}
           alt={true}
-          location={'https://app.univjobs.ca/register/'}
+          location={`${config.appUrl}register`}
         />
       </div>
     )
