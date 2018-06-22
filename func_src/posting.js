@@ -7,20 +7,34 @@ var striptags = require("striptags");
 
 exports.handler = function(event, context, callback) {
 	//exports.handler = async function(event, context, callback) {
+	var setting = {
+		"staging": {
+			"api": "http://api.01-staging.univjobs.ca",
+			"app": "http://app.01-staging.univjobs.ca",
+		},
+		"prod": {
+			"api": "https://api.univjobs.ca",
+			"app": "https://app.univjobs.ca",
+		}
+	}
 
 	var splits = event.path.split("/");
 	var job_id = splits[splits.length-1];
+	var env = splits[splits.length-2];
 
-	axios.get(`https://api.univjobs.ca/api/v1/public/job/${job_id}`).then((r) => {
+	console.log(env);
+	var setting = (env == "staging") ? setting.staging : setting.prod;
 
-		axios.get('http://app.univjobs.ca').then((t) => {
+	axios.get(`${setting.api}/api/v1/public/job/${job_id}`).then((r) => {
+
+		axios.get(setting.app).then((t) => {
 
 			var test3 = new jsdom.JSDOM(t.data);
 
 			var job = r.data.job;
 
 			var title = `${job.title} @ ${job.Employer.company_name}`;
-			var url = `http://app.univjobs.ca/posting/${job_id}`;
+			var url = `${setting.app}/posting/${job_id}`;
 			var description = striptags(job.compensation);
 			var image = job.Employer.logo_url;
 
