@@ -13,6 +13,8 @@ export default {
   url: STATIC_URL,
   twitter: 'https://twitter.com/univjobsapp',
   fbAppID: '1897052653882765',
+  staticUrl: STATIC_URL,
+  appUrl: APP_URL
 }
 
 if (typeof window !== "undefined") {
