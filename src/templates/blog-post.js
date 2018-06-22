@@ -40,20 +40,14 @@ const BlogPostHeader = (props) => {
 }
 
 const BlogPostContent = (props) => {
-  const PostContent = props.contentComponent;
-  console.log(props, "content")
+  const PostContent = props.contentComponent || Content;
+  console.log(PostContent, "content")
 
   return (
     <div>
-      <div 
-        className={styles.content} 
-        dangerouslySetInnerHTML={{ __html: props.description }} 
-      />
+      <PostContent className={styles.content} content={props.description}/>
       <br/>
-      <div 
-        className={styles.content} 
-        dangerouslySetInnerHTML={{ __html: props.content }} 
-      />
+      <PostContent className={styles.content} content={props.content}/>      
     </div>
   )
 }

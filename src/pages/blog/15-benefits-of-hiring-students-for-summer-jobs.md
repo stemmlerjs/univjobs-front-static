@@ -13,7 +13,7 @@ tags:
   - Eager Employees
   - Employer Benefits of Hiring Students
 featured: false
-image: /img/business-women-working_4460x4460.jpg
+image: /img/top_10_ways_to_be_more_productive_twitter_image-1-.jpg
 category: Hiring
 parentcategory: Employers
 public: false

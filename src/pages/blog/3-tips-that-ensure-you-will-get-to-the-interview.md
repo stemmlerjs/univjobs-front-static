@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: 3 Tips to Getting an Interview
+title: 3 Tips To Take Your Resume To The Next Level
 author: Charles Javelona
 date: '2018-06-16T21:15:49-04:00'
 description: >
@@ -19,7 +19,7 @@ category: Job Hunt
 parentcategory: Career
 public: true
 ---
-# **1. Copy elements of the job description in your resume**
+# 1. Copy elements of the job description in your resume
 
 The job description in any job posting contains vital information that you can use to your advantage. This is where the employer is telling you exactly who they are looking for. Many organizations even use resume scanners that are looking for words that match with the job posting. 
 
