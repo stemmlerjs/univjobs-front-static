@@ -84,8 +84,6 @@ Once you've decided what to do the feedback you've received, be selective and wi
 
 Be loving of your critic and ESPECIALLY of yourself. Plan some self-care treats for the day of the audition or submission. Regardless of the outcome, you deserve it!
 
-\
 So, now you should be feeling empowered to never let criticism stifle your creativity again.
 
-\
 If you're ready to jump back in and find your dream job, [Univjobs.ca](https://univjobs.ca/) is there for you. Get started [here](https://app.univjobs.ca/register/).
