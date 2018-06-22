@@ -24,3 +24,10 @@ gatsby develop
 ## Deploy
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+
+
+
+## NOTES on links
+ - Use an <a> tag to send the users to different domains outside univjobs.
+ - Use gastby link to send users to url's inside the univjobs domain.
+ - Use redirectTo function in the utils function if you don't want to use the <a> tag.
