@@ -44,7 +44,7 @@ const Plan = (props) => {
       borderTop: `solid 6px ${props.headerColor}`
     }} className={styles.plan}>
       <h3 className={styles.planTitle}>{props.title}</h3>
-
+        <p>{props.subTitle}</p>
       
         {
 
@@ -55,6 +55,10 @@ const Plan = (props) => {
           props.price 
             ? <div className={styles.priceContainer}>
                 <div className={styles.priceFlex}>
+                  <div style={{color: 'red'}}>$</div>
+                  <div className={styles.price}><del style={{color: 'red'}}>100</del></div>
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+
                   <div>$</div>
                   <div className={styles.price}>{props.price}</div>
                 </div>
@@ -86,9 +90,12 @@ const Plans = (props) => {
       <h1>SIMPLE PLANS FOR EVERYONE</h1>
       <div className={styles.planSubTitle}>Choose the plan that works for you. Our pricing is flexible so you can pay for exactly what you need.</div>
 
+      
       <div className={styles.planCards}>
+    
         <Plan 
           title={'Pay per posting'}
+          subTitle={'Introductory offer'}
           price={'20'}
           headerColor={'#0cc9e8'}
           features={
@@ -112,6 +119,7 @@ const Plans = (props) => {
         />
         <Plan 
           title={'Enterprise'}
+          subTitle={undefined}
           price={undefined}
           headerColor={'#03d597'}
           features={[
@@ -127,7 +135,7 @@ const Plans = (props) => {
         />
       </div>
 
-      <div className={styles.disclaimer}>No setup or monthly fees.</div>
+      <div className={styles.disclaimer}>No setup or hidden fees.</div>
 
     </section>
   )
