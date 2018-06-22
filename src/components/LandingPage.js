@@ -4,6 +4,9 @@ import Link from 'gatsby-link'
 import landingePageStyles from '../styles/LandingPageStyles.module.css'
 import styles from '../styles/NewLandingPageStyles.module.css'
 
+import config from '../config'
+import { redirectTo } from '../helpers'
+
 function shouldShowMask (options) {
   if (options.hero) {
     if (options.hero.showHeroMask) {
@@ -17,20 +20,13 @@ function shouldShowMask (options) {
 
   return '';
 }
-
-function redirect (location) {
-  if (typeof window !== undefined && location) {
-    window.location.href = location;
-  }
-}
-
 const LandingPageButtons = ({ buttons }) => {
   return (
     <div className={styles.ctaContainer}>
       <div className={styles.buttonContainer}>
         <button
           className={styles.getStartedButton}
-          onClick={() => redirect(buttons.mainButtonLocation)}>
+          onClick={() => redirectTo(buttons.mainButtonLocation)}>
           {buttons.mainButtonText}
         </button>
         
@@ -38,7 +34,7 @@ const LandingPageButtons = ({ buttons }) => {
           buttons.alreadyOnComponentActive
             ? <div className={styles.alreadyOn}>Already on Univjobs? 
                 <span 
-                  onClick={() => redirect("https://app.univjobs.ca/login/")}
+                  onClick={() => redirectTo(`${config.appUrl}login`)}
                 > Sign in.</span>
               </div>
             : ''
@@ -50,7 +46,7 @@ const LandingPageButtons = ({ buttons }) => {
           ? <div className={styles.buttonContainer}>
               <button 
                 className={styles.reRouteButton}
-                onClick={() => redirect(buttons.reRouteButtonLocation)}>
+                onClick={() => redirectTo(buttons.reRouteButtonLocation)}>
                 {buttons.reRouteButtonText}
             </button>
             </div>
@@ -113,10 +109,6 @@ class NewLandingPage extends React.Component {
         image: null,
         hasPolygon: false,
         buttons: {
-          // hasButtons: true,
-          // mainButtonText: 'GET STARTED',
-          // reRouteButtonText: "",
-          // reRouteButtonLocation: null,
           alreadyOnComponentActive: false
         },
         hero: {
@@ -129,8 +121,6 @@ class NewLandingPage extends React.Component {
     }
 
     settings = Object.assign({}, settings, this.props);
-
-    console.log(settings)
 
     return (
       <div className={styles.container}>

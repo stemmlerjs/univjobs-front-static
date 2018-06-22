@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
+import CallToAction from '../components/CallToAction'
 import LeftFeatures from '../components/LeftFeatures'
 import RightFeatures from '../components/RightFeatures'
 import Slidy from '../components/Slidy'
@@ -35,31 +36,8 @@ import sheridanEntrepreneurs from '../img/sheridanentrepreneurs.png'
 
 import LandingPage from '../components/LandingPage'
 
-const StudentLandingPage = (props) => {
-  return (
-    <section className={landingePageStyles.backgroundFallback}>
-      <div className={landingePageStyles.hero}></div>
-      <div className={landingePageStyles.heroMask}></div>
-      <div className={landingePageStyles.heroContainer}>
-        <h1 className={landingePageStyles.title}>Quickly apply to student and recent grad jobs</h1>
-        <div className={landingePageStyles.subTitle}>A place where you can find jobs to earn cash and launch your career</div>
-
-        <div className={landingePageStyles.ctaContainer}>
-          <div className={landingePageStyles.buttonContainer}>
-            <button className={landingePageStyles.getStartedButton}>GET STARTED</button>
-            <div className={landingePageStyles.alreadyOn}>Already on Univjobs? <span>Sign in.</span></div>
-          </div>
-          <div className={landingePageStyles.buttonContainer}>
-            <button className={landingePageStyles.employerButton}>I'm an employer</button>
-          </div>
-        </div>
-      </div>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 70" preserveAspectRatio="none">
-        <polygon fill="white" points="0,200 200,0 200,200"></polygon>
-      </svg>
-    </section>
-  )
-}
+import config from '../config'
+import { redirectTo } from '../helpers'
 
 const StudentShowCaseSection = (props) => {
   return (
@@ -110,7 +88,9 @@ const StudentCallToAction = (props) => {
     <section className={studentCTA.container}>
       <h1>Get started now!</h1>
       <div>Create your profile and get access to student-friendly jobs.</div>
-      <button className={`${landingePageStyles.getStartedButton} ${studentCTA.button}`}>Try it now</button>
+      <button 
+        onClick={() => redirectTo(`${config.appUrl}register`)}
+        className={`${landingePageStyles.getStartedButton} ${studentCTA.button}`}>Try it now</button>
     </section>
   )
 }
@@ -120,7 +100,9 @@ const AltStudentCallToAction = (props) => {
     <section className={altStudentCTA.container}>
       <h1>Start now!</h1>
       <div>Students are already applying to jobs. Create your profile and find meaningful work today.</div>
-      <button className={`${landingePageStyles.getStartedButton} ${studentCTA.button}`}>Sign up</button>
+      <button 
+        onClick={() => redirectTo(`${config.appUrl}register`)}
+        className={`${landingePageStyles.getStartedButton} ${studentCTA.button}`}>Sign up</button>
     </section>
   )
 }
@@ -195,7 +177,7 @@ export default () =>
         buttons: {
           hasButtons: true,
           mainButtonText: 'Get hired',
-          mainButtonLocation: 'https://app.univjobs.ca/register/',
+          mainButtonLocation: `${config.appUrl}register`,
           reRouteButtonText: "I'm an employer",
           reRouteButtonLocation: '/employers',
           alreadyOnComponentActive: true
@@ -208,7 +190,15 @@ export default () =>
       }}
     />
     <StudentShowCaseSection/>
-    <StudentCallToAction/>
+    <CallToAction
+       header= 'Get started now!'
+       subHeader= 'Create your profile and get access to student-friendly jobs.'
+       buttonText= 'Sign me up'
+       alt= {false}
+       location={`${config.appUrl}register`}
+    
+    />
+  
     <section className={features.container}>
       <LeftFeatures
         header="Get invited to jobs by employers"

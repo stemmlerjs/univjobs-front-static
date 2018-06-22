@@ -46,6 +46,7 @@ height: 38px;
     transition: .1s ease-out;
     position: relative;
     text-decoration: none;
+    font-weight: 300;
 }
 
 .navItems a:hover {
@@ -88,6 +89,7 @@ display: inline-block;
     margin-left: 2em;
     transition: .2s ease-out;
     font-weight: bold;
+    text-decoration: none;
 }
 
 .signInButton:hover {
@@ -95,6 +97,7 @@ display: inline-block;
     color: white;
     font-weight: 700;
     letter-spacing: .6px;
+    text-decoration: none;
 }
 
 .burgerMenuNavItem {
@@ -174,11 +177,11 @@ display: flex;
 }
 
 .overlayItem {
-    font-size: 1em !important;
-    padding: 5px !important;
-    font-size: 24px !important;
-    margin-left:0px !important;
-    text-transform: none !important;
+font-size: 1em!important;
+    padding: 5px!important;
+    font-size: 30px!important;
+    margin-left: 0!important;
+    text-transform: none!important;
 }
 
 .overlayItemMain {

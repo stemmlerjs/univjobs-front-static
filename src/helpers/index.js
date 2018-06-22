@@ -1,7 +1,23 @@
 
 import _ from 'underscore'
+import config from '../config'
 
 export default {
+
+  /**
+   * redirectTo
+   * 
+   * Redirects the user to the url passed in.
+   * 
+   * @param {String} url 
+   * @return void
+   */
+
+  redirectTo: (url) => {
+    if (typeof window !== undefined) {
+      window.location.href = url;
+    }
+  },
 
   blog: {
 
