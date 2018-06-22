@@ -80,16 +80,17 @@ class Header extends React.Component {
           }
           <div className={styles.mobileNavOverlayOptionsContainer}>
 
-            <a className={styles.overlayItemMain}>Sign in</a>
-            <a className={styles.overlayItemMain}>Register</a>
-            <a className={styles.overlayItemMain}>Blog</a>
+            <a className={styles.overlayItemMain} href="https://app.univjobs.ca/login">Sign in</a>
+            <a className={styles.overlayItemMain} href="https://app.univjobs.ca/register">Register</a>
+            <a className={styles.overlayItemMain} href="https://univjobs.ca/blog">Blog</a>
 
             <div className={styles.overlaySection}>For Employers</div>
-            <a className={styles.overlayItem}>Why Univjobs</a>
-            <a className={styles.overlayItem}>Pricing</a>
-            <a className={styles.overlayItem}>Contact</a>
-            <a className={styles.overlayItem}>About</a>
-            <a className={styles.overlayItem}>Tips</a>
+            <a className={styles.overlayItemMain} href="https://app.univjobs.ca/login">Sign in</a>
+            <a className={styles.overlayItemMain} href="https://app.univjobs.ca/register/employers">Register</a>
+            <a className={styles.overlayItem} href="https://univjobs.ca/pricing">Pricing</a>
+            <a className={styles.overlayItem} href="mailto:contact@univjobs.ca?Subject=Inquiry%20[Type question here]">Contact</a>
+            <a className={styles.overlayItem} href="https://univjobs.ca/about">About</a>
+            <a className={styles.overlayItem} href="https://univjobs.ca/blog/categories/employers">Tips</a>
           </div>
         </div>
       </div>

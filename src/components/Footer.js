@@ -37,7 +37,7 @@ const FooterMenuSection = (props) => {
         props.links.map((link, index) => {
           return link.mail || link.external
             ? (
-              <a key={index} className={styles.menuItem}  href={link.url}>
+              <a key={index} className={styles.menuItem} href={link.url}>
                 <div>{link.name}</div>
               </a>
             ) : (

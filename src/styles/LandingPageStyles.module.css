@@ -92,7 +92,7 @@ position: relative;
 }
 
 .getStartedButton {
-        background: #0dd4d2;
+    background: #0dd4d2;
     border: none;
     border-radius: 60px;
     color: white;
@@ -103,7 +103,9 @@ position: relative;
      font-weight: 500;
      transition: 0.2s ease-out;
     font-family: 'Roboto', sans-serif;
-    outline: none
+    outline: none;
+    text-decoration: none;
+
 }
 
 .getStartedButton:hover {
@@ -122,7 +124,10 @@ position: relative;
     background: none;
     border: solid 2px white;
     transition: 0.2s ease-out;
-    outline: none
+    outline: none;
+    text-decoration: none;
+    margin-bottom: 10px;
+
 }
 
 .reRouteButton:hover {
@@ -141,6 +146,7 @@ background: #fbfbfb;
     margin-top: 20px;
     justify-content: flex-start;
 }
+
 
 .centeredCtaContainer {
     display: -ms-flexbox;
@@ -180,15 +186,17 @@ background: #fbfbfb;
 }
 
 .alreadyOn {
-        font-size: 12px;
+    font-size: 12px;
     color: white;
     padding-top: 10px;
 }
 
-.alreadyOn span {
-        cursor: pointer;
+.alreadyOn a {
+    cursor: pointer;
     color: #0dd4d2;
     font-weight: bold;
+    text-decoration: none;
+
 }
 
 @media (min-width: 1900px) {

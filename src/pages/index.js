@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
+import CallToAction from '../components/CallToAction'
 import LeftFeatures from '../components/LeftFeatures'
 import RightFeatures from '../components/RightFeatures'
 import Slidy from '../components/Slidy'
@@ -34,32 +35,6 @@ import startupSchool from '../img/startupschool.png'
 import sheridanEntrepreneurs from '../img/sheridanentrepreneurs.png'
 
 import LandingPage from '../components/LandingPage'
-
-const StudentLandingPage = (props) => {
-  return (
-    <section className={landingePageStyles.backgroundFallback}>
-      <div className={landingePageStyles.hero}></div>
-      <div className={landingePageStyles.heroMask}></div>
-      <div className={landingePageStyles.heroContainer}>
-        <h1 className={landingePageStyles.title}>Quickly apply to student and recent grad jobs</h1>
-        <div className={landingePageStyles.subTitle}>A place where you can find jobs to earn cash and launch your career</div>
-
-        <div className={landingePageStyles.ctaContainer}>
-          <div className={landingePageStyles.buttonContainer}>
-            <button className={landingePageStyles.getStartedButton}>GET STARTED</button>
-            <div className={landingePageStyles.alreadyOn}>Already on Univjobs? <span>Sign in.</span></div>
-          </div>
-          <div className={landingePageStyles.buttonContainer}>
-            <button className={landingePageStyles.employerButton}>I'm an employer</button>
-          </div>
-        </div>
-      </div>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 70" preserveAspectRatio="none">
-        <polygon fill="white" points="0,200 200,0 200,200"></polygon>
-      </svg>
-    </section>
-  )
-}
 
 const StudentShowCaseSection = (props) => {
   return (
@@ -208,7 +183,15 @@ export default () =>
       }}
     />
     <StudentShowCaseSection/>
-    <StudentCallToAction/>
+    <CallToAction
+       header= 'Get started now!'
+       subHeader= 'Create your profile and get access to student-friendly jobs.'
+       buttonText= 'Sign me up'
+       alt= {false}
+       url= 'https://app.univjobs.ca/register'
+    
+    />
+  
     <section className={features.container}>
       <LeftFeatures
         header="Get invited to jobs by employers"

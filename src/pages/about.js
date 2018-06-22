@@ -127,7 +127,6 @@ const AboutPage = ({ data }) => {
       <LandingPage
         heroTitle="About"
         heroSubTitle="Learn more about the team behind Univjobs"
-  
         showHeroMask={false}
         centerHeroContainer={true}
         hasPolygon={false}
