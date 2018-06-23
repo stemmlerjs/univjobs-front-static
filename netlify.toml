@@ -11,6 +11,13 @@
   APP_URL = "https://app.01-staging.univjobs.ca/"
   STATIC_URL = "https://01-staging.univjobs.ca/"
 
+  BRANCH = "staging 01"
+
+[context.master.environment] # 'staging' is a branch name
+  BRANCH = "staging 02"
+
 [context.production.environment]
   APP_URL = "https://app.univjobs.ca/"
   STATIC_URL = "https://univjobs.ca/"
+
+  BRANCH = "production"
