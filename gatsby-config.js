@@ -1,3 +1,16 @@
+
+let activeEnv = process.env.ACTIVE_ENV;
+
+if (!activeEnv) {
+  activeEnv = "development";
+}
+
+require("dotenv").config({
+  path: `.env.${activeEnv}`,
+});
+
+console.log(`[Init]: Starting in environment=${activeEnv}`)
+
 module.exports = {
   siteMetadata: {
     title: 'Univjobs - Simplifying hiring post-secondary students',
