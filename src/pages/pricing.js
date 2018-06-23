@@ -5,7 +5,7 @@ import woman from '../img/pricing/woman-mask.jpg'
 import womanMobile from '../img/pricing/business-woman-mobile.jpg'
 import companies1 from '../img/companies-resized-2.png'
 import companies2 from '../img/companies-4-alt.png'
-import desktopCompanies from '../img/companies.png'
+import desktopCompanies from '../img/pricing/desktop-companies.png'
 import uLogo from '../img/u-logo-circle.png'
 
 import CallToAction from '../components/CallToAction'
