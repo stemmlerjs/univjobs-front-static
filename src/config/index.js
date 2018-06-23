@@ -4,7 +4,7 @@ const STATIC_URL = process.env.STATIC_URL
   : 'https://01-staging.univjobs.ca/'
 
 const APP_URL = process.env.APP_URL 
-  ? process.APP_URL 
+  ? process.env.APP_URL 
   : 'https://app.01-staging.univjobs.ca/';
 
 export default {
