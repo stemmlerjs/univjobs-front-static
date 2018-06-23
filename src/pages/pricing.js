@@ -47,7 +47,7 @@ const Plan = (props) => {
       borderTop: `solid 6px ${props.headerColor}`
     }} className={styles.plan}>
       <h3 className={styles.planTitle}>{props.title}</h3>
-        <p>{props.subTitle}</p>
+        <p style={{textAlign: 'center'}}>{props.subTitle}</p>
       
         {
 
