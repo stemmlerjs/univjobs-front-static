@@ -75,7 +75,7 @@ const Footer = ({ siteTitle }) => (
       <section>
         <FooterMenuSection title={'For employers'} links={
           [
-            { name: 'Register', url: `${config.appUrl}register/employer`, external: true },
+            { name: 'Register', url: `${config.appUrl}/register/employer`, external: true },
             { name: 'Small Businesses', url: '/small-business' },
           ]
         }/>
