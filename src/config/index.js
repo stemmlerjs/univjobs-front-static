@@ -21,3 +21,6 @@ if (typeof window !== "undefined") {
   window.APP_URL = APP_URL;
   window.STATIC_URL = STATIC_URL;
 }
+
+console.log('Node env', process.env.NODE_ENV)
+console.log('active env', process.env.ACTIVE_ENV)
