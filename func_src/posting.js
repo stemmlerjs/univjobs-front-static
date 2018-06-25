@@ -22,8 +22,10 @@ exports.handler = function(event, context, callback) {
 	var job_id = splits[splits.length-1];
 	var env = splits[splits.length-2];
 
+	console.log(splits);
 	console.log(env);
 	var setting = (env == "staging") ? setting.staging : setting.prod;
+	console.log(JSON.stringify(setting));
 
 	axios.get(`${setting.api}/api/v1/public/job/${job_id}`).then((r) => {
 
