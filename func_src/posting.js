@@ -20,7 +20,7 @@ exports.handler = function(event, context, callback) {
 
 	var splits = event.path.split("/");
 	var job_id = splits[splits.length-1];
-	var env = splits[splits.length-2];
+	var env = splits[splits.length-3];
 
 	console.log(splits);
 	console.log(env);
