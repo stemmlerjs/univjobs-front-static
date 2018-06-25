@@ -9,8 +9,8 @@ exports.handler = function(event, context, callback) {
 	//exports.handler = async function(event, context, callback) {
 	var setting = {
 		"staging": {
-			"api": "http://api.01-staging.univjobs.ca",
-			"app": "http://app.01-staging.univjobs.ca",
+			"api": "https://api.01-staging.univjobs.ca",
+			"app": "https://app.01-staging.univjobs.ca",
 		},
 		"prod": {
 			"api": "https://api.univjobs.ca",
