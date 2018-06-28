@@ -6,6 +6,8 @@ import styles from "../styles/FooterStyles.module.css";
 import facebook from '../img/facebook-logo.png'
 import twitter from '../img/twitter-logo-silhouette.png'
 import linkedin from '../img/linkedin-logo.png'
+import instagram from '../img/instagram.svg'
+
 
 import config from '../config'
 
@@ -27,6 +29,8 @@ const SocialLinks = (props) => {
       <a className={styles.socialLink} href="https://www.facebook.com/univjobs/"><img src={facebook}></img></a>
       <a className={styles.socialLink} href="https://twitter.com/univjobsapp"><img src={twitter}></img></a>
       <a className={styles.socialLink} href="https://www.linkedin.com/company/univjobs/?originalSubdomain=ca"><img src={linkedin}></img></a>
+      <a className={styles.socialLink} href="https://www.instagram.com/univjobs"><img src={instagram}></img></a>
+
     </div>
   )
 }

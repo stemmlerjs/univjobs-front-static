@@ -41,9 +41,9 @@ const WhoWeAre = (props) => {
         
         <div className={whoWeAre.textContainer}>
           <h1>Who we are</h1>
-          <p>There was a problem. It was hard for 
-  students and recent grads to find jobs 
-  and internships. It was also tough for 
+          <p>There is a problem. It is hard for 
+  students and recent grads to find jobs during school 
+  and after graduation. It is also tough for 
   employers to find great early-career talent.</p>
           <p>One of our founders, Charles wanted to 
   solve this problem, and so UnivJobs was born. 
@@ -71,7 +71,7 @@ const OurStory = (props) => {
   started UnivJobs while at school. 
   </p>
           <p>The platform launched early of September 2017, building the 
-  platform in between classes.</p>
+  platform in between their classes.</p>
         </div>
       </div>
     
