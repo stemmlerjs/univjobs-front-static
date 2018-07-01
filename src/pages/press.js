@@ -14,8 +14,8 @@ import LandingPage from '../components/LandingPage'
 import CountUp from 'react-countup';
 
 import Divider from '../components/Divider'
-import Mentions from '../components/Press/Mentions'
-import Founders from '../components/Press/Founders'
+import Mentions from '../components/press/Mentions'
+import Founders from '../components/press/Founders'
 
 import styles from '../styles/Press.module.css'
 
