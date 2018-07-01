@@ -166,7 +166,7 @@ export default () =>
           hasButtons: true,
           reRouteButtonText: "I'm an employer",
           reRouteButtonURL: "https://univjobs.ca/register/employer",
-          getStartedURL: `https://${process.env.APP_DOMAIN_NAME}/register`,
+          getStartedURL: "https://app.univjobs.ca/register",
         },
         hero: {
           showHeroMask: true,
@@ -180,7 +180,7 @@ export default () =>
        subHeader= 'Create your profile and get access to student-friendly jobs.'
        buttonText= 'Sign me up'
        alt= {false}
-       url= `https://${process.env.APP_DOMAIN_NAME}/register`
+       url= 'https://app.univjobs.ca/register'
     
     />
   
@@ -205,7 +205,7 @@ export default () =>
        subHeader= 'Students are already applying to jobs. Create your profile and find meaningful work today.'
        buttonText= 'Try it now'
        alt= {true}
-       url= `https://${process.env.APP_DOMAIN_NAME}/register`
+       url= 'https://app.univjobs.ca/register'
     
     />
     <StudentBrandRecognition/>

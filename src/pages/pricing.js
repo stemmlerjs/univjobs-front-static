@@ -102,7 +102,7 @@ const Plans = (props) => {
           buttonText={'Get started - $20'}
           onClick={() => {
             if ( typeof window !== 'undefined') {
-              window.location.href = `https://${process.env.APP_DOMAIN_NAME}/register/employer`
+              window.location.href = "https://app.univjobs.ca/register/employer"
             }
           }}
         />

@@ -28,7 +28,7 @@ class LandingPage extends React.Component {
                   GET STARTED
                 </a>
                
-                <div className={landingePageStyles.alreadyOn}>Already on Univjobs? <a className={landingePageStyles.alreadyOnButton} href=`https://${process.env.APP_DOMAIN_NAME}/join`>Sign in.</a></div>
+                <div className={landingePageStyles.alreadyOn}>Already on Univjobs? <a className={landingePageStyles.alreadyOnButton} href="https://app.univjobs.ca/join">Sign in.</a></div>
               </div>
               <div className={this.props.options.centerHeroContainer ? landingePageStyles.centeredButtonContainer : landingePageStyles.buttonContainer}>
                 <a 
