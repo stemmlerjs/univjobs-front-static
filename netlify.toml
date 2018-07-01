@@ -9,10 +9,16 @@
 
 
 [context.master]
+  publish = "public"
+  command = "npm run build"
+	functions = "./func"
   base = "master"
 	environment = { ACTIVE_ENV = "staging" }
 
 [context.production]
+  publish = "public"
+  command = "npm run build"
+	functions = "./func"
   base = "production"
 	environment = { ACTIVE_ENV = "production" }
 
