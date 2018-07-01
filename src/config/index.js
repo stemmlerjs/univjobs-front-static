@@ -5,9 +5,9 @@ let config = {
   logo: '/img/u.png',
   twitter: 'https://twitter.com/univjobsapp',
   fbAppID: '1897052653882765',
-  url: process.env.STATIC_URL ? process.env.STATIC_URL : 'https://01-staging.univjobs.ca/',
-  appUrl: process.env.APP_URL ? process.env.APP_URL : 'https://app.01-staging.univjobs.ca/',
-  staticUrl: process.env.STATIC_URL ? process.env.STATIC_URL : 'https://01-staging.univjobs.ca/',
+  url: process.env.GATSBY_STATIC_URL ? process.env.GATSBY_STATIC_URL : 'https://01-staging.univjobs.ca/',
+  appUrl: process.env.GATSBY_APP_URL ? process.env.GATSBY_APP_URL : 'https://app.01-staging.univjobs.ca/',
+  staticUrl: process.env.GATSBY_STATIC_URL ? process.env.GATSBY_STATIC_URL : 'https://01-staging.univjobs.ca/',
 }
 
 export default config;
