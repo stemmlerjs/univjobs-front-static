@@ -9,8 +9,10 @@
 
 
 [context.master]
+  base = "master"
 	environment = { ACTIVE_ENV = "staging" }
 
 [context.production]
+  base = "production"
 	environment = { ACTIVE_ENV = "production" }
 
