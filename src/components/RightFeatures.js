@@ -12,7 +12,9 @@ class RightFeatures extends React.Component {
 render = () => {
     return (
         <section className={features.flexContainerRight}>
+          <div className={features.imageContainer}>
             <img src={this.props.picture}></img>
+          </div>
           <div className={features.flexItem}>
             <h1>{this.props.header}</h1>
             <div>{this.props.paragraphOne}</div>

@@ -51,8 +51,8 @@ const StudentShowCaseSection = (props) => {
           <h1>One profile, one resume</h1>
         </div>
 
-        <div className={studentShowCaseStyles.standardParagraph}>Making multiple cover letters and resumes can be stressful and time consuming on top of your exams and projects.</div>
-        <div className={studentShowCaseStyles.standardParagraph}>The next time you apply to a job, you can relax. UnivJobs eliminates cover letters and multiple resumes so you can get back to your studies.</div>
+        <div className={studentShowCaseStyles.standardParagraph}>Making multiple cover letters and resumes, on top of your exams and projects, can be stressful and time consuming.</div>
+        <div className={studentShowCaseStyles.standardParagraph}>The next time you apply to a job, you can relax. UnivJobs eliminates having to create multiple cover letters and resumes; that way, you can get back to your studies.</div>
 
         <div className={studentShowCaseStyles.regularWhosOn}>
           <div className={studentShowCaseStyles.whosOnContainer}>
@@ -202,15 +202,15 @@ export default () =>
     <section className={features.container}>
       <LeftFeatures
         header="Get invited to jobs by employers"
-        paragraphOne="Not receiving updates can cause anxiety."
-        paragraphTwo='We let employers invite you to a job and let you build meaningful connections, fast.'
+        paragraphOne="Your next job is right around the corner."
+        paragraphTwo='We encourage employers to invite you to jobs and let you build meaningful connections, fast.'
         picture= {featureOneImage}
       />
 
       <RightFeatures
         header= 'Track all your job applications'
-        paragraphOne= 'Going to career fairs can be time-consuming and costly, especially when you have limited time and budget.'
-        paragraphTwo= "UnivJobs can reduce the anxiety by showing the 'progress' of your job applications whether you're being considered, whether you're invited for an interview or whether you get hired."
+        paragraphOne= {`Going to career fairs can be time-consuming and costly, especially when you have limited time and budget.`}
+        paragraphTwo= {`UnivJobs can reduce this anxiety by showing you the "progress" of your job applications whether you're being considered, whether you're invited for an interview or whether you get hired.`}
         picture={featureTwoImage}
       />
     </section>

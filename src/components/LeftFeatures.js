@@ -10,17 +10,19 @@ class LeftFeatures extends React.Component {
     }
 
 render = () => {
-    return (
-        <section className={features.flexContainerLeft}>
-          <div className={features.flexItem}>
-            <h1>{this.props.header}</h1>
-            <div>{this.props.paragraphOne}</div>
-            <div>{this.props.paragraphTwo}</div>
-          </div>
+  return (
+      <section className={features.flexContainerLeft}>
+        <div className={features.flexItem}>
+          <h1>{this.props.header}</h1>
+          <div>{this.props.paragraphOne}</div>
+          <div>{this.props.paragraphTwo}</div>
+        </div>
+        <div className={features.imageContainer}>
           <img src={this.props.picture}></img>
-        </section>
-     )
-    }
+        </div>
+      </section>
+    )
+  }
 }
 
 LeftFeatures.defaultProps = {
