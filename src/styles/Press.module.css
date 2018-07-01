@@ -10,8 +10,6 @@
 /* Founders  */
 
 .founderContainer {
-  padding-left: 1.4em;
-  padding-right: 1.4em;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;

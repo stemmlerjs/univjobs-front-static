@@ -8,3 +8,4 @@
 - Removed TD mention from our front page because we haven't heard back from TD.
 - Refactored Press page components into /components/Press
 - Updated styles on index and press pages.
+- Removed the underline on the nav overlay items on mobile.

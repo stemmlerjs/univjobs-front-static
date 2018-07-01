@@ -68,7 +68,7 @@
     font-size: 1.6em;
   }
   .flexContainerLeft {
-    width: 75%;
+    width: 90%;
     display: block;
   }
 
@@ -84,6 +84,7 @@
     width: 50%;
   }
   .flexContainerRight {
+    width: 90%;
     display: flex;
     flex-direction: column-reverse;
   }
