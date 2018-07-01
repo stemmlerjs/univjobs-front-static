@@ -76,7 +76,6 @@ class Header extends React.Component {
              */
           }
           <div className={styles.mobileNavOverlayOptionsContainer}>
-
             <a className={styles.overlayItemMain} href={`${config.appUrl}login`}>Sign in</a>
             <a className={styles.overlayItemMain} href={`${config.appUrl}register`}>Register</a>
             <a className={styles.overlayItemMain} href="/blog">Blog</a>
