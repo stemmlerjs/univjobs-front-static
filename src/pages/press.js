@@ -180,7 +180,7 @@ const Mentions = () => {
 
 const Download = () => {
   return (
-    <a href="https://drive.google.com/open?id=1JWrGWVoBImg-eOCg4H6jxb7N45a-sAye">Download our press kit</a>
+    <a href="https://drive.google.com/drive/folders/19eOhSLLlsPsfw7QpG93QlfeWu6I6niO3?usp=sharing">Download our press kit</a>
   )
 }
 
