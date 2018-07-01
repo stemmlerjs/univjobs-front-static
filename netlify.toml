@@ -6,19 +6,4 @@
 [build.environment]
   YARN_VERSION = "1.3.2"
   YARN_FLAGS = "--no-ignore-optional"
-
-
-[context.master]
-  publish = "public"
-  command = "npm run build"
-	functions = "./func"
-  base = "master"
-	environment = { ACTIVE_ENV = "staging" }
-
-[context.production]
-  publish = "public"
-  command = "npm run build"
-	functions = "./func"
-  base = "production"
-	environment = { ACTIVE_ENV = "production" }
-
+	ACTIVE_ENV = "staging"
