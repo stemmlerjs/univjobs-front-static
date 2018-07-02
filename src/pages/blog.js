@@ -6,9 +6,9 @@ import helpers from '../helpers'
 
 import Divider from '../components/Divider'
 import CallToAction from '../components/CallToAction'
-import BlogCategoriesHeader from '../components/BlogCategoriesHeader'
-import Posts from '../components/Posts'
-import FeaturedPost from '../components/FeaturedPost'
+import CategoriesHeader from '../components/blog/CategoriesHeader'
+import Posts from '../components/blog/Posts'
+import FeaturedPost from '../components/blog/FeaturedPost'
 
 import styles from '../styles/Blog.module.css'
 
@@ -50,7 +50,7 @@ class Blog extends React.Component {
 
     return (
       <section>
-        <BlogCategoriesHeader
+        <CategoriesHeader
           categories={categories}
         />
 
