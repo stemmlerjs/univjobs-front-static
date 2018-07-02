@@ -1,8 +1,42 @@
+
+let activeEnv = process.env.ACTIVE_ENV;
+
+if (!activeEnv) {
+  activeEnv = "development";
+}
+
+require("dotenv").config({
+  path: `.env.${activeEnv}`,
+});
+
 module.exports = {
   siteMetadata: {
-    title: 'Univjobs',
+    title: 'Univjobs - Simplifying hiring post-secondary students',
+    siteUrl: `https://univjobs.ca`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-favicon`,
+      options: {
+        logo: "./src/favicon.png",
+        injectHTML: true,
+        icons: {
+          android: true,
+          appleIcon: true,
+          appleStartup: true,
+          coast: false,
+          favicons: true,
+          firefox: true,
+          twitter: false,
+          yandex: false,
+          windows: false
+        }
+      }
+    },
+    {
+      resolve: `gatsby-plugin-sitemap`
+    },
+    `gatsby-plugin-compression`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {

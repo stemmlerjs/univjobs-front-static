@@ -13,7 +13,8 @@ tags:
   - ''
 featured: false
 image: /img/conversation-1262311_960_720.png
-category: null
+category: Student Life
+public: true
 ---
 The funny thing about presenting and public speaking is that the majority of people will tell you they don't enjoy it and/or aren't very good at it. And yet regardless of who they are and what they do, most of the speaking they do on a day-to-day basis IS public speaking.
 

@@ -2,33 +2,15 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
+import helpers from '../helpers'
 
 import Divider from '../components/Divider'
-import Slidy from '../components/Slidy'
 import CallToAction from '../components/CallToAction'
-import BlogCategoriesHeader from '../components/BlogCategoriesHeader'
-import Posts from '../components/Posts'
+import CategoriesHeader from '../components/blog/CategoriesHeader'
+import Posts from '../components/blog/Posts'
+import FeaturedPost from '../components/blog/FeaturedPost'
 
 import styles from '../styles/Blog.module.css'
-
-const FeaturedPostsItems = [
-  { image: '' }
-]
-
-const FeaturedPosts = (props) => {
-  return (
-    <div>
-      <Slidy
-        class={styles.sliderOverride}
-        elements={props.posts}
-        component={'Featured posts'}
-        settings={{
-          centerMode: false
-        }}
-      />
-    </div>
-  )
-}
 
 class Blog extends React.Component {
   constructor () {
@@ -43,31 +25,41 @@ class Blog extends React.Component {
 
     const data = this.props.data;
     console.log(data)
-    const featuredPosts = data.allMarkdownRemark
-      .edges.map((edge) => edge.node)
-      .map((node) => Object.assign(
-        {}, { excerpt: node.excerpt }, node.frontmatter, node.fields, 
-        { timeToRead: node.timeToRead })
-      )
-      .filter((node) => node.featured)
 
-    const regularPosts = data.allMarkdownRemark
+    const featuredPosts = data.featuredPosts 
+      ? data.featuredPosts
       .edges.map((edge) => edge.node)
       .map((node) => Object.assign(
         {}, { excerpt: node.excerpt }, node.frontmatter, node.fields, 
         { timeToRead: node.timeToRead })
       )
-      .filter((node) => !node.featured)
+      : [];
+
+    const posts = data.posts 
+      ? data.posts
+      .edges.map((edge) => edge.node)
+      .map((node) => Object.assign(
+        {}, { excerpt: node.excerpt }, node.frontmatter, node.fields, 
+        { timeToRead: node.timeToRead })
+      )
+      : [];
+
+    const tags = helpers.blog.getTagsFromQuery(data.tags);
+
+    const categories = helpers.blog.getCategoriesFromQuery(data.categories);
 
     return (
       <section>
-        <BlogCategoriesHeader/>
-        <FeaturedPosts
+        <CategoriesHeader
+          categories={categories}
+        />
+
+        <FeaturedPost
           posts={featuredPosts}
         />
         
         <Posts
-          posts={regularPosts}
+          posts={posts}
         />
         <CallToAction
           header={'Find your next job'}
@@ -83,30 +75,111 @@ class Blog extends React.Component {
 export default Blog
 
 export const blogPagesQuery = graphql`
-  query Blog {
-    allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { 
-      frontmatter:  { templateKey: {eq: "blog-post" } } }
-    ){
-        edges {
-          node {
-            excerpt(pruneLength: 250)
-            timeToRead
-            frontmatter {
-              title
-              date 
-              description
-              tags
-              featured
-              image
-              category
-            }
-            fields {
-              slug
-            }
+  query BlogsPageMain {
+    featuredPosts: allMarkdownRemark ( 
+    	sort: { order: DESC, fields: [frontmatter___date]},
+      filter: {
+        frontmatter: {
+          templateKey: { eq: "blog-post"},
+          featured: { eq: true }
+          public: { eq: true }
+        }
+      }
+    ) {
+      edges {
+        node {
+          timeToRead
+          fields {
+            slug
+          }
+          frontmatter {
+            title 
+            date 
+            description 
+            tags
+            featured 
+            image 
+            category
           }
         }
+      }
+    }
+    
+    posts: allMarkdownRemark( 
+    	sort: { order: DESC, fields: [frontmatter___date] }
+      filter: {
+        frontmatter:  { 
+          templateKey: {eq: "blog-post"},
+          featured: { ne: true }
+          public: { eq: true }
+        } 
+      }
+      
+    ) {
+      edges {
+        node {
+          excerpt(pruneLength: 250)
+          timeToRead
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            date 
+            description
+            tags
+            featured
+            image
+            category
+          }
+        }
+      }
+    }
+
+    categories: allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      filter: { 
+        frontmatter: { 
+          templateKey: { eq: "blog-post" }
+          category: { ne: null }
+          public: { eq: true }
+        }
+      }
+      limit: 1000
+    ) {
+      edges {
+        node {
+          frontmatter {
+            category
+            parentcategory
+          }
+        }
+      }
+    }
+    
+    tags: allMarkdownRemark(
+      filter: { 
+        frontmatter: { 
+          templateKey: { 
+            eq: "blog-post" 
+          }
+          tags: {
+            ne: null
+          }
+          tags: {
+            ne: ""
+          }
+        }
+      }
+      limit: 1000
+    ) {
+      edges {
+        node {
+          frontmatter {
+            tags
+          }
+        }
+      }
     }
   }
 `

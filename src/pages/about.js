@@ -41,11 +41,11 @@ const WhoWeAre = (props) => {
         
         <div className={whoWeAre.textContainer}>
           <h1>Who we are</h1>
-          <p>There was a problem. It was hard for 
-  students and recent grads to find jobs 
-  and internships. It was also tough for 
+          <p>There is a problem. It is hard for 
+  students and recent grads to find jobs during school 
+  and after graduation. It is also tough for 
   employers to find great early-career talent.</p>
-          <p>One of our founders, Charles wanted to 
+          <p>One of our founders, Charles, wanted to 
   solve this problem, and so UnivJobs was born. 
   UnivJobs' mission is to connect students and 
   recent grads with meaningful opportunities.</p>
@@ -66,12 +66,11 @@ const OurStory = (props) => {
 
         <div className={ourStory.textContainer}>
           <p>UnivJobs was co-founded by Charles and Khalil, after they noticed that 
-  them and many of their friends experienced difficulty looking for work 
-  during school and after graduating. Upon realizing the problem they 
-  started UnivJobs while at school. 
+  they and many of their friends experienced difficulty looking for work 
+  during school and after graduation. Upon realizing the problem, they 
+  started building UnivJobs inbetween classes. 
   </p>
-          <p>The platform launched early of September 2017, building the 
-  platform in between classes.</p>
+          <p>The platform launched early of September 2017.</p>
         </div>
       </div>
     
@@ -127,17 +126,15 @@ const AboutPage = ({ data }) => {
       <LandingPage
         heroTitle="About"
         heroSubTitle="Learn more about the team behind Univjobs"
+        showHeroMask={false}
+        centerHeroContainer={true}
+        hasPolygon={false}
         options={{
-          centerHeroContainer:true,
+          alignment: 'center',
           image: aboutImage,
-          hasPolygon: false,
-          buttons: {
-            hasButtons: false,
-            reRouteButtonText: "I'm a student",
-          },
           hero: {
-            showHeroMask: false,
-            color: ''
+            showHeroMask: true,
+            showDarkMask: false
           }
         }}
       />
@@ -156,6 +153,7 @@ const AboutPage = ({ data }) => {
         subHeader={'Students are already applying to jobs. Create your profile and find meaningful work today!'}
         buttonText={'Sign up'}
         alt={true}
+        location={"https://app.univjobs.ca/register/"}
       />
     </div>
   )

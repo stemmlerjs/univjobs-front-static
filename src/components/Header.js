@@ -3,6 +3,35 @@ import Link from 'gatsby-link'
 
 import styles from "../styles/HeaderStyles.module.css";
 
+import config from '../config'
+import { redirectTo } from '../helpers'
+
+const Overlay = ({ isOpen }) => {
+  return (
+    <div className={isOpen
+      ? styles.mobileNavOverlay
+      : `${styles.mobileNavOverlay} ${styles.overlayClosed}`}>
+
+      {
+        /**s
+         * Overlay options
+         */
+      }
+      <div className={styles.mobileNavOverlayOptionsContainer}>
+        <a className={`${styles.overlayItemMain} ${styles.overlay}`} href={`${config.appUrl}login`}>Login</a>
+        <a className={`${styles.overlayItemMain} ${styles.overlay}`} href={`${config.appUrl}register`}>Register</a>
+
+        <div className={styles.overlaySection}>Employers</div>
+        <a className={`${styles.overlayItem} ${styles.overlay}`} href="/about">About</a>
+        <a className={`${styles.overlayItem} ${styles.overlay}`} href="/blog">Blog</a>
+        <a className={`${styles.overlayItem} ${styles.overlay}`} href="mailto:contact@univjobs.ca?Subject=Inquiry%20">Contact</a>
+        <a className={`${styles.overlayItem} ${styles.overlay}`} href="/pricing">Pricing</a>
+        <a className={`${styles.overlayItem} ${styles.overlay}`} href="/blog/categories/employers">Tips</a>
+      </div>
+    </div>
+  )
+}
+
 class Header extends React.Component {
   constructor () {
     super();
@@ -10,8 +39,6 @@ class Header extends React.Component {
       menuOpen: false
     };
   }
-
-  
 
   /**
    * openBurgerMenu
@@ -37,10 +64,10 @@ class Header extends React.Component {
         </Link>
       </div>
       <div className={styles.navItems}>
-        {/*<Link className={styles.navItem} to="/pricing">Pricing</Link>*/}
+        <Link className={styles.navItem} to="/pricing">Pricing</Link>
         <Link className={styles.navItem} to="/blog">Blog</Link>
         <Link className={styles.navItem} to="/employers">Employers</Link>
-        <div className={styles.signInButton}>
+        <div onClick={() => redirectTo(config.appUrl)} className={styles.signInButton}>
           SIGN IN
         </div>
         <div className={styles.burgerMenuNavItem} href="javascript:void(0);" onClick={this.toggleBurgerMenu}>
@@ -65,30 +92,9 @@ class Header extends React.Component {
 
         </div>
 
-        <div className={this.state.menuOpen 
-          ? styles.mobileNavOverlay
-          : `${styles.mobileNavOverlay} ${styles.overlayClosed}`}>
-
-          {
-            /**s
-             * Overlay options
-             */
-          }
-          <div className={styles.mobileNavOverlayOptionsContainer}>
-
-            <a className={styles.overlayItemMain} href="https://app.univjobs.ca/login">Sign in</a>
-            <a className={styles.overlayItemMain} href="https://app.univjobs.ca/register">Register</a>
-            <a className={styles.overlayItemMain} href="https://univjobs.ca/blog">Blog</a>
-
-            <div className={styles.overlaySection}>For Employers</div>
-            <a className={styles.overlayItemMain} href="https://app.univjobs.ca/login">Sign in</a>
-            <a className={styles.overlayItemMain} href="https://app.univjobs.ca/register/employers">Register</a>
-            <a className={styles.overlayItem} href="https://univjobs.ca/pricing">Pricing</a>
-            <a className={styles.overlayItem} href="mailto:contact@univjobs.ca?Subject=Inquiry%20[Type question here]">Contact</a>
-            <a className={styles.overlayItem} href="https://univjobs.ca/about">About</a>
-            <a className={styles.overlayItem} href="https://univjobs.ca/blog/categories/employers">Tips</a>
-          </div>
-        </div>
+        <Overlay
+          isOpen={this.state.menuOpen}
+        />
       </div>
     </div>
   )

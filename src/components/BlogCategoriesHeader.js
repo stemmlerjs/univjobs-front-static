@@ -6,6 +6,8 @@ import Link from 'gatsby-link'
 
 import styles from '../styles/Blog/Header.module.css'
 
+import kebabCase from "lodash/kebabCase";
+
 const Tags = [
   { tag: 'All', url: '/blog', menu: null },
   { tag: 'Adulting 101', 
@@ -44,18 +46,108 @@ const BlogTagItem = (props) => {
   )
 }
 
-
-const BlogCategoriesHeader = (props) => (
-  <div className={styles.outerContainer}>
-    <div className={styles.container}>
-      {
+/**
+ * {
         Tags.map((tag, index) => {
           return <BlogTagItem key={index} tag={tag}/>
         })
       }
+ */
+
+ 
+
+const MobileCategoriesNav = ({ categories, navOpen, handleToggleNav }) => {
+  return (
+    <div className={styles.mobileCategoriesNav}>
+        
+      <div onClick={() => handleToggleNav()} className={styles.mobileCategoryHeader}>Categories <i className={"fa fa-angle-down"}></i></div>
+
+        <div className={navOpen 
+          ? `${styles.mobileCategoryListContainer} ${styles.open}` 
+          : styles.mobileCategoryListContainer}>
+
+          <div className={styles.mobileCategoryListParent}>
+            <Link 
+              to={`/blog`} 
+              className={styles.parentTitle}>All</Link>
+          </div>
+
+          {
+
+            !!categories == true
+              ? (
+                Object.keys(categories).sort().map((key, index) => {
+                  return (
+                    <div key={index} className={styles.mobileCategoryListParent}>
+                      <div className={styles.parentTitle}>{ key }</div>
+                      <div>
+                        {
+                          categories[key].map((childKey, index) => {
+                            return (
+                              <Link 
+                                to={`/blog/categories/${kebabCase(childKey)}`} 
+                                className={styles.childTitle} 
+                                key={index}>{childKey}</Link>
+                            )
+                          })
+                        }
+                      </div>
+                    </div>
+                  )
+                })
+              ) : (
+                ''
+              )
+
+            
+          }
+        </div>
+      
     </div>
-    <Divider/>
-  </div>
-)
+  )
+}
+
+
+class BlogCategoriesHeader extends React.Component {
+  constructor () {
+    super();
+    this.state = {
+      navOpen: false
+    }
+
+    this.toggleNav = this.toggleNav.bind(this);
+  }
+
+  toggleNav () {
+
+    this.setState({
+      ...this.state,
+      navOpen: !this.state.navOpen
+    })
+  }
+
+  render () {
+    return (
+      <div className={styles.outerContainer}>
+        <div className={styles.container}>
+          
+          {
+            this.props.categories
+              ?  <MobileCategoriesNav
+                  categories={this.props.categories}
+                  navOpen={this.state.navOpen}
+                  handleToggleNav={this.toggleNav}
+                />
+              : ''
+          }
+          
+
+        </div>
+        <Divider/>
+      </div>
+    )
+  }
+}
+
 
 export default BlogCategoriesHeader

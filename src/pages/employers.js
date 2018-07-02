@@ -26,6 +26,7 @@ import instacart from '../img/instacart.svg'
 import ymca from '../img/ymca.svg'
 import airmiles from '../img/airmiles.svg'
 
+import config from '../config'
 
 const Employers = () => (
   <div>
@@ -33,17 +34,19 @@ const Employers = () => (
       heroTitle="Early access to young talent from any post-secondary school"
       heroSubTitle="A network of affordable qualified students for your growing team"
       options={{
-        centerHeroContainer:true,
+        alignment: 'center',
         image: gotJob,
         hasPolygon: false,
         buttons: {
-          hasButtons: true,
-          reRouteButtonText: "I'm a student",
-          reRouteButtonURL: "https://univjobs.ca/register",
-          getStartedURL: "https://app.univjobs.ca/register/employer",
+          mainButtonText: 'Post a job',
+          mainButtonLocation: `${config.appUrl}register/employer`,
+          reRouteButtonText: "I'm an student",
+          reRouteButtonLocation: '/',
+          alreadyOnComponentActive: true
         },
         hero: {
           showHeroMask: false,
+          showDarkMask: true,
           color: ''
         }
       }}
@@ -68,8 +71,8 @@ const Employers = () => (
       header='Get help quickly with UnivJobs'
       subHeader='UnivJobs makes it easy to find early career talent'
       buttonText='Try it now!'
-      alt={false}
-      url="https://app.univjobs.ca/register/employer"
+      alt={true}
+      location={`${config.appUrl}register/employer`}
     />
 
    
@@ -101,14 +104,8 @@ const Employers = () => (
         subHeader='UnivJobs advertises your job listing & logo in front of thousands of early career talent.'
         buttonText='Post a job now'
         alt={true}
-        url="https://app.univjobs.ca/register/employer"
-
+        location={`${config.appUrl}register/employer`}
     />
-  
-    
-
-    
-
     <Slidy/>
    </div>
 

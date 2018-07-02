@@ -6,13 +6,17 @@ import styles from "../styles/FooterStyles.module.css";
 import facebook from '../img/facebook-logo.png'
 import twitter from '../img/twitter-logo-silhouette.png'
 import linkedin from '../img/linkedin-logo.png'
+import instagram from '../img/instagram.svg'
+
+
+import config from '../config'
 
 const Strip = () => {
   return (
     <div className={styles.bottomStrip}>
       <div>DCommons, Inc. © 2018</div>
-      <div>Privacy Policy</div>
-      <div>Terms of Service</div>
+      <Link to="/privacy-policy">Privacy Policy</Link>
+      <Link to="/terms-of-service">Terms of Service</Link>
     </div>
   )
 }
@@ -25,6 +29,8 @@ const SocialLinks = (props) => {
       <a className={styles.socialLink} href="https://www.facebook.com/univjobs/"><img src={facebook}></img></a>
       <a className={styles.socialLink} href="https://twitter.com/univjobsapp"><img src={twitter}></img></a>
       <a className={styles.socialLink} href="https://www.linkedin.com/company/univjobs/?originalSubdomain=ca"><img src={linkedin}></img></a>
+      <a className={styles.socialLink} href="https://www.instagram.com/univjobs"><img src={instagram}></img></a>
+
     </div>
   )
 }
@@ -35,9 +41,9 @@ const FooterMenuSection = (props) => {
       <div className={styles.menuHeader}>{props.title}</div>
       {
         props.links.map((link, index) => {
-          return link.mail 
+          return link.mail || link.external
             ? (
-              <a key={index} className={styles.menuItem}  href={link.url}>
+              <a key={index} className={styles.menuItem} href={link.url}>
                 <div>{link.name}</div>
               </a>
             ) : (
@@ -59,8 +65,7 @@ const Footer = ({ siteTitle }) => (
           [
             { name: 'About', url: '/about' },
             { name: 'Contact', url: 'mailto:contact@univjobs.ca?Subject=Inquiry', mail: true },
-            { name: 'Press', url: '/press' },
-            //{ name: 'Why Univjobs', url: '/blog/why-univjobs/' }
+            { name: 'Press', url: '/press' }
           ]
         }/>
         <FooterMenuSection title={'Product'} links={
@@ -74,9 +79,8 @@ const Footer = ({ siteTitle }) => (
       <section>
         <FooterMenuSection title={'For employers'} links={
           [
-            { name: 'Register', url: 'https://app.univjobs.ca/register/employer' },
-           // { name: 'Small Businesses', url: '/small-business' },
-           // { name: 'How to be successful on Univjobs', url: '/blog/how-to-be-most-successful-on-univjobs'}
+            { name: 'Register', url: `${config.appUrl}/register/employer`, external: true },
+            { name: 'Small Businesses', url: '/small-business' },
           ]
         }/>
         <SocialLinks/>

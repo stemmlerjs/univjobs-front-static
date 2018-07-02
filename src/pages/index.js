@@ -4,6 +4,7 @@ import Link from 'gatsby-link'
 import CallToAction from '../components/CallToAction'
 import LeftFeatures from '../components/LeftFeatures'
 import RightFeatures from '../components/RightFeatures'
+import Slidy from '../components/Slidy'
 
 import landingePageStyles from '../styles/StudentLandingPageStyles.module.css'
 import studentShowCaseStyles from '../styles/StudentShowCaseSectionStyles.module.css'
@@ -35,6 +36,9 @@ import sheridanEntrepreneurs from '../img/sheridanentrepreneurs.png'
 
 import LandingPage from '../components/LandingPage'
 
+import config from '../config'
+import { redirectTo } from '../helpers'
+
 const StudentShowCaseSection = (props) => {
   return (
     <div>
@@ -47,8 +51,8 @@ const StudentShowCaseSection = (props) => {
           <h1>One profile, one resume</h1>
         </div>
 
-        <div className={studentShowCaseStyles.standardParagraph}>Making multiple cover letters and resumes can be stressful and time consuming on top of your exams and projects.</div>
-        <div className={studentShowCaseStyles.standardParagraph}>The next time you apply to a job, you can relax. UnivJobs eliminates cover letters and multiple resumes so you can get back to your studies.</div>
+        <div className={studentShowCaseStyles.standardParagraph}>Making multiple cover letters and resumes, on top of your exams and projects, can be stressful and time consuming.</div>
+        <div className={studentShowCaseStyles.standardParagraph}>The next time you apply to a job, you can relax. UnivJobs eliminates having to create multiple cover letters and resumes; that way, you can get back to your studies.</div>
 
         <div className={studentShowCaseStyles.regularWhosOn}>
           <div className={studentShowCaseStyles.whosOnContainer}>
@@ -84,7 +88,9 @@ const StudentCallToAction = (props) => {
     <section className={studentCTA.container}>
       <h1>Get started now!</h1>
       <div>Create your profile and get access to student-friendly jobs.</div>
-      <button className={`${landingePageStyles.getStartedButton} ${studentCTA.button}`}>Try it now</button>
+      <button 
+        onClick={() => redirectTo(`${config.appUrl}register`)}
+        className={`${landingePageStyles.getStartedButton} ${studentCTA.button}`}>Try it now</button>
     </section>
   )
 }
@@ -94,7 +100,9 @@ const AltStudentCallToAction = (props) => {
     <section className={altStudentCTA.container}>
       <h1>Start now!</h1>
       <div>Students are already applying to jobs. Create your profile and find meaningful work today.</div>
-      <button className={`${landingePageStyles.getStartedButton} ${studentCTA.button}`}>Sign up</button>
+      <button 
+        onClick={() => redirectTo(`${config.appUrl}register`)}
+        className={`${landingePageStyles.getStartedButton} ${studentCTA.button}`}>Sign up</button>
     </section>
   )
 }
@@ -109,6 +117,11 @@ const StudentBrandRecognition = (props) => {
   truly want to foster the best in their 
   abilities. We use it to find the best talent." </div>
 
+        {
+          true == false 
+            ? ''
+            : ''
+        }
         <div className={recognition.personContainer}>
           <div className={recognition.personImgContainer}>
             <img src={asud}></img>
@@ -159,19 +172,21 @@ export default () =>
       heroTitle="Quickly apply to student and recent grad jobs"
       heroSubTitle="A place where you can find jobs to earn cash and launch your career"
       options={{
-        centerHeroContainer:false,
+        alignment: 'left',
         image: grad,
-        hasPolygon: false,
         buttons: {
           hasButtons: true,
+          mainButtonText: 'Get hired',
+          mainButtonLocation: `${config.appUrl}register`,
           reRouteButtonText: "I'm an employer",
-          reRouteButtonURL: "https://univjobs.ca/register/employer",
-          getStartedURL: "https://app.univjobs.ca/register",
+          reRouteButtonLocation: '/employers',
+          alreadyOnComponentActive: true
         },
         hero: {
           showHeroMask: true,
           color: ''
-        }
+        },
+        overrideClass: landingePageStyles.overrideLandingPage
       }}
     />
     <StudentShowCaseSection/>
@@ -180,35 +195,34 @@ export default () =>
        subHeader= 'Create your profile and get access to student-friendly jobs.'
        buttonText= 'Sign me up'
        alt= {false}
-       url= 'https://app.univjobs.ca/register'
+       location={`${config.appUrl}register`}
     
     />
   
     <section className={features.container}>
       <LeftFeatures
         header="Get invited to jobs by employers"
-        paragraphOne="Not receiving updates can cause anxiety."
-        paragraphTwo='We let employers invite you to a job and let you build meaningful connections, fast.'
+        paragraphOne="Your next job is right around the corner."
+        paragraphTwo='We encourage employers to invite you to jobs and let you build meaningful connections, fast.'
         picture= {featureOneImage}
       />
 
       <RightFeatures
         header= 'Track all your job applications'
-        paragraphOne= 'Going to career fairs can be time-consuming and costly, especially when you have limited time and budget.'
-        paragraphTwo= "UnivJobs can reduce the anxiety by showing the 'progress' of your job applications whether you're being considered, whether you're invited for an interview or whether you get hired."
+        paragraphOne= {`Going to career fairs can be time-consuming and costly, especially when you have limited time and budget.`}
+        paragraphTwo= {`UnivJobs can reduce this anxiety by showing you the "progress" of your job applications whether you're being considered, whether you're invited for an interview or whether you get hired.`}
         picture={featureTwoImage}
       />
     </section>
 
-      <CallToAction
-       header= 'Start now!'
-       subHeader= 'Students are already applying to jobs. Create your profile and find meaningful work today.'
-       buttonText= 'Try it now'
-       alt= {true}
-       url= 'https://app.univjobs.ca/register'
+    <AltStudentCallToAction/>
+
+    {
+      "Asud signed off = true" === "Asud signed off = false"
+        ? <StudentBrandRecognition/>
+        : <Slidy/>
+    }
     
-    />
-    <StudentBrandRecognition/>
     <Backers/>
   </div>
   

@@ -17,6 +17,9 @@ import EmployerReviews from '../components/EmployerReviews'
 
 import styles from '../styles/Pricing.module.css'
 
+import config from '../config' 
+import { redirectTo } from '../helpers'
+
 
 const ULogo = () => {
   return (
@@ -44,7 +47,7 @@ const Plan = (props) => {
       borderTop: `solid 6px ${props.headerColor}`
     }} className={styles.plan}>
       <h3 className={styles.planTitle}>{props.title}</h3>
-
+        <p style={{textAlign: 'center'}}>{props.subTitle}</p>
       
         {
 
@@ -55,6 +58,10 @@ const Plan = (props) => {
           props.price 
             ? <div className={styles.priceContainer}>
                 <div className={styles.priceFlex}>
+                  <div style={{color: 'red'}}>$</div>
+                  <div className={styles.price}><del style={{color: 'red'}}>100</del></div>
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+
                   <div>$</div>
                   <div className={styles.price}>{props.price}</div>
                 </div>
@@ -68,7 +75,12 @@ const Plan = (props) => {
                 </div>
                 
                 <Features features={props.features}/>
-                <button className={`${styles.planButton} drift-open-chat`}>{props.buttonText}</button>
+                <button onClick={props.onClick} className={`${styles.planButton} drift-open-chat`}>{props.buttonText}</button>
+                <div style={{
+                  fontSize: '16px',
+                  marginTop: '12px',
+                  textAlign: 'center'
+                }}>or chat with us below (bottom-right)</div>
               </div>
         }
         
@@ -82,9 +94,12 @@ const Plans = (props) => {
       <h1>SIMPLE PLANS FOR EVERYONE</h1>
       <div className={styles.planSubTitle}>Choose the plan that works for you. Our pricing is flexible so you can pay for exactly what you need.</div>
 
+      
       <div className={styles.planCards}>
+    
         <Plan 
           title={'Pay per posting'}
+          subTitle={'Introductory offer'}
           price={'20'}
           headerColor={'#0cc9e8'}
           features={
@@ -100,14 +115,11 @@ const Plans = (props) => {
             ]
           }
           buttonText={'Get started - $20'}
-          onClick={() => {
-            if ( typeof window !== 'undefined') {
-              window.location.href = "https://app.univjobs.ca/register/employer"
-            }
-          }}
+          onClick={() => redirectTo(`${config.appUrl}register/employer`)}
         />
         <Plan 
           title={'Enterprise'}
+          subTitle={undefined}
           price={undefined}
           headerColor={'#03d597'}
           features={[
@@ -115,10 +127,15 @@ const Plans = (props) => {
             'Become a member of the Early Adopters Program'
           ]}
           buttonText={'Request a demo'}
+          onClick={() => {
+            if (typeof window !== undefined) {
+              window.location.href = 'mailto:contact@univjobs.ca?Subject=Enterprise Inquiry'
+            }
+          }}
         />
       </div>
 
-      <div className={styles.disclaimer}>No setup or monthly fees.</div>
+      <div className={styles.disclaimer}>No setup or hidden fees.</div>
 
     </section>
   )
@@ -143,55 +160,6 @@ class Pricing extends React.Component {
     super();
   }
 
-  componentDidMount () {
-    let loadingDrift;
-    var DRIFT_CHAT_SELECTOR = '.drift-open-chat'
-
-    function forEachElement(selector, fn) {
-      var elements = document.querySelectorAll(selector);
-      for (var i = 0; i < elements.length; i++)
-        fn(elements[i], i);
-    }
-
-    function openSidebar(driftApi, event) {
-      event.preventDefault();
-      driftApi.sidebar.open();
-      return false;
-    }
-
-    function loadDrift () {
-      console.log("[Drift]: Attempting to load Drift.");
-
-      if (typeof window !== undefined) {
-        if (window.drift) {
-          window.drift.on('ready', function(api) {
-            var handleClick = openSidebar.bind(this, api)
-            forEachElement(DRIFT_CHAT_SELECTOR, function(el) {
-              el.addEventListener('click', handleClick);
-            });
-            console.log("[Drift]: Drift loaded [via ready state]");
-            clearInterval(loadingDrift);
-          });
-
-          if (window.drift.api) {
-            var handleClick = openSidebar.bind(this, window.drift.api)
-            forEachElement(DRIFT_CHAT_SELECTOR, function(el) {
-              el.addEventListener('click', handleClick);
-            });
-            console.log("[Drift]: Drift loaded [via api]");
-            clearInterval(loadingDrift);
-          }
-        }
-      }
-
-      console.log("[Drift]: Trying again in 1 second.");
-    }
-    
-    loadingDrift = setInterval(loadDrift, 1000);
-
-
-  }
-
   render () {
     return (
       <div>
@@ -212,6 +180,7 @@ class Pricing extends React.Component {
           subHeader={'Students are already applying to jobs. Post a job to over 50 post-secondary schools in Ontario.'}
           buttonText={'Start'}
           alt={true}
+          location={`${config.appUrl}register`}
         />
       </div>
     )

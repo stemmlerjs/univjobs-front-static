@@ -2,7 +2,7 @@ import path from 'path';
 import React from 'react';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
-import config from '../config';
+import * as config from '../config';
 
 const getSchemaOrgJSONLD = ({
   isBlogPost,
@@ -73,16 +73,16 @@ const getSchemaOrgJSONLD = ({
 };
 
 const SEO = ({ postData, postImage, isBlogPost }) => {
-  const postMeta = postData.frontmatter || {};
+  const postMeta = postData || {};
 
   const title = postMeta.title || config.title;
   const description =
     postMeta.description || postData.excerpt || config.description;
   const image = `${config.url}${postImage}` || config.image;
   const url = postMeta.slug
-    ? `${config.url}${path.sep}${postMeta.slug}`
+    ? `${config.url}${postMeta.slug}`
     : config.url;
-  const datePublished = isBlogPost ? postMeta.datePublished : false;
+  const datePublished = isBlogPost ? postMeta.date : false;
 
   const schemaOrgJSONLD = getSchemaOrgJSONLD({
     isBlogPost,
@@ -110,7 +110,6 @@ const SEO = ({ postData, postImage, isBlogPost }) => {
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
-      <meta property="fb:app_id" content={config.fbAppID} />
 
       {/* Twitter Card tags */}
       <meta name="twitter:card" content="summary_large_image" />

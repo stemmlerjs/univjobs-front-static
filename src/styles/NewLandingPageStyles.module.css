@@ -1,0 +1,190 @@
+.container {
+  position: relative;
+  background: linear-gradient(90deg, #0a26ca, #1ae8e7);
+  min-height: calc(87vh - 50px) !important;
+  justify-content: center;
+  align-items: center;
+  margin: 0 !important;
+}
+
+.title {
+  font-size: 2.5em;
+  font-weight: bold;
+  line-height: 1.2em;
+  color: white;
+}
+
+.subTitle {
+  font-size: 24px;
+  color: #d2eaff;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+.imageOrColour {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  z-index: 50;
+}
+
+.mask {
+  background: linear-gradient(90deg, #0022de, #00fff3);
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 51;
+  opacity: .86;
+}
+
+.darkMask {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 51;
+  opacity: .86;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.content {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 52;
+  width: 50%;
+  max-width: 653px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 15%;
+}
+
+.centeredContent {
+  margin: 0 auto;
+}
+
+.getStartedButton {
+  background: #0dd4d2;
+  border: none;
+  border-radius: 60px;
+  color: white;
+  font-size: 20px;
+  padding: 4px;
+  padding-left: 20px;
+  padding-right: 22px;
+  font-weight: 500;
+  transition: 0.2s ease-out;
+  font-family: 'Roboto', sans-serif;
+  outline: none;
+  cursor: pointer;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  min-width: 193px;
+  text-align: center;
+  min-height: 51px;
+}
+
+.getStartedButton:hover {
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, .2);
+}
+
+.reRouteButton {
+  border: none;
+  border-radius: 60px;
+  color: white;
+  font-size: 20px;
+  padding: 4px;
+  padding-left: 20px;
+  padding-right: 22px;
+  font-weight: 500;
+  background: none;
+  border: solid 2px white;
+  transition: 0.2s ease-out;
+  outline: none;
+  cursor: pointer;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  min-width: 193px;
+  text-align: center;
+  min-height: 51px;
+}
+
+.reRouteButton:hover {
+  background: #fbfbfb;
+  color: #0ac1e8;
+  font-weight: 700;
+  letter-spacing: .6px;
+  outline: none;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 12px;
+}
+
+.ctaContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.alreadyOn {
+  font-size: 1em;
+  color: #fff;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.alreadyOn span {
+  cursor: pointer;
+  color: #0dd4d2;
+  font-weight: bold;
+}
+
+@media (max-width: 750px) {
+  .ctaContainer {
+    flex-direction: column;
+  }
+  .content {
+    width: 100%;
+    margin: 0;
+    padding: 2em;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .buttonContainer {
+    margin-bottom: 1em;
+  }
+
+  .buttonContainer {
+    flex-direction: column-reverse;
+  }
+
+  .alreadyOn {
+    max-width: 175px;
+    padding-bottom: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 4vh;
+  }
+  .subTitle {
+    font-size: 2.4vh;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

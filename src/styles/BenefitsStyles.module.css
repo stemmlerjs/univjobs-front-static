@@ -44,6 +44,17 @@
 
 }
 
+@media (max-width: 600px) {
+    .container {
+            background: #fff;
+    /* padding: 3em; */
+    padding-bottom: 1em;
+    padding-top: 1em;
+    padding-left: 0em;
+    padding-right: 0em;
+    }
+}
+
 icons {
     width: 100px !important;
     height: 100px;

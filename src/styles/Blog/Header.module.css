@@ -13,8 +13,6 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 1em;
-    padding-left: 3em;
-    padding-right: 3em;
 }
 .navItem {
     margin-right: 2em;
@@ -66,4 +64,46 @@
 
 .navItem:hover .subList {
     display: flex;
+}
+
+.mobileCategoriesNav {
+
+
+}
+
+.mobileCategoryHeader {
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 1.5em;
+}
+
+.mobileCategoryListContainer {
+     overflow: hidden;
+    height: 0px;
+    transition: 0.2s ease-in;
+}
+
+.open {
+    height: auto !important;
+}
+
+.mobileCategoryListParent {
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+.parentTitle {
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    color: #030303;
+}
+
+.childTitle {
+    color: grey;
+    cursor: pointer;
+    margin-top: .4em;
+    display: block;
+    font-size: 18px;
+    text-decoration: none;
 }

@@ -1,81 +1,146 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import landingePageStyles from '../styles/LandingPageStyles.module.css'
+import styles from '../styles/NewLandingPageStyles.module.css'
 
-class LandingPage extends React.Component {
-    constructor () {
-      super();
-      this.state = {
-      };
+import config from '../config'
+import { redirectTo } from '../helpers'
+
+function shouldShowMask (options) {
+  if (options.hero) {
+    if (options.hero.showHeroMask) {
+      return styles.mask;
     }
 
-    render = () => {
-      return (
-        <section style={{ marginTop: '0px !important'}} className={landingePageStyles.backgroundFallback}>
-          <div style={{ backgroundImage: `url(${this.props.options.image})`, backgroundColor: this.props.options.hero.color }} className={landingePageStyles.hero}></div>
-          <div className={this.props.options.hero.showHeroMask ? landingePageStyles.heroMask : landingePageStyles.darkMask}></div>
-          <div className={this.props.options.centerHeroContainer ? landingePageStyles.centeredHeroContainer : landingePageStyles.heroContainer}>
-            <h1 className={landingePageStyles.title}>{this.props.heroTitle}</h1>
-            <div className={landingePageStyles.subTitle}>{this.props.heroSubTitle}</div>
-    
-          { this.props.options.buttons.hasButtons ? 
-            <div className={this.props.options.centerHeroContainer ? landingePageStyles.centeredCtaContainer : landingePageStyles.ctaContainer}>
-              <div className={landingePageStyles.buttonContainer}>
-                <a 
-                  href={this.props.options.buttons.getStartedURL}
-                   className={landingePageStyles.getStartedButton}
-                >
-                  GET STARTED
-                </a>
-               
-                <div className={landingePageStyles.alreadyOn}>Already on Univjobs? <a className={landingePageStyles.alreadyOnButton} href="https://app.univjobs.ca/join">Sign in.</a></div>
-              </div>
-              <div className={this.props.options.centerHeroContainer ? landingePageStyles.centeredButtonContainer : landingePageStyles.buttonContainer}>
-                <a 
-                  href={this.props.options.buttons.reRouteButtonURL}
-                  className={landingePageStyles.reRouteButton}>{this.props.options.buttons.reRouteButtonText}
-                </a>
-              </div>
-            </div> : ''
-          }
-
-          </div>
-          { this.props.options.hasPolygon ?
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 70" preserveAspectRatio="none">
-                <polygon fill="white" points="0,200 200,0 200,200"></polygon>
-              </svg>
-            : '' 
-          }
-        </section>
-      )
+    if (options.hero.showDarkMask) {
+      return styles.darkMask;
     }
+  }
+
+  return '';
+}
+const LandingPageButtons = ({ buttons }) => {
+  console.log("landing page buttons", buttons)
+  return (
+    <div className={styles.ctaContainer}>
+      <div className={styles.buttonContainer}>
+        <button
+          className={styles.getStartedButton}
+          onClick={() => redirectTo(buttons.mainButtonLocation)}>
+          {buttons.mainButtonText}
+        </button>
+        
+        {
+          buttons.alreadyOnComponentActive
+            ? <div className={styles.alreadyOn}>Already on Univjobs? 
+                <span 
+                  onClick={() => redirectTo(`${config.appUrl}login`)}
+                > Sign in.</span>
+              </div>
+            : ''
+        }
+
+      </div>
+      {
+        buttons.reRouteButtonText && buttons.reRouteButtonLocation
+          ? <div className={styles.buttonContainer}>
+              <button 
+                className={styles.reRouteButton}
+                onClick={() => redirectTo(buttons.reRouteButtonLocation)}>
+                {buttons.reRouteButtonText}
+            </button>
+            </div>
+          : ''
+      }
+    </div>
+  )
 }
 
+LandingPageButtons.propTypes = {
+  buttons: PropTypes.shape({
+    mainButtonText: PropTypes.string,
+    mainButtonLocation: PropTypes.string,
+    reRouteButtonText: PropTypes.string,
+    reRouteButtonLocation: PropTypes.string,
+    alreadyOnComponentActive: PropTypes.bool,
+  })
+}
 
-/**
- * Variables for options:
- *    heroTitle="Early access to young talent from any post-secondary school"
- *     heroSubTitle="A network of affordable qualified students for your growing team"
- *     options={{
- *        centerHeroContainer:true,
- *        image: gotJob,
- *        hasPolygon: false,
- *         buttons: {
- *          hasButtons: true,
- *          reRouteButtonText: "I'm a student",
- *        },
- *        hero: {
- *          showHeroMask: false,
- *          color: '#555555'
- *        }
- *      }}
- *   
- */
-LandingPage.defaultProps = {
-  heroTitle: '',
-  heroSubTitle: '',
-  options: {}
- 
-};
+const LandingPageContent = ({ title, subTitle, alignment, buttons }) => {
+  return (
+    <div className={alignment == "center" ? `${styles.content} ${styles.centeredContent}` : styles.content }>
+      <h1 className={styles.title}>{ title }</h1>
+      {
+        subTitle
+          ? <div className={styles.subTitle}>{subTitle}</div>
+          : ''
+      }
 
-export default LandingPage
+      {
+        buttons
+          ? <LandingPageButtons buttons={buttons}/>
+          : ''
+      }
+    </div>
+  )
+}
+
+LandingPageContent.propTypes = {
+  title: PropTypes.string,
+  subTitle: PropTypes.string,
+  alignment: PropTypes.string,
+  buttons: PropTypes.shape({
+    mainButtonText: PropTypes.string,
+    mainButtonLocation: PropTypes.string,
+    reRouteButtonText: PropTypes.string,
+    reRouteButtonLocation: PropTypes.string,
+    alreadyOnComponentActive: PropTypes.bool,
+  })
+}
+
+class NewLandingPage extends React.Component {
+  super() {}
+
+  render () {
+    let settings = {
+      options: {
+        alignment: 'left',
+        centerHeroContainer:true,
+        image: null,
+        hasPolygon: false,
+        buttons: {
+          alreadyOnComponentActive: false
+        },
+        hero: {
+          showHeroMask: false,
+          showDarkMask: false,
+          color: '#555555'
+        },
+        overrideClass: null
+      }
+    }
+
+    settings = Object.assign({}, settings, this.props);
+
+    return (
+      <div className={styles.container}>
+        <div  
+          style={{ 
+            backgroundImage: `url(${settings.options.image})`, 
+            backgroundColor: settings.options.hero ? settings.options.hero.color : '' }}  
+          className={styles.imageOrColour}>
+          <div className={shouldShowMask(settings.options)}></div>
+          <LandingPageContent
+            title={settings.heroTitle}
+            subTitle={settings.heroSubTitle}
+            buttons={settings.options.buttons}
+            alignment={settings.options.alignment}
+          />
+        </div>
+      </div>
+    )
+  }
+}
+
+export default NewLandingPage

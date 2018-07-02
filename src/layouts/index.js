@@ -5,6 +5,9 @@ import Helmet from 'react-helmet'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
+import config from '../config'
+console.log(config)
+
 const Layout = ({ children, data }) => (
   <div>
     <Helmet
@@ -17,11 +20,11 @@ const Layout = ({ children, data }) => (
       meta={[
         // Server side rendering meta data
         { property: "fb:app_id" , content: "1897052653882765" },
-        { property: "og:title" ,  content: "<%= title %>" },
-        { property: "og:description" , content: "<%= description %>" },
-        { property: "og:type" , content: "<%= type %>" },
-        { property: "og:url" , content: "<%= url %>" },
-        { property: "og:image" , content: "<%= image %>" },
+        { property: "og:title" ,  content: "Univjobs | Simplifying hiring post-secondary students" },
+        { property: "og:description" , content: "A place where you can find jobs to earn cash and launch your career." },
+        { property: "og:type" , content: "website" },
+        { property: "og:url" , content: config.url },
+        { property: "og:image" , content: `${config.url}${config.logo}` },
         { property: "og:image:type" , content: "image/png" },
         { property: "og:image:width" , content: "200" },
         { property: "og:image:height" , content: "200" },
@@ -31,7 +34,7 @@ const Layout = ({ children, data }) => (
 
         // SEO Keywords
         { name:"keywords", content:"univjobs, studentjobs, internship, part-time work" }, 
-        { name:"author", content:"UnivJobs Team" }
+        { name:"author", content: "UnivJobs Team" }
       ]}
 
       /**

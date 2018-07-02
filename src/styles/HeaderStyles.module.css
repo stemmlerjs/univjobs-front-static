@@ -1,71 +1,71 @@
 .container {
-    position: fixed;
-    z-index: 100;
-    width: 100%;
-    background: linear-gradient(90deg,#022ed4,#0ff3ee);
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -ms-flex-align: center;
-    align-items: center;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    /* padding: 13px 3%; */
-    top: 0px;
-    padding-left: 3%;
-    padding-right: 3%;
-    padding-top: 13px;
-    padding-bottom: 13px;
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  background: linear-gradient(90deg, #022ed4, #0ff3ee);
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  /* padding: 13px 3%; */
+  top: 0px;
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  box-shadow: 0px 3px 25px rgba(46, 46, 46, 0.5);
+  /* border-bottom: solid 1px rgba(247, 247, 247, 0.4); */
 }
 
 .univjobsLogo {
-height: 38px;
-    margin: 0px;
-    cursor: pointer;
+  height: 38px;
+  margin: 0px;
+  cursor: pointer;
 }
 
 .logoContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.navItems {
-
-}
+.navItems {}
 
 .navItems a {
-    color: #fff;
-    text-transform: uppercase;
-    margin-left: 2em;
-    font-size: 17px;
-    font-weight: 500;
-    letter-spacing: .5px;
-    transition: .1s ease-out;
-    position: relative;
-    text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  margin-left: 2em;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: .5px;
+  transition: .1s ease-out;
+  position: relative;
+  text-decoration: none;
+  font-weight: 300;
 }
-
 .navItems a:hover {
-    color: white;
+  color: white;
 }
 
 .navItems a:before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #fff;
-    visibility: hidden;
-    -ms-transform: scaleX(0);
-    transform: scaleX(0);
-    transition: all .2s ease-in 0s;
-    margin-bottom: -3px;
-    border-radius: 10px;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  visibility: hidden;
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
+  transition: all .2s ease-in 0s;
+  margin-bottom: -3px;
+  border-radius: 10px;
 }
 
 .navItems a:hover:before {
@@ -74,132 +74,140 @@ height: 38px;
   transform: scaleX(1);
 }
 
+.overlay:before {
+    height: 0px !important;
+}
+
+
 .signInButton {
-display: inline-block;
-    font-size: 16px;
-    color: #2643a7;
-    border: 3px solid #2643a7;
-    padding: 6px;
-    padding-left: 2em;
-    padding-right: 2em;
-    margin-left: 11px;
-    font-weight: 500;
-    cursor: pointer;
-    margin-left: 2em;
-    transition: .2s ease-out;
-    font-weight: bold;
+  display: inline-block;
+  font-size: 16px;
+  color: #2643a7;
+  border: 3px solid #2643a7;
+  padding: 6px;
+  padding-left: 2em;
+  padding-right: 2em;
+  margin-left: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-left: 2em;
+  transition: .2s ease-out;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .signInButton:hover {
-    background: #2643a7;
-    color: white;
-    font-weight: 700;
-    letter-spacing: .6px;
+  background: #2643a7;
+  color: white;
+  font-weight: 700;
+  letter-spacing: .6px;
+  text-decoration: none;
 }
 
 .burgerMenuNavItem {
   display: none;
 }
 
-.navItem {
-
-}
+.navItem {}
 
 .burgerMenu {
-    color: #fff;
-    margin-right: 20px;
-    font-size: 1.7em;
-    cursor: pointer;
-    position: relative;
-    z-index: 99;
+  color: #fff;
+  margin-right: 20px;
+  font-size: 1.7em;
+  cursor: pointer;
+  position: relative;
+  z-index: 99;
 }
 
 .mobileNavOverlay {
-    position: fixed;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-        background: #12d6ea;
-    top: 0px;
-    height:100%;
-    transition: height 0.25s ease-in;
-    overflow:hidden;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background: #12d6ea;
+  top: 0px;
+  height: 100%;
+  transition: height 0.25s ease-in;
+  overflow: hidden;
 }
 
 .overlayClosed {
   height: 0% !important;
 }
 
-.bar1, .bar2, .bar3 {
-    width: 35px;
-    height: 5px;
-    background-color: #fff;
-    margin: 6px 0;
-    transition: 0.4s;
-    cursor: pointer;
-    position: relative;
-    z-index: 99;
+.bar1,
+.bar2,
+.bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #fff;
+  margin: 6px 0;
+  transition: 0.4s;
+  cursor: pointer;
+  position: relative;
+  z-index: 99;
 }
 
 /* Rotate first bar */
+
 .change1 {
-    -webkit-transform: rotate(-45deg) translate(-9px, 6px) !important;
-    transform: rotate(-45deg) translate(-9px, 6px) !important;
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px) !important;
+  transform: rotate(-45deg) translate(-9px, 6px) !important;
 }
 
 /* Fade out the second bar */
+
 .change2 {
-    opacity: 0 !important;
+  opacity: 0 !important;
 }
 
 /* Rotate last bar */
+
 .change3 {
-    -webkit-transform: rotate(45deg) translate(-8px, -8px)  !important;
-    transform: rotate(45deg) translate(-8px, -8px)  !important;
+  -webkit-transform: rotate(45deg) translate(-8px, -8px) !important;
+  transform: rotate(45deg) translate(-8px, -8px) !important;
 }
 
 .mobileNavOverlayOptionsContainer {
-display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    padding: 2em;
-    font-family: 'Roboto', sans-serif;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 2em;
+  font-family: 'Roboto', sans-serif;
 }
 
 .overlaySection {
   text-transform: none !important;
   font-weight: bold;
   font-size: 30px;
-  margin-top:2em;
+  margin-top: 2em;
+  color: #00ffd7;
 }
 
 .overlayItem {
-    font-size: 1em !important;
-    padding: 5px !important;
-    font-size: 24px !important;
-    margin-left:0px !important;
-    text-transform: none !important;
+  font-size: 1em !important;
+  padding: 5px !important;
+  font-size: 30px !important;
+  margin-left: 0 !important;
+  text-transform: none !important;
 }
 
 .overlayItemMain {
-    font-size: 1em !important;
-    padding: 5px !important;
-    font-size: 30px !important;
-    margin-left:0px !important;
-    text-transform: none !important;
+  font-size: 1em !important;
+  padding: 5px !important;
+  font-size: 30px !important;
+  margin-left: 0px !important;
+  text-transform: none !important;
 }
 
-
-
-@media (max-width: 600px) {
-    .navItem {
-      display: none;
-    }
-    .signInButton {
-      display: none;
-    }
-
-    .burgerMenuNavItem {
-      display: block;
-    }
+@media (max-width: 700px) {
+  .navItem {
+    display: none;
+  }
+  .signInButton {
+    display: none;
+  }
+  .burgerMenuNavItem {
+    display: block;
+  }
 }
