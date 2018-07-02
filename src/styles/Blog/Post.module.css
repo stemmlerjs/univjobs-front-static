@@ -7,7 +7,7 @@ max-width: 1200px;
     padding-left: 3em;
     padding-right: 3em; */
     /* text-align: left; */
-        text-align: left;
+text-align: center;
 }
 
 .postContainer {
@@ -16,13 +16,13 @@ max-width: 1200px;
     display: inline-flex;
     -ms-flex-direction: column;
     flex-direction: column;
-       margin: 13px;
-    border: 1px solid #cacaca;
+    margin: 13px;
+    /* border: 1px solid #cacaca; */
     margin-bottom: 2em;
-    border-radius: 23px;
-        min-height: 456px;
+    /* border-radius: 23px; */
+    min-height: 456px;
     min-width: 342px;
-        box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
+    box-shadow: 0 14px 28px 0 hsla(0, 0%, 56%, 0.2);
 }
 
 .imageContainer {
@@ -36,8 +36,6 @@ max-width: 1200px;
     height: 218px;
     background-position-x: 50%;
     background-position-y: 50%;
-    border-top-right-radius: 19px;
-    border-top-left-radius: 19px;
 }
 
 .textContainer {
@@ -57,7 +55,7 @@ max-width: 1200px;
 }
 
 .timeToRead {
-    
+    font-size: 14px !important;
 }
 
 .readButton {
@@ -68,7 +66,6 @@ max-width: 1200px;
     padding: 10px;
     padding-left: 20px;
     padding-right: 20px;
-    border-radius: 6px;
     cursor: pointer;
     border-radius: #17c2e3;
     border: solid 1px #0dd4d2;

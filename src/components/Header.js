@@ -6,6 +6,32 @@ import styles from "../styles/HeaderStyles.module.css";
 import config from '../config'
 import { redirectTo } from '../helpers'
 
+const Overlay = ({ isOpen }) => {
+  return (
+    <div className={isOpen
+      ? styles.mobileNavOverlay
+      : `${styles.mobileNavOverlay} ${styles.overlayClosed}`}>
+
+      {
+        /**s
+         * Overlay options
+         */
+      }
+      <div className={styles.mobileNavOverlayOptionsContainer}>
+        <a className={`${styles.overlayItemMain} ${styles.overlay}`} href={`${config.appUrl}login`}>Login</a>
+        <a className={`${styles.overlayItemMain} ${styles.overlay}`} href={`${config.appUrl}register`}>Register</a>
+
+        <div className={styles.overlaySection}>Employers</div>
+        <a className={`${styles.overlayItem} ${styles.overlay}`} href="/about">About</a>
+        <a className={`${styles.overlayItem} ${styles.overlay}`} href="/blog">Blog</a>
+        <a className={`${styles.overlayItem} ${styles.overlay}`} href="mailto:contact@univjobs.ca?Subject=Inquiry%20">Contact</a>
+        <a className={`${styles.overlayItem} ${styles.overlay}`} href="/pricing">Pricing</a>
+        <a className={`${styles.overlayItem} ${styles.overlay}`} href="/blog/categories/employers">Tips</a>
+      </div>
+    </div>
+  )
+}
+
 class Header extends React.Component {
   constructor () {
     super();
@@ -66,30 +92,9 @@ class Header extends React.Component {
 
         </div>
 
-        <div className={this.state.menuOpen 
-          ? styles.mobileNavOverlay
-          : `${styles.mobileNavOverlay} ${styles.overlayClosed}`}>
-
-          {
-            /**s
-             * Overlay options
-             */
-          }
-          <div className={styles.mobileNavOverlayOptionsContainer}>
-
-            <a className={styles.overlayItemMain} href={`${config.appUrl}login`}>Sign in</a>
-            <a className={styles.overlayItemMain} href={`${config.appUrl}register`}>Register</a>
-            <a className={styles.overlayItemMain} href="/blog">Blog</a>
-
-            <div className={styles.overlaySection}>For Employers</div>
-            <a className={styles.overlayItemMain} href={`${config.appUrl}login`}>Sign in</a>
-            <a className={styles.overlayItemMain} href={`${config.appUrl}register/employers`}>Register</a>
-            <a className={styles.overlayItem} href="/pricing">Pricing</a>
-            <a className={styles.overlayItem} href="mailto:contact@univjobs.ca?Subject=Inquiry%20">Contact</a>
-            <a className={styles.overlayItem} href="/about">About</a>
-            <a className={styles.overlayItem} href="/blog/categories/employers">Tips</a>
-          </div>
-        </div>
+        <Overlay
+          isOpen={this.state.menuOpen}
+        />
       </div>
     </div>
   )

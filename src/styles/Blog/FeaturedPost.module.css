@@ -4,12 +4,9 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    max-width: 80%;
     margin: 0 auto;
-    border-radius: 12px;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
-    max-width: 1270px;
-    width: 80%;
+    max-width: 1079px;
     padding: 2em;
     position: relative;
         display: flex;
@@ -57,7 +54,6 @@
     background-color: #000;
     opacity: .3;
     z-index: 50;
-        border-radius: 12px;
 }
 
 .readMore {
@@ -83,7 +79,6 @@
 
 @media (max-width: 850px) {
     .container {
-        width: 90%;
         margin: 0 auto;
         /* padding-bottom: 16em; */
         margin-bottom: 2em;

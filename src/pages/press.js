@@ -14,6 +14,8 @@ import LandingPage from '../components/LandingPage'
 import CountUp from 'react-countup';
 
 import Divider from '../components/Divider'
+import Mentions from '../components/press/Mentions'
+import Founders from '../components/press/Founders'
 
 import styles from '../styles/Press.module.css'
 
@@ -85,98 +87,13 @@ const Milestones = (props) => {
   )
 }
 
-const Founders = () => {
-  return (
-    <section>
-      <h1>Founders</h1>
-
-      <div className={styles.founderContainer}>
-
-        <div><img style={{paddingRight: '1em'}} src={charles}/></div>
-
-        <div>
-          <h3>Charles Javelona</h3>
-          <p>Originally from the Philippines, Charles
-              previously worked at Scotiabank
-              Innovation Factory. An aspiring
-              entrepreneur, Charles has an impressive
-              track record for innovation and making
-              the impossible happen.
-          </p>
-          <p>
-              From starting a Toastmasters Club in
-Oakville and having recognized a need for
-improved communication capabilities
-among students to braving the world of
-entrepreneurship, Charles simply views
-obstacles as challenges to be overcome.
-          </p>
-        </div>
-      </div>
-
-      <div className={styles.founderContainer}>
-        <div>
-          <h3>Khalil Stemmler</h3>
-          <p>Prior to becoming a founding member
-of the Univjobs team, Khalil worked in
-software development at IBM and
-Pinnaca while attending school at
-both Brock University and Sheridan
-College.
-          </p>
-          <p>As a Software Architect, Khalil works
-diligently to ensure that the platform is
-scalable, secure, and mobile friendly
-for employers and students.</p>
-        </div>
-
-        <div className={styles.founderContainerRight}><img style={{paddingLeft: '1em'}} src={khalil}/></div>
-      </div>
 
 
-    </section>
-  )
-}
-
-const Mention = (props) => {
-  return (
-    <a className={styles.mention} href={props.link}
-      style={{ textDecoration: 'none'}}
-    >
-      <img src={props.img}/>
-      <div>
-        <div>{props.title}</div>
-        <div className={styles.mentionAuthor}>{props.author}</div>
-      </div>
-    </a>
-  )
-}
-
-const Mentions = () => {
-  return (
-    <section>
-      <h1>Press mentions</h1>
-      <Mention 
-        title={"There's a new way for students to look for jobs in Toronto"} 
-        img={press1}
-        author={'Blog Toronto'}
-        link={'https://www.blogto.com/tech/2018/04/students-jobs-toronto/'}
-      />
-      <Mention 
-        title={"Where do college students in Toronto go to find internships and part-time jobs?"} 
-        img={press2}
-        author={'Info 51'}
-        link={'http://info.51.ca/life/study/2018-04/638154.html'}
-      />
-      <Mention 
-        title={"Univjobs app dedicated to boosting the Oakville job market"} 
-        img={press3}
-        author={'Oakville News'}
-        link={'https://oakvillenews.org/univjobs-boosts-job-opportunities-ontario/'}
-      />
-    </section>
-  )
-}
+/**
+ * Download
+ * 
+ * Download button to download our press kit.
+ */
 
 const Download = () => {
   return (
@@ -184,6 +101,11 @@ const Download = () => {
   )
 }
 
+/**
+ * @class PressPage
+ * @desc Press page describing important details about our company for
+ * the public.
+ */
 
 class PressPage extends React.Component {
   constructor () {
@@ -212,14 +134,70 @@ class PressPage extends React.Component {
           <Divider/>
           <Milestones/>
           <Divider/>
-          <Founders/>
+          <Founders
+            founders={
+              [
+                {
+                  name: 'Charles Javelona',
+                  paragraph1: `Originally from the Philippines, Charles
+              previously worked at Scotiabank
+              Innovation Factory. An aspiring
+              entrepreneur, Charles has an impressive
+              track record for innovation and making
+              the impossible happen.`,
+                  paragraph2: `From starting a Toastmasters Club in
+Oakville and having recognized a need for
+improved communication capabilities
+among students to braving the world of
+entrepreneurship, Charles simply views
+obstacles as challenges to be overcome.`,
+                  image: charles,
+                  isLeftAligned: true
+                },
+                {
+                  name: 'Khalil Stemmler',
+                  paragraph1: `Prior to becoming a founding member
+of the Univjobs team, Khalil worked in
+software development at IBM and
+Pinnaca while attending school at
+both Brock University and Sheridan
+College.`,
+                  paragraph2: `As a Software Architect, Khalil works
+diligently to ensure that the platform is
+scalable, secure, and mobile friendly
+for employers and students.`,
+                  image: khalil,
+                  isLeftAligned: false
+                }
+              ]
+            }
+          />
           <Divider/>
-          <Mentions/>
+          <Mentions
+            mentions={[
+              {
+                title: "There's a new way for students to look for jobs in Toronto",
+                image: press1,
+                author: 'Blog Toronto',
+                link: 'https://www.blogto.com/tech/2018/04/students-jobs-toronto/'
+              },
+              {
+                title: "Where do college students in Toronto go to find internships and part-time jobs?",
+                image: press2,
+                author: 'Info 51',
+                link: 'http://info.51.ca/life/study/2018-04/638154.html'
+              },
+              {
+                title: "Univjobs app dedicated to boosting the Oakville job market",
+                image: press3,
+                author: 'Oakville News',
+                link: 'https://oakvillenews.org/univjobs-boosts-job-opportunities-ontario/'
+              }
+
+            ]}
+          />
           <Download/>
         </Body>
-        
-        
-      
         <CallToAction
           header={'Start Now!'}
           subHeader={'Students are already applying to jobs. Create your profile and find meaningful work today!'}
