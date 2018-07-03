@@ -34,6 +34,7 @@ collections:
     create: true
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "team-member"}
+      - {label: "Title", name: "title", widget: "string", default: 'first-name-here'}
       - {label: Name, name: name, widget: string}
       - {label: Image, name: image, widget: image}
       - {label: Role, name: role, widget: string}

@@ -1,6 +1,7 @@
 ---
 templateKey: 'team-member'
 name: Khalil Stemmler
+title: Khalil Stemmler
 image: /img/about/khalil.png
 role: CTO, Founder
 ---

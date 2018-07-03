@@ -1,8 +1,10 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-import charles from '../img/about/charles-headshot.png'
-import khalil from '../img/about/khalil-headshot.png'
+import charles from '../img/press/charles.png'
+import khalil from '../img/press/khalil.png'
+import judy from '../img/press/judy.png'
+import gurdeep from '../img/press/gurdeep.png'
 
 import press1 from '../img/press/press-1.png'
 import press2 from '../img/press/press-2.png'
@@ -16,6 +18,8 @@ import CountUp from 'react-countup';
 import Divider from '../components/Divider'
 import Mentions from '../components/press/Mentions'
 import Founders from '../components/press/Founders'
+import Advisors from '../components/press/Advisors'
+import Mentors from '../components/press/Mentors'
 
 import styles from '../styles/Press.module.css'
 
@@ -171,6 +175,36 @@ for employers and students.`,
                 }
               ]
             }
+          />
+          <Divider/>
+          <Advisors
+            advisors={[
+              {
+                  name: 'Gurdeep Singh',
+                  paragraph1: `Gurdeep, a graduate from Rotman School of Management, is a start-up growth specialist. 
+                    He has launched businesses from scratch and has grown them to become market leaders.`,
+                  paragraph2: `Some of the start-ups that have benefited from his expertise are inMotive 
+                    (bringing one of the world's most efficient transmission technology for electric vehicles) and GoFetch 
+                    (Canada's leading pet care technology platform, which has recently been acquired).`,
+                  paragraph3: `Gurdeep's passion for scaling start-ups has had him selected into the highly coveted Creative Destruction Lab (CDL) cohort.`,
+                  image: gurdeep,
+                  isLeftAligned: true
+                }
+            ]}
+          />
+          <Divider/>
+          <Mentors
+            mentors={[
+              {
+                  name: 'Judy Lindenbach',
+                  paragraph1: `Judy has held a number of roles as founder and director at companies she helped grow from start to profit.`,
+                  paragraph2: `Judy's expertise includes guiding high-level strategic initiatives to further business development & growth with a special emphasis on Sales, Marketing, 
+                    Talent Acquisition & Management, Policy & Procedure Development, Training Program Design & Delivery.`,
+                  paragraph3: `She is currently a Senior Director of Corporate Partnerships at Haltech Regional Innovation Centre.`,
+                  image: judy,
+                  isLeftAligned: true
+                }
+            ]}
           />
           <Divider/>
           <Mentions

@@ -1,6 +1,7 @@
 ---
 templateKey: 'team-member'
 name: Julio Sueiras
+title: Julio Sueiras
 image: /img/about/julio.png
 role: Devops Engineer
 ---
