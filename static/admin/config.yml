@@ -3,6 +3,7 @@ backend:
   name: github
   repo: stemmlerjs/univjobs-front-static
   branch: master
+  site_domain: 01-staging.univjobs.ca
 
 media_folder: static/img
 public_folder: /img
