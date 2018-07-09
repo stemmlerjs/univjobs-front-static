@@ -4,7 +4,12 @@ import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
 
 const TagsPage = ({
-  data: { allMarkdownRemark: { group }, site: { siteMetadata: { title } } },
+  data: {
+    allMarkdownRemark: { group },
+    site: {
+      siteMetadata: { title },
+    },
+  },
 }) => (
   <section className="section">
     <Helmet title={`Tags | ${title}`} />
@@ -16,13 +21,15 @@ const TagsPage = ({
         >
           <h1 className="title is-size-2 is-bold-light">Tags</h1>
           <ul className="taglist">
-            {group.map(tag => (
-              <li key={tag.fieldValue}>
-                <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
-                  {tag.fieldValue} ({tag.totalCount})
-                </Link>
-              </li>
-            ))}
+            {!!group
+              ? group.map(tag => (
+                  <li key={tag.fieldValue}>
+                    <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+                      {tag.fieldValue} ({tag.totalCount})
+                    </Link>
+                  </li>
+                ))
+              : null}
           </ul>
         </div>
       </div>

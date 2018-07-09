@@ -5,13 +5,21 @@ class NotFoundPage extends React.Component {
     super()
   }
 
+  // componentWillMount () {
+  // }
+
   componentWillMount () {
-    debugger;
-    if (typeof window !== undefined) {
-      if (window.location.href.indexOf('posting') !== -1) {
-        let lastIndexSlash = window.location.href.lastIndexOf("/");
-        let postingSlug = window.location.href.substring(lastIndexSlash + 1);
-        window.location.href = `${config.appUrl}${postingSlug}`
+        if (typeof window !== undefined) {
+      let url = window.location.href;
+
+      if (url.indexOf('posting') !== -1) {
+        let lastIndexSlash = url.lastIndexOf("/");
+        let postingSlug = url.substring(lastIndexSlash + 1);
+
+        if (typeof window !== undefined) {
+          window.location.href = `${config.appUrl}posting/${postingSlug}`
+        }
+        
       }
     }
   }
