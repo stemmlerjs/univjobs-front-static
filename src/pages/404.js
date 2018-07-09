@@ -5,11 +5,8 @@ class NotFoundPage extends React.Component {
     super()
   }
 
-  // componentWillMount () {
-  // }
-
-  componentWillMount () {
-        if (typeof window !== undefined) {
+  componentDidMount () {
+    if (typeof window !== undefined) {
       let url = window.location.href;
 
       if (url.indexOf('posting') !== -1) {
