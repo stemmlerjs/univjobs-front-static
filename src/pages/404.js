@@ -21,7 +21,7 @@ class NotFoundPage extends React.Component {
 
       if (url.indexOf('register/employer')) {
         if (typeof window !== undefined) {
-          window.location.href = `${config.appUrl}register/employer`
+          window.location.href = 'https://univjobs.ca/employers/'
         }
       }
     }
