@@ -17,7 +17,7 @@
 }
 
 .subHeader {
-  font-size: 14px;
+    font-size: 19px;
   color: #a8a8a8;
   margin-bottom: 1em;
   text-transform: capitalize;
@@ -41,6 +41,16 @@ ol,
 li,
 ul {
   font-size: 18px;
+  line-height: 1.7em;
+}
+
+.content blockquote > p {
+      font-weight: bold;
+    font-style: italic;
+  font-size: 30px;
+    color: #a2a2a2;
+    border-left: solid 3px;
+    padding-left: 19px;
 }
 
 @media (max-width: 600px) {
@@ -51,6 +61,6 @@ ul {
   h2,
   h3,
   h4 {
-    font-size: 7vw;
+    font-size: 30px;
   }
 }
