@@ -6,6 +6,9 @@ $primary-teal: #21ADE3;
 // ===== Explore Companies ===========
 // ===================================
 
+.featured-explore-slider-container
+  overflow: hidden;
+
 .featured-explore-company
   display: flex;
   min-height: 280px;
@@ -44,4 +47,74 @@ $primary-teal: #21ADE3;
     background-position: center;
     background-size: cover;
 
+// Companies showcase section
+// @desc Displays a bunch of other non-featured companies
+// that are just within the app and have completed explore
+// profiles.
 
+.companies-showcase-container
+  background: #F9F9F9;
+  text-align: center;
+  padding-top: 3em;
+  padding-bottom: 3em;
+
+  h1
+    color: #6C6C6C;
+    font-weight: normal;
+  
+  p 
+    color: #6C6C6C;
+    opacity: 0.8;
+    max-width: 600px;
+    margin: 0 auto;
+
+  .companies-showcase-items
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    max-width: 1147px;
+    margin: 0 auto;
+    padding-top: 2.5em;
+
+    .company-sc-item
+      max-width: 300px;
+      margin: 13px;
+      margin-bottom: 2em;
+      min-height: 400px;
+      min-width: 342px;
+      box-shadow: 0 14px 28px 0 hsla(0,0%,56%,.2);
+      border-radius: 3px;
+
+      .sc-item-branding
+        height: 140px;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      
+      .learn-more
+        i 
+          padding-left: 10px;
+      
+      .sc-item-logo-container
+        max-width: 75px;
+        margin: 0 auto;
+        height: 55px;
+        position: relative;
+        top: -28px;
+
+        img 
+          border-radius: 4px;
+          border: solid 5px white;
+      
+      h3 
+        font-weight: 300;
+      
+  .cta
+    font-weight: bold;
+    font-family: Roboto;
+    a 
+      color: blue;
+      text-decoration: none;

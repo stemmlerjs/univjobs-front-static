@@ -16,6 +16,12 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: "gatsby-univjobs-api",
+      options: {
+        url: process.env.UNIVJOBS_DATASOURCE_URL,
+      },
+    },
+    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: "UA-101892655-1",

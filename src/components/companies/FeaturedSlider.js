@@ -56,7 +56,7 @@ FeaturedCompanySliderItem.propTypes = {
  */
 
 const FeaturedSlider = ({ companies }) => (
-  <div>
+  <div className="featured-explore-slider-container">
     <Slider {...sliderSettings}>
       { companies.map((c, i) => <FeaturedCompanySliderItem key={i} company={c}/>)}
     </Slider>

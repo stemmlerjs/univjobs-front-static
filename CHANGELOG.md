@@ -5,6 +5,7 @@
 - Added .editorConfig
 - Added .eslint and linting script.
 - Started the explore page for companies.
+- Added the univjobs-datasource-api plugin.
 
 ## [1.0.0] - [2018-07-01]
 ### Added 
