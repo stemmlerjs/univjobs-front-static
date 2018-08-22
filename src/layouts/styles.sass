@@ -8,6 +8,11 @@ $primary-teal: #21ADE3;
 
 .featured-explore-company
   display: flex;
+  min-height: 280px;
+
+  > div
+    width: 50%;
+    text-align: center;
 
   .featured-explore-company-desc
     background: linear-gradient(75deg, $primary-blue, $primary-teal);
@@ -18,24 +23,25 @@ $primary-teal: #21ADE3;
     padding: 2em;
     color: white;
 
-    p
-      font-family: 'Roboto', 'Nunito', 'sans-serif';
-      text-transform: uppercase;
-      letter-spacing: 1.3px;
-      font-weight: bold;
+    div
+      max-width: 320px;
+      text-align: left;
+      margin: 0 auto;
 
-    h2
-      color: white;
-      margin: 0;
-      padding: 0;
+      p
+        font-family: 'Roboto', 'Nunito', 'sans-serif';
+        text-transform: uppercase;
+        letter-spacing: 1.3px;
+        font-weight: bold;
+
+      h2
+        color: white;
+        margin: 0;
+        padding: 0;
       
   .featured-explore-company-image
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-
-  > div
-    width: 50%;
-    text-align: center;
 
 

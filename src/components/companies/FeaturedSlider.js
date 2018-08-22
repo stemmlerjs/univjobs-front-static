@@ -25,9 +25,11 @@ const sliderSettings = {
 const FeaturedCompanySliderItem = ({ company }) => (
   <div className="featured-explore-company">
     <div className="featured-explore-company-desc">
-      <p>Featured Company</p>
-      <h2>{company.companyName}</h2>
-      <div>{company.slogan}</div>
+      <div>
+        <p>Featured Company</p>
+        <h2>{company.companyName}</h2>
+        <div>{company.slogan}</div>
+      </div>
     </div>
     <div className="featured-explore-company-image" style={{
       backgroundImage: `url(${company.brandImageUrl})`
