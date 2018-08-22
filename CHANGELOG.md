@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.1] - [2018-08-22]
+## Added 
+- Added .editorConfig
+- Added .eslint and linting script.
+- Started the explore page for companies.
+
 ## [1.0.0] - [2018-07-01]
 ### Added 
 - Created and finalized the static website and the blog. Next is to setup different environment.

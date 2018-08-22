@@ -1,6 +1,7 @@
 const _ = require('lodash')
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
+const {cssModulesConfig} = require('gatsby-1-config-css-modules');
 
 exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators
@@ -131,3 +132,40 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
     })
   }
 }
+
+/**
+ * Modify the weback config so that we can use 
+ * auto-prefixer with Sass and CSS modules.
+ * https://github.com/gatsbyjs/gatsby/issues/2660
+ */
+
+exports.modifyWebpackConfig = ({config, stage}, options) => {
+  options.sourceMap = true;
+
+  const sassFiles = /\.s[ac]ss$/;
+  const sassModulesFiles = /\.module\.s[ac]ss$/;
+  const sassLoader = `sass?${JSON.stringify(options)}`;
+
+  switch (stage) {
+    case 'develop': {
+      config.removeLoader('sass');
+      config.removeLoader('sassModules');
+
+      config.loader('sass', {
+        test: sassFiles,
+        exclude: sassModulesFiles,
+        loaders: ['style', 'css?sourceMap', sassLoader],
+      });
+
+      config.loader('sassModules', {
+        test: sassModulesFiles,
+        loaders: ['style', `${cssModulesConfig(stage)}&sourceMap=true`, sassLoader],
+      });
+
+      return config;
+    }
+    default: {
+      return config;
+    }
+  }
+};

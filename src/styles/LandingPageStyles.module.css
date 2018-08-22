@@ -1,299 +1,278 @@
 .backgroundFallback {
-    background: linear-gradient(90deg,#0a26ca,#1ae8e7);
-    min-height: calc(87vh - 50px)!important;
-    justify-content: center;
-    align-items: center;
-    margin: 0 !important;
+  background: linear-gradient(90deg, #0a26ca, #1ae8e7);
+  min-height: calc(87vh - 50px) !important;
+  justify-content: center;
+  align-items: center;
+  margin: 0 !important;
 }
 
 /* 
  Initial swoop  */
 
 .backgroundFallback svg {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 224px;
-    z-index: 25;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 224px;
+  z-index: 25;
 }
 
 .hero {
-    min-height: calc(100vh - 50px)!important;
-    position: relative;
-    width: 100%;
-    background-size: cover;
-    background-position: 50%;
-    background-repeat: no-repeat;
-    color: #fff;
-    position: absolute;
-    top: -36px;
+  min-height: calc(100vh - 50px) !important;
+  position: relative;
+  width: 100%;
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  color: #fff;
+  position: absolute;
+  top: -36px;
 }
 
-
 .heroMask {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-size: cover;
-    background-position: 50%;
-    background-repeat: no-repeat;
-    opacity: .86;
-    z-index: 2;
-    background: linear-gradient(90deg,#0022de,#00fff3);
-    top: -86px;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  opacity: .86;
+  z-index: 2;
+  background: linear-gradient(90deg, #0022de, #00fff3);
+  top: -86px;
 }
 
 .darkMask {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-size: cover;
-    background-position: 50%;
-    background-repeat: no-repeat;
-    opacity: .86;
-    z-index: 2;
-    background: rgba(0,0,0,0.5);
-    top: -86px;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  opacity: .86;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.5);
+  top: -86px;
 }
 
 .heroContainer {
-position: relative;
-    z-index: 3;
-    width: 100%;
-    padding-left: 15%;
-    text-align: left;
-    top: 12vh;
-    padding-right: 11em;
-    max-width: 963px;
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  padding-left: 15%;
+  text-align: left;
+  top: 12vh;
+  padding-right: 11em;
+  max-width: 963px;
 }
 
 .centeredHeroContainer {
-    position: relative;
-    z-index: 3;
-    width: 100%;
-    text-align: center;
-    max-width: 47%;
-        top: 4em;
-    margin-left: auto;
-    margin-right: auto
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  text-align: center;
+  max-width: 47%;
+  top: 4em;
+  margin-left: auto;
+  margin-right: auto
 }
 
 .title {
-    font-size: 2.5em;
-    font-weight: bold;
-    line-height: 1.2em;
-    color: white;
+  font-size: 2.5em;
+  font-weight: bold;
+  line-height: 1.2em;
+  color: white;
 }
 
 .subTitle {
-    font-size: 24px;
-    color: #d2eaff;
-    padding-top: 18px;
+  font-size: 24px;
+  color: #d2eaff;
+  padding-top: 18px;
 }
 
 .getStartedButton {
-    background: #0dd4d2;
-    border: none;
-    border-radius: 60px;
-    color: white;
-    font-size: 20px;
-    padding: 4px;
-    padding-left: 20px;
-    padding-right: 22px;
-     font-weight: 500;
-     transition: 0.2s ease-out;
-    font-family: 'Roboto', sans-serif;
-    outline: none;
-    text-decoration: none;
-
+  background: #0dd4d2;
+  border: none;
+  border-radius: 60px;
+  color: white;
+  font-size: 20px;
+  padding: 4px;
+  padding-left: 20px;
+  padding-right: 22px;
+  font-weight: 500;
+  transition: 0.2s ease-out;
+  font-family: 'Roboto', sans-serif;
+  outline: none;
+  text-decoration: none;
 }
 
 .getStartedButton:hover {
-    box-shadow: 0 4px 6px 0 rgba(0,0,0,.2);
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, .2);
 }
 
 .reRouteButton {
-    border: none;
-    border-radius: 60px;
-    color: white;
-    font-size: 20px;
-    padding: 4px;
-    padding-left: 20px;
-    padding-right: 22px;
-    font-weight: 500;
-    background: none;
-    border: solid 2px white;
-    transition: 0.2s ease-out;
-    outline: none;
-    text-decoration: none;
-    margin-bottom: 10px;
-
+  border: none;
+  border-radius: 60px;
+  color: white;
+  font-size: 20px;
+  padding: 4px;
+  padding-left: 20px;
+  padding-right: 22px;
+  font-weight: 500;
+  background: none;
+  border: solid 2px white;
+  transition: 0.2s ease-out;
+  outline: none;
+  text-decoration: none;
+  margin-bottom: 10px;
 }
 
 .reRouteButton:hover {
-background: #fbfbfb;
-    color: #0ac1e8;
-    font-weight: 700;
-    letter-spacing: .6px;
-    outline: none;
+  background: #fbfbfb;
+  color: #0ac1e8;
+  font-weight: 700;
+  letter-spacing: .6px;
+  outline: none;
 }
 
 .ctaContainer {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    margin-top: 20px;
-    justify-content: flex-start;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin-top: 20px;
+  justify-content: flex-start;
 }
 
-
 .centeredCtaContainer {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    margin-top: 20px;
-    align-items: center;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin-top: 20px;
+  align-items: center;
   justify-content: center
 }
 
-
 .buttonContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-right: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 12px;
 }
 
 .centeredButtonContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-right: 12px;
-    margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-right: 12px;
+  margin-bottom: 25px;
 }
 
-
 .buttonContainer button {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .centeredButtonContainer button {
-    cursor: pointer;
-    outline: none;
+  cursor: pointer;
+  outline: none;
 }
 
 .alreadyOn {
-    font-size: 12px;
-    color: white;
-    padding-top: 10px;
+  font-size: 12px;
+  color: white;
+  padding-top: 10px;
 }
 
 .alreadyOn a {
-    cursor: pointer;
-    color: #0dd4d2;
-    font-weight: bold;
-    text-decoration: none;
-
+  cursor: pointer;
+  color: #0dd4d2;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 @media (min-width: 1900px) {
-    .heroContainer {
-        padding-right: 0px;
-    }
+  .heroContainer {
+    padding-right: 0px;
+  }
 }
 
 @media (max-width: 830px) {
-    .darkMask {
-            top: -69px;
-    }
-    .heroMask {
-            top: -86px;
-    }
+  .darkMask {
+    top: -69px;
+  }
+  .heroMask {
+    top: -86px;
+  }
 }
 
 @media (max-width: 900px) {
-    .heroContainer {
+  .heroContainer {
     max-width: 100%;
     padding-right: 15%;
     top: 15vh;
-    }
-    .title {
-      font-size: 1.5em;
-    }
-
-    .ctaContainer {
-        flex-direction: column;
-    }
-
-    .buttonContainer {
-      margin-bottom: 8px;
-    }
-
-    svg {
-      display: none;
-    }
+  }
+  .title {
+    font-size: 1.5em;
+  }
+  .ctaContainer {
+    flex-direction: column;
+  }
+  .buttonContainer {
+    margin-bottom: 8px;
+  }
+  svg {
+    display: none;
+  }
 }
 
 @media (max-width: 735px) {
-    /* .heroMask {
+  /* .heroMask {
         top: -69px;
     } */
 }
 
 @media(max-width: 430px) {
-    .hero {
-        /* min-height: calc(100vh - 0px)!important; */
-    }
-
-    .title {
-        font-size: 25px;
-    }
-
+  .hero {
+    /* min-height: calc(100vh - 0px)!important; */
+  }
+  .title {
+    font-size: 25px;
+  }
   .subTitle {
-        color: #d2eaff;
-        padding-top: 0px;
-    }
-
-    .centeredCtaContainer {
-        flex-direction: column;
-      }
-    
-
-    .centeredHeroContainer {    
-      max-width: 75%;
-    }
-
-    .darkMask {
-      top: -35px;
-    }
-
-    .heroMask {
-        /* top: -17px; */
-    }
+    color: #d2eaff;
+    padding-top: 0px;
+  }
+  .centeredCtaContainer {
+    flex-direction: column;
+  }
+  .centeredHeroContainer {
+    max-width: 75%;
+  }
+  .darkMask {
+    top: -35px;
+  }
+  .heroMask {
+    /* top: -17px; */
+  }
 }
 
 @media (max-width: 375px) {
   .hero {
     /* min-height: calc(104vh - 0px)!important; */
   }
-
   .title {
     font-size: 1em;
   }
-
   .subTitle {
     color: #d2eaff;
     padding-top: 0px;
   }
-
-  .centeredHeroContainer {    
+  .centeredHeroContainer {
     top: 5em;
     max-width: 75%;
   }
-
   .darkMask {
     top: -15px;
   }
@@ -301,32 +280,25 @@ background: #fbfbfb;
     flex-direction: column;
   }
 }
-
-
 
 @media (max-width: 360px) {
   .hero {
     /* min-height: calc(104vh - 0px)!important; */
   }
-
   .heroMask {
-      /* top: -10px; */
+    /* top: -10px; */
   }
-
   .title {
-        font-size: 1em;
+    font-size: 1em;
   }
-
   .subTitle {
     color: #d2eaff;
     padding-top: 0px;
-    }
-
-  .centeredHeroContainer {    
+  }
+  .centeredHeroContainer {
     top: 2em;
     max-width: 75%;
   }
-
   .darkMask {
     top: -15px;
   }
@@ -334,4 +306,3 @@ background: #fbfbfb;
     flex-direction: column;
   }
 }
-

@@ -6,6 +6,7 @@ import styles from '../styles/NewLandingPageStyles.module.css'
 
 import config from '../config'
 import { redirectTo } from '../helpers'
+import get from 'lodash/get'
 
 function shouldShowMask (options) {
   if (options.hero) {
@@ -100,8 +101,9 @@ LandingPageContent.propTypes = {
 }
 
 class NewLandingPage extends React.Component {
-  super() {}
-
+  constructor () {
+    super();
+  }
   render () {
     let settings = {
       options: {
@@ -123,8 +125,9 @@ class NewLandingPage extends React.Component {
 
     settings = Object.assign({}, settings, this.props);
 
+    console.log(get(settings,'options.styles.container'))
     return (
-      <div className={styles.container}>
+      <div style={get(settings,'options.styles.container')} className={styles.container}>
         <div  
           style={{ 
             backgroundImage: `url(${settings.options.image})`, 
