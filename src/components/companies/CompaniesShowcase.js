@@ -13,6 +13,10 @@ const LearnMore = props => (
   </Link>
 )
 
+LearnMore.propTypes = {
+  slug: PropTypes.string.isRequired
+}
+
 const CompaniesShowcaseCTA = () => (
   <div className="cta">
     <div>Want your company listed here?</div>

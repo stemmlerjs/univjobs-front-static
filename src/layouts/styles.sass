@@ -2,6 +2,11 @@
 $primary-blue: #0C3DD1;
 $primary-teal: #21ADE3;
 
+@mixin flex($property) 
+  display: flex;
+  flex-direction: $property;
+
+
 // ===================================
 // ===== Explore Companies ===========
 // ===================================
@@ -118,3 +123,114 @@ $primary-teal: #21ADE3;
     a 
       color: blue;
       text-decoration: none;
+
+// ======================================
+// ===== Company Page ===================
+// ===== /components/company/CompanyShowcase.js
+// ===== /components/company/CompanyHeader.js
+
+.company-header-container
+  display: flex;
+  flex-direction: row;
+  border-bottom: solid 1px #e1e1e1;
+  > div
+    padding: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+  > div:nth-child(1)
+    width: 65%;  
+  > div:nth-child(2)
+    width: 35%;
+    border-left: solid 1px #e1e1e1;
+
+  .company-header-main
+    @include flex(column);
+
+    > div:nth-child(1)
+      font-weight: bold;
+
+    > div:nth-child(2)
+      opacity: 0.8;
+
+// ================================
+// ===== Company Jobs =============
+// ===== /components/company/CompanyJobs.js
+// ===== /components/company/Job.js
+// ================================
+
+.company-jobs
+  background: #0C3CD1;
+  padding-top: 3.5em;
+  padding-bottom: 3.5em;
+
+  .company-jobs-container
+    max-width: 1100px;
+    margin: 0 auto;
+
+    h3
+      color: white;
+    
+    input
+      background: #082990;
+      border: solid 1px #082990;
+      width: 100%;
+      padding: 8px;
+      padding-left: 14px;
+      padding-right: 14px;
+      margin-bottom: 1.45rem;
+      color: white;
+
+      &::placeholder 
+        color: #6B8FFF;
+    
+    .jobs-list-container
+      @include flex(row);
+      justify-content: space-between;
+
+      .job
+        padding: 1em;
+        width: 32%;
+        display: block;
+        background: white;
+        border-radius: 3px;
+        box-shadow: 0 14px 28px 0 rgba(143, 143, 143, 0.2);
+
+        > div:nth-child(1)
+          font-weight: bold;
+        
+        > div:nth-child(3)
+          font-size: 16px;
+          font-weight: bold;
+          opacity: 0.8;
+
+// ================================
+// ===== Company Jobs =============
+// ===== /components/company/CompanyJobs.js
+// ===== /components/company/Job.js
+// ================================
+
+.company-articles
+  padding-top: 3.5em;
+  padding-bottom: 3.5em;
+  background: #f8f8f8;
+
+  .company-articles-container
+    max-width: 1110px;
+    margin: 0 auto;
+
+// ==================================
+// ===== Company Sections Container =
+// ==================================
+
+.company-sections-container
+  max-width: 1110px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-top: 3.5em;
+  padding-bottom: 3.5em;
+  justify-content: space-evenly;
