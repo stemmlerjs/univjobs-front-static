@@ -6,7 +6,7 @@ const CompanyArticles = (props) => (
   <div className="company-articles">
     <div className="company-articles-container">
       <h3>Articles by {props.companyName}</h3>
-      <div>
+      <div className="company-articles-list-wrapper">
         {
           props.articles.map((article, i) => (
             <Post key={i} {...article}/>

@@ -7,6 +7,9 @@ import CompanyArticles from '../components/companies/CompanyArticles'
 import TextSection from '../components/companies/TextSection'
 import ListSection from '../components/companies/ListSection'
 import Videos from '../components/companies/Videos'
+import SocialMediaSection from '../components/companies/SocialMediaSection'
+import OfficesSection from '../components/companies/OfficesSection'
+import CultureSection from '../components/companies/CultureSection'
 
 const defaultProps = {
   companyName: 'Rover.com',
@@ -78,6 +81,36 @@ const defaultProps = {
   videos: [
     'https://www.youtube.com/watch?v=6IFR3WYSBFM',
     'https://www.youtube.com/watch?v=MevKTPN4ozw'
+  ],
+  offices: [
+    { 
+      name: 'Rover HQ', 
+      street: '1428 White Oaks Blvd', 
+      headquarters: true, 
+      city: 'Oakville', 
+      provinceOrState: 'Ontario', 
+      country: 'Canada' 
+    },
+    {
+      name: null,
+      street: '53 Front Street West', 
+      headquarters: false, 
+      city: 'Toronto', 
+      provinceOrState: 'Ontario', 
+      country: 'Canada' 
+    }
+  ],
+  cultureItems: [
+    {
+      image: 'https://images.unsplash.com/photo-1528083855824-d49e61c27bbf?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3a7b6f6275b15c4b1b2b278504db251c&auto=format&fit=crop&w=1350&q=80',
+      title: "New Beginnings",
+      description: "To celebrate our new merger, we ran into something cool."
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1518717758536-85ae29035b6d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=58321e04954daa3a0e2d3b1dc2a927da&auto=format&fit=crop&w=1350&q=80',
+      title: "Best friends every day",
+      description: "This is some sample text but honestly, wouldn't it be awesome to just get to hang out with animals every damn day? I think so."
+    }
   ]
 }
 
@@ -165,6 +198,21 @@ class CompanyTemplate extends React.Component {
           <ListSection
             title="Company values"
             list={defaultProps.companyValues}
+            size="half"
+          />
+          <SocialMediaSection
+            title="Social Media"
+            links={defaultProps.socialLinks}
+            size="half"
+          />
+          <OfficesSection
+            title="Offices"
+            offices={defaultProps.offices}
+            size="half"
+          />
+          <CultureSection
+            title={`Life at ${defaultProps.companyName}`}
+            cultureItems={defaultProps.cultureItems}
             size="half"
           />
         </section>

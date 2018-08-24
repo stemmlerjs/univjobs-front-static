@@ -148,12 +148,20 @@ $primary-teal: #21ADE3;
 
   .company-header-main
     @include flex(column);
+    padding-left: 15px;
+    padding-right: 15px;
 
     > div:nth-child(1)
       font-weight: bold;
 
     > div:nth-child(2)
       opacity: 0.8;
+
+  @media (max-width: 800px) 
+    flex-direction: column;
+    > div:nth-child(1), > div:nth-child(2)
+      width: 100%;
+  
 
 // ================================
 // ===== Company Jobs =============
@@ -165,6 +173,8 @@ $primary-teal: #21ADE3;
   background: #0C3CD1;
   padding-top: 3.5em;
   padding-bottom: 3.5em;
+  padding-left: 15px;
+  padding-right: 15px;
 
   .company-jobs-container
     max-width: 1100px;
@@ -206,6 +216,11 @@ $primary-teal: #21ADE3;
           font-weight: bold;
           opacity: 0.8;
 
+      @media (max-width: 800px) 
+        flex-direction: column;
+        .job
+          width: 100%;
+          margin-bottom: 1em;
 // ================================
 // ===== Company Jobs =============
 // ===== /components/company/CompanyJobs.js
@@ -216,10 +231,15 @@ $primary-teal: #21ADE3;
   padding-top: 3.5em;
   padding-bottom: 3.5em;
   background: #f8f8f8;
+  padding-left: 15px;
+  padding-right: 15px;
 
   .company-articles-container
     max-width: 1110px;
     margin: 0 auto;
+
+    .company-articles-list-wrapper
+      text-align: center;
 
 // ==================================
 // ===== Company Sections Container =
@@ -233,4 +253,4 @@ $primary-teal: #21ADE3;
   flex-wrap: wrap;
   padding-top: 3.5em;
   padding-bottom: 3.5em;
-  justify-content: space-evenly;
+  justify-content: flex-start;

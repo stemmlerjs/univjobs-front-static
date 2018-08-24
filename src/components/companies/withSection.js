@@ -12,7 +12,7 @@ function withCompanySection(WrappedComponent) {
     }
 
     render() {
-      const { size, title, alt } = this.props;
+      const { size, title, alt, ...otherProps } = this.props;
       // ... and renders the wrapped component with the fresh data!
       // Notice that we pass through any additional props
       return (
