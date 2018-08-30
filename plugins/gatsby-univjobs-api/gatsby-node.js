@@ -69,14 +69,29 @@ const processCompany = (company, createNodeId) => {
   return nodeData
 }
 
-exports.sourceNodes = ({ boundActionCreators, createNodeId }, configOptions) => {
+exports.sourceNodes = async ({ boundActionCreators, createNodeId }, configOptions) => {
   const { createNode } = boundActionCreators;
+  const { url } = configOptions;
 
   // Gatsby adds a configOption that's not needed for this plugin, delete it
   delete configOptions.plugins;
 
   // plugin code goes here...
   console.log("Univjobs Datasource API Plugin starting with options", configOptions);
+
+  // try {
+  //   const exploreCompanies = await getExploreCompanies();
+    
+  //   const featuredCompanies = await getFeaturedCompanies();
+
+  //   for each company,
+  //     const company = await getCompanyById(id);
+
+  // }
+
+  // catch (err) {
+  //   return Promise.reject(err);
+  // }
 
   return getCompanies()
     // Handle the companies
@@ -92,5 +107,4 @@ exports.sourceNodes = ({ boundActionCreators, createNodeId }, configOptions) => 
     .catch((err) => {
       return Promise.reject(err)
     })
-
 };
