@@ -80,25 +80,25 @@ exports.sourceNodes = async ({ boundActionCreators, createNodeId }, configOption
 
   // plugin code goes here...
   console.log("Univjobs Datasource API Plugin starting with options", configOptions);
-  //let object = await axios.get(configOptions.url + '/companies/explore');
-  
-  await PublicCompaniesAPI.getExploreCompanies();
-  await PublicCompaniesAPI.getFeaturedCompanies();
-  await PublicCompaniesAPI.getExploreCompanyById(186);
+   try {
+     const exploreCompanies = await PublicCompaniesAPI.getExploreCompanies();
+     const featuredCompanies = await PublicCompaniesAPI.getFeaturedCompanies();
+     
+      let uniqueCompanies = await exploreCompanies
+        .concat(featuredCompanies)
+        .map((company) => company.companyId)
 
-  // try {
-  //   const exploreCompanies = await getExploreCompanies();
-    
-  //   const featuredCompanies = await getFeaturedCompanies();
+      uniqueCompanies = [...new Set(uniqueCompanies)];
 
-  //   for each company,
-  //     const company = await getCompanyById(id);
+      let allCompanies = await Promise.all(
+          uniqueCompanies.map((element) => {
+          return PublicCompaniesAPI.getExploreCompanyById(element);
+        })
+      );
 
-  // }
-
-  // catch (err) {
-  //   return Promise.reject(err);
-  // }
+  } catch (err) {
+     return Promise.reject(err);
+  }
 
   return getCompanies()
     // Handle the companies

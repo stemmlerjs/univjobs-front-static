@@ -11,6 +11,14 @@ const axios = require('axios');
       this.url = url;
     }
 
+
+/**
+ * TODO:
+ * - Delete all try catch in this file
+ * - Make a index list of all unique employer_id. 
+ * 
+ */
+
     /**
    * getExploreCompanies
    * 
@@ -22,21 +30,21 @@ const axios = require('axios');
    * 
    * @return {Promise | Array}
    */
+
   async getExploreCompanies () {
-    //Make an axios call here
     let exploreCompanies = '';
-    try {
-      console.log('Getting explore companies from UnivJobs API...');
-      exploreCompanies = await axios.get(this.url+'/api/v1/public/companies/explore');
-    } catch(err) {
-      return Promise.reject(err);
-    }
-
-    //Transform data to requirement
-    console.log(exploreCompanies.data.companies);
-
-    //TODO: Return object
-    return true;
+    exploreCompanies = await axios.get(`${this.url}/api/v1/public/companies/explore`);
+    let companies = await exploreCompanies.data.companies.map((company) => {
+      return {
+        companyId: company.employer_id,
+        companyName: company.company_name,
+        //slug: /companies/company.company_name
+        brandImageUrl: company.brand_image_url,
+        industry: company.industry.industry_text,
+        logoUrl: company.logo_url
+      }
+    });
+    return companies;
   }
 
    /**
@@ -48,21 +56,20 @@ const axios = require('axios');
    */
 
   async getFeaturedCompanies () {
-    //Make an axios call here
     let featuredCompanies = '';
-    try {
-      console.log('Getting featured companies from UnivJobs API...');
-      featuredCompanies = await axios.get(this.url+'/api/v1/public/companies/featured');
-    } catch(err) {
-      return Promise.reject(err);
-    }
-
-    //Transform data to requirement
-    console.log(featuredCompanies.data.companies);
-
-    //TODO: Return object
-    //Return object
-    return true;
+    console.log('Getting featured companies from UnivJobs API...');
+    featuredCompanies = await axios.get(this.url+'/api/v1/public/companies/featured');
+    let companies = await featuredCompanies.data.companies.map((company) => {
+      return {
+        companyId: company.employer_id,
+        companyName: company.company_name,
+        slogan: company.slogan,
+        brandImageUrl: company.brand_image_url,
+        industry: company.industry.industry_text,
+        logoUrl: company.logo_url
+      }
+    });
+    return companies;
 
   }
 
@@ -76,21 +83,10 @@ const axios = require('axios');
 
 
   async getExploreCompanyById (companyId) {
-    //Make an axios call here
     let company = '';
-    try {
-      console.log('Getting a company from UnivJobs API...');
-      company = await axios.get(`${this.url}/api/v1/public/companies/${companyId}`);
-    } catch(err) {
-      return Promise.reject(err);
-    }
-
-    //Transform data to requirement
-    console.log(company.data.company);
-
-    //TODO: Return object
-    //Return object
-    return true;
+    console.log('Getting a company from UnivJobs API...');
+    company = await axios.get(`${this.url}/api/v1/public/companies/${companyId}`);
+    return company.data.company;
   }
 
 
