@@ -29,6 +29,7 @@ const FeaturedCompanySliderItem = ({ company }) => (
         <p>Featured Company</p>
         <h2>{company.companyName}</h2>
         <div>{company.slogan}</div>
+        <a href={company.slug}>LEARN MORE</a>
       </div>
     </div>
     <div className="featured-explore-company-image" style={{
