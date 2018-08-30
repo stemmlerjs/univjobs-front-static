@@ -5,6 +5,7 @@
 
 const crypto = require("crypto");
 const axios = require('axios');
+const PublicCompanies = require('./public-companies')
 
 /**
  * getCompanies
@@ -72,12 +73,18 @@ const processCompany = (company, createNodeId) => {
 exports.sourceNodes = async ({ boundActionCreators, createNodeId }, configOptions) => {
   const { createNode } = boundActionCreators;
   const { url } = configOptions;
+  const PublicCompaniesAPI = PublicCompanies(url);
 
   // Gatsby adds a configOption that's not needed for this plugin, delete it
   delete configOptions.plugins;
 
   // plugin code goes here...
   console.log("Univjobs Datasource API Plugin starting with options", configOptions);
+  //let object = await axios.get(configOptions.url + '/companies/explore');
+  
+  await PublicCompaniesAPI.getExploreCompanies();
+  await PublicCompaniesAPI.getFeaturedCompanies();
+  await PublicCompaniesAPI.getExploreCompanyById(186);
 
   // try {
   //   const exploreCompanies = await getExploreCompanies();
