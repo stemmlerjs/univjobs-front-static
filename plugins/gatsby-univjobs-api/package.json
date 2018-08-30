@@ -1,0 +1,21 @@
+{
+  "name": "gatsby-univjobs-api",
+  "version": "1.0.0",
+  "description": "Gatsby plugin so that we can access Univjobs APIs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gatsby",
+    "api",
+    "univjobs"
+  ],
+  "author": "Khalil Stemmler",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "0.18.0",
+    "node-fetch": "2.2.0",
+    "query-string": "6.1.0"
+  }
+}

@@ -1,6 +1,7 @@
 ---
 templateKey: 'team-member'
 name: Michael Dessureault
+title: Michael Dessureault
 image: /img/about/michael.jpg
 role: Software Developer
 ---

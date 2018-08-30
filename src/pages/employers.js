@@ -40,7 +40,7 @@ const Employers = () => (
         buttons: {
           mainButtonText: 'Post a job',
           mainButtonLocation: `${config.appUrl}register/employer`,
-          reRouteButtonText: "I'm an student",
+          reRouteButtonText: "I'm a student",
           reRouteButtonLocation: '/',
           alreadyOnComponentActive: true
         },

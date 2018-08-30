@@ -1,7 +1,7 @@
 .container {
   position: relative;
   background: linear-gradient(90deg, #0a26ca, #1ae8e7);
-  min-height: calc(87vh - 50px) !important;
+  min-height: calc(87vh - 50px);
   justify-content: center;
   align-items: center;
   margin: 0 !important;
@@ -167,11 +167,9 @@
   .buttonContainer {
     margin-bottom: 1em;
   }
-
   .buttonContainer {
     flex-direction: column-reverse;
   }
-
   .alreadyOn {
     max-width: 175px;
     padding-bottom: 20px;

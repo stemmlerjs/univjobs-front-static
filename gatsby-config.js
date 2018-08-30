@@ -16,6 +16,22 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: "gatsby-univjobs-api",
+      options: {
+        url: process.env.UNIVJOBS_DATASOURCE_URL,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-101892655-1",
+        // Puts tracking script in the head instead of the body
+        head: false,
+        // Avoids sending pageview hits from custom paths
+        exclude: ["/admin/**", "/do-not-track/me/too/"],
+      },
+    },
+    {
       resolve: `gatsby-plugin-favicon`,
       options: {
         logo: "./src/favicon.png",
@@ -41,6 +57,13 @@ module.exports = {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography.js`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-postcss-sass`,
+      options: {
+        postCssPlugins: [require('autoprefixer')()],
+        precision: 8, // SASS default: 5
       },
     },
     'gatsby-plugin-react-helmet',

@@ -102,7 +102,10 @@ const MeetTheTeam = (props) => {
     <section className={styles.sectionContainer}>
       <h1 style={{ marginBottom: '2em'}}>Meet the Team</h1>
       {
-        props.members.map((member, index) => {
+        props
+        .members
+        .sort((a, b) => a.name > b.name)
+        .map((member, index) => {
           return <Member 
             key={index} 
             index={index} 

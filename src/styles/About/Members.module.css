@@ -1,7 +1,7 @@
 .container {
     display: flex;
     flex-direction: row;
-    margin-bottom: 2.5em;
+    margin-bottom: 6.5em;
 }
 
 .imageContainer {
@@ -21,7 +21,7 @@
 }
 
 .textContainer > div {
-    font-size: 16px;
+    font-size: 20px;
     margin-bottom: 1em;
 }
 

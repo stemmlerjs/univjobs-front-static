@@ -4,7 +4,6 @@ title: 3 Tips To Take Your Resume To The Next Level
 author: Charles Javelona
 date: '2018-06-16T21:15:49-04:00'
 description: >
-
   Whether you’re a student or recent graduate, it can be challenging to get your
   foot in the door and make it to the interview stage. It doesn’t have to be;
   Here are a few tips to take your resume to the next level and get that

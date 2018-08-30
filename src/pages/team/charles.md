@@ -1,5 +1,6 @@
 ---
 templateKey: 'team-member'
+title: Charles Javelona
 name: Charles Javelona
 image: /img/about/charles.png
 role: CEO, Founder
