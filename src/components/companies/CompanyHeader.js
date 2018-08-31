@@ -17,7 +17,7 @@ const CompanyHeader = (props) => (
     <div>
       <div className="company-header-main">
         <div>Company size</div>
-        <div>10 - 100</div>
+        <div>{props.numEmployees}</div>
       </div>
       <SocialLinks links={props.socialLinks}/>
     </div>
@@ -29,6 +29,7 @@ CompanyHeader.propTypes = {
   industry: PropTypes.string.isRequired,
   slogan: PropTypes.string.isRequired,
   logoUrl: PropTypes.string.isRequired,
+  numEmployees: PropTypes.string.isRequired,
   socialLinks: PropTypes.arrayOf(PropTypes.shape({
     url: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired

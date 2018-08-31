@@ -29,7 +29,7 @@ const FeaturedCompanySliderItem = ({ company }) => (
         <p>Featured Company</p>
         <h2>{company.companyName}</h2>
         <div>{company.slogan}</div>
-        <a href={company.companyName}>LEARN MORE</a>
+        <a href={company.fields.slug}>LEARN MORE</a>
       </div>
     </div>
     <div className="featured-explore-company-image" style={{
@@ -43,7 +43,9 @@ FeaturedCompanySliderItem.propTypes = {
   company: PropTypes.shape({
     companyName: PropTypes.string,
     slogan: PropTypes.string,
-    slug: PropTypes.string,
+    fields: PropTypes.shape({
+      slug: PropTypes.string.isRequired,
+    }).isRequired,
     brandImageUrl: PropTypes.string
   })
 }
@@ -68,7 +70,9 @@ FeaturedSlider.propTypes = {
   companies: PropTypes.arrayOf(PropTypes.shape({
     companyName: PropTypes.string,
     slogan: PropTypes.string,
-    slug: PropTypes.string,
+    fields: PropTypes.shape({
+      slug: PropTypes.string.isRequired,
+    }).isRequired,
     brandImageUrl: PropTypes.string
   }))
 }

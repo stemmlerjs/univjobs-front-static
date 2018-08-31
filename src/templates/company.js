@@ -131,16 +131,19 @@ class CompanyTemplate extends React.Component {
   render () {
     const { data } = this.props;
     let company = helpers.companies.getCompaniesFromQuery(data.company);
+  
     if (company.length !== 0) {
       company = company[0];
     }
+
+    console.log(company)
 
     return (
       <div>
         <LandingPage
           options={{
             alignment: 'center',
-            image: defaultProps.brandImageUrl,
+            image: company.brandImageUrl,
             hasPolygon: false,
             hero: {
               showHeroMask: false,
@@ -157,69 +160,70 @@ class CompanyTemplate extends React.Component {
           }}
         />
         <CompanyHeader
-          companyName={defaultProps.companyName}
-          industry={defaultProps.industry}
-          slogan={defaultProps.slogan}
-          logoUrl={defaultProps.logoUrl}
-          socialLinks={defaultProps.socialLinks}
+          companyName={company.companyName}
+          industry={company.industry}
+          slogan={company.slogan}
+          logoUrl={company.logoUrl}
+          numEmployees={company.numEmployees}
+          socialLinks={company.socialLinks}
         />
         <CompanyJobs
-          companyName={defaultProps.companyName}
-          jobs={defaultProps.jobs}
+          companyName={company.companyName}
+          jobs={company.jobs}
         />
         <CompanyArticles
-          companyName={defaultProps.companyName}
-          articles={defaultProps.articles}
+          companyName={company.companyName}
+          articles={company.articles}
         />
         <section className="company-sections-container">
           <TextSection 
             title="About us" 
-            text={defaultProps.aboutUs} 
+            text={company.aboutUs} 
             size="half"
           />
           <ListSection 
             title="Fun facts" 
-            list={defaultProps.funFacts} 
+            list={company.funFacts} 
             size="half"/>
           <Videos
             title="Videos"
-            urls={defaultProps.videos}
+            urls={company.videos}
             size="full"
           />
           <TextSection 
             title="Vision" 
-            text={defaultProps.vision} 
+            text={company.vision} 
             size="half"
           />
           <TextSection 
             title="Mission" 
-            text={defaultProps.mission} 
+            text={company.mission} 
             size="half"
           />
           <ListSection
             title="Company perks"
-            list={defaultProps.perks}
+            list={company.perks}
             size="half"
             alt="true"
           />
           <ListSection
             title="Company values"
-            list={defaultProps.companyValues}
+            list={company.companyValues}
             size="half"
           />
           <SocialMediaSection
             title="Social Media"
-            links={defaultProps.socialLinks}
+            links={company.socialLinks}
             size="half"
           />
           <OfficesSection
             title="Offices"
-            offices={defaultProps.offices}
+            offices={company.offices}
             size="half"
           />
           <CultureSection
-            title={`Life at ${defaultProps.companyName}`}
-            cultureItems={defaultProps.cultureItems}
+            title={`Life at ${company.companyName}`}
+            cultureItems={company.cultureItems}
             size="half"
           />
         </section>
