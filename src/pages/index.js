@@ -32,7 +32,7 @@ import asud from '../img/asud.png'
 import haltech from '../img/haltech.png'
 import icube from '../img/icube.png'
 import startupSchool from '../img/startupschool.png'
-import sheridanEntrepreneurs from '../img/sheridanentrepreneurs.png'
+import sheridanEdge from '../img/edge_hires-400x143.png'
 
 import LandingPage from '../components/LandingPage'
 
@@ -196,8 +196,8 @@ const Backers = props => {
             </a>
           </div>
           <div>
-            <a href="https://www.sheridancollege.ca/research/entrepreneurs">
-              <img src={sheridanEntrepreneurs} />
+            <a href="https://edge.sheridancollege.ca/">
+              <img src={sheridanEdge} />
             </a>
           </div>
         </div>

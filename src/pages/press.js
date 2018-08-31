@@ -6,9 +6,18 @@ import khalil from '../img/press/khalil.png'
 import judy from '../img/press/judy.png'
 import gurdeep from '../img/press/gurdeep.png'
 
-import press1 from '../img/press/press-1.png'
-import press2 from '../img/press/press-2.png'
-import press3 from '../img/press/press-3.png'
+import blogTo from '../img/press/blogTo.png'
+import fiftyOne from '../img/press/fiftyOne.png'
+import oakvilleNews from '../img/press/oakvilleNews.png'
+import bramptonGuardian from '../img/press/bramptonGuardian.png'
+import mississaugaNews from '../img/press/mississaugaNews.jpg'
+import canindiaNews from '../img/press/canindiaNews.png'
+import torontoGuardian from '../img/press/torontoGuardian.jpg'
+import buzzfeed from '../img/press/buzzfeed.png'
+
+
+
+
 
 import CallToAction from '../components/CallToAction'
 import LandingPage from '../components/LandingPage'
@@ -18,7 +27,6 @@ import CountUp from 'react-countup';
 import Divider from '../components/Divider'
 import Mentions from '../components/press/Mentions'
 import Founders from '../components/press/Founders'
-import Advisors from '../components/press/Advisors'
 import Mentors from '../components/press/Mentors'
 
 import styles from '../styles/Press.module.css'
@@ -78,12 +86,11 @@ const Milestones = (props) => {
           <div>post-secondary institutions</div>
         </div>
         <div className={styles.milestoneItem}>
-          <div>Active user base</div>
-          <h3>1.5K</h3>
+          <div>Forward-thinking employers onboard</div>
+          <h3>130+</h3>
         </div>
         <div className={styles.milestoneItem}>
-          <div>Forward-thinking employers onboard</div>
-          <h3>100+</h3>
+          
         </div>
       </div>
       
@@ -177,9 +184,19 @@ for employers and students.`,
             }
           />
           <Divider/>
-          <Advisors
-            advisors={[
+         
+          <Mentors
+            mentors={[
               {
+                  name: 'Judy Lindenbach',
+                  paragraph1: `Judy has held a number of roles as founder and director at companies she helped grow from start to profit.`,
+                  paragraph2: `Judy's expertise includes guiding high-level strategic initiatives to further business development & growth with a special emphasis on Sales, Marketing, 
+                    Talent Acquisition & Management, Policy & Procedure Development, Training Program Design & Delivery.`,
+                  paragraph3: `She is currently a Senior Director of Corporate Partnerships at Haltech Regional Innovation Centre.`,
+                  image: judy,
+                  isLeftAligned: true
+                },
+                {
                   name: 'Gurdeep Singh',
                   paragraph1: `Gurdeep, a graduate from Rotman School of Management, is a start-up growth specialist. 
                     He has launched businesses from scratch and has grown them to become market leaders.`,
@@ -193,44 +210,62 @@ for employers and students.`,
             ]}
           />
           <Divider/>
-          <Mentors
-            mentors={[
-              {
-                  name: 'Judy Lindenbach',
-                  paragraph1: `Judy has held a number of roles as founder and director at companies she helped grow from start to profit.`,
-                  paragraph2: `Judy's expertise includes guiding high-level strategic initiatives to further business development & growth with a special emphasis on Sales, Marketing, 
-                    Talent Acquisition & Management, Policy & Procedure Development, Training Program Design & Delivery.`,
-                  paragraph3: `She is currently a Senior Director of Corporate Partnerships at Haltech Regional Innovation Centre.`,
-                  image: judy,
-                  isLeftAligned: true
-                }
-            ]}
-          />
-          <Divider/>
           <Mentions
             mentions={[
               {
                 title: "There's a new way for students to look for jobs in Toronto",
-                image: press1,
+                image: blogTo,
                 author: 'Blog Toronto',
                 link: 'https://www.blogto.com/tech/2018/04/students-jobs-toronto/'
               },
               {
                 title: "Where do college students in Toronto go to find internships and part-time jobs?",
-                image: press2,
+                image: fiftyOne,
                 author: 'Info 51',
                 link: 'http://info.51.ca/life/study/2018-04/638154.html'
               },
               {
+                title: "Sheridan alumni help undergrads connect with employers",
+                image: bramptonGuardian,
+                author: 'Brampton Guardian',
+                link: 'https://www.bramptonguardian.com/news-story/8809420-sheridan-alumni-help-undergrads-connect-with-employers-via-new-liaison-service/'
+              },
+              {
                 title: "Univjobs app dedicated to boosting the Oakville job market",
-                image: press3,
+                image: oakvilleNews,
                 author: 'Oakville News',
                 link: 'https://oakvillenews.org/univjobs-boosts-job-opportunities-ontario/'
-              }
+              },
+              {
+                title: "5 undiscovered startups in Mississauga",
+                image: mississaugaNews,
+                author: 'Mississauga News',
+                link: ' https://www.mississauga.com/news-story/8800040-5-undiscovered-startups-in-mississauga/'
+              },
+              {
+                title: "Online tool to assist undergrads with jobs",
+                image: canindiaNews,
+                author: 'CanIndia News',
+                link: 'https://www.canindia.com/online-tool-to-assist-undergrads-with-jobs/'
+              },
+              {
+                title: "Univjobs helps employers connect with students at post-secondary schools",
+                image: torontoGuardian,
+                author: 'Toronto Guardian',
+                link: 'https://torontoguardian.com/2018/07/univjobs-post-secondary-jobs-connect/'
+              },
+              {
+                title: "Top 5 Emerging Startups In Mississauga",
+                image: buzzfeed,
+                author: 'Buzzfeed',
+                link: 'https://www.buzzfeed.com/dewtre/top-5-emerging-startups-in-mississauga-3k530?utm_term=.glVoYJVn2#.fivbZ87l1'
+              },
+              
+
+
 
             ]}
           />
-          <Download/>
         </Body>
         <CallToAction
           header={'Start Now!'}

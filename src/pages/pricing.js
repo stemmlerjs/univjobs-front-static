@@ -5,6 +5,7 @@ import woman from '../img/pricing/woman-mask.jpg'
 import womanMobile from '../img/pricing/business-woman-mobile.jpg'
 import companies1 from '../img/companies-resized-2.png'
 import companies2 from '../img/companies-4-alt.png'
+import goodCompany from '../img/good-company.png'
 import desktopCompanies from '../img/pricing/desktop-companies.png'
 import uLogo from '../img/u-logo-circle.png'
 
@@ -58,10 +59,6 @@ const Plan = (props) => {
           props.price 
             ? <div className={styles.priceContainer}>
                 <div className={styles.priceFlex}>
-                  <div style={{color: 'red'}}>$</div>
-                  <div className={styles.price}><del style={{color: 'red'}}>100</del></div>
-                  &nbsp;&nbsp;&nbsp;&nbsp;
-
                   <div>$</div>
                   <div className={styles.price}>{props.price}</div>
                 </div>
@@ -99,8 +96,8 @@ const Plans = (props) => {
     
         <Plan 
           title={'Pay per posting'}
-          subTitle={'Introductory offer'}
-          price={'20'}
+          subTitle={''}
+          price={'100'}
           headerColor={'#0cc9e8'}
           features={
             [
@@ -114,7 +111,7 @@ const Plans = (props) => {
               'Invite students'
             ]
           }
-          buttonText={'Get started - $20'}
+          buttonText={'Sign up for free'}
           onClick={() => redirectTo(`${config.appUrl}register/employer`)}
         />
         <Plan 

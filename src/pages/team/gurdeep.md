@@ -3,7 +3,7 @@ templateKey: team-member
 title: Gurdeep Singh
 name: Gurdeep Singh
 image: /img/gurdeep-copy.jpeg
-role: Advisor
+role: Mentor
 ---
 Gurdeep, a graduate from Rotman School of Management, 
 is a start-up growth specialist. He has launched businesses 

@@ -78,7 +78,7 @@ class Companies extends React.Component {
     const { data } = this.props;
     const companies = helpers.companies.getCompaniesFromQuery(data.companies);
     const featuredCompanies = helpers.companies.getCompaniesFromQuery(data.featureCompanies);
-
+    console.log(data)
     return (
       <div>
         <LandingPage

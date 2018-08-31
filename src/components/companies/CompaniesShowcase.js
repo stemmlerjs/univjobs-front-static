@@ -6,7 +6,7 @@ const LearnMore = props => (
   <Link
     className="learn-more"
     style={{ textDecoration: 'none' }}
-    to={props.slug}
+    to={`${props.slug.toLowerCase()}`}
   >
     Learn more
     <i className="fa fa-angle-right" />
@@ -36,7 +36,7 @@ const CompanyShowcaseItem = props => (
       <img src={props.logoUrl} />
     </div>
     <h3>{props.companyName}</h3>
-    <LearnMore slug={props.slug} />
+    <LearnMore slug={props.companyName} />
     <div>{props.industry}</div>
   </div>
 )

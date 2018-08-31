@@ -12,8 +12,7 @@ const PrivacyPolicy = (props) => {
 
       <p>
         Welcome to UnivJobs, operated by DCommons, Inc. (“UnivJobs” and
-        sometimes referred to as “our”) and located at 2035 Sunset Lake
-        RoadSuite B-2, 19702, Newark, Delaware. This Privacy Policy addresses
+        sometimes referred to as “our”) and located at Mississauga, Ontario. This Privacy Policy addresses
         UnivJobs' practices regarding information collected from users and
         visitors of our Services and only addresses information collected
         directly through or from our Services – it does not address or govern
@@ -221,9 +220,7 @@ const PrivacyPolicy = (props) => {
 
       <p>
         DCommons, Inc.<br />
-        Attn: California/Shine the Light<br />
-        2035 Sunset Lake RoadSuite B-2,<br />
-        19702, Newark, Delaware.
+        Attn: Mississauga, Ontario, Canada<br />
       </p>
 
       <p>
@@ -246,9 +243,9 @@ const PrivacyPolicy = (props) => {
         If your question is urgent, you may contact 647-779-8525
       </p>
 
-      <p>Last modified: June 29, 2016</p>
+      <p>Last modified: June 29, 2018</p>
 
-      <p>Copyright © 2017 DCommons, Inc.; All rights reserved.</p>
+      <p>Copyright © 2018 DCommons, Inc.; All rights reserved.</p>
     </div>
   )
 }

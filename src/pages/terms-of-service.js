@@ -12,8 +12,7 @@ const Terms = () => (
       <h2>Terms & Conditions</h2>
       <p>
         Welcome to UnivJobs, operated by DCommons, Inc. (“UnivJobs” and
-        sometimes referred to as “our”) and located at 2035 Sunset Lake
-        RoadSuite B-2, 19702, Newark, Delaware Thank you for using or visiting
+        sometimes referred to as “our”) and located at Mississauaga, Ontario. Thank you for using or visiting
         our products and services (“Services”). Our Services are a platform
         through which current and former students at particular educational
         institutions seeking employment opportunities or contracting
@@ -670,9 +669,9 @@ const Terms = () => (
         If your question is urgent, you may contact 647-779-8525
       </p>
 
-      <p>Last modified: June 29, 2016</p>
+      <p>Last modified: June 29, 2018</p>
 
-      <p>Copyright © 2017 DCommons, Inc.; All rights reserved.</p>
+      <p>Copyright © 2018 DCommons, Inc.; All rights reserved.</p>
     </div>
   </div>
 );
