@@ -36,7 +36,7 @@ const CompanyShowcaseItem = props => (
       <img src={props.logoUrl} />
     </div>
     <h3>{props.companyName}</h3>
-    <LearnMore slug={props.slug} />
+    <LearnMore slug={props.fields.slug} />
     <div>{props.industry}</div>
   </div>
 )
@@ -44,7 +44,9 @@ const CompanyShowcaseItem = props => (
 CompanyShowcaseItem.propTypes = {
   companyName: PropTypes.string.isRequired,
   brandImageUrl: PropTypes.string.isRequired,
-  slug: PropTypes.string.isRequired,
+  fields: PropTypes.shape({
+    slug: PropTypes.string.isRequired,
+  }).isRequired,
   industry: PropTypes.string.isRequired,
   logoUrl: PropTypes.string.isRequired,
 }
@@ -69,7 +71,9 @@ CompaniesShowcase.propTypes = {
     PropTypes.shape({
       companyName: PropTypes.string.isRequired,
       brandImageUrl: PropTypes.string.isRequired,
-      slug: PropTypes.string.isRequired,
+      fields: PropTypes.shape({
+        slug: PropTypes.string.isRequired,
+      }).isRequired,
       industry: PropTypes.string.isRequired,
       logoUrl: PropTypes.string.isRequired,
     })

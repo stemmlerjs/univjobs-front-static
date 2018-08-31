@@ -1,7 +1,13 @@
 # Changelog
 
+## [1.1.0] - [2018-08-31]
+### Added
+- Finished the univjobs-datasource-api plugin.
+- Added a /companies page to show Explore Companies.
+- Added a Companies template page to show details on a particular company.
+
 ## [1.0.1] - [2018-08-22]
-## Added 
+### Added 
 - Added .editorConfig
 - Added .eslint and linting script.
 - Started the explore page for companies.
