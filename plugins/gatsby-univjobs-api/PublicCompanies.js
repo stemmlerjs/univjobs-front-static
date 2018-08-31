@@ -11,15 +11,7 @@ const axios = require('axios');
       this.url = url;
     }
 
-
-/**
- * TODO:
- * - Delete all try catch in this file
- * - Make a index list of all unique employer_id. 
- * 
- */
-
-    /**
+  /**
    * getExploreCompanies
    * 
    * @function that gets all of the explore companies based on 
@@ -38,7 +30,6 @@ const axios = require('axios');
       return {
         companyId: company.employer_id,
         companyName: company.company_name,
-        //slug: /companies/company.company_name
         brandImageUrl: company.brand_image_url,
         industry: company.industry.industry_text,
         logoUrl: company.logo_url
@@ -70,7 +61,6 @@ const axios = require('axios');
       }
     });
     return companies;
-
   }
 
   /**
@@ -81,16 +71,11 @@ const axios = require('axios');
    * @return {Promise | Object}
    */
 
-
   async getExploreCompanyById (companyId) {
-    let company = '';
-    console.log('Getting a company from UnivJobs API...');
-    company = await axios.get(`${this.url}/api/v1/public/companies/${companyId}`);
-    return company.data.company;
+    console.log(`\nGetting a company id=${companyId} from UnivJobs API...`);
+    const response = await axios.get(`${this.url}/api/v1/public/companies/${companyId}`);
+    return response.data.company;
   }
-
-
-
 }
 
 module.exports = (url) => {

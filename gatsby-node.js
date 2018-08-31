@@ -169,12 +169,40 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
       companies: allCompany(limit: 1000) {
         edges {
           node {
-            companyName
-            companyId
-            industry
-            logoUrl
-            earlyAdopter
+            id
+            aboutUs
             brandImageUrl
+            companyId
+            companyName
+            featured 
+            funFacts
+            logoUrl
+            numEmployees
+            industry
+            mission
+            perks
+            companyValues
+            cultureItems {
+              image
+              title
+              description
+            }
+            slogan
+            socialLinks { 
+              url
+              type
+            }
+            offices {
+              name
+              street
+              headquarters
+              provinceOrState
+              city
+              country
+            }
+            website
+            videos
+            vision
             fields {
               slug
             }

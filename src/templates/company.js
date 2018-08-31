@@ -10,6 +10,7 @@ import Videos from '../components/companies/Videos'
 import SocialMediaSection from '../components/companies/SocialMediaSection'
 import OfficesSection from '../components/companies/OfficesSection'
 import CultureSection from '../components/companies/CultureSection'
+import helpers from '../helpers'
 
 const defaultProps = {
   companyName: 'Rover.com',
@@ -128,6 +129,12 @@ const defaultProps = {
 
 class CompanyTemplate extends React.Component {
   render () {
+    const { data } = this.props;
+    let company = helpers.companies.getCompaniesFromQuery(data.company);
+    if (company.length !== 0) {
+      company = company[0];
+    }
+
     return (
       <div>
         <LandingPage
@@ -232,16 +239,42 @@ export const pageQuery = graphql`
     company: allCompany(filter: {
       companyId: { eq: $companyId }
     }) {
-    
       edges {
-        node { 
+        node {
           id
-          companyName
-          companyId
-          industry
-          logoUrl
-          earlyAdopter
+          aboutUs
           brandImageUrl
+          companyId
+          companyName
+          featured 
+          funFacts
+          logoUrl
+          numEmployees
+          industry
+          mission
+          perks
+          companyValues
+          cultureItems {
+            image
+            title
+            description
+          }
+          slogan
+          socialLinks { 
+          	url
+            type
+          }
+          offices {
+            name
+            street
+            headquarters
+            provinceOrState
+            city
+            country
+          }
+          website
+          videos
+          vision
           fields {
             slug
           }

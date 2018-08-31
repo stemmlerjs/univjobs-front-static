@@ -4,114 +4,47 @@
 // https://www.gatsbyjs.org/docs/create-source-plugin/
 
 const crypto = require("crypto");
-const axios = require('axios');
-const PublicCompanies = require('./public-companies')
+const PublicCompanies = require('./PublicCompanies')
+const Processor = require('./Processor')
 
-/**
- * getCompanies
- * 
- * @function gets all of the test companies
- * so that we can put them together in our interface.
- */
 
-const getCompanies = () => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve([
-        {
-          companyId: 1,
-          earlyAdopter: true,
-          companyName: 'Rover.com',
-          brandImageUrl: 'https://user-images.githubusercontent.com/6892666/44449999-c2c6a380-a5bd-11e8-8a96-6b01c2020fb3.png',
-          industry: 'Start-up',
-          logoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYel_hiMcSbl4mTNc0sOIAAOeyluy54xudTWQHSwsU8tKQolLA'
-        },
-        {
-          companyId: 2,
-          earlyAdopter: false,
-          companyName: 'Univjobs',
-          brandImageUrl: 'https://user-images.githubusercontent.com/6892666/44449999-c2c6a380-a5bd-11e8-8a96-6b01c2020fb3.png',
-          industry: 'Start-up',
-          logoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYel_hiMcSbl4mTNc0sOIAAOeyluy54xudTWQHSwsU8tKQolLA'
-        }
-      ])
-    }, 1300)
-  })
-}
+async function getAllCompanies (exploreCompanies, featuredCompanies, PublicCompaniesAPI) {
+  let uniqueCompaniesIds = await exploreCompanies
+    .concat(featuredCompanies)
+    .map((company) => company.companyId)
 
-/**
- * processCompany
- * 
- * @function formats data into the format that Gatsby needs it.
- * @param {Object}
- * @param {Function} to create the node id
- * @return {Object}
- */
+  uniqueCompaniesIds = [...new Set(uniqueCompaniesIds)];
 
-const processCompany = (company, createNodeId) => {
-  const nodeId = createNodeId(`univjobs-company-${company.companyId}`)
-  const nodeContent = JSON.stringify(company)
-  const nodeContentDigest = crypto
-    .createHash('md5')
-    .update(nodeContent)
-    .digest('hex')
-
-  const nodeData = Object.assign({}, company, {
-    id: nodeId,
-    parent: null,
-    children: [],
-    internal: {
-      type: `Company`,
-      content: nodeContent,
-      contentDigest: nodeContentDigest,
-    },
-  })
-
-  return nodeData
+  const allCompanies = await Promise.all(
+    uniqueCompaniesIds.map((element) => {
+      return PublicCompaniesAPI.getExploreCompanyById(element);
+    })
+  );
+  return allCompanies;
 }
 
 exports.sourceNodes = async ({ boundActionCreators, createNodeId }, configOptions) => {
   const { createNode } = boundActionCreators;
   const { url } = configOptions;
   const PublicCompaniesAPI = PublicCompanies(url);
-
+  const CompanyProcessor = Processor.createProcessor(createNodeId, createNode);
   // Gatsby adds a configOption that's not needed for this plugin, delete it
   delete configOptions.plugins;
-
   // plugin code goes here...
   console.log("Univjobs Datasource API Plugin starting with options", configOptions);
-   try {
-     const exploreCompanies = await PublicCompaniesAPI.getExploreCompanies();
-     const featuredCompanies = await PublicCompaniesAPI.getFeaturedCompanies();
-     
-      let uniqueCompanies = await exploreCompanies
-        .concat(featuredCompanies)
-        .map((company) => company.companyId)
 
-      uniqueCompanies = [...new Set(uniqueCompanies)];
-
-      let allCompanies = await Promise.all(
-          uniqueCompanies.map((element) => {
-          return PublicCompaniesAPI.getExploreCompanyById(element);
-        })
-      );
-
-  } catch (err) {
+  try {
+    // Get all companies
+    const exploreCompanies = await PublicCompaniesAPI.getExploreCompanies();
+    const featuredCompanies = await PublicCompaniesAPI.getFeaturedCompanies();
+    const allCompanies = await getAllCompanies(exploreCompanies, featuredCompanies, PublicCompaniesAPI);
+    console.log(allCompanies)
+    for (let company of allCompanies) {
+      CompanyProcessor.processAndCreateCompanyNode(company);
+    }
+  } 
+  
+  catch (err) {
      return Promise.reject(err);
   }
-
-  return getCompanies()
-    // Handle the companies
-    .then((companies) => {
-      // For each company, parse them into the appropriate format for Gatsby
-      companies.forEach((company) => {
-        let nodeData = processCompany(company, createNodeId);
-        // Use Gatsby's createNode helper to create a node from the node data
-        createNode(nodeData)
-      })
-    })
-
-    .catch((err) => {
-      return Promise.reject(err)
-    })
 };

@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
+import helpers from '../helpers'
 
 import LandingPage from '../components/LandingPage'
 import FeaturedSlider from '../components/companies/FeaturedSlider'
@@ -68,45 +69,58 @@ const defaultData = {
  * the Explore Companies page via /companies.
  */
 
-const Companies = () => (
-  <div>
-    <LandingPage
-      heroTitle="Explore Companies"
-      heroSubTitle={`Top companies are searching for candidates just like you.
-       Discover their company culture and the careers they offer.`}
-      options={{
-        alignment: 'center',
-        image: exploreCompanies,
-        hasPolygon: false,
-        hero: {
-          showHeroMask: false,
-          showDarkMask: true,
-          color: '',
-        },
-        styles: {
-          container: {
-            maxHeight: '45vh',
-            minHeight: '45vh',
-            textAlign: 'center',
-          },
-        },
-      }}
-    />
-    <FeaturedSlider companies={defaultData.featuredCompanies}/>
-    <CompaniesShowcase 
-      title={'Growing companies'}
-      subTitle={`Looking for an opportunity to make an impact? 
-        These companies are growing fast and looking for new grads to shape the future of their business.`}
-      companies={defaultData.companies}/>
-    <CallToAction
-      header="Get started now!"
-      subHeader="Create your profile and get access to student-friendly jobs."
-      buttonText="Sign me up"
-      alt={true}
-      location={`${config.appUrl}register`}
-    />
-  </div>
-)
+class Companies extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+
+  render () {
+    const { data } = this.props;
+    const companies = helpers.companies.getCompaniesFromQuery(data.companies);
+    const featuredCompanies = helpers.companies.getCompaniesFromQuery(data.featureCompanies);
+
+    return (
+      <div>
+        <LandingPage
+          heroTitle="Explore Companies"
+          heroSubTitle={`Top companies are searching for candidates just like you.
+          Discover their company culture and the careers they offer.`}
+          options={{
+            alignment: 'center',
+            image: exploreCompanies,
+            hasPolygon: false,
+            hero: {
+              showHeroMask: false,
+              showDarkMask: true,
+              color: '',
+            },
+            styles: {
+              container: {
+                maxHeight: '45vh',
+                minHeight: '45vh',
+                textAlign: 'center',
+              },
+            },
+          }}
+        />
+        <FeaturedSlider 
+          companies={featuredCompanies}/>
+        <CompaniesShowcase 
+          title={'Growing companies'}
+          subTitle={`Looking for an opportunity to make an impact? 
+            These companies are growing fast and looking for new grads to shape the future of their business.`}
+          companies={companies}/>
+        <CallToAction
+          header="Get started now!"
+          subHeader="Create your profile and get access to student-friendly jobs."
+          buttonText="Sign me up"
+          alt={true}
+          location={`${config.appUrl}register`}
+        />
+      </div>
+    )
+  }
+}
 
 Companies.propTypes = {
   featuredCompanies: PropTypes.arrayOf(
@@ -120,3 +134,99 @@ Companies.propTypes = {
 }
 
 export default Companies
+
+export const companiesPageQuery = graphql`
+query CompaniesQuery {
+  featureCompanies: allCompany ( 
+      filter: {
+        featured: { eq: true }
+      }
+    ) {
+      edges {
+        node {
+          id
+          aboutUs
+          brandImageUrl
+          companyId
+          companyName
+          featured 
+          funFacts
+          logoUrl
+          numEmployees
+          industry
+          mission
+          perks
+          companyValues
+          cultureItems {
+            image
+            title
+            description
+          }
+          slogan
+          socialLinks { 
+          	url
+            type
+          }
+          offices {
+            name
+            street
+            headquarters
+            provinceOrState
+            city
+            country
+          }
+          website
+          videos
+          vision
+          fields {
+            slug
+          }
+        }
+      }
+    }
+  
+    companies: allCompany {
+      edges {
+        node {
+          id
+          aboutUs
+          brandImageUrl
+          companyId
+          companyName
+          featured 
+          funFacts
+          logoUrl
+          numEmployees
+          industry
+          mission
+          perks
+          companyValues
+          cultureItems {
+            image
+            title
+            description
+          }
+          slogan
+          socialLinks { 
+          	url
+            type
+          }
+          offices {
+            name
+            street
+            headquarters
+            provinceOrState
+            city
+            country
+          }
+          website
+          videos
+          vision
+          fields {
+            slug
+          }
+        }
+      }
+    }
+  }
+`

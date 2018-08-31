@@ -83,6 +83,16 @@ export default {
       }
 
       return [];
+    },
+  },
+
+  companies: {
+    getCompaniesFromQuery: (companies) => {
+      if (companies) {
+        return companies.edges.map((edge) => edge.node)      
+      }
+
+      return [];
       
     }
   }
