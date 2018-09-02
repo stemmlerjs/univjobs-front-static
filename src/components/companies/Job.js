@@ -45,7 +45,7 @@ const Job = props => (
   >
     <div>{props.title}</div>
     <div>{props.location}</div>
-      <div>{props.description}</div>
+      <div>{props.jobType}</div>
   </Link>
 )
 
@@ -54,7 +54,7 @@ Job.propTypes = {
   location: PropTypes.string.isRequired,
   slug: PropTypes.string.isRequired,
   jobTypeId: PropTypes.number.isRequired,
-  description: PropTypes.string.isRequired,
+  jobType: PropTypes.string.isRequired,
 }
 
 export default Job
