@@ -13,56 +13,6 @@ import config from '../config'
 import exploreCompanies from '../img/companies/explore-companies.png'
 
 /**
- * TODO: Replace this with actual data from
- * data source.
- */
-
-const defaultData = {
-  featuredCompanies: [{
-    companyName: 'Rover',
-    slogan: "We're the dog-walking company changing the world.",
-    slug: '/companies/rover-com',
-    brandImageUrl: 'https://user-images.githubusercontent.com/6892666/44449999-c2c6a380-a5bd-11e8-8a96-6b01c2020fb3.png'
-  }, {
-    companyName: 'Univjobs',
-    slogan: "We help students get jobs, for real.",
-    slug: '/companies/univjobs',
-    brandImageUrl: 'https://univjobs.ca/static/u-logo.4bc69dc3.png'
-  }],
-  companies: [{
-    companyName: 'Rover.com',
-    brandImageUrl: 'https://user-images.githubusercontent.com/6892666/44449999-c2c6a380-a5bd-11e8-8a96-6b01c2020fb3.png',
-    slug: '/companies/rover-com',
-    industry: 'Start-up',
-    logoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYel_hiMcSbl4mTNc0sOIAAOeyluy54xudTWQHSwsU8tKQolLA'
-  }, {
-    companyName: 'Rover.com',
-    brandImageUrl: 'https://user-images.githubusercontent.com/6892666/44449999-c2c6a380-a5bd-11e8-8a96-6b01c2020fb3.png',
-    slug: '/companies/rover-com',
-    industry: 'Start-up',
-    logoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYel_hiMcSbl4mTNc0sOIAAOeyluy54xudTWQHSwsU8tKQolLA'
-  }, {
-    companyName: 'Rover.com',
-    brandImageUrl: 'https://user-images.githubusercontent.com/6892666/44449999-c2c6a380-a5bd-11e8-8a96-6b01c2020fb3.png',
-    slug: '/companies/rover-com',
-    industry: 'Start-up',
-    logoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYel_hiMcSbl4mTNc0sOIAAOeyluy54xudTWQHSwsU8tKQolLA'
-  }, {
-    companyName: 'Rover.com',
-    brandImageUrl: 'https://user-images.githubusercontent.com/6892666/44449999-c2c6a380-a5bd-11e8-8a96-6b01c2020fb3.png',
-    slug: '/companies/rover-com',
-    industry: 'Start-up',
-    logoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYel_hiMcSbl4mTNc0sOIAAOeyluy54xudTWQHSwsU8tKQolLA'
-  }, {
-    companyName: 'Rover.com',
-    brandImageUrl: 'https://user-images.githubusercontent.com/6892666/44449999-c2c6a380-a5bd-11e8-8a96-6b01c2020fb3.png',
-    slug: '/companies/rover-com',
-    industry: 'Start-up',
-    logoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYel_hiMcSbl4mTNc0sOIAAOeyluy54xudTWQHSwsU8tKQolLA'
-  }]
-}
-
-/**
  * Companies
  * 
  * @desc Parent component to render all of the components for
@@ -149,7 +99,7 @@ query CompaniesQuery {
           brandImageUrl
           companyId
           companyName
-          featured 
+          featured
           funFacts
           logoUrl
           numEmployees
@@ -164,51 +114,7 @@ query CompaniesQuery {
           }
           slogan
           socialLinks { 
-          	url
-            type
-          }
-          offices {
-            name
-            street
-            headquarters
-            provinceOrState
-            city
-            country
-          }
-          website
-          videos
-          vision
-          fields {
-            slug
-          }
-        }
-      }
-    }
-  
-    companies: allCompany {
-      edges {
-        node {
-          id
-          aboutUs
-          brandImageUrl
-          companyId
-          companyName
-          featured 
-          funFacts
-          logoUrl
-          numEmployees
-          industry
-          mission
-          perks
-          companyValues
-          cultureItems {
-            image
-            title
-            description
-          }
-          slogan
-          socialLinks { 
-          	url
+            url
             type
           }
           jobs {
@@ -218,6 +124,17 @@ query CompaniesQuery {
             jobTypeId
             jobType
           }
+          articles {
+            companyName
+            employerId
+            title
+            sponsored
+            sponsoredCompanyName
+            sponsoredCompanyImage
+            timeToRead
+            slug
+            image
+          }
           offices {
             name
             street
@@ -232,9 +149,76 @@ query CompaniesQuery {
           fields {
             slug
           }
+          hidden
         }
       }
     }
-  }
+  
+    companies: allCompany ( 
+      filter: {
+        hidden: { eq: false }
+      }
+    ) { 
+      edges {
+        node {
+          id
+          aboutUs
+          brandImageUrl
+          companyId
+          companyName
+          featured
+          funFacts
+          logoUrl
+          numEmployees
+          industry
+          mission
+          perks
+          companyValues
+          cultureItems {
+            image
+            title
+            description
+          }
+          slogan
+          socialLinks { 
+            url
+            type
+          }
+          jobs {
+            title
+            location
+            slug
+            jobTypeId
+            jobType
+          }
+          articles {
+            companyName
+            employerId
+            title
+            sponsored
+            sponsoredCompanyName
+            sponsoredCompanyImage
+            timeToRead
+            slug
+            image
+          }
+          offices {
+            name
+            street
+            headquarters
+            provinceOrState
+            city
+            country
+          }
+          website
+          videos
+          vision
+          fields {
+            slug
+          }
+          hidden
+        }
+      }
+    }
+}
 `
-{ title: 'Dog walker', location: 'Oakville, ON', slug: '/posting/535', jobTypeId: 2, jobType: 'Freelance' },

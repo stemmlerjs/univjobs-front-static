@@ -18,15 +18,18 @@ const Overlay = ({ isOpen }) => {
          */
       }
       <div className={styles.mobileNavOverlayOptionsContainer}>
-        <a className={`${styles.overlayItemMain} ${styles.overlay}`} href={`${config.appUrl}login`}>Login</a>
+       <a className={`${styles.overlayItemMain} ${styles.overlay}`} href={`${config.appUrl}login`}>Login</a>
+       <a className={`${styles.overlayItem} ${styles.overlay}`} href="/companies">Explore Companies</a>
+       <a className={`${styles.overlayItem} ${styles.overlay}`} href="/about">About</a>
+
+      <div className={styles.overlaySection}>Student</div>        
         <a className={`${styles.overlayItemMain} ${styles.overlay}`} href={`${config.appUrl}register`}>Register</a>
+        <a className={`${styles.overlayItem} ${styles.overlay}`} href="/blog/categories/students">Tips</a>
 
         <div className={styles.overlaySection}>Employers</div>
-        <a className={`${styles.overlayItem} ${styles.overlay}`} href="/about">About</a>
-        <a className={`${styles.overlayItem} ${styles.overlay}`} href="/blog">Blog</a>
-        <a className={`${styles.overlayItem} ${styles.overlay}`} href="mailto:contact@univjobs.ca?Subject=Inquiry%20">Contact</a>
-        <a className={`${styles.overlayItem} ${styles.overlay}`} href="/pricing">Pricing</a>
-        <a className={`${styles.overlayItem} ${styles.overlay}`} href="/blog/categories/employers">Tips</a>
+          <a className={`${styles.overlayItemMain} ${styles.overlay}`} href={`${config.appUrl}register/employer`}>Register Employer</a>
+          <a className={`${styles.overlayItem} ${styles.overlay}`} href="/pricing">Pricing</a>
+
       </div>
     </div>
   )
@@ -66,6 +69,7 @@ class Header extends React.Component {
       <div className={styles.navItems}>
         <Link className={styles.navItem} to="/pricing">Pricing</Link>
         <Link className={styles.navItem} to="/blog">Blog</Link>
+        <Link className={styles.navItem} to="/companies">Explore Companies</Link>
         <Link className={styles.navItem} to="/employers">Employers</Link>
         <div onClick={() => redirectTo(config.appUrl)} className={styles.signInButton}>
           SIGN IN

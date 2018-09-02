@@ -27,9 +27,9 @@ const defaultProps = {
     { url: 'https://rover.com', type: 'website' }
   ],
   jobs: [
-    { title: 'Dog walker', location: 'Oakville, ON', slug: '/posting/535', jobTypeId: 2, jobType: 'Freelance' },
-    { title: 'System Administrator', location: 'Toronto, ON', slug: '/posting/536', jobTypeId: 4, jobType: 'Co-op' },
-    { title: 'System Administrator', location: 'Toronto, ON', slug: '/posting/536', jobTypeId: 4, jobType: 'Co-op' }
+    { title: 'Dog walker', location: 'Oakville, ON', slug: '/posting/535', jobTypeId: 2, description: 'Freelance' },
+    { title: 'System Administrator', location: 'Toronto, ON', slug: '/posting/536', jobTypeId: 4, description: 'Co-op' },
+    { title: 'System Administrator', location: 'Toronto, ON', slug: '/posting/536', jobTypeId: 4, description: 'Co-op' }
   ],
   articles: [
     { 
@@ -136,8 +136,6 @@ class CompanyTemplate extends React.Component {
       company = company[0];
     }
 
-    console.log(company)
-
     return (
       <div>
         <LandingPage
@@ -242,6 +240,7 @@ export const pageQuery = graphql`
   query CompanyTemplateQuery($companyId: Int) {
     company: allCompany(filter: {
       companyId: { eq: $companyId }
+      hidden: { eq: false }
     }) {
       edges {
         node {
@@ -250,7 +249,7 @@ export const pageQuery = graphql`
           brandImageUrl
           companyId
           companyName
-          featured 
+          featured
           funFacts
           logoUrl
           numEmployees
@@ -268,6 +267,24 @@ export const pageQuery = graphql`
           	url
             type
           }
+          jobs {
+            title
+            location
+            slug
+            jobTypeId
+            jobType
+          }
+          articles {
+            companyName
+            employerId
+            title
+            sponsored
+            sponsoredCompanyName
+            sponsoredCompanyImage
+            timeToRead
+            slug
+            image
+          }
           offices {
             name
             street
@@ -282,6 +299,7 @@ export const pageQuery = graphql`
           fields {
             slug
           }
+          hidden
         }
       }
     }

@@ -72,7 +72,7 @@ class CompanyJobs extends React.Component {
 
     // In the case that there are no current jobs at all,
     // we simply won't render anything at all.
-    if (jobs != true) return <div/>;
+    // if (jobs != true) return <div/>;
     if (jobs.length === 0) return <div/>;
 
     return (

@@ -15,11 +15,13 @@ async function getAllCompanies (exploreCompanies, featuredCompanies, PublicCompa
 
   uniqueCompaniesIds = [...new Set(uniqueCompaniesIds)];
 
-  const allCompanies = await Promise.all(
+  let allCompanies = await Promise.all(
     uniqueCompaniesIds.map((element) => {
-      return PublicCompaniesAPI.getExploreCompanyById(element);
+      let company = PublicCompaniesAPI.getExploreCompanyById(element);
+      return company;
     })
   );
+
   return allCompanies;
 }
 
@@ -37,7 +39,9 @@ exports.sourceNodes = async ({ boundActionCreators, createNodeId }, configOption
     // Get all companies
     const exploreCompanies = await PublicCompaniesAPI.getExploreCompanies();
     const featuredCompanies = await PublicCompaniesAPI.getFeaturedCompanies();
-    const allCompanies = await getAllCompanies(exploreCompanies, featuredCompanies, PublicCompaniesAPI);
+    let allCompanies = await getAllCompanies(exploreCompanies, featuredCompanies, PublicCompaniesAPI);
+    console.log("Adding dummy company!")
+    allCompanies = await allCompanies.concat(await PublicCompaniesAPI.addDummyCompany());
     console.log(allCompanies)
     for (let company of allCompanies) {
       CompanyProcessor.processAndCreateCompanyNode(company);
