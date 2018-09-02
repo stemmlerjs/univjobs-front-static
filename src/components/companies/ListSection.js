@@ -19,29 +19,20 @@ class ListSection extends React.Component {
     super();
   }
 
-  hasList (boolean) {
-
-    if(boolean) {
-      return <div className="list-section">
-       {
-         boolean.map((item, i) => (
-          <ListItem key={i} text={item}/>
-        ))
-       }
-      </div>
-    } else {
-      return <div/>
-     
-    }
-    
-  }
-
-
-
   render() {
     const { list } = this.props;
+
+    if (list != true) return <div/>;
+    if (list.length === 0) return <div/>;
+
     return (
-          this.hasList(list)
+      <div className="list-section">
+        {
+          list.map((item, i) => (
+            <ListItem key={i} text={item}/>
+          ))
+        }
+      </div>
     )
   }
 }
