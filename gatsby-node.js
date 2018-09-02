@@ -174,7 +174,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
             brandImageUrl
             companyId
             companyName
-            featured
+            featured 
             funFacts
             logoUrl
             numEmployees
@@ -192,24 +192,6 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
               url
               type
             }
-            jobs {
-              title
-              location
-              slug
-              jobTypeId
-              jobType
-            }
-            articles {
-              companyName
-              employerId
-              title
-              sponsored
-              sponsoredCompanyName
-              sponsoredCompanyImage
-              timeToRead
-              slug
-              image
-            }
             offices {
               name
               street
@@ -224,7 +206,6 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
             fields {
               slug
             }
-            hidden
           }
         }
       }
