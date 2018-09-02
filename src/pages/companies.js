@@ -211,6 +211,13 @@ query CompaniesQuery {
           	url
             type
           }
+          jobs {
+            title
+            location
+            slug
+            jobTypeId
+            jobType
+          }
           offices {
             name
             street
@@ -230,3 +237,4 @@ query CompaniesQuery {
     }
   }
 `
+{ title: 'Dog walker', location: 'Oakville, ON', slug: '/posting/535', jobTypeId: 2, jobType: 'Freelance' },
