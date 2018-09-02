@@ -44,6 +44,10 @@ class CultureSection extends React.Component {
 
   render() {
     const { cultureItems } = this.props;
+
+
+    if (cultureItems != true) return <div/>;
+    if (cultureItems.length === 0) return <div/>;
     return (
       <div>
         <Slider {...sliderSettings}>
