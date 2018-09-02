@@ -31,6 +31,9 @@ class SocialMediaSection extends React.Component {
 
   render() {
     const { links } = this.props
+
+    if (links != true) return <div/>;
+    if (links.length === 0) return <div/>;
     return (
       <div className="list-section">
         {links.map((link, i) => <SocialMedia key={i} {...link} />)}
