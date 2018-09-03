@@ -167,7 +167,7 @@ class CompanyTemplate extends React.Component {
         />
 
         {
-          company.jobs.length === 0
+          !company.jobs || company.jobs.length === 0
            ? ""
            :
             <CompanyJobs
@@ -177,7 +177,7 @@ class CompanyTemplate extends React.Component {
 
         }
         {
-          company.articles.length === 0 
+          !company.articles || company.articles.length === 0 
           ? ""
           :
           <CompanyArticles
