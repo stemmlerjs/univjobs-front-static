@@ -86,12 +86,12 @@ const axios = require('axios');
 
       {
         companyId: 100001,
-        companyName: 'Rover.com',
+        companyName: 'UneedJobs',
         brandImageUrl: 'https://user-images.githubusercontent.com/6892666/44449999-c2c6a380-a5bd-11e8-8a96-6b01c2020fb3.png',
-        slug: '/companies/rover-com',
+        slug: '/companies/uneedjobs',
         industry: 'Start-up',
         logoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYel_hiMcSbl4mTNc0sOIAAOeyluy54xudTWQHSwsU8tKQolLA',
-        slogan: 'Earn up to $1000/month dog-sitting',
+        slogan: 'Replace traditional career fair digitally',
         numEmployees: '10 - 100',
         fetured: false,
         socialLinks: [
@@ -107,7 +107,7 @@ const axios = require('axios');
         ],
         articles: [
           { 
-            companyName: "Rover.com", // needs to be added in the frontmatter for blog post template
+            companyName: "uneedjobs.com", // needs to be added in the frontmatter for blog post template
             employerId: 20,
             title: 'How to get started Dog Walking',
             sponsored: true,
@@ -117,7 +117,7 @@ const axios = require('axios');
             slug: '/blog/how-to-get-started-dog-walking',
             image: 'https://user-images.githubusercontent.com/6892666/44449999-c2c6a380-a5bd-11e8-8a96-6b01c2020fb3.png'
           }, {
-            companyName: "Rover.com",
+            companyName: "uneejobs.com",
             employerId: 20,
             title: 'Top 10 Places to Walk Your Pup',
             sponsored: true,
@@ -163,7 +163,7 @@ const axios = require('axios');
         ],
         offices: [
           { 
-            name: 'Rover HQ', 
+            name: 'UneedJobs HQ', 
             street: '1428 White Oaks Blvd', 
             headquarters: true, 
             city: 'Oakville', 
@@ -171,7 +171,7 @@ const axios = require('axios');
             country: 'Canada' 
           },
           {
-            name: null,
+            name: 'UneedJobs Toronto',
             street: '53 Front Street West', 
             headquarters: false, 
             city: 'Toronto', 
