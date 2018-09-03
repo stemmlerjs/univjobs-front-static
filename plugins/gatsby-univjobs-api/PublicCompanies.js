@@ -98,7 +98,7 @@ const axios = require('axios');
           { url: 'https://www.facebook.com/RoverDotCom/', type: 'facebook' },
           { url: 'https://www.facebook.com/RoverDotCom/', type: 'instagram' },
           { url: 'https://www.facebook.com/RoverDotCom/', type: 'twitter' },
-          { url: 'https://rover.com', type: 'website' }
+          { url: 'https://rovker.com', type: 'website' }
         ],
         jobs: [
           { title: 'Dog walker', location: 'Oakville, ON', slug: '/posting/535', jobTypeId: 2, jobType: 'Freelance' },

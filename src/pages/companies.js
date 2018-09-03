@@ -143,7 +143,6 @@ query CompaniesQuery {
             city
             country
           }
-          website
           videos
           vision
           fields {
@@ -210,7 +209,6 @@ query CompaniesQuery {
             city
             country
           }
-          website
           videos
           vision
           fields {
