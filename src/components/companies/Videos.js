@@ -60,8 +60,6 @@ class Videos extends React.Component {
   render() {
     const { urls } = this.props;
 
-    if (urls != true) return <div/>;
-    if (urls.length === 0) return <div/>;
     return (
       <div>
         <Slider {...sliderSettings}>

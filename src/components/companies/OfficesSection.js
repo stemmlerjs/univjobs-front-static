@@ -35,8 +35,6 @@ class OfficesSection extends React.Component {
   render() {
     const { offices } = this.props;
 
-    if (offices != true) return <div/>;
-    if (offices.length === 0) return <div/>;
     return (
       <div className="list-section">
         {

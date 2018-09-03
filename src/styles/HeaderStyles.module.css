@@ -200,7 +200,7 @@
   text-transform: none !important;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 885px) {
   .navItem {
     display: none;
   }

@@ -165,65 +165,122 @@ class CompanyTemplate extends React.Component {
           numEmployees={company.numEmployees}
           socialLinks={company.socialLinks}
         />
-        <CompanyJobs
-          companyName={company.companyName}
-          jobs={company.jobs}
-        />
-        <CompanyArticles
-          companyName={company.companyName}
-          articles={company.articles}
-        />
+
+        {
+          company.jobs.length === 0
+           ? ""
+           :
+            <CompanyJobs
+              companyName={company.companyName}
+              jobs={company.jobs}
+            />
+
+        }
+        {
+          company.articles.length === 0 
+          ? ""
+          :
+          <CompanyArticles
+            companyName={company.companyName}
+            articles={company.articles}
+          />
+        }
         <section className="company-sections-container">
           <TextSection 
             title="About us" 
             text={company.aboutUs} 
             size="half"
           />
-          <ListSection 
-            title="Fun facts" 
-            list={company.funFacts} 
-            size="half"/>
-          <Videos
-            title="Videos"
-            urls={company.videos}
-            size="full"
-          />
+          {
+            company.funFacts.length === 0 
+            ? ""
+            : 
+            <ListSection 
+              title="Fun facts" 
+              list={company.funFacts} 
+              size="half"/>
+          }
+          {
+            company.videos.length === 0
+            ? ""
+            :
+            <Videos
+              title="Videos"
+              urls={company.videos}
+              size="full"
+            />
+          }
+          {
+            !company.vision || company.vision === 0 
+            ? "" 
+            :
           <TextSection 
             title="Vision" 
             text={company.vision} 
             size="half"
           />
-          <TextSection 
-            title="Mission" 
-            text={company.mission} 
-            size="half"
+          }
+          {
+            !company.mission || company.mission === 0 
+            ? "" 
+            :
+            <TextSection 
+              title="Mission" 
+              text={company.mission} 
+              size="half"
+            />
+          }
+          {
+            !company.perks.length === 0 
+            ? "" 
+            :
+            <ListSection
+              title="Company perks"
+              list={company.perks}
+              size="half"
+              alt="true"
+            />
+          }
+          {
+            company.companyValues.length === 0 
+            ? "" 
+            :
+            <ListSection
+              title="Company values"
+              list={company.companyValues}
+              size="half"
+            />
+          }
+          {
+            company.socialLinks.length === 0 
+            ? ""
+            :
+            <SocialMediaSection
+              title="Social Media"
+              links={company.socialLinks}
+              size="half"
           />
-          <ListSection
-            title="Company perks"
-            list={company.perks}
-            size="half"
-            alt="true"
-          />
-          <ListSection
-            title="Company values"
-            list={company.companyValues}
-            size="half"
-          />
-          <SocialMediaSection
-            title="Social Media"
-            links={company.socialLinks}
-            size="half"
-          />
-          <OfficesSection
-            title="Offices"
-            offices={company.offices}
-            size="half"
-          />
-          <CultureSection
-            title={`Life at ${company.companyName}`}
-            cultureItems={company.cultureItems}
-            size="half"
-          />
+          }
+          {
+            company.offices.length === 0 
+            ? ""
+            :
+            <OfficesSection
+              title="Offices"
+              offices={company.offices}
+              size="half"
+            />
+          }
+          {
+            company.cultureItems.length === 0
+            ? ""
+            :
+            <CultureSection
+              title={`Life at ${company.companyName}`}
+              cultureItems={company.cultureItems}
+              size="half"
+            />
+          }
         </section>
       </div>
     )

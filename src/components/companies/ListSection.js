@@ -22,17 +22,16 @@ class ListSection extends React.Component {
   render() {
     const { list } = this.props;
 
-    if (list != true) return <div/>;
-    if (list.length === 0) return <div/>;
-
     return (
+            
       <div className="list-section">
         {
+          
           list.map((item, i) => (
             <ListItem key={i} text={item}/>
           ))
         }
-      </div>
+    </div>
     )
   }
 }
