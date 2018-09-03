@@ -93,7 +93,7 @@ const axios = require('axios');
         logoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYel_hiMcSbl4mTNc0sOIAAOeyluy54xudTWQHSwsU8tKQolLA',
         slogan: 'Replace traditional career fair digitally',
         numEmployees: '10 - 100',
-        fetured: false,
+        featured: false,
         socialLinks: [
           { url: 'https://www.facebook.com/RoverDotCom/', type: 'facebook' },
           { url: 'https://www.facebook.com/RoverDotCom/', type: 'instagram' },
