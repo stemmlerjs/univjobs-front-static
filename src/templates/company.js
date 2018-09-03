@@ -192,7 +192,7 @@ class CompanyTemplate extends React.Component {
             size="half"
           />
           {
-            company.funFacts.length === 0 
+            !company.funFacts || company.funFacts.length === 0 
             ? ""
             : 
             <ListSection 
@@ -201,7 +201,7 @@ class CompanyTemplate extends React.Component {
               size="half"/>
           }
           {
-            company.videos.length === 0
+            !company.videos || company.videos.length === 0
             ? ""
             :
             <Videos
@@ -231,7 +231,7 @@ class CompanyTemplate extends React.Component {
             />
           }
           {
-            !company.perks.length === 0 
+            !company.perks || company.perks.length === 0 
             ? "" 
             :
             <ListSection
@@ -242,7 +242,7 @@ class CompanyTemplate extends React.Component {
             />
           }
           {
-            company.companyValues.length === 0 
+            !company.companyValues || company.companyValues.length === 0 
             ? "" 
             :
             <ListSection
@@ -252,7 +252,7 @@ class CompanyTemplate extends React.Component {
             />
           }
           {
-            company.socialLinks.length === 0 
+            !company.socialLinks || company.socialLinks.length === 0 
             ? ""
             :
             <SocialMediaSection
@@ -262,7 +262,7 @@ class CompanyTemplate extends React.Component {
           />
           }
           {
-            company.offices.length === 0 
+            !company.offices || company.offices.length === 0 
             ? ""
             :
             <OfficesSection
@@ -272,7 +272,7 @@ class CompanyTemplate extends React.Component {
             />
           }
           {
-            company.cultureItems.length === 0
+            !company.cultureItems || company.cultureItems.length === 0
             ? ""
             :
             <CultureSection
