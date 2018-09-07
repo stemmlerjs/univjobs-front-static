@@ -5,6 +5,8 @@
 
 const crypto = require("crypto");
 const PublicCompanies = require('./PublicCompanies')
+const PublicJobs = require('./PublicJobs')
+
 const Processor = require('./Processor')
 
 
@@ -29,22 +31,32 @@ exports.sourceNodes = async ({ boundActionCreators, createNodeId }, configOption
   const { createNode } = boundActionCreators;
   const { url } = configOptions;
   const PublicCompaniesAPI = PublicCompanies(url);
+  const PublicJobsAPI = PublicJobs(url)
   const CompanyProcessor = Processor.createProcessor(createNodeId, createNode);
+  const JobProcessor = Processor.createProcessor(createNodeId, createNode);
   // Gatsby adds a configOption that's not needed for this plugin, delete it
   delete configOptions.plugins;
   // plugin code goes here...
   console.log("Univjobs Datasource API Plugin starting with options", configOptions);
 
   try {
+    //Get all jobs
+    //const jobs = await PublicJobsAPI.getPublicJobs();
+    //debugger;
     // Get all companies
     const exploreCompanies = await PublicCompaniesAPI.getExploreCompanies();
     const featuredCompanies = await PublicCompaniesAPI.getFeaturedCompanies();
     let allCompanies = await getAllCompanies(exploreCompanies, featuredCompanies, PublicCompaniesAPI);
+    const jobs = await PublicJobsAPI.getPublicJobs();
     console.log("Adding dummy company!")
     allCompanies = await allCompanies.concat(await PublicCompaniesAPI.addDummyCompany());
     console.log(allCompanies)
     for (let company of allCompanies) {
       CompanyProcessor.processAndCreateCompanyNode(company);
+    }
+
+    for (let job of jobs) {
+      JobProcessor.processAndCreateJobNode(job)
     }
   } 
   

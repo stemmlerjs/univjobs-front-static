@@ -52,10 +52,61 @@ class Processor {
     const { createNode } = this;
     const nodeData = this._processCompany(company);
     createNode(nodeData);
-    console.log("Created node");
+    console.log("Created company node");
   }
 
+  /**
+   * _processJobs
+   * 
+   * @function that processes a job and returns the Gatsby/
+   * GraphQL object format.
+   * @param {Object} company
+   * @return {Object} for GraphQL/Gatsby
+   */
+
+  _processJob (job) {
+    const { createNodeId } = this;
+
+    const nodeId = createNodeId(`univjobs-company-job-${job.jobId}`)
+    const nodeContent = JSON.stringify(job)
+    const nodeContentDigest = crypto
+      .createHash('md5')
+      .update(nodeContent)
+      .digest('hex')
+
+    const nodeData = Object.assign({}, job, {
+      id: nodeId,
+      parent: null,
+      children: [],
+      internal: {
+        type: `Job`,
+        content: nodeContent,
+        contentDigest: nodeContentDigest,
+      },
+    })
+    return nodeData
+  }
+
+  /**
+   * processAndCreateJobNode
+   * 
+   * @function that processes and creates a new job node.
+   * @param {Object} company object
+   * @return {Promise}
+   */
+
+  processAndCreateJobNode (job) {
+    const { createNode } = this;
+    const nodeData = this._processJob(job);
+    createNode(nodeData);
+    console.log("Created job node");
+  }
+
+
+
 }
+
+
 
 module.exports = {
   createProcessor: (createNodeId, createNode) => {
