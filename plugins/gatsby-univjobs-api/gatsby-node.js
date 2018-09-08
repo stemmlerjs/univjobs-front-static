@@ -39,21 +39,24 @@ exports.sourceNodes = async ({ boundActionCreators, createNodeId }, configOption
   console.log("Univjobs Datasource API Plugin starting with options", configOptions);
 
   try {
-    //Get all jobs
-    //const jobs = await PublicJobsAPI.getPublicJobs();
-    //debugger;
-    // Get all companies
+
     const exploreCompanies = await PublicCompaniesAPI.getExploreCompanies();
     const featuredCompanies = await PublicCompaniesAPI.getFeaturedCompanies();
     let allCompanies = await getAllCompanies(exploreCompanies, featuredCompanies, PublicCompaniesAPI);
-    const jobs = await PublicJobsAPI.getPublicJobs();
-    console.log("Adding dummy company!")
     allCompanies = await allCompanies.concat(await PublicCompaniesAPI.addDummyCompany());
     console.log(allCompanies)
+
+    
+    //Get jobs
+    let jobs = await PublicJobsAPI.getPublicJobs();
+    let allJobs = await Object.assign(jobs, await PublicJobsAPI.createDummyJob());
+    console.log(allJobs);
+
+
     for (let company of allCompanies) {
       ProcessorInstance.processAndCreateCompanyNode(company);
     }
-    for (let job of jobs) {
+    for (let job of allJobs) {
       ProcessorInstance.processAndCreateJobNode(job)
     }
   } 
