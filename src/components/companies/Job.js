@@ -2,6 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 
+import config from '../../config'
+
+
 const JobTypeColorCodes = {
   1: { color: 'rgb(255, 255, 255)', background: 'rgb(144, 137, 205)' },
   2: { color: 'rgb(255, 255, 255)', background: '#EE4266' },
@@ -34,19 +37,19 @@ function getJobTypeColor(jobTypeId) {
  */
 
 const Job = props => (
-  <Link
+  <a
     className="job"
     style={{
       textDecoration: 'none',
       color: 'inherit',
       borderTop: `solid 10px ${getJobTypeColor(props.jobTypeId)}`
     }}
-    to={props.slug}
+    href={`${config.appUrl}${props.slug}`}
   >
     <div>{props.title}</div>
     <div>{props.location}</div>
       <div>{props.jobType}</div>
-  </Link>
+  </a>
 )
 
 Job.propTypes = {
