@@ -31,7 +31,7 @@ exports.sourceNodes = async ({ boundActionCreators, createNodeId }, configOption
   const { createNode } = boundActionCreators;
   const { url } = configOptions;
   const PublicCompaniesAPI = PublicCompanies(url);
-  const PublicJobsAPI = PublicJobs(url)
+  //const PublicJobsAPI = PublicJobs(url)
   const ProcessorInstance = Processor.createProcessor(createNodeId, createNode);
     // Gatsby adds a configOption that's not needed for this plugin, delete it
   delete configOptions.plugins;
@@ -48,17 +48,17 @@ exports.sourceNodes = async ({ boundActionCreators, createNodeId }, configOption
 
     
     //Get jobs
-    let jobs = await PublicJobsAPI.getPublicJobs();
-    let allJobs = await Object.assign(jobs, await PublicJobsAPI.createDummyJob());
-    console.log(allJobs);
+    // let jobs = await PublicJobsAPI.getPublicJobs();
+    // let allJobs = await Object.assign(jobs, await PublicJobsAPI.createDummyJob());
+    // console.log(allJobs);
 
 
     for (let company of allCompanies) {
       ProcessorInstance.processAndCreateCompanyNode(company);
     }
-    for (let job of allJobs) {
-      ProcessorInstance.processAndCreateJobNode(job)
-    }
+    // for (let job of allJobs) {
+    //   ProcessorInstance.processAndCreateJobNode(job)
+    // }
   } 
   
   catch (err) {

@@ -20,10 +20,10 @@ const axios = require('axios');
    */
 
   async getPublicJobs () {
-    const publicJobs = await axios.get(`${this.url}/api/v1/public/companies/jobs`);
+    const publicJobs = await axios.get(`${this.url}/api/v1/public/jobs/open`);
 
-    let jobs = publicJobs.jobs.map((job) => Object.assign({}, job, { hidden: false }));
-
+    let jobs = publicJobs.data.jobs.map((job) => Object.assign({}, job, { hidden: false}));
+  
     return jobs;
   }
 
