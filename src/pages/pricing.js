@@ -107,8 +107,6 @@ const Plans = (props) => {
               'Target students by school',
               'Applicant tracking system',
               'Custom questions',
-              'Access to student database',
-              'Invite students'
             ]
           }
           buttonText={'Sign up for free'}

@@ -99,14 +99,8 @@ class Processor {
     const { createNode } = this;
     const nodeData = this._processJob(job);
     createNode(nodeData);
-    console.log("Created job node");
   }
-
-
-
 }
-
-
 
 module.exports = {
   createProcessor: (createNodeId, createNode) => {

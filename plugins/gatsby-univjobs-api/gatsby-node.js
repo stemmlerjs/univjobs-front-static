@@ -32,9 +32,8 @@ exports.sourceNodes = async ({ boundActionCreators, createNodeId }, configOption
   const { url } = configOptions;
   const PublicCompaniesAPI = PublicCompanies(url);
   const PublicJobsAPI = PublicJobs(url)
-  const CompanyProcessor = Processor.createProcessor(createNodeId, createNode);
-  const JobProcessor = Processor.createProcessor(createNodeId, createNode);
-  // Gatsby adds a configOption that's not needed for this plugin, delete it
+  const ProcessorInstance = Processor.createProcessor(createNodeId, createNode);
+    // Gatsby adds a configOption that's not needed for this plugin, delete it
   delete configOptions.plugins;
   // plugin code goes here...
   console.log("Univjobs Datasource API Plugin starting with options", configOptions);
@@ -52,11 +51,10 @@ exports.sourceNodes = async ({ boundActionCreators, createNodeId }, configOption
     allCompanies = await allCompanies.concat(await PublicCompaniesAPI.addDummyCompany());
     console.log(allCompanies)
     for (let company of allCompanies) {
-      CompanyProcessor.processAndCreateCompanyNode(company);
+      ProcessorInstance.processAndCreateCompanyNode(company);
     }
-
     for (let job of jobs) {
-      JobProcessor.processAndCreateJobNode(job)
+      ProcessorInstance.processAndCreateJobNode(job)
     }
   } 
   

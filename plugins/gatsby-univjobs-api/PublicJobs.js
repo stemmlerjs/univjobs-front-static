@@ -20,14 +20,15 @@ const axios = require('axios');
    */
 
   async getPublicJobs () {
-    let publicJobs = '';
-    publicJobs = await axios.get(`${this.url}/api/v1/public/jobs/open`);
-    console.log("WE ARE HERE!!! LITASS!")
-    let jobs = await publicJobs.data.jobs.map((job) => {
-        console.log(job)
-    })
-    return jobs;
+    const publicJobs = await axios.get(`${this.url}/api/v1/public/companies/jobs`);
+    return publicJobs;
   }
+
+  // TODO: 
+  async createDummyJob () {
+    // Fill this in
+  }
+  
 }
 
 module.exports = (url) => {
