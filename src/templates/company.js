@@ -11,6 +11,7 @@ import SocialMediaSection from '../components/companies/SocialMediaSection'
 import OfficesSection from '../components/companies/OfficesSection'
 import CultureSection from '../components/companies/CultureSection'
 import helpers from '../helpers'
+import { logExploreCompanyView } from '../utils/logging';
 
 /**
  * CompanyTemplate
@@ -25,6 +26,18 @@ import helpers from '../helpers'
  */
 
 class CompanyTemplate extends React.Component {
+  componentDidMount () {
+    const { data } = this.props;
+    let company = helpers.companies.getCompaniesFromQuery(data.company);
+    
+    if (company.length !== 0) {
+      company = company[0];
+    }
+
+    const companyId = company.companyId;
+    logExploreCompanyView(companyId);
+  }
+
   render () {
     const { data } = this.props;
     let company = helpers.companies.getCompaniesFromQuery(data.company);
