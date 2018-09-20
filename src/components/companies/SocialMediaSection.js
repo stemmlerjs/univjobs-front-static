@@ -8,14 +8,14 @@ import SocialLink from '../SocialLink'
 
 const SocialMedia = props => (
   <div className="list-section-item">
-    <Link
-      to={props.url}
+    <a
+      href={props.url}
       style={{ textDecoration: 'none', color: 'inherit' }}
       className="social-item"
     >
       <SocialLink {...props} />
       <div className="social-type">{props.type}</div>
-    </Link>
+    </a>
   </div>
 )
 
@@ -25,16 +25,19 @@ SocialMedia.propTypes = {
 }
 
 class SocialMediaSection extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props);
   }
 
   render() {
     const { links } = this.props
+    console.log('<SocialMediaSection>', links)
 
     return (
       <div className="list-section">
-        {links.map((link, i) => <SocialMedia key={i} {...link} />)}
+        {links
+          .filter(link => link.url !== "")
+          .map((link, i) => <SocialMedia key={i} {...link} />)}
       </div>
     )
   }

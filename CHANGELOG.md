@@ -1,5 +1,9 @@
 # Changelog
 
+##[1.1.1] - [2018-09-19]
+### Fixed
+- [Company Template] Fixed social media links to only show links that were present.
+
 ## [1.1.0] - [2018-08-31]
 ### Added
 - Finished the univjobs-datasource-api plugin.
