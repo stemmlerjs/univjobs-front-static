@@ -1,38 +1,37 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 
 import backers from '../styles/BackersStyles.module.css'
-
-
 
 /**
  * NOTE: We can use this for other logos such as employers who use us
  */
 class Backer extends React.Component {
-    constructor () {
-      super();
-      this.state = {
-      };
-    }
+  constructor() {
+    super()
+    this.state = {}
+  }
 
-
-render = () => {
+  render = () => {
+    const { header, logos } = this.props
     return (
       <section className={backers.container}>
         <div className={backers.innerContainer}>
-          <h1>{this.props.header}</h1>
+          <h1>{header}</h1>
           <div className={backers.backersList}>
-           { 
-              Object.values(this.props.logos).map( logo => 
-                <div><a href={logo[0]}><img style={{maxWidth: '220px'}} src={logo[1]}></img></a></div>
-                )
-            }  
-          
+            {Object.values(logos).map((logo, key) => (
+              <div key={key}>
+                <a href={logo[0]}>
+                  <img style={{ maxWidth: '220px' }} src={logo[1]} />
+                </a>
+              </div>
+            ))}
           </div>
-        </div>  
+        </div>
       </section>
     )
- }
+  }
 }
 
 /**
@@ -40,7 +39,12 @@ render = () => {
  */
 Backer.defaultProps = {
   header: '',
-  logos: {},
+  logos: [],
+}
+
+Backer.propTypes = {
+  header: PropTypes.string,
+  logos: PropTypes.array
 }
 
 export default Backer

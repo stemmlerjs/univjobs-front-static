@@ -45,6 +45,7 @@ class CompanyTemplate extends React.Component {
     if (company.length !== 0) {
       company = company[0];
     }
+    console.log('<Company/>', this.props)
 
     return (
       <div>
