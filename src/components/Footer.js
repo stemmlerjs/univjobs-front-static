@@ -40,7 +40,7 @@ const Footer = () => (
     <div className={styles.linksContainer}>
       <section>
         <FooterMenuSection
-          title={'Company'}
+          title={'Univjobs'}
           links={[
             { name: 'About', url: '/about' },
             {
@@ -58,6 +58,14 @@ const Footer = () => (
             { name: 'Pricing', url: '/pricing' },
           ]}
         />
+        <FooterMenuSection
+          title={'Companies'}
+          links={[
+            { name: 'Directory', url: '/companies/directory' },
+            { name: 'Featured Companies', url: '/companies' },
+          ]}
+        />
+
       </section>
 
       <section>

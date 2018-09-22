@@ -39,8 +39,87 @@ class Header extends React.Component {
   constructor () {
     super();
     this.state = {
-      menuOpen: false
+      menuOpen: false,
+      didScroll: false,
+      lastScrollTop: 0,
+      delta: 5,
+      navbarHeight: 0,
+      hideUp: false
     };
+
+    this.hasScrolled = this.hasScrolled.bind(this);
+  }
+
+  componentDidMount () {
+    if (typeof window !== "undefined") {
+      // Set navbar height
+      this.setState({
+        ...this.state,
+        navbarHeight: document.getElementById('header-nav').offsetHeight
+      })
+
+      // Hook up scroll event listener
+      window.addEventListener('scroll', () => {
+        this.setState({ 
+          ...this.state,
+          didScroll: true
+        })
+      });
+
+      // Check for scroll every while
+      setInterval(() => {
+        if (this.state.didScroll) {
+          this.hasScrolled();
+          this.setState({
+            ...this.state,
+            didScroll: false
+          })
+        }
+      }, 250);
+    }
+  }
+
+  hasScrolled = () => {
+    const st = window.scrollY;
+    const { lastScrollTop, delta, navbarHeight } = this.state;
+
+    const body = document.body,
+    html = document.documentElement;
+
+    const documentHeight = Math.max( body.scrollHeight, body.offsetHeight, 
+                       html.clientHeight, html.scrollHeight, html.offsetHeight );
+    
+    // Make sure they scroll more than delta
+    if(Math.abs(lastScrollTop - st) <= delta)
+      return;
+    
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+    if (st > lastScrollTop && st > navbarHeight){
+      // Scroll Down
+      // $('header').removeClass('nav-down').addClass('nav-up');
+      this.setState({
+        ...this.state,
+        hideUp: true
+      })
+      console.log('scroll down')
+    } 
+    else {
+      // Scroll Up
+      if(st + window.innerHeight < documentHeight) {
+        // $('header').removeClass('nav-up').addClass('nav-down');
+        this.setState({
+          ...this.state,
+          hideUp: false
+        })
+        console.log('scroll up')
+      }
+    }
+    
+    this.setState({
+      ...this.state,
+      lastScrollTop: st
+    })
   }
 
   /**
@@ -58,7 +137,13 @@ class Header extends React.Component {
 
   render = () => {
     return (
-    <div className={styles.container}>
+    <div 
+      id="header-nav" 
+      className={styles.container}
+      style={{
+        top: this.state.hideUp ? '-95px' : '0px'
+      }}
+    >
       <div className={styles.logoContainer}>
         <Link to="/">
         <img 

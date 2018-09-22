@@ -7,6 +7,7 @@ import LandingPage from '../components/LandingPage'
 import FeaturedSlider from '../components/companies/FeaturedSlider'
 import CompaniesShowcase from '../components/companies/CompaniesShowcase'
 import CallToAction from '../components/CallToAction'
+import DirectoryLink from '../components/companies/DirectoryLink';
 
 import config from '../config'
 
@@ -59,7 +60,9 @@ class Companies extends React.Component {
           title={'Growing companies'}
           subTitle={`Looking for an opportunity to make an impact? 
             These companies are growing fast and looking for new grads to shape the future of their business.`}
-          companies={companies}/>
+          companies={companies}
+        />
+        <DirectoryLink/>
         <CallToAction
           header="Get started now!"
           subHeader="Create your profile and get access to student-friendly jobs."
