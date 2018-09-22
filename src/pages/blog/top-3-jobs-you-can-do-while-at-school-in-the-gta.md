@@ -27,7 +27,7 @@ We’ve put together a list of the top 3 companies with jobs local to the GTA th
 
 # Rover
 
-## Pet Sitter & Dog Walker
+**Pet Sitter & Dog Walker**
 
 ![Rover.com](/img/men-2425121_1920.jpg)
 
@@ -39,7 +39,7 @@ Sounds awesome, right? Check ‘em out [here](https://go.rover.com/univjobs/).
 
 # Plume Music
 
-## In-Home Piano Teacher
+**In-Home Piano Teacher**
 
 ![Plume Music](/img/music-1542546_1920.jpg)
 
@@ -51,7 +51,7 @@ If you think you’re ready to pass your skills onto someone else, click here to
 
 # Port App
 
-## Driver
+**Driver**
 
 ![Port app](/img/car-1149997_1920.jpg)
 
@@ -67,4 +67,4 @@ Ready to get driving? Visit [portapp.co](https://portapp.co/drivers).
 
 School's hard enough as it is. Finding part-time work, valuable co-op and work experience while you're already enrolled doesn't have to be so damn hard. We created Univjobs to make this easier, kind of like a college-survival platform for being able to pay the bills and leveling up in your early-career endeavors.
 
-Join today and get access to Canada's exclusive student and recent grad jobs network. Free for students (forever).
+[Join today](https://app.univjobs.ca/register) and get access to Canada's exclusive student and recent grad jobs network. Free for students (forever).
