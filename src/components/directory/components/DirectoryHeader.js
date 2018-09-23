@@ -42,18 +42,32 @@ export default class DirectoryHeader extends React.Component {
     // function.
     const self = this;
     window.initializegmaps = () => {
+      // Setup autocomplete
       const input = document.getElementById('searchTextField');
       const autocomplete = new google.maps.places.Autocomplete(input);
-
       google.maps.event.addListener(autocomplete, 'place_changed', this.handlePlaceChanged.bind(self));
+
+      // Setup GeoCoder
+      window.Geocoder = new google.maps.Geocoder;
     }
   }
+
+  /**
+   * handlePlaceChanged
+   * @desc This callback gets fired when the place is changed from
+   * the Google Maps input.
+   */
 
   handlePlaceChanged () {
     const newPlaceValue = document.getElementById('searchTextField').value;
     this.props.onChange(newPlaceValue);
     this.props.onSubmit();
   }
+
+  /**
+   * setupScrollEvents
+   * @desc This function initializes all of the scroll events.
+   */
 
   setupScrollEvents() {
     if (typeof window !== 'undefined') {
@@ -84,6 +98,13 @@ export default class DirectoryHeader extends React.Component {
       }, 250)
     }
   }
+
+  /**
+   * hasScrolled
+   * @desc When we scroll, we want the status bar to not show. This
+   * function determines if we've scrolled past the navbar and places
+   * a class on it to remove it from view.
+   */
 
   hasScrolled = () => {
     const st = window.scrollY
@@ -130,6 +151,14 @@ export default class DirectoryHeader extends React.Component {
       lastScrollTop: st,
     })
   }
+
+  /**
+   * _handleKeyPress
+   * @desc This function should be fired when the input field
+   * changes. It will detect when the enter key has been pressed
+   * in order to submit.
+   * @param {Event} e
+   */
 
   _handleKeyPress = (e) => {
     if (e.key === 'Enter') {

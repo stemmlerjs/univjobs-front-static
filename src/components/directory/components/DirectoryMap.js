@@ -19,6 +19,7 @@ class DirectoryMap extends React.Component {
     }
     this.onMapLoad = this.onMapLoad.bind(this);
     this.changeLocation = this.changeLocation.bind(this);
+    this.updateMarkers = this.updateMarkers.bind(this);
   }
 
   /**
@@ -33,6 +34,33 @@ class DirectoryMap extends React.Component {
     
   }
 
+  updateMarkers () {
+    const { companies } = this.props;
+    const { map } = this.state;
+    companies.forEach(function(marker, i) {
+
+      // create a HTML element for each feature
+      var el = document.createElement('div');
+      el.className = 'marker';
+      el.innerText = `${i + 1}`
+
+      // make a marker for each feature and add to the map
+      new mapboxgl.Marker(el)
+      .setLngLat([marker.position.lng, marker.position.lat])
+      .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+      .setHTML(`<div>
+      <div class="image-container"><img src="${marker.logoUrl}"/></div>
+      <div>
+        <h3>${marker.companyName}</h3>
+        <p>${marker.address}</p>
+        <div class="industry">${marker.industry.label}</div>
+      </div>
+    </div>
+    `))
+      .addTo(map);
+    });
+  }
+
   /**
    * onMapLoad
    * @desc When the map is loaded, we'll save a reference to
@@ -45,6 +73,8 @@ class DirectoryMap extends React.Component {
       map: map,
       mapLoaded: true
     })
+
+    this.updateMarkers();
   }
 
   /**
@@ -63,12 +93,13 @@ class DirectoryMap extends React.Component {
   render() {
     const {currentLatitude, currentLongitude } = this.props;
     return (
-      <Map
+      <div className="directory-map">
+        <Map
         ref={(e) => { this.map = e; }}
         style="mapbox://styles/mapbox/streets-v10"
         containerStyle={{
           height: '100vh',
-          width: '50%',
+          width: '100%',
         }}
         onStyleLoad={this.onMapLoad}
         center={[currentLongitude, currentLatitude]}
@@ -79,9 +110,10 @@ class DirectoryMap extends React.Component {
           type="symbol" 
           id="marker" 
           layout={{ 'icon-image': 'marker-15' }}>
-          
         </Layer>
       </Map>
+      </div>
+      
     )
   }
 }

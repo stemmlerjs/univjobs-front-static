@@ -83,7 +83,6 @@ class Directory extends React.Component {
     }
     
     this.handleChangeLocationText = this.handleChangeLocationText.bind(this);
-    this.handleChangeLocation = this.handleChangeLocation.bind(this)
     this.handleSearchForLocation = this.handleSearchForLocation.bind(this)
   }
 
@@ -151,20 +150,13 @@ class Directory extends React.Component {
   }
 
   /**
-   * changeLocation
+   * handleChangeLocationText
    * 
-   * @desc This function changes the location of the map and would
-   * also need to re-order companies in view.
-   * @param {String} cityOrAddress
-   * @param {Number} lat latitude 
-   * @param {Number} lng longitude
+   * @desc Updates the text for the current location.
+   * @param {String} searchTerm
    *  
    * @return void
    */
-  
-  handleChangeLocation (cityOrAddress, lat, lng) {
-
-  }
 
   handleChangeLocationText (searchTerm) {
     this.setState({
@@ -173,9 +165,27 @@ class Directory extends React.Component {
     })
   }
 
+  /**
+   * handleSearchForLocation
+   * @desc When a user types in a new location and hits search,
+   * we need to get the geolocation coordinates for that location and 
+   * then update our map. That's what this function does.
+   */
+
   handleSearchForLocation () {
     const { currentLocation } = this.state;
-    console.log('time to search for a new location', currentLocation)
+    const { Geocoder } = window;
+    Geocoder.geocode({ address: currentLocation }, 
+      (geocodeResponse) => {
+        const lat = geocodeResponse[0].geometry.location.lat();
+        const lng = geocodeResponse[0].geometry.location.lng();
+
+        this.setState({
+          ...this.state,
+          myLat: lat,
+          myLng: lng
+        })
+      })
   }
 
   render() {
