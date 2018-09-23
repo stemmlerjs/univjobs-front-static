@@ -1,0 +1,74 @@
+.directory-result
+  width: 100%;
+  border-bottom: solid 1px #dfdfdf;
+  min-height: 175px;
+  .directory-result-inner-container
+    cursor: pointer;
+    padding: 1em;
+    &.featured
+      min-height: 175px;
+      border: solid 3px #48ded7;
+      border-radius: 3px;
+      background: #faffff;
+    .head 
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      .job-count
+        font-size: 16px;
+        color: #00d2cd;
+        font-weight: bold;
+    .body-container
+      display: flex;
+      flex-direction: row;
+      .logo-container
+        width: 43%;
+        text-align: center;
+        img 
+          max-height: 150px;
+          margin: 0;
+      .body
+        width: 57%;
+        margin-left: 2em;
+        .company-name
+          font-weight: bold;
+          font-size: 1.4em;
+        .address
+          opacity: 0.5;
+          font-size: 16px;
+        .industry
+          font-size: 16px;
+          background: #EFEFEF;
+          display: inline-block;
+          padding: 10px 17px 10px 17px;
+          border-radius: 42px;
+          color: grey;
+          margin-bottom: 11px;
+          margin-right: 11px;
+        .featured
+          font-size: 16px;
+          background: #00d2cd;
+          display: inline-block;
+          padding: 10px 17px 10px 17px;
+          border-radius: 42px;
+          color: white;
+          margin-bottom: 11px
+  .directory-result-focused-section
+    transition: 0.2s ease-in;
+    overflow: hidden;
+    height: 0px;
+    background: #F9F9F9;
+    &.open
+      height: initial;
+    .inner 
+      padding: 1em;
+    
+    p 
+      font-size: 16px;
+      opacity: 0.6;
+      margin-top: 8px;
+
+    .job
+      display: block;
+      font-size: 16px;
+      color: #00d2cd;

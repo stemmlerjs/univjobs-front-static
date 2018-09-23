@@ -1,40 +1,17 @@
 import React from 'react'
 import Link from 'gatsby-link'
-
-import styles from "../styles/HeaderStyles.module.css";
-
+import HeaderOverlay from './HeaderOverlay'
 import config from '../config'
 import { redirectTo } from '../helpers'
 
-const Overlay = ({ isOpen }) => {
-  return (
-    <div className={isOpen
-      ? styles.mobileNavOverlay
-      : `${styles.mobileNavOverlay} ${styles.overlayClosed}`}>
+import styles from "../styles/HeaderStyles.module.css";
 
-      {
-        /**s
-         * Overlay options
-         */
-      }
-      <div className={styles.mobileNavOverlayOptionsContainer}>
-       <a className={`${styles.overlayItemMain} ${styles.overlay}`} href={`${config.appUrl}login`}>Login</a>
-       <a className={`${styles.overlayItem} ${styles.overlay}`} href="/companies">Explore Companies</a>
-       <a className={`${styles.overlayItem} ${styles.overlay}`} href="/about">About</a>
-
-      <div className={styles.overlaySection}>Student</div>        
-        <a className={`${styles.overlayItemMain} ${styles.overlay}`} href={`${config.appUrl}register`}>Register</a>
-        <a className={`${styles.overlayItem} ${styles.overlay}`} href="/blog/categories/students">Tips</a>
-
-        <div className={styles.overlaySection}>Employers</div>
-          <a className={`${styles.overlayItemMain} ${styles.overlay}`} href={`${config.appUrl}register/employer`}>Register Employer</a>
-          <a className={`${styles.overlayItem} ${styles.overlay}`} href="/pricing">Pricing</a>
-
-      </div>
-    </div>
-  )
-}
-
+/**
+ * @class Header
+ * @desc The basic blue header that shows within the entire application.
+ * We'll make it show on every page except the directory, it will render
+ * a different header.
+ */
 class Header extends React.Component {
   constructor () {
     super();
@@ -44,7 +21,9 @@ class Header extends React.Component {
       lastScrollTop: 0,
       delta: 5,
       navbarHeight: 0,
-      hideUp: false
+      hideUp: false,
+      currentUrl: '',
+      shouldHide: false
     };
 
     this.hasScrolled = this.hasScrolled.bind(this);
@@ -79,6 +58,7 @@ class Header extends React.Component {
     }
   }
 
+  // Deterine if the user has scrolled recently.
   hasScrolled = () => {
     const st = window.scrollY;
     const { lastScrollTop, delta, navbarHeight } = this.state;
@@ -122,12 +102,7 @@ class Header extends React.Component {
     })
   }
 
-  /**
-   * openBurgerMenu
-   * 
-   * Opens the burger menu.
-   */
-
+  // Opens the burger menu
   toggleBurgerMenu = () => {
     this.setState({
       ...this.state,
@@ -181,7 +156,7 @@ class Header extends React.Component {
 
         </div>
 
-        <Overlay
+        <HeaderOverlay
           isOpen={this.state.menuOpen}
         />
       </div>
