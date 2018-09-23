@@ -22,6 +22,11 @@
   transition: top 0.2s ease-in-out;
 }
 
+.hideNav {
+  background: white !important;
+  box-shadow: unset !important;
+}
+
 .univjobsLogo {
   height: 38px;
   margin: 0px;

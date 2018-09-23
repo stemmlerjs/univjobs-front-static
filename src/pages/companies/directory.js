@@ -6,6 +6,7 @@ import DirectoryFilters from '../../components/directory/components/DirectoryFil
 import DirectoryResultsList from '../../components/directory/components/DirectoryResultsList'
 import DirectoryMap from '../../components/directory/components/DirectoryMap'
 import Loading from '../../components/Loading'
+import {getCurrentCity, getCoordinates} from '../../utils/ip'
 import '../../styles/Directory/Directory.sass'
 
 /**
@@ -55,6 +56,14 @@ const companies = [
   },
 ]
 
+// Coordinates for Union Station in Toronto. A backup
+// in case we can't get the coordinates for this current
+// user.
+const unionStationCoordinates = {
+  lat: 43.645530,
+  lng: -79.380350
+}
+
 /**
  * Companies
  *
@@ -66,39 +75,118 @@ const companies = [
 
 class Directory extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      myLat: 42.3601,
-      myLng: -71.0589,
+      myLat: unionStationCoordinates.lat,
+      myLng: unionStationCoordinates.lng,
+      currentLocation: ''
     }
-    // OAKVILLE: latitude: 43.4714071, longitude: -79.6935869
+    
+    this.handleChangeLocationText = this.handleChangeLocationText.bind(this);
+    this.handleChangeLocation = this.handleChangeLocation.bind(this)
+    this.handleSearchForLocation = this.handleSearchForLocation.bind(this)
   }
 
-  componentDidMount() {
-    debugger;
-    if (navigator) {
-      navigator.geolocation.getCurrentPosition(position => {
-        const lat = position.coords.latitude
-        const lon = position.coords.longitude
+  async componentDidMount() {
 
-        debugger;
+    const getLatitudePromise = () => {
+      return new Promise((resolve, reject) => {
+        // Get latitude and longitude.
+        if (navigator) {
+          navigator.geolocation.getCurrentPosition(position => {
+            const lat = position.coords.latitude
+            const lng = position.coords.longitude
 
-        this.setState({
-          ...this.state,
-          myLat: lat,
-          myLng: lon,
-        })
-      }, err => {
-        debugger;
-        console.log(err)
-      }, { enableHighAccuracy: true, timeout: 2000, maximumAge: 3600000 })
+            return resolve({
+              lat: lat,
+              lng: lng
+            })
+            
+          }, err => {
+            return resolve(null);
+          }, { enableHighAccuracy: true, timeout: 60000, maximumAge: 3600000 })
+        }
+      })
     }
+
+    const getCityAndCacheCoordinatePromise = async () => {
+      // Get current city
+      let city = '';
+      try {
+        city = await getCurrentCity();
+        return city;
+      } catch (err) {
+        return null;
+      }
+    }
+
+    const [coords, city] = await Promise.all([
+      getLatitudePromise(),
+      getCityAndCacheCoordinatePromise()
+    ])
+
+    // If the navigator was able to successfully query and
+    // retrieve the coordinates of this user, we'll take that
+    // because it's more accurate.
+
+    if (coords) {
+      this.setState({
+        myLat: coords.lat,
+        myLng: coords.lng,
+        currentLocation: city
+      })
+    } 
+    
+    // Otherwise, in the case that we weren't able to get it from
+    // the user (they didn't accept, request timed out, non-secure
+    // connection, etc), then we'll take it from the ip-stack req.
+    else {
+      const coordinates = await getCoordinates();
+      this.setState({
+        myLat: coordinates.lat,
+        myLng: coordinates.lng,
+        currentLocation: city
+      })
+    }
+  }
+
+  /**
+   * changeLocation
+   * 
+   * @desc This function changes the location of the map and would
+   * also need to re-order companies in view.
+   * @param {String} cityOrAddress
+   * @param {Number} lat latitude 
+   * @param {Number} lng longitude
+   *  
+   * @return void
+   */
+  
+  handleChangeLocation (cityOrAddress, lat, lng) {
+
+  }
+
+  handleChangeLocationText (searchTerm) {
+    this.setState({
+      ...this.state,
+      currentLocation: searchTerm
+    })
+  }
+
+  handleSearchForLocation () {
+    const { currentLocation } = this.state;
+    console.log('time to search for a new location', currentLocation)
   }
 
   render() {
+    const { currentLocation } = this.state;
     return (
       <div className="directory-container">
-        <DirectoryHeader />
+        <DirectoryHeader 
+          currentLocation={currentLocation}
+          onChange={this.handleChangeLocationText}
+          onSubmit={this.handleSearchForLocation}
+        />
         <div className="directory-body">
           <DirectoryFilters />
           <DirectoryResultsList 
@@ -106,12 +194,8 @@ class Directory extends React.Component {
           />
           <DirectoryMap
             companies={companies}
-            googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyBphEXJviUGPiUE4GDnsBXIqnMi3mC0KLA&v=3.exp&libraries=geometry,drawing,places`}
-            loadingElement={<Loading />}
-            containerElement={<div style={{ height: `600px`, width: `50%` }} />}
-            mapElement={<div style={{ height: `100%` }} />}
-            lat={this.state.myLat}
-            lng={this.state.myLng}
+            currentLatitude={this.state.myLat}
+            currentLongitude={this.state.myLng}
           />
         </div>
       </div>

@@ -23,11 +23,36 @@ export default class DirectoryHeader extends React.Component {
 
     this.hasScrolled = this.hasScrolled.bind(this)
     this.setupScrollEvents = this.setupScrollEvents.bind(this)
+    this.setupGoogleMapsAutoComplete = this.setupGoogleMapsAutoComplete.bind(this)
   }
 
   componentDidMount() {
     // Setup scrolling events.
     this.setupScrollEvents()
+
+    // Setup autocomplete
+    if (typeof window !== undefined) {
+      this.setupGoogleMapsAutoComplete();
+    }
+  }
+
+  setupGoogleMapsAutoComplete () {
+    // Place "initializegmaps" onto the window as a global function
+    // so that the google maps API can access it as a callback 
+    // function.
+    const self = this;
+    window.initializegmaps = () => {
+      const input = document.getElementById('searchTextField');
+      const autocomplete = new google.maps.places.Autocomplete(input);
+
+      google.maps.event.addListener(autocomplete, 'place_changed', this.handlePlaceChanged.bind(self));
+    }
+  }
+
+  handlePlaceChanged () {
+    const newPlaceValue = document.getElementById('searchTextField').value;
+    this.props.onChange(newPlaceValue);
+    this.props.onSubmit();
   }
 
   setupScrollEvents() {
@@ -106,7 +131,14 @@ export default class DirectoryHeader extends React.Component {
     })
   }
 
+  _handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      this.props.onSubmit();
+    }
+  }
+
   render() {
+    const { currentLocation } = this.props;
     return (
       <div
         style={{
@@ -117,8 +149,17 @@ export default class DirectoryHeader extends React.Component {
       >
         <div className="logo-container"><img src={uLogo}/></div>
         <div className="search-container">
-          <input type="text" placeholder="Search by address or city"/>
-          <div className="enter-button">
+          <input 
+            id="searchTextField"
+            value={currentLocation} 
+            type="text" 
+            placeholder="Search by address or city"
+            onChange={(e) => this.props.onChange(e.target.value)}
+            onKeyPress={this._handleKeyPress}
+          />
+          <div 
+            onClick={this.props.onSubmit}
+            className="enter-button">
             <img src={searchSvg}/>
           </div>
         </div>
@@ -128,5 +169,7 @@ export default class DirectoryHeader extends React.Component {
 }
 
 DirectoryHeader.propTypes = {
-  
+  currentLocation: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired
 }

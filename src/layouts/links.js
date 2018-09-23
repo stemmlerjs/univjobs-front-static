@@ -20,6 +20,10 @@ const links = [
       'https://fonts.googleapis.com/css?family=Roboto+Mono:400,400i,700,700i',
     rel: 'stylesheet',
   },
+  {
+    href: 
+      "https://api.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css", rel:'stylesheet'
+  }
 ]
 
 export default links

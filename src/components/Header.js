@@ -23,7 +23,7 @@ class Header extends React.Component {
       navbarHeight: 0,
       hideUp: false,
       currentUrl: '',
-      shouldHide: false
+      shouldHideHeader: false
     };
 
     this.hasScrolled = this.hasScrolled.bind(this);
@@ -52,6 +52,14 @@ class Header extends React.Component {
           this.setState({
             ...this.state,
             didScroll: false
+          })
+        }
+
+        const shouldHideHeader = window.location.href.indexOf('companies/directory') !== -1;
+        if (shouldHideHeader !== this.state.shouldHideHeader) {
+          this.setState({
+            ...this.state,
+            shouldHideHeader: shouldHideHeader
           })
         }
       }, 250);
@@ -114,7 +122,7 @@ class Header extends React.Component {
     return (
     <div 
       id="header-nav" 
-      className={styles.container}
+      className={`${styles.container} ${this.state.shouldHideHeader ? styles.hideNav : ''}`}
       style={{
         top: this.state.hideUp ? '-95px' : '0px'
       }}
