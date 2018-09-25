@@ -39,24 +39,27 @@ FilterContainer.propTypes = {
  * results.
  */
 
-const DirectoryFilters = () => (
+const DirectoryFilters = ({ onChange }) => (
   <div className="directory-filters">
     <FilterContainer title="Industry">
       <Select 
         isMulti 
         options={industries}
+        onChange={(e) => onChange(e, 'industry')}
       />
     </FilterContainer>
 
     <FilterContainer title="Company size">
       <Select 
         options={companySize}
+        onChange={(e) => onChange(e, 'companySize')}
       />
     </FilterContainer>
 
     <FilterContainer title="Hiring">
       <Select 
         options={hiringOptions}
+        onChange={(e) => onChange(e, 'hiring')}
       />
     </FilterContainer>
     
@@ -66,5 +69,5 @@ const DirectoryFilters = () => (
 export default DirectoryFilters;
 
 DirectoryFilters.propTypes = {
-
+  onChange: PropTypes.func.isRequired
 }

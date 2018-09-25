@@ -9,6 +9,10 @@ const PublicJobs = require('./PublicJobs')
 
 const Processor = require('./Processor')
 
+/**
+ * getAllCompanies
+ * @desc This function combines all companies
+ */
 
 async function getAllCompanies (exploreCompanies, featuredCompanies, PublicCompaniesAPI) {
   let uniqueCompaniesIds = await exploreCompanies
@@ -40,25 +44,23 @@ exports.sourceNodes = async ({ boundActionCreators, createNodeId }, configOption
 
   try {
 
+    /**
+     * In this section, we create all of the Explore Companies and 
+     * Featured Companies which are shown on the /companies and companies/explore
+     * pages.
+     */
+
     const exploreCompanies = await PublicCompaniesAPI.getExploreCompanies();
     const featuredCompanies = await PublicCompaniesAPI.getFeaturedCompanies();
+    
     let allCompanies = await getAllCompanies(exploreCompanies, featuredCompanies, PublicCompaniesAPI);
     allCompanies = await allCompanies.concat(await PublicCompaniesAPI.addDummyCompany());
-    console.log(allCompanies)
 
-    
-    //Get jobs
-    // let jobs = await PublicJobsAPI.getPublicJobs();
-    // let allJobs = await Object.assign(jobs, await PublicJobsAPI.createDummyJob());
-    // console.log(allJobs);
-
+    const directoryCompanies
 
     for (let company of allCompanies) {
       ProcessorInstance.processAndCreateCompanyNode(company);
     }
-    // for (let job of allJobs) {
-    //   ProcessorInstance.processAndCreateJobNode(job)
-    // }
   } 
   
   catch (err) {

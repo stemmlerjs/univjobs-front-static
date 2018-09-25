@@ -7,6 +7,7 @@ import DirectoryResultsList from '../../components/directory/components/Director
 import DirectoryMap from '../../components/directory/components/DirectoryMap'
 import Loading from '../../components/Loading'
 import {getCurrentCity, getCoordinates} from '../../utils/ip'
+import CallToAction from '../../components/CallToAction'
 import '../../styles/Directory/Directory.sass'
 
 /**
@@ -23,6 +24,7 @@ const companies = [
       value: 5,
       label: "Service"
     },
+    companySize: { value: 1, label: '1 - 9' },
     about: `Dog-walking and pet-sitting at your own convenience. 
       We help blah blah blah so o lklf lorem ipsum, etc.`,
     featured: true,
@@ -36,12 +38,14 @@ const companies = [
     position: {
       lat: 43.650770,
       lng: -79.375810
-    }
+    },
+    hiring: true
   },
   { 
     jobs: [],
     companyName: "Wealthsimple", 
     address: "1524 Front Avenue, Toronto ON", 
+    companySize: { value: 2, label: '10 - 99' },
     industry: {
       value: 6,
       label: "Finance"
@@ -52,7 +56,8 @@ const companies = [
     position: {
       lat: 43.644910,
       lng: -79.412330
-    }
+    },
+    hiring: false
   },
 ]
 
@@ -79,17 +84,35 @@ class Directory extends React.Component {
     this.state = {
       myLat: unionStationCoordinates.lat,
       myLng: unionStationCoordinates.lng,
-      currentLocation: ''
+      currentLocation: '',
+
+      filters: {
+        industry: null,
+        companySize: null,
+        hiring: null
+      },
+
+      filteredCompanies: [],
+
+      isRebuildingMap: false,
+      isRebuildingMapSuccess: false,
+      isRebuildingMapFailure: false
     }
     
     this.handleChangeLocationText = this.handleChangeLocationText.bind(this);
-    this.handleSearchForLocation = this.handleSearchForLocation.bind(this)
+    this.handleSearchForLocation = this.handleSearchForLocation.bind(this);
+    this.handleFiltersChange = this.handleFiltersChange.bind(this);
+
+    this.filterByIndustry = this.filterByIndustry.bind(this);
+    this.filterByCompanySize = this.filterByCompanySize.bind(this);
+    this.filterByHiring = this.filterByHiring.bind(this);
+    this._doFilter = this._doFilter.bind(this)
   }
 
   async componentDidMount() {
 
     const getLatitudePromise = () => {
-      return new Promise((resolve, reject) => {
+      return new Promise((resolve) => {
         // Get latitude and longitude.
         if (navigator) {
           navigator.geolocation.getCurrentPosition(position => {
@@ -188,6 +211,126 @@ class Directory extends React.Component {
       })
   }
 
+  /**
+   * handleFiltersChange
+   * @desc When the filters change, we set the new filter
+   * value and issue a filter over the current showing data.
+   */
+
+  handleFiltersChange (value, filterName) {
+    // Set new filter values, signal intent to rebuild map
+    this.setState({
+      ...this.state,
+      filters: {
+        ...this.state.filters,
+        [filterName]: value
+      }
+    })
+  }
+
+  _doFilter () {
+    // Filter companies
+    const { hiring, companySize, industry } = this.state.filters;
+    let filteredCompanies = this
+      .filterByCompanySize(
+        this.filterByHiring(
+          this.filterByIndustry(companies, industry), 
+        hiring), 
+      companySize);
+    
+    console.log('filtered companies', filteredCompanies);
+
+  }
+
+  detectFiltersChange = (previousFilters) => {
+    const { industry, hiring, companySize } = previousFilters;
+    if (JSON.stringify(industry) !== JSON.stringify(this.state.filters.industry)) return true;
+    if (JSON.stringify(hiring) !== JSON.stringify(this.state.filters.hiring)) return true;
+    if (JSON.stringify(companySize) !== JSON.stringify(this.state.filters.companySize)) return true;
+    return false;
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const didFiltersChange = this.detectFiltersChange(prevState.filters);
+    if (didFiltersChange) {
+      this._doFilter();
+    }
+  }
+
+  /**
+   * filterByIndustry
+   * @desc Only shows companies that are of the selected industries.
+   * @param {Array | Object} companies original list of companies
+   * @param  
+   */
+
+  filterByIndustry (companies, industryFilters) {
+    if (industryFilters !== null) {
+      if (industryFilters.length !== 0) {
+        companies = companies.filter((company) => {
+          // If the company doesn't belong to one of the filters provided,
+          // then it shouldn't be shown.
+          let show = false;
+  
+          // Use "some()", return "true" when you want it to break.
+          industryFilters.some((industry) => {
+            if (industry.value === company.industry.value) {
+              show = true;
+              return true;
+            }
+            return false;
+          })
+  
+          return show;
+        })
+      }
+    }
+
+    return companies;
+  }
+
+  /**
+   * @filterByHiring
+   * @desc Filter companies by companies hiring only.
+   */
+
+  filterByHiring (companies, hiringFilters) {
+    if (hiringFilters !== null) {
+      companies = companies.filter((company) => {
+        // If the company doesn't belong to one of the filters provided,
+        // then it shouldn't be shown.
+
+        if (hiringFilters.value === company.hiring) {
+          return true;
+        }
+
+        return false;
+      })
+    }
+    return companies;
+  }
+
+  /**
+   * filterByCompanySize
+   * @desc Filters by company size.
+   */
+
+  filterByCompanySize (companies, companySizeFilters) {
+    if (companySizeFilters !== null) {
+      companies = companies.filter((company) => {
+        // If the company doesn't belong to one of the filters provided,
+        // then it shouldn't be shown.
+
+        if (companySizeFilters.value === company.companySize.value) {
+          return true;
+        }
+
+        return false;
+      })
+    }
+    return companies;
+  }
+
   render() {
     const { currentLocation } = this.state;
     return (
@@ -198,7 +341,9 @@ class Directory extends React.Component {
           onSubmit={this.handleSearchForLocation}
         />
         <div className="directory-body">
-          <DirectoryFilters />
+          <DirectoryFilters 
+            onChange={this.handleFiltersChange}
+          />
           <DirectoryResultsList 
             companies={companies}
           />
@@ -206,8 +351,18 @@ class Directory extends React.Component {
             companies={companies}
             currentLatitude={this.state.myLat}
             currentLongitude={this.state.myLng}
+            isRebuildingMap={this.state.isRebuildingMap}
+            isRebuildingMapSuccess={this.state.isRebuildingMapSuccess}
+            isRebuildingMapFailure={this.state.isRebuildingMapFailure}
           />
         </div>
+        <CallToAction
+          header="Want your company listed here?"
+          subHeader="Sign up for free and let students know you exist!"
+          buttonText="Sign up"
+          alt={true}
+          location=""
+        />
       </div>
     )
   }
