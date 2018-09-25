@@ -9,6 +9,53 @@ class Processor {
   }
 
   /**
+   * _processDirectoryCompany
+   * 
+   * @function _processDirectoryCompany processes a company and returns the Gatsby
+   * GraphQL object format.
+   * @param {Object} directoryCompany
+   * @return {Object} for GraphQL/Gatsby
+   */
+
+  _processDirectoryCompany (directoryCompany) {
+    const { createNodeId } = this;
+
+    const nodeId = createNodeId(`univjobs-directory-company-${directoryCompany.companyId}`)
+    const nodeContent = JSON.stringify(directoryCompany)
+    const nodeContentDigest = crypto
+      .createHash('md5')
+      .update(nodeContent)
+      .digest('hex')
+
+    const nodeData = Object.assign({}, directoryCompany, {
+      id: nodeId,
+      parent: null,
+      children: [],
+      internal: {
+        type: `DirectoryCompany`,
+        content: nodeContent,
+        contentDigest: nodeContentDigest,
+      },
+    })
+    return nodeData
+  }
+
+  /**
+   * processAndCreateDirectoryCompanyNode
+   * 
+   * @function that processes and creates a new directory company node.
+   * @param {Object} company object
+   * @return {Promise}
+   */
+
+  processAndCreateDirectoryCompanyNode (directoryCompany) {
+    const { createNode } = this;
+    const nodeData = this._processDirectoryCompany(directoryCompany);
+    createNode(nodeData);
+    console.log("Created Directory Company node");
+  }
+
+  /**
    * _processCompany
    * 
    * @function that processes a company and returns the Gatsby/

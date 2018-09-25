@@ -51,16 +51,22 @@ exports.sourceNodes = async ({ boundActionCreators, createNodeId }, configOption
      */
 
     const exploreCompanies = await PublicCompaniesAPI.getExploreCompanies();
-    const directoryCompanies = await PublicCompaniesAPI.getDirectory();
     const featuredCompanies = await PublicCompaniesAPI.getFeaturedCompanies();
     
     let allCompanies = await getAllCompanies(exploreCompanies, featuredCompanies, PublicCompaniesAPI);
     allCompanies = await allCompanies.concat(await PublicCompaniesAPI.addDummyCompany());
 
-    const directoryCompanies
-
     for (let company of allCompanies) {
       ProcessorInstance.processAndCreateCompanyNode(company);
+    }
+
+    /**
+     * Now, we need to get and create all directory nodes.
+     */
+
+    const directoryCompanies = await PublicCompaniesAPI.getDirectoryCompanies();
+    for (let directoryCompany of directoryCompanies) {
+      ProcessorInstance.processAndCreateDirectoryCompanyNode(directoryCompany)
     }
   } 
   
