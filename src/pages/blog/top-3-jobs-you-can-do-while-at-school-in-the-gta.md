@@ -37,17 +37,18 @@ One other great perk about this job for students is that you actually get to pic
 
 Sounds awesome, right? Check ‘em out [here](https://go.rover.com/univjobs/).
 
-# Plume Music
+# Feely Piano School
 
 **In-Home Piano Teacher**
 
-![Plume Music](/img/music-1542546_1920.jpg)
+![Feely Piano School](/img/music-1542546_1920.jpg)
 
 Love playing piano? Enjoy teaching? Want to get paid to teach piano? 
 
-Plume Music is looking musicians with 8th grade piano skills to teach others the basics of how to play the piano. This is another great job for students and music lovers alike. Who knows, you could be teaching the next John Legend or Lady Gaga! Just think about when they win that Grammy… make sure to ask for a shoutout! Oh, we forgot to mention, you’re getting paid (like a star) and you get to choose your own hours and work on your own schedule.
+Feely Piano Music is looking musicians, preferred to have 8th grade piano skills, but coach 1-1 for any to teach others the basics of how to play the piano. This is another great job for students and music lovers alike. Who knows, you could be teaching the next John Legend or Lady Gaga! Just think about when they win that Grammy… make sure to ask for a shoutout! Oh, we forgot to mention, you’re getting paid (like a star) and you get to choose your own hours and work on your own schedule. In addition, 1-1 mentorship for new teachers and shadowing the CEO.
 
-If you think you’re ready to pass your skills onto someone else, click here to vist [their site](https://www.plumemusic.ca/work-for-us).
+If you think you’re ready to pass your skills onto someone else, click here to vist [their site](https://www.feelypianoschool.com/).
+
 
 # Port App
 
@@ -67,4 +68,4 @@ Ready to get driving? Visit [portapp.co](https://portapp.co/drivers).
 
 School's hard enough as it is. Finding part-time work, valuable co-op and work experience while you're already enrolled doesn't have to be so damn hard. We created Univjobs to make this easier, kind of like a college-survival platform for being able to pay the bills and leveling up in your early-career endeavors.
 
-[Join today](https://app.univjobs.ca/register) and get access to Canada's exclusive student and recent grad jobs network. Free for students (forever).
+[Join today](https://univjobs.ca/) and get access to Canada's exclusive student and recent grad jobs network. Free for students (forever).
