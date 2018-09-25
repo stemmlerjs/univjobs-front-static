@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 368 368" style="enable-background:new 0 0 368 368;" xml:space="preserve" width="512px" height="512px" class=""><g><path style="fill:#D4F4F3" d="M232,8v304H40V8H232z M184,200v-48H88v48H184z M184,104V56H88v48H184z" data-original="#CCE4FF" class="active-path" data-old_color="#D3F4F3"/><g>
+	<path style="fill:#0DD4D2" d="M360,304h-24V8c0-4.424-3.576-8-8-8H40c-4.424,0-8,3.576-8,8v296H8c-4.424,0-8,3.576-8,8v48   c0,4.424,3.576,8,8,8h352c4.424,0,8-3.576,8-8v-48C368,307.576,364.424,304,360,304z M320,304h-32v-56c0-4.424-3.576-8-8-8   s-8,3.576-8,8v56h-32V16h32v184c0,4.424,3.576,8,8,8s8-3.576,8-8V16h32V304z M48,16h176v288H48V16z M352,352H16v-32h336V352z" data-original="#007AFF" class="" data-old_color="#007AFF"/>
+	<path style="fill:#0DD4D2" d="M184,48H88c-4.424,0-8,3.576-8,8v48c0,4.424,3.576,8,8,8h96c4.424,0,8-3.576,8-8V56   C192,51.576,188.424,48,184,48z M176,96H96V64h80V96z" data-original="#007AFF" class="" data-old_color="#007AFF"/>
+	<path style="fill:#0DD4D2" d="M184,144H88c-4.424,0-8,3.576-8,8v48c0,4.424,3.576,8,8,8h96c4.424,0,8-3.576,8-8v-48   C192,147.576,188.424,144,184,144z M176,192H96v-32h80V192z" data-original="#007AFF" class="" data-old_color="#007AFF"/>
+	<path style="fill:#0DD4D2" d="M184,240H88c-4.424,0-8,3.576-8,8s3.576,8,8,8h96c4.424,0,8-3.576,8-8S188.424,240,184,240z" data-original="#007AFF" class="" data-old_color="#007AFF"/>
+</g></g> </svg>

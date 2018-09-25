@@ -8,6 +8,7 @@ import DirectoryMap from '../../components/directory/components/DirectoryMap'
 import Loading from '../../components/Loading'
 import { getCurrentCity, getCoordinates } from '../../utils/ip'
 import CallToAction from '../../components/CallToAction'
+import config from '../../config'
 import '../../styles/Directory/Directory.sass'
 
 /**
@@ -16,55 +17,55 @@ import '../../styles/Directory/Directory.sass'
  * https://www.fullstackreact.com/articles/how-to-write-a-google-maps-react-component/
  */
 
-const companies = [
-  {
-    companyName: 'Rover',
-    address: '1428 White Oaks Blvd',
-    industry: {
-      value: 5,
-      label: 'Service',
-    },
-    companySize: { value: 1, label: '1 - 9' },
-    about: `Dog-walking and pet-sitting at your own convenience. 
-      We help blah blah blah so o lklf lorem ipsum, etc.`,
-    featured: true,
-    logoUrl:
-      'https://freebiemom.r.worldssl.net/wp-content/uploads/2018/08/Rover-logo.jpg',
-    jobs: [
-      {
-        title: 'Software Developer - Co-op',
-        slug: '/software-developer-co-op-12343nkd',
-      },
-      { title: 'Sales associate - Brampton', slug: '/salesassociate' },
-      { title: 'Entry level Dev-ops', slug: '/entry-level-dev-ops' },
-    ],
-    exploreSlug: '/companies/rover',
-    position: {
-      lat: 43.65077,
-      lng: -79.37581,
-    },
-    hiring: true,
-  },
-  {
-    jobs: [],
-    companyName: 'Wealthsimple',
-    address: '1524 Front Avenue, Toronto ON',
-    companySize: { value: 2, label: '10 - 99' },
-    industry: {
-      value: 6,
-      label: 'Finance',
-    },
-    about: `We help you use your money for smart investments.`,
-    featured: false,
-    logoUrl:
-      'https://images.startupopenhouse.com/thumbnail?colorspace=srgb&url=https://s3.amazonaws.com/soh-pwa-files-production/img/874e3c45-47dd-4ee6-a2ce-f9867d43d29c-1653e55f118.jpeg&width=310',
-    position: {
-      lat: 43.64491,
-      lng: -79.41233,
-    },
-    hiring: false,
-  },
-]
+// const companies = [
+//   {
+//     companyName: 'Rover',
+//     address: '1428 White Oaks Blvd',
+//     industry: {
+//       value: 5,
+//       label: 'Service',
+//     },
+//     companySize: { value: 1, label: '1 - 9' },
+//     about: `Dog-walking and pet-sitting at your own convenience. 
+//       We help blah blah blah so o lklf lorem ipsum, etc.`,
+//     featured: true,
+//     logoUrl:
+//       'https://freebiemom.r.worldssl.net/wp-content/uploads/2018/08/Rover-logo.jpg',
+//     jobs: [
+//       {
+//         title: 'Software Developer - Co-op',
+//         slug: '/software-developer-co-op-12343nkd',
+//       },
+//       { title: 'Sales associate - Brampton', slug: '/salesassociate' },
+//       { title: 'Entry level Dev-ops', slug: '/entry-level-dev-ops' },
+//     ],
+//     exploreSlug: '/companies/rover',
+//     position: {
+//       lat: 43.65077,
+//       lng: -79.37581,
+//     },
+//     hiring: true,
+//   },
+//   {
+//     jobs: [],
+//     companyName: 'Wealthsimple',
+//     address: '1524 Front Avenue, Toronto ON',
+//     companySize: { value: 2, label: '10 - 99' },
+//     industry: {
+//       value: 6,
+//       label: 'Finance',
+//     },
+//     about: `We help you use your money for smart investments.`,
+//     featured: false,
+//     logoUrl:
+//       'https://images.startupopenhouse.com/thumbnail?colorspace=srgb&url=https://s3.amazonaws.com/soh-pwa-files-production/img/874e3c45-47dd-4ee6-a2ce-f9867d43d29c-1653e55f118.jpeg&width=310',
+//     position: {
+//       lat: 43.64491,
+//       lng: -79.41233,
+//     },
+//     hiring: false,
+//   },
+// ]
 
 // Coordinates for Union Station in Toronto. A backup
 // in case we can't get the coordinates for this current
@@ -112,6 +113,20 @@ class Directory extends React.Component {
     this.filterByCompanySize = this.filterByCompanySize.bind(this)
     this.filterByHiring = this.filterByHiring.bind(this)
     this._doFilter = this._doFilter.bind(this)
+  }
+
+  areFiltersApplied = () => {
+    const { industry, companySize, hiring } = this.state.filters;
+    if (industry) {
+      if (industry.length !== 0) {
+        return true;
+      }
+    }
+
+    // TODO: Put a clear button under both of these to set to null
+    if (companySize) return true;
+    if (hiring) return true;
+    return false;
   }
 
   async componentDidMount() {
@@ -236,13 +251,19 @@ class Directory extends React.Component {
 
   _doFilter() {
     // Filter companies
-    const { hiring, companySize, industry } = this.state.filters
+    const { hiring, companySize, industry } = this.state.filters;
+    const companies = this.getCompaniesFromProps();
+    
     let filteredCompanies = this.filterByCompanySize(
       this.filterByHiring(this.filterByIndustry(companies, industry), hiring),
       companySize
     )
 
     console.log('filtered companies', filteredCompanies)
+    this.setState({
+      ...this.state,
+      filteredCompanies: filteredCompanies
+    })
   }
 
   detectFiltersChange = previousFilters => {
@@ -342,11 +363,17 @@ class Directory extends React.Component {
     return companies
   }
 
-  render() {
+  getCompaniesFromProps = () => {
     let { companies } = this.props.data;
-    companies = companies.edges.map((c) => c.node);
+    return companies.edges.map((c) => c.node);
+  }
 
-    const { currentLocation } = this.state;
+  render() {
+    const { filteredCompanies, currentLocation } = this.state;
+    const companies = this.areFiltersApplied() ? filteredCompanies : this.getCompaniesFromProps();
+
+    console.log(this.state)
+    
     return (
       <div className="directory-container">
         <DirectoryHeader
@@ -371,7 +398,7 @@ class Directory extends React.Component {
           subHeader="Sign up for free and let students know you exist!"
           buttonText="Sign up"
           alt={true}
-          location=""
+          location={`${config.appUrl}register/employer`}
         />
       </div>
     )
