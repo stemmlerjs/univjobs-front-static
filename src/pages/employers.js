@@ -20,7 +20,7 @@ import postJob from '../img/post-a-job.png'
 import gotJob from '../img/she-got-the-job.jpg'
 
 import scribble from '../img/scribble.svg'
-import chartwells from '../img/chartwells.svg'
+import rover from '../img/rover.png'
 import homedepot from '../img/homedepot.svg'
 import instacart from '../img/instacart.svg'
 import ymca from '../img/ymca.svg'
@@ -57,7 +57,7 @@ const Employers = () => (
       logos={ 
         {
           'one': ['#', scribble], 
-          'two': ['#', chartwells], 
+          'two': ['#', rover], 
           'three': ['#', homedepot], 
           'four': ['#', instacart],
           'five': ['#', ymca], 
