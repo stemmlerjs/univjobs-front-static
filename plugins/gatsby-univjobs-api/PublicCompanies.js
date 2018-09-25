@@ -60,7 +60,6 @@ const axios = require('axios');
         industry: company.industry.industry_text,
         logoUrl: company.logo_url,
         hidden: false,
-
       }
     });
     return companies;
@@ -80,6 +79,20 @@ const axios = require('axios');
     response.data.company.hidden = false; 
     return response.data.company;
   }
+
+  /**
+   * getDirectory
+   * 
+   * @function that returns all companies
+   * 
+   * @return {Promise | Object}
+   */
+  async getDirectory() {
+    console.log(`\nGetting all companies from UnivJobs API...`);
+    const response = await axios.get(`${this.url}/api/v1/public/companies/directory`);
+    return response.data.directory;
+  }
+
 
   async addDummyCompany() {
     return (
@@ -196,6 +209,8 @@ const axios = require('axios');
     )
 
   }
+
+  async 
 }
 
 module.exports = (url) => {
