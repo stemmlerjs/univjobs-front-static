@@ -25,12 +25,19 @@ import homedepot from '../img/homedepot.svg'
 import instacart from '../img/instacart.svg'
 import ymca from '../img/ymca.svg'
 import airmiles from '../img/airmiles.svg'
-
 import config from '../config'
-
+import SEO from '../components/SEO'
 
 const SmallBusiness = () => (
   <div>
+    <SEO
+      isBlogPost={false}
+      postData={{
+        title: 'Univjobs for Small Businesses | Find local help',
+        description:
+          'Browse and connect with thousands of local students to help with your business',
+      }}
+    />
     <LandingPage
       heroTitle="Easily access, and hire local young talent"
       heroSubTitle="We have thousands of candidates ready and waiting"

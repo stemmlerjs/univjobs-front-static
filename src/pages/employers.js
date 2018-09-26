@@ -35,7 +35,7 @@ const Employers = () => (
       isBlogPost={false}
       postData={{
         title: "Employers @ Univjobs | Simplifying hiring post-secondary students",
-        description: "Find students and recent-grads at any post-secondary school in Canada."
+        description: "Recruit students and recent-grads from any post-secondary school in Canada."
       }}
     />
     <LandingPage
