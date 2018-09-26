@@ -20,7 +20,7 @@ import icube from '../img/icube.png'
 import startupSchool from '../img/startupschool.png'
 import sheridanEntrepreneurs from '../img/sheridanentrepreneurs.png'
 import scribble from '../img/scribble.svg'
-import chartwells from '../img/chartwells.svg'
+import rover from '../img/rover.png'
 import homedepot from '../img/homedepot.svg'
 import instacart from '../img/instacart.svg'
 import ymca from '../img/ymca.svg'
@@ -56,7 +56,7 @@ const SmallBusiness = () => (
       logos={ 
         {
           'one': ['https://www.scribblelive.com/', scribble], 
-          'two': ['http://www.dineoncampus.ca/', chartwells], 
+          'two': ['http://go.rover.com/univjobs', rover], 
           'three': ['https://www.homedepot.ca/en/home.html', homedepot], 
           'four': ['https://www.instacart.com/', instacart],
           'five': ['http://ymcaofoakville.org/', ymca], 
