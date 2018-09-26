@@ -13,7 +13,7 @@ if (typeof window !== `undefined`) {
   ReactMapboxGl = function() { return {} }
 }
 
-const Map = ReactMapboxGl({
+const Map = ReactMapboxGl.Map({
   accessToken:
     'pk.eyJ1Ijoia3N0ZW1tbGVyIiwiYSI6ImNpbzYzdHY3OTAyNXF3M2tqcnBsNnNnbG0ifQ.t5zgcqnSItauuI69WK-Sew',
 })
