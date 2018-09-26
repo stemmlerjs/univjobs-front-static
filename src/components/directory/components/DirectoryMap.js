@@ -10,7 +10,7 @@ if (typeof window !== `undefined`) {
   mapboxgl = require('mapbox-gl')
   ReactMapboxGl = require('react-mapbox-gl')
 } else {
-  ReactMapboxGl.Map = function() { return {} }
+  ReactMapboxGl.Map = () => { return <div></div> }
 }
 
 const Map = ReactMapboxGl.Map({
