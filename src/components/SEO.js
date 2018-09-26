@@ -134,7 +134,7 @@ SEO.propTypes = {
 
 SEO.defaultProps = {
   isBlogPost: false,
-  postImage: "/img/u.png",
+  postImage: "img/u.png",
 };
 
 export default SEO;
