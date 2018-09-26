@@ -10,6 +10,7 @@ import CallToAction from '../components/CallToAction'
 import DirectoryLink from '../components/companies/DirectoryLink';
 
 import config from '../config'
+import SEO from '../components/SEO'
 
 import exploreCompanies from '../img/companies/explore-companies.png'
 
@@ -32,6 +33,13 @@ class Companies extends React.Component {
     console.log(data)
     return (
       <div>
+        <SEO
+          isBlogPost={false}
+          postData={{
+            title: "Companies @ Univjobs | Explore companies",
+            description: "Explore companies on Univjobs offering opportunities for students and recent-grads"
+          }}
+        />
         <LandingPage
           heroTitle="Explore Companies"
           heroSubTitle={`Top companies are searching for candidates just like you.

@@ -25,11 +25,19 @@ import homedepot from '../img/homedepot.svg'
 import instacart from '../img/instacart.svg'
 import ymca from '../img/ymca.svg'
 import airmiles from '../img/airmiles.svg'
+import SEO from '../components/SEO'
 
 import config from '../config'
 
 const Employers = () => (
   <div>
+    <SEO
+      isBlogPost={false}
+      postData={{
+        title: "Employers @ Univjobs | Simplifying hiring post-secondary students",
+        description: "Find students and recent-grads at any post-secondary school in Canada."
+      }}
+    />
     <LandingPage
       heroTitle="Early access to young talent from any post-secondary school"
       heroSubTitle="A network of affordable qualified students for your growing team"

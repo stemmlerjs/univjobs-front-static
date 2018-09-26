@@ -9,6 +9,7 @@ import Loading from '../../components/Loading'
 import { getCurrentCity, getCoordinates } from '../../utils/ip'
 import CallToAction from '../../components/CallToAction'
 import config from '../../config'
+import SEO from '../../components/SEO'
 import '../../styles/Directory/Directory.sass'
 
 // Coordinates for Union Station in Toronto. A backup
@@ -320,6 +321,13 @@ class Directory extends React.Component {
     
     return (
       <div className="directory-container">
+        <SEO
+          isBlogPost={false}
+          postData={{
+            title: "Companies Near Me | Univjobs",
+            description: "Find local tech, design, business and part-time jobs near you"
+          }}
+        />
         <DirectoryHeader
           currentLocation={currentLocation}
           onChange={this.handleChangeLocationText}
