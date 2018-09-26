@@ -4,13 +4,13 @@ import CompanyMarker from './CompanyMarker'
 import '../styles/DirectoryMap.sass'
 
 let mapboxgl;
-let ReactMapboxGl;
+let ReactMapboxGl = {};
 
 if (typeof window !== `undefined`) {
   mapboxgl = require('mapbox-gl')
   ReactMapboxGl = require('react-mapbox-gl')
 } else {
-  ReactMapboxGl = function() { return {} }
+  ReactMapboxGl.Map = function() { return {} }
 }
 
 const Map = ReactMapboxGl.Map({
