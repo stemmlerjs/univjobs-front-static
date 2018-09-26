@@ -40,7 +40,7 @@ class Directory extends React.Component {
       filters: {
         industry: null,
         companySize: null,
-        hiring: null,
+        hiring: { label: 'Yes', value: true }
       },
 
       filteredCompanies: [],
@@ -75,6 +75,9 @@ class Directory extends React.Component {
   }
 
   async componentDidMount() {
+    // Filter companies
+    this._doFilter();
+
     const getLatitudePromise = () => {
       return new Promise(resolve => {
         // Get latitude and longitude.
@@ -198,6 +201,7 @@ class Directory extends React.Component {
     // Filter companies
     const { hiring, companySize, industry } = this.state.filters;
     const companies = this.getCompaniesFromProps();
+    debugger;
     
     let filteredCompanies = this.filterByCompanySize(
       this.filterByHiring(this.filterByIndustry(companies, industry), hiring),
@@ -317,7 +321,10 @@ class Directory extends React.Component {
     const { filteredCompanies, currentLocation } = this.state;
     const companies = this.areFiltersApplied() ? filteredCompanies : this.getCompaniesFromProps();
 
-    console.log(this.state)
+    console.log(this.areFiltersApplied(), "are filterd applied?")
+    console.log(this.state, "state")
+    console.log(this.props, "props")
+    console.log(companies, "companies")
     
     return (
       <div className="directory-container">
@@ -334,7 +341,10 @@ class Directory extends React.Component {
           onSubmit={this.handleSearchForLocation}
         />
         <div className="directory-body">
-          <DirectoryFilters onChange={this.handleFiltersChange} />
+          <DirectoryFilters 
+            onChange={this.handleFiltersChange} 
+            values={this.state.filters}
+          />
           <DirectoryResultsList companies={companies ? companies : []} />
           <DirectoryMap
             companies={companies ? companies : []}

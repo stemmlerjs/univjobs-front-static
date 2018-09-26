@@ -46,16 +46,15 @@ class CompanyTemplate extends React.Component {
     if (company.length !== 0) {
       company = company[0];
     }
-    console.log('<Company/>', this.props)
 
     return (
       <div>
         <SEO
           isBlogPost={false}
           postData={{
-            title: `${company.companyName} @ Univjobs | Jobs for students and recent-grads`,
+            title: `Jobs at ${company.companyName} | Univjobs - Jobs for students and recent-grads`,
             description:
-              `${company.slogan} | Apply to student, part-time and recent grad opportunities at ${company.companyName} 
+              `${company.slogan} | Apply to student, part-time and recent grad jobs at ${company.companyName} 
               `,
           }}
         />

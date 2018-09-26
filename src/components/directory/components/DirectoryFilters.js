@@ -42,7 +42,7 @@ class DirectoryFilters extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isFilterOpen: true
+      isFilterOpen: false
     }
   }
 
@@ -54,16 +54,19 @@ class DirectoryFilters extends React.Component {
   }
 
   render () {
-    const { onChange } = this.props;
+    const { onChange, values } = this.props;
     const { isFilterOpen } = this.state;
+    console.log("<DirectoryFilters/>", values)
     return (
-      <div className="directory-filters">
+      <div className={`directory-filters ${isFilterOpen ? "on" : "off"}`}>
+        <div className="title">Showing companies nearby</div>
         <div className={`directory-filters-container ${isFilterOpen ? "on" : "off"}`}>
           <FilterContainer title="Industry">
             <Select 
               isMulti 
               options={industries}
               onChange={(e) => onChange(e, 'industry')}
+              value={values.industry}
             />
           </FilterContainer>
 
@@ -71,6 +74,7 @@ class DirectoryFilters extends React.Component {
             <Select 
               options={companySize}
               onChange={(e) => onChange(e, 'companySize')}
+              value={values.companySize}
             />
           </FilterContainer>
 
@@ -78,13 +82,14 @@ class DirectoryFilters extends React.Component {
             <Select 
               options={hiringOptions}
               onChange={(e) => onChange(e, 'hiring')}
+              value={values.hiring}
             />
           </FilterContainer>
         </div>
         <div>
           <div 
             onClick={this.toggleFilterVisible} 
-            className="filter-toggle">{isFilterOpen ? "Hide filters" : "Show filters"}</div>
+            className="filter-toggle">{isFilterOpen ? "Filter" : "Filter"}</div>
         </div>
       </div>
     )
@@ -94,5 +99,6 @@ class DirectoryFilters extends React.Component {
 export default DirectoryFilters;
 
 DirectoryFilters.propTypes = {
-  onChange: PropTypes.func.isRequired
+  onChange: PropTypes.func.isRequired,
+  values: PropTypes.object
 }
