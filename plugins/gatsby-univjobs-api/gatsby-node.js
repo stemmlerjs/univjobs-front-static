@@ -41,7 +41,6 @@ exports.sourceNodes = async ({ boundActionCreators, createNodeId }, configOption
   try {
 
     const exploreCompanies = await PublicCompaniesAPI.getExploreCompanies();
-    const directoryCompanies = await PublicCompaniesAPI.getDirectory();
     const featuredCompanies = await PublicCompaniesAPI.getFeaturedCompanies();
     let allCompanies = await getAllCompanies(exploreCompanies, featuredCompanies, PublicCompaniesAPI);
     allCompanies = await allCompanies.concat(await PublicCompaniesAPI.addDummyCompany());

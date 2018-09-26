@@ -209,8 +209,6 @@ const axios = require('axios');
     )
 
   }
-
-  async 
 }
 
 module.exports = (url) => {
