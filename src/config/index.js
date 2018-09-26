@@ -3,6 +3,7 @@
 let config = {
   title: 'Univjobs - Simplifying hiring post-secondary students',
   logo: '/img/u.png',
+  image: '/img/u.png',
   twitter: 'https://twitter.com/univjobsapp',
   fbAppID: '1897052653882765',
   url: process.env.GATSBY_STATIC_URL ? process.env.GATSBY_STATIC_URL : 'https://01-staging.univjobs.ca/',
