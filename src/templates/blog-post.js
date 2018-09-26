@@ -79,7 +79,7 @@ export class BlogPostTemplate extends React.Component {
     } = this.props;
 
     return (
-    <section>
+    <section className="blog-post">
 
       {helmet || ''}
 

@@ -10,6 +10,7 @@
   border-bottom: solid 1px #dfdfdf;
   height: 72px;
   background: white;
+
   .logo-container
     height: 100%;
     width: 60px;
@@ -30,6 +31,9 @@
     justify-content: center;
     position: relative;
 
+    @media (max-width: 675px) 
+      width: 70%;
+
     input 
       font-size: 16px;
       padding: 5px;
@@ -43,6 +47,9 @@
       width: 30vw;
       padding-right: 43px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+
+      @media (max-width: 675px) 
+        width: 100% !important;
 
     .enter-button
       background: #0DD4D2;
