@@ -1,9 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import CompanyMarker from './CompanyMarker'
-import ReactMapboxGl, { Layer, Feature, Source } from 'react-mapbox-gl'
-import mapboxgl from 'mapbox-gl'
 import '../styles/DirectoryMap.sass'
+
+let mapboxgl;
+let ReactMapboxGl;
+
+if (typeof window !== `undefined`) {
+  mapboxgl = require('mapbox-gl')
+  ReactMapboxGl = require('react-mapbox-gl')
+} else {
+  ReactMapboxGl = function() { return {} }
+}
 
 const Map = ReactMapboxGl({
   accessToken:
