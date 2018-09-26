@@ -3,14 +3,23 @@ import PropTypes from 'prop-types'
 import CompanyMarker from './CompanyMarker'
 import '../styles/DirectoryMap.sass'
 
-let mapboxgl;
-let ReactMapboxGl = {};
+let mapboxgl
+let ReactMapboxGl = {}
 
 if (typeof window !== `undefined`) {
   mapboxgl = require('mapbox-gl')
   ReactMapboxGl = require('react-mapbox-gl')
 } else {
-  ReactMapboxGl.Map = () => { return <div></div> }
+  ReactMapboxGl.Map = () => {
+    return class Mock extends React.Component {
+      constructor() {
+        super()
+      }
+      render() {
+        return <div />
+      }
+    }
+  }
 }
 
 const Map = ReactMapboxGl.Map({
@@ -18,13 +27,15 @@ const Map = ReactMapboxGl.Map({
     'pk.eyJ1Ijoia3N0ZW1tbGVyIiwiYSI6ImNpbzYzdHY3OTAyNXF3M2tqcnBsNnNnbG0ifQ.t5zgcqnSItauuI69WK-Sew',
 })
 
+console.log(Map)
+
 class DirectoryMap extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       map: null,
       mapLoaded: false,
-      markers: []
+      markers: [],
     }
     this.onMapLoad = this.onMapLoad.bind(this)
     this.changeLocation = this.changeLocation.bind(this)
@@ -49,13 +60,13 @@ class DirectoryMap extends React.Component {
   updateMarkers() {
     const { companies } = this.props
     const { map } = this.state
-    const newMarkersList = [];
+    const newMarkersList = []
 
     // Remove old markers
-    const { markers } = this.state;
-    markers.map((m) => {
-      m.remove();
-    });
+    const { markers } = this.state
+    markers.map(m => {
+      m.remove()
+    })
 
     // Create new markers
     companies.forEach(function(marker, i) {
@@ -76,10 +87,11 @@ class DirectoryMap extends React.Component {
           <div class="industry">${marker.industry.label}</div>
         </div>
       </div>
-      `));
+      `)
+        )
 
       // Add marker to list
-      newMarkersList.push(m);
+      newMarkersList.push(m)
 
       // Add marker to map
       m.addTo(map)
@@ -88,7 +100,7 @@ class DirectoryMap extends React.Component {
     // Then, set the markers list
     this.setState({
       ...this.state,
-      markers: newMarkersList
+      markers: newMarkersList,
     })
   }
 
@@ -105,15 +117,15 @@ class DirectoryMap extends React.Component {
       mapLoaded: true,
     })
 
-    map.addControl(new mapboxgl.NavigationControl());
+    map.addControl(new mapboxgl.NavigationControl())
 
     this.updateMarkers()
   }
 
-  componentDidUpdate (prevProps) {
+  componentDidUpdate(prevProps) {
     if (prevProps.isRebuildingMap && !this.props.isRebuildingMap) {
       console.log('Time to rebuild the map')
-      this.updateMarkers();
+      this.updateMarkers()
     }
   }
 
@@ -193,7 +205,7 @@ DirectoryMap.propTypes = {
   companies: PropTypes.array,
   isRebuildingMap: PropTypes.bool,
   isRebuildingMapSuccess: PropTypes.bool,
-  isRebuildingMapFailure: PropTypes.bool
+  isRebuildingMapFailure: PropTypes.bool,
 }
 
 export default DirectoryMap
