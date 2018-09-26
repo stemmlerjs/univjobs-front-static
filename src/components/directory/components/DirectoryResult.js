@@ -95,7 +95,11 @@ class DirectoryResult extends React.Component {
           <div className="head">
             <div>{index + 1}.</div>
             <div className="job-count">
-              {jobs.length === 0 ? '' : `${jobs.length} jobs`}
+              {jobs.length === 0 
+                ? '' 
+                : jobs.length === 1 
+                  ? '1 job'
+                  : `${jobs.length} jobs`}
             </div>
           </div>
           <div className="body-container">

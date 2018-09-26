@@ -14,6 +14,10 @@
       display: flex;
       width: 100%;
       justify-content: space-between;
+      > div 
+        margin-bottom: 10px;
+        @media (max-width: 600px)
+          font-size: 12px;
       .job-count
         font-size: 16px;
         color: #00d2cd;
@@ -21,21 +25,31 @@
     .body-container
       display: flex;
       flex-direction: row;
+      
       .logo-container
         width: 43%;
         text-align: center;
+
+        @media (max-width: 600px) 
+          width: 15%;
+
         img 
           max-height: 117px;
           margin: 0;
+          border-radius: 4px;
       .body
         width: 57%;
         margin-left: 2em;
         .company-name
           font-weight: bold;
           font-size: 1.4em;
+          @media (max-width: 600px) 
+            font-size: 18px;
         .address
           opacity: 0.5;
           font-size: 16px;
+          @media (max-width: 600px)
+            font-size: 14px;
         .industry
           font-size: 16px;
           background: #EFEFEF;
@@ -46,6 +60,8 @@
           margin-bottom: 11px;
           margin-right: 11px;
           text-align: center;
+          @media (max-width: 600px) 
+            font-size: 12px;
         .featured
           font-size: 16px;
           background: #00d2cd;

@@ -38,33 +38,58 @@ FilterContainer.propTypes = {
  * @desc This component allows us to filter the search
  * results.
  */
+class DirectoryFilters extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isFilterOpen: true
+    }
+  }
 
-const DirectoryFilters = ({ onChange }) => (
-  <div className="directory-filters">
-    <FilterContainer title="Industry">
-      <Select 
-        isMulti 
-        options={industries}
-        onChange={(e) => onChange(e, 'industry')}
-      />
-    </FilterContainer>
+  toggleFilterVisible = () => {
+    this.setState({
+      ...this.state,
+      isFilterOpen: !this.state.isFilterOpen
+    })
+  }
 
-    <FilterContainer title="Company size">
-      <Select 
-        options={companySize}
-        onChange={(e) => onChange(e, 'companySize')}
-      />
-    </FilterContainer>
+  render () {
+    const { onChange } = this.props;
+    const { isFilterOpen } = this.state;
+    return (
+      <div className="directory-filters">
+        <div className={`directory-filters-container ${isFilterOpen ? "on" : "off"}`}>
+          <FilterContainer title="Industry">
+            <Select 
+              isMulti 
+              options={industries}
+              onChange={(e) => onChange(e, 'industry')}
+            />
+          </FilterContainer>
 
-    <FilterContainer title="Hiring">
-      <Select 
-        options={hiringOptions}
-        onChange={(e) => onChange(e, 'hiring')}
-      />
-    </FilterContainer>
-    
-  </div>
-)
+          <FilterContainer title="Company size">
+            <Select 
+              options={companySize}
+              onChange={(e) => onChange(e, 'companySize')}
+            />
+          </FilterContainer>
+
+          <FilterContainer title="Hiring">
+            <Select 
+              options={hiringOptions}
+              onChange={(e) => onChange(e, 'hiring')}
+            />
+          </FilterContainer>
+        </div>
+        <div>
+          <div 
+            onClick={this.toggleFilterVisible} 
+            className="filter-toggle">{isFilterOpen ? "Hide filters" : "Show filters"}</div>
+        </div>
+      </div>
+    )
+  }
+}
 
 export default DirectoryFilters;
 
