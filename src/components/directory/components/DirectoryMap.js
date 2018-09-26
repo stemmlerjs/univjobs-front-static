@@ -27,8 +27,6 @@ const Map = ReactMapboxGl.Map({
     'pk.eyJ1Ijoia3N0ZW1tbGVyIiwiYSI6ImNpbzYzdHY3OTAyNXF3M2tqcnBsNnNnbG0ifQ.t5zgcqnSItauuI69WK-Sew',
 })
 
-console.log(Map)
-
 class DirectoryMap extends React.Component {
   constructor(props) {
     super(props)

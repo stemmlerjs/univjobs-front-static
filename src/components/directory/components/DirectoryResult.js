@@ -3,6 +3,7 @@ import Link from 'gatsby-link'
 import PropTypes from 'prop-types'
 import '../styles/DirectoryResult.sass'
 import altCompanyImg from '../../../img/directory/company.svg'
+import config from '../../../config'
 
 function doesLogoExist(logoUrl) {
   if (
@@ -128,9 +129,12 @@ class DirectoryResult extends React.Component {
               <div>
                 <div>Jobs at {companyName}</div>
                 {jobs.map((job, i) => (
-                  <Link className="job" key={i} to={job.slug}>
+                  <a 
+                    className="job" 
+                    key={i} 
+                    href={`${config.appUrl}posting/${job.slug}`}>
                     {job.title}
-                  </Link>
+                  </a>
                 ))}
               </div>
             ) : (
