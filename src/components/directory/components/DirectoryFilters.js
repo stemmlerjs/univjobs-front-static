@@ -93,7 +93,7 @@ class DirectoryFilters extends React.Component {
         <div>
           <div 
             onClick={this.toggleFilterVisible} 
-            className="filter-toggle">{isFilterOpen ? "Filter" : "Filter"}</div>
+            className="filter-toggle">{isFilterOpen ? "Hide filters" : "Show filters"}</div>
         </div>
       </div>
     )

@@ -69,6 +69,7 @@ class Directory extends React.Component {
 
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this)
     this.getInitialPosition = this.getInitialPosition.bind(this)
+    this.sortByDistance = this.sortByDistance.bind(this)
   }
 
   componentWillUnmount() {
@@ -85,7 +86,6 @@ class Directory extends React.Component {
       }
     }
 
-    // TODO: Put a clear button under both of these to set to null
     if (companySize) return true
     if (hiring) return true
     return false
@@ -266,7 +266,6 @@ class Directory extends React.Component {
 
   _doFilter() {
     // Filter companies
-    const { myLat, myLng } = this.state
     const { hiring, companySize, industry } = this.state.filters
     const companies = this.getCompaniesFromProps()
 
@@ -274,27 +273,28 @@ class Directory extends React.Component {
       this.filterByHiring(this.filterByIndustry(companies, industry), hiring),
       companySize
     )
-      .map(company => {
-        const distance = calculateDistance(
-          myLat,
-          myLng,
-          company.position.lat,
-          company.position.lng,
-          'K'
-        )
-        company.distance = distance
-        console.log('Distance for this company', distance, company.companyName)
-        return company
-      })
-      .sort((a, b) => {
-        return a.distance - b.distance
-      })
-    debugger
-    console.log('filtered companies', filteredCompanies)
     this.setState({
       ...this.state,
       filteredCompanies: filteredCompanies,
       isSearching: false,
+    })
+  }
+
+  sortByDistance (companies) {
+    const { myLat, myLng } = this.state
+    return companies.map(company => {
+      const distance = calculateDistance(
+        myLat,
+        myLng,
+        company.position.lat,
+        company.position.lng,
+        'K'
+      )
+      company.distance = distance
+      return company
+    })
+    .sort((a, b) => {
+      return a.distance - b.distance
     })
   }
 
@@ -396,8 +396,8 @@ class Directory extends React.Component {
   }
 
   getCompaniesFromProps = () => {
-    let { companies } = this.props.data
-    return companies.edges.map(c => c.node)
+    let { companies } = this.props.data;
+    return this.sortByDistance(companies.edges.map(c => c.node)) 
   }
 
   updateWindowDimensions() {
@@ -416,11 +416,6 @@ class Directory extends React.Component {
     const companies = this.areFiltersApplied()
       ? filteredCompanies
       : this.getCompaniesFromProps()
-
-    console.log(this.areFiltersApplied(), 'are filterd applied?')
-    console.log(this.state, 'state')
-    console.log(this.props, 'props')
-    console.log(companies, 'companies')
 
     return (
       <div className="directory-container">
@@ -457,6 +452,11 @@ class Directory extends React.Component {
               >
                 <ClipLoader color={'#48ded7'} loading={true} />
               </div>
+            </div>
+          ) : !isSearching && companies.length === 0 ? (
+            <div className="search-container">
+              <div className="search-message-title">No results found</div>
+              <div>Try adjusting your search filters!</div>
             </div>
           ) : (
             <DirectoryResultsList companies={companies ? companies : []} />
@@ -504,6 +504,7 @@ export const directoryQuery = graphql`
           jobs {
             title
             slug
+            active
           }
           companyId
           companyName
