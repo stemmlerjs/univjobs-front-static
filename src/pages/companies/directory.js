@@ -70,6 +70,7 @@ class Directory extends React.Component {
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this)
     this.getInitialPosition = this.getInitialPosition.bind(this)
     this.sortByDistance = this.sortByDistance.bind(this)
+    this.detectLocationChange = this.detectLocationChange.bind(this)
   }
 
   componentWillUnmount() {
@@ -233,7 +234,7 @@ class Directory extends React.Component {
 
   handleSearchForLocation() {
     const { currentLocation } = this.state
-    const { Geocoder } = window
+    const { Geocoder } = window;
     Geocoder.geocode({ address: currentLocation }, geocodeResponse => {
       const lat = geocodeResponse[0].geometry.location.lat()
       const lng = geocodeResponse[0].geometry.location.lng()
@@ -314,9 +315,16 @@ class Directory extends React.Component {
     return false
   }
 
+  detectLocationChange (prevLat, prevLng) {
+    if (prevLat !== this.state.myLat) return true;
+    if (prevLng !== this.state.myLng) return true;
+    return false
+  }
+
   componentDidUpdate(prevProps, prevState) {
     const didFiltersChange = this.detectFiltersChange(prevState.filters)
-    if (didFiltersChange) {
+    const didLocationChange = this.detectLocationChange(prevState.myLat, prevState.myLng)
+    if (didFiltersChange || didLocationChange) {
       this._doFilter()
     }
   }
@@ -477,7 +485,7 @@ class Directory extends React.Component {
         </div>
         <CallToAction
           header="Students and recent grads"
-          subHeader="Sign up for free, apply to 🔥 jobs, get hired"
+          subHeader="Sign up for free, apply to 🔥 jobs, get hired."
           buttonText="Sign up"
           alt={false}
           location={`${config.appUrl}register`}
