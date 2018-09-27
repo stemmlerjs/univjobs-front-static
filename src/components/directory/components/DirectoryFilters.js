@@ -56,10 +56,9 @@ class DirectoryFilters extends React.Component {
   render () {
     const { onChange, values } = this.props;
     const { isFilterOpen } = this.state;
-    console.log("<DirectoryFilters/>", values)
+
     return (
       <div className={`directory-filters ${isFilterOpen ? "on" : "off"}`}>
-        <div className="title">Showing companies nearby</div>
         <div className={`directory-filters-container ${isFilterOpen ? "on" : "off"}`}>
           <FilterContainer title="Industry">
             <Select 

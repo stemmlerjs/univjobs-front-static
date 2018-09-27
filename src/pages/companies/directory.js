@@ -5,12 +5,15 @@ import DirectoryHeader from '../../components/directory/components/DirectoryHead
 import DirectoryFilters from '../../components/directory/components/DirectoryFilters'
 import DirectoryResultsList from '../../components/directory/components/DirectoryResultsList'
 import DirectoryMap from '../../components/directory/components/DirectoryMap'
+import MobilePagePicture from '../../components/directory/components/MobilePagePicture'
 import Loading from '../../components/Loading'
 import { getCurrentCity, getCoordinates } from '../../utils/ip'
 import CallToAction from '../../components/CallToAction'
 import config from '../../config'
 import SEO from '../../components/SEO'
 import '../../styles/Directory/Directory.sass'
+import { calculateDistance } from '../../utils/navigation'
+import { ClipLoader } from 'react-spinners'
 
 // Coordinates for Union Station in Toronto. A backup
 // in case we can't get the coordinates for this current
@@ -40,7 +43,7 @@ class Directory extends React.Component {
       filters: {
         industry: null,
         companySize: null,
-        hiring: { label: 'Yes', value: true }
+        hiring: { label: 'Yes', value: true },
       },
 
       filteredCompanies: [],
@@ -48,6 +51,11 @@ class Directory extends React.Component {
       isRebuildingMap: false,
       isRebuildingMapSuccess: false,
       isRebuildingMapFailure: false,
+
+      width: 0,
+      height: 0,
+
+      isSearching: true,
     }
 
     this.handleChangeLocationText = this.handleChangeLocationText.bind(this)
@@ -58,34 +66,69 @@ class Directory extends React.Component {
     this.filterByCompanySize = this.filterByCompanySize.bind(this)
     this.filterByHiring = this.filterByHiring.bind(this)
     this._doFilter = this._doFilter.bind(this)
+
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this)
+    this.getInitialPosition = this.getInitialPosition.bind(this)
+  }
+
+  componentWillUnmount() {
+    if (typeof window !== undefined) {
+      window.removeEventListener('resize', this.updateWindowDimensions)
+    }
   }
 
   areFiltersApplied = () => {
-    const { industry, companySize, hiring } = this.state.filters;
+    const { industry, companySize, hiring } = this.state.filters
     if (industry) {
       if (industry.length !== 0) {
-        return true;
+        return true
       }
     }
 
     // TODO: Put a clear button under both of these to set to null
-    if (companySize) return true;
-    if (hiring) return true;
-    return false;
+    if (companySize) return true
+    if (hiring) return true
+    return false
   }
 
-  async componentDidMount() {
-    // Filter companies
-    this._doFilter();
+  /**
+   * getInitialPosition
+   *
+   * @desc Get the initial coordinates for the user.
+   */
+
+  async getInitialPosition(cb) {
+    /**
+     * getLatitudePromise
+     * @desc This function attempts to acquire the latitude
+     * and longitude of the current user via navigator.
+     *
+     * @return {Promise | Object | null} returns null if it can't find the
+     * coordinates via navigator.
+     */
 
     const getLatitudePromise = () => {
       return new Promise(resolve => {
-        // Get latitude and longitude.
-        if (navigator) {
-          navigator.geolocation.getCurrentPosition(
+        // Create a timeout, if we don't get a response after 3 seconds,
+        // then we're going to skip and get the initial position through
+        // other means, not through navigator. We can't wait on it.
+        let id = setTimeout(() => {
+          console.log(
+            '[Directory]: Navigator timed out, continuing with IPstack call.'
+          )
+          return resolve(null)
+        }, 3000)
+
+        // Get latitude and longitude from the navigator. If this doesn't
+        // work after 3 seconds, we cancel this promise and return null.
+        if (window.navigator) {
+          window.navigator.geolocation.getCurrentPosition(
             position => {
+              // Acquired position through the navigator.
               const lat = position.coords.latitude
               const lng = position.coords.longitude
+              console.log('[Directory]: Got lat/lng via navigator.')
+              clearTimeout(id)
 
               return resolve({
                 lat: lat,
@@ -93,6 +136,7 @@ class Directory extends React.Component {
               })
             },
             err => {
+              clearTimeout(id)
               return resolve(null)
             },
             { enableHighAccuracy: true, timeout: 60000, maximumAge: 3600000 }
@@ -100,6 +144,11 @@ class Directory extends React.Component {
         }
       })
     }
+
+    /**
+     * getCityAndCacheCoordinatePromise
+     * @desc Gets the current user's city.
+     */
 
     const getCityAndCacheCoordinatePromise = async () => {
       // Get current city
@@ -120,13 +169,14 @@ class Directory extends React.Component {
     // If the navigator was able to successfully query and
     // retrieve the coordinates of this user, we'll take that
     // because it's more accurate.
-
     if (coords) {
       this.setState({
         myLat: coords.lat,
         myLng: coords.lng,
         currentLocation: city,
       })
+
+      if (cb) cb()
     }
 
     // Otherwise, in the case that we weren't able to get it from
@@ -139,6 +189,22 @@ class Directory extends React.Component {
         myLng: coordinates.lng,
         currentLocation: city,
       })
+
+      if (cb) cb()
+    }
+  }
+
+  componentDidMount() {
+    // Get the initial position of the user.
+    this.getInitialPosition(() => {
+      // Filter companies
+      this._doFilter()
+    })
+
+    // Setup event listener on window dimensions
+    this.updateWindowDimensions()
+    if (typeof window !== undefined) {
+      window.addEventListener('resize', this.updateWindowDimensions)
     }
   }
 
@@ -199,19 +265,35 @@ class Directory extends React.Component {
 
   _doFilter() {
     // Filter companies
-    const { hiring, companySize, industry } = this.state.filters;
-    const companies = this.getCompaniesFromProps();
-    debugger;
-    
+    const { myLat, myLng } = this.state
+    const { hiring, companySize, industry } = this.state.filters
+    const companies = this.getCompaniesFromProps()
+
     let filteredCompanies = this.filterByCompanySize(
       this.filterByHiring(this.filterByIndustry(companies, industry), hiring),
       companySize
     )
-
+      .map(company => {
+        const distance = calculateDistance(
+          myLat,
+          myLng,
+          company.position.lat,
+          company.position.lng,
+          'K'
+        )
+        company.distance = distance
+        console.log('Distance for this company', distance, company.companyName)
+        return company
+      })
+      .sort((a, b) => {
+        return a.distance - b.distance
+      })
+    debugger
     console.log('filtered companies', filteredCompanies)
     this.setState({
       ...this.state,
-      filteredCompanies: filteredCompanies
+      filteredCompanies: filteredCompanies,
+      isSearching: false,
     })
   }
 
@@ -313,26 +395,40 @@ class Directory extends React.Component {
   }
 
   getCompaniesFromProps = () => {
-    let { companies } = this.props.data;
-    return companies.edges.map((c) => c.node);
+    let { companies } = this.props.data
+    return companies.edges.map(c => c.node)
+  }
+
+  updateWindowDimensions() {
+    if (typeof window !== undefined) {
+      this.setState({ width: window.innerWidth, height: window.innerHeight })
+    }
   }
 
   render() {
-    const { filteredCompanies, currentLocation } = this.state;
-    const companies = this.areFiltersApplied() ? filteredCompanies : this.getCompaniesFromProps();
+    const {
+      filteredCompanies,
+      currentLocation,
+      width,
+      isSearching,
+    } = this.state
+    const companies = this.areFiltersApplied()
+      ? filteredCompanies
+      : this.getCompaniesFromProps()
 
-    console.log(this.areFiltersApplied(), "are filterd applied?")
-    console.log(this.state, "state")
-    console.log(this.props, "props")
-    console.log(companies, "companies")
-    
+    console.log(this.areFiltersApplied(), 'are filterd applied?')
+    console.log(this.state, 'state')
+    console.log(this.props, 'props')
+    console.log(companies, 'companies')
+
     return (
       <div className="directory-container">
         <SEO
           isBlogPost={false}
           postData={{
-            title: "Companies Near Me | Univjobs",
-            description: "Find local tech, design, business and part-time jobs near you"
+            title: 'Companies Near Me | Univjobs',
+            description:
+              'Find local tech, design, business and part-time jobs near you',
           }}
         />
         <DirectoryHeader
@@ -341,19 +437,42 @@ class Directory extends React.Component {
           onSubmit={this.handleSearchForLocation}
         />
         <div className="directory-body">
-          <DirectoryFilters 
-            onChange={this.handleFiltersChange} 
+          <MobilePagePicture />
+          <DirectoryFilters
+            onChange={this.handleFiltersChange}
             values={this.state.filters}
           />
-          <DirectoryResultsList companies={companies ? companies : []} />
-          <DirectoryMap
-            companies={companies ? companies : []}
-            currentLatitude={this.state.myLat}
-            currentLongitude={this.state.myLng}
-            isRebuildingMap={this.state.isRebuildingMap}
-            isRebuildingMapSuccess={this.state.isRebuildingMapSuccess}
-            isRebuildingMapFailure={this.state.isRebuildingMapFailure}
-          />
+          {isSearching ? (
+            <div className="search-container">
+              <div className="search-message-title">Retrieving companies</div>
+              <div>Just a moment!</div>
+              <div
+                style={{
+                  margin: '0 auto',
+                  textAlign: 'center',
+                  paddingTop: '10px'
+                }}
+                className="center"
+              >
+                <ClipLoader color={'#48ded7'} loading={true} />
+              </div>
+            </div>
+          ) : (
+            <DirectoryResultsList companies={companies ? companies : []} />
+          )}
+
+          {width > 650 ? (
+            <DirectoryMap
+              companies={companies ? companies : []}
+              currentLatitude={this.state.myLat}
+              currentLongitude={this.state.myLng}
+              isRebuildingMap={this.state.isRebuildingMap}
+              isRebuildingMapSuccess={this.state.isRebuildingMapSuccess}
+              isRebuildingMapFailure={this.state.isRebuildingMapFailure}
+            />
+          ) : (
+            ''
+          )}
         </div>
         <CallToAction
           header="Want your company listed here?"

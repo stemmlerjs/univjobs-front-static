@@ -3,6 +3,24 @@
     display: flex;
     flex-direction: row;
     max-height: 100vh;
+  
+    @media (max-width: 675px)
+      max-height: unset;
+
+    .search-container
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 25vh;
+      .search-message-title
+        font-weight: bold;
+        opacity: 0.9;
+      > div:nth-of-type(2)
+        font-size: 14px;
+        opacity: 0.6
 
     @media (max-width: 675px)
       flex-direction: column;
+
+  

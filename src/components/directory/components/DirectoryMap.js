@@ -48,7 +48,9 @@ class DirectoryMap extends React.Component {
    * coordinates for Union Station.
    */
 
-  componentDidMount() {}
+  componentDidMount() {
+    console.log("<DirectoryMap/> Loaded");
+  }
 
   /**
    * updateMarkers

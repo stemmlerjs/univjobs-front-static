@@ -16,7 +16,7 @@ const routeConfig = [
       { name: 'Create account', route: `${config.appUrl}register` },
       { name: 'Companies Near Me', route: '/companies/directory' },
       { name: "Featured companies", route: '/companies' },
-      { name: 'Blog & Resources', route: "/blog/categories/students" }
+      { name: 'Blog & Resources', route: "/blog/categories/student-life" }
     ]
   },
 
