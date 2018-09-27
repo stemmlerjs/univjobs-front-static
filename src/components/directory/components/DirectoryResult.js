@@ -62,11 +62,12 @@ class DirectoryResult extends React.Component {
     })
   }
 
-  toggleCard() {
-    const { isOpen } = this.state
+  toggleCard(e) {
+    const { isOpen } = this.state;
     if (isOpen) {
       this.closeCard()
     } else {
+      this.props.onClick(e);
       this.openCard()
     }
   }
@@ -171,4 +172,5 @@ DirectoryResult.propTypes = {
     })
   ).isRequired,
   exploreSlug: PropTypes.string,
+  onClick: PropTypes.func
 }
