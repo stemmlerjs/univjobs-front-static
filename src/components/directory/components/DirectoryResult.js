@@ -46,6 +46,7 @@ class DirectoryResult extends React.Component {
     this.openCard = this.openCard.bind(this)
     this.closeCard = this.closeCard.bind(this)
     this.toggleCard = this.toggleCard.bind(this)
+    this.renderDistance = this.renderDistance.bind(this)
   }
 
   openCard() {
@@ -71,6 +72,14 @@ class DirectoryResult extends React.Component {
       this.openCard()
     }
   }
+  
+  renderDistance (distance) {
+    if (distance < 1) {
+      return `${(Math.floor(distance * 100) / 10).toFixed(0)}00 m`
+    } else {
+      return `${distance.toFixed(1)} km`
+    }
+  }
 
   render() {
     const {
@@ -82,6 +91,7 @@ class DirectoryResult extends React.Component {
       industry,
       featured,
       about,
+      distance
     } = this.props
     const { isOpen } = this.state
   
@@ -94,9 +104,10 @@ class DirectoryResult extends React.Component {
           onClick={this.toggleCard}
         >
           <div className="head">
-            <div>{index + 1}.</div>
+            <div className="distance">{index + 1}.</div>
             <div className="job-count">
-              {jobs.length === 0 
+              <span>{this.renderDistance(distance)}</span>
+            {jobs.length === 0 
                 ? '' 
                 : jobs.length === 1 
                   ? '1 job'
@@ -172,5 +183,6 @@ DirectoryResult.propTypes = {
     })
   ).isRequired,
   exploreSlug: PropTypes.string,
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  distance: PropTypes.number
 }

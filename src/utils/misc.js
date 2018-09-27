@@ -50,10 +50,8 @@ export function scrollToY(scrollTargetY, speed, easing) {
   // call it once to get started
   tick();
 }
-
-let requestAnimFrame;
 if (typeof window !== undefined) {
-  requestAnimFrame = function() {
+  window.requestAnimFrame = (function() {
     return (
       window.requestAnimationFrame ||
       window.webkitRequestAnimationFrame ||
@@ -62,5 +60,5 @@ if (typeof window !== undefined) {
         window.setTimeout(callback, 1000 / 60);
       }
     );
-  }
+  })();
 }
