@@ -50,15 +50,14 @@ export function scrollToY(scrollTargetY, speed, easing) {
   // call it once to get started
   tick();
 }
-if (typeof window !== undefined) {
-  window.requestAnimFrame = (function() {
-    return (
-      window.requestAnimationFrame ||
-      window.webkitRequestAnimationFrame ||
-      window.mozRequestAnimationFrame ||
-      function(callback) {
-        window.setTimeout(callback, 1000 / 60);
-      }
-    );
-  })();
-}
+
+typeof window !== 'undefined' && (window.requestAnimFrame = (function() {
+  return (
+    window.requestAnimationFrame ||
+    window.webkitRequestAnimationFrame ||
+    window.mozRequestAnimationFrame ||
+    function(callback) {
+      window.setTimeout(callback, 1000 / 60);
+    }
+  );
+})());
