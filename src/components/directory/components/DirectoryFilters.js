@@ -60,6 +60,7 @@ class DirectoryFilters extends React.Component {
     return (
       <div className={`directory-filters ${isFilterOpen ? "on" : "off"}`}>
         <div className={`directory-filters-container ${isFilterOpen ? "on" : "off"}`}>
+          <div className="filter-section-title">Filter your search</div>
           <FilterContainer title="Industry">
             <Select 
               isMulti 
@@ -74,7 +75,8 @@ class DirectoryFilters extends React.Component {
               options={companySize}
               onChange={(e) => onChange(e, 'companySize')}
               value={values.companySize}
-              searchable={false}
+              isSearchable={false}
+              isClearable={true}
             />
           </FilterContainer>
 
@@ -83,7 +85,8 @@ class DirectoryFilters extends React.Component {
               options={hiringOptions}
               onChange={(e) => onChange(e, 'hiring')}
               value={values.hiring}
-              searchable={false}
+              isSearchable={false}
+              isClearable={true}
             />
           </FilterContainer>
         </div>

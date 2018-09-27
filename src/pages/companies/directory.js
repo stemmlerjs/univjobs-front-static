@@ -259,6 +259,7 @@ class Directory extends React.Component {
       filters: {
         ...this.state.filters,
         [filterName]: value,
+        isSearching: true
       },
     })
   }
