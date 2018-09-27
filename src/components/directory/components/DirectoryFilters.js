@@ -74,6 +74,7 @@ class DirectoryFilters extends React.Component {
               options={companySize}
               onChange={(e) => onChange(e, 'companySize')}
               value={values.companySize}
+              searchable={false}
             />
           </FilterContainer>
 
@@ -82,6 +83,7 @@ class DirectoryFilters extends React.Component {
               options={hiringOptions}
               onChange={(e) => onChange(e, 'hiring')}
               value={values.hiring}
+              searchable={false}
             />
           </FilterContainer>
         </div>
