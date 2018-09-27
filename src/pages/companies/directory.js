@@ -476,9 +476,16 @@ class Directory extends React.Component {
           )}
         </div>
         <CallToAction
-          header="Want your company listed here?"
-          subHeader="Sign up for free and let students know you exist!"
+          header="Students and recent grads"
+          subHeader="Sign up for free, apply to 🔥 jobs, get hired"
           buttonText="Sign up"
+          alt={false}
+          location={`${config.appUrl}register`}
+        />
+        <CallToAction
+          header="Employers, want your company listed here?"
+          subHeader="Sign up for free and let students know you exist"
+          buttonText="Create account"
           alt={true}
           location={`${config.appUrl}register/employer`}
         />
