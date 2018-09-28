@@ -25,7 +25,7 @@ class CallToAction extends React.Component {
           this.props.alt ? altStudentCTA.container : studentCTA.container
         }
       >
-        <h1>{this.props.header}</h1>
+        <h3>{this.props.header}</h3>
         <div>{this.props.subHeader}</div>
         <button
           onClick={this.onClickButton}

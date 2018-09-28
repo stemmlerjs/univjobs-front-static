@@ -1,7 +1,9 @@
-export function scrollToY(scrollTargetY, speed, easing) {
+export function scrollToY(scrollTargetY, speed, easing, baseElement) {
   // scrollTargetY: the target scrollY property of the window
   // speed: time in pixels per second
   // easing: easing equation to use
+  // baseElement: (optional), if provided, scrolls to the top of this element instead.
+  
 
   var scrollY = window.scrollY || document.documentElement.scrollTop,
     scrollTargetY = scrollTargetY || 0,

@@ -17,7 +17,7 @@ function doesLogoExist(logoUrl) {
   return true
 }
 
-function doesImageExistOnServer(logoUrl) {
+function doesImageExistOnServer (logoUrl) {
   var image = new Image()
   image.src = logoUrl;
 
@@ -89,7 +89,7 @@ class DirectoryResult extends React.Component {
       companyName,
       address,
       industry,
-      featured,
+      feature,
       about,
       distance
     } = this.props
@@ -99,7 +99,7 @@ class DirectoryResult extends React.Component {
       <div className={`directory-result`}>
         <div
           className={`directory-result-inner-container ${
-            featured ? 'featured' : ''
+            feature ? 'featured' : ''
           }`}
           onClick={this.toggleCard}
         >
@@ -127,7 +127,7 @@ class DirectoryResult extends React.Component {
               <div className="address">{address}</div>
               <div>
                 <div className="industry">{industry.label}</div>
-                {featured ? <div className="featured">Featured</div> : ''}
+                {feature ? <div className="featured">Featured</div> : ''}
               </div>
             </div>
           </div>

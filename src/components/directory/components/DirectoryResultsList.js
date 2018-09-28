@@ -18,7 +18,9 @@ class DirectoryResultsList extends React.Component {
    */
 
   handleScrollCardToTop (event) {
-    scrollToY(event.target.offsetTop - 50, 500, "easeInOutQuint")
+    if (this.props.isMobile) {
+      scrollToY(event.target.offsetTop - 50, 500, "easeInOutQuint")
+    }
   }
 
   render () {

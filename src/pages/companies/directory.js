@@ -71,6 +71,7 @@ class Directory extends React.Component {
     this.getInitialPosition = this.getInitialPosition.bind(this)
     this.sortByDistance = this.sortByDistance.bind(this)
     this.detectLocationChange = this.detectLocationChange.bind(this)
+    this.isMobileUser = this.isMobileUser.bind(this)
   }
 
   componentWillUnmount() {
@@ -260,9 +261,15 @@ class Directory extends React.Component {
       filters: {
         ...this.state.filters,
         [filterName]: value,
-        isSearching: true
+        isSearching: true,
       },
+      isRebuildingMap: !this.isMobileUser() ? !this.state.isRebuildingMap : this.state.isRebuildingMap
     })
+  }
+
+  isMobileUser () {
+    const { width } = this.state;
+    return width < 675;
   }
 
   _doFilter() {
@@ -278,6 +285,7 @@ class Directory extends React.Component {
       ...this.state,
       filteredCompanies: filteredCompanies,
       isSearching: false,
+      isRebuildingMap: !this.isMobileUser() ? false : !this.state.isRebuildingMap
     })
   }
 
@@ -350,7 +358,7 @@ class Directory extends React.Component {
               show = true
               return true
             }
-            return false
+            return false;
           })
 
           return show
@@ -467,10 +475,13 @@ class Directory extends React.Component {
               <div>Try adjusting your search filters!</div>
             </div>
           ) : (
-            <DirectoryResultsList companies={companies ? companies : []} />
+            <DirectoryResultsList 
+              companies={companies ? companies : []} 
+              isMobile={this.isMobileUser()}
+            />
           )}
 
-          {width > 650 ? (
+          {!this.isMobileUser() ? (
             <DirectoryMap
               companies={companies ? companies : []}
               currentLatitude={this.state.myLat}
@@ -537,6 +548,9 @@ export const directoryQuery = graphql`
             lng
           }
           hiring
+          fields {
+            slug
+          }
         }
       }
     }

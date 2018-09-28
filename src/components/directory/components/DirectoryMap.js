@@ -49,7 +49,7 @@ class DirectoryMap extends React.Component {
    */
 
   componentDidMount() {
-    console.log("<DirectoryMap/> Loaded");
+    console.log('<DirectoryMap/> Loaded')
   }
 
   /**
@@ -62,24 +62,25 @@ class DirectoryMap extends React.Component {
     const { map } = this.state
     const newMarkersList = []
 
-    // Remove old markers
-    const { markers } = this.state
-    markers.map(m => {
-      m.remove()
-    })
+    try {
+      // Remove old markers
+      const { markers } = this.state
+      markers.map(m => {
+        m.remove()
+      })
 
-    // Create new markers
-    companies.forEach(function(marker, i) {
-      // create a HTML element for each feature
-      var el = document.createElement('div')
-      el.className = 'marker'
-      el.innerText = `${i + 1}`
+      // Create new markers
+      companies.forEach(function(marker, i) {
+        // create a HTML element for each feature
+        var el = document.createElement('div')
+        el.className = 'marker'
+        el.innerText = `${i + 1}`
 
-      // Create a marker
-      let m = new mapboxgl.Marker(el)
-        .setLngLat([marker.position.lng, marker.position.lat])
-        .setPopup(
-          new mapboxgl.Popup({ offset: 25 }).setHTML(`<div>
+        // Create a marker
+        let m = new mapboxgl.Marker(el)
+          .setLngLat([marker.position.lng, marker.position.lat])
+          .setPopup(
+            new mapboxgl.Popup({ offset: 25 }).setHTML(`<div>
         <div class="image-container"><img src="${marker.logoUrl}"/></div>
         <div>
           <h3>${marker.companyName}</h3>
@@ -88,20 +89,23 @@ class DirectoryMap extends React.Component {
         </div>
       </div>
       `)
-        )
+          )
 
-      // Add marker to list
-      newMarkersList.push(m)
+        // Add marker to list
+        newMarkersList.push(m)
 
-      // Add marker to map
-      m.addTo(map)
-    })
+        // Add marker to map
+        m.addTo(map)
+      })
 
-    // Then, set the markers list
-    this.setState({
-      ...this.state,
-      markers: newMarkersList,
-    })
+      // Then, set the markers list
+      this.setState({
+        ...this.state,
+        markers: newMarkersList,
+      })
+    } catch (err) {
+      console.log("Couldn't load markers", err)
+    }
   }
 
   /**
@@ -123,6 +127,7 @@ class DirectoryMap extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
+    console.log('component updated', prevProps, this.props)
     if (prevProps.isRebuildingMap && !this.props.isRebuildingMap) {
       console.log('Time to rebuild the map')
       this.updateMarkers()
@@ -143,7 +148,7 @@ class DirectoryMap extends React.Component {
   }
 
   render() {
-    const { currentLatitude, currentLongitude, companies } = this.props
+    const { currentLatitude, currentLongitude } = this.props
     return (
       <div className="directory-map">
         <Map

@@ -31,6 +31,33 @@ const createBlogPosts = (posts, createPage) => {
   return posts;
 }
 
+/**
+ * createDirectoryCompanyPages
+ * 
+ * @function create all directory company nodes
+ */
+
+const createDirectoryCompanyPages = (companies, createPage) => {
+  companies.forEach(edge => {
+    const companyId = edge.node.companyId;
+    
+    createPage({
+      path: edge.node.fields.slug,
+      component: path.resolve(`src/templates/directory-company.js`),
+      context: {
+        companyId
+      }
+    })
+  })
+}
+
+/**
+ * createCompanyPages
+ * 
+ * @function creates all company pages
+ * @param {Array<Edge>}
+ */
+
 const createCompanyPages = (companies, createPage) => {
   companies.forEach(edge => {
     const companyId = edge.node.companyId;
@@ -129,22 +156,6 @@ const getAllTagsFromPosts = (posts) => {
   return _.uniq(tags);
 }
 
-
-
-// exports.sourceNodes = async ({ boundActionCreators }) => {
-//   const { createNode } = boundActionCreators;
-//   // Create nodes here, generally by downloading data
-//   // from a remote API.
-//   // const data = await fetch(REMOTE_API);
-//   // const data = await dataSource.getData()
-
-//   // Process data into nodes.
-//   data.forEach(datum => createNode(dataSource.processData(datum)));
-
-//   // We're done, return.
-//   return;
-// };
-
 exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators;
 
@@ -162,6 +173,42 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
               templateKey
               category
             }
+          }
+        }
+      }
+
+      directoryCompanies: allDirectoryCompany(limit: 1000) {
+        edges {
+          node {
+            fields {
+              slug
+            }
+            id
+            industry {
+              value
+              label
+            }
+            jobs {
+              title
+              slug
+              active
+            }
+            companyId
+            companyName
+            about
+            logoUrl
+            address
+            companySize {
+              value
+              label
+            }
+            feature
+            exploreSlug
+            position {
+              lat
+              lng
+            }
+            hiring
           }
         }
       }
@@ -249,6 +296,10 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     // Create pages from companies
     createCompanyPages(result.data.companies.edges, createPage)
 
+    // Create directory company pages
+    createDirectoryCompanyPages(result.data.directoryCompanies.edges, createPage)
+    console.log(result.data.directoryCompanies.edges[0])
+
   })
 }
 
@@ -286,6 +337,14 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
       name: 'slug',
       node,
       value: `/companies/${_.kebabCase(node.companyName)}/`
+    })
+  }
+
+  else if (node.internal.type === "DirectoryCompany") {
+    createNodeField({
+      name: 'slug',
+      node,
+      value: `/companies/directory/${_.kebabCase(node.companyName)}/`
     })
   }
 }
