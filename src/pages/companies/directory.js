@@ -413,7 +413,44 @@ class Directory extends React.Component {
 
   getCompaniesFromProps = () => {
     let { companies } = this.props.data;
-    return this.sortByDistance(companies.edges.map(c => c.node)) 
+    return this.shuffleFeatured(
+      this.sortByDistance(companies.edges.map(c => c.node))
+    )
+  }
+
+  /**
+   * shuffleFeatured
+   * 
+   * @desc This function places the featured companies towards the 
+   * top of the list, shuffled every 3/4 companies.
+   */
+
+  shuffleFeatured = (companies) => {
+    let featuredMap = [];
+    // Get all featured companies
+    companies.filter((company, i) => {
+      if (company.feature) {
+        featuredMap.push({ index: i, company: company })
+        return true;
+      }
+      return false;
+    });
+
+    // Only begin shuffling if there were some featured companies
+    // found.
+    if (featuredMap.length !== 0) {
+      let shuffleIndex = 0;
+      featuredMap.forEach((featured, ind) => {
+        // Remove the featured company from the original list.
+        companies.splice(featured.index, 1)
+        // Insert featured company
+        companies.splice(shuffleIndex, 0, featured.company)
+        // Get next position of featured company
+        shuffleIndex = companies[(shuffleIndex + 3)] ? shuffleIndex + 3 : shuffleIndex + 1;
+      });
+    }
+    
+    return companies;
   }
 
   updateWindowDimensions() {

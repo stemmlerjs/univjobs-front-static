@@ -32,6 +32,7 @@ class DirectoryCompanyTemplate extends React.Component {
 
   render () {
     const company = this.props.data.allDirectoryCompany.edges[0].node;
+    console.log(company)
 
     return (
       <div>
