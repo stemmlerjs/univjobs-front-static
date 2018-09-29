@@ -13,6 +13,7 @@ import CultureSection from '../components/companies/CultureSection'
 import helpers from '../helpers'
 import { logExploreCompanyView } from '../utils/logging';
 import SEO from '../components/SEO'
+import '../styles/Directory/DirectoryCompanyTemplate.sass'
 
 /**
  * CompanyTemplate
@@ -42,10 +43,44 @@ class DirectoryCompanyTemplate extends React.Component {
           postData={{
             title: `${company.companyName} | Univjobs - Jobs for students and recent-grads`,
             description:
-              `Apply to student, part-time and recent grad jobs at ${company.companyName} 
-              `,
+              `Apply to student, part-time and recent grad jobs at ${company.companyName}`
           }}
         />
+        <LandingPage
+          heroTitle={`${company.companyName}`}
+          subTitle=""
+          options={{
+            alignment: 'center',
+            hasPolygon: false,
+            hero: {
+              showHeroMask: false,
+              showDarkMask: false,
+              color: '',
+            },
+            styles: {
+              container: {
+                maxHeight: '40vh',
+                minHeight: '40vh',
+                textAlign: 'center',
+              }
+            }
+          }}
+        />
+        <CompanyHeader
+          companyName={company.companyName}
+          industry={company.industry.label}
+          logoUrl={company.logoUrl}
+          numEmployees={company.companySize.label}
+        />
+        <div className="directory-company-template-container">
+        
+          <div className="header">Where are they?</div>
+          <p>{company.address}</p>
+
+          <div className="header">What's their thing?</div>
+          <p>{company.about}</p>
+          
+        </div>
       </div>
     )
   }

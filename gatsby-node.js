@@ -182,6 +182,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
           node {
             fields {
               slug
+              exploreSlug
             }
             id
             industry {
@@ -346,6 +347,13 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
       node,
       value: `/companies/directory/${_.kebabCase(node.companyName)}/`
     })
+    if (node.feature) {
+      createNodeField({
+        name: 'exploreSlug',
+        node,
+        value: `/companies/${_.kebabCase(node.companyName)}/`
+      })
+    }
   }
 }
 

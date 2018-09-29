@@ -91,9 +91,11 @@ class DirectoryResult extends React.Component {
       industry,
       feature,
       about,
-      distance
+      distance,
+      exploreSlug,
+      fields
     } = this.props
-    const { isOpen } = this.state
+    const { isOpen } = this.state;
   
     return (
       <div className={`directory-result`}>
@@ -141,6 +143,11 @@ class DirectoryResult extends React.Component {
           <div className="inner">
             <div>About {companyName}</div>
             <p>{about}</p>
+
+            <Link className="link" to={fields.exploreSlug ? fields.exploreSlug : fields.slug}>
+
+              {fields.exploreSlug ? `Explore life at ${companyName}` : `Learn more about ${companyName}`}
+            </Link>
             {jobs.length !== 0 ? (
               <div>
                 <div>Jobs at {companyName}</div>

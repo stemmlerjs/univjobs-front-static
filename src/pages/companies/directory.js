@@ -470,6 +470,8 @@ class Directory extends React.Component {
       ? filteredCompanies
       : this.getCompaniesFromProps()
 
+      console.log(companies)
+
     return (
       <div className="directory-container">
         <SEO
@@ -579,7 +581,6 @@ export const directoryQuery = graphql`
             label
           }
           feature
-          exploreSlug
           position {
             lat
             lng
@@ -587,6 +588,7 @@ export const directoryQuery = graphql`
           hiring
           fields {
             slug
+            exploreSlug
           }
         }
       }
