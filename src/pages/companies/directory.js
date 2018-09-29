@@ -199,8 +199,9 @@ class Directory extends React.Component {
   componentDidMount() {
     // Get the initial position of the user.
     this.getInitialPosition(() => {
+      debugger;
       // Filter companies
-      this._doFilter()
+      this._doFilter();
     })
 
     // Setup event listener on window dimensions
@@ -280,12 +281,13 @@ class Directory extends React.Component {
     let filteredCompanies = this.filterByCompanySize(
       this.filterByHiring(this.filterByIndustry(companies, industry), hiring),
       companySize
-    )
+    );
+
     this.setState({
       ...this.state,
       filteredCompanies: filteredCompanies,
       isSearching: false,
-      isRebuildingMap: !this.isMobileUser() ? false : !this.state.isRebuildingMap
+      isRebuildingMap: this.isMobileUser() ? false : !this.state.isRebuildingMap
     })
   }
 

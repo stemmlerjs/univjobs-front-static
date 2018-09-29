@@ -60,7 +60,7 @@ class DirectoryMap extends React.Component {
   updateMarkers() {
     const { companies } = this.props
     const { map } = this.state
-    const newMarkersList = []
+    const newMarkersList = [];
 
     try {
       // Remove old markers
@@ -122,11 +122,11 @@ class DirectoryMap extends React.Component {
     })
 
     map.addControl(new mapboxgl.NavigationControl())
-
+    console.log("map loaded!!! ======================== ")
     this.updateMarkers()
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps, next) {
     console.log('component updated', prevProps, this.props)
     if (prevProps.isRebuildingMap && !this.props.isRebuildingMap) {
       console.log('Time to rebuild the map')
