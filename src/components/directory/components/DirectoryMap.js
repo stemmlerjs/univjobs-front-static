@@ -147,56 +147,30 @@ class DirectoryMap extends React.Component {
   }
 
   render() {
-    const { currentLatitude, currentLongitude } = this.props
+    const { 
+      currentLatitude, 
+      currentLongitude, 
+      styleUrl, 
+      zoom,
+      containerStyle
+    } = this.props;
+
     return (
       <div className="directory-map">
         <Map
           ref={e => {
             this.map = e
           }}
-          style="mapbox://styles/mapbox/streets-v10"
-          containerStyle={{
+          style={styleUrl ? styleUrl : "mapbox://styles/mapbox/streets-v10"}
+          containerStyle={containerStyle ? containerStyle : {
             height: '100vh',
             width: '100%',
           }}
           onStyleLoad={this.onMapLoad}
           center={[currentLongitude, currentLatitude]}
-          zoom={[11]}
+          zoom={[zoom ? zoom : 11]}
           speed={[0.6]}
         >
-          {/* <Source
-            id="company-markers"
-            geoJsonSource={{
-              type: 'geojson',
-              data: {
-                type: 'FeatureCollection',
-                features: companies.map((comp, i) => {
-                  return {
-                    type: 'Feature',
-                    geometry: {
-                      type: 'Point',
-                      coordinates: [comp.position.lng, comp.position.lat],
-                    },
-                    properties: {
-                      title: comp.companyName,
-                    }
-                  }
-                }),
-              },
-            }}
-          /> */}
-          {/* <Layer
-            type="symbol"
-            id="company-markers"
-            layout={{ 
-              'icon-image': 'marker-15',
-              "text-field": "{title}",
-              "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
-              "text-offset": [0, 0.6],
-              "text-anchor": "top"
-            }}
-            sourceId="company-markers"
-          /> */}
         </Map>
       </div>
     )
@@ -210,6 +184,9 @@ DirectoryMap.propTypes = {
   isRebuildingMap: PropTypes.bool,
   isRebuildingMapSuccess: PropTypes.bool,
   isRebuildingMapFailure: PropTypes.bool,
+  styleUrl: PropTypes.string,
+  zoom: PropTypes.number,
+  containerStyle: PropTypes.object
 }
 
 export default DirectoryMap

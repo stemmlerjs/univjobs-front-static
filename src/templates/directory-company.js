@@ -2,16 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import LandingPage from '../components/LandingPage'
 import CompanyHeader from '../components/companies/CompanyHeader'
-import CompanyJobs from '../components/companies/CompanyJobs'
-import CompanyArticles from '../components/companies/CompanyArticles'
-import TextSection from '../components/companies/TextSection'
-import ListSection from '../components/companies/ListSection'
-import Videos from '../components/companies/Videos'
-import SocialMediaSection from '../components/companies/SocialMediaSection'
-import OfficesSection from '../components/companies/OfficesSection'
-import CultureSection from '../components/companies/CultureSection'
-import helpers from '../helpers'
-import { logExploreCompanyView } from '../utils/logging';
+import DirectoryMap from '../components/directory/components/DirectoryMap'
+
 import SEO from '../components/SEO'
 import '../styles/Directory/DirectoryCompanyTemplate.sass'
 
@@ -33,6 +25,7 @@ class DirectoryCompanyTemplate extends React.Component {
 
   render () {
     const company = this.props.data.allDirectoryCompany.edges[0].node;
+    const { lat, lng } = company.position;
     console.log(company)
 
     return (
@@ -76,11 +69,26 @@ class DirectoryCompanyTemplate extends React.Component {
         
           <div className="header">Where are they?</div>
           <p>{company.address}</p>
-
           <div className="header">What's their thing?</div>
           <p>{company.about}</p>
-          
         </div>
+        <div 
+          // style={{
+          //   backgroundImage: `url("https://api.mapbox.com/v4/mapbox.outdoors/pin-l-marker+285A98(-79.3806,43.6453)/-79.3806,43.6453,15/600x300@2x.png?access_token=pk.eyJ1Ijoia3N0ZW1tbGVyIiwiYSI6ImNpbzYzdHY3OTAyNXF3M2tqcnBsNnNnbG0ifQ.t5zgcqnSItauuI69WK-Sew")`
+          // }}
+          className="directory-company-directory-map">
+          <DirectoryMap
+            currentLatitude={lat}
+            currentLongitude={lng}
+            styleUrl="mapbox://styles/kstemmler/cjmqjkd1w4gx82slmwc4t7qk5"
+            zoom={15}
+            companies={[company]}
+            containerStyle={{
+              height: '50vh',
+              width: '100%',
+            }}
+          />
+          </div>
       </div>
     )
   }
