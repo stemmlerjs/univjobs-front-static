@@ -23111,7 +23111,9 @@ app.use(__webpack_require__(312).set('prerenderToken', 'Ecl3kKs6Lg7ZdBcbaKTF'));
 const router = express.Router();
 app.use((req, res) => {
 	console.log('Request to', req.url);
+	console.log(req.url.split('/'));
 });
+
 app.get('/:env/posting/:jobId', (req, res) => request({
 	url: `${getBaseUrl(req.params.env)}/posting/${req.params.jobId}`,
 	method: 'GET'
