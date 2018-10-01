@@ -41,14 +41,13 @@ const router = express.Router();
 app.use((req, res) => {
 	console.log('Request to', req.url);
 	console.log(req.url.split('/'), "========== :)")
+	request({
+		url: `${getBaseUrl(req.url)}/posting/${getJobSlug(req.url)}`,
+		method: 'GET'
+	}).pipe(res)
 })
 
-app.get('*', (req, res) => request({
-	url: `${getBaseUrl(req.url)}/posting/${getJobSlug(req.url)}`,
-	method: 'GET'
-}).pipe(res));
-
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
 app.use('/.netlify/functions/posting', router);  // path must route to lambda
 
 module.exports = app;
