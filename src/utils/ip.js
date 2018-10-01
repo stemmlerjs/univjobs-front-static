@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const IPSTACK_URL = "http://api.ipstack.com/107.190.49.54?access_key=b59c2a5bdda684535c44e08f1f73d9bc"
+const IPSTACK_URL = "https://api.ipstack.com/107.190.49.54?access_key=b59c2a5bdda684535c44e08f1f73d9bc"
 
 const cache = {
   getCityResponse: null,
