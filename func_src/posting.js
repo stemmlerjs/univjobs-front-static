@@ -30,11 +30,15 @@ app.use(require('prerender-node')
 // .set('forwardHeaders', true);
 
 const router = express.Router();
+app.get('*', (req, res) => {
+	console.log(req.url);
+	console.log(JSON.stringify(req))
+	res.send("here's where we are now buddy")
+})
 app.get('/posting/:jobId', (req, res) => request({
 	url: `${getBaseUrl(req)}/posting/${req.params.jobId}`,
 	method: 'GET'
 }).pipe(res));
-
 
 app.use(bodyParser.json());
 app.use('/.netlify/functions/posting', router);  // path must route to lambda
