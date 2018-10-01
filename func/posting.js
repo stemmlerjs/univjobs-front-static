@@ -23098,9 +23098,8 @@ const setting = {
 	}
 };
 
-const getBaseUrl = req => {
-	const baseUrl = req.url.split("/")[2];
-	if (baseUrl === "app.01-staging.univjobs.ca") {
+const getBaseUrl = env => {
+	if (env === "staging") {
 		return setting.staging.app;
 	}
 	return setting.prod.app;
@@ -23110,13 +23109,11 @@ app.use(__webpack_require__(312).set('prerenderToken', 'Ecl3kKs6Lg7ZdBcbaKTF'));
 // .set('forwardHeaders', true);
 
 const router = express.Router();
-app.get('*', (req, res) => {
-	console.log(req.url);
-	console.log(JSON.stringify(req));
-	res.send("here's where we are now buddy");
+app.use((req, res) => {
+	console.log('Request to', req.url);
 });
-app.get('/posting/:jobId', (req, res) => request({
-	url: `${getBaseUrl(req)}/posting/${req.params.jobId}`,
+app.get('/:env/posting/:jobId', (req, res) => request({
+	url: `${getBaseUrl(req.params.env)}/posting/${req.params.jobId}`,
 	method: 'GET'
 }).pipe(res));
 
