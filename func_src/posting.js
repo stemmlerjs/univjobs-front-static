@@ -46,11 +46,16 @@ app.use((req, res) => {
 	// 	method: 'GET'
 	// }).pipe(res)
 
-	req.pipe(request.get({ 
-		url: `${getBaseUrl(req.url)}/posting/${getJobSlug(req.url)}`
-	}), {
-		end: false
-	}).pipe(res);
+	return axios.get(`${getBaseUrl(req.url)}/posting/${getJobSlug(req.url)}`)
+		.then((r) => {
+			return res.send(r.data);
+		})
+
+	// req.pipe(request.get({ 
+	// 	url: `${getBaseUrl(req.url)}/posting/${getJobSlug(req.url)}`
+	// }), {
+	// 	end: false
+	// }).pipe(res);
 })
 
 // app.use(bodyParser.json());
