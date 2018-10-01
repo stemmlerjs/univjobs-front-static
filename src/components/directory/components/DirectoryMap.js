@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import CompanyMarker from './CompanyMarker'
 import '../styles/DirectoryMap.sass'
 
 let mapboxgl
