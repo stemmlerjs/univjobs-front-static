@@ -41,10 +41,16 @@ const router = express.Router();
 app.use((req, res) => {
 	console.log('Request to', req.url);
 	console.log(req.url.split('/'), "========== :)")
-	request({
-		url: `${getBaseUrl(req.url)}/posting/${getJobSlug(req.url)}`,
-		method: 'GET'
-	}).pipe(res)
+	// request({
+	// 	url: `${getBaseUrl(req.url)}/posting/${getJobSlug(req.url)}`,
+	// 	method: 'GET'
+	// }).pipe(res)
+
+	req.pipe(request.get({ 
+		url: `${getBaseUrl(req.url)}/posting/${getJobSlug(req.url)}`
+	}), {
+		end: false
+	}).pipe(res);
 })
 
 // app.use(bodyParser.json());
