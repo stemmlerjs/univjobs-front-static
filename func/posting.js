@@ -23098,24 +23098,30 @@ const setting = {
 	}
 };
 
-const getBaseUrl = env => {
+const getBaseUrl = url => {
+	const env = url.split('/')[4];
 	if (env === "staging") {
+		console.log(`[Staging request]: ${setting.staging.app}`);
 		return setting.staging.app;
 	}
+	console.log(`[Prod request]: ${setting.prod.app}`);
 	return setting.prod.app;
 };
 
+const getJobSlug = url => {
+	return url.split('/')[6];
+};
+
 app.use(__webpack_require__(312).set('prerenderToken', 'Ecl3kKs6Lg7ZdBcbaKTF'));
-// .set('forwardHeaders', true);
 
 const router = express.Router();
 app.use((req, res) => {
 	console.log('Request to', req.url);
-	console.log(req.url.split('/'));
+	console.log(req.url.split('/'), "========== :)");
 });
 
-app.get('/:env/posting/:jobId', (req, res) => request({
-	url: `${getBaseUrl(req.params.env)}/posting/${req.params.jobId}`,
+app.get('*', (req, res) => request({
+	url: `${getBaseUrl(req.url)}/posting/${getJobSlug(req.url)}`,
 	method: 'GET'
 }).pipe(res));
 

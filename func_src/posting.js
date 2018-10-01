@@ -18,7 +18,9 @@ const setting = {
 }
 
 const getBaseUrl = (url) => {
-	const env = url.split('/')[4];
+	const chunks = url.split('/');
+	const env = chunks[chunks.length - 3];
+	console.log("current env", env)
 	if (env === "staging") {
 		console.log(`[Staging request]: ${setting.staging.app}`)
 		return setting.staging.app;
@@ -28,7 +30,8 @@ const getBaseUrl = (url) => {
 }
 
 const getJobSlug = (url) => {
-	return url.split('/')[6];
+	const chunks = url.split('/');
+	return chunks[chunks.length - 1];
 }
 
 app.use(require('prerender-node')
