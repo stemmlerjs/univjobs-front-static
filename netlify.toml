@@ -1,6 +1,6 @@
 [build]
   publish = "public"
-  command = "npm run build"
+  command = "npm run build && npm run build:lambda"
 	functions = "./func"
 
 [build.environment]
