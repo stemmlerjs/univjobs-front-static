@@ -1,7 +1,7 @@
 {
   "name": "univjobs-static-front-gatsby",
   "description": "Univjobs static site project",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "author": "Khalil Stemmler <khalilstemmler@gmail.com>",
   "dependencies": {
     "autoprefixer": "9.1.3",

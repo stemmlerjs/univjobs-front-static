@@ -1,5 +1,14 @@
 # Changelog
 
+##[1.2.0] - [2018-10-01]
+### Added
+- [Directory] Added directory page to show a map of companies.
+- [Directory Companies] Added directory company routes to show basic info for each company.
+- [SEO] Improved SEO on most pages by using the SEO component everywhere possible.
+
+### Changed
+- [Prerendering] Started research on Prerender.io. We're going to use this instead of our Lambda functions. This will allow us to only use Helmet to put the correct SEO stuff on each page. We're going to hook it up on CloudFront using Terraform.
+
 ##[1.1.1] - [2018-09-19]
 ### Fixed
 - [Company Template] Fixed social media links to only show links that were present.
