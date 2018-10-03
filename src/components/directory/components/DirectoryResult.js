@@ -17,7 +17,7 @@ function doesLogoExist(logoUrl) {
   return true
 }
 
-function doesImageExistOnServer(logoUrl) {
+function doesImageExistOnServer (logoUrl) {
   var image = new Image()
   image.src = logoUrl;
 
@@ -46,6 +46,7 @@ class DirectoryResult extends React.Component {
     this.openCard = this.openCard.bind(this)
     this.closeCard = this.closeCard.bind(this)
     this.toggleCard = this.toggleCard.bind(this)
+    this.renderDistance = this.renderDistance.bind(this)
   }
 
   openCard() {
@@ -62,12 +63,21 @@ class DirectoryResult extends React.Component {
     })
   }
 
-  toggleCard() {
-    const { isOpen } = this.state
+  toggleCard(e) {
+    const { isOpen } = this.state;
     if (isOpen) {
       this.closeCard()
     } else {
+      this.props.onClick(e);
       this.openCard()
+    }
+  }
+  
+  renderDistance (distance) {
+    if (distance < 1) {
+      return `${(Math.floor(distance * 100) / 10).toFixed(0)}00 m`
+    } else {
+      return `${distance.toFixed(1)} km`
     }
   }
 
@@ -79,23 +89,31 @@ class DirectoryResult extends React.Component {
       companyName,
       address,
       industry,
-      featured,
+      feature,
       about,
+      distance,
+      exploreSlug,
+      fields
     } = this.props
-    const { isOpen } = this.state
+    const { isOpen } = this.state;
   
     return (
       <div className={`directory-result`}>
         <div
           className={`directory-result-inner-container ${
-            featured ? 'featured' : ''
+            feature ? 'featured' : ''
           }`}
           onClick={this.toggleCard}
         >
           <div className="head">
-            <div>{index + 1}.</div>
+            <div className="distance">{index + 1}.</div>
             <div className="job-count">
-              {jobs.length === 0 ? '' : `${jobs.length} jobs`}
+              <span>{this.renderDistance(distance)}</span>
+            {jobs.length === 0 
+                ? '' 
+                : jobs.length === 1 
+                  ? '1 job'
+                  : `${jobs.length} jobs`}
             </div>
           </div>
           <div className="body-container">
@@ -111,7 +129,7 @@ class DirectoryResult extends React.Component {
               <div className="address">{address}</div>
               <div>
                 <div className="industry">{industry.label}</div>
-                {featured ? <div className="featured">Featured</div> : ''}
+                {feature ? <div className="featured">Featured</div> : ''}
               </div>
             </div>
           </div>
@@ -125,6 +143,11 @@ class DirectoryResult extends React.Component {
           <div className="inner">
             <div>About {companyName}</div>
             <p>{about}</p>
+
+            <Link className="link" to={fields.exploreSlug ? fields.exploreSlug : fields.slug}>
+
+              {fields.exploreSlug ? `Explore life at ${companyName}` : `Learn more about ${companyName}`}
+            </Link>
             {jobs.length !== 0 ? (
               <div>
                 <div>Jobs at {companyName}</div>
@@ -167,4 +190,6 @@ DirectoryResult.propTypes = {
     })
   ).isRequired,
   exploreSlug: PropTypes.string,
+  onClick: PropTypes.func,
+  distance: PropTypes.number
 }

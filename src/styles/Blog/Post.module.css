@@ -91,7 +91,15 @@
   box-shadow: 0 14px 28px 0 rgba(143, 143, 143, 0.2);
   /* margin: 2px; */
   background-size: cover;
+  background: white;
 }
+
+.sponsoredCompanyImage>div > div {
+  height: 100%;
+  background-position: center;
+  background-size: contain;
+}
+
 
 @media (max-width: 1130px) {
   .container {

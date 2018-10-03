@@ -12,6 +12,7 @@ import OfficesSection from '../components/companies/OfficesSection'
 import CultureSection from '../components/companies/CultureSection'
 import helpers from '../helpers'
 import { logExploreCompanyView } from '../utils/logging';
+import SEO from '../components/SEO'
 
 /**
  * CompanyTemplate
@@ -45,10 +46,18 @@ class CompanyTemplate extends React.Component {
     if (company.length !== 0) {
       company = company[0];
     }
-    console.log('<Company/>', this.props)
 
     return (
       <div>
+        <SEO
+          isBlogPost={false}
+          postData={{
+            title: `Jobs at ${company.companyName} | Univjobs - Jobs for students and recent-grads`,
+            description:
+              `${company.slogan} | Apply to student, part-time and recent grad jobs at ${company.companyName} 
+              `,
+          }}
+        />
         <LandingPage
           options={{
             alignment: 'center',

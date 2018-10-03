@@ -38,36 +38,71 @@ FilterContainer.propTypes = {
  * @desc This component allows us to filter the search
  * results.
  */
+class DirectoryFilters extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isFilterOpen: false
+    }
+  }
 
-const DirectoryFilters = ({ onChange }) => (
-  <div className="directory-filters">
-    <FilterContainer title="Industry">
-      <Select 
-        isMulti 
-        options={industries}
-        onChange={(e) => onChange(e, 'industry')}
-      />
-    </FilterContainer>
+  toggleFilterVisible = () => {
+    this.setState({
+      ...this.state,
+      isFilterOpen: !this.state.isFilterOpen
+    })
+  }
 
-    <FilterContainer title="Company size">
-      <Select 
-        options={companySize}
-        onChange={(e) => onChange(e, 'companySize')}
-      />
-    </FilterContainer>
+  render () {
+    const { onChange, values } = this.props;
+    const { isFilterOpen } = this.state;
 
-    <FilterContainer title="Hiring">
-      <Select 
-        options={hiringOptions}
-        onChange={(e) => onChange(e, 'hiring')}
-      />
-    </FilterContainer>
-    
-  </div>
-)
+    return (
+      <div className={`directory-filters ${isFilterOpen ? "on" : "off"}`}>
+        <div className={`directory-filters-container ${isFilterOpen ? "on" : "off"}`}>
+          <div className="filter-section-title">Filter your search</div>
+          <FilterContainer title="Industry">
+            <Select 
+              isMulti 
+              options={industries}
+              onChange={(e) => onChange(e, 'industry')}
+              value={values.industry}
+            />
+          </FilterContainer>
+
+          <FilterContainer title="Company size">
+            <Select 
+              options={companySize}
+              onChange={(e) => onChange(e, 'companySize')}
+              value={values.companySize}
+              isSearchable={false}
+              isClearable={true}
+            />
+          </FilterContainer>
+
+          <FilterContainer title="Hiring">
+            <Select 
+              options={hiringOptions}
+              onChange={(e) => onChange(e, 'hiring')}
+              value={values.hiring}
+              isSearchable={false}
+              isClearable={true}
+            />
+          </FilterContainer>
+        </div>
+        <div>
+          <div 
+            onClick={this.toggleFilterVisible} 
+            className="filter-toggle">{isFilterOpen ? "Hide filters" : "Show filters"}</div>
+        </div>
+      </div>
+    )
+  }
+}
 
 export default DirectoryFilters;
 
 DirectoryFilters.propTypes = {
-  onChange: PropTypes.func.isRequired
+  onChange: PropTypes.func.isRequired,
+  values: PropTypes.object
 }

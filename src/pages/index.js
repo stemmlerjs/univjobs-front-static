@@ -38,6 +38,7 @@ import LandingPage from '../components/LandingPage'
 
 import config from '../config'
 import { redirectTo } from '../helpers'
+import SEO from '../components/SEO'
 
 const StudentShowCaseSection = props => {
   return (
@@ -214,6 +215,14 @@ const Backers = props => {
 
 const Index = () => (
   <div>
+    <SEO
+      isBlogPost={false}
+      postData={{
+        title: 'Univjobs | Simplifying hiring post-secondary students',
+        description:
+          'A place where you can find jobs to earn cash and launch your career.',
+      }}
+    />
     <LandingPage
       heroTitle="Quickly apply to student and recent grad jobs"
       heroSubTitle="A place where you can find jobs to earn cash and launch your career"

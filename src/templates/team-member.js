@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { HTMLContent } from '../components/Content'
 import CallToAction from '../components/CallToAction'
 import Link from 'gatsby-link'
+import SEO from '../components/SEO'
 
 import styles from '../styles/TeamMember.module.css'
 
@@ -24,6 +25,14 @@ export const TeamMemberPageTemplate = ({
 }) => (
   <div>
     <section className={styles.pageContainer}>
+      <SEO
+        isBlogPost={false}
+        postData={{
+          title: `${name} | Univjobs Team`,
+          description: role
+        }}
+        postImage={image}
+      />
       <Intro
         name={name}
         role={role}

@@ -131,6 +131,9 @@ export const blogPagesQuery = graphql`
             featured
             image
             category
+            sponsored
+            sponsoredCompanyName
+            sponsoredCompanyImage
           }
         }
       }

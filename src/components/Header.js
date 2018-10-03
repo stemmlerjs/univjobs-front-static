@@ -55,7 +55,11 @@ class Header extends React.Component {
           })
         }
 
-        const shouldHideHeader = window.location.href.indexOf('companies/directory') !== -1;
+        const re = /companies\/directory$/g;
+        const re2 = /companies\/directory\/$/g;
+        const url = window.location.href;
+
+        const shouldHideHeader = re.test(url) || re2.test(url);
         if (shouldHideHeader !== this.state.shouldHideHeader) {
           this.setState({
             ...this.state,

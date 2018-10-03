@@ -2,10 +2,25 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import DirectoryResult from './DirectoryResult'
 import "../styles/DirectoryResultsList.sass"
+import { scrollToY } from "../../../utils/misc";
 
 class DirectoryResultsList extends React.Component {
   constructor (props) {
-    super(props)
+    super(props);
+
+    this.handleScrollCardToTop = this.handleScrollCardToTop.bind(this);
+  }
+
+  /**
+   * handleScrollCardToTop
+   * @desc Self-explainatory. Scrolls the card to the
+   * top of the display.
+   */
+
+  handleScrollCardToTop (event) {
+    if (this.props.isMobile) {
+      scrollToY(event.target.offsetTop - 50, 500, "easeInOutQuint")
+    }
   }
 
   render () {
@@ -13,7 +28,10 @@ class DirectoryResultsList extends React.Component {
     return (
       <div className="directory-results-list">
         { companies.map((company, i) => (
-          <DirectoryResult key={i} index={i} {...company}/>
+          <DirectoryResult 
+            onClick={this.handleScrollCardToTop}
+            key={i} 
+            index={i} {...company}/>
         ))}
       </div>
     )

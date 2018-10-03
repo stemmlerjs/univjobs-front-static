@@ -10,10 +10,19 @@
       // border: solid 3px #48ded7;
       border-radius: 3px;
       background: #faffff;
+      border: solid 3px #00d2cd;
     .head 
       display: flex;
       width: 100%;
       justify-content: space-between;
+      span
+        opacity: 0.5;
+        font-size: 14px;
+        padding-right: 14px;
+      > div 
+        margin-bottom: 10px;
+        @media (max-width: 600px)
+          font-size: 12px;
       .job-count
         font-size: 16px;
         color: #00d2cd;
@@ -21,21 +30,31 @@
     .body-container
       display: flex;
       flex-direction: row;
+      
       .logo-container
         width: 43%;
         text-align: center;
+
+        @media (max-width: 600px) 
+          width: 15%;
+
         img 
           max-height: 117px;
           margin: 0;
+          border-radius: 4px;
       .body
         width: 57%;
         margin-left: 2em;
         .company-name
           font-weight: bold;
-          font-size: 1.4em;
+          font-size: 1.1em;
+          @media (max-width: 600px) 
+            font-size: 18px;
         .address
           opacity: 0.5;
           font-size: 16px;
+          @media (max-width: 600px)
+            font-size: 14px;
         .industry
           font-size: 16px;
           background: #EFEFEF;
@@ -46,6 +65,8 @@
           margin-bottom: 11px;
           margin-right: 11px;
           text-align: center;
+          @media (max-width: 600px) 
+            font-size: 12px;
         .featured
           font-size: 16px;
           background: #00d2cd;
@@ -68,7 +89,15 @@
       font-size: 16px;
       opacity: 0.6;
       margin-top: 8px;
+      margin-bottom: 0px;
+      padding-bottom: 0px;
 
+    .link
+      font-size: 13px;
+      opacity: 0.7;
+      margin-bottom: 3em;
+      display: block;
+      margin-top: 1em;
     .job
       display: block;
       font-size: 16px;

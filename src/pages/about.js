@@ -8,6 +8,7 @@ import uLogo from '../img/about/u-logo.png'
 import LandingPage from '../components/LandingPage'
 import CallToAction from '../components/CallToAction'
 import Divider from '../components/Divider'
+import SEO from '../components/SEO'
 
 import styles from '../styles/About.module.css'
 import description from '../styles/About/Description.module.css'
@@ -126,6 +127,13 @@ const AboutPage = ({ data }) => {
 
   return (
     <div>
+      <SEO
+        isBlogPost={false}
+        postData={{
+          title: 'About Univjobs | Simplifying hiring post-secondary students',
+          description: 'Follow our progress and learn about the team',
+        }}
+      />
       <LandingPage
         heroTitle="About"
         heroSubTitle="Learn more about the team behind Univjobs"

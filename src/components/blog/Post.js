@@ -38,7 +38,9 @@ PostImage.propTypes = {
 const Sponsor = ({ image, companyName }) => (
   <div className={postStyles.sponsoredCompanyImage}>
     Sponsored by {companyName}
-    <div style={{ backgroundImage: `url(${image})` }} />
+    <div>
+      <div style={{ backgroundImage: `url(${image})` }} />
+    </div>
   </div>
 )
 

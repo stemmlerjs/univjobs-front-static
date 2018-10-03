@@ -124,6 +124,8 @@ const SEO = ({ postData, postImage, isBlogPost }) => {
 SEO.propTypes = {
   isBlogPost: PropTypes.bool,
   postData: PropTypes.shape({
+    title: PropTypes.string,
+    description: PropTypes.string,
     frontmatter: PropTypes.any,
     excerpt: PropTypes.any,
   }).isRequired,
@@ -132,7 +134,7 @@ SEO.propTypes = {
 
 SEO.defaultProps = {
   isBlogPost: false,
-  postImage: null,
+  postImage: "img/u.png",
 };
 
 export default SEO;

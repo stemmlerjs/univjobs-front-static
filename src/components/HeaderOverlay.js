@@ -6,6 +6,29 @@ import styles from "../styles/HeaderStyles.module.css";
 import config from '../config'
 import { redirectTo } from '../helpers'
 
+// pricing, blog, explore companies, directory, login, employer signup, student signup, about, pricing,
+
+const routeConfig = [
+  {
+    sectionName: "App",
+    routes: [
+      { name: 'Sign in', route: `${config.appUrl}login` },
+      { name: 'Create account', route: `${config.appUrl}register` },
+      { name: 'Companies Near Me', route: '/companies/directory' },
+      { name: "Featured companies", route: '/companies' },
+      { name: 'Blog & Resources', route: "/blog/categories/student-life" }
+    ]
+  },
+
+  {
+    sectionName: "Employers",
+    routes: [
+      { name: "Create business account", route: `${config.appUrl}register/employer` },
+      { name: "Pricing", route: "/pricing" }
+    ]
+  }
+]
+
 const HeaderOverlay = ({ isOpen }) => {
   return (
     <div className={isOpen
@@ -18,18 +41,20 @@ const HeaderOverlay = ({ isOpen }) => {
          */
       }
       <div className={styles.mobileNavOverlayOptionsContainer}>
-       <a className={`${styles.overlayItemMain} ${styles.overlay}`} href={`${config.appUrl}login`}>Login</a>
-       <a className={`${styles.overlayItem} ${styles.overlay}`} href="/companies">Explore Companies</a>
-       <a className={`${styles.overlayItem} ${styles.overlay}`} href="/about">About</a>
-
-      <div className={styles.overlaySection}>Student</div>        
-        <a className={`${styles.overlayItemMain} ${styles.overlay}`} href={`${config.appUrl}register`}>Register</a>
-        <a className={`${styles.overlayItem} ${styles.overlay}`} href="/blog/categories/students">Tips</a>
-
-        <div className={styles.overlaySection}>Employers</div>
-          <a className={`${styles.overlayItemMain} ${styles.overlay}`} href={`${config.appUrl}register/employer`}>Register Employer</a>
-          <a className={`${styles.overlayItem} ${styles.overlay}`} href="/pricing">Pricing</a>
-
+        {
+          routeConfig.map((section, i) => (
+            <div style={{ display: 'flex',
+              flexDirection: 'column' }} key={i}>
+              <div className={styles.overlaySection}>{section.sectionName}</div>  
+              { section.routes.map((route, j) => (
+                <a 
+                  key={j} 
+                  className={`${styles.overlayItem} ${styles.overlay}`} 
+                  href={route.route}>{route.name}</a>
+              ))}
+            </div>
+          ))
+        }
       </div>
     </div>
   )

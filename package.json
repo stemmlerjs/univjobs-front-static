@@ -1,7 +1,7 @@
 {
   "name": "univjobs-static-front-gatsby",
   "description": "Univjobs static site project",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "author": "Khalil Stemmler <khalilstemmler@gmail.com>",
   "dependencies": {
     "autoprefixer": "9.1.3",
@@ -11,6 +11,7 @@
     "bufferutil": "^3.0.5",
     "bulma": "^0.6.0",
     "dotenv": "^6.0.0",
+    "express": "^4.16.3",
     "gatsby": "^1.9.277",
     "gatsby-link": "^1.6.46",
     "gatsby-paginate": "^1.0.16",
@@ -35,6 +36,7 @@
     "lodash-webpack-plugin": "^0.11.4",
     "mapbox-gl": "^0.49.0",
     "netlify-cms": "^1.8.4",
+    "prerender-node": "^3.2.1",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-countup": "^3.0.3",
@@ -46,6 +48,7 @@
     "react-slick": "^0.23.1",
     "react-spinners": "^0.4.4",
     "react-youtube": "7.6.0",
+    "request": "^2.88.0",
     "slick-carousel": "^1.8.1",
     "striptags": "^3.1.1",
     "underscore": "^1.9.1",
@@ -60,6 +63,7 @@
   "scripts": {
     "start": "npm run develop",
     "build": "gatsby build",
+    "build:lambda": "netlify-lambda build ./func_src",
     "develop": "gatsby develop",
     "serve": "gatsby serve",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
@@ -74,7 +78,9 @@
     "eslint-plugin-import": "2.14.0",
     "eslint-plugin-jsx-a11y": "6.1.1",
     "eslint-plugin-react": "7.11.1",
-    "prettier": "^1.12.0"
+    "netlify-lambda": "^0.4.0",
+    "prettier": "^1.12.0",
+    "serverless-http": "^1.6.0"
   },
   "repository": {
     "type": "git",

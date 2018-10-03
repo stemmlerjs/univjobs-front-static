@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import CompanyMarker from './CompanyMarker'
 import '../styles/DirectoryMap.sass'
 
 let mapboxgl
@@ -48,7 +47,9 @@ class DirectoryMap extends React.Component {
    * coordinates for Union Station.
    */
 
-  componentDidMount() {}
+  componentDidMount() {
+    console.log('<DirectoryMap/> Loaded')
+  }
 
   /**
    * updateMarkers
@@ -58,26 +59,27 @@ class DirectoryMap extends React.Component {
   updateMarkers() {
     const { companies } = this.props
     const { map } = this.state
-    const newMarkersList = []
+    const newMarkersList = [];
 
-    // Remove old markers
-    const { markers } = this.state
-    markers.map(m => {
-      m.remove()
-    })
+    try {
+      // Remove old markers
+      const { markers } = this.state
+      markers.map(m => {
+        m.remove()
+      })
 
-    // Create new markers
-    companies.forEach(function(marker, i) {
-      // create a HTML element for each feature
-      var el = document.createElement('div')
-      el.className = 'marker'
-      el.innerText = `${i + 1}`
+      // Create new markers
+      companies.forEach(function(marker, i) {
+        // create a HTML element for each feature
+        var el = document.createElement('div')
+        el.className = 'marker'
+        el.innerText = `${i + 1}`
 
-      // Create a marker
-      let m = new mapboxgl.Marker(el)
-        .setLngLat([marker.position.lng, marker.position.lat])
-        .setPopup(
-          new mapboxgl.Popup({ offset: 25 }).setHTML(`<div>
+        // Create a marker
+        let m = new mapboxgl.Marker(el)
+          .setLngLat([marker.position.lng, marker.position.lat])
+          .setPopup(
+            new mapboxgl.Popup({ offset: 25 }).setHTML(`<div>
         <div class="image-container"><img src="${marker.logoUrl}"/></div>
         <div>
           <h3>${marker.companyName}</h3>
@@ -86,20 +88,23 @@ class DirectoryMap extends React.Component {
         </div>
       </div>
       `)
-        )
+          )
 
-      // Add marker to list
-      newMarkersList.push(m)
+        // Add marker to list
+        newMarkersList.push(m)
 
-      // Add marker to map
-      m.addTo(map)
-    })
+        // Add marker to map
+        m.addTo(map)
+      })
 
-    // Then, set the markers list
-    this.setState({
-      ...this.state,
-      markers: newMarkersList,
-    })
+      // Then, set the markers list
+      this.setState({
+        ...this.state,
+        markers: newMarkersList,
+      })
+    } catch (err) {
+      console.log("Couldn't load markers", err)
+    }
   }
 
   /**
@@ -116,11 +121,12 @@ class DirectoryMap extends React.Component {
     })
 
     map.addControl(new mapboxgl.NavigationControl())
-
+    console.log("map loaded!!! ======================== ")
     this.updateMarkers()
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps, next) {
+    console.log('component updated', prevProps, this.props)
     if (prevProps.isRebuildingMap && !this.props.isRebuildingMap) {
       console.log('Time to rebuild the map')
       this.updateMarkers()
@@ -141,56 +147,30 @@ class DirectoryMap extends React.Component {
   }
 
   render() {
-    const { currentLatitude, currentLongitude, companies } = this.props
+    const { 
+      currentLatitude, 
+      currentLongitude, 
+      styleUrl, 
+      zoom,
+      containerStyle
+    } = this.props;
+
     return (
       <div className="directory-map">
         <Map
           ref={e => {
             this.map = e
           }}
-          style="mapbox://styles/mapbox/streets-v10"
-          containerStyle={{
+          style={styleUrl ? styleUrl : "mapbox://styles/mapbox/streets-v10"}
+          containerStyle={containerStyle ? containerStyle : {
             height: '100vh',
             width: '100%',
           }}
           onStyleLoad={this.onMapLoad}
           center={[currentLongitude, currentLatitude]}
-          zoom={[11]}
+          zoom={[zoom ? zoom : 11]}
           speed={[0.6]}
         >
-          {/* <Source
-            id="company-markers"
-            geoJsonSource={{
-              type: 'geojson',
-              data: {
-                type: 'FeatureCollection',
-                features: companies.map((comp, i) => {
-                  return {
-                    type: 'Feature',
-                    geometry: {
-                      type: 'Point',
-                      coordinates: [comp.position.lng, comp.position.lat],
-                    },
-                    properties: {
-                      title: comp.companyName,
-                    }
-                  }
-                }),
-              },
-            }}
-          /> */}
-          {/* <Layer
-            type="symbol"
-            id="company-markers"
-            layout={{ 
-              'icon-image': 'marker-15',
-              "text-field": "{title}",
-              "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
-              "text-offset": [0, 0.6],
-              "text-anchor": "top"
-            }}
-            sourceId="company-markers"
-          /> */}
         </Map>
       </div>
     )
@@ -204,6 +184,9 @@ DirectoryMap.propTypes = {
   isRebuildingMap: PropTypes.bool,
   isRebuildingMapSuccess: PropTypes.bool,
   isRebuildingMapFailure: PropTypes.bool,
+  styleUrl: PropTypes.string,
+  zoom: PropTypes.number,
+  containerStyle: PropTypes.object
 }
 
 export default DirectoryMap

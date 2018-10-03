@@ -1,8 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Link from 'gatsby-link'
 import uLogo from '../../../img/about/u-logo.png'
 import searchSvg from '../../../img/directory/search.svg'
 import '../styles/DirectoryHeader.sass'
+import HeaderOverlay from '../../../components/HeaderOverlay'
 
 /**
  * @class DirectoryHeader
@@ -19,6 +21,7 @@ export default class DirectoryHeader extends React.Component {
       delta: 5,
       navbarHeight: 0,
       hideUp: false,
+      isHeaderOpen: false
     }
 
     this.hasScrolled = this.hasScrolled.bind(this)
@@ -176,7 +179,7 @@ export default class DirectoryHeader extends React.Component {
         className="directory-header"
         id="directory-header-nav"
       >
-        <div className="logo-container"><img src={uLogo}/></div>
+        <Link to="/" className="logo-container"><img src={uLogo}/></Link>
         <div className="search-container">
           <input 
             id="searchTextField"
@@ -192,6 +195,10 @@ export default class DirectoryHeader extends React.Component {
             <img src={searchSvg}/>
           </div>
         </div>
+
+        <HeaderOverlay
+          isOpen={this.state.isHeaderOpen}
+        />
       </div>
     )
   }
