@@ -15,10 +15,11 @@ const getSchemaOrgJSONLD = ({
   const schemaOrgJSONLD = [
     {
       '@context': 'https://univjobs.ca',
-      '@type': 'WebSite',
+      '@type': 'website',
       url,
       name: title,
       alternateName: config.title,
+      logo: "https://univjobs.ca/static/u-logo.4bc69dc3.png"
     },
   ];
 
