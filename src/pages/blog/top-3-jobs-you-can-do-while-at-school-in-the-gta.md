@@ -45,7 +45,7 @@ Sounds awesome, right? Check ‘em out [here](https://go.rover.com/univjobs/).
 
 Love playing piano? Enjoy teaching? Want to get paid to teach piano? 
 
-Feely Piano Music is looking musicians, preferred to have 8th grade piano skills, but coach 1-1 for any to teach others the basics of how to play the piano. This is another great job for students and music lovers alike. Who knows, you could be teaching the next John Legend or Lady Gaga! Just think about when they win that Grammy… make sure to ask for a shoutout! Oh, we forgot to mention, you’re getting paid (like a star) and you get to choose your own hours and work on your own schedule. In addition, 1-1 mentorship for new teachers and shadowing the CEO.
+Feely Piano Music is looking for musicians, This is another great job for students and music lovers alike. Who knows, you could be teaching the next John Legend or Lady Gaga! Just think about when they win that Grammy… make sure to ask for a shoutout! Oh, we forgot to mention, you’re getting paid (like a star) and you get to choose your own hours and work on your own schedule. In addition, 1-1 mentorship for new teachers and shadowing the CEO.
 
 If you think you’re ready to pass your skills onto someone else, click here to vist [their site](https://www.feelypianoschool.com/).
 
