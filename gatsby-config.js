@@ -10,6 +10,7 @@ require("dotenv").config({
 });
 
 const plugins = [
+  'gatsby-plugin-robots-txt',
   {
     resolve: "gatsby-univjobs-api",
     options: {
@@ -58,7 +59,7 @@ const plugins = [
     resolve: `gatsby-plugin-postcss-sass`,
     options: {
       postCssPlugins: [require('autoprefixer')()],
-      precision: 8, // SASS default: 5
+      precision: 8,
     },
   },
   'gatsby-plugin-react-helmet',

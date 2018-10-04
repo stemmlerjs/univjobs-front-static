@@ -3,6 +3,20 @@ const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 const {cssModulesConfig} = require('gatsby-1-config-css-modules');
 
+const createCityPages = (cities, createPage) => {
+  cities.forEach(edge => {
+    const city = edge.node.name;
+    
+    createPage({
+      path: edge.node.fields.slug,
+      component: path.resolve(`src/templates/city.js`),
+      context: {
+        city
+      }
+    })
+  })
+}
+
 /**
  * createBlogPosts
  * 
@@ -214,6 +228,18 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         }
       }
 
+      cities: allCity(limit: 1000) {
+        edges {
+          node {
+            name
+            id
+            fields {
+              slug
+            }
+          }
+        }
+      }
+
       companies: allCompany(limit: 1000) {
         edges {
           node {
@@ -301,6 +327,9 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     createDirectoryCompanyPages(result.data.directoryCompanies.edges, createPage)
     console.log(result.data.directoryCompanies.edges[0])
 
+    // Create city pages
+    createCityPages(result.data.cities.edges, createPage);
+
   })
 }
 
@@ -354,6 +383,14 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
         value: `/companies/${_.kebabCase(node.companyName)}/`
       })
     }
+  }
+
+  else if (node.internal.type === "City") {
+    createNodeField({
+      name: 'slug',
+      node,
+      value: `/jobs/${_.kebabCase(node.name)}/`
+    })
   }
 }
 

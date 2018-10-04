@@ -9,35 +9,49 @@ class Processor {
   }
 
   /**
-   * _processDirectoryCompany
+   * _processNode
+   * Creates a unique node.
    * 
-   * @function _processDirectoryCompany processes a company and returns the Gatsby
-   * GraphQL object format.
-   * @param {Object} directoryCompany
-   * @return {Object} for GraphQL/Gatsby
+   * @param {Object} source source object to use as node data
+   * @param {String} uniqueNodeString required unique string
+   * 
+   * @return {Object} node
    */
 
-  _processDirectoryCompany (directoryCompany) {
+  _processNode (source, uniqueNodeString, nodeName) {
     const { createNodeId } = this;
 
-    const nodeId = createNodeId(`univjobs-directory-company-${directoryCompany.companyId}`)
-    const nodeContent = JSON.stringify(directoryCompany)
+    const nodeId = createNodeId(uniqueNodeString)
+    const nodeContent = JSON.stringify(source)
     const nodeContentDigest = crypto
       .createHash('md5')
       .update(nodeContent)
       .digest('hex')
 
-    const nodeData = Object.assign({}, directoryCompany, {
+    const nodeData = Object.assign({}, source, {
       id: nodeId,
       parent: null,
       children: [],
       internal: {
-        type: `DirectoryCompany`,
+        type: nodeName,
         content: nodeContent,
         contentDigest: nodeContentDigest,
       },
     })
     return nodeData
+  }
+
+
+  processAndCreateCityNode (city) {
+    const { createNode } = this;
+    const nodeData = this._processNode(
+      { name: city },
+      `univjobs-city-${city}`,
+      'City'
+    );
+    createNode(nodeData);
+    console.log(city)
+    // console.log("Created city node");
   }
 
   /**
@@ -50,41 +64,13 @@ class Processor {
 
   processAndCreateDirectoryCompanyNode (directoryCompany) {
     const { createNode } = this;
-    const nodeData = this._processDirectoryCompany(directoryCompany);
+    const nodeData = this._processNode(
+      directoryCompany,
+      `univjobs-directory-company-${directoryCompany.companyId}`,
+      'DirectoryCompany'
+    );
     createNode(nodeData);
-    console.log("Created Directory Company node");
-  }
-
-  /**
-   * _processCompany
-   * 
-   * @function that processes a company and returns the Gatsby/
-   * GraphQL object format.
-   * @param {Object} company
-   * @return {Object} for GraphQL/Gatsby
-   */
-
-  _processCompany (company) {
-    const { createNodeId } = this;
-
-    const nodeId = createNodeId(`univjobs-company-${company.companyId}`)
-    const nodeContent = JSON.stringify(company)
-    const nodeContentDigest = crypto
-      .createHash('md5')
-      .update(nodeContent)
-      .digest('hex')
-
-    const nodeData = Object.assign({}, company, {
-      id: nodeId,
-      parent: null,
-      children: [],
-      internal: {
-        type: `Company`,
-        content: nodeContent,
-        contentDigest: nodeContentDigest,
-      },
-    })
-    return nodeData
+    // console.log("Created Directory Company node");
   }
 
   /**
@@ -97,41 +83,13 @@ class Processor {
 
   processAndCreateCompanyNode (company) {
     const { createNode } = this;
-    const nodeData = this._processCompany(company);
+    const nodeData = this._processNode(
+      company,
+      `univjobs-company-${company.companyId}`,
+      'Company'
+    );
     createNode(nodeData);
     console.log("Created company node");
-  }
-
-  /**
-   * _processJobs
-   * 
-   * @function that processes a job and returns the Gatsby/
-   * GraphQL object format.
-   * @param {Object} company
-   * @return {Object} for GraphQL/Gatsby
-   */
-
-  _processJob (job) {
-    const { createNodeId } = this;
-
-    const nodeId = createNodeId(`univjobs-company-job-${job.jobId}`)
-    const nodeContent = JSON.stringify(job)
-    const nodeContentDigest = crypto
-      .createHash('md5')
-      .update(nodeContent)
-      .digest('hex')
-
-    const nodeData = Object.assign({}, job, {
-      id: nodeId,
-      parent: null,
-      children: [],
-      internal: {
-        type: `Job`,
-        content: nodeContent,
-        contentDigest: nodeContentDigest,
-      },
-    })
-    return nodeData
   }
 
   /**
@@ -144,9 +102,14 @@ class Processor {
 
   processAndCreateJobNode (job) {
     const { createNode } = this;
-    const nodeData = this._processJob(job);
+    const nodeData = this._processNode(
+      job,
+      `univjobs-company-job-${job.jobId}`,
+      'Job'
+    );
     createNode(nodeData);
   }
+
 }
 
 module.exports = {
