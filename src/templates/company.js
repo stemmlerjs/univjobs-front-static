@@ -13,6 +13,7 @@ import CultureSection from '../components/companies/CultureSection'
 import helpers from '../helpers'
 import { logExploreCompanyView } from '../utils/logging';
 import SEO from '../components/SEO'
+import get from 'lodash/get'
 
 /**
  * CompanyTemplate
@@ -51,7 +52,7 @@ class CompanyTemplate extends React.Component {
       if (articles.length !== 0) {
         //Reference from truthy and falsy: https://basarat.gitbooks.io/typescript/docs/tips/truthy.html
         company.articles = articles.filter(article => 
-          article.frontmatter.employerId === company.companyId)
+          get(article, 'frontmatter.employerId') === company.companyId)
       }
     }
 
