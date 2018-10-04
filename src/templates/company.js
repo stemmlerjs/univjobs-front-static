@@ -41,10 +41,18 @@ class CompanyTemplate extends React.Component {
 
   render () {
     const { data } = this.props;
+
     let company = helpers.companies.getCompaniesFromQuery(data.company);
+    let articles = helpers.companies.getCompaniesFromQuery(data.posts);
   
     if (company.length !== 0) {
       company = company[0];
+      
+      if (articles.length !== 0) {
+        //Reference from truthy and falsy: https://basarat.gitbooks.io/typescript/docs/tips/truthy.html
+        company.articles = articles.filter(article => 
+          article.frontmatter.employerId === company.companyId)
+      }
     }
 
     return (
@@ -214,7 +222,7 @@ CompanyTemplate.propTypes = {
 export default CompanyTemplate;
 
 export const pageQuery = graphql`
-  query CompanyTemplateQuery($companyId: Int) {
+  query blogsPageAndCompanyTemplateQuery($companyId: Int) {
     company: allCompany(filter: {
       companyId: { eq: $companyId }
       hidden: { eq: false }
@@ -276,6 +284,41 @@ export const pageQuery = graphql`
             slug
           }
           hidden
+        }
+      }
+    }
+
+
+    posts: allMarkdownRemark( 
+    	sort: { order: DESC, fields: [frontmatter___date] }
+      filter: {
+        frontmatter:  { 
+          templateKey: {eq: "blog-post"},
+          public: { eq: true }
+        } 
+      }
+      
+    ) {
+      edges {
+        node {
+          excerpt(pruneLength: 250)
+          timeToRead
+          fields {
+            slug
+          }
+          frontmatter {
+            employerId
+            title
+            date 
+            description
+            tags
+            featured
+            image
+            category
+            sponsored
+            sponsoredCompanyName
+            sponsoredCompanyImage
+          }
         }
       }
     }

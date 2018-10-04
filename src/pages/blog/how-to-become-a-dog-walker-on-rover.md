@@ -12,6 +12,7 @@ image: /img/rover_winter_dog_walk.jpg
 category: Job Hunt
 parentcategory: Career
 public: true
+employerId: 189
 sponsored: true
 sponsoredCompanyName: 'Rover'
 sponsoredCompanyImage: https://univjobs.s3.amazonaws.com/avatar/logo-9aq9nzrcydt5b8qeomgvuxq0kyu7s46nc925q5gm1537561708300.png
