@@ -84,6 +84,7 @@ const SEO = ({ postData, postImage, isBlogPost }) => {
     ? `${config.url}${postMeta.slug}`
     : config.url;
   const datePublished = isBlogPost ? postMeta.date : false;
+  const keywords = postData.keywords ? postData.keywords : 'student jobs, part time jobs, co-op jobs, univjobs, toronto, oakville, mississauga';
 
   const schemaOrgJSONLD = getSchemaOrgJSONLD({
     isBlogPost,
@@ -111,6 +112,7 @@ const SEO = ({ postData, postImage, isBlogPost }) => {
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
+      <meta property="keywords" content={keywords} />
 
       {/* Twitter Card tags */}
       <meta name="twitter:card" content="summary_large_image" />

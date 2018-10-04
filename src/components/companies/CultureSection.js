@@ -11,7 +11,7 @@ import '../../styles/company/CultureItem.sass'
 const sliderSettings = {
   dots: true,
   infinite: true,
-  speed: 1200,
+  speed: 2500,
   autoplay: true,
   autoplaySpeed: 3000
 }

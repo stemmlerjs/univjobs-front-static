@@ -96,7 +96,6 @@ class DirectoryResult extends React.Component {
       fields
     } = this.props
     const { isOpen } = this.state;
-  
     return (
       <div className={`directory-result`}>
         <div
@@ -108,12 +107,13 @@ class DirectoryResult extends React.Component {
           <div className="head">
             <div className="distance">{index + 1}.</div>
             <div className="job-count">
-              <span>{this.renderDistance(distance)}</span>
+              <span>{distance ? this.renderDistance(distance) : ''}</span>
             {jobs.length === 0 
                 ? '' 
                 : jobs.length === 1 
                   ? '1 job'
-                  : `${jobs.length} jobs`}
+                  : `${jobs.length} jobs`
+            }
             </div>
           </div>
           <div className="body-container">

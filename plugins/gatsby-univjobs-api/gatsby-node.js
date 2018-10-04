@@ -3,6 +3,7 @@
 // Use this tutorial to help figure out what to do next
 // https://www.gatsbyjs.org/docs/create-source-plugin/
 
+const _ = require('lodash')
 const crypto = require("crypto");
 const PublicCompanies = require('./PublicCompanies')
 const PublicJobs = require('./PublicJobs')
@@ -32,6 +33,7 @@ async function getAllCompanies (exploreCompanies, featuredCompanies, PublicCompa
 }
 
 exports.sourceNodes = async ({ boundActionCreators, createNodeId }, configOptions) => {
+  const cities = [];
   const { createNode } = boundActionCreators;
   const { url } = configOptions;
   const PublicCompaniesAPI = PublicCompanies(url);
@@ -66,7 +68,16 @@ exports.sourceNodes = async ({ boundActionCreators, createNodeId }, configOption
 
     const directoryCompanies = await PublicCompaniesAPI.getDirectoryCompanies();
     for (let directoryCompany of directoryCompanies) {
+      cities.push(directoryCompany.city)
       ProcessorInstance.processAndCreateDirectoryCompanyNode(directoryCompany)
+    }
+
+    /**
+     * Create all of the different City Nodes.
+     */
+    let unique  = _.uniq(cities).sort()
+    for (let city of unique) {
+      ProcessorInstance.processAndCreateCityNode(city)
     }
   } 
   
