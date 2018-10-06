@@ -50,7 +50,6 @@ class CompanyTemplate extends React.Component {
       company = company[0];
       
       if (articles.length !== 0) {
-        //Reference from truthy and falsy: https://basarat.gitbooks.io/typescript/docs/tips/truthy.html
         company.articles = articles.filter(article => 
           get(article, 'frontmatter.employerId') === company.companyId)
       }

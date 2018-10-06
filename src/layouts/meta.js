@@ -20,9 +20,13 @@ const meta = [
   { property: 'og:image:height', content: '200' },
 
   // Google Tracking
+  // {
+  //   name: 'google-site-verification',
+  //   content: 'hnc0xMxaywTkrqjaD9-r57vX4SF8YTRpQtaiORbyuzk',
+  // },
   {
     name: 'google-site-verification',
-    content: 'hnc0xMxaywTkrqjaD9-r57vX4SF8YTRpQtaiORbyuzk',
+    content: 'U22OVlRPWeMnqAw53R07dKFHh_6PdjYd9gJ7SJLXeqA',
   },
 
   // SEO Keywords
