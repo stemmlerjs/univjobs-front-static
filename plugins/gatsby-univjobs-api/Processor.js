@@ -44,6 +44,7 @@ class Processor {
 
   processAndCreateCityNode (city) {
     const { createNode } = this;
+    console.log('creating cirty node', city)
     const nodeData = this._processNode(
       { name: city },
       `univjobs-city-${city}`,
