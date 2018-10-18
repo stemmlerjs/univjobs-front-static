@@ -68,16 +68,35 @@ exports.sourceNodes = async ({ boundActionCreators, createNodeId }, configOption
 
     const directoryCompanies = await PublicCompaniesAPI.getDirectoryCompanies();
     for (let directoryCompany of directoryCompanies) {
-      cities.push(directoryCompany.city)
+      cities.push(directoryCompany.city);
       ProcessorInstance.processAndCreateDirectoryCompanyNode(directoryCompany)
     }
 
     /**
      * Create all of the different City Nodes.
      */
-    let unique  = _.uniq(cities).sort()
+    
+    let unique  = _.uniq(cities).sort();
+
+    // Working on a map so that we can create pages on
+    // {job-type}-jobs-in-{city}
+    // ======================
+    const cityMap = {};
     for (let city of unique) {
-      ProcessorInstance.processAndCreateCityNode(city)
+      cityMap[city] = [];
+    }
+
+    for (let directoryCompany of directoryCompanies) {
+      for (let job of directoryCompany.jobs) {
+        let city = directoryCompany.city;
+        cityMap[city].push(job);
+      }
+    }
+    // ======================
+    // Create city nodes
+    for (let cityKey of Object.keys(cityMap)) {
+      const cityJobs = cityMap[cityKey];
+      ProcessorInstance.processAndCreateCityNode({ name: cityKey, jobs: cityJobs })
     }
   } 
   

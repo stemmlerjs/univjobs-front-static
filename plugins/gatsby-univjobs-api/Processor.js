@@ -42,16 +42,21 @@ class Processor {
   }
 
 
-  processAndCreateCityNode (city) {
+  processAndCreateCityNode (cityData) {
     const { createNode } = this;
-    console.log('creating cirty node', city)
+    console.log('creating cirty node', cityData.name)
+    // We can't index empty arrays. If the city has no jobs,
+    // delete the empty array.
+    if (cityData.jobs.length === 0) {
+      delete cityData.jobs;
+    }
     const nodeData = this._processNode(
-      { name: city },
-      `univjobs-city-${city}`,
+      cityData,
+      `univjobs-city-${cityData.name} `,
       'City'
     );
     createNode(nodeData);
-    console.log(city)
+    console.log(cityData);
     // console.log("Created city node");
   }
 

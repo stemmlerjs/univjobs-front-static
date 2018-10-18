@@ -1,22 +1,17 @@
 import React from 'react'
-import Link from 'gatsby-link'
 
 import LandingPage from '../components/LandingPage'
 import SocialValidation from '../components/SocialValidation'
-import ShowCaseSection from '../components/ShowCaseSection'
 
 import CallToAction from '../components/CallToAction'
 import LeftFeatures from '../components/LeftFeatures'
 import RightFeatures from '../components/RightFeatures'
 import Slidy from '../components/Slidy'
-import Backer from '../components/Backer'
 
 import features from '../styles/FeatureStyles.module.css'
 import featureOneImage from '../img/undraw_filter_4kje.svg'
 import featureTwoImage from '../img/undraw_experts3_3njd.svg'
 import featureThreeImage from '../img/undraw_invite_i6u7.svg'
-import leftSide from '../img/leftside.png'
-import postJob from '../img/post-a-job.png'
 import gotJob from '../img/she-got-the-job.jpg'
 
 import scribble from '../img/scribble.svg'
@@ -64,12 +59,12 @@ const Employers = () => (
       header=""
       logos={ 
         {
-          'one': ['#', scribble], 
-          'two': ['#', rover], 
-          'three': ['#', homedepot], 
-          'four': ['#', instacart],
-          'five': ['#', ymca], 
-          'six': ['#', airmiles], 
+          'one': ['https://www.scribblelive.com/', scribble], 
+          'two': ['https://www.rover.com/ca/toronto--on--dog-boarding/', rover], 
+          'three': ['https://www.homedepot.ca/en/home.html', homedepot], 
+          'four': ['https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwjmvPmEl__dAhVDWYYKHQcGDdAYABAAGgJ2dQ&ohost=www.google.ca&cid=CAESQeD2u2kKUNSf2ITcyHnVKrVEgxIM79T0V-3KIHwU-WzLu6O_gl_y0t18Gp0qgTXk7PSGlYDULuSKkb3D-6DeCedP&sig=AOD64_3L5JhVUaSPtbX52TmcicuCa2SmkA&q=&ved=2ahUKEwiBj_KEl__dAhVCtlkKHXqSBn8Q0Qx6BAgFEAI&adurl=', instacart],
+          'five': ['https://ymcagta.org/', ymca], 
+          'six': ['https://airmiles.ca/', airmiles], 
  
         } 
       }

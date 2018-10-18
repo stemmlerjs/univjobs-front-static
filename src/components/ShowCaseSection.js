@@ -35,7 +35,7 @@ class ShowCaseSection extends React.Component {
         
                 <div className={showCaseStyles.regularWhosOn}>
                   <div className={showCaseStyles.whosOnContainer}>
-                    <h1 className={showCaseStyles.whosOn}>Who's on our platform?</h1>
+                    <div className={showCaseStyles.whosOn}>Who's on our platform?</div>
                   </div>
                   <img className={showCaseStyles.companiesShowCase} src={companies}></img>
                   <div style={{ margin: '0'}} className={showCaseStyles.andMore}>...and many more!</div>
@@ -45,7 +45,7 @@ class ShowCaseSection extends React.Component {
             </section>
               <div className={showCaseStyles.resizedWhosOn}>
                 <div className={showCaseStyles.whosOnContainer}>
-                  <h1 className={showCaseStyles.whosOn}>Who's on our platform?</h1>
+                  <div className={showCaseStyles.whosOn}>Who's on our platform?</div>
                 </div>
                 <img className={showCaseStyles.companiesShowCase} src={companies}></img>
                 

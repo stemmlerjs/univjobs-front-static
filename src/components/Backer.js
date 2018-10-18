@@ -18,7 +18,7 @@ class Backer extends React.Component {
     return (
       <section className={backers.container}>
         <div className={backers.innerContainer}>
-          <h1>{header}</h1>
+          <div className="backer-header">{header}</div>
           <div className={backers.backersList}>
             {Object.values(logos).map((logo, key) => (
               <div key={key}>

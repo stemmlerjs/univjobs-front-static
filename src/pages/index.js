@@ -7,32 +7,20 @@ import RightFeatures from '../components/RightFeatures'
 import Slidy from '../components/Slidy'
 
 import landingePageStyles from '../styles/StudentLandingPageStyles.module.css'
-import studentShowCaseStyles from '../styles/StudentShowCaseSectionStyles.module.css'
+
 import studentCTA from '../styles/StudentCallToActionStyles.module.css'
 import studentFeatures from '../styles/StudentFeatureStyles.module.css'
 import altStudentCTA from '../styles/AltStudentCallToActionStyles.module.css'
 import recognition from '../styles/BrandRecognitionStyles.module.css'
-import backers from '../styles/BackersStyles.module.css'
 import features from '../styles/FeatureStyles.module.css'
 
-import leftside from '../img/leftside.png'
-import companies from '../img/companies.png'
-
 import grad from '../img/gradphotos.jpeg'
-
-import companySmallOne from '../img/companies-resized-1.png'
-import companySmallTwo from '../img/companies-resized-2.png'
-import companySmallThree from '../img/companies-resized-3.png'
 
 import featureOneImage from '../img/undraw_mail_2_tqip.png'
 import featureTwoImage from '../img/undraw_job_hunt_byf9.png'
 import workingStudent from '../img/leaf-wall-office-space_925x.png'
 import td from '../img/td.png'
 import asud from '../img/asud.png'
-import haltech from '../img/haltech.png'
-import icube from '../img/icube.png'
-import startupSchool from '../img/startupschool.png'
-import sheridanEdge from '../img/edge_hires-400x143.png'
 
 import LandingPage from '../components/LandingPage'
 
@@ -40,93 +28,15 @@ import config from '../config'
 import { redirectTo } from '../helpers'
 import SEO from '../components/SEO'
 
-const StudentShowCaseSection = props => {
-  return (
-    <div>
-      <section className={studentShowCaseStyles.container}>
-        <div className={studentShowCaseStyles.graphicsContainer}>
-          <img style={{ maxHeight: '888px' }} src={leftside} />
-        </div>
-        <div className={studentShowCaseStyles.textContainer}>
-          <div>
-            <h1>One profile, one resume</h1>
-          </div>
+import Backers from './index/Backers';
+import StudentShowCaseSection from './index/StudentShowcaseSection'
 
-          <div className={studentShowCaseStyles.standardParagraph}>
-            Making multiple cover letters and resumes, on top of your exams and
-            projects, can be stressful and time consuming.
-          </div>
-          <div className={studentShowCaseStyles.standardParagraph}>
-            The next time you apply to a job, you can relax. UnivJobs eliminates
-            having to create multiple cover letters and resumes; that way, you
-            can get back to your studies.
-          </div>
 
-          <div className={studentShowCaseStyles.regularWhosOn}>
-            <div className={studentShowCaseStyles.whosOnContainer}>
-              <h1 className={studentShowCaseStyles.whosOn}>
-                Who's on our platform?
-              </h1>
-            </div>
-            <img
-              className={studentShowCaseStyles.companiesShowCase}
-              src={companies}
-            />
-            <div
-              style={{ margin: '0' }}
-              className={studentShowCaseStyles.andMore}
-            >
-              ...and many more!
-            </div>
-          </div>
-        </div>
-      </section>
-      <div className={studentShowCaseStyles.resizedWhosOn}>
-        <div className={studentShowCaseStyles.whosOnContainer}>
-          <h1 className={studentShowCaseStyles.whosOn}>
-            Who's on our platform?
-          </h1>
-        </div>
-        <img
-          className={studentShowCaseStyles.companiesShowCase}
-          src={companies}
-        />
-
-        <div className={studentShowCaseStyles.tinyScreens}>
-          <img src={companySmallOne} />
-          <img src={companySmallTwo} />
-          <img src={companySmallThree} />
-        </div>
-
-        <div style={{ margin: '0' }} className={studentShowCaseStyles.andMore}>
-          ...and many more!
-        </div>
-      </div>
-    </div>
-  )
-}
-
-const StudentCallToAction = props => {
-  return (
-    <section className={studentCTA.container}>
-      <h1>Get started now!</h1>
-      <div>Create your profile and get access to student-friendly jobs.</div>
-      <button
-        onClick={() => redirectTo(`${config.appUrl}register`)}
-        className={`${landingePageStyles.getStartedButton} ${
-          studentCTA.button
-        }`}
-      >
-        Try it now
-      </button>
-    </section>
-  )
-}
 
 const AltStudentCallToAction = props => {
   return (
     <section className={altStudentCTA.container}>
-      <h1>Start now!</h1>
+      <div className="heading-large">Start now!</div>
       <div>
         Students are already applying to jobs. Create your profile and find
         meaningful work today.
@@ -175,42 +85,11 @@ const StudentBrandRecognition = props => {
   )
 }
 
-const Backers = props => {
-  return (
-    <section className={backers.container}>
-      <div className={backers.innerContainer}>
-        <h1>Who's backing us?</h1>
-        <div className={backers.backersList}>
-          <div>
-            <a href="http://haltech.ca/">
-              <img src={haltech} />
-            </a>
-          </div>
-          <div>
-            <a href="http://icubeutm.ca/">
-              <img src={icube} />
-            </a>
-          </div>
-          <div>
-            <a href="https://www.startupschool.org/">
-              <img style={{ paddingLeft: '23px' }} src={startupSchool} />
-            </a>
-          </div>
-          <div>
-            <a href="https://edge.sheridancollege.ca/">
-              <img src={sheridanEdge} />
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
+
 
 /**
- * heroTitle="Early access to young talent from any post-secondary school"
-      heroSubTitle="A network of affordable qualified students for your growing team"
-     
+ * @class Index
+ * @desc This is the index page. It's the main page for univjobs.ca.
  */
 
 const Index = () => (
@@ -218,9 +97,9 @@ const Index = () => (
     <SEO
       isBlogPost={false}
       postData={{
-        title: 'Univjobs | Simplifying hiring post-secondary students',
+        title: 'Univjobs | Find student, part time, entry level and recent grad jobs',
         description:
-          'A place where you can find jobs to earn cash and launch your career.',
+          'A place for students and recent-grads to find jobs to earn cash and launch their careers.',
       }}
     />
     <LandingPage

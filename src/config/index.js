@@ -19,3 +19,4 @@ console.log(process.env.BRANCH)
 if (typeof window !== "undefined") {
   window.config = config;
 }
+

@@ -3,6 +3,32 @@ const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 const {cssModulesConfig} = require('gatsby-1-config-css-modules');
 
+/**
+ * createCityJobsSlug
+ * @desc Creates the city job slug.
+ * @param {String} city
+ * @param {String} job type
+ * @return {String}
+ */
+
+const createCityJobsSlug = (city, jobType) => {
+  switch (jobType) {
+    case "Part-time work":
+      return `/jobs/${_.kebabCase('part time jobs')}-in-${_.kebabCase(city)}/`
+    case "Volunteer":
+      return `/jobs/${_.kebabCase('volunteer-jobs')}-in-${_.kebabCase(city)}/`
+    case "Summer 2018":
+      return `/jobs/${_.kebabCase('summer jobs')}-in-${_.kebabCase(city)}/` 
+    case "Campus Rep & Brand Ambassador":
+      return `/jobs/${_.kebabCase('campus rep jobs')}-in-${_.kebabCase(city)}/`
+    case "Entry-level":
+      return `/jobs/${_.kebabCase('entry-level-jobs')}-in-${_.kebabCase(city)}/`
+    default:
+      return `/jobs/${_.kebabCase(jobType)}-in-${_.kebabCase(city)}/`
+      
+  }
+}
+
 const createCityPages = (cities, createPage) => {
   cities.forEach(edge => {
     const city = edge.node.name;
@@ -325,7 +351,6 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 
     // Create directory company pages
     createDirectoryCompanyPages(result.data.directoryCompanies.edges, createPage)
-    console.log(result.data.directoryCompanies.edges[0])
 
     // Create city pages
     createCityPages(result.data.cities.edges, createPage);
@@ -386,11 +411,32 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
   }
 
   else if (node.internal.type === "City") {
-    createNodeField({
-      name: 'slug',
-      node,
-      value: `/jobs/${_.kebabCase(node.name)}/`
-    })
+    // If the city has jobs, then we're going to create slugs
+    // for all of those cities and all of the job types for
+    // those cities.
+
+    if (node.jobs) {
+      const jobSlugs = [];
+      for (let job of node.jobs) {
+        jobSlugs.push(createCityJobsSlug(node.name, job.job_type));
+      }
+
+      for (let slug of _.uniq(jobSlugs)) {
+        createNodeField({
+          name: 'slug',
+          node,
+          value: createCityJobsSlug(slug)
+        })
+      }
+    } 
+
+    // We're also going to keep it basic.
+    console.log(`/jobs/student-jobs-in-${_.kebabCase(node.name)}/`)
+      createNodeField({
+        name: 'slug',
+        node,
+        value: `/jobs/student-jobs-in-${_.kebabCase(node.name)}/`
+      })
   }
 }
 
