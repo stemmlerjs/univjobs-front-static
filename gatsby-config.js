@@ -1,4 +1,5 @@
 
+const path = require('path');
 let activeEnv = process.env.ACTIVE_ENV;
 
 if (!activeEnv) {
@@ -10,6 +11,13 @@ require("dotenv").config({
 });
 
 const plugins = [
+  {
+    resolve: 'gatsby-plugin-root-import',
+    options: {
+      '@': path.join(__dirname, 'src'),
+      components: path.join(__dirname, 'src/components')
+    }
+  },
   'gatsby-plugin-robots-txt',
   {
     resolve: "gatsby-univjobs-api",

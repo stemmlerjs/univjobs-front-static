@@ -4,7 +4,7 @@ import Link from 'gatsby-link'
 import uLogo from '../../../img/about/u-logo.png'
 import searchSvg from '../../../img/directory/search.svg'
 import '../styles/DirectoryHeader.sass'
-import HeaderOverlay from '../../../components/HeaderOverlay'
+import { HeaderOverlay } from '../../shared'
 
 /**
  * @class DirectoryHeader

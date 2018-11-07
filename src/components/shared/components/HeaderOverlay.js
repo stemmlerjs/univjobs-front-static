@@ -1,12 +1,10 @@
 import React from 'react'
-import Link from 'gatsby-link'
 
 import styles from "../styles/HeaderStyles.module.css";
 
-import config from '../config'
-import { redirectTo } from '../helpers'
+import config from '../../../config'
+import { redirectTo } from '../../../helpers'
 
-// pricing, blog, explore companies, directory, login, employer signup, student signup, about, pricing,
 
 const routeConfig = [
   {

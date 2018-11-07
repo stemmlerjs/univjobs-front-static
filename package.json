@@ -79,6 +79,7 @@
     "eslint-plugin-import": "2.14.0",
     "eslint-plugin-jsx-a11y": "6.1.1",
     "eslint-plugin-react": "7.11.1",
+    "gatsby-plugin-root-import": "^2.0.4",
     "netlify-lambda": "^0.4.0",
     "prettier": "^1.12.0",
     "serverless-http": "^1.6.0"

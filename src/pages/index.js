@@ -1,39 +1,25 @@
 import React from 'react'
-import Link from 'gatsby-link'
-
 import CallToAction from '../components/CallToAction'
 import LeftFeatures from '../components/LeftFeatures'
 import RightFeatures from '../components/RightFeatures'
-import Slidy from '../components/Slidy'
 
 import landingePageStyles from '../styles/StudentLandingPageStyles.module.css'
 
 import studentCTA from '../styles/StudentCallToActionStyles.module.css'
-import studentFeatures from '../styles/StudentFeatureStyles.module.css'
 import altStudentCTA from '../styles/AltStudentCallToActionStyles.module.css'
-import recognition from '../styles/BrandRecognitionStyles.module.css'
 import features from '../styles/FeatureStyles.module.css'
 
 import grad from '../img/gradphotos.jpeg'
 
 import featureOneImage from '../img/undraw_mail_2_tqip.png'
 import featureTwoImage from '../img/undraw_job_hunt_byf9.png'
-import workingStudent from '../img/leaf-wall-office-space_925x.png'
-import td from '../img/td.png'
-import asud from '../img/asud.png'
-
 import LandingPage from '../components/LandingPage'
 
 import config from '../config'
 import { redirectTo } from '../helpers'
 import SEO from '../components/SEO'
 
-import Backers from './index/Backers';
-import StudentShowCaseSection from './index/StudentShowcaseSection'
-
-
-
-const AltStudentCallToAction = props => {
+const AltStudentCallToAction = () => {
   return (
     <section className={altStudentCTA.container}>
       <div className="heading-large">Start now!</div>
@@ -53,43 +39,10 @@ const AltStudentCallToAction = props => {
   )
 }
 
-const StudentBrandRecognition = props => {
-  return (
-    <section className={recognition.container}>
-      <div className={recognition.quoteContainer}>
-        <h1>Get recognized by top-tier brands</h1>
-        <div>
-          "Univjobs is a great platform for students to grow and connect with
-          employers that truly want to foster the best in their abilities. We
-          use it to find the best talent."{' '}
-        </div>
-
-        {true == false ? '' : ''}
-        <div className={recognition.personContainer}>
-          <div className={recognition.personImgContainer}>
-            <img src={asud} />
-          </div>
-          <div className={recognition.personDetailsContainer}>
-            <div>Asud Anderson</div>
-            <div>Head of Campus Recruitment</div>
-            <div className={recognition.personCompanyImgContainer}>
-              <img src={td} />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className={recognition.imgContainer}>
-        <img src={workingStudent} />
-      </div>
-    </section>
-  )
-}
-
-
-
 /**
  * @class Index
- * @desc This is the index page. It's the main page for univjobs.ca.
+ * @desc This is the index page. It's the main page 
+ * for univjobs.ca.
  */
 
 const Index = () => (
@@ -123,7 +76,6 @@ const Index = () => (
         overrideClass: landingePageStyles.overrideLandingPage,
       }}
     />
-    <StudentShowCaseSection />
     <CallToAction
       header="Get started now!"
       subHeader="Create your profile and get access to student-friendly jobs."
@@ -147,14 +99,6 @@ const Index = () => (
       />
     </section>
     <AltStudentCallToAction />
-
-    {'Asud signed off = true' === 'Asud signed off = false' ? (
-      <StudentBrandRecognition />
-    ) : (
-      <Slidy />
-    )}
-
-    <Backers />
   </div>
 )
 

@@ -125,7 +125,6 @@ class NewLandingPage extends React.Component {
 
     settings = Object.assign({}, settings, this.props);
 
-    console.log(get(settings,'options.styles.container'))
     return (
       <div style={get(settings,'options.styles.container')} className={styles.container}>
         <div  
