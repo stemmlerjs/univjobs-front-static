@@ -1,12 +1,9 @@
 import React from 'react'
-import CallToAction from '../components/CallToAction'
+import { CallToAction } from '../components/shared'
 import LeftFeatures from '../components/LeftFeatures'
 import RightFeatures from '../components/RightFeatures'
 
 import landingePageStyles from '../styles/StudentLandingPageStyles.module.css'
-
-import studentCTA from '../styles/StudentCallToActionStyles.module.css'
-import altStudentCTA from '../styles/AltStudentCallToActionStyles.module.css'
 import features from '../styles/FeatureStyles.module.css'
 
 import grad from '../img/gradphotos.jpeg'
@@ -16,28 +13,20 @@ import featureTwoImage from '../img/undraw_job_hunt_byf9.png'
 import LandingPage from '../components/LandingPage'
 
 import config from '../config'
-import { redirectTo } from '../helpers'
 import SEO from '../components/SEO'
 
-const AltStudentCallToAction = () => {
-  return (
-    <section className={altStudentCTA.container}>
-      <div className="heading-large">Start now!</div>
-      <div>
-        Students are already applying to jobs. Create your profile and find
-        meaningful work today.
-      </div>
-      <button
-        onClick={() => redirectTo(`${config.appUrl}register`)}
-        className={`${landingePageStyles.getStartedButton} ${
-          studentCTA.button
-        }`}
-      >
-        Sign up
-      </button>
-    </section>
-  )
-}
+import { Backers } from '../components/landing';
+import scribbleLive from '../img/scribble.svg';
+import rover from '../img/companies/rover.svg'
+import instacart from '../img/companies/instacart.svg';
+import homeDepot from '../img/companies/homedepot.svg';
+import ymca from '../img/companies/ymca.svg'
+import airmiles from '../img/companies/airmiles.svg';
+
+import haltech from '../img/haltech.png'
+import icube from '../img/icube.png'
+import startupschool from '../img/startupschool.png';
+import edge from '../img/edge_hires-400x143.png'
 
 /**
  * @class Index
@@ -56,8 +45,8 @@ const Index = () => (
       }}
     />
     <LandingPage
-      heroTitle="Quickly apply to student and recent grad jobs"
-      heroSubTitle="A place where you can find jobs to earn cash and launch your career"
+      heroTitle="Apply to student and recent grad jobs"
+      heroSubTitle="A marketplace to find part time, co-op, entry-level jobs and internships."
       options={{
         alignment: 'left',
         image: grad,
@@ -67,19 +56,33 @@ const Index = () => (
           mainButtonLocation: `${config.appUrl}register`,
           reRouteButtonText: "I'm an employer",
           reRouteButtonLocation: '/employers',
-          alreadyOnComponentActive: true,
+          alreadyOnComponentActive: false,
         },
+        // hero: {
+        //   showHeroMask: true,
+        //   color: '#1C46DA',
+        // },
         hero: {
-          showHeroMask: true,
-          color: '',
+          showColorMask: true,
+          color: '#1C46DA'
         },
         overrideClass: landingePageStyles.overrideLandingPage,
       }}
     />
+    <Backers
+      companies={[
+        { link: 'https://www.scribblelive.com/', imageUrl: scribbleLive },
+        { link: 'https://www.rover.com/ca/', imageUrl: rover },
+        { link: 'https://www.homedepot.ca/en/home.html', imageUrl: homeDepot },
+        { link: 'https://www.instacart.com/', imageUrl: instacart },
+        { link: 'http://ymca.ca/', imageUrl: ymca },
+        { link: 'https://www.airmiles.ca/arrow/Home', imageUrl: airmiles },
+      ]}
+    />
     <CallToAction
-      header="Get started now!"
-      subHeader="Create your profile and get access to student-friendly jobs."
-      buttonText="Sign me up"
+      header="Get access to student-friendly jobs"
+      subHeader="Apply to jobs specifically suited for students or recent-grads."
+      buttonText="Find jobs"
       alt={false}
       location={`${config.appUrl}register`}
     />
@@ -98,7 +101,30 @@ const Index = () => (
         picture={featureTwoImage}
       />
     </section>
-    <AltStudentCallToAction />
+    <CallToAction 
+      header="Start your career journey now"
+      alt={true}
+      subHeader="Find a job that works for you, whether you’re part-time, full-time or a recent-grad."
+      buttonText="Start applying"
+      location={`${config.appUrl}register`}
+    />
+    <Backers
+      header="Our community support"
+      subHeader="Thank you for supporting us in changing the way students find meaningful employment."
+      companies={[
+        { link: 'http://haltech.ca/', imageUrl: haltech },
+        { link: 'http://icubeutm.ca/', imageUrl: icube },
+        { link: 'https://www.startupschool.org/', imageUrl: startupschool },
+        { link: 'https://edge.sheridancollege.ca/', imageUrl: edge }
+      ]}
+    />
+    <CallToAction 
+      header="Explore new job opportunities"
+      alt={true}
+      subHeader="Students are already applying to jobs. Create your profile and find meaningful work today."
+      buttonText="Find jobs"
+      location={`${config.appUrl}register`}
+    />
   </div>
 )
 

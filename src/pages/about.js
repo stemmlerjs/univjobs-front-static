@@ -6,7 +6,7 @@ import pitch from '../img/about/pitch.png'
 import uLogo from '../img/about/u-logo.png'
 
 import LandingPage from '../components/LandingPage'
-import CallToAction from '../components/CallToAction'
+import { CallToAction } from '../components/shared';
 import Divider from '../components/Divider'
 import SEO from '../components/SEO'
 

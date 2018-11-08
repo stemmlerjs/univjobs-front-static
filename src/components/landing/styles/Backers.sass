@@ -1,0 +1,66 @@
+.backers-container 
+  background: #f6f6f6;
+  padding: 3em;
+  padding-bottom: 1em;
+
+  .backer-header
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: #193cbc;
+
+  .backer-sub-header
+    margin: 0 auto;
+    max-width: 600px;
+    padding-left: 1em;
+    padding-right: 1em;
+    opacity: 0.6
+
+  .inner-container 
+    text-align: center;
+    margin: 0;
+
+    h1 
+      text-align: center;
+      margin: 0;
+
+    .backers-list 
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+
+      > div 
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -ms-flex-align: center;
+        align-items: center;
+        padding: 13px;
+        width: 15%;
+
+        img 
+          width: 100%;
+
+
+  @media (max-width: 770px) 
+    background: #f6f6f6;
+    padding: 1em;
+    border-bottom: 1px solid #d8d8d8;
+    padding-bottom: 1em;
+    padding-top: 2em;
+    text-align: center;
+  
+    .backers-list
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 90%;
+      padding-top: 1.5em;
+      margin: 0 auto;
+      flex-wrap: wrap;
+
+      > div 
+        width: 30% !important;
+  

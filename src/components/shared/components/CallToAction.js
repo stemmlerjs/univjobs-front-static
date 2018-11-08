@@ -1,11 +1,11 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-import { redirectTo } from '../helpers'
+import { redirectTo } from '../../../helpers'
 
-import studentCTA from '../styles/StudentCallToActionStyles.module.css'
-import altStudentCTA from '../styles/AltStudentCallToActionStyles.module.css'
-import landingePageStyles from '../styles/LandingPageStyles.module.css'
+import studentCTA from '../../../styles/StudentCallToActionStyles.module.css'
+import altStudentCTA from '../../../styles/AltStudentCallToActionStyles.module.css'
+import landingePageStyles from '../../../styles/LandingPageStyles.module.css'
 
 class CallToAction extends React.Component {
   constructor() {

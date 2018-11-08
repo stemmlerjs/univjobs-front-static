@@ -9,7 +9,7 @@ import goodCompany from '../img/good-company.png'
 import desktopCompanies from '../img/pricing/desktop-companies.png'
 import uLogo from '../img/u-logo-circle.png'
 
-import CallToAction from '../components/CallToAction'
+import { CallToAction } from '../components/shared';
 import LandingPage from '../components/LandingPage'
 
 import Divider from '../components/Divider'

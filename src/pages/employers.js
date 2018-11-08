@@ -3,7 +3,7 @@ import React from 'react'
 import LandingPage from '../components/LandingPage'
 import SocialValidation from '../components/SocialValidation'
 
-import CallToAction from '../components/CallToAction'
+import { CallToAction } from '../components/shared';
 import LeftFeatures from '../components/LeftFeatures'
 import RightFeatures from '../components/RightFeatures'
 import Slidy from '../components/Slidy'

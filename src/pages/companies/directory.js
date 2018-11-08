@@ -8,7 +8,7 @@ import DirectoryMap from '../../components/directory/components/DirectoryMap'
 import MobilePagePicture from '../../components/directory/components/MobilePagePicture'
 import Loading from '../../components/Loading'
 import { getCurrentCity, getCoordinates } from '../../utils/ip'
-import CallToAction from '../../components/CallToAction'
+import { CallToAction } from '../../components/shared';
 import config from '../../config'
 import SEO from '../../components/SEO'
 import '../../styles/Directory/Directory.sass'

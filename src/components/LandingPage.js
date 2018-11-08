@@ -8,14 +8,28 @@ import config from '../config'
 import { redirectTo } from '../helpers'
 import get from 'lodash/get'
 
+function applyLandingStyles (options) {
+  const styles = {};
+
+  if (options.hero.color) {
+    styles.backgroundColor = options.hero.color;
+  }
+
+  return styles;
+}
+
 function shouldShowMask (options) {
   if (options.hero) {
     if (options.hero.showHeroMask) {
-      return styles.mask;
+      return styles.gradientMask;
     }
 
     if (options.hero.showDarkMask) {
       return styles.darkMask;
+    }
+
+    if (options.hero.showColorMask && options.hero.color) {
+      return styles.mask;
     }
   }
 
@@ -100,11 +114,28 @@ LandingPageContent.propTypes = {
   })
 }
 
-class NewLandingPage extends React.Component {
-  constructor () {
-    super();
+/**
+ * @class LandingPage
+ * @desc Component that can be used to generate any landing page
+ * hero element. Works by supplying options to determine what you want
+ * to show and how you want to style it.
+ */
+
+class LandingPage extends React.Component {
+  constructor (props) {
+    super(props);
   }
   render () {
+
+    /**
+     * @desc Default landing page styles.
+     * By supplying options in props, we can override
+     * these styles. 
+     * 
+     * At some point, documentation for this component will
+     * become more necessary.
+     */
+
     let settings = {
       options: {
         alignment: 'left',
@@ -117,6 +148,7 @@ class NewLandingPage extends React.Component {
         hero: {
           showHeroMask: false,
           showDarkMask: false,
+          showColorMask: false,
           color: '#555555'
         },
         overrideClass: null
@@ -132,7 +164,10 @@ class NewLandingPage extends React.Component {
             backgroundImage: `url(${settings.options.image})`, 
             backgroundColor: settings.options.hero ? settings.options.hero.color : '' }}  
           className={styles.imageOrColour}>
-          <div className={shouldShowMask(settings.options)}></div>
+          <div 
+            style={applyLandingStyles(settings.options)}
+            className={shouldShowMask(settings.options)}>
+          </div>
           <LandingPageContent
             title={settings.heroTitle}
             subTitle={settings.heroSubTitle}
@@ -145,4 +180,4 @@ class NewLandingPage extends React.Component {
   }
 }
 
-export default NewLandingPage
+export default LandingPage

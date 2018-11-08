@@ -6,7 +6,7 @@ import helpers from '../helpers'
 import LandingPage from '../components/LandingPage'
 import FeaturedSlider from '../components/companies/FeaturedSlider'
 import CompaniesShowcase from '../components/companies/CompaniesShowcase'
-import CallToAction from '../components/CallToAction'
+import { CallToAction } from '../components/shared';
 import DirectoryLink from '../components/companies/DirectoryLink';
 
 import config from '../config'

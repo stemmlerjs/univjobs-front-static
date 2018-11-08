@@ -3,7 +3,7 @@ import Link from 'gatsby-link'
 
 import LandingPage from '../components/LandingPage'
 import Benefits from '../components/Benefits'
-import CallToAction from '../components/CallToAction'
+import { CallToAction } from '../components/shared';
 import LeftFeatures from '../components/LeftFeatures'
 import RightFeatures from '../components/RightFeatures'
 import Slidy from '../components/Slidy'

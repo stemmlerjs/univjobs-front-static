@@ -5,7 +5,7 @@ import Link from 'gatsby-link'
 import helpers from '../helpers'
 
 import Divider from '../components/Divider'
-import CallToAction from '../components/CallToAction'
+import { CallToAction } from '../components/shared';
 import CategoriesHeader from '../components/blog/CategoriesHeader'
 import Posts from '../components/blog/Posts'
 import FeaturedPost from '../components/blog/FeaturedPost'

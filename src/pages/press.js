@@ -19,7 +19,7 @@ import buzzfeed from '../img/press/buzzfeed.png'
 
 
 
-import CallToAction from '../components/CallToAction'
+import { CallToAction } from '../components/shared';
 import LandingPage from '../components/LandingPage'
 
 import CountUp from 'react-countup';

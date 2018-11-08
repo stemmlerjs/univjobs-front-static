@@ -6,7 +6,7 @@ import BlogCategoriesHeader from '../components/BlogCategoriesHeader'
 import Posts from '../components/Posts'
 import styles from '../styles/Blog/Category.module.css'
 
-import CallToAction from '../components/CallToAction'
+import { CallToAction } from '../components/shared';
 
 import helpers from '../helpers'
 

@@ -20,13 +20,19 @@ const typography = new Typography({
       fontSize: '18px',
     },
     section: {
-      marginTop: '1em',
+      paddingTop: '1em',
     },
     div: {
       fontSize: '18px',
     },
     h1: {
       fontSize: '1.5rem',
+    },
+    h2: {
+      fontSize: '1.3rem',
+    },
+    h3: {
+      fontSize: '1.1rem',
     },
   }),
 })

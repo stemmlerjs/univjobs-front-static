@@ -11,7 +11,7 @@ import Divider from '../components/Divider'
 import styles from '../styles/Blog/BlogPostPage.module.css'
 
 import ReactDisqusComments from 'react-disqus-comments';
-import CallToAction from '../components/CallToAction';
+import { CallToAction } from '../components/shared';
 
 import SEO from '../components/SEO'
 
