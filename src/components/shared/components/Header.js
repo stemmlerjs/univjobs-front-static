@@ -124,7 +124,7 @@ class Header extends React.Component {
   }
 
   isOnEmployerRoute = () => {
-    if (typeof window !== undefined) {
+    if (typeof window !== "undefined") {
       const pathname = window.location.pathname;
       const isEmployerRoute = pathname.indexOf('employers') === 1;
       return isEmployerRoute;
