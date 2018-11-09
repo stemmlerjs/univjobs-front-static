@@ -45,7 +45,7 @@ const Employers = () => (
           mainButtonLocation: `${config.appUrl}register/employer`,
           reRouteButtonText: "I'm a student",
           reRouteButtonLocation: '/',
-          alreadyOnComponentActive: true
+          alreadyOnComponentActive: false
         },
         hero: {
           showColorMask: true,
