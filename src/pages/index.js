@@ -7,21 +7,23 @@ import landingePageStyles from '../styles/StudentLandingPageStyles.module.css'
 import features from '../styles/FeatureStyles.module.css'
 
 import grad from '../img/gradphotos.jpeg'
-
-import featureOneImage from '../img/undraw_mail_2_tqip.png'
-import featureTwoImage from '../img/undraw_job_hunt_byf9.png'
 import LandingPage from '../components/LandingPage'
 
 import config from '../config'
 import SEO from '../components/SEO'
 
-import { Backers } from '../components/landing';
+import { Backers, AltFeature, StudentTestimonials } from '../components/landing';
+
 import scribbleLive from '../img/scribble.svg';
 import rover from '../img/companies/rover.svg'
 import instacart from '../img/companies/instacart.svg';
 import homeDepot from '../img/companies/homedepot.svg';
 import ymca from '../img/companies/ymca.svg'
 import airmiles from '../img/companies/airmiles.svg';
+
+import productImage from '../img/product-image.svg';
+import mail from '../img/undraw-mail.svg';
+import jobs from '../img/undraw-jobs.svg';
 
 import haltech from '../img/haltech.png'
 import icube from '../img/icube.png'
@@ -58,10 +60,6 @@ const Index = () => (
           reRouteButtonLocation: '/employers',
           alreadyOnComponentActive: false,
         },
-        // hero: {
-        //   showHeroMask: true,
-        //   color: '#1C46DA',
-        // },
         hero: {
           showColorMask: true,
           color: '#1C46DA'
@@ -87,18 +85,32 @@ const Index = () => (
       location={`${config.appUrl}register`}
     />
 
+    <AltFeature
+      header="One profile, one resume"
+      subHeader="No more cover letters"
+      paragraphOne="Making multiple cover letters and 
+        resumes, while balancing exams and
+        projects is stressful and time
+        consuming."
+      paragraphTwo="Next time you need a job, you can relax. 
+        Univjobs eliminates you having to create multiple cover 
+        letters and resumes. That way, you can get back 
+        to your studies."
+      picture={productImage}
+    />
+
     <section className={features.container}>
       <LeftFeatures
         header="Get invited to jobs by employers"
         paragraphOne="Your next job is right around the corner."
         paragraphTwo="We encourage employers to invite you to jobs and let you build meaningful connections, fast."
-        picture={featureOneImage}
+        picture={mail}
       />
       <RightFeatures
         header="Track all your job applications"
         paragraphOne={`Going to career fairs can be time-consuming and costly, especially when you have limited time and budget.`}
         paragraphTwo={`UnivJobs can reduce this anxiety by showing you the "progress" of your job applications whether you're being considered, whether you're invited for an interview or whether you get hired.`}
-        picture={featureTwoImage}
+        picture={jobs}
       />
     </section>
     <CallToAction 
@@ -108,6 +120,7 @@ const Index = () => (
       buttonText="Start applying"
       location={`${config.appUrl}register`}
     />
+    <StudentTestimonials/>
     <Backers
       header="Our community support"
       subHeader="Thank you for supporting us in changing the way students find meaningful employment."

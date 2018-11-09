@@ -1,6 +1,6 @@
 .container {
   padding: 3em;
-  padding-left: 1em;
+  padding-left: 2em;
   padding-right: 2em;
   max-width: 1200px;
   margin: 0 auto;
@@ -50,7 +50,7 @@
 .container h1 {
   font-size: 18px;
   color: #2B2B2B;
-  font-size: 2rem;
+  font-size: 1.4rem;
 }
 
 .imageContainer {
@@ -65,7 +65,7 @@
     margin: 0 auto;
   }
   .container h1 {
-    font-size: 1.6em;
+    font-size: 1.2rem;
   }
   .flexContainerLeft {
     width: 90%;

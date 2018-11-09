@@ -33,6 +33,7 @@ const typography = new Typography({
     },
     h3: {
       fontSize: '1.1rem',
+      letterSpacing: '0.5px'
     },
   }),
 })
