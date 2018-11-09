@@ -123,6 +123,15 @@ class Header extends React.Component {
     })
   }
 
+  isOnEmployerRoute = () => {
+    if (typeof window !== undefined) {
+      const pathname = window.location.pathname;
+      const isEmployerRoute = pathname.indexOf('employers') === 1;
+      return isEmployerRoute;
+    }
+    return false;
+  }
+
   render = () => {
     return (
     <div 
@@ -143,10 +152,15 @@ class Header extends React.Component {
         </Link>
       </div>
       <div className="nav-items">
-        <Link className="nav-item" to="/pricing">Pricing</Link>
+        {this.isOnEmployerRoute() ? (
+          <Link className="nav-item" to="/">Get Hired</Link>
+        ): (
+          <Link className="nav-item" to="/employers">Hire Talent</Link>
+        )}
+        
         <Link className="nav-item" to="/blog">Blog</Link>
         <Link className="nav-item" to="/companies">Explore Companies</Link>
-        <Link className="nav-item" to="/employers">Employers</Link>
+        {/* <Link className="nav-item" to="/employers">Log in</Link> */}
         <div 
           onClick={() => redirectTo(config.appUrl)} 
           className="sign-in-button">

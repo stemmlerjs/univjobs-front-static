@@ -48,9 +48,13 @@ const Employers = () => (
           alreadyOnComponentActive: true
         },
         hero: {
-          showHeroMask: false,
-          showDarkMask: true,
-          color: ''
+          showColorMask: true,
+          color: '#1C46DA',
+        },
+        styles: {
+          container: {
+            minHeight: 'calc(85vh - 50px)'
+          }
         }
       }}
     />
