@@ -25,8 +25,25 @@ const createCityJobsSlug = (city, jobType) => {
       return `/jobs/${_.kebabCase('entry-level-jobs')}-in-${_.kebabCase(city)}/`
     default:
       return `/jobs/${_.kebabCase(jobType)}-in-${_.kebabCase(city)}/`
-      
   }
+}
+
+/**
+ * @class createLandingPages
+ */
+
+const createLandingPages = (landingPages, createPage) => {
+  landingPages.forEach(edge => {
+    const id = edge.node.id;
+    
+    createPage({
+      path: edge.node.fields.slug,
+      component: path.resolve(`src/templates/landing-page.js`),
+      context: {
+        id
+      }
+    })
+  })
 }
 
 const createCityPages = (cities, createPage) => {
@@ -201,6 +218,53 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 
   return graphql(`
     {
+      landingPages: allMarkdownRemark(filter: {
+        frontmatter: {
+          templateKey: {
+            eq: "landing-page"
+          }
+        }
+      }) {
+        edges {
+          node {
+            id
+            fields {
+              slug
+            }
+            frontmatter {
+              title
+              description
+              templateKey
+              targetUserType
+              heroTitle
+              heroSubTitle
+              heroButtonText
+              heroImage
+              ctaOneHeader
+              ctaOneSubText
+              ctaOneButtonText
+              featureOneHeader
+              featureOneSubTitle
+              featureOneParagraphOne
+              featureOneParagraphTwo
+              featureTwoHeader
+              featureTwoSubTitle
+              featureTwoParagraphOne
+              featureTwoParagraphTwo
+              featureThreeHeader
+              featureThreeSubTitle
+              featureThreeParagraphOne
+              featureThreeParagraphTwo
+              ctaTwoHeader
+              ctaTwoSubText
+              ctaTwoButtonText
+              ctaThreeHeader
+              ctaThreeSubText
+              ctaThreeButtonText
+            }
+          }
+        }
+      } 
       posts: allMarkdownRemark(limit: 1000) {
         edges {
           node {
@@ -354,6 +418,9 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 
     // Create city pages
     createCityPages(result.data.cities.edges, createPage);
+
+    // Create landing pages
+    createLandingPages(result.data.landingPages.edges, createPage);
 
   })
 }
