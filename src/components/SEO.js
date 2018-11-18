@@ -85,6 +85,7 @@ const SEO = ({ postData, postImage, isBlogPost }) => {
     : config.url;
   const datePublished = isBlogPost ? postMeta.date : false;
   const keywords = postData.keywords ? postData.keywords : 'student jobs, part time jobs, co-op jobs, univjobs, toronto, oakville, mississauga';
+  const { canonical } = postData;
 
   const schemaOrgJSONLD = getSchemaOrgJSONLD({
     isBlogPost,
@@ -120,6 +121,10 @@ const SEO = ({ postData, postImage, isBlogPost }) => {
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
+
+      { canonical ? (
+        <link rel="canonical" href={canonical}></link>
+      ): ''}
     </Helmet>
   );
 };

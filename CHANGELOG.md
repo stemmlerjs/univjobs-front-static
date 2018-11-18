@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1] - [2018-10-05] - [2018-10-10]
+### Added
+- [Landing Pages] Added a landing pages template so that we can scaffold new landing pages.
+
+### Changed
+- [Landing Pages] Updated the primary landing page.
+
 ##[1.2.0] - [2018-10-01]
 ### Added
 - [Directory] Added directory page to show a map of companies.

@@ -41,9 +41,9 @@ const Index = () => (
     <SEO
       isBlogPost={false}
       postData={{
-        title: 'Univjobs | Find student, part time, entry level and recent grad jobs',
+        title: 'Univjobs | Entry level jobs for Students and Recent Grads',
         description:
-          'A place for students and recent-grads to find jobs to earn cash and launch their careers.',
+          'A place for students and recent grads to find jobs to earn cash and launch their careers.',
       }}
     />
     <LandingPage

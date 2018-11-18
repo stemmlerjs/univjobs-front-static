@@ -15,6 +15,10 @@ function applyLandingStyles (options) {
     styles.backgroundColor = options.hero.color;
   }
 
+  if (options.hero.minHeight) {
+    styles.minHeight = options.hero.minHeight;
+  }
+
   return styles;
 }
 

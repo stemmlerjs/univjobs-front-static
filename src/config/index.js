@@ -1,7 +1,8 @@
 
 
 let config = {
-  title: 'Univjobs - Simplifying hiring post-secondary students',
+  title: 'Univjobs | Entry level jobs for Students and Recent Grads',
+  description: 'A place for students and recent grads to find jobs to earn cash and launch their careers.',
   logo: '/img/u.png',
   image: '/img/u.png',
   twitter: 'https://twitter.com/univjobsapp',

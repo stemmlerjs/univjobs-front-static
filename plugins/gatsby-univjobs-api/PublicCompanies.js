@@ -28,7 +28,10 @@ class PublicCompanies {
     exploreCompanies = await axios.get(
       `${this.url}/api/v1/public/companies/explore`
     )
-    let companies = await exploreCompanies.data.companies.map(company => {
+    console.log('==========================')
+    console.log(exploreCompanies, 'explore companies')
+    console.log('==========================')
+    let companies = exploreCompanies.data.companies.map(company => {
       return {
         companyId: company.employer_id,
         companyName: company.company_name,

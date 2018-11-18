@@ -61,9 +61,13 @@ const Employers = () => (
         },
         hero: {
           showColorMask: true,
-          color: '#1C46DA'
+          color: '#1C46DA',
         },
-        overrideClass: landingePageStyles.overrideLandingPage,
+        styles: {
+          container: {
+            minHeight: 'calc(85vh - 50px)'
+          }
+        }
       }}
     />
 
