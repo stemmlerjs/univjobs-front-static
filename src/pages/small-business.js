@@ -12,8 +12,6 @@ import SocialValidation from '../components/SocialValidation'
 import features from '../styles/FeatureStyles.module.css'
 
 import merchant from '../img/merchant.jpg'
-import featureOneImage from '../img/undraw_experts3_3njd.svg'
-import featureTwoImage from '../img/undraw_invite_i6u7.svg'
 import leftSide from '../img/leftside.png'
 import haltech from '../img/haltech.png'
 import icube from '../img/icube.png'

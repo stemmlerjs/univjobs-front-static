@@ -96,12 +96,13 @@ const Index = () => (
         Univjobs eliminates you having to create multiple cover 
         letters and resumes. That way, you can get back 
         to your studies."
+      paragrapThree=""
       picture={productImage}
     />
 
     <section className={features.container}>
       <LeftFeatures
-        header="Get invited to jobs by employers"
+        header="Get personally invited to jobs by employers"
         paragraphOne="Your next job is right around the corner."
         paragraphTwo="We encourage employers to invite you to jobs and let you build meaningful connections, fast."
         picture={mail}

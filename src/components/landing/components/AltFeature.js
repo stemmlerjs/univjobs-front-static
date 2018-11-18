@@ -19,6 +19,8 @@ const AltFeature = (props) => (
         <h4>{props.subHeader}</h4>
         <p>{props.paragraphOne}</p>
         <p>{props.paragraphTwo}</p>
+        <p>{props.paragraphThree}</p>
+
       </div>
     </div>
   </section>
@@ -29,7 +31,9 @@ AltFeature.propTypes = {
   header: PropTypes.string.isRequired,
   subHeader: PropTypes.string,
   paragraphOne: PropTypes.string,
-  paragraphTwo: PropTypes.string
+  paragraphTwo: PropTypes.string,
+  paragraphThree: PropTypes.string
+
 }
 
 export default AltFeature;

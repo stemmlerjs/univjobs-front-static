@@ -3,8 +3,6 @@ import Link from 'gatsby-link'
 
 import benefits from '../styles/BenefitsStyles.module.css'
 
-import featureTwoImage from '../img/undraw_invite_i6u7.svg'
-
 import target from '../img/target.svg'
 import search from '../img/search.svg'
 import piggy from '../img/piggy-bank.svg'

@@ -19,6 +19,7 @@ render = () => {
             <h1>{this.props.header}</h1>
             <div>{this.props.paragraphOne}</div>
             <div>{this.props.paragraphTwo}</div>
+            <div>{this.props.paragraphThree}</div>
           </div>
         </section>
      )
@@ -29,6 +30,7 @@ RightFeatures.defaultProps = {
     header: '',
     paragraphOne: '',
     paragraphTwo: '',
+    paragraphThree: '',
     picture: ''
   };
   
