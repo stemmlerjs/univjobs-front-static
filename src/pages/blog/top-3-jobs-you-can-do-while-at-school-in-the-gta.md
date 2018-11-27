@@ -11,7 +11,7 @@ tags:
   - work on demand
 featured: true
 image: /img/rover-pet-sitting.jpg
-category: Student Life
+category: Opportunities
 parentcategory: Career
 public: true
 ---

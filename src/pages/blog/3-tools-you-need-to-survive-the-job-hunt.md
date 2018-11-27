@@ -10,7 +10,7 @@ tags:
   - job hunt
 featured: false
 image: /img/blueprint-tools_4460x4460.jpg
-category: Job Hunt
+category: Career
 parentcategory: Career
 public: true
 ---

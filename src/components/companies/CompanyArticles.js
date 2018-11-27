@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Post from '../blog/Post'
+import { Post } from '../blog'
 
 const CompanyArticles = (props) => {
   //if (props.articles != true) return <div/>;

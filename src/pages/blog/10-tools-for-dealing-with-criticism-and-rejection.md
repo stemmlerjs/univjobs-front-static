@@ -18,7 +18,7 @@ tags:
   - ''
 featured: false
 image: /img/blur-close-up-color-850216-1-.jpg
-category: Communication & Relationships
+category: Career
 parentcategory: Adulting 101
 public: true
 ---

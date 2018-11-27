@@ -1,21 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { kebabCase } from 'lodash'
 import Helmet from 'react-helmet'
-import Link from 'gatsby-link'
 import Content, { HTMLContent } from '../components/Content'
-
-import BlogCategoriesHeader from '../components/BlogCategoriesHeader'
-import Divider from '../components/Divider'
-
-import styles from '../styles/Blog/BlogPostPage.module.css'
-
+import { CategoriesHeader } from '../components/blog'
 import ReactDisqusComments from 'react-disqus-comments';
 import { CallToAction } from '../components/shared';
-
 import SEO from '../components/SEO'
-
 import helpers from '../helpers'
+
+import styles from '../styles/Blog/BlogPostPage.module.css'
 
 function getUniquePageIdentifier () {
   return typeof window !== 'undefined' && window.location.href
@@ -83,7 +76,7 @@ export class BlogPostTemplate extends React.Component {
 
       {helmet || ''}
 
-      <BlogCategoriesHeader
+      <CategoriesHeader
         categories={categories}
       />
 
@@ -131,7 +124,12 @@ BlogPostTemplate.propTypes = {
   helmet: PropTypes.instanceOf(Helmet),
 }
 
-const BlogPost = ({ data, pathContext }) => {
+/**
+ * @class BlogPost
+ * @desc A single blog post.
+ */
+
+const BlogPost = ({ data }) => {
   let { post, categories } = data;
 
   post = Object.assign({}, post, post.fields, post.frontmatter)

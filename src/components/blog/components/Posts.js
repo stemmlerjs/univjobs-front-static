@@ -2,7 +2,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import Post from './Post'
-import postStyles from '../../styles/Blog/Post.module.css'
+import postStyles from '../../../styles/Blog/Post.module.css'
 
 const Posts = (props) => (
   <section className={postStyles.container}>

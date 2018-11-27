@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-import styles from '../../styles/Blog/FeaturedPost.module.css'
+import styles from '../../../styles/Blog/FeaturedPost.module.css'
 
 const FeaturedPost = ({ posts }) => {
   

@@ -1,40 +1,23 @@
 
 import React from 'react'
-import Link from 'gatsby-link'
-
-import helpers from '../helpers'
-
-import Divider from '../components/Divider'
 import { CallToAction } from '../components/shared';
-import CategoriesHeader from '../components/blog/CategoriesHeader'
-import Posts from '../components/blog/Posts'
-import FeaturedPost from '../components/blog/FeaturedPost'
+import { Post, CategoriesHeader } from '../components/blog'
+import helpers from '../helpers';
+import "../components/blog/styles/BlogIndex.sass"
 
-import styles from '../styles/Blog.module.css'
+/**
+ * @class Blog
+ * @desc The main blog class. Responsible for holding all blog posts
+ * in a 3x3 fashion, all popular posts, tools and categories.
+ */
 
 class Blog extends React.Component {
-  constructor () {
-    super();
+  constructor (props) {
+    super(props);
   }
 
   render () {
-
-    /**
-     * Extract the featured posts, posts, tags, etc.
-     */
-
-    const data = this.props.data;
-    console.log(data)
-
-    const featuredPosts = data.featuredPosts 
-      ? data.featuredPosts
-      .edges.map((edge) => edge.node)
-      .map((node) => Object.assign(
-        {}, { excerpt: node.excerpt }, node.frontmatter, node.fields, 
-        { timeToRead: node.timeToRead })
-      )
-      : [];
-
+    const { data } = this.props;
     const posts = data.posts 
       ? data.posts
       .edges.map((edge) => edge.node)
@@ -43,24 +26,23 @@ class Blog extends React.Component {
         { timeToRead: node.timeToRead })
       )
       : [];
-
-    const tags = helpers.blog.getTagsFromQuery(data.tags);
-
     const categories = helpers.blog.getCategoriesFromQuery(data.categories);
 
     return (
       <section>
-        <CategoriesHeader
-          categories={categories}
-        />
+        <div className="blog-page-content-container">
+          <CategoriesHeader
+            categories={categories}
+          />
+          <div className="posts-container">
+            {posts.map((post, i) => (
+              <Post key={i} {...post}/>
+            ))}
+            <div style={{ height: '0px', width: '30%'}}></div>
+            <div style={{ height: '0px', width: '30%'}}></div>
+          </div>
+        </div>
 
-        <FeaturedPost
-          posts={featuredPosts}
-        />
-        
-        <Posts
-          posts={posts}
-        />
         <CallToAction
           header={'Find your next job'}
           subHeader={'Students are already finding meaningful employment. Create your profile today!'}
@@ -110,7 +92,6 @@ export const blogPagesQuery = graphql`
       filter: {
         frontmatter:  { 
           templateKey: {eq: "blog-post"},
-          featured: { ne: true }
           public: { eq: true }
         } 
       }

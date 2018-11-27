@@ -8,7 +8,7 @@ tags:
   - volunteering
 featured: false
 image: /img/team-hands-in_4460x4460-1.jpg
-category: Volunteering
+category: Career
 parentcategory: Career
 public: true
 ---

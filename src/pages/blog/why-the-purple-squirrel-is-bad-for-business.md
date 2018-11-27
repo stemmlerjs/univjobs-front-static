@@ -16,7 +16,7 @@ tags:
   - Purple Squirrel
 featured: true
 image: /img/purple-squirrel-copy.jpg
-category: Hiring
+category: Recruitment
 parentcategory: Employers
 public: false
 ---

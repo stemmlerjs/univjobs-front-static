@@ -9,8 +9,8 @@ tags:
   - career
 featured: false
 image: /img/cute_puppy.jpg
-category: Job Hunt
-parentcategory: Career
+category: Opportunities
+parentcategory: Opportunities
 public: true
 employerId: 189
 sponsored: true

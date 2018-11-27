@@ -14,7 +14,7 @@ tags:
   - employer success
 featured: false
 image: /img/smiling-woman-portrait_925x.jpg
-category: Employers
+category: Recruitment
 parentcategory: Guides
 public: true
 ---

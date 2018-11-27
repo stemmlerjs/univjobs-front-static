@@ -9,7 +9,7 @@ tags:
   - student
 featured: false
 image: /img/78fa5434fc6f7382d1618cf906996885.png
-category: null
+category: Career
 public: true
 ---
 Partying every weekend, roommates that become lifelong friends, and cozy study sessions in the library are all things that often come to mind for Mandisa Lau when she initially thinks of attending a post-secondary school. For some, this is, in fact, a reality but what many fail to mention is the hefty price that comes with it.

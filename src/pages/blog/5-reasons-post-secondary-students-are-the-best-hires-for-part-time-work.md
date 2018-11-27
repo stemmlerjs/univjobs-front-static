@@ -14,7 +14,7 @@ tags:
   - ''
 featured: false
 image: /img/business-women-shaking-hands_4460x4460.jpg
-category: Employers
+category: Recruitment
 parentcategory: Guides
 public: true
 ---

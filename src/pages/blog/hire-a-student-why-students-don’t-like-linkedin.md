@@ -9,7 +9,7 @@ tags:
   - recruitment
 featured: false
 image: /img/young-man-checking-phone_4460x4460.jpg
-category: Employers
+category: Recruitment
 parentcategory: Guides
 public: true
 ---

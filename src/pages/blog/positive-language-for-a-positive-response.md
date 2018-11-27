@@ -11,7 +11,7 @@ tags:
   - positive language
 featured: false
 image: /img/laughter-in-the-sun_4460x4460.jpg
-category: Communication & Relationships
+category: Career
 parentcategory: Adulting 101
 public: true
 ---

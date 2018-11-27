@@ -9,7 +9,7 @@ tags:
   - gigs
 featured: false
 image: /img/rover_winter_dog_walk.jpg
-category: Job Hunt
+category: Opportunities
 parentcategory: Career
 public: true
 employerId: 189

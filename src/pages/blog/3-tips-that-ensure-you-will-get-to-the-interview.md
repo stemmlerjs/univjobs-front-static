@@ -14,7 +14,7 @@ tags:
   - Getting to the interview
 featured: true
 image: /img/adult-blur-boss-288477.jpg
-category: Job Hunt
+category: Career
 parentcategory: Career
 public: true
 ---

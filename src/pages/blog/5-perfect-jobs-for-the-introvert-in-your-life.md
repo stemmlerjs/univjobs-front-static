@@ -18,7 +18,7 @@ tags:
   - Web Developer
 featured: false
 image: /img/man-woman-video-chat_4460x4460.jpg
-category: Job Hunt
+category: Opportunities
 parentcategory: Career
 public: true
 ---

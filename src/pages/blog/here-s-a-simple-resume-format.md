@@ -11,7 +11,7 @@ tags:
   - free resume template
 featured: true
 image: /img/screen-shot-2018-05-27-at-10.40.21-pm.png
-category: Resume
+category: Resources
 parentcategory: Resources
 public: true
 ---

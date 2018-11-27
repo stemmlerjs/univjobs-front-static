@@ -10,7 +10,7 @@ tags:
   - Back to school
 featured: true
 image: /img/apps-for-students.jpg
-category: Productivity
+category: Resources
 parentcategory: Resources
 public: true
 ---

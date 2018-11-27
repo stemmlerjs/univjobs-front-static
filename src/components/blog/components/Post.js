@@ -1,7 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
-import postStyles from '../../styles/Blog/Post.module.css'
+import postStyles from '../../../styles/Blog/Post.module.css'
+import '../styles/Post.sass';
+import moment from 'moment'
 
 const TimeToRead = props => {
   if (!!props.timeToRead == false) return <div />
@@ -16,7 +18,7 @@ const TimeToRead = props => {
  */
 
 const PostImage = ({ image }) => (
-  <div className={postStyles.imageContainer}>
+  <div className="image-container">
     <div
       style={{
         backgroundImage: `url('${image}')`,
@@ -36,9 +38,9 @@ PostImage.propTypes = {
  */
 
 const Sponsor = ({ image, companyName }) => (
-  <div className={postStyles.sponsoredCompanyImage}>
+  <div className="sponsored-company-blog-post-contianer">
     Sponsored by {companyName}
-    <div>
+    <div className="sponsored-company-image-container">
       <div style={{ backgroundImage: `url(${image})` }} />
     </div>
   </div>
@@ -49,15 +51,21 @@ Sponsor.propTypes = {
   companyName: PropTypes.string.isRequired,
 }
 
+/**
+ * @class Post
+ * @desc Renders a single post
+ */
+
 const Post = props => {
+  const { category, date } = props;
   return (
     <Link
       to={props.slug}
-      style={{ textDecoration: 'none' }}
-      className={postStyles.postContainer}
+      style={{textDecoration: 'none'}}
+      className="post-container"
     >
       <PostImage image={props.image} />
-      <div className={postStyles.textContainer}>
+      <div className="text-container">
         {props.sponsored ? (
           <Sponsor
             image={props.sponsoredCompanyImage}
@@ -66,15 +74,17 @@ const Post = props => {
         ) : (
           ''
         )}
-        <TimeToRead time={props.timeToRead} />
+        <div className="post-category">{category}</div>
         <h3>{props.title}</h3>
-        <div className={postStyles.readButton}>Read</div>
+        <div className="credits-and-date">By <span className="author-name">Charles Javelona</span> <span className="date">• {moment(date).format('MMM Do, YYYY')}</span> </div>
       </div>
     </Link>
   )
 }
 
 Post.propTypes = {
+  category: PropTypes.string,
+  date: PropTypes.string,
   slug: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,

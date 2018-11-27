@@ -1,14 +1,9 @@
 import React from 'react'
-import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
-
-import BlogCategoriesHeader from '../components/BlogCategoriesHeader'
-import Posts from '../components/Posts'
-import styles from '../styles/Blog/Category.module.css'
-
+import { CategoriesHeader, Post } from '../components/blog'
 import { CallToAction } from '../components/shared';
-
 import helpers from '../helpers'
+import "../components/blog/styles/BlogIndex.sass"
 
 const NotFound = () => {
   return (
@@ -26,8 +21,6 @@ const NotFound = () => {
 
 class CategoryPage extends React.Component {
   render() {
-    console.log(this.props, "got categories page props")
-
     const category = this.props.pathContext.category;
     const posts = this.props.data.posts
       .edges.map((edge) => edge.node)
@@ -36,31 +29,33 @@ class CategoryPage extends React.Component {
         { timeToRead: node.timeToRead })
       )
       .filter((post) => post.category == category);
-    
     const categories = helpers.blog.getCategoriesFromQuery(this.props.data.categories);
 
     return (
       <section>
-        <BlogCategoriesHeader
-          categories={categories}
-        />
-        <section>
-          {
-            posts.length == 0
-              ? <NotFound/>
-              : <h1 className={styles.title}>{category}</h1>
+        {
+          posts.length == 0
+            ? <NotFound/>
+            : (<div className="blog-page-content-container">
+                <CategoriesHeader
+                  categories={categories}
+                  currentCategory={category}
+                />
+                <div className="posts-container">
+                  {posts.map((post, i) => (
+                    <Post key={i} {...post}/>
+                  ))}
+                  <div style={{ height: '0px', width: '30%'}}></div>
+                  <div style={{ height: '0px', width: '30%'}}></div>
+                </div>
+              </div>)
           }
-          
-          <Posts
-            posts={posts}
-          />
           <CallToAction
             header={'Find your next job'}
             subHeader={'Students are already finding meaningful employment. Create your profile today!'}
             buttonText={'Sign up'}
             alt={true}
           />
-        </section>
       </section>
     )
   }

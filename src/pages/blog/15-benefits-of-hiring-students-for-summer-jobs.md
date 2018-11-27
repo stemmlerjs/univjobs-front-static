@@ -14,7 +14,7 @@ tags:
   - Employer Benefits of Hiring Students
 featured: false
 image: /img/top_10_ways_to_be_more_productive_twitter_image-1-.jpg
-category: Hiring
+category: Recruitment
 parentcategory: Employers
 public: false
 ---

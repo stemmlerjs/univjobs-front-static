@@ -1,10 +1,10 @@
 
 import React from 'react'
 
-import Divider from '../Divider'
+import Divider from '../../Divider'
 import Link from 'gatsby-link'
 
-import styles from '../../styles/Blog/Header.module.css'
+import styles from '../../../styles/Blog/Header.module.css'
 
 import kebabCase from "lodash/kebabCase";
 
@@ -108,7 +108,7 @@ const MobileCategoriesNav = ({ categories, navOpen, handleToggleNav }) => {
 }
 
 
-class CategoriesHeader extends React.Component {
+class BlogCategoriesHeader extends React.Component {
   constructor () {
     super();
     this.state = {
@@ -150,4 +150,4 @@ class CategoriesHeader extends React.Component {
 }
 
 
-export default CategoriesHeader
+export default BlogCategoriesHeader
