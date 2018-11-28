@@ -36,6 +36,9 @@
 }
 
 .navItem {}
+.navItem > img {
+  margin: 0;
+}
 
 .burgerMenu {
   color: #0DD4D2;

@@ -10,6 +10,7 @@ import "../styles/Header.sass"
 import logo from '../../../img/logo-aqua-large@2x.png'
 import greenArrow from '../../../img/icons/left-arrow.svg'
 import whiteArrow from '../../../img/icons/left-arrow-right.svg'
+import login from '../../../img/icons/login.svg'
 
 /**
  * @class Header
@@ -134,8 +135,7 @@ class Header extends React.Component {
 
   render = () => {
     return (
-    <div 
-      main-header-container 
+    <div
       id="header-nav" 
       className={`main-header-container 
         ${styles.container} ${this.state.shouldHideHeader 
@@ -146,52 +146,58 @@ class Header extends React.Component {
         top: this.state.hideUp ? '-95px' : '0px'
       }}
     >
-      <div className="logo-container">
-        <Link to="/">
-          <img className="univjobs-logo" src={logo}/>
-        </Link>
-      </div>
-      <div className="nav-items">
-        {this.isOnEmployerRoute() ? (
-          <Link className="nav-item" to="/">Get Hired</Link>
-        ): (
-          <Link className="nav-item" to="/employers">Hire Talent</Link>
-        )}
-        
-        <Link className="nav-item" to="/blog">Blog</Link>
-        <Link className="nav-item" to="/companies">Explore Companies</Link>
-        {/* <Link className="nav-item" to="/employers">Log in</Link> */}
-        <div 
-          onClick={() => redirectTo(config.appUrl)} 
-          className="sign-in-button">
-          SIGN IN
-          <img className="before-hover" src={greenArrow}></img>
-          <img className="after-hover" src={whiteArrow}></img>
+      <div className="main-header-container-inner">
+        <div className="logo-container">
+          <Link to="/">
+            <img className="univjobs-logo" src={logo}/>
+          </Link>
         </div>
-      </div>
-      <div className={styles.burgerMenuNavItem} href="javascript:void(0);" onClick={this.toggleBurgerMenu}>
-        <div>
-          <div className={
-            this.state.menuOpen 
-              ? `${styles.change1} bar1`
-              : "bar1"}>
+        <div className="nav-items">
+          {this.isOnEmployerRoute() ? (
+            <Link className="nav-item" to="/">Get Hired</Link>
+          ): (
+            <Link className="nav-item" to="/employers">Hire Talent</Link>
+          )}
+          
+          <Link className="nav-item" to="/blog">Blog</Link>
+          <Link className="nav-item" to="/companies">Explore Companies</Link>
+          <div 
+            onClick={() => redirectTo(`${config.appUrl}login`)}
+            className="nav-item">
+            <img src={login}/>Log in
           </div>
-          <div className={
-            this.state.menuOpen 
-              ? `${styles.change2} bar2`
-              : "bar2"}>
+          <div 
+            onClick={() => redirectTo(config.appUrl)} 
+            className="sign-in-button">
+            SIGN UP
+            <img className="before-hover" src={greenArrow}></img>
+            <img className="after-hover" src={whiteArrow}></img>
           </div>
+        </div>
+        <div className={styles.burgerMenuNavItem} href="javascript:void(0);" onClick={this.toggleBurgerMenu}>
+          <div>
+            <div className={
+              this.state.menuOpen 
+                ? `${styles.change1} bar1`
+                : "bar1"}>
+            </div>
+            <div className={
+              this.state.menuOpen 
+                ? `${styles.change2} bar2`
+                : "bar2"}>
+            </div>
 
-          <div className={
-            this.state.menuOpen 
-              ? `${styles.change3} bar3`
-              : "bar3"}>
+            <div className={
+              this.state.menuOpen 
+                ? `${styles.change3} bar3`
+                : "bar3"}>
+            </div>
           </div>
         </div>
+        <HeaderOverlay
+          isOpen={this.state.menuOpen}
+        />
       </div>
-      <HeaderOverlay
-        isOpen={this.state.menuOpen}
-      />
     </div>
   )
   }

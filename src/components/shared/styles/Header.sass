@@ -1,67 +1,71 @@
 .main-header-container 
-  .logo-container
+  .main-header-container-inner
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    .univjobs-logo
-      height: 33px;
-      margin: 0;
-      cursor: pointer;
-      position: relative;
-      top: 6px;
-  .nav-items 
-    @media (max-width: 900px) 
-      display: none;
-    a
-      color: #2643a7;
-      text-transform: uppercase;
-      margin-left: 2em;
-      font-size: 17px;
+    width: 1450px;
+    margin: 0 auto;
+    justify-content: space-between;
+    .logo-container
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      .univjobs-logo
+        height: 33px;
+        margin: 0;
+        cursor: pointer;
+        position: relative;
+        top: 6px;
+    .nav-items 
+      @media (max-width: 900px) 
+        display: none;
+      a
+        color: #2643a7;
+        // text-transform: uppercase;
+        margin-left: 2em;
+        font-size: 17px;
+        font-weight: 500;
+        letter-spacing: .5px;
+        transition: .1s ease-out;
+        position: relative;
+        text-decoration: none;
+        font-weight: bold;
+        &:before 
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          bottom: 0;
+          left: 0;
+          background-color: #fff;
+          visibility: hidden;
+          -ms-transform: scaleX(0);
+          transform: scaleX(0);
+          transition: all .2s ease-in 0s;
+          margin-bottom: -3px;
+          border-radius: 10px;
+        &:hover
+          opacity: 0.6;
+          &:before
+            visibility: visible;
+            -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+
+    .sign-in-button
+      display: inline-block;
+      font-size: 16px;
+      color: #0DD4D2;
+      padding: 6px;
+      padding-right: 2em;
+      margin-left: 11px;
       font-weight: 500;
-      letter-spacing: .5px;
-      transition: .1s ease-out;
-      position: relative;
-      text-decoration: none;
+      cursor: pointer;
+      margin-left: 2em;
+      transition: .2s ease-out;
       font-weight: bold;
-      &:before 
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 2px;
-        bottom: 0;
-        left: 0;
-        background-color: #fff;
-        visibility: hidden;
-        -ms-transform: scaleX(0);
-        transform: scaleX(0);
-        transition: all .2s ease-in 0s;
-        margin-bottom: -3px;
-        border-radius: 10px;
-      &:hover
-        opacity: 0.6;
-        &:before
-          visibility: visible;
-          -webkit-transform: scaleX(1);
-          transform: scaleX(1);
+      text-decoration: none;
+      border-radius: 3px;
+      padding-left: 2em;
 
-  .sign-in-button
-    display: inline-block;
-    font-size: 16px;
-    color: #0DD4D2;
-    padding: 6px;
-    padding-right: 2em;
-    margin-left: 11px;
-    font-weight: 500;
-    cursor: pointer;
-    margin-left: 2em;
-    transition: .2s ease-out;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 3px;
-    padding-left: 2em;
-
-    &:hover 
       color: white;
       font-weight: 700;
       letter-spacing: .6px;
@@ -69,41 +73,69 @@
       background: #0DD4D2;
       border: #0DD4D2;
 
-      img 
-        &.before-hover
-          opacity: 0;
-        &.after-hover
+      img
+        &.after-hover 
           opacity: 1
 
-    img 
-      width: 20px;
-      margin: 0;
-      transform: rotate(180deg)
+      &:hover 
+        color: white;
+        font-weight: 700;
+        letter-spacing: .6px;
+        text-decoration: none;
+        background: #10bfbd;
+        border: #0DD4D2;
+
+        img 
+          &.before-hover
+            opacity: 0;
+          &.after-hover
+            opacity: 1;
+
+      img 
+        width: 20px;
+        margin: 0;
+        transform: rotate(180deg)
+        position: relative;
+
+        &.after-hover
+          transition: .2s ease-out;
+          top: 3px;
+          opacity: 1;
+          left: -4px;
+        &.before-hover
+          opacity: 0;
+
+    .bar1,
+    .bar2,
+    .bar3 
+      width: 29px;
+      height: 2px;
+      background-color: #0dd4d2;
+      margin: 6px 0;
+      transition: .4s;
+      cursor: pointer;
       position: relative;
-      
-      &.before-hover
-        transition: .2s ease-out;
-        top: 3px;
-        left: 12px;
+      z-index: 99;
+      border-radius: 2px;
 
-      &.after-hover
-        transition: .2s ease-out;
-        top: 3px;
-        opacity: 0;
-        left: -4px;
-
-  .bar1,
-  .bar2,
-  .bar3 
-    width: 29px;
-    height: 2px;
-    background-color: #0dd4d2;
-    margin: 6px 0;
-    transition: .4s;
+  div.nav-item 
     cursor: pointer;
+    display: inline-block;
+    color: #2643a7;
+    // text-transform: uppercase;
+    margin-left: 2em;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: .5px;
+    transition: .1s ease-out;
     position: relative;
-    z-index: 99;
-    border-radius: 2px;
+    text-decoration: none;
+    font-weight: bold;
+    &:hover
+      opacity: 0.6;
+    img 
+      padding-right: 10px;
+      margin: 0;
 
 
 

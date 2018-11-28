@@ -1,9 +1,7 @@
 
 import React from 'react'
-import { CallToAction } from '../components/shared';
-import { Post, CategoriesHeader } from '../components/blog'
+import { BlogPage } from '../components/blog'
 import helpers from '../helpers';
-import "../components/blog/styles/BlogIndex.sass"
 
 /**
  * @class Blog
@@ -29,27 +27,10 @@ class Blog extends React.Component {
     const categories = helpers.blog.getCategoriesFromQuery(data.categories);
 
     return (
-      <section>
-        <div className="blog-page-content-container">
-          <CategoriesHeader
-            categories={categories}
-          />
-          <div className="posts-container">
-            {posts.map((post, i) => (
-              <Post key={i} {...post}/>
-            ))}
-            <div style={{ height: '0px', width: '30%'}}></div>
-            <div style={{ height: '0px', width: '30%'}}></div>
-          </div>
-        </div>
-
-        <CallToAction
-          header={'Find your next job'}
-          subHeader={'Students are already finding meaningful employment. Create your profile today!'}
-          buttonText={'Sign up'}
-          alt={true}
-        />
-      </section>
+      <BlogPage
+        posts={posts}
+        categories={categories}
+      />
     )
   }
 }

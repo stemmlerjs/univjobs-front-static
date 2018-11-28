@@ -1,23 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import { CategoriesHeader, Post } from '../components/blog'
-import { CallToAction } from '../components/shared';
+import { BlogPage } from '../components/blog'
 import helpers from '../helpers'
-import "../components/blog/styles/BlogIndex.sass"
-
-const NotFound = () => {
-  return (
-    <div style={{
-      maxWidth: '1200px',
-      margin: '0 auto',
-      paddingLeft: '1em',
-      paddingRight: '1em'
-    }}>
-      <div>There aren't any posts in this category yet!</div>
-      <Link to="/blog">Browse all posts</Link>
-    </div>
-  )
-}
 
 class CategoryPage extends React.Component {
   render() {
@@ -32,31 +16,11 @@ class CategoryPage extends React.Component {
     const categories = helpers.blog.getCategoriesFromQuery(this.props.data.categories);
 
     return (
-      <section>
-        {
-          posts.length == 0
-            ? <NotFound/>
-            : (<div className="blog-page-content-container">
-                <CategoriesHeader
-                  categories={categories}
-                  currentCategory={category}
-                />
-                <div className="posts-container">
-                  {posts.map((post, i) => (
-                    <Post key={i} {...post}/>
-                  ))}
-                  <div style={{ height: '0px', width: '30%'}}></div>
-                  <div style={{ height: '0px', width: '30%'}}></div>
-                </div>
-              </div>)
-          }
-          <CallToAction
-            header={'Find your next job'}
-            subHeader={'Students are already finding meaningful employment. Create your profile today!'}
-            buttonText={'Sign up'}
-            alt={true}
-          />
-      </section>
+      <BlogPage
+        categories={categories}
+        posts={posts}
+        category={category}
+      />
     )
   }
 }

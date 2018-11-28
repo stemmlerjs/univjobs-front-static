@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import Content, { HTMLContent } from '../components/Content'
-import { CategoriesHeader } from '../components/blog'
+import { CategoriesHeader, BlogPage } from '../components/blog'
 import ReactDisqusComments from 'react-disqus-comments';
 import { CallToAction } from '../components/shared';
 import SEO from '../components/SEO'
@@ -47,13 +47,6 @@ const BlogPostContent = (props) => {
 }
 
 export class BlogPostTemplate extends React.Component {
-  constructor () {
-    super();
-  }
-
-  componentDidMount () {
-  }
-
   render () {
     const {
       content,
@@ -72,15 +65,8 @@ export class BlogPostTemplate extends React.Component {
     } = this.props;
 
     return (
-    <section className="blog-post">
-
-      {helmet || ''}
-
-      <CategoriesHeader
-        categories={categories}
-      />
-
       <div className={styles.container}>
+        {helmet || ''}
         <BlogPostHeader 
           title={title} 
           image={image}
@@ -94,7 +80,6 @@ export class BlogPostTemplate extends React.Component {
           content={content}
           description={description}
           contentComponent={contentComponent}/>
-
         <ReactDisqusComments
           shortname="univjobs"
           identifier={ getUniquePageIdentifier() }
@@ -102,14 +87,7 @@ export class BlogPostTemplate extends React.Component {
           url={ getUniquePageIdentifier() }
           />
       </div>
-      <CallToAction
-          header={'Find your next job'}
-          subHeader={'Students are already finding meaningful employment. Create your profile today!'}
-          buttonText={'Sign up'}
-          alt={true}
-        />
-    </section>
-  )
+    )
   }
 }
 
@@ -136,27 +114,32 @@ const BlogPost = ({ data }) => {
   categories = helpers.blog.getCategoriesFromQuery(categories);
 
   return (
-    <BlogPostTemplate
-      content={post.html}
-      contentComponent={HTMLContent}
-      description={post.description}
-      helmet={
-        <SEO 
-          isBlogPost={true}
-          postData={post}
-          postImage={post.image}
-          title={post.title}
-        />}
-      tags={post.tags}
-      title={post.title}
-      image={post.image}
-      timeToRead={post.timeToRead}
-      frontmatter={post}
+    <BlogPage
+      post={post}
       category={post.category}
-      parentCategory={post.parentCategory}
-      author={post.author}
       categories={categories}
     />
+    // <BlogPostTemplate
+    //   content={post.html}
+    //   contentComponent={HTMLContent}
+    //   description={post.description}
+    //   helmet={
+    //     <SEO 
+    //       isBlogPost={true}
+    //       postData={post}
+    //       postImage={post.image}
+    //       title={post.title}
+    //     />}
+    //   tags={post.tags}
+    //   title={post.title}
+    //   image={post.image}
+    //   timeToRead={post.timeToRead}
+    //   frontmatter={post}
+    //   category={post.category}
+    //   parentCategory={post.parentCategory}
+    //   author={post.author}
+    //   categories={categories}
+    // />
   )
 }
 
