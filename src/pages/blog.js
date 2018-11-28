@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { BlogPage } from '../components/blog'
+import { BlogPageLayout } from '../components/blog'
 import helpers from '../helpers';
 
 /**
@@ -27,7 +27,7 @@ class Blog extends React.Component {
     const categories = helpers.blog.getCategoriesFromQuery(data.categories);
 
     return (
-      <BlogPage
+      <BlogPageLayout
         posts={posts}
         categories={categories}
       />
@@ -93,6 +93,7 @@ export const blogPagesQuery = graphql`
             featured
             image
             category
+            author
           }
         }
       }

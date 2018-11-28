@@ -2,19 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import Content, { HTMLContent } from '../components/Content'
-import { CategoriesHeader, BlogPage } from '../components/blog'
-import ReactDisqusComments from 'react-disqus-comments';
+import { CategoriesHeader, BlogPageLayout } from '../components/blog'
+
 import { CallToAction } from '../components/shared';
 import SEO from '../components/SEO'
 import helpers from '../helpers'
 
 import styles from '../styles/Blog/BlogPostPage.module.css'
-
-function getUniquePageIdentifier () {
-  return typeof window !== 'undefined' && window.location.href
-      ? typeof window !== 'undefined' && window.location.href
-      : 'https://nostalgic-bhaskara-eea0ad.netlify.com'
-}
     
 
 const BlogPostHeader = (props) => {
@@ -36,7 +30,6 @@ const BlogPostHeader = (props) => {
 const BlogPostContent = (props) => {
   const PostContent = props.contentComponent || Content;
   console.log(PostContent, "content")
-
   return (
     <div>
       <PostContent className={styles.content} content={props.description}/>
@@ -79,21 +72,20 @@ export class BlogPostTemplate extends React.Component {
         <BlogPostContent 
           content={content}
           description={description}
-          contentComponent={contentComponent}/>
+          contentComponent={contentComponent}
+        />
         <ReactDisqusComments
           shortname="univjobs"
           identifier={ getUniquePageIdentifier() }
           title={title}
           url={ getUniquePageIdentifier() }
-          />
+        />
       </div>
     )
   }
 }
 
-
 // Test
-
 BlogPostTemplate.propTypes = {
   content: PropTypes.string.isRequired,
   contentComponent: PropTypes.func,
@@ -114,7 +106,7 @@ const BlogPost = ({ data }) => {
   categories = helpers.blog.getCategoriesFromQuery(categories);
 
   return (
-    <BlogPage
+    <BlogPageLayout
       post={post}
       category={post.category}
       categories={categories}

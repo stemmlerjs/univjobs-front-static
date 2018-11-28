@@ -31,10 +31,10 @@ const NotFound = () => {
  * - categories blog page
  * - blog template page.
  * 
- * It's pretty much the blog page layout template.
+ * It's pretty much the blog page LAYOUT template.
  */
 
-const BlogPage = ({ post, posts, categories, category }) => (
+const BlogPageLayout = ({ post, posts, categories, category }) => (
   <section style={{ padding: 0 }}>
     <div className="blog-page-content-container">
       <div className="blog-page-content-container-inner">
@@ -89,11 +89,11 @@ const BlogPage = ({ post, posts, categories, category }) => (
   </section>
 )
 
-BlogPage.propTypes = {
+BlogPageLayout.propTypes = {
   post: PropTypes.object,
   posts: PropTypes.array,
   categories: PropTypes.arrayOf(PropTypes.string).isRequired,
   category: PropTypes.string
 }
 
-export default BlogPage
+export default BlogPageLayout;

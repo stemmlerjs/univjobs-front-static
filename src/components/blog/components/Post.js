@@ -76,7 +76,7 @@ const Post = props => {
         )}
         <div className="post-category">{category}</div>
         <h3>{props.title}</h3>
-        <div className="credits-and-date">By <span className="author-name">Charles Javelona</span> <span className="date">• {moment(date).format('MMM Do, YYYY')}</span> </div>
+        <div className="credits-and-date">By <span className="author-name">{props.author}</span> <span className="date">• {moment(date).format('MMM Do, YYYY')}</span> </div>
       </div>
     </Link>
   )

@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import { BlogPage } from '../components/blog'
+import { BlogPageLayout } from '../components/blog'
 import helpers from '../helpers'
 
 class CategoryPage extends React.Component {
@@ -16,7 +16,7 @@ class CategoryPage extends React.Component {
     const categories = helpers.blog.getCategoriesFromQuery(this.props.data.categories);
 
     return (
-      <BlogPage
+      <BlogPageLayout
         categories={categories}
         posts={posts}
         category={category}
@@ -52,6 +52,7 @@ export const categoryPageQuery = graphql`
                 featured
                 image
                 category
+                author
               }
               fields {
                 slug

@@ -30,10 +30,12 @@ const typography = new Typography({
     },
     h2: {
       fontSize: '1.3rem',
+      fontWeight: '400'
     },
     h3: {
       fontSize: '1.1rem',
-      letterSpacing: '0.5px'
+      letterSpacing: '0.5px',
+      fontWeight: '400'
     },
   }),
 })
