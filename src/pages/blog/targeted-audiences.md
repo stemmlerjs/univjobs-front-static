@@ -39,7 +39,7 @@ Currently, employers are able to set their Targeted Audience criteria on the fol
 
 - filter by year (I want a 1st, 2nd or 3rd year student)
 - filter by recent grads (I only want recent grads)
-- filter by school (I only want students who are attendeding or attended Sheridan College)
+- filter by school (I only want students who are attending or attended Sheridan College)
 - filter by co-op (I only want students who are looking for co-op opportunities)
 
 Good luck!
