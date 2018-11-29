@@ -44,7 +44,8 @@ const BlogPageLayout = ({ post, posts, categories, category }) => (
           <SEO
             postData={{
               title: `${post.title} | Univjobs Blog`,
-              description: post.description
+              description: post.description,
+              slug: post.slug
             }}
             postImage={post.image}
             isBlogPost={true}

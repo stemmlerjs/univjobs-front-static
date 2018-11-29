@@ -95,7 +95,7 @@ const SEO = ({ postData, postImage, isBlogPost }) => {
     description,
     datePublished,
   });
-  
+
   return (
     <Helmet>
       {/* General tags */}
