@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.2.2] - [2018-11-28]
+### Changed
+- [Blog] Changed the design for the blog.
+
 ## [1.2.1] - [2018-10-05] - [2018-10-10]
 ### Added
 - [Landing Pages] Added a landing pages template so that we can scaffold new landing pages.

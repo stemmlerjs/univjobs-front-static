@@ -69,6 +69,7 @@ const BlogPostContent = (props) => {
         />
       </div>
       <br/>
+      <img src={props.image}/>
       <div>{props.description}</div>
       <br/>
       <HTMLContent className="post-content" content={props.html}/>      

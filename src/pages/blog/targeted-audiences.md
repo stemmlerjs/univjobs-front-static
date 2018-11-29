@@ -11,7 +11,7 @@ tags:
   - Schools
   - Screening
 featured: false
-image: /img/business-women-shaking-hands_4460x4460.jpg
+image: /img/features/targeted-audiences-logo.png
 category: Univjobs Updates
 parentcategory: Guides
 public: true
