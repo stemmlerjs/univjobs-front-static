@@ -130,7 +130,6 @@ class BlogCategoriesHeader extends React.Component {
     return (
       <div className={styles.outerContainer}>
         <div className={styles.container}>
-          
           {
             this.props.categories
               ?  <MobileCategoriesNav

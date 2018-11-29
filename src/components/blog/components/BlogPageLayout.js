@@ -72,7 +72,7 @@ const BlogPageLayout = ({ post, posts, categories, category }) => (
               <div className="sidebar-element-title-container">
                 <img src={tools}/>Tools for Students
               </div>
-              <a className="sidebar-element">Companies Near Me</a>
+              <Link to="/companies/directory" className="sidebar-element">Companies Near Me</Link>
               <a className="sidebar-element">Build a Resume</a>
             </section>
             
