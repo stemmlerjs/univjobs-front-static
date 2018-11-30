@@ -35,7 +35,7 @@ const Layout = ({ children, data }) => (
     <Header 
       siteTitle={data.site.siteMetadata.title} 
       appUrl={config.appUrl}
-      linkComponent={null}
+      linkComponent={Link}
     />
     <div
       style={{
