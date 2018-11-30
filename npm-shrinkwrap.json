@@ -23130,9 +23130,9 @@
       "integrity": "sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg=="
     },
     "univjobs-ui-components": {
-      "version": "1.0.4",
-      "resolved": "https://registry.npmjs.org/univjobs-ui-components/-/univjobs-ui-components-1.0.4.tgz",
-      "integrity": "sha512-2e6fgCtaAYu+SyIUgao/1rJGnPsmMLwkglyZOJRbWGecejRZ0vOhGtV4WDoC9z+XjgLfun23MqGuo3DBy9Im4A=="
+      "version": "1.0.5",
+      "resolved": "https://registry.npmjs.org/univjobs-ui-components/-/univjobs-ui-components-1.0.5.tgz",
+      "integrity": "sha512-rpc21V22cjbQP21gBOIHUdllfE4pmQntx12ESHEy1LPghdUFOUlIY/2sb4LHS4agyEoTbjZCyB/AlasuDIB3zg=="
     },
     "unpipe": {
       "version": "1.0.0",
