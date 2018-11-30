@@ -1,4 +1,7 @@
 # Changelog
+## [1.2.3] - [2018-11-29]
+### Changed
+- [Header] Changed the header to come from the univjobs-ui-components library instead.
 
 ## [1.2.2] - [2018-11-28]
 ### Changed

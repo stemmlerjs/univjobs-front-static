@@ -1,7 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import { Header } from '../components/shared'
+import Link from 'gatsby-link'
+// import { Header } from '../components/shared'
+import { Header } from 'univjobs-ui-components'
+import "univjobs-ui-components/build/index.css"
+
 import Footer from '../components/Footer'
 import config from '../config'
 import meta from './meta'
@@ -30,6 +34,8 @@ const Layout = ({ children, data }) => (
     />
     <Header 
       siteTitle={data.site.siteMetadata.title} 
+      appUrl={config.appUrl}
+      linkComponent={Link}
     />
     <div
       style={{
