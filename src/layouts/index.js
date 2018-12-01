@@ -35,7 +35,14 @@ const Layout = ({ children, data }) => (
     <Header 
       siteTitle={data.site.siteMetadata.title} 
       appUrl={config.appUrl}
+      staticUrl={config.staticUrl}
       linkComponent={Link}
+      // TODO: Implement these with an external API call
+      // that will allow us to do so.
+      isAuthenticating={false}
+      isAuthenticated={false}
+      profilePicture={null}
+      isAStudent={false}
     />
     <div
       style={{
