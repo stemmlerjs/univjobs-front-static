@@ -3,9 +3,6 @@ import PropTypes from 'prop-types'
 import { Post } from '../blog'
 
 const CompanyArticles = (props) => {
-  //if (props.articles != true) return <div/>;
-  //if (props.articles.length === 0) return <div/>;
-  
   let articles = props.articles.map((article) => {
     article.slug = article.fields.slug
     article.image = article.frontmatter.image
@@ -20,8 +17,8 @@ const CompanyArticles = (props) => {
     delete article.excerpt
 
     return article
-    
   });
+
   return (
     <div className="company-articles">
       <div className="company-articles-container">
@@ -32,6 +29,8 @@ const CompanyArticles = (props) => {
               <Post key={i} {...article}/>
             ))        
           }
+          <div style={{ width: '30%', height: 0 }}/>
+          <div style={{ width: '30%', height: 0 }}/>
         </div>
       </div>
     </div>

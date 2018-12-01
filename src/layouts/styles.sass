@@ -113,6 +113,7 @@ $primary-teal: #21ADE3;
       min-width: 342px;
       box-shadow: 0 14px 28px 0 hsla(0,0%,56%,.2);
       border-radius: 3px;
+      background: white;
 
       .sc-item-branding
         height: 140px;
@@ -223,7 +224,8 @@ $primary-teal: #21ADE3;
     
     .jobs-list-container
       @include flex(row);
-      justify-content: space-between;
+      flex-wrap: wrap;
+      justify-content: space-around;
 
       .job
         padding: 1em;
@@ -232,6 +234,7 @@ $primary-teal: #21ADE3;
         background: white;
         border-radius: 3px;
         box-shadow: 0 14px 28px 0 rgba(143, 143, 143, 0.2);
+        margin-bottom: 14px;
 
         > div:nth-child(1)
           font-weight: bold;
@@ -266,6 +269,10 @@ $primary-teal: #21ADE3;
 
     .company-articles-list-wrapper
       text-align: center;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
 
 // ==================================
 // ===== Company Sections Container =

@@ -87,6 +87,8 @@ class CompanyJobs extends React.Component {
                   <Job key={i} {...job}/>
                 ))
             }
+            <div style={{ width: '32%', height: 0 }}/>
+            <div style={{ width: '32%', height: 0 }}/>
           </div>
         </div>
       </div>

@@ -1,4 +1,10 @@
 # Changelog
+
+## [1.2.4] - [2018-12-01]
+### Added
+- [Company Jobs] Added flex cards so that these always look aligned left.
+- [Company Articles] Added flex cards so that these always look aligned left.
+
 ## [1.2.3] - [2018-11-29]
 ### Changed
 - [Header] Changed the header to come from the univjobs-ui-components library instead.
