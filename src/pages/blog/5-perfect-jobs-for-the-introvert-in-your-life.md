@@ -1,7 +1,7 @@
 ---
 templateKey: blog-post
 title: 5 Perfect Jobs For The Introvert In Your Life
-author: Trevor Dewan
+author: Charles Javelona
 date: '2018-06-16T13:05:18-04:00'
 description: >+
   Introverts are people who prefer calm, minimally stimulating environments and
