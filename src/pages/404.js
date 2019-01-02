@@ -6,25 +6,25 @@ class NotFoundPage extends React.Component {
   }
 
   componentDidMount () {
-    if (typeof window !== undefined) {
-      let url = window.location.href;
+    // if (typeof window !== undefined) {
+    //   let url = window.location.href;
 
-      if (url.indexOf('posting') !== -1) {
-        let lastIndexSlash = url.lastIndexOf("/");
-        let postingSlug = url.substring(lastIndexSlash + 1);
+    //   if (url.indexOf('posting') !== -1) {
+    //     let lastIndexSlash = url.lastIndexOf("/");
+    //     let postingSlug = url.substring(lastIndexSlash + 1);
 
-        if (typeof window !== undefined) {
-          window.location.href = `${config.appUrl}posting/${postingSlug}`
-        }
+    //     if (typeof window !== undefined) {
+    //       window.location.href = `${config.appUrl}posting/${postingSlug}`
+    //     }
         
-      }
+    //   }
 
-      if (url.indexOf('register/employer')) {
-        if (typeof window !== undefined) {
-          window.location.href = 'https://univjobs.ca/employers/'
-        }
-      }
-    }
+    //   if (url.indexOf('register/employer')) {
+    //     if (typeof window !== undefined) {
+    //       window.location.href = 'https://univjobs.ca/employers/'
+    //     }
+    //   }
+    // }
   }
 
   render() {
