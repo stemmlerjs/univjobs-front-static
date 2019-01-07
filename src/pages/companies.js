@@ -36,8 +36,8 @@ class Companies extends React.Component {
         <SEO
           isBlogPost={false}
           postData={{
-            title: "Companies @ Univjobs | Explore companies",
-            description: "Explore companies on Univjobs offering opportunities for students and recent-grads"
+            title: "Univjobs: Find companies that hire college students and recent grads",
+            description: "Look inside different companies to see what they offer, what they do, and apply for jobs."
           }}
         />
         <LandingPage
@@ -72,9 +72,9 @@ class Companies extends React.Component {
         />
         <DirectoryLink/>
         <CallToAction
-          header="Get started now!"
-          subHeader="Create your profile and get access to student-friendly jobs."
-          buttonText="Sign me up"
+          header="Get access to these company jobs"
+          subHeader=""
+          buttonText="Start applying"
           alt={true}
           location={`${config.appUrl}register`}
         />

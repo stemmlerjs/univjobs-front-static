@@ -479,9 +479,9 @@ class Directory extends React.Component {
         <SEO
           isBlogPost={false}
           postData={{
-            title: 'Companies Near Me | Univjobs',
+            title: 'Univjobs: Find Work Nearby',
             description:
-              'Find local tech, design, business and part-time jobs near you',
+              'Work while studying as a college student or apply to jobs before graduating ',
           }}
         />
         <DirectoryHeader

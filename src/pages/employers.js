@@ -41,8 +41,8 @@ const Employers = () => (
     <SEO
       isBlogPost={false}
       postData={{
-        title: "Employers @ Univjobs | Simplifying hiring post-secondary students",
-        description: "Recruit students and recent-grads from any post-secondary school in Canada."
+        title: "Univjobs: Online campus recruitment solution for employers",
+        description: "Reach and recruit college and university students and recent-grads on campus. Save time and money finding or hiring interns and recent grads."
       }}
     />
     <LandingPage
@@ -84,7 +84,7 @@ const Employers = () => (
 
      <CallToAction
       header="Get early access to young talent now"
-      subHeader="Showcase your company and opportunities to the best talent before they graduate."
+      subHeader=""
       buttonText="Start hiring"
       alt={false}
       location={`${config.appUrl}register/employer`}
@@ -119,7 +119,7 @@ const Employers = () => (
 
     <CallToAction
         header='Attract early career talent'
-        subHeader='Find a student that fits your company needs.'
+        subHeader=''
         buttonText='Recruit students'
         alt={true}
         location={`${config.appUrl}register/employer`}
@@ -139,7 +139,7 @@ const Employers = () => (
       <CallToAction 
       header="Find your future team member"
       alt={true}
-      subHeader="Students are already applying to jobs. Create your profile and connect with your future employee today."
+      subHeader=""
       buttonText="Find students"
       location={`${config.appUrl}register`}
     />
