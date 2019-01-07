@@ -88,7 +88,7 @@ class DirectoryResult extends React.Component {
       logoUrl,
       companyName,
       address,
-      industry,
+      industries,
       feature,
       about,
       distance,
@@ -128,7 +128,9 @@ class DirectoryResult extends React.Component {
               <div className="company-name">{companyName}</div>
               <div className="address">{address}</div>
               <div>
-                <div className="industry">{industry.label}</div>
+                {industries.map((industry, i) => (
+                  <div className="industry" key={i}>{industry.industry_text}</div>
+                ))}
                 {feature ? <div className="featured">Featured</div> : ''}
               </div>
             </div>

@@ -87,7 +87,7 @@ class CompanyTemplate extends React.Component {
         />
         <CompanyHeader
           companyName={company.companyName}
-          industry={company.industry}
+          industries={company.industries}
           slogan={company.slogan}
           logoUrl={company.logoUrl}
           numEmployees={company.numEmployees}
@@ -238,10 +238,13 @@ export const pageQuery = graphql`
           funFacts
           logoUrl
           numEmployees
-          industry
           mission
           perks
           companyValues
+          industries {
+            industry_text
+            industry_id
+          }
           cultureItems {
             image
             title

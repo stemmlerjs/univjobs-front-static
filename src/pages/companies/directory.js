@@ -199,7 +199,6 @@ class Directory extends React.Component {
   componentDidMount() {
     // Get the initial position of the user.
     this.getInitialPosition(() => {
-      debugger;
       // Filter companies
       this._doFilter();
     })
@@ -356,12 +355,17 @@ class Directory extends React.Component {
 
           // Use "some()", return "true" when you want it to break.
           industryFilters.some(industry => {
-            if (industry.value === company.industry.value) {
+            const filtered = company.industries.filter((i) => {
+              return i.industry_id === industry.value
+            });
+
+            if (filtered.length !== 0) {
               show = true
               return true
             }
             return false;
           })
+          console.log(show, 'show?')
 
           return show
         })
@@ -564,14 +568,14 @@ export const directoryQuery = graphql`
       edges {
         node {
           id
-          industry {
-            value
-            label
-          }
           jobs {
             title
             slug
             active
+          }
+          industries {
+            industry_text
+            industry_id
           }
           companyId
           companyName

@@ -31,6 +31,7 @@ class Companies extends React.Component {
     const companies = helpers.companies.getCompaniesFromQuery(data.companies);
     const featuredCompanies = helpers.companies.getCompaniesFromQuery(data.featureCompanies);
     console.log(data)
+    console.log(this.props)
     return (
       <div>
         <SEO
@@ -114,7 +115,6 @@ query CompaniesQuery {
           funFacts
           logoUrl
           numEmployees
-          industry
           mission
           perks
           companyValues
@@ -122,6 +122,10 @@ query CompaniesQuery {
             image
             title
             description
+          }
+          industries {
+            industry_text
+            industry_id
           }
           slogan
           socialLinks { 
@@ -180,7 +184,6 @@ query CompaniesQuery {
           funFacts
           logoUrl
           numEmployees
-          industry
           mission
           perks
           companyValues
@@ -188,6 +191,10 @@ query CompaniesQuery {
             image
             title
             description
+          }
+          industries {
+            industry_text
+            industry_id
           }
           slogan
           socialLinks { 

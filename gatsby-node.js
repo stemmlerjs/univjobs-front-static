@@ -289,9 +289,9 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
               exploreSlug
             }
             id
-            industry {
-              value
-              label
+            industries {
+              industry_id
+              industry_text
             }
             jobs {
               title
@@ -342,7 +342,10 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
             funFacts
             logoUrl
             numEmployees
-            industry
+            industries {
+              industry_text
+              industry_id
+            }
             mission
             perks
             companyValues

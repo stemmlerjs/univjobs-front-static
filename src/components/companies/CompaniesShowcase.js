@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
+import CompanyIndustryTags from './CompanyIndustryTags'
 
 const LearnMore = props => (
   <Link
@@ -37,7 +38,7 @@ const CompanyShowcaseItem = props => (
     </div>
     <h3>{props.companyName}</h3>
     <LearnMore slug={props.fields.slug} />
-    <div>{props.industry}</div>
+    <CompanyIndustryTags industries={props.industries}/>
   </div>
 )
 
@@ -47,7 +48,7 @@ CompanyShowcaseItem.propTypes = {
   fields: PropTypes.shape({
     slug: PropTypes.string.isRequired,
   }).isRequired,
-  industry: PropTypes.string.isRequired,
+  industries: PropTypes.array,
   logoUrl: PropTypes.string.isRequired,
 }
 
@@ -57,7 +58,8 @@ const CompaniesShowcase = props => (
     <p>{props.subTitle}</p>
 
     <div className="companies-showcase-items">
-      {props.companies.map((c, i) => <CompanyShowcaseItem key={i} {...c} />)}
+      {props.companies.map(
+        (c, i) => <CompanyShowcaseItem key={i} {...c} />)}
     </div>
 
     <CompaniesShowcaseCTA />

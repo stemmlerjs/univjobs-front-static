@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.3.0] - [2019-01-06]
+### Changed
+- [Industries] Updated the univjobs-datasource-api to use the new industries and build different industry nodes.
+
 ## [1.2.4] - [2018-12-01]
 ### Added
 - [Company Jobs] Added flex cards so that these always look aligned left.
