@@ -15,6 +15,8 @@ class CallToAction extends React.Component {
   }
 
   onClickButton () {
+    new window.AnalyticsEvent('Button_click');
+    //TODO: Add url property
     redirectTo(this.props.location)
   }
 

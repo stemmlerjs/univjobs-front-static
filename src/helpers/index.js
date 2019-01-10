@@ -15,6 +15,8 @@ export default {
 
   redirectTo: (url) => {
     if (typeof window !== undefined) {
+      new window.AnalyticsEvent('Button_click')
+          //TODO: Add url property
       window.location.href = url;
     }
   },
