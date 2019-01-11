@@ -9,16 +9,27 @@ export default {
    * 
    * Redirects the user to the url passed in.
    * 
+   * 
    * @param {String} url 
    * @return void
    */
 
   redirectTo: (url) => {
     if (typeof window !== undefined) {
-      new window.AnalyticsEvent('Button_click')
-          //TODO: Add url property
-      window.location.href = url;
-    }
+      //Strip away certain url params from url string and pass them to window.AnalyticsEvent
+      //Strip button_id
+      debugger
+      var pathArray = url.split('?button_id=');
+
+      if(pathArray.length == 2) {
+        window.AnalyticsEvent('Button_click',{
+          type: pathArray[1]
+        })
+        window.location.href = `${pathArray[0]}?dev_id=${window.AmplitudeInstance.options.deviceId}`;
+      } else {
+        window.location.href = `${url}?dev_id=${window.AmplitudeInstance.options.deviceId}`;
+      }
+    }    
   },
 
   blog: {

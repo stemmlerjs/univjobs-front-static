@@ -15,9 +15,8 @@ class CallToAction extends React.Component {
   }
 
   onClickButton () {
-    new window.AnalyticsEvent('Button_click');
-    //TODO: Add url property
-    redirectTo(this.props.location)
+    //Amplitude: Grab device id and pass as a ref
+    redirectTo(`${this.props.location}`)
   }
 
   render = () => {

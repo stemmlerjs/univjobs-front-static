@@ -136,10 +136,13 @@ function IdentifyUser(email, props) {
   if (props) amplitude.setUserProperties(props);
 }
 
+
+
 function getInstance() {
   if (!!window.amplitude == false) throw new Error("Amplitude not loaded");
   return window.amplitude.getInstance();
 }
+
 
 
 /**
@@ -154,6 +157,9 @@ const initializeAnalytics = (lib, apiKey) => {
     saveEvents: true,
     includeUtm: true,
     includeReferrer: true
+  }, (instance) => {
+      //Contains core info. Can be reinitialized if needed.
+       window.AmplitudeInstance = instance;
   });
 };
 
@@ -163,6 +169,8 @@ const apiKey = process.env.AMPLITUDE_API_KEY;
 const isProd = currentEnv === "production";
 
 initializeAnalytics(window.amplitude, apiKey);
+
+window.AmplitudeInstance; 
 window.AnalyticsEvent = AnalyticsEvent;
 window.IdentifyUser = IdentifyUser;
 window.SetUserInfo = setUserInfo;
@@ -181,7 +189,7 @@ exports.onClientEntry = () => {
    * Yes, establish that this is a known user
    * No, establish a new user
    */
-  new window.AnalyticsEvent('Page_event');
+  window.AnalyticsEvent('Landing_page_view');
  
   if (isProd && typeof window !== undefined) {
     require('./gatsby-prod-scripts')
