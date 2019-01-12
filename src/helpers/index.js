@@ -18,10 +18,11 @@ export default {
     if (typeof window !== undefined) {
       //Strip away certain url params from url string and pass them to window.AnalyticsEvent
       //Strip button_id
-      debugger
-      var pathArray = url.split('?button_id=');
+      
+      const buttonIdPresent = url.indexOf('button_id=') !==1; 
+      const pathArray = url.split('?button_id=');
 
-      if(pathArray.length == 2) {
+      if(buttonIdPresent) {
         window.AnalyticsEvent('Button_click',{
           type: pathArray[1]
         })
