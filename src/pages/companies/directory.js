@@ -563,6 +563,7 @@ export const directoryQuery = graphql`
   query DirectoryCompanies {
     companies: allDirectoryCompany(
       sort: { order: DESC, fields: [companyName] }
+      filter: { hidden: { ne: true } }
     ) {
       edges {
         node {

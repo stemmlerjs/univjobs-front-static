@@ -21,5 +21,6 @@ module.exports = {
   },
   "hiring":true,
   "distance": 0.7537555246343917,
-  city: "Brantford"
+  city: "Brantford",
+  hidden: true
 }
