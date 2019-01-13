@@ -61,7 +61,7 @@ class DirectoryCompanyTemplate extends React.Component {
         />
         <CompanyHeader
           companyName={company.companyName}
-          industry={company.industry.label}
+          industries={company.industries}
           logoUrl={company.logoUrl}
           numEmployees={company.companySize.label}
         />

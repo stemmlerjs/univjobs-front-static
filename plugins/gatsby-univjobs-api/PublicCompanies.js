@@ -12,23 +12,6 @@ class PublicCompanies {
   }
 
   /**
-   * getExploreCompanyById
-   *
-   * @function that returns a company object.
-   *
-   * @return {Promise | Object}
-   */
-
-  async getExploreCompanyById(companyId) {
-    console.log(`\nGetting a company id=${companyId} from UnivJobs API...`)
-    const response = await axios.get(
-      `${this.url}/api/v1/public/companies/${companyId}`
-    )
-    response.data.company.hidden = false
-    return response.data.company
-  }
-
-  /**
    * @function getDirectoryCompanies
    * @desc Returns all companies
    *
