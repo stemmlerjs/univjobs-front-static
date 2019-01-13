@@ -199,7 +199,7 @@ class Directory extends React.Component {
   componentDidMount() {
     // Get the initial position of the user.
     this.getInitialPosition(() => {
-      debugger;
+      //debugger;
       // Filter companies
       this._doFilter();
     })

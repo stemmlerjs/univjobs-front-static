@@ -15,7 +15,8 @@ class CallToAction extends React.Component {
   }
 
   onClickButton () {
-    redirectTo(this.props.location)
+    //Amplitude: Grab device id and pass as a ref
+    redirectTo(`${this.props.location}`)
   }
 
   render = () => {

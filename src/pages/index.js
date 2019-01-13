@@ -55,9 +55,9 @@ const Index = () => (
         buttons: {
           hasButtons: true,
           mainButtonText: 'Get hired',
-          mainButtonLocation: `${config.appUrl}register`,
+          mainButtonLocation: `${config.appUrl}/register?button_id=hero`,
           reRouteButtonText: "I'm an employer",
-          reRouteButtonLocation: '/employers',
+          reRouteButtonLocation: '/employers?button_id=reroute_hero',
           alreadyOnComponentActive: false,
         },
         hero: {
@@ -82,7 +82,7 @@ const Index = () => (
       subHeader=""
       buttonText="Apply to student-friendly jobs"
       alt={false}
-      location={`${config.appUrl}register`}
+      location={`${config.appUrl}register?button_id=cta1`}
     />
 
     <AltFeature
@@ -119,7 +119,7 @@ const Index = () => (
       alt={true}
       subHeader=""
       buttonText="Browse jobs"
-      location={`${config.appUrl}register`}
+      location={`${config.appUrl}register?button_id=cta2`}
     />
     <StudentTestimonials/>
     <Backers
@@ -137,7 +137,7 @@ const Index = () => (
       alt={true}
       subHeader=""
       buttonText="Start applying"
-      location={`${config.appUrl}register`}
+      location={`${config.appUrl}register?button_id=cta3`}
     />
   </div>
 )

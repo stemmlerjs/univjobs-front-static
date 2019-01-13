@@ -54,9 +54,9 @@ const Employers = () => (
         hasPolygon: false,
         buttons: {
           mainButtonText: 'Hire talent',
-          mainButtonLocation: `${config.appUrl}register/employer`,
+          mainButtonLocation: `${config.appUrl}register/employer?buttond_id=hero`,
           reRouteButtonText: "I'm a student",
-          reRouteButtonLocation: '/',
+          reRouteButtonLocation: '/?button_id=reroute_hero',
           alreadyOnComponentActive: false
         },
         hero: {
@@ -87,7 +87,7 @@ const Employers = () => (
       subHeader=""
       buttonText="Start hiring"
       alt={false}
-      location={`${config.appUrl}register/employer`}
+      location={`${config.appUrl}register/employer?button_id=cta1`}
     />
     
     <AltFeature
@@ -122,7 +122,7 @@ const Employers = () => (
         subHeader=''
         buttonText='Recruit students'
         alt={true}
-        location={`${config.appUrl}register/employer`}
+        location={`${config.appUrl}register/employer?button_id=cta2`}
     />
     <StudentTestimonials/>
     <Backers
@@ -141,7 +141,7 @@ const Employers = () => (
       alt={true}
       subHeader=""
       buttonText="Find students"
-      location={`${config.appUrl}register`}
+      location={`${config.appUrl}register/employer?button_id=cta3`}
     />
    </div>
 
