@@ -130,8 +130,8 @@ const AboutPage = ({ data }) => {
       <SEO
         isBlogPost={false}
         postData={{
-          title: 'About Univjobs | Simplifying hiring post-secondary students',
-          description: 'Follow our progress and learn about the team',
+          title: 'About Univjobs',
+          description: 'Follow us on helping college students recent grads get experience.',
         }}
       />
       <LandingPage
@@ -160,9 +160,9 @@ const AboutPage = ({ data }) => {
       />
 
       <CallToAction
-        header={'Start Now!'}
-        subHeader={'Students are already applying to jobs. Create your profile and find meaningful work today!'}
-        buttonText={'Sign up'}
+        header={'Find work while you study'}
+        subHeader={''}
+        buttonText={'See jobs'}
         alt={true}
         location={"https://app.univjobs.ca/register/"}
       />

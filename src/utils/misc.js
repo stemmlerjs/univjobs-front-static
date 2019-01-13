@@ -63,3 +63,30 @@ typeof window !== 'undefined' && (window.requestAnimFrame = (function() {
     }
   );
 })());
+
+
+export function doesLogoExist(logoUrl) {
+  if (
+    logoUrl == false ||
+    logoUrl == '' ||
+    logoUrl == 'null' ||
+    logoUrl == null
+  ) {
+    return false
+  }
+  return true
+}
+
+export function doesImageExistOnServer (logoUrl) {
+  var image = new Image()
+  image.src = logoUrl;
+
+  return new Promise((resolve, reject) => {
+    image.onload = function() {
+      return resolve(true)
+    }
+    image.onerror = function() {
+      return resolve(false)
+    }
+  })
+}

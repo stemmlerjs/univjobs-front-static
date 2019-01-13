@@ -15,7 +15,7 @@ const getSchemaOrgJSONLD = ({
   const schemaOrgJSONLD = [
     {
       '@context': 'https://univjobs.ca',
-      '@type': 'website',
+      '@type': 'Product',
       url,
       name: title,
       alternateName: config.title,

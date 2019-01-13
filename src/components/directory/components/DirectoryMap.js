@@ -75,19 +75,27 @@ class DirectoryMap extends React.Component {
         el.className = 'marker'
         el.innerText = `${i + 1}`
 
+        const industriesElements = (industries) => {
+          let str = "";
+          industries.forEach((industry) => {
+            str = str + `<div class="industry">${industry.industry_text}</div>`
+          })
+          return str;
+        }
+
         // Create a marker
         let m = new mapboxgl.Marker(el)
           .setLngLat([marker.position.lng, marker.position.lat])
           .setPopup(
             new mapboxgl.Popup({ offset: 25 }).setHTML(`<div>
-        <div class="image-container"><img src="${marker.logoUrl}"/></div>
-        <div>
-          <h3>${marker.companyName}</h3>
-          <p>${marker.address}</p>
-          <div class="industry">${marker.industry.label}</div>
-        </div>
-      </div>
-      `)
+              <div class="image-container"><img src="${marker.logoUrl}"/></div>
+              <div>
+                <h3>${marker.companyName}</h3>
+                <p>${marker.address}</p>
+                ${industriesElements(marker.industries)}
+              </div>
+            </div>
+            `)
           )
 
         // Add marker to list

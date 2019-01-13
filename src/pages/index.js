@@ -41,9 +41,9 @@ const Index = () => (
     <SEO
       isBlogPost={false}
       postData={{
-        title: 'Univjobs | Entry level jobs for Students and Recent Grads',
+        title: 'Univjobs: Jobs, Internships & Work Study for College Students and Recent Grads',
         description:
-          'A place for students and recent grads to find jobs to earn cash and launch their careers.',
+          'Find paid internship, remote work, part time, and entry-level jobs at startups and large companies',
       }}
     />
     <LandingPage
@@ -55,9 +55,9 @@ const Index = () => (
         buttons: {
           hasButtons: true,
           mainButtonText: 'Get hired',
-          mainButtonLocation: `${config.appUrl}register`,
+          mainButtonLocation: `${config.appUrl}/register?button_id=hero`,
           reRouteButtonText: "I'm an employer",
-          reRouteButtonLocation: '/employers',
+          reRouteButtonLocation: '/employers?button_id=reroute_hero',
           alreadyOnComponentActive: false,
         },
         hero: {
@@ -79,10 +79,10 @@ const Index = () => (
     />
     <CallToAction
       header="Get access to student-friendly jobs"
-      subHeader="Apply to jobs specifically suited for students or recent-grads."
-      buttonText="Find jobs"
+      subHeader=""
+      buttonText="Apply to student-friendly jobs"
       alt={false}
-      location={`${config.appUrl}register`}
+      location={`${config.appUrl}register?button_id=cta1`}
     />
 
     <AltFeature
@@ -117,9 +117,9 @@ const Index = () => (
     <CallToAction 
       header="Start your career journey now"
       alt={true}
-      subHeader="Find a job that works for you, whether you’re part-time, full-time or a recent-grad."
-      buttonText="Start applying"
-      location={`${config.appUrl}register`}
+      subHeader=""
+      buttonText="Browse jobs"
+      location={`${config.appUrl}register?button_id=cta2`}
     />
     <StudentTestimonials/>
     <Backers
@@ -133,11 +133,11 @@ const Index = () => (
       ]}
     />
     <CallToAction 
-      header="Explore new job opportunities"
+      header="Explore new job opportunities meant for students and recent grads"
       alt={true}
-      subHeader="Students are already applying to jobs. Create your profile and find meaningful work today."
-      buttonText="Find jobs"
-      location={`${config.appUrl}register`}
+      subHeader=""
+      buttonText="Start applying"
+      location={`${config.appUrl}register?button_id=cta3`}
     />
   </div>
 )
