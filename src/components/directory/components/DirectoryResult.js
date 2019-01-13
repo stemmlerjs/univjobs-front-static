@@ -4,32 +4,7 @@ import PropTypes from 'prop-types'
 import '../styles/DirectoryResult.sass'
 import altCompanyImg from '../../../img/directory/company.svg'
 import config from '../../../config'
-
-function doesLogoExist(logoUrl) {
-  if (
-    logoUrl == false ||
-    logoUrl == '' ||
-    logoUrl == 'null' ||
-    logoUrl == null
-  ) {
-    return false
-  }
-  return true
-}
-
-function doesImageExistOnServer (logoUrl) {
-  var image = new Image()
-  image.src = logoUrl;
-
-  return new Promise((resolve, reject) => {
-    image.onload = function() {
-      return resolve(true)
-    }
-    image.onerror = function() {
-      return resolve(false)
-    }
-  })
-}
+import { doesLogoExist, doesImageExistOnServer } from '../../../utils/misc'
 
 /**
  * @class DirectoryResult

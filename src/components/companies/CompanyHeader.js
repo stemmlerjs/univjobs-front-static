@@ -19,16 +19,15 @@ const Industries = ({ industries }) => {
 }
 
 const CompanyHeader = (props) => {
-  console.log(props, 'header')
   return (
     <div className="company-header-container">
     <div>
       <CompanyLogo logoUrl={props.logoUrl}/>
       <div className="company-header-main">
         <div>Careers at {props.companyName}</div>
-        {props.industries.map((industry, i) => (
+        {props.industries ? props.industries.map((industry, i) => (
           <div className="industry" key={i}>{industry.industry_text}</div>
-        ))}
+        )) : ''}
       </div>
       <div className="company-header-slogan">{props.slogan}</div>
     </div>
