@@ -55,7 +55,7 @@ const Index = () => (
         buttons: {
           hasButtons: true,
           mainButtonText: 'Get hired',
-          mainButtonLocation: `${config.appUrl}/register?button_id=hero`,
+          mainButtonLocation: `${config.appUrl}register?button_id=hero`,
           reRouteButtonText: "I'm an employer",
           reRouteButtonLocation: '/employers?button_id=reroute_hero',
           alreadyOnComponentActive: false,
