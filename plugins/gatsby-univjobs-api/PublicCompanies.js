@@ -12,68 +12,6 @@ class PublicCompanies {
   }
 
   /**
-   * getExploreCompanies
-   *
-   * @function that gets all of the explore companies based on
-   * some criteria:
-   *
-   * > has filled out all required early adopter explore company details
-   * > they're an early adopter plan companies
-   *
-   * @return {Promise | Array}
-   */
-
-  async getExploreCompanies() {
-    console.log(`Getting explore companies...`)
-    const response = await axios.get(
-      `${this.url}/api/v1/public/companies/explore`
-    )
-    const exploreCompanies = response.data.companies;
-    console.log(exploreCompanies);
-    return exploreCompanies.map(company => {
-      return {
-        companyId: company.employer_id,
-        companyName: company.company_name,
-        brandImageUrl: company.brand_image_url,
-        industries: company.industries,
-        logoUrl: company.logo_url,
-        hidden: false,
-      }
-    })
-  }
-
-  /**
-   * getFeaturedCompanies
-   *
-   * @function that returns all featured companies.
-   *
-   * @return {Promise | Array}
-   */
-
-  async getFeaturedCompanies() {
-    let featuredCompanies;
-    console.log('Getting featured companies from UnivJobs API...')
-    const response = await axios.get(
-      this.url + '/api/v1/public/companies/featured'
-    )
-
-    featuredCompanies = response.data.companies;
-    console.log(featuredCompanies)
-    
-    return featuredCompanies.map(company => {
-      return {
-        companyId: company.employer_id,
-        companyName: company.company_name,
-        slogan: company.slogan,
-        brandImageUrl: company.brand_image_url,
-        industries: company.industries,
-        logoUrl: company.logo_url,
-        hidden: false,
-      }
-    })
-  }
-
-  /**
    * getExploreCompanyById
    *
    * @function that returns a company object.
