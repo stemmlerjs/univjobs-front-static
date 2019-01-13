@@ -112,9 +112,8 @@ query CompaniesByCity($city: String) {
           slug
         }
         id
-        industry {
-          value
-          label
+        industries {
+          industry_text
         }
         jobs {
           title

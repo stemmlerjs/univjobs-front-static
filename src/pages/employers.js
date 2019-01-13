@@ -41,8 +41,8 @@ const Employers = () => (
     <SEO
       isBlogPost={false}
       postData={{
-        title: "Employers @ Univjobs | Simplifying hiring post-secondary students",
-        description: "Recruit students and recent-grads from any post-secondary school in Canada."
+        title: "Univjobs: Online campus recruitment solution for employers",
+        description: "Reach and recruit college and university students and recent-grads on campus. Save time and money finding or hiring interns and recent grads."
       }}
     />
     <LandingPage
@@ -54,9 +54,9 @@ const Employers = () => (
         hasPolygon: false,
         buttons: {
           mainButtonText: 'Hire talent',
-          mainButtonLocation: `${config.appUrl}register/employer`,
+          mainButtonLocation: `${config.appUrl}register/employer?buttond_id=hero`,
           reRouteButtonText: "I'm a student",
-          reRouteButtonLocation: '/',
+          reRouteButtonLocation: '/?button_id=reroute_hero',
           alreadyOnComponentActive: false
         },
         hero: {
@@ -84,10 +84,10 @@ const Employers = () => (
 
      <CallToAction
       header="Get early access to young talent now"
-      subHeader="Showcase your company and opportunities to the best talent before they graduate."
+      subHeader=""
       buttonText="Start hiring"
       alt={false}
-      location={`${config.appUrl}register/employer`}
+      location={`${config.appUrl}register/employer?button_id=cta1`}
     />
     
     <AltFeature
@@ -119,10 +119,10 @@ const Employers = () => (
 
     <CallToAction
         header='Attract early career talent'
-        subHeader='Find a student that fits your company needs.'
+        subHeader=''
         buttonText='Recruit students'
         alt={true}
-        location={`${config.appUrl}register/employer`}
+        location={`${config.appUrl}register/employer?button_id=cta2`}
     />
     <StudentTestimonials/>
     <Backers
@@ -139,9 +139,9 @@ const Employers = () => (
       <CallToAction 
       header="Find your future team member"
       alt={true}
-      subHeader="Students are already applying to jobs. Create your profile and connect with your future employee today."
+      subHeader=""
       buttonText="Find students"
-      location={`${config.appUrl}register`}
+      location={`${config.appUrl}register/employer?button_id=cta3`}
     />
    </div>
 

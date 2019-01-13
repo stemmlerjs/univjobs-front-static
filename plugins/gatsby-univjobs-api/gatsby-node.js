@@ -4,45 +4,55 @@
 // https://www.gatsbyjs.org/docs/create-source-plugin/
 
 const _ = require('lodash')
-const crypto = require("crypto");
 const PublicCompanies = require('./PublicCompanies')
-const PublicJobs = require('./PublicJobs')
-
+const services = require('./services')
 const Processor = require('./Processor')
 
 /**
- * getAllCompanies
- * @desc This function combines all companies
+ * @desc combineCompanies
+ * This function combines all companies.
  */
 
-async function getAllCompanies (exploreCompanies, featuredCompanies, PublicCompaniesAPI) {
-  let uniqueCompaniesIds = await exploreCompanies
+async function combineCompanies (exploreCompanies, featuredCompanies, ExploreCompanyService, FeaturedCompanyService) {
+  console.log(`[Combine Companies]: There are ${exploreCompanies.length} explore companies and ${featuredCompanies.length} featured companies.`)
+  
+  let uniqueCompaniesIds = exploreCompanies
     .concat(featuredCompanies)
     .map((company) => company.companyId)
 
   uniqueCompaniesIds = [...new Set(uniqueCompaniesIds)];
 
+  // Get each company from the backend using it's company id.
   let allCompanies = await Promise.all(
-    uniqueCompaniesIds.map((element) => {
-      let company = PublicCompaniesAPI.getExploreCompanyById(element);
-      return company;
-    })
+    uniqueCompaniesIds.map((id) => ExploreCompanyService.getCompanyById(id))
   );
+
+  // Get the one dummy company that has all of the keys that we definitely need.
+  allCompanies.push(FeaturedCompanyService.getDummy())
 
   return allCompanies;
 }
 
 exports.sourceNodes = async ({ boundActionCreators, createNodeId }, configOptions) => {
-  const cities = [];
-  const { createNode } = boundActionCreators;
-  const { url } = configOptions;
-  const PublicCompaniesAPI = PublicCompanies(url);
-  //const PublicJobsAPI = PublicJobs(url)
-  const ProcessorInstance = Processor.createProcessor(createNodeId, createNode);
-    // Gatsby adds a configOption that's not needed for this plugin, delete it
-  delete configOptions.plugins;
   // plugin code goes here...
   console.log("Univjobs Datasource API Plugin starting with options", configOptions);
+
+  const { createNode } = boundActionCreators;
+  const { url } = configOptions;
+  // Gatsby adds a configOption that's not needed for this plugin, delete it
+  delete configOptions.plugins;
+
+  // Create all of the services for creating nodes.
+  const {
+    DirectoryCompanyService,
+    FeaturedCompanyService,
+    ExploreCompanyService,
+    CitiesService
+  } = services.createServices(url);
+
+  // The processor will actually allow us to create Nodes in Gatsby
+  // from our data models.
+  const ProcessorInstance = Processor.createProcessor(createNodeId, createNode);
 
   try {
 
@@ -52,46 +62,22 @@ exports.sourceNodes = async ({ boundActionCreators, createNodeId }, configOption
      * pages.
      */
 
-    const exploreCompanies = await PublicCompaniesAPI.getExploreCompanies();
-    const featuredCompanies = await PublicCompaniesAPI.getFeaturedCompanies();
+    const exploreCompanies = await ExploreCompanyService.getCompanies();
+    const featuredCompanies = await FeaturedCompanyService.getCompanies();
+    // Combine all of the companies
+    const allCompanies = await combineCompanies(exploreCompanies, featuredCompanies, ExploreCompanyService, FeaturedCompanyService);
     
-    let allCompanies = await getAllCompanies(exploreCompanies, featuredCompanies, PublicCompaniesAPI);
-    allCompanies = await allCompanies.concat(await PublicCompaniesAPI.addDummyCompany());
+    // 1. Create all CompanyNodes
+    ProcessorInstance.processAndCreateCompanyNodesBulk(allCompanies);
 
-    for (let company of allCompanies) {
-      ProcessorInstance.processAndCreateCompanyNode(company);
-    }
+    // 2. Create all DirectoryNodes
+    const directoryCompanies = await DirectoryCompanyService.getCompanies();
+    ProcessorInstance.processAndCreateDirectoryCompanyNodesBulk(directoryCompanies)
 
-    /**
-     * Now, we need to get and create all directory nodes.
-     */
+    // 3. Create all of the different City Nodes.
+    const uniqueCities  = _.uniq(directoryCompanies.map((dc) => dc.city)).sort();
+    const cityMap = CitiesService.getCities(uniqueCities, directoryCompanies);
 
-    const directoryCompanies = await PublicCompaniesAPI.getDirectoryCompanies();
-    for (let directoryCompany of directoryCompanies) {
-      cities.push(directoryCompany.city);
-      ProcessorInstance.processAndCreateDirectoryCompanyNode(directoryCompany)
-    }
-
-    /**
-     * Create all of the different City Nodes.
-     */
-    
-    let unique  = _.uniq(cities).sort();
-
-    // Working on a map so that we can create pages on
-    // {job-type}-jobs-in-{city}
-    // ======================
-    const cityMap = {};
-    for (let city of unique) {
-      cityMap[city] = [];
-    }
-
-    for (let directoryCompany of directoryCompanies) {
-      for (let job of directoryCompany.jobs) {
-        let city = directoryCompany.city;
-        cityMap[city].push(job);
-      }
-    }
     // ======================
     // Create city nodes
     for (let cityKey of Object.keys(cityMap)) {

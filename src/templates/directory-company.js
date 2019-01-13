@@ -61,7 +61,7 @@ class DirectoryCompanyTemplate extends React.Component {
         />
         <CompanyHeader
           companyName={company.companyName}
-          industry={company.industry.label}
+          industries={company.industries}
           logoUrl={company.logoUrl}
           numEmployees={company.companySize.label}
         />
@@ -111,9 +111,8 @@ query DirectoryCompanyQuery($companyId: Int) {
             slug
           }
           id
-          industry {
-            value
-            label
+          industries {
+            industry_text
           }
           jobs {
             title

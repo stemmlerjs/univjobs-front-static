@@ -12,90 +12,12 @@ class PublicCompanies {
   }
 
   /**
-   * getExploreCompanies
-   *
-   * @function that gets all of the explore companies based on
-   * some criteria:
-   *
-   * > has filled out all required early adopter explore company details
-   * > they're an early adopter plan companies
-   *
-   * @return {Promise | Array}
-   */
-
-  async getExploreCompanies() {
-    let exploreCompanies = ''
-    exploreCompanies = await axios.get(
-      `${this.url}/api/v1/public/companies/explore`
-    )
-    console.log('==========================')
-    console.log(exploreCompanies, 'explore companies')
-    console.log('==========================')
-    let companies = exploreCompanies.data.companies.map(company => {
-      return {
-        companyId: company.employer_id,
-        companyName: company.company_name,
-        brandImageUrl: company.brand_image_url,
-        industry: company.industry.industry_text,
-        logoUrl: company.logo_url,
-        hidden: false,
-      }
-    })
-    return companies
-  }
-
-  /**
-   * getFeaturedCompanies
-   *
-   * @function that returns all featured companies.
-   *
-   * @return {Promise | Array}
-   */
-
-  async getFeaturedCompanies() {
-    let featuredCompanies = ''
-    console.log('Getting featured companies from UnivJobs API...')
-    featuredCompanies = await axios.get(
-      this.url + '/api/v1/public/companies/featured'
-    )
-    let companies = await featuredCompanies.data.companies.map(company => {
-      return {
-        companyId: company.employer_id,
-        companyName: company.company_name,
-        slogan: company.slogan,
-        brandImageUrl: company.brand_image_url,
-        industry: company.industry.industry_text,
-        logoUrl: company.logo_url,
-        hidden: false,
-      }
-    })
-    return companies
-  }
-
-  /**
-   * getExploreCompanyById
-   *
-   * @function that returns a company object.
+   * @function getDirectoryCompanies
+   * @desc Returns all companies
    *
    * @return {Promise | Object}
    */
 
-  async getExploreCompanyById(companyId) {
-    console.log(`\nGetting a company id=${companyId} from UnivJobs API...`)
-    const response = await axios.get(
-      `${this.url}/api/v1/public/companies/${companyId}`
-    )
-    response.data.company.hidden = false
-    return response.data.company
-  }
-
-  /**
-   * getDirectory
-   *
-   * @function that returns all companies
-   *
-   * @return {Promise | Object}
-   */
   async getDirectoryCompanies() {
     console.log(`\nGetting all companies from UnivJobs API...`)
     const response = await axios.get(
@@ -111,7 +33,9 @@ class PublicCompanies {
       brandImageUrl:
         'https://user-images.githubusercontent.com/6892666/44449999-c2c6a380-a5bd-11e8-8a96-6b01c2020fb3.png',
       slug: '/companies/uneedjobs',
-      industry: 'Start-up',
+      industries: [
+        { industry_text: 'hi', industry_id: 2 }
+      ],
       logoUrl:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYel_hiMcSbl4mTNc0sOIAAOeyluy54xudTWQHSwsU8tKQolLA',
       slogan: 'Replace traditional career fair digitally',

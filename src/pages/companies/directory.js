@@ -199,8 +199,6 @@ class Directory extends React.Component {
   componentDidMount() {
     // Get the initial position of the user.
     this.getInitialPosition(() => {
-      debugger;
-      // Filter companies
       this._doFilter();
     })
 
@@ -356,12 +354,17 @@ class Directory extends React.Component {
 
           // Use "some()", return "true" when you want it to break.
           industryFilters.some(industry => {
-            if (industry.value === company.industry.value) {
+            const filtered = company.industries.filter((i) => {
+              return i.industry_id === industry.value
+            });
+
+            if (filtered.length !== 0) {
               show = true
               return true
             }
             return false;
           })
+          console.log(show, 'show?')
 
           return show
         })
@@ -479,9 +482,9 @@ class Directory extends React.Component {
         <SEO
           isBlogPost={false}
           postData={{
-            title: 'Companies Near Me | Univjobs',
+            title: 'Univjobs: Find Work Nearby',
             description:
-              'Find local tech, design, business and part-time jobs near you',
+              'Work while studying as a college student or apply to jobs before graduating ',
           }}
         />
         <DirectoryHeader
@@ -560,18 +563,19 @@ export const directoryQuery = graphql`
   query DirectoryCompanies {
     companies: allDirectoryCompany(
       sort: { order: DESC, fields: [companyName] }
+      filter: { hidden: { ne: true } }
     ) {
       edges {
         node {
           id
-          industry {
-            value
-            label
-          }
           jobs {
             title
             slug
             active
+          }
+          industries {
+            industry_text
+            industry_id
           }
           companyId
           companyName
