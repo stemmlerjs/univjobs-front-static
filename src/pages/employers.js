@@ -54,7 +54,7 @@ const Employers = () => (
         hasPolygon: false,
         buttons: {
           mainButtonText: 'Hire talent',
-          mainButtonLocation: `${config.appUrl}register/employer?buttond_id=hero`,
+          mainButtonLocation: `${config.appUrl}register/employer?button_id=hero`,
           reRouteButtonText: "I'm a student",
           reRouteButtonLocation: '/?button_id=reroute_hero',
           alreadyOnComponentActive: false
