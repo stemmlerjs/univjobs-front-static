@@ -4,13 +4,25 @@ import PropTypes from 'prop-types'
 import SocialLinks from '../SocialLinks'
 import CompanyLogo from './CompanyLogo'
 
+const Industries = ({ industries }) => {
+  if (!industries) return <div></div>
+  if (industries.length === 1) return <span>{industries[0].industry_text}</span>
+  return industries.map((industry, i) => {
+    if (i === industries.length - 1) {
+      return <span>{industry.industry_text}</span>
+    } else {
+      return <span>{industry.industry_text}, </span>
+    }
+  })
+}
+
 const CompanyHeader = (props) => (
   <div className="company-header-container">
     <div>
       <CompanyLogo logoUrl={props.logoUrl}/>
       <div className="company-header-main">
         <div>Careers at {props.companyName}</div>
-        <div>{props.industry}</div>
+        <Industries industries={props.industries}/>
       </div>
       <div className="company-header-slogan">{props.slogan}</div>
     </div>
@@ -26,7 +38,7 @@ const CompanyHeader = (props) => (
 
 CompanyHeader.propTypes = {
   companyName: PropTypes.string.isRequired,
-  industry: PropTypes.string.isRequired,
+  industries: PropTypes.array.isRequired,
   slogan: PropTypes.string.isRequired,
   logoUrl: PropTypes.string.isRequired,
   numEmployees: PropTypes.string.isRequired,

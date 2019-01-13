@@ -59,6 +59,7 @@ exports.sourceNodes = async ({ boundActionCreators, createNodeId }, configOption
     allCompanies = await allCompanies.concat(await PublicCompaniesAPI.addDummyCompany());
 
     for (let company of allCompanies) {
+      // console.log(`======> Creating company node: ${JSON.stringify(company)}`)
       ProcessorInstance.processAndCreateCompanyNode(company);
     }
 

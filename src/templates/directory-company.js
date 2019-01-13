@@ -111,9 +111,8 @@ query DirectoryCompanyQuery($companyId: Int) {
             slug
           }
           id
-          industry {
-            value
-            label
+          industries {
+            industry_text
           }
           jobs {
             title

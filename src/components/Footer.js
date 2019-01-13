@@ -74,7 +74,7 @@ const Footer = () => (
           links={[
             {
               name: 'Register',
-              url: `${config.appUrl}/register/employer`,
+              url: `${config.appUrl}register/employer`,
               external: true,
             },
             { name: 'Small Businesses', url: '/small-business' },
