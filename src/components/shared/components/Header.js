@@ -154,20 +154,20 @@ class Header extends React.Component {
         </div>
         <div className="nav-items">
           {this.isOnEmployerRoute() ? (
-            <Link className="nav-item" to="/?button_id=nav">Get Hired</Link>
+            <Link className="nav-item" to="/">Get Hired</Link>
           ): (
-            <Link className="nav-item" to="/employers?button_id=nav">Hire Talent</Link>
+            <Link className="nav-item" to="/">Hire Talent</Link>
           )}
           
           <Link className="nav-item" to="/blog">Blog</Link>
           <Link className="nav-item" to="/companies">Explore Companies</Link>
           <div 
-            onClick={() => redirectTo(`${config.appUrl}login?button_id=nav`)}
+            onClick={() => redirectTo(`${config.appUrl}login`)}
             className="nav-item">
             <img src={login}/>Log in
           </div>
           <div 
-            onClick={() => redirectTo(`${config.appUrl}?button_id=nav`)}
+            onClick={() => redirectTo(`${config.appUrl}`)}
             className="sign-in-button">
             SIGN UP
             <img className="before-hover" src={greenArrow}></img>
