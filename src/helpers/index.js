@@ -19,7 +19,7 @@ export default {
       //Strip away certain url params from url string and pass them to window.AnalyticsEvent
       //Strip button_id
       
-      const buttonIdPresent = url.indexOf('button_id=') !==1; 
+      const buttonIdPresent = url.indexOf('button_id=') !== -1; 
       const pathArray = url.split('?button_id=');
 
       if(buttonIdPresent) {
