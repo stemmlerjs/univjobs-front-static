@@ -20,6 +20,7 @@ Students and recent grads, we hear you: transitioning into the working world is 
 
 
  **1.)  Join/ start a club related to the industry that you want to go into:**
+<img sizes="25vw" src="https://burst.shopifycdn.com/photos/business-meeting-with-large-team_373x.progressive.jpg" alt="club"/>
 
 Look for school clubs and organizations related to your field. Aim for a leadership position and find ways to demonstrate your abilities in a measurable way. It could be increasing club signups, organizing events, generating sponsorship, or handling social media. Think of how you can make a positive impact and learn at the same time, and don’t forget to hype it up on your resume. 
 
@@ -27,38 +28,49 @@ Club doesn’t exist? This is the perfect chance to show your entrepreneurial sk
 
 
 **2.)  Write and publish independent work about your field:**
+<img sizes="25vw" src="https://burst.shopifycdn.com/photos/hands-pen-notebook-man_70x.progressive.jpg" alt="write"/>
 
 Another way to create your own work experience is to generate your own content. Consider starting a blog about your industry, or writing articles and submitting them to publications. This will show recruiters that you took the time and effort to learn about your domain. It also promotes your research and writing abilities. 
 When marketed correctly, the content that you create is a valuable addition to your resume or portfolio. 
 
 
 **3.) Build an online portfolio:**
+<img sizes="25vw" src="https://burst.shopifycdn.com/photos/female-designer-reviewing-wireframes_373x.progressive.jpg" alt="portfolio"/>
 
 On a related note, you can compile school projects, independent works, articles that you’ve written and more into a portfolio. Keep it relevant and streamlined to the job you want, and you will impress recruiters. Building an online portfolio also gives you the chance to brand yourself and can lead the way to networking opportunities. Always make sure to put the link near the top of your resume! 
 
 
 **4.) Build a product or service that people want to use:**
+<img sizes="25vw" src="https://burst.shopifycdn.com/photos/business-woman-flow-chart_373x.progressive.jpg" alt="portfolio"/>
+
 
 Starting your own business or startup is a great way to accelerate your learning and build work skills. This can be a challenge while still at school, but it can be extremely rewarding when you’re trying to sell yourself in the job market.  You probably didn’t know that Canadian schools are incentivised to help students become entrepreneurs, so find out what your school has to offer! 
 Bonus: you might become so successful that finding a job might not be a concern any more.
 
 
 **5.) Join a startup:**
+<img sizes="25vw" src="https://burst.shopifycdn.com/photos/crowd-participating-at-event_373x.progressive.jpg" alt="startup"/>
+
 
 If creating your own startup seems intimidating, you can always join one. Many startups need help but don’t have the ability to pay employees just yet. If you volunteer your services to a startup you will gain hands on experience that will land your next paid gig. You’ll also gain lots of material for your portfolio. 
 
 
 **6.) Try Freelancing**
+<img sizes="25vw" src="https://burst.shopifycdn.com/photos/frustrated-man-on-computer_373x.progressive.jpg" alt="freelancing"/>
 
 It may take some time to build up a successful freelance career, but this is a great option if you want to balance work and school. Think about any skills that you have that you can market to people. This can be design, writing, photography, dog walking… there are so many options. Building up your client base will take time, but it will teach you vital sales and marketing skills which you can leverage in your resume. 
 
 
 **7.) Intern during the summer:**
+<img sizes="25vw" src="https://burst.shopifycdn.com/photos/young-man-working-at-startup_70x.progressive.jpg" alt="intern"/>
+
 
 If you’ve found it hard to secure an internship in the past, it could be because companies don’t often advertise these opportunities. This is why we built a website to help people find positions that are geared toward students, and you can check that out (here)[https://univjobs.ca/?ref=how_to_get_work_experience].
 
 
 **9.) Be a campus rep:**
+<img sizes="25vw" src="https://burst.shopifycdn.com/photos/concert-goers-hold-hands_373x.progressive.jpg" alt="rep"/>
+
 
 Many companies are looking for individuals to help generate awareness and excitement about a brand. This is the perfect job to do while still in school as you can easily get your work done between classes. 
 

@@ -19,6 +19,8 @@ public: true
 The Job Interview is a necessary evil in the path to starting your career. It’s the final obstacle between you and the job you want, and can be a major source of anxiety. At Univjobs we want you to succeed, so we’ve asked recruiters at top companies to let us in on their tips to ace any job interview. 
 
 **1.) Research the company before the interview**
+<img sizes="25vw" src="https://burst.shopifycdn.com/photos/instant-messege-on-laptop_373x.progressive.jpg" alt="research"/>
+
 
 The most annoying thing for me is students are they not prepared coming in, don't know who they're interviewing and what for, wait till 2 minutes before an interview to email and ask questions, and difficulty in scheduling says Brett, recruiter from SnapTravel. 
 
@@ -38,12 +40,14 @@ You probably don’t have time to write a 20 page essay about the company you’
 
 
 **2.) Know what you want to gain from the role you're applying for**
+<img sizes="25vw" src="https://burst.shopifycdn.com/photos/a-game-of-chess-in-progress_373x.progressive.jpg" alt="research"/>
 
 During the interview, employers will ask about your motivation for applying to the job. Questions such as "Why do you want to work for us?" and "Why did you apply to this job?" will definitely come up. Impress your interviewer by being specific, direct and knowledgeable. Think of how you want to grow professionally: “I heard that your company offers in depth training in [insert name] field, and I want to make the most of that”. You could also address your personal growth: 
 “I know that this company values [insert value name], and I want to work for a company that I really believe in”. Try to make it personal; interviewers have heard all of the generic answers before. 
 
 
 **3.) Prepare with examples on projects, volunteers, work history that map to to the job description**
+<img sizes="25vw" src="https://burst.shopifycdn.com/photos/brainstorm-meeting_373x.progressive.jpg" alt="projects"/>
  
 If somebody hasn't told you this yet, I will, employers have their own family to feed so the top things on their mind are, will you be able to help them make money or save money. How will you help them achieve one or the other?
 
@@ -51,6 +55,7 @@ The job description will give you an insight of what they are looking for in a c
 
 
 **4.) Be prepared with a few questions to ask at the end of the interview**
+<img sizes="25vw" src="https://burst.shopifycdn.com/photos/job-interview-woman_373x.progressive.jpg" alt="interview"/>
 
 It’s a given that you’re going to be asked if you have any questions for the interviewer. Unfortunately, saying no isn’t really an option. Think of this as your chance to stand out and appear as the intelligent, thoughtful person you are. 
 
@@ -64,6 +69,8 @@ It’s a given that you’re going to be asked if you have any questions for the
 
 
 **5.) Follow up after the interview**
+<img sizes="25vw" src="https://burst.shopifycdn.com/photos/texting-santa-wish-list_373x.progressive.jpg" alt="follow-up"/>
+
 
 The cherry on top of the “I just conquered this interview” sundae is the thank you letter. This can be the make or break step that distinguishes you from the other candidates. Make yourself memorable by emailing your interviewer a quick thank you for their time and consideration.  Make sure to remind them of your strengths. This is a great way to ensure that you are a the top of their mind when decision time comes around, and makes you look professional after. 
 
