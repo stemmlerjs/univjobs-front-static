@@ -18,7 +18,7 @@ featured: true
 image: /img/purple-squirrel-copy.jpg
 category: Recruitment
 parentcategory: Employers
-public: false
+public: true 
 ---
 When you see it, you're hit with the feeling of "how the heck can I get experienced workers when an entry level job requires 2-3 years’ experience".
 
