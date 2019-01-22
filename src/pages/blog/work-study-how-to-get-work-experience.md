@@ -76,7 +76,7 @@ It may take some time to build up a successful freelance career, but this is a g
 If you’ve found it hard to secure an internship in the past, it could be because companies don’t often advertise these opportunities. This is why we built a website to help people find positions that are geared toward students, and you can check that out [here](https://univjobs.ca/?ref=how_to_get_work_experience).
 
 
-**9.) Be a campus rep:**
+## 8.) Be a campus rep:
 
 ![](/img/concert-goer.jpg)
 
