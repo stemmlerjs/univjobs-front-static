@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: Job Interview: Interview preparation tips 
+title: 'Job Interview: Interview preparation tips' 
 author: Charles Javelona
 date: '2019-01-21T21:15:49-04:00'
 description: >

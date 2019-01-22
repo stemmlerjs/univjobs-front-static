@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: Work Study: How to get work experience 
+title: 'Work Study: How to get work experience'
 author: Charles Javelona
 date: '2019-01-21T21:15:49-04:00'
 description: >
