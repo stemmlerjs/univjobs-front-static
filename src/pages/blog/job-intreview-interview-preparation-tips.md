@@ -18,7 +18,7 @@ public: true
 
 The Job Interview is a necessary evil in the path to starting your career. It’s the final obstacle between you and the job you want, and can be a major source of anxiety. At Univjobs we want you to succeed, so we’ve asked recruiters at top companies to let us in on their tips to ace any job interview. 
 
-## 1.) Research the company before the interview
+## 1. Research the company before the interview
 
 ![](/img/instant-messege-on-laptop.jpg)
 
@@ -40,7 +40,7 @@ You probably don’t have time to write a 20 page essay about the company you’
 - Tip: Check their social media to find out what they’re up to 
 
 
-## 2.) Know what you want to gain from the role you're applying for
+## 2. Know what you want to gain from the role you're applying for
 
 ![](/img/chess.jpg)
 
@@ -48,7 +48,7 @@ During the interview, employers will ask about your motivation for applying to t
 “I know that this company values [insert value name], and I want to work for a company that I really believe in”. Try to make it personal; interviewers have heard all of the generic answers before. 
 
 
-## 3.) Prepare with examples on projects, volunteers, work history that map to to the job description
+## 3. Prepare with examples on projects, volunteers, work history that map to to the job description
 
 ![](/img/hand-design.jpg)
  
@@ -57,7 +57,7 @@ If somebody hasn't told you this yet, I will, employers have their own family to
 The job description will give you an insight of what they are looking for in a candidate. Chances are you applied to it because you have the skills, achievements, and experience that you did in the past, make sure to prepare at least 1 example of how you demonstrated leadership qualities or how you positively generated positive results. 
 
 
-## 4.) Be prepared with a few questions to ask at the end of the interview
+## 4. Be prepared with a few questions to ask at the end of the interview
 
 ![](/img/job-interview-woman.jpg)
 
@@ -72,7 +72,7 @@ It’s a given that you’re going to be asked if you have any questions for the
 - I know of the company’s value is [insert value name]. How is that demonstrated here?
 
 
-## 5.) Follow up after the interview
+## 5. Follow up after the interview
 
 ![](/img/woman-texting.jpg)
 
