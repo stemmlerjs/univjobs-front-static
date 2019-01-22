@@ -8,8 +8,8 @@ import altStudentCTA from '../../../styles/AltStudentCallToActionStyles.module.c
 import landingePageStyles from '../../../styles/LandingPageStyles.module.css'
 
 class CallToAction extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {}
     this.onClickButton = this.onClickButton.bind(this);
   }
