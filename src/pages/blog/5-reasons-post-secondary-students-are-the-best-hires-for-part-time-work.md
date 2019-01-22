@@ -18,11 +18,11 @@ category: Recruitment
 parentcategory: Guides
 public: true
 ---
-## 5. They're Full Of Energy
+## 1. They're Full Of Energy
 
 Younger people are some of the most energetic employees, making them an excellent hire. They can go above and beyond what is required of them and will naturally inject this energy into the workplace.
 
-## 4. They're Highly Motivated
+## 2. They're Highly Motivated
 
 Post-secondary students are eager to gain work experience. This contributes to a positive attitude and a determined approach to work life. Students eagerly accept new challenges and will conquer them with gusto.
 
@@ -30,11 +30,11 @@ Post-secondary students are eager to gain work experience. This contributes to a
 
 In today's digitally connected world, young adults are at the head of the game. The average student owns at least seven tech devices and is technically gifted with all of them. Most young adults have grown up connected to digital technologies and social media, making them fast learners when it comes to picking up new processes in the workplace.
 
-## 2. They're Affordable
+## 4. They're Affordable
 
 A business is there to earn profit and save money. Students are still gaining experience, so their salary expectations are lower, as opposed to established workers who naturally require a higher wage. Students are often looking for part-time work due to their school schedules, which makes them an economical hire.
 
-## 1. They're Moldable
+## 5. They're Moldable
 
 Young-adults haven’t developed any of the bad habits that someone with years of ‘know-how’ may have picked up along the way. This means that they are highly trainable to a company’s unique standards.
 
