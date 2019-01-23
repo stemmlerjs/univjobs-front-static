@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.3.1] - [2019-01-22]
+## [1.3.3] - [2019-01-22]
 ### Changed
 - [Blog] Added additional line height to the blog post paragraphs.
 
