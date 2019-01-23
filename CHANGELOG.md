@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.3.1] - [2019-01-22]
+### Changed
+- [Blog] Added additional line height to the blog post paragraphs.
+
 ## [1.3.0] - [2019-01-06]
 ### Changed
 - [Industries] Updated the univjobs-datasource-api to use the new industries and build different industry nodes.
