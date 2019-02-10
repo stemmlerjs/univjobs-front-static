@@ -61,7 +61,7 @@ Bonus: you might become so successful that finding a job might not be a concern 
 If creating your own startup seems intimidating, you can always join one. Many startups need help but don’t have the ability to pay employees just yet. If you volunteer your services to a startup you will gain hands on experience that will land your next paid gig. You’ll also gain lots of material for your portfolio. 
 
 
-## 6. Try Freelancing 
+## 6) Try Freelancing 
 
 ![](/img/freelance-helper.jpg)
 
