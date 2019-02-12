@@ -23,13 +23,10 @@ The Job Interview is a necessary evil in the path to starting your career. It’
 ![](/img/instant-messege-on-laptop.jpg)
 
 
-The most annoying thing for me is students are they not prepared coming in, don't know who they're interviewing and what for, wait till 2 minutes before an interview to email and ask questions, and difficulty in scheduling says Brett, recruiter from SnapTravel. 
-
-Understandably, you as a student have so many things going on with school, projects, relationship, bills, etc.. It's hard to juggle so many things in your head. 
-
-**Alternatively:**
+According to Brett, a recruiter from Snap Travel, the most annoying things for him to deal with is when students aren’t prepared for the interview. Waiting until 2 minutes before the interview to email and ask questions isn’t going to cut it. 
 
 You probably don’t have time to write a 20 page essay about the company you’re interviewing for. Recruiters are realistic and just want you to show that you’ve put in some effort. 
+
 
 **Here’s a quick research checklist to give you a head start:**
 
@@ -44,17 +41,16 @@ You probably don’t have time to write a 20 page essay about the company you’
 
 ![](/img/chess.jpg)
 
-During the interview, employers will ask about your motivation for applying to the job. Questions such as "Why do you want to work for us?" and "Why did you apply to this job?" will definitely come up. Impress your interviewer by being specific, direct and knowledgeable. Think of how you want to grow professionally: “I heard that your company offers in depth training in [insert name] field, and I want to make the most of that”. You could also address your personal growth: 
-“I know that this company values [insert value name], and I want to work for a company that I really believe in”. Try to make it personal; interviewers have heard all of the generic answers before. 
+During the interview, employers will ask about your motivation for applying to the job. Questions such as "Why do you want to work for us?" and "Why did you apply to this job?" will definitely come up. Impress your interviewer by being specific, direct and knowledgeable. Think of how you want to grow professionally: “I heard that your company offers in depth training in this field, and I want to make the most of that”. You could also address your personal growth: 
+“I know that this company values the environment, and I want to work for a company that I really believe in”. Try to make it personal; interviewers have heard all of the generic answers before. 
 
 
 ## 3. Prepare with examples on projects, volunteers, work history that map to to the job description
 
 ![](/img/hand-design.jpg)
  
-If somebody hasn't told you this yet, I will, employers have their own family to feed so the top things on their mind are, will you be able to help them make money or save money. How will you help them achieve one or the other?
+The job description will give you an insight of what they are looking for in a candidate. Chances are you applied to it because you have the skills, achievements, and experience that match what was listed. Make sure to prepare at least one example of how you demonstrated these qualities. 
 
-The job description will give you an insight of what they are looking for in a candidate. Chances are you applied to it because you have the skills, achievements, and experience that you did in the past, make sure to prepare at least 1 example of how you demonstrated leadership qualities or how you positively generated positive results. 
 
 
 ## 4. Be prepared with a few questions to ask at the end of the interview
@@ -77,7 +73,8 @@ It’s a given that you’re going to be asked if you have any questions for the
 ![](/img/woman-texting.jpg)
 
 
-The cherry on top of the “I just conquered this interview” sundae is the thank you letter. This can be the make or break step that distinguishes you from the other candidates. Make yourself memorable by emailing your interviewer a quick thank you for their time and consideration.  Make sure to remind them of your strengths. This is a great way to ensure that you are a the top of their mind when decision time comes around, and makes you look professional after. 
+The cherry on top of the “I just conquered this interview” sundae is the thank you letter. This can be the make or break step that distinguishes you from the other candidates. Make yourself memorable by emailing your interviewer a quick thank you for their time and consideration.  Make sure to remind them of your strengths. This is a great way to ensure that you are at the top of their mind when decision time comes around.
+
 
 Get more career tips for internships and entry-level jobs at our [blog](https://univjobs.ca/blog). If you are in the lookout for new opportunities while you’re at school or you’ve just graduated check out [Univjobs](https://univjobs.ca/?ref=interview_preparation_tips). 
 
