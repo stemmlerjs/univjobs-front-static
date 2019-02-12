@@ -20,7 +20,7 @@ public: true
 With a new year upon us, that wonderful time where our willpower dies and we give up on all of those resolutions we made. 
 If you’re human like us, procrastination might be the biggest obstacle holding you back from doing your best, but it’s never too late to turn over a new leaf and change your bad habits for good. Whether you vowed to get fit, hand in your essays on time or call your mom more often, here are our tips to stop procrastinating and get it done!  
 
-# 1) Break down your goals
+# 1. Break down your goals
 
 ![](/img/flow-chart.jpg)
 
@@ -30,13 +30,13 @@ Avoid this cycle by breaking the task down into smaller tasks, and scheduling ti
 
 For example, if you have a paper due, break it down to a writing few paragraphs at a time. It will be far more productive to spend 30 minutes writing per day as opposed to eight hours all at once. 
 
-# 2) Reward yourself
+# 2. Reward yourself
 
 ![](/img/reward-yourself.jpeg)
 
 Many of us procrastinate because we dread the displeasure that the task will bring us. Condition yourself to associate pleasure with work by giving yourself a reward every time you get a task done. What motivates you and makes you happy is an individual thing, but our favorite ideas are watching 20 minutes of YouTube, chocolate chip cookies, or taking a break to spend time with friends. 
 
-# 3) Rethink distractions
+# 3. Rethink distractions
 
 ![](/img/helium-app.jpg)
 
@@ -47,14 +47,14 @@ You have to be the judge of whether you need to avoid these distractions complet
 Apps like [Helium](https://univjobs.ca/blog/11-must-have-apps-for-students/) are great for this because give you a small window to indulge in distraction while getting work done. 
 
 
-# 4) Don’t overthink it
+# 4. Don’t overthink it
 
 ![](/img/overthinking.jpeg)
 
 Shift your focus from the drudgery of getting down to business and picture the good feelings you’ll have once the task is done instead. 
 Envision yourself finishing your work. Keep a positive attitude, even if it feels forced. Building positive thought patterns and associations takes time and work, but just like any skill it gets strengthened over time.
 
-# 5) Avoid perfection
+# 5. Avoid perfection
 
 ![](/img/perfect.jpg)
 
