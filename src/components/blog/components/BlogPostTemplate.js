@@ -2,21 +2,48 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import ReactDisqusComments from 'react-disqus-comments';
 import moment from 'moment'
-import Content, { HTMLContent } from '../../../components/Content'
+import { HTMLContent } from '../../../components/Content'
+import Link from 'gatsby-link'
 import "../styles/BlogPostTemplate.sass"
 
 import charles from '../../../img/authors/charles.png'
 import khalil from '../../../img/authors/khalil.jpg'
+import trevor from '../../../img/authors/trevor.jpeg'
 
 const postAuthors = {
   "Khalil Stemmler": {
     imageUrl: khalil,
-    linkedIn: "https://www.linkedin.com/in/khalilstemmler/"
+    linkedIn: "https://www.linkedin.com/in/khalilstemmler/",
+    about: `JavaScript wizard, cat-lover and lifelong learner. Front-end consultant at Dev6
+    and evening hacker at Univjobs.`
   },
   "Charles Javelona": {
     imageUrl: charles,
-    linkedIn: "https://www.linkedin.com/in/charles-javelona-3863296a/?originalSubdomain=ca"
+    linkedIn: "https://www.linkedin.com/in/charles-javelona-3863296a/?originalSubdomain=ca",
+    about: `Relentlessly resourceful. CEO @ Univjobs.`
+  },
+  "Trevor Dewan": {
+    imageUrl: trevor,
+    linkedIn: "https://www.linkedin.com/in/trevor-dewan-b2b74091?originalSubdomain=ca",
+    about: `Marketing Consultant | Digital Certified | CMDC-Young Bloods Award Winner`
   }
+}
+
+const AuthorBlurb = ({ authorContent, author }) => (
+  <div className="author-blurb">
+    <div><img src={authorContent.imageUrl}/></div>
+    <div className="author-blurb--content">
+      <span>Written by</span>
+      <h4>{author}</h4>
+      <div>{authorContent.about}</div>
+      <a href={authorContent.linkedIn}>Follow</a>
+    </div>
+  </div>
+)
+
+AuthorBlurb.propTypes = {
+  authorContent: PropTypes.any,
+  author: PropTypes.string.isRequired
 }
 
 const getUniquePageIdentifier = () => {
@@ -70,7 +97,7 @@ const BlogPostContent = (props) => {
       </div>
       <br/>
       <img src={props.image}/>
-      <div>{props.description}</div>
+      <div className="post-description">{props.description}</div>
       <br/>
       <HTMLContent className="post-content" content={props.html}/>      
     </div>
@@ -93,12 +120,20 @@ BlogPostContent.propTypes = {
 
 const BlogPostTemplate = (props) => {
   const { post } = props;
-  console.log(props);
+  const { author } = post;
+  const authorContent = postAuthors[author];
   return (
     <div className="blog-post-container ">
         <BlogPostContent 
           {...post}
         />
+        <br></br>
+        {authorContent && <AuthorBlurb 
+          authorContent={postAuthors[author]} 
+          author={author}
+        />}
+        <br></br>
+        <br></br>
         <ReactDisqusComments
           shortname="univjobs"
           identifier={ getUniquePageIdentifier() }
