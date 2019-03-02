@@ -19,7 +19,7 @@ const getSchemaOrgJSONLD = ({
       url,
       name: title,
       alternateName: config.title,
-      logo: "https://univjobs.ca/static/u-logo.4bc69dc3.png"
+      logo: "https://s3.amazonaws.com/assets.univjobs/svg/univjobs_full.svg"
     },
   ];
 

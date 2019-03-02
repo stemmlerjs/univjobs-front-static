@@ -3,7 +3,7 @@ import Link from 'gatsby-link'
 
 import aboutImage from '../img/about/hero.png'
 import pitch from '../img/about/pitch.png'
-import uLogo from '../img/about/u-logo.png'
+import uLogo from '../img/about/unicorn-social.jpg'
 
 import LandingPage from '../components/LandingPage'
 import { CallToAction } from '../components/shared';
@@ -25,9 +25,9 @@ const Description = (props) => {
 and recent graduates. 
 </div>
 
-      <h1 className={description.how}>We enable students to connect with forward 
-thinking employers through part-time work, 
-internships, and entry-level jobs.</h1>
+      <h1 className={description.how}>
+      “Our mission is to help students reach their full potential and bridge them to meaningful work related to their field of study.”
+      </h1>
     </section>
   )
 }
@@ -158,7 +158,6 @@ const AboutPage = ({ data }) => {
       <MeetTheTeam
         members={TeamMembers}
       />
-
       <CallToAction
         header={'Find work while you study'}
         subHeader={''}

@@ -7,7 +7,7 @@ import companies1 from '../img/companies-resized-2.png'
 import companies2 from '../img/companies-4-alt.png'
 import goodCompany from '../img/good-company.png'
 import desktopCompanies from '../img/pricing/desktop-companies.png'
-import uLogo from '../img/u-logo-circle.png'
+import uLogo from '../img/pricing/unicorn-social.jpg'
 
 import { CallToAction } from '../components/shared';
 import LandingPage from '../components/LandingPage'

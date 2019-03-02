@@ -60,37 +60,60 @@ const DownloadPressKit = (props) => {
 const About = (props) => {
   return (
     <section className={styles.section}>
-      <p className={styles.lastUpdated}>Last updated June 9th, 2018</p>
+      <p className={styles.lastUpdated}>Last updated March 1st, 2019</p>
       <h1>About Univjobs</h1>
-      <p>UnivJobs is the online job marketplace for Canadian post-secondary students
-and recent graduates. We enable students to connect with forward
-thinking employers through part-time work, internships, and entry-level jobs.</p>
-      <p>UnivJobs was co-founded by Charles Javelona and Khalil Stemmler, after they noticed that 
+      <p>
+        Univjobs is a marketplace that connects students and recent grads with employers through co-ops, internships and part-time and entry level jobs.
+        The platform is tailored toward the talent pool of students and recent grads. They no longer need to worry about jobs that have unrealistic requirements such as 3 years of experience. We use machine learning and artificial intelligence to match candidates with jobs that are suited for them based on their education, career goals and location. 
+      </p>
+        
+      <p>
+        Traditional options for employers such as job fairs, regular job boards, and career services are inefficient methods to recruit students. 
+        They cost a lot of time, money and according to employers, are not the most effective ways to find the right talent. 
+        On other job searching platforms like Indeed, it's easy for students to get lost among senior level and overqualified candidates.
+        At Univjobs, employers can headhunt early career candidates quickly, promoting diverse and inclusive hiring practices. 
+        They can target, invite, search, and narrow down candidates based on school, skills, and year. 
+        This allows them to find qualified job seekers within days instead of months while magnifying their brand presence among the next generation of talent.
+      </p>
+
+      <p>
+        Univjobs has over 7,000 students and recent grads looking for jobs. 
+        Over 200 employers have signed up and posted jobs including AirMiles, Instacart, and Stackadapt. 
+        It is our mission to help students reach their full potential and bridge them to meaningful work related to their field of study.
+      </p>
+
+      <p>
+        UnivJobs was co-founded by Charles Javelona and Khalil Stemmler, after they noticed that 
 many of their friends experienced difficulty looking for work during school and after
 graduating. Upon realizing the problem, they started UnivJobs while at school.
 The platform launched early of <b>September 2017</b>, building the platform in
-between classes.</p>
+between classes.
+      </p>
     </section>
   )
 }
 
-const Milestones = (props) => {
+const Figures = (props) => {
   return (
     <section>
-      <h1>Milestones</h1>
+      <h1>Figures</h1>
 
       <div className={styles.milestonesContainer}>
         <div className={styles.milestoneItem}>
-          <div>Students from</div>
-          <h3>40+</h3>
-          <div>post-secondary institutions</div>
+          <h3>7000+</h3>
+          <div>Active students and recent grads using the platform</div>
         </div>
         <div className={styles.milestoneItem}>
-          <div>Forward-thinking employers onboard</div>
-          <h3>130+</h3>
+          <h3>250+</h3>
+          <div>Forward thinking employers who have used the platform</div>
         </div>
         <div className={styles.milestoneItem}>
-          
+          <h3>59%</h3>
+          <div>Are female members</div>
+        </div>
+        <div className={styles.milestoneItem}>
+           <h3>60%</h3>
+          <div>Are from a under represented minority group</div> 
         </div>
       </div>
       
@@ -143,7 +166,7 @@ class PressPage extends React.Component {
           <Download/>
           <About/>
           <Divider/>
-          <Milestones/>
+          <Figures/>
           <Divider/>
           <Founders
             founders={
@@ -185,30 +208,6 @@ for employers and students.`,
           />
           <Divider/>
          
-          <Mentors
-            mentors={[
-              {
-                  name: 'Judy Lindenbach',
-                  paragraph1: `Judy has held a number of roles as founder and director at companies she helped grow from start to profit.`,
-                  paragraph2: `Judy's expertise includes guiding high-level strategic initiatives to further business development & growth with a special emphasis on Sales, Marketing, 
-                    Talent Acquisition & Management, Policy & Procedure Development, Training Program Design & Delivery.`,
-                  paragraph3: `She is currently a Senior Director of Corporate Partnerships at Haltech Regional Innovation Centre.`,
-                  image: judy,
-                  isLeftAligned: true
-                },
-                {
-                  name: 'Gurdeep Singh',
-                  paragraph1: `Gurdeep, a graduate from Rotman School of Management, is a start-up growth specialist. 
-                    He has launched businesses from scratch and has grown them to become market leaders.`,
-                  paragraph2: `Some of the start-ups that have benefited from his expertise are inMotive 
-                    (bringing one of the world's most efficient transmission technology for electric vehicles) and GoFetch 
-                    (Canada's leading pet care technology platform, which has recently been acquired).`,
-                  paragraph3: `Gurdeep's passion for scaling start-ups has had him selected into the highly coveted Creative Destruction Lab (CDL) cohort.`,
-                  image: gurdeep,
-                  isLeftAligned: true
-                }
-            ]}
-          />
           <Divider/>
           <Mentions
             mentions={[

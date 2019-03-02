@@ -9,7 +9,7 @@ import config from '../config'
 const Strip = () => {
   return (
     <div className={styles.bottomStrip}>
-      <div>DCommons, Inc. © 2018</div>
+      <div>DCommons, Inc. © {new Date().getFullYear()}</div>
       <Link to="/privacy-policy">Privacy Policy</Link>
       <Link to="/terms-of-service">Terms of Service</Link>
     </div>

@@ -23,6 +23,7 @@
 
 .uLogo>img {
   width: 75px;
+  border-radius: 50%;
 }
 
 .plan {

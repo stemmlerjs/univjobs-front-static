@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
-import uLogo from '../../../img/about/u-logo.png'
+import uLogo from '../../../img/about/unicorn-social.jpg'
 import searchSvg from '../../../img/directory/search.svg'
 import '../styles/DirectoryHeader.sass'
 import { HeaderOverlay } from '../../shared'

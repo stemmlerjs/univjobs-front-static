@@ -3,8 +3,8 @@
 let config = {
   title: 'Univjobs | Entry level jobs for Students and Recent Grads',
   description: 'A place for students and recent grads to find jobs to earn cash and launch their careers.',
-  logo: '/img/u.png',
-  image: '/img/u.png',
+  logo: 'https://s3.amazonaws.com/assets.univjobs/images/icons/unicorn-social.jpg',
+  image: 'https://s3.amazonaws.com/assets.univjobs/images/icons/unicorn-social.jpg',
   twitter: '@univjobsapp',
   fbAppID: '1897052653882765',
   url: process.env.GATSBY_STATIC_URL ? process.env.GATSBY_STATIC_URL : 'https://01-staging.univjobs.ca/',
