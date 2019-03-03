@@ -1,9 +1,10 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
+import config from '../config/'
+
 import aboutImage from '../img/about/hero.png'
 import pitch from '../img/about/pitch.png'
-import uLogo from '../img/about/unicorn-social.jpg'
 
 import LandingPage from '../components/LandingPage'
 import { CallToAction } from '../components/shared';
@@ -62,7 +63,7 @@ const OurStory = (props) => {
 
       <div className={ourStory.flexContainer}>
         <div className={ourStory.imageContainer}>
-          <img src={uLogo}/>
+          <img src={config.logo}/>
         </div>
 
         <div className={ourStory.textContainer}>

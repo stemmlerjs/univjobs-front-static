@@ -3,8 +3,6 @@ import Link from 'gatsby-link'
 
 import charles from '../img/press/charles.png'
 import khalil from '../img/press/khalil.png'
-import judy from '../img/press/judy.png'
-import gurdeep from '../img/press/gurdeep.png'
 
 import blogTo from '../img/press/blogTo.png'
 import fiftyOne from '../img/press/fiftyOne.png'

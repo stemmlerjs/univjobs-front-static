@@ -1,10 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
-import uLogo from '../../../img/about/unicorn-social.jpg'
 import searchSvg from '../../../img/directory/search.svg'
 import '../styles/DirectoryHeader.sass'
 import { HeaderOverlay } from '../../shared'
+
+import config from '../../../config'
 
 /**
  * @class DirectoryHeader
@@ -179,7 +180,7 @@ export default class DirectoryHeader extends React.Component {
         className="directory-header"
         id="directory-header-nav"
       >
-        <Link to="/" className="logo-container"><img src={uLogo}/></Link>
+        <Link to="/" className="logo-container"><img src={config.logo}/></Link>
         <div className="search-container">
           <input 
             id="searchTextField"
