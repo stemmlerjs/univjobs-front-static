@@ -15,7 +15,7 @@ const LearnMore = props => (
 )
 
 LearnMore.propTypes = {
-  slug: PropTypes.string.isRequired
+  slug: PropTypes.string.isRequired,
 }
 
 const CompaniesShowcaseCTA = () => (
@@ -38,7 +38,7 @@ const CompanyShowcaseItem = props => (
     </div>
     <h3>{props.companyName}</h3>
     <LearnMore slug={props.fields.slug} />
-    <CompanyIndustryTags industries={props.industries}/>
+    <CompanyIndustryTags industries={props.industries} />
   </div>
 )
 
@@ -58,8 +58,9 @@ const CompaniesShowcase = props => (
     <p>{props.subTitle}</p>
 
     <div className="companies-showcase-items">
-      {props.companies.map(
-        (c, i) => <CompanyShowcaseItem key={i} {...c} />)}
+      {props.companies.map((c, i) => (
+        <CompanyShowcaseItem key={i} {...c} />
+      ))}
     </div>
 
     <CompaniesShowcaseCTA />

@@ -21,9 +21,9 @@ const links = [
     rel: 'stylesheet',
   },
   {
-    href: 
-      "https://api.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css", rel:'stylesheet'
-  }
+    href: 'https://api.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css',
+    rel: 'stylesheet',
+  },
 ]
 
 export default links

@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import ReactDisqusComments from 'react-disqus-comments';
+import ReactDisqusComments from 'react-disqus-comments'
 import moment from 'moment'
 import { HTMLContent } from '../../../components/Content'
 import Link from 'gatsby-link'
@@ -11,13 +11,12 @@ import khalil from '../../../img/authors/khalil.jpg'
 import trevor from '../../../img/authors/trevor.jpeg'
 
 const postAuthors = {
-  "Khalil Stemmler": {
+  'Khalil Stemmler': {
     imageUrl: khalil,
     linkedIn: "https://www.linkedin.com/in/khalilstemmler/",
-    about: `JavaScript wizard, cat-lover and lifelong learner. Front-end consultant at Dev6
-    and evening hacker at Univjobs.`
+    about: `JavaScript wizard, cat-lover and lifelong learner. Software consultant & prime hacker @ Univjobs.`
   },
-  "Charles Javelona": {
+  'Charles Javelona': {
     imageUrl: charles,
     linkedIn: "https://www.linkedin.com/in/charles-javelona-3863296a/?originalSubdomain=ca",
     about: `Relentlessly resourceful. CEO @ Univjobs.`
@@ -62,20 +61,26 @@ const PostAuthor = ({ date, author }) => (
     {postAuthors[author] ? (
       <div className="author-image-container">
         <a href={postAuthors[author].linkedIn}>
-          <img src={postAuthors[author].imageUrl}/>
+          <img src={postAuthors[author].imageUrl} />
         </a>
       </div>
-    ) : ''}
-    <div className="credits-and-date">By&nbsp;
-      <span className="author-name">{author}</span> <span className="date">•&nbsp;
-      {moment(date).format('MMM Do, YYYY')}</span> 
-    </div>  
+    ) : (
+      ''
+    )}
+    <div className="credits-and-date">
+      By&nbsp;
+      <span className="author-name">{author}</span>{' '}
+      <span className="date">
+        •&nbsp;
+        {moment(date).format('MMM Do, YYYY')}
+      </span>
+    </div>
   </div>
 )
 
 PostAuthor.propTypes = {
   date: PropTypes.string,
-  author: PropTypes.string
+  author: PropTypes.string,
 }
 
 /**
@@ -84,16 +89,13 @@ PostAuthor.propTypes = {
  * the description, the title, everything.
  */
 
-const BlogPostContent = (props) => {
+const BlogPostContent = props => {
   return (
     <div className="post-content-container">
       <div className="post-header">
         {/* <div className="post-category">{props.category}</div> */}
         <h1>{props.title}</h1>
-        <PostAuthor
-          date={props.date}
-          author={props.author}
-        />
+        <PostAuthor date={props.date} author={props.author} />
       </div>
       <br/>
       <img src={props.image}/>
@@ -109,7 +111,7 @@ BlogPostContent.propTypes = {
   html: PropTypes.string,
   title: PropTypes.string,
   category: PropTypes.string,
-  author: PropTypes.string
+  author: PropTypes.string,
 }
 
 /**
@@ -146,8 +148,8 @@ const BlogPostTemplate = (props) => {
 
 BlogPostTemplate.propTypes = {
   post: PropTypes.shape({
-    title: PropTypes.string.isRequired
-  }).isRequired
+    title: PropTypes.string.isRequired,
+  }).isRequired,
 }
 
-export default BlogPostTemplate;
+export default BlogPostTemplate

@@ -3,10 +3,10 @@ import Link from 'gatsby-link'
 
 import FeaturedBlogPost from '../components/FeaturedBlogPost'
 
-import Slider from "react-slick";
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import slidy from '../styles/Slidy.module.css';
+import Slider from 'react-slick'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
+import slidy from '../styles/Slidy.module.css'
 
 var settings = {
   dots: true,
@@ -16,8 +16,8 @@ var settings = {
   autoplay: true,
   speed: 3000,
   autoplaySpeed: 3000,
-  className:"center",
-  centerMode:true,
+  className: 'center',
+  centerMode: true,
   adaptiveHeight: true,
   responsive: [
     {
@@ -26,8 +26,8 @@ var settings = {
         slidesToShow: 1,
         slidesToScroll: 1,
         infinite: true,
-        dots: true
-      }
+        dots: true,
+      },
     },
     {
       breakpoint: 600,
@@ -35,8 +35,8 @@ var settings = {
         slidesToShow: 1,
         slidesToScroll: 1,
         infinite: true,
-        dots: true
-      }
+        dots: true,
+      },
     },
     {
       breakpoint: 480,
@@ -44,8 +44,8 @@ var settings = {
         slidesToShow: 1,
         slidesToScroll: 1,
         infinite: true,
-        dots: true
-      }
+        dots: true,
+      },
     },
     {
       breakpoint: 380,
@@ -53,44 +53,35 @@ var settings = {
         slidesToShow: 1,
         slidesToScroll: 1,
         infinite: true,
-        dots: true
-      }
-    }
-  ]
-};
-
+        dots: true,
+      },
+    },
+  ],
+}
 
 class Slidy extends React.Component {
-    constructor () {
-      super();
-      this.state = {
-      };
-    }
+  constructor() {
+    super()
+    this.state = {}
+  }
 
   render = () => {
-
     const instanceSettings = Object.assign({}, settings, this.props.settings)
 
     switch (this.props.component) {
-
-      case "Featured posts":
+      case 'Featured posts':
         return (
-          <section className={
-            this.props.class 
-              ? `${this.props.class} ${slidy.container}` 
-              : slidy.container
-          }>
-            <Slider {
-              ...instanceSettings
-            }>
-              {
-                this.props.elements.map((element, index) => {
-                  return <FeaturedBlogPost
-                    key={index}
-                    post={element}
-                  />
-                })
-              }
+          <section
+            className={
+              this.props.class
+                ? `${this.props.class} ${slidy.container}`
+                : slidy.container
+            }
+          >
+            <Slider {...instanceSettings}>
+              {this.props.elements.map((element, index) => {
+                return <FeaturedBlogPost key={index} post={element} />
+              })}
             </Slider>
           </section>
         )
@@ -99,33 +90,31 @@ class Slidy extends React.Component {
         return (
           <section className={slidy.container}>
             <Slider {...settings}>
-            <div>
-              <img className={slidy.picture}
-                src="https://s3.amazonaws.com/assets.univjobs/images/front/fb-review-one.png"
+              <div>
+                <img
+                  className={slidy.picture}
+                  src="https://s3.amazonaws.com/assets.univjobs/images/front/fb-review-one.png"
                 />
-            </div>
-            <div>
-            <img className={slidy.picture}
-              src="https://s3.amazonaws.com/assets.univjobs/images/front/fb-review-two.png"
+              </div>
+              <div>
+                <img
+                  className={slidy.picture}
+                  src="https://s3.amazonaws.com/assets.univjobs/images/front/fb-review-two.png"
                 />
-            </div>
-            <div>
-            <img className={slidy.picture}
-              src="https://s3.amazonaws.com/assets.univjobs/images/front/fb-review-three.png"
+              </div>
+              <div>
+                <img
+                  className={slidy.picture}
+                  src="https://s3.amazonaws.com/assets.univjobs/images/front/fb-review-three.png"
                 />
-            </div>
-          </Slider>
-            
-        </section>
-      )
+              </div>
+            </Slider>
+          </section>
+        )
     }
-    
   }
 }
 
-Slidy.defaultProps = {
-    
-};
-
+Slidy.defaultProps = {}
 
 export default Slidy

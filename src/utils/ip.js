@@ -1,25 +1,26 @@
-import axios from 'axios';
+import axios from 'axios'
 
-const IPSTACK_URL = "https://api.ipstack.com/107.190.49.54?access_key=b59c2a5bdda684535c44e08f1f73d9bc"
+const IPSTACK_URL =
+  'https://api.ipstack.com/107.190.49.54?access_key=b59c2a5bdda684535c44e08f1f73d9bc'
 
 const cache = {
   getCityResponse: null,
-  getCoordinates: null
+  getCoordinates: null,
 }
 
 /**
  * cacheResponse
  * @desc This function will cache all of the things that we get back from
  * IP_STACK.
- * 
+ *
  * @param {Object} response the response object from ipstack
  */
 
-function cacheResponse (response) {
+function cacheResponse(response) {
   cache.getCityResponse = `${response.data.city}, ${response.data.region_code}`
   cache.getCoordinates = {
     lat: response.data.latitude,
-    lng: response.data.longitude
+    lng: response.data.longitude,
   }
 }
 
@@ -29,18 +30,18 @@ function cacheResponse (response) {
  * @return {Object | {lat: Number, lng: Number}}
  */
 
-export function getCoordinates () {
+export function getCoordinates() {
   return new Promise(async (resolve, reject) => {
     // If cached, return from cache
-    if (cache.getCoordinates) return resolve(cache.getCoordinates);
+    if (cache.getCoordinates) return resolve(cache.getCoordinates)
 
     // Otherwise, make the request yourself.
     try {
-      const response = await axios.get(IPSTACK_URL);
+      const response = await axios.get(IPSTACK_URL)
       cacheResponse(response)
-      return resolve(cache.getCoordinates);
+      return resolve(cache.getCoordinates)
     } catch (err) {
-      return reject(null);
+      return reject(null)
     }
   })
 }
@@ -51,18 +52,18 @@ export function getCoordinates () {
  * @return {Promise | String}
  */
 
-export function getCurrentCity () {
-  return new Promise( async (resolve, reject) => {
+export function getCurrentCity() {
+  return new Promise(async (resolve, reject) => {
     // If cached, return from cache
-    if (cache.getCityResponse) return resolve(cache.getCityResponse);
+    if (cache.getCityResponse) return resolve(cache.getCityResponse)
 
     // Otherwise, make the request yourself.
     try {
-      const response = await axios.get(IPSTACK_URL);
+      const response = await axios.get(IPSTACK_URL)
       cacheResponse(response)
-      return resolve(cache.getCityResponse);
+      return resolve(cache.getCityResponse)
     } catch (err) {
-      return reject(null);
+      return reject(null)
     }
   })
 }

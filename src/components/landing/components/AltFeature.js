@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import "../styles/AltFeature.sass"
+import React from 'react'
+import PropTypes from 'prop-types'
+import '../styles/AltFeature.sass'
 
 /**
  * @class AltFeature
@@ -8,11 +8,11 @@ import "../styles/AltFeature.sass"
  * features.
  */
 
-const AltFeature = (props) => (
+const AltFeature = props => (
   <section className="alt-feature-container">
     <div className="alt-feature">
       <div className="image-container">
-        <img src={props.picture}></img>
+        <img src={props.picture} />
       </div>
       <div className="content-container">
         <h2>{props.header}</h2>
@@ -20,7 +20,6 @@ const AltFeature = (props) => (
         <p>{props.paragraphOne}</p>
         <p>{props.paragraphTwo}</p>
         <p>{props.paragraphThree}</p>
-
       </div>
     </div>
   </section>
@@ -32,8 +31,7 @@ AltFeature.propTypes = {
   subHeader: PropTypes.string,
   paragraphOne: PropTypes.string,
   paragraphTwo: PropTypes.string,
-  paragraphThree: PropTypes.string
-
+  paragraphThree: PropTypes.string,
 }
 
-export default AltFeature;
+export default AltFeature

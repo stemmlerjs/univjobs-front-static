@@ -4,43 +4,41 @@ import Helmet from 'react-helmet'
 import Content, { HTMLContent } from '../components/Content'
 import { CategoriesHeader, BlogPageLayout } from '../components/blog'
 
-import { CallToAction } from '../components/shared';
+import { CallToAction } from '../components/shared'
 import SEO from '../components/SEO'
 import helpers from '../helpers'
 
 import styles from '../styles/Blog/BlogPostPage.module.css'
-    
 
-const BlogPostHeader = (props) => {
+const BlogPostHeader = props => {
   return (
     <div className={styles.header}>
       <h1>{props.title}</h1>
       <div className={styles.subHeader}>{`${
-        !!props.parentCategory == true
-        ? props.parentCategory + " > "
-        : ''}${props.category} • ${props.timeToRead} minute read`}</div>
+        !!props.parentCategory == true ? props.parentCategory + ' > ' : ''
+      }${props.category} • ${props.timeToRead} minute read`}</div>
       <p>By {props.author}</p>
       <div className={styles.headerImageContainer}>
-        <img src={props.image}/>
+        <img src={props.image} />
       </div>
     </div>
   )
 }
 
-const BlogPostContent = (props) => {
-  const PostContent = props.contentComponent || Content;
-  console.log(PostContent, "content")
+const BlogPostContent = props => {
+  const PostContent = props.contentComponent || Content
+  console.log(PostContent, 'content')
   return (
     <div>
-      <PostContent className={styles.content} content={props.description}/>
-      <br/>
-      <PostContent className={styles.content} content={props.content}/>      
+      <PostContent className={styles.content} content={props.description} />
+      <br />
+      <PostContent className={styles.content} content={props.content} />
     </div>
   )
 }
 
 export class BlogPostTemplate extends React.Component {
-  render () {
+  render() {
     const {
       content,
       contentComponent,
@@ -54,14 +52,14 @@ export class BlogPostTemplate extends React.Component {
       category,
       author,
       parentCategory,
-      categories
-    } = this.props;
+      categories,
+    } = this.props
 
     return (
       <div className={styles.container}>
         {helmet || ''}
-        <BlogPostHeader 
-          title={title} 
+        <BlogPostHeader
+          title={title}
           image={image}
           timeToRead={timeToRead}
           tags={tags}
@@ -69,16 +67,16 @@ export class BlogPostTemplate extends React.Component {
           parentCategory={parentCategory}
           author={author}
         />
-        <BlogPostContent 
+        <BlogPostContent
           content={content}
           description={description}
           contentComponent={contentComponent}
         />
         <ReactDisqusComments
           shortname="univjobs"
-          identifier={ getUniquePageIdentifier() }
+          identifier={getUniquePageIdentifier()}
           title={title}
-          url={ getUniquePageIdentifier() }
+          url={getUniquePageIdentifier()}
         />
       </div>
     )
@@ -100,10 +98,10 @@ BlogPostTemplate.propTypes = {
  */
 
 const BlogPost = ({ data }) => {
-  let { post, categories } = data;
+  let { post, categories } = data
 
   post = Object.assign({}, post, post.fields, post.frontmatter)
-  categories = helpers.blog.getCategoriesFromQuery(categories);
+  categories = helpers.blog.getCategoriesFromQuery(categories)
 
   return (
     <BlogPageLayout
@@ -116,7 +114,7 @@ const BlogPost = ({ data }) => {
     //   contentComponent={HTMLContent}
     //   description={post.description}
     //   helmet={
-    //     <SEO 
+    //     <SEO
     //       isBlogPost={true}
     //       postData={post}
     //       postImage={post.image}
@@ -167,8 +165,8 @@ export const pageQuery = graphql`
 
     categories: allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { 
-        frontmatter: { 
+      filter: {
+        frontmatter: {
           templateKey: { eq: "blog-post" }
           category: { ne: null }
           public: { eq: true }

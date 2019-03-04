@@ -1,9 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
-import "./styles/CompanyIndustryTags.sass";
+import React from 'react'
+import PropTypes from 'prop-types'
+import './styles/CompanyIndustryTags.sass'
 
 const CompanyIndustryTags = ({ industries }) => {
-  if (!industries) return <div />;
+  if (!industries) return <div />
   return (
     <div className="company-industry-tags-container">
       {industries.map((industry, i) => (
@@ -12,16 +12,16 @@ const CompanyIndustryTags = ({ industries }) => {
         </div>
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default CompanyIndustryTags;
+export default CompanyIndustryTags
 
 CompanyIndustryTags.propTypes = {
   industries: PropTypes.arrayOf(
     PropTypes.shape({
       industry_id: PropTypes.number.isRequired,
-      industry_text: PropTypes.string.isRequired
+      industry_text: PropTypes.string.isRequired,
     })
-  ).isRequired
-};
+  ).isRequired,
+}

@@ -1,26 +1,28 @@
 import React from 'react'
 
-const PrivacyPolicy = (props) => {
+const PrivacyPolicy = props => {
   return (
-    <div style={{
-    maxWidth: '1200px',
-    margin: '0 auto',
-    paddingTop: '4em',
-    padding: '1em'
-  }}>
-<h2>Privacy Policy</h2>
+    <div
+      style={{
+        maxWidth: '1200px',
+        margin: '0 auto',
+        paddingTop: '4em',
+        padding: '1em',
+      }}
+    >
+      <h2>Privacy Policy</h2>
 
       <p>
         Welcome to UnivJobs, operated by DCommons, Inc. (“UnivJobs” and
-        sometimes referred to as “our”) and located at Mississauga, Ontario. This Privacy Policy addresses
-        UnivJobs' practices regarding information collected from users and
-        visitors of our Services and only addresses information collected
-        directly through or from our Services – it does not address or govern
-        any information-gathering, use, or dissemination practices related to
-        information collected from the visitor (sometimes referred to as a
-        “visitor,” "you" or "your") other than directly through or from our
-        Services, such as from telephone, facsimile, postal mail, personal
-        delivery, or other or additional offline means or media.
+        sometimes referred to as “our”) and located at Mississauga, Ontario.
+        This Privacy Policy addresses UnivJobs' practices regarding information
+        collected from users and visitors of our Services and only addresses
+        information collected directly through or from our Services – it does
+        not address or govern any information-gathering, use, or dissemination
+        practices related to information collected from the visitor (sometimes
+        referred to as a “visitor,” "you" or "your") other than directly through
+        or from our Services, such as from telephone, facsimile, postal mail,
+        personal delivery, or other or additional offline means or media.
       </p>
 
       <p>
@@ -219,8 +221,10 @@ const PrivacyPolicy = (props) => {
       </p>
 
       <p>
-        DCommons, Inc.<br />
-        Attn: Mississauga, Ontario, Canada<br />
+        DCommons, Inc.
+        <br />
+        Attn: Mississauga, Ontario, Canada
+        <br />
       </p>
 
       <p>
@@ -236,10 +240,10 @@ const PrivacyPolicy = (props) => {
 
       <p>
         If you have any questions or need to contact us, we recommend you reach
-        out to{" "}
+        out to{' '}
         <a href="mailto:contact@univjobs.ca?" target="_top">
           contact@univjobs.ca
-        </a>{" "}
+        </a>{' '}
         If your question is urgent, you may contact 647-779-8525
       </p>
 
@@ -250,4 +254,4 @@ const PrivacyPolicy = (props) => {
   )
 }
 
-export default PrivacyPolicy;
+export default PrivacyPolicy

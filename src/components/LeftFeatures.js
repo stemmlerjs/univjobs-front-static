@@ -3,14 +3,13 @@ import Link from 'gatsby-link'
 import features from '../styles/FeatureStyles.module.css'
 
 class LeftFeatures extends React.Component {
-    constructor () {
-      super();
-      this.state = {
-      };
-    }
+  constructor() {
+    super()
+    this.state = {}
+  }
 
-render = () => {
-  return (
+  render = () => {
+    return (
       <section className={features.flexContainerLeft}>
         <div className={features.flexItem}>
           <h1>{this.props.header}</h1>
@@ -19,7 +18,7 @@ render = () => {
           <div>{this.props.paragraphThree}</div>
         </div>
         <div className={features.imageContainer}>
-          <img src={this.props.picture}></img>
+          <img src={this.props.picture} />
         </div>
       </section>
     )
@@ -27,12 +26,11 @@ render = () => {
 }
 
 LeftFeatures.defaultProps = {
-    header: '',
-    paragraphOne: '',
-    paragraphTwo: '',
-    paragraphThree: '',
-    picture: ''
-  };
-  
+  header: '',
+  paragraphOne: '',
+  paragraphTwo: '',
+  paragraphThree: '',
+  picture: '',
+}
+
 export default LeftFeatures
-  

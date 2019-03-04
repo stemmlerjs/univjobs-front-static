@@ -11,10 +11,10 @@ class CallToAction extends React.Component {
   constructor(props) {
     super(props)
     this.state = {}
-    this.onClickButton = this.onClickButton.bind(this);
+    this.onClickButton = this.onClickButton.bind(this)
   }
 
-  onClickButton () {
+  onClickButton() {
     //Amplitude: Grab device id and pass as a ref
     redirectTo(`${this.props.location}`)
   }

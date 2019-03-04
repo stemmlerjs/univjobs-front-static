@@ -14,7 +14,7 @@ const meta = [
   },
   { property: 'og:type', content: 'website' },
   { property: 'og:url', content: config.url },
-  { property: 'og:image', content: `${config.url}${config.logo}` },
+  { property: 'og:image', content: `${config.url}${config.assets.image.logo}` },
   { property: 'og:image:type', content: 'image/png' },
   { property: 'og:image:width', content: '200' },
   { property: 'og:image:height', content: '200' },

@@ -12,27 +12,27 @@ import LandingPage from '../components/LandingPage'
 import config from '../config'
 import SEO from '../components/SEO'
 
-import { Backers, AltFeature, StudentTestimonials } from '../components/landing';
+import { Backers, AltFeature, StudentTestimonials } from '../components/landing'
 
-import scribbleLive from '../img/scribble.svg';
+import scribbleLive from '../img/scribble.svg'
 import rover from '../img/companies/rover.svg'
-import instacart from '../img/companies/instacart.svg';
-import homeDepot from '../img/companies/homedepot.svg';
+import instacart from '../img/companies/instacart.svg'
+import homeDepot from '../img/companies/homedepot.svg'
 import ymca from '../img/companies/ymca.svg'
-import airmiles from '../img/companies/airmiles.svg';
+import airmiles from '../img/companies/airmiles.svg'
 
-import productImage from '../img/product-image.svg';
-import mail from '../img/undraw-mail.svg';
-import jobs from '../img/undraw-jobs.svg';
+import productImage from '../img/product-image.svg'
+import mail from '../img/undraw-mail.svg'
+import jobs from '../img/undraw-jobs.svg'
 
 import haltech from '../img/haltech.png'
 import icube from '../img/icube.png'
-import startupschool from '../img/startupschool.png';
+import startupschool from '../img/startupschool.png'
 import edge from '../img/edge_hires-400x143.png'
 
 /**
  * @class Index
- * @desc This is the index page. It's the main page 
+ * @desc This is the index page. It's the main page
  * for univjobs.ca.
  */
 
@@ -41,7 +41,8 @@ const Index = () => (
     <SEO
       isBlogPost={false}
       postData={{
-        title: 'Univjobs: Jobs, Internships & Work Study for College Students and Recent Grads',
+        title:
+          'Univjobs: Jobs, Internships & Work Study for College Students and Recent Grads',
         description:
           'Find paid internship, remote work, part time, and entry-level jobs at startups and large companies',
       }}
@@ -62,7 +63,7 @@ const Index = () => (
         },
         hero: {
           showColorMask: true,
-          color: '#1C46DA'
+          color: '#1C46DA',
         },
         overrideClass: landingePageStyles.overrideLandingPage,
       }}
@@ -114,14 +115,14 @@ const Index = () => (
         picture={jobs}
       />
     </section>
-    <CallToAction 
+    <CallToAction
       header="Start your career journey now"
       alt={true}
       subHeader=""
       buttonText="Browse jobs"
       location={`${config.appUrl}register?button_id=cta2`}
     />
-    <StudentTestimonials/>
+    <StudentTestimonials />
     <Backers
       header="Our community support"
       subHeader="Thank you for supporting us in changing the way students find meaningful employment."
@@ -129,10 +130,10 @@ const Index = () => (
         { link: 'http://haltech.ca/', imageUrl: haltech },
         { link: 'http://icubeutm.ca/', imageUrl: icube },
         { link: 'https://www.startupschool.org/', imageUrl: startupschool },
-        { link: 'https://edge.sheridancollege.ca/', imageUrl: edge }
+        { link: 'https://edge.sheridancollege.ca/', imageUrl: edge },
       ]}
     />
-    <CallToAction 
+    <CallToAction
       header="Explore new job opportunities meant for students and recent grads"
       alt={true}
       subHeader=""

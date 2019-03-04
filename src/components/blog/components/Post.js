@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import postStyles from '../../../styles/Blog/Post.module.css'
-import '../styles/Post.sass';
+import '../styles/Post.sass'
 import moment from 'moment'
 
 const TimeToRead = props => {
@@ -57,11 +57,11 @@ Sponsor.propTypes = {
  */
 
 const Post = props => {
-  const { category, date } = props;
+  const { category, date } = props
   return (
     <Link
       to={props.slug}
-      style={{textDecoration: 'none'}}
+      style={{ textDecoration: 'none' }}
       className="post-container"
     >
       <PostImage image={props.image} />
@@ -76,7 +76,10 @@ const Post = props => {
         )}
         <div className="post-category">{category}</div>
         <h3>{props.title}</h3>
-        <div className="credits-and-date">By <span className="author-name">{props.author}</span> <span className="date">• {moment(date).format('MMM Do, YYYY')}</span> </div>
+        <div className="credits-and-date">
+          By <span className="author-name">{props.author}</span>{' '}
+          <span className="date">• {moment(date).format('MMM Do, YYYY')}</span>{' '}
+        </div>
       </div>
     </Link>
   )
