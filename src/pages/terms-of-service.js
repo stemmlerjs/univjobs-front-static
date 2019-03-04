@@ -1,23 +1,26 @@
 // ==============REACT BUILTINS================ //
-import React from "react";
+import React from 'react'
 
 const Terms = () => (
-  <div style={{
-    maxWidth: '1200px',
-    margin: '0 auto',
-    paddingTop: '4em',
-    padding: '1em'
-  }}>
+  <div
+    style={{
+      maxWidth: '1200px',
+      margin: '0 auto',
+      paddingTop: '4em',
+      padding: '1em',
+    }}
+  >
     <div>
       <h2>Terms & Conditions</h2>
       <p>
         Welcome to UnivJobs, operated by DCommons, Inc. (“UnivJobs” and
-        sometimes referred to as “our”) and located at Mississauaga, Ontario. Thank you for using or visiting
-        our products and services (“Services”). Our Services are a platform
-        through which current and former students at particular educational
-        institutions seeking employment opportunities or contracting
-        opportunities (each, a “Student”) can find and connect with providers of
-        such employment or contracting opportunities (each, a “Business”).
+        sometimes referred to as “our”) and located at Mississauaga, Ontario.
+        Thank you for using or visiting our products and services (“Services”).
+        Our Services are a platform through which current and former students at
+        particular educational institutions seeking employment opportunities or
+        contracting opportunities (each, a “Student”) can find and connect with
+        providers of such employment or contracting opportunities (each, a
+        “Business”).
       </p>
       <p>
         UnivJobs does not take part in, nor is DCommons, Inc in any way
@@ -82,7 +85,7 @@ const Terms = () => (
             for your account, including use of the account by any third party,
             and maintaining the confidentiality of your password. You may
             suspend your account at any time by suspending the account within
-            your profile or by emailing{" "}
+            your profile or by emailing{' '}
             <a href="mailto:contact@univjobs.ca?" target="_top">
               contact@univjobs.ca
             </a>
@@ -500,10 +503,10 @@ const Terms = () => (
           <p>
             If you elect to terminate your registration and Services account,
             you may do so at any time by sending an email (that includes your
-            email address) to{" "}
+            email address) to{' '}
             <a href="mailto:contact@univjobs.ca?" target="_top">
               contact@univjobs.ca
-            </a>{" "}
+            </a>{' '}
             or by going to your account settings and choosing “suspend account.”
             Please be advised that your Services account is not terminated
             simply by deleting our App from your mobile device. Your
@@ -662,10 +665,10 @@ const Terms = () => (
 
       <p>
         If you have any questions or need to contact us, we recommend you reach
-        out to{" "}
+        out to{' '}
         <a href="mailto:contact@univjobs.ca?" target="_top">
           contact@univjobs.ca
-        </a>{" "}
+        </a>{' '}
         If your question is urgent, you may contact 647-779-8525
       </p>
 
@@ -674,6 +677,6 @@ const Terms = () => (
       <p>Copyright © 2018 DCommons, Inc.; All rights reserved.</p>
     </div>
   </div>
-);
+)
 
-export default Terms;
+export default Terms

@@ -3,7 +3,7 @@ import Link from 'gatsby-link'
 
 import LandingPage from '../components/LandingPage'
 import Benefits from '../components/Benefits'
-import { CallToAction } from '../components/shared';
+import { CallToAction } from '../components/shared'
 import LeftFeatures from '../components/LeftFeatures'
 import RightFeatures from '../components/RightFeatures'
 import Slidy from '../components/Slidy'
@@ -40,7 +40,7 @@ const SmallBusiness = () => (
       heroTitle="Easily access, and hire local young talent"
       heroSubTitle="We have thousands of candidates ready and waiting"
       options={{
-        centerHeroContainer:true,
+        centerHeroContainer: true,
         image: merchant,
         hasPolygon: false,
         buttons: {
@@ -50,47 +50,42 @@ const SmallBusiness = () => (
         hero: {
           showHeroMask: false,
           showDarkMask: true,
-          color: ''
-        }
+          color: '',
+        },
       }}
     />
 
-
     <SocialValidation
       header=""
-      logos={ 
-        {
-          'one': ['https://www.scribblelive.com/', scribble], 
-          'two': ['http://go.rover.com/univjobs', rover], 
-          'three': ['https://www.homedepot.ca/en/home.html', homedepot], 
-          'four': ['https://www.instacart.com/', instacart],
-          'five': ['http://ymcaofoakville.org/', ymca], 
-          'six': ['https://www.airmiles.ca/arrow/Home', airmiles], 
- 
-        } 
-      }
+      logos={{
+        one: ['https://www.scribblelive.com/', scribble],
+        two: ['http://go.rover.com/univjobs', rover],
+        three: ['https://www.homedepot.ca/en/home.html', homedepot],
+        four: ['https://www.instacart.com/', instacart],
+        five: ['http://ymcaofoakville.org/', ymca],
+        six: ['https://www.airmiles.ca/arrow/Home', airmiles],
+      }}
     />
-     <CallToAction
-      header='Get help and save money with Univjobs'
-      subHeader='UnivJobs makes it easy to find affordable talent locally'
-      buttonText='Try it now!'
+    <CallToAction
+      header="Get help and save money with Univjobs"
+      subHeader="UnivJobs makes it easy to find affordable talent locally"
+      buttonText="Try it now!"
       alt={true}
       location={`${config.appUrl}register/employer`}
     />
 
-    <Benefits/>
+    <Benefits />
 
     <CallToAction
-        header='Get local brand awareness virtually with Univjobs'
-        subHeader='UnivJobs shows your company logo in front of thousands of job seekers.'
-        buttonText='Post a job now'
-        alt={true}
-        location={`${config.appUrl}register/employer`}
+      header="Get local brand awareness virtually with Univjobs"
+      subHeader="UnivJobs shows your company logo in front of thousands of job seekers."
+      buttonText="Post a job now"
+      alt={true}
+      location={`${config.appUrl}register/employer`}
     />
 
-    <Slidy/>
-   </div>
-
+    <Slidy />
+  </div>
 )
 
 export default SmallBusiness

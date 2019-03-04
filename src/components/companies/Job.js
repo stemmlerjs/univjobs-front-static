@@ -4,7 +4,6 @@ import Link from 'gatsby-link'
 
 import config from '../../config'
 
-
 const JobTypeColorCodes = {
   1: { color: 'rgb(255, 255, 255)', background: 'rgb(144, 137, 205)' },
   2: { color: 'rgb(255, 255, 255)', background: '#EE4266' },
@@ -21,12 +20,10 @@ const JobTypeColorCodes = {
 }
 
 function getJobTypeColor(jobTypeId) {
-  if ((jobTypeId >= 1) && (jobTypeId <= 11)) {
-    return JobTypeColorCodes[jobTypeId].background;
-  }
-
-  else {
-    return JobTypeColorCodes.default.background;
+  if (jobTypeId >= 1 && jobTypeId <= 11) {
+    return JobTypeColorCodes[jobTypeId].background
+  } else {
+    return JobTypeColorCodes.default.background
   }
 }
 
@@ -42,13 +39,13 @@ const Job = props => (
     style={{
       textDecoration: 'none',
       color: 'inherit',
-      borderTop: `solid 10px ${getJobTypeColor(props.jobTypeId)}`
+      borderTop: `solid 10px ${getJobTypeColor(props.jobTypeId)}`,
     }}
     href={`${config.appUrl}${props.slug}`}
   >
     <div>{props.title}</div>
     <div>{props.location}</div>
-      <div>{props.jobType}</div>
+    <div>{props.jobType}</div>
   </a>
 )
 

@@ -13,7 +13,7 @@ const options = [
 
 const hiringOptions = [
   { value: true, label: 'Yes' },
-  { value: false, label: 'No' }
+  { value: false, label: 'No' },
 ]
 
 /**
@@ -30,7 +30,7 @@ const FilterContainer = ({ title, children }) => (
 
 FilterContainer.propTypes = {
   title: PropTypes.string.isRequired,
-  children: PropTypes.any
+  children: PropTypes.any,
 }
 
 /**
@@ -40,40 +40,44 @@ FilterContainer.propTypes = {
  */
 class DirectoryFilters extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
-      isFilterOpen: false
+      isFilterOpen: false,
     }
   }
 
   toggleFilterVisible = () => {
     this.setState({
       ...this.state,
-      isFilterOpen: !this.state.isFilterOpen
+      isFilterOpen: !this.state.isFilterOpen,
     })
   }
 
-  render () {
-    const { onChange, values } = this.props;
-    const { isFilterOpen } = this.state;
+  render() {
+    const { onChange, values } = this.props
+    const { isFilterOpen } = this.state
 
     return (
-      <div className={`directory-filters ${isFilterOpen ? "on" : "off"}`}>
-        <div className={`directory-filters-container ${isFilterOpen ? "on" : "off"}`}>
+      <div className={`directory-filters ${isFilterOpen ? 'on' : 'off'}`}>
+        <div
+          className={`directory-filters-container ${
+            isFilterOpen ? 'on' : 'off'
+          }`}
+        >
           <div className="filter-section-title">Filter your search</div>
           <FilterContainer title="Industry">
-            <Select 
-              isMulti 
+            <Select
+              isMulti
               options={industries}
-              onChange={(e) => onChange(e, 'industry')}
+              onChange={e => onChange(e, 'industry')}
               value={values.industry}
             />
           </FilterContainer>
 
           <FilterContainer title="Company size">
-            <Select 
+            <Select
               options={companySize}
-              onChange={(e) => onChange(e, 'companySize')}
+              onChange={e => onChange(e, 'companySize')}
               value={values.companySize}
               isSearchable={false}
               isClearable={true}
@@ -81,9 +85,9 @@ class DirectoryFilters extends React.Component {
           </FilterContainer>
 
           <FilterContainer title="Hiring">
-            <Select 
+            <Select
               options={hiringOptions}
-              onChange={(e) => onChange(e, 'hiring')}
+              onChange={e => onChange(e, 'hiring')}
               value={values.hiring}
               isSearchable={false}
               isClearable={true}
@@ -91,18 +95,18 @@ class DirectoryFilters extends React.Component {
           </FilterContainer>
         </div>
         <div>
-          <div 
-            onClick={this.toggleFilterVisible} 
-            className="filter-toggle">{isFilterOpen ? "Hide filters" : "Show filters"}</div>
+          <div onClick={this.toggleFilterVisible} className="filter-toggle">
+            {isFilterOpen ? 'Hide filters' : 'Show filters'}
+          </div>
         </div>
       </div>
     )
   }
 }
 
-export default DirectoryFilters;
+export default DirectoryFilters
 
 DirectoryFilters.propTypes = {
   onChange: PropTypes.func.isRequired,
-  values: PropTypes.object
+  values: PropTypes.object,
 }

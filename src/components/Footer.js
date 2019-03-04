@@ -65,7 +65,6 @@ const Footer = () => (
             { name: 'Featured Companies', url: '/companies' },
           ]}
         />
-
       </section>
 
       <section>

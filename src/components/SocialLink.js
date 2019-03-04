@@ -42,4 +42,4 @@ SocialLink.propTypes = {
   type: PropTypes.string.isRequired,
 }
 
-export default SocialLink;
+export default SocialLink

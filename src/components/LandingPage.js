@@ -8,70 +8,73 @@ import config from '../config'
 import { redirectTo } from '../helpers'
 import get from 'lodash/get'
 
-function applyLandingStyles (options) {
-  const styles = {};
+function applyLandingStyles(options) {
+  const styles = {}
 
   if (options.hero.color) {
-    styles.backgroundColor = options.hero.color;
+    styles.backgroundColor = options.hero.color
   }
 
   if (options.hero.minHeight) {
-    styles.minHeight = options.hero.minHeight;
+    styles.minHeight = options.hero.minHeight
   }
 
-  return styles;
+  return styles
 }
 
-function shouldShowMask (options) {
+function shouldShowMask(options) {
   if (options.hero) {
     if (options.hero.showHeroMask) {
-      return styles.gradientMask;
+      return styles.gradientMask
     }
 
     if (options.hero.showDarkMask) {
-      return styles.darkMask;
+      return styles.darkMask
     }
 
     if (options.hero.showColorMask && options.hero.color) {
-      return styles.mask;
+      return styles.mask
     }
   }
 
-  return '';
+  return ''
 }
 const LandingPageButtons = ({ buttons }) => {
-  console.log("landing page buttons", buttons)
+  console.log('landing page buttons', buttons)
   return (
     <div className={styles.ctaContainer}>
       <div className={styles.buttonContainer}>
         <button
           className={styles.getStartedButton}
-          onClick={() => redirectTo(buttons.mainButtonLocation)}>
+          onClick={() => redirectTo(buttons.mainButtonLocation)}
+        >
           {buttons.mainButtonText}
         </button>
-        
-        {
-          buttons.alreadyOnComponentActive
-            ? <div className={styles.alreadyOn}>Already on Univjobs? 
-                <span 
-                  onClick={() => redirectTo(`${config.appUrl}login`)}
-                > Sign in.</span>
-              </div>
-            : ''
-        }
 
+        {buttons.alreadyOnComponentActive ? (
+          <div className={styles.alreadyOn}>
+            Already on Univjobs?
+            <span onClick={() => redirectTo(`${config.appUrl}login`)}>
+              {' '}
+              Sign in.
+            </span>
+          </div>
+        ) : (
+          ''
+        )}
       </div>
-      {
-        buttons.reRouteButtonText && buttons.reRouteButtonLocation
-          ? <div className={styles.buttonContainer}>
-              <button 
-                className={styles.reRouteButton}
-                onClick={() => redirectTo(buttons.reRouteButtonLocation)}>
-                {buttons.reRouteButtonText}
-            </button>
-            </div>
-          : ''
-      }
+      {buttons.reRouteButtonText && buttons.reRouteButtonLocation ? (
+        <div className={styles.buttonContainer}>
+          <button
+            className={styles.reRouteButton}
+            onClick={() => redirectTo(buttons.reRouteButtonLocation)}
+          >
+            {buttons.reRouteButtonText}
+          </button>
+        </div>
+      ) : (
+        ''
+      )}
     </div>
   )
 }
@@ -83,24 +86,22 @@ LandingPageButtons.propTypes = {
     reRouteButtonText: PropTypes.string,
     reRouteButtonLocation: PropTypes.string,
     alreadyOnComponentActive: PropTypes.bool,
-  })
+  }),
 }
 
 const LandingPageContent = ({ title, subTitle, alignment, buttons }) => {
   return (
-    <div className={alignment == "center" ? `${styles.content} ${styles.centeredContent}` : styles.content }>
-      <h1 className={styles.title}>{ title }</h1>
-      {
-        subTitle
-          ? <div className={styles.subTitle}>{subTitle}</div>
-          : ''
+    <div
+      className={
+        alignment == 'center'
+          ? `${styles.content} ${styles.centeredContent}`
+          : styles.content
       }
+    >
+      <h1 className={styles.title}>{title}</h1>
+      {subTitle ? <div className={styles.subTitle}>{subTitle}</div> : ''}
 
-      {
-        buttons
-          ? <LandingPageButtons buttons={buttons}/>
-          : ''
-      }
+      {buttons ? <LandingPageButtons buttons={buttons} /> : ''}
     </div>
   )
 }
@@ -115,7 +116,7 @@ LandingPageContent.propTypes = {
     reRouteButtonText: PropTypes.string,
     reRouteButtonLocation: PropTypes.string,
     alreadyOnComponentActive: PropTypes.bool,
-  })
+  }),
 }
 
 /**
@@ -126,20 +127,16 @@ LandingPageContent.propTypes = {
  */
 
 class LandingPage extends React.Component {
-  constructor (props) {
-    super(props);
+  constructor(props) {
+    super(props)
   }
 
-
-  render () {
-     
-    
-
+  render() {
     /**
      * @desc Default landing page styles.
      * By supplying options in props, we can override
-     * these styles. 
-     * 
+     * these styles.
+     *
      * At some point, documentation for this component will
      * become more necessary.
      */
@@ -147,35 +144,42 @@ class LandingPage extends React.Component {
     let settings = {
       options: {
         alignment: 'left',
-        centerHeroContainer:true,
+        centerHeroContainer: true,
         image: null,
         hasPolygon: false,
         buttons: {
-          alreadyOnComponentActive: false
+          alreadyOnComponentActive: false,
         },
         hero: {
           showHeroMask: false,
           showDarkMask: false,
           showColorMask: false,
-          color: '#555555'
+          color: '#555555',
         },
-        overrideClass: null
-      }
+        overrideClass: null,
+      },
     }
 
-    settings = Object.assign({}, settings, this.props);
+    settings = Object.assign({}, settings, this.props)
 
     return (
-      <div style={get(settings,'options.styles.container')} className={styles.container}>
-        <div  
-          style={{ 
-            backgroundImage: `url(${settings.options.image})`, 
-            backgroundColor: settings.options.hero ? settings.options.hero.color : '' }}  
-          className={styles.imageOrColour}>
-          <div 
+      <div
+        style={get(settings, 'options.styles.container')}
+        className={styles.container}
+      >
+        <div
+          style={{
+            backgroundImage: `url(${settings.options.image})`,
+            backgroundColor: settings.options.hero
+              ? settings.options.hero.color
+              : '',
+          }}
+          className={styles.imageOrColour}
+        >
+          <div
             style={applyLandingStyles(settings.options)}
-            className={shouldShowMask(settings.options)}>
-          </div>
+            className={shouldShowMask(settings.options)}
+          />
           <LandingPageContent
             title={settings.heroTitle}
             subTitle={settings.heroSubTitle}

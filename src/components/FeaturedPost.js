@@ -4,32 +4,31 @@ import Link from 'gatsby-link'
 import styles from '../styles/Blog/FeaturedPost.module.css'
 
 const FeaturedPost = ({ posts }) => {
-  
   // If there aren't any featured posts, we'll just return nothing.
-  if (posts.length == 0) return <div/>;
+  if (posts.length == 0) return <div />
 
   // If there are posts, then we'll choose one at random.
-  let min = 0;
-  let max = posts.length - 1;
-  let rand = Math.floor(Math.random() * (max - min + 1) + min);
+  let min = 0
+  let max = posts.length - 1
+  let rand = Math.floor(Math.random() * (max - min + 1) + min)
 
-  let post = posts[rand];
-  
+  let post = posts[rand]
 
   return (
-    <Link 
+    <Link
       style={{
-        textDecoration: 'none'
+        textDecoration: 'none',
       }}
-      to={post.slug}>
-      <div 
+      to={post.slug}
+    >
+      <div
         style={{
-          backgroundImage: `url("${post.image}")`
+          backgroundImage: `url("${post.image}")`,
         }}
-        className={styles.container}>
-        
+        className={styles.container}
+      >
         <div className={styles.content}>
-          <div className={styles.mask}></div>
+          <div className={styles.mask} />
           <div className={styles.content}>
             <div className={styles.featured}>Featured</div>
             <h2 className={styles.title}>{post.title}</h2>
@@ -41,4 +40,4 @@ const FeaturedPost = ({ posts }) => {
   )
 }
 
-export default FeaturedPost;
+export default FeaturedPost

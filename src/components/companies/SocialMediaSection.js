@@ -26,7 +26,7 @@ SocialMedia.propTypes = {
 
 class SocialMediaSection extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
   }
 
   render() {
@@ -36,8 +36,10 @@ class SocialMediaSection extends React.Component {
     return (
       <div className="list-section">
         {links
-          .filter(link => link.url !== "")
-          .map((link, i) => <SocialMedia key={i} {...link} />)}
+          .filter(link => link.url !== '')
+          .map((link, i) => (
+            <SocialMedia key={i} {...link} />
+          ))}
       </div>
     )
   }

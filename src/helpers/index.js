@@ -1,72 +1,71 @@
-
 import _ from 'underscore'
 import config from '../config'
 
 export default {
-
   /**
    * redirectTo
-   * 
+   *
    * Redirects the user to the url passed in.
-   * 
-   * 
-   * @param {String} url 
+   *
+   *
+   * @param {String} url
    * @return void
    */
 
-  redirectTo: (url) => {
+  redirectTo: url => {
     if (typeof window !== undefined) {
       //Strip away certain url params from url string and pass them to window.AnalyticsEvent
       //Strip button_id
-      
-      const buttonIdPresent = url.indexOf('button_id=') !==1; 
-      const pathArray = url.split('?button_id=');
 
-      if(buttonIdPresent) {
-        window.AnalyticsEvent('Button_click',{
-          type: pathArray[1]
+      const buttonIdPresent = url.indexOf('button_id=') !== 1
+      const pathArray = url.split('?button_id=')
+
+      if (buttonIdPresent) {
+        window.AnalyticsEvent('Button_click', {
+          type: pathArray[1],
         })
-        window.location.href = `${pathArray[0]}?dev_id=${window.AmplitudeInstance.options.deviceId}`;
+        window.location.href = `${pathArray[0]}?dev_id=${
+          window.AmplitudeInstance.options.deviceId
+        }`
       } else {
-        window.location.href = `${url}?dev_id=${window.AmplitudeInstance.options.deviceId}`;
+        window.location.href = `${url}?dev_id=${
+          window.AmplitudeInstance.options.deviceId
+        }`
       }
-    }    
+    }
   },
 
   blog: {
-
-     /**
+    /**
      * getPostsFromQuery
-     * 
+     *
      * Returns all the data that we need
      * from frontmatter and fields for blog posts.
-     * 
+     *
      */
 
-    getPostsFromQuery: (posts) => {
+    getPostsFromQuery: posts => {
       if (posts) {
-        return posts.edges.map((edge) => edge.node)
-        .map((node) => Object.assign(
-          {}, node.frontmatter, node.fields)
-        );
+        return posts.edges
+          .map(edge => edge.node)
+          .map(node => Object.assign({}, node.frontmatter, node.fields))
       }
 
-      return [];
+      return []
     },
 
-    getCategoriesFromQuery: (categories) => {
+    getCategoriesFromQuery: categories => {
       if (categories) {
         categories = _.uniq(
-          categories.edges.map((edge) => edge.node)
-          .map((node) => Object.assign(
-            {}, node.frontmatter
-          ))
-          .map((c) => {
-            return c.category
-          })
+          categories.edges
+            .map(edge => edge.node)
+            .map(node => Object.assign({}, node.frontmatter))
+            .map(c => {
+              return c.category
+            })
         )
 
-        return categories;
+        return categories
 
         // for (let obj of categories) {
         //   if (!map.hasOwnProperty(obj.parent)) map[obj.parent] = [];
@@ -76,34 +75,32 @@ export default {
 
         // delete map.null;
       }
-      return [];
+      return []
     },
 
-    getTagsFromQuery: (tags) => {
+    getTagsFromQuery: tags => {
       if (tags) {
-        return _.uniq(tags.edges.map((edge) => edge.node)
-          .map((node) => Object.assign(
-            {}, node.frontmatter
-          ))
-          .reduce((acc, e) => acc.concat(e.tags), [])
-          .filter((t) => !!t == true)
-          .sort()
+        return _.uniq(
+          tags.edges
+            .map(edge => edge.node)
+            .map(node => Object.assign({}, node.frontmatter))
+            .reduce((acc, e) => acc.concat(e.tags), [])
+            .filter(t => !!t == true)
+            .sort()
         )
       }
 
-      return [];
+      return []
     },
   },
 
   companies: {
-    getCompaniesFromQuery: (companies) => {
+    getCompaniesFromQuery: companies => {
       if (companies) {
-        return companies.edges.map((edge) => edge.node)      
+        return companies.edges.map(edge => edge.node)
       }
 
-      return [];
-      
-    }
-  }
-
+      return []
+    },
+  },
 }

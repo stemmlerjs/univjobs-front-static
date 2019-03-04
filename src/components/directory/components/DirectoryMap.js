@@ -59,7 +59,7 @@ class DirectoryMap extends React.Component {
   updateMarkers() {
     const { companies } = this.props
     const { map } = this.state
-    const newMarkersList = [];
+    const newMarkersList = []
 
     try {
       // Remove old markers
@@ -75,12 +75,12 @@ class DirectoryMap extends React.Component {
         el.className = 'marker'
         el.innerText = `${i + 1}`
 
-        const industriesElements = (industries) => {
-          let str = "";
-          industries.forEach((industry) => {
+        const industriesElements = industries => {
+          let str = ''
+          industries.forEach(industry => {
             str = str + `<div class="industry">${industry.industry_text}</div>`
           })
-          return str;
+          return str
         }
 
         // Create a marker
@@ -129,7 +129,7 @@ class DirectoryMap extends React.Component {
     })
 
     map.addControl(new mapboxgl.NavigationControl())
-    console.log("map loaded!!! ======================== ")
+    console.log('map loaded!!! ======================== ')
     this.updateMarkers()
   }
 
@@ -155,13 +155,13 @@ class DirectoryMap extends React.Component {
   }
 
   render() {
-    const { 
-      currentLatitude, 
-      currentLongitude, 
-      styleUrl, 
+    const {
+      currentLatitude,
+      currentLongitude,
+      styleUrl,
       zoom,
-      containerStyle
-    } = this.props;
+      containerStyle,
+    } = this.props
 
     return (
       <div className="directory-map">
@@ -169,17 +169,20 @@ class DirectoryMap extends React.Component {
           ref={e => {
             this.map = e
           }}
-          style={styleUrl ? styleUrl : "mapbox://styles/mapbox/streets-v10"}
-          containerStyle={containerStyle ? containerStyle : {
-            height: '100vh',
-            width: '100%',
-          }}
+          style={styleUrl ? styleUrl : 'mapbox://styles/mapbox/streets-v10'}
+          containerStyle={
+            containerStyle
+              ? containerStyle
+              : {
+                  height: '100vh',
+                  width: '100%',
+                }
+          }
           onStyleLoad={this.onMapLoad}
           center={[currentLongitude, currentLatitude]}
           zoom={[zoom ? zoom : 11]}
           speed={[0.6]}
-        >
-        </Map>
+        />
       </div>
     )
   }
@@ -194,7 +197,7 @@ DirectoryMap.propTypes = {
   isRebuildingMapFailure: PropTypes.bool,
   styleUrl: PropTypes.string,
   zoom: PropTypes.number,
-  containerStyle: PropTypes.object
+  containerStyle: PropTypes.object,
 }
 
 export default DirectoryMap

@@ -1,7 +1,6 @@
-
 import React from 'react'
 import { BlogPageLayout } from '../components/blog'
-import helpers from '../helpers';
+import helpers from '../helpers'
 
 /**
  * @class Blog
@@ -10,28 +9,28 @@ import helpers from '../helpers';
  */
 
 class Blog extends React.Component {
-  constructor (props) {
-    super(props);
+  constructor(props) {
+    super(props)
   }
 
-  render () {
-    const { data } = this.props;
-    const posts = data.posts 
-      ? data.posts
-      .edges.map((edge) => edge.node)
-      .map((node) => Object.assign(
-        {}, { excerpt: node.excerpt }, node.frontmatter, node.fields, 
-        { timeToRead: node.timeToRead })
-      )
-      : [];
-    const categories = helpers.blog.getCategoriesFromQuery(data.categories);
+  render() {
+    const { data } = this.props
+    const posts = data.posts
+      ? data.posts.edges
+          .map(edge => edge.node)
+          .map(node =>
+            Object.assign(
+              {},
+              { excerpt: node.excerpt },
+              node.frontmatter,
+              node.fields,
+              { timeToRead: node.timeToRead }
+            )
+          )
+      : []
+    const categories = helpers.blog.getCategoriesFromQuery(data.categories)
 
-    return (
-      <BlogPageLayout
-        posts={posts}
-        categories={categories}
-      />
-    )
+    return <BlogPageLayout posts={posts} categories={categories} />
   }
 }
 
@@ -39,11 +38,11 @@ export default Blog
 
 export const blogPagesQuery = graphql`
   query BlogsPageMain {
-    featuredPosts: allMarkdownRemark ( 
-    	sort: { order: DESC, fields: [frontmatter___date]},
+    featuredPosts: allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
       filter: {
         frontmatter: {
-          templateKey: { eq: "blog-post"},
+          templateKey: { eq: "blog-post" }
           featured: { eq: true }
           public: { eq: true }
         }
@@ -56,27 +55,23 @@ export const blogPagesQuery = graphql`
             slug
           }
           frontmatter {
-            title 
-            date 
-            description 
+            title
+            date
+            description
             tags
-            featured 
-            image 
+            featured
+            image
             category
           }
         }
       }
     }
-    
-    posts: allMarkdownRemark( 
-    	sort: { order: DESC, fields: [frontmatter___date] }
+
+    posts: allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
       filter: {
-        frontmatter:  { 
-          templateKey: {eq: "blog-post"},
-          public: { eq: true }
-        } 
+        frontmatter: { templateKey: { eq: "blog-post" }, public: { eq: true } }
       }
-      
     ) {
       edges {
         node {
@@ -87,7 +82,7 @@ export const blogPagesQuery = graphql`
           }
           frontmatter {
             title
-            date 
+            date
             description
             tags
             featured
@@ -101,8 +96,8 @@ export const blogPagesQuery = graphql`
 
     categories: allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { 
-        frontmatter: { 
+      filter: {
+        frontmatter: {
           templateKey: { eq: "blog-post" }
           category: { ne: null }
           public: { eq: true }
@@ -119,19 +114,13 @@ export const blogPagesQuery = graphql`
         }
       }
     }
-    
+
     tags: allMarkdownRemark(
-      filter: { 
-        frontmatter: { 
-          templateKey: { 
-            eq: "blog-post" 
-          }
-          tags: {
-            ne: null
-          }
-          tags: {
-            ne: ""
-          }
+      filter: {
+        frontmatter: {
+          templateKey: { eq: "blog-post" }
+          tags: { ne: null }
+          tags: { ne: "" }
         }
       }
       limit: 1000

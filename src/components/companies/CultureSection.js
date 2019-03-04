@@ -13,12 +13,12 @@ const sliderSettings = {
   infinite: true,
   speed: 2500,
   autoplay: true,
-  autoplaySpeed: 3000
+  autoplaySpeed: 3000,
 }
 
-const CultureItem = (props) => (
+const CultureItem = props => (
   <div className="culture-item">
-    <div style={{ backgroundImage: `url(${props.image})`}}></div>
+    <div style={{ backgroundImage: `url(${props.image})` }} />
     <div>{props.title}</div>
     <div>{props.description}</div>
   </div>
@@ -27,32 +27,29 @@ const CultureItem = (props) => (
 CultureItem.propTypes = {
   image: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired
+  description: PropTypes.string.isRequired,
 }
 
 /**
  * CultureSection
- * 
+ *
  * @class Display a series of videos.
  * Should be composed withSlider
  */
 
 class CultureSection extends React.Component {
   constructor() {
-    super();
+    super()
   }
 
   render() {
-    const { cultureItems } = this.props;
+    const { cultureItems } = this.props
 
     return (
       <div>
         <Slider {...sliderSettings}>
-          { cultureItems.map((cultureItem, i) => (
-            <CultureItem 
-              key={i} 
-              {...cultureItem}
-            />
+          {cultureItems.map((cultureItem, i) => (
+            <CultureItem key={i} {...cultureItem} />
           ))}
         </Slider>
       </div>
@@ -62,12 +59,14 @@ class CultureSection extends React.Component {
 
 CultureSection.propTypes = {
   title: PropTypes.string.isRequired,
-  cultureItems: PropTypes.arrayOf(PropTypes.shape({
-    image: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    description: PropTypes.string
-  })),
-  size: PropTypes.string.isRequired
+  cultureItems: PropTypes.arrayOf(
+    PropTypes.shape({
+      image: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      description: PropTypes.string,
+    })
+  ),
+  size: PropTypes.string.isRequired,
 }
 
-export default withSection(CultureSection);
+export default withSection(CultureSection)

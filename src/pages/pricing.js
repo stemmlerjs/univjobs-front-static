@@ -8,7 +8,7 @@ import companies2 from '../img/companies-4-alt.png'
 import goodCompany from '../img/good-company.png'
 import desktopCompanies from '../img/pricing/desktop-companies.png'
 
-import { CallToAction } from '../components/shared';
+import { CallToAction } from '../components/shared'
 import LandingPage from '../components/LandingPage'
 
 import Divider from '../components/Divider'
@@ -173,7 +173,8 @@ class Pricing extends React.Component {
         <SEO
           isBlogPost={false}
           postData={{
-            title: 'Pricing @ Univjobs | Simplifying hiring post-secondary students',
+            title:
+              'Pricing @ Univjobs | Simplifying hiring post-secondary students',
             description:
               'Recruit students and recent-grads from any post-secondary school in Canada.',
           }}
