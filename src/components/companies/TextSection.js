@@ -4,27 +4,25 @@ import withSection from './withSection'
 
 /**
  * TextSection
- * 
+ *
  * @class that renders basic text in the company profile.
  */
 
 class TextSection extends React.Component {
   constructor() {
-    super();
+    super()
   }
 
-  render () {
-    const { text } = this.props;
-    return (
-      <div dangerouslySetInnerHTML={{__html: text}}/>
-    )
+  render() {
+    const { text } = this.props
+    return <div dangerouslySetInnerHTML={{ __html: text }} />
   }
 }
 
 TextSection.propTypes = {
   title: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
-  size: PropTypes.string.isRequired
+  size: PropTypes.string.isRequired,
 }
 
-export default withSection(TextSection);
+export default withSection(TextSection)

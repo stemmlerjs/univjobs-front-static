@@ -39,16 +39,16 @@ class DirectoryResult extends React.Component {
   }
 
   toggleCard(e) {
-    const { isOpen } = this.state;
+    const { isOpen } = this.state
     if (isOpen) {
       this.closeCard()
     } else {
-      this.props.onClick(e);
+      this.props.onClick(e)
       this.openCard()
     }
   }
-  
-  renderDistance (distance) {
+
+  renderDistance(distance) {
     if (distance < 1) {
       return `${(Math.floor(distance * 100) / 10).toFixed(0)}00 m`
     } else {
@@ -68,9 +68,9 @@ class DirectoryResult extends React.Component {
       about,
       distance,
       exploreSlug,
-      fields
+      fields,
     } = this.props
-    const { isOpen } = this.state;
+    const { isOpen } = this.state
     return (
       <div className={`directory-result`}>
         <div
@@ -83,12 +83,11 @@ class DirectoryResult extends React.Component {
             <div className="distance">{index + 1}.</div>
             <div className="job-count">
               <span>{distance ? this.renderDistance(distance) : ''}</span>
-            {jobs.length === 0 
-                ? '' 
-                : jobs.length === 1 
-                  ? '1 job'
-                  : `${jobs.length} jobs`
-            }
+              {jobs.length === 0
+                ? ''
+                : jobs.length === 1
+                ? '1 job'
+                : `${jobs.length} jobs`}
             </div>
           </div>
           <div className="body-container">
@@ -104,7 +103,9 @@ class DirectoryResult extends React.Component {
               <div className="address">{address}</div>
               <div>
                 {industries.map((industry, i) => (
-                  <div className="industry" key={i}>{industry.industry_text}</div>
+                  <div className="industry" key={i}>
+                    {industry.industry_text}
+                  </div>
                 ))}
                 {feature ? <div className="featured">Featured</div> : ''}
               </div>
@@ -121,18 +122,23 @@ class DirectoryResult extends React.Component {
             <div>About {companyName}</div>
             <p>{about}</p>
 
-            <Link className="link" to={fields.exploreSlug ? fields.exploreSlug : fields.slug}>
-
-              {fields.exploreSlug ? `Explore life at ${companyName}` : `Learn more about ${companyName}`}
+            <Link
+              className="link"
+              to={fields.exploreSlug ? fields.exploreSlug : fields.slug}
+            >
+              {fields.exploreSlug
+                ? `Explore life at ${companyName}`
+                : `Learn more about ${companyName}`}
             </Link>
             {jobs.length !== 0 ? (
               <div>
                 <div>Jobs at {companyName}</div>
                 {jobs.map((job, i) => (
-                  <a 
-                    className="job" 
-                    key={i} 
-                    href={`${config.appUrl}posting/${job.slug}`}>
+                  <a
+                    className="job"
+                    key={i}
+                    href={`${config.appUrl}posting/${job.slug}`}
+                  >
                     {job.title}
                   </a>
                 ))}
@@ -168,5 +174,5 @@ DirectoryResult.propTypes = {
   ).isRequired,
   exploreSlug: PropTypes.string,
   onClick: PropTypes.func,
-  distance: PropTypes.number
+  distance: PropTypes.number,
 }

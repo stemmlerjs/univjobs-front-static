@@ -8,9 +8,12 @@ import '../../styles/company/CompanyLogo.sass'
 
 const CompanyLogo = ({ logoUrl }) => (
   <div className="company-logo">
-    {doesLogoExist(logoUrl) ? <img src={logoUrl}/> : <img src={altCompanyImg}/>}
-    
+    {doesLogoExist(logoUrl) ? (
+      <img src={logoUrl} />
+    ) : (
+      <img src={altCompanyImg} />
+    )}
   </div>
 )
 
-export default CompanyLogo;
+export default CompanyLogo

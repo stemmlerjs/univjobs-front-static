@@ -6,8 +6,8 @@ import helpers from '../helpers'
 import LandingPage from '../components/LandingPage'
 import FeaturedSlider from '../components/companies/FeaturedSlider'
 import CompaniesShowcase from '../components/companies/CompaniesShowcase'
-import { CallToAction } from '../components/shared';
-import DirectoryLink from '../components/companies/DirectoryLink';
+import { CallToAction } from '../components/shared'
+import DirectoryLink from '../components/companies/DirectoryLink'
 
 import config from '../config'
 import SEO from '../components/SEO'
@@ -16,7 +16,7 @@ import exploreCompanies from '../img/companies/explore-companies.png'
 
 /**
  * Companies
- * 
+ *
  * @desc Parent component to render all of the components for
  * the Explore Companies page via /companies.
  */
@@ -26,10 +26,12 @@ class Companies extends React.Component {
     super(props)
   }
 
-  render () {
-    const { data } = this.props;
-    const companies = helpers.companies.getCompaniesFromQuery(data.companies);
-    const featuredCompanies = helpers.companies.getCompaniesFromQuery(data.featureCompanies);
+  render() {
+    const { data } = this.props
+    const companies = helpers.companies.getCompaniesFromQuery(data.companies)
+    const featuredCompanies = helpers.companies.getCompaniesFromQuery(
+      data.featureCompanies
+    )
     console.log(data)
     console.log(this.props)
     return (
@@ -37,8 +39,10 @@ class Companies extends React.Component {
         <SEO
           isBlogPost={false}
           postData={{
-            title: "Univjobs: Find companies that hire college students and recent grads",
-            description: "Look inside different companies to see what they offer, what they do, and apply for jobs."
+            title:
+              'Univjobs: Find companies that hire college students and recent grads',
+            description:
+              'Look inside different companies to see what they offer, what they do, and apply for jobs.',
           }}
         />
         <LandingPage
@@ -63,15 +67,14 @@ class Companies extends React.Component {
             },
           }}
         />
-        <FeaturedSlider 
-          companies={featuredCompanies}/>
-        <CompaniesShowcase 
+        <FeaturedSlider companies={featuredCompanies} />
+        <CompaniesShowcase
           title={'Growing companies'}
           subTitle={`Looking for an opportunity to make an impact? 
             These companies are growing fast and looking for new grads to shape the future of their business.`}
           companies={companies}
         />
-        <DirectoryLink/>
+        <DirectoryLink />
         <CallToAction
           header="Get access to these company jobs"
           subHeader=""
@@ -90,20 +93,16 @@ Companies.propTypes = {
       companyName: PropTypes.string,
       slogan: PropTypes.string,
       slug: PropTypes.string,
-      brandImageUrl: PropTypes.string
-    }
-  )).isRequired
+      brandImageUrl: PropTypes.string,
+    })
+  ).isRequired,
 }
 
 export default Companies
 
 export const companiesPageQuery = graphql`
-query CompaniesQuery {
-  featureCompanies: allCompany ( 
-      filter: {
-        featured: { eq: true }
-      }
-    ) {
+  query CompaniesQuery {
+    featureCompanies: allCompany(filter: { featured: { eq: true } }) {
       edges {
         node {
           id
@@ -128,7 +127,7 @@ query CompaniesQuery {
             industry_id
           }
           slogan
-          socialLinks { 
+          socialLinks {
             url
             type
           }
@@ -167,12 +166,8 @@ query CompaniesQuery {
         }
       }
     }
-  
-    companies: allCompany ( 
-      filter: {
-        hidden: { eq: false }
-      }
-    ) { 
+
+    companies: allCompany(filter: { hidden: { eq: false } }) {
       edges {
         node {
           id
@@ -197,7 +192,7 @@ query CompaniesQuery {
             industry_id
           }
           slogan
-          socialLinks { 
+          socialLinks {
             url
             type
           }
@@ -236,5 +231,5 @@ query CompaniesQuery {
         }
       }
     }
-}
+  }
 `

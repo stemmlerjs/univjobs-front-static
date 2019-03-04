@@ -9,10 +9,10 @@ import '../styles/Directory/DirectoryCompanyTemplate.sass'
 
 /**
  * CompanyTemplate
- * 
+ *
  * @class The CompanyTemplate class outlines the template for how
  * an "Explore companies" commpany page will actually look.
- * 
+ *
  * @see LandingPage for the background image at the top
  * @see CompanyHeader for the header details
  * @see CompanyJobs for the jobs search
@@ -20,12 +20,11 @@ import '../styles/Directory/DirectoryCompanyTemplate.sass'
  */
 
 class DirectoryCompanyTemplate extends React.Component {
+  componentDidMount() {}
 
-  componentDidMount () {}
-
-  render () {
-    const company = this.props.data.allDirectoryCompany.edges[0].node;
-    const { lat, lng } = company.position;
+  render() {
+    const company = this.props.data.allDirectoryCompany.edges[0].node
+    const { lat, lng } = company.position
     console.log(company)
 
     return (
@@ -34,9 +33,12 @@ class DirectoryCompanyTemplate extends React.Component {
           isBlogPost={false}
           postImage={company.logoUrl}
           postData={{
-            title: `${company.companyName} | Univjobs - Jobs for students and recent-grads`,
-            description:
-              `Apply to student, part-time and recent grad jobs at ${company.companyName}`
+            title: `${
+              company.companyName
+            } | Univjobs - Jobs for students and recent-grads`,
+            description: `Apply to student, part-time and recent grad jobs at ${
+              company.companyName
+            }`,
           }}
         />
         <LandingPage
@@ -55,8 +57,8 @@ class DirectoryCompanyTemplate extends React.Component {
                 maxHeight: '40vh',
                 minHeight: '40vh',
                 textAlign: 'center',
-              }
-            }
+              },
+            },
           }}
         />
         <CompanyHeader
@@ -66,17 +68,17 @@ class DirectoryCompanyTemplate extends React.Component {
           numEmployees={company.companySize.label}
         />
         <div className="directory-company-template-container">
-        
           <div className="header">Where are they?</div>
           <p>{company.address}</p>
           <div className="header">What's their thing?</div>
           <p>{company.about}</p>
         </div>
-        <div 
+        <div
           // style={{
           //   backgroundImage: `url("https://api.mapbox.com/v4/mapbox.outdoors/pin-l-marker+285A98(-79.3806,43.6453)/-79.3806,43.6453,15/600x300@2x.png?access_token=pk.eyJ1Ijoia3N0ZW1tbGVyIiwiYSI6ImNpbzYzdHY3OTAyNXF3M2tqcnBsNnNnbG0ifQ.t5zgcqnSItauuI69WK-Sew")`
           // }}
-          className="directory-company-directory-map">
+          className="directory-company-directory-map"
+        >
           <DirectoryMap
             currentLatitude={lat}
             currentLongitude={lng}
@@ -88,23 +90,19 @@ class DirectoryCompanyTemplate extends React.Component {
               width: '100%',
             }}
           />
-          </div>
+        </div>
       </div>
     )
   }
 }
 
-DirectoryCompanyTemplate.propTypes = {
+DirectoryCompanyTemplate.propTypes = {}
 
-}
-
-export default DirectoryCompanyTemplate;
+export default DirectoryCompanyTemplate
 
 export const pageQuery = graphql`
-query DirectoryCompanyQuery($companyId: Int) {
-  allDirectoryCompany(filter: {
-    companyId: { eq: $companyId }
-  }) {
+  query DirectoryCompanyQuery($companyId: Int) {
+    allDirectoryCompany(filter: { companyId: { eq: $companyId } }) {
       edges {
         node {
           fields {

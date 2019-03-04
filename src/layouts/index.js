@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
 // import { Header } from '../components/shared'
 import { Header } from 'univjobs-ui-components'
-import "univjobs-ui-components/build/index.css"
+import 'univjobs-ui-components/build/index.css'
 
 import Footer from '../components/Footer'
 import config from '../config'
@@ -12,11 +12,11 @@ import meta from './meta'
 import links from './links'
 import scripts from './scripts'
 
-import "./styles.sass"
+import './styles.sass'
 
 /**
  * Layout
- * 
+ *
  * @desc The layout is the main component for the entire
  * app. Think of it as the skeleton of the project.
  * We set the default Helmet meta tags which can be overriden
@@ -32,8 +32,8 @@ const Layout = ({ children, data }) => (
       link={links}
       script={scripts}
     />
-    <Header 
-      siteTitle={data.site.siteMetadata.title} 
+    <Header
+      siteTitle={data.site.siteMetadata.title}
       appUrl={config.appUrl}
       staticUrl={config.staticUrl}
       linkComponent={Link}
@@ -52,7 +52,7 @@ const Layout = ({ children, data }) => (
     >
       {children()}
     </div>
-    <Footer/>
+    <Footer />
   </div>
 )
 

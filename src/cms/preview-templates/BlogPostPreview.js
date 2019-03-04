@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { BlogPostTemplate } from '../../templates/blog-post'
 
 const BlogPostPreview = ({ entry, widgetFor }) => {
-  const data = entry.get('data').toJS();
+  const data = entry.get('data').toJS()
   return (
     <BlogPostTemplate
       content={data.body}
@@ -12,7 +12,7 @@ const BlogPostPreview = ({ entry, widgetFor }) => {
       title={entry.getIn(['data', 'title'])}
     />
   )
-} 
+}
 
 BlogPostPreview.propTypes = {
   entry: PropTypes.shape({
