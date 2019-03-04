@@ -24,7 +24,7 @@ import SEO from '../components/SEO'
 const Logo = () => {
   return (
     <div className={styles.uLogo}>
-      <img src={config.logo} />
+      <img src={config.assets.image.cirularLogo} />
     </div>
   )
 }

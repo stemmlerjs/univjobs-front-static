@@ -60,7 +60,7 @@ const getSchemaOrgJSONLD = ({
           publisher: {
             '@type': 'Organization',
             url: 'https://univjobs.ca',
-            logo: config.logo,
+            logo: config.assets.image.circularLogo,
             name: 'Charles Javelona',
           },
           mainEntityOfPage: {
@@ -79,7 +79,7 @@ const SEO = ({ postData, postImage, isBlogPost }) => {
   const title = postMeta.title || config.title;
   const description =
     postMeta.description || postData.excerpt || config.description;
-  const image = `${config.url}${postImage}` || config.image;
+  const image = `${config.url}${postImage}` || config.assets.image.circularLogo;
   const url = postMeta.slug
     ? `${config.url}${postMeta.slug}`
     : config.url;

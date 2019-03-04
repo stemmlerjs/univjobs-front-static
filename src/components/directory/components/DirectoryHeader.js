@@ -180,7 +180,7 @@ export default class DirectoryHeader extends React.Component {
         className="directory-header"
         id="directory-header-nav"
       >
-        <Link to="/" className="logo-container"><img src={config.logo}/></Link>
+        <Link to="/" className="logo-container"><img src={config.assets.image.cirularLogo}/></Link>
         <div className="search-container">
           <input 
             id="searchTextField"

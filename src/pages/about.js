@@ -63,7 +63,7 @@ const OurStory = (props) => {
 
       <div className={ourStory.flexContainer}>
         <div className={ourStory.imageContainer}>
-          <img src={config.logo}/>
+          <img src={config.assets.image.cirularLogo}/>
         </div>
 
         <div className={ourStory.textContainer}>
