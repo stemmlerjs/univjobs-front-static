@@ -66,12 +66,14 @@ const About = (props) => {
       </p>
         
       <p>
-        Traditional options for employers such as job fairs, regular job boards, and career services are inefficient methods to recruit students. 
+        {
+          `Traditional options for employers such as job fairs, regular job boards, and career services are inefficient methods to recruit students. 
         They cost a lot of time, money and according to employers, are not the most effective ways to find the right talent. 
         On other job searching platforms like Indeed, it's easy for students to get lost among senior level and overqualified candidates.
         At Univjobs, employers can headhunt early career candidates quickly, promoting diverse and inclusive hiring practices. 
         They can target, invite, search, and narrow down candidates based on school, skills, and year. 
-        This allows them to find qualified job seekers within days instead of months while magnifying their brand presence among the next generation of talent.
+        This allows them to find qualified job seekers within days instead of months while magnifying their brand presence among the next generation of talent.`
+        }
       </p>
 
       <p>
