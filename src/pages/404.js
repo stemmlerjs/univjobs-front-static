@@ -1,4 +1,5 @@
 import React from 'react'
+import config from '../config/index'
 
 class NotFoundPage extends React.Component {
   constructor() {
@@ -6,25 +7,13 @@ class NotFoundPage extends React.Component {
   }
 
   componentDidMount () {
-    if (typeof window !== undefined) {
-      let url = window.location.href;
-
-      if (url.indexOf('posting') !== -1) {
-        let lastIndexSlash = url.lastIndexOf("/");
-        let postingSlug = url.substring(lastIndexSlash + 1);
-
-        if (typeof window !== undefined) {
-          window.location.href = `${config.appUrl}posting/${postingSlug}`
-        }
-        
-      }
-
-      if (url.indexOf('register/employer')) {
-        if (typeof window !== undefined) {
-          window.location.href = 'https://univjobs.ca/employers/'
-        }
-      }
-    }
+    /**
+     * NOTE: 
+     *  config.staticUrl is accepted to be 8001 in development
+     *  redirection in local development will automatically go to 8000
+     * 
+     * */
+    window.location.replace(config.staticUrl)
   }
 
   render() {
