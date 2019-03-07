@@ -1,4 +1,5 @@
 import React from 'react'
+import config from '../config/index'
 
 class NotFoundPage extends React.Component {
   constructor() {
@@ -6,6 +7,7 @@ class NotFoundPage extends React.Component {
   }
 
   componentDidMount () {
+    window.location.replace(config.staticUrl)
   }
 
   render() {
