@@ -15,7 +15,9 @@ const SocialLinks = props => {
   } else {
     return (
       <div className="social-links-container">
-        {props.links.map((link, i) => <SocialLink key={i} {...link} />)}
+        {props.links.map((link, i) => (
+          <SocialLink key={i} {...link} />
+        ))}
       </div>
     )
   }

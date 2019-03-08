@@ -1,10 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
-import uLogo from '../../../img/about/u-logo.png'
 import searchSvg from '../../../img/directory/search.svg'
 import '../styles/DirectoryHeader.sass'
 import { HeaderOverlay } from '../../shared'
+
+import config from '../../../config'
 
 /**
  * @class DirectoryHeader
@@ -21,12 +22,14 @@ export default class DirectoryHeader extends React.Component {
       delta: 5,
       navbarHeight: 0,
       hideUp: false,
-      isHeaderOpen: false
+      isHeaderOpen: false,
     }
 
     this.hasScrolled = this.hasScrolled.bind(this)
     this.setupScrollEvents = this.setupScrollEvents.bind(this)
-    this.setupGoogleMapsAutoComplete = this.setupGoogleMapsAutoComplete.bind(this)
+    this.setupGoogleMapsAutoComplete = this.setupGoogleMapsAutoComplete.bind(
+      this
+    )
   }
 
   componentDidMount() {
@@ -35,23 +38,27 @@ export default class DirectoryHeader extends React.Component {
 
     // Setup autocomplete
     if (typeof window !== undefined) {
-      this.setupGoogleMapsAutoComplete();
+      this.setupGoogleMapsAutoComplete()
     }
   }
 
-  setupGoogleMapsAutoComplete () {
+  setupGoogleMapsAutoComplete() {
     // Place "initializegmaps" onto the window as a global function
-    // so that the google maps API can access it as a callback 
+    // so that the google maps API can access it as a callback
     // function.
-    const self = this;
+    const self = this
     window.initializegmaps = () => {
       // Setup autocomplete
-      const input = document.getElementById('searchTextField');
-      const autocomplete = new google.maps.places.Autocomplete(input);
-      google.maps.event.addListener(autocomplete, 'place_changed', this.handlePlaceChanged.bind(self));
+      const input = document.getElementById('searchTextField')
+      const autocomplete = new google.maps.places.Autocomplete(input)
+      google.maps.event.addListener(
+        autocomplete,
+        'place_changed',
+        this.handlePlaceChanged.bind(self)
+      )
 
       // Setup GeoCoder
-      window.Geocoder = new google.maps.Geocoder;
+      window.Geocoder = new google.maps.Geocoder()
     }
   }
 
@@ -61,10 +68,10 @@ export default class DirectoryHeader extends React.Component {
    * the Google Maps input.
    */
 
-  handlePlaceChanged () {
-    const newPlaceValue = document.getElementById('searchTextField').value;
-    this.props.onChange(newPlaceValue);
-    this.props.onSubmit();
+  handlePlaceChanged() {
+    const newPlaceValue = document.getElementById('searchTextField').value
+    this.props.onChange(newPlaceValue)
+    this.props.onSubmit()
   }
 
   /**
@@ -163,14 +170,14 @@ export default class DirectoryHeader extends React.Component {
    * @param {Event} e
    */
 
-  _handleKeyPress = (e) => {
+  _handleKeyPress = e => {
     if (e.key === 'Enter') {
-      this.props.onSubmit();
+      this.props.onSubmit()
     }
   }
 
   render() {
-    const { currentLocation } = this.props;
+    const { currentLocation } = this.props
     return (
       <div
         style={{
@@ -179,26 +186,24 @@ export default class DirectoryHeader extends React.Component {
         className="directory-header"
         id="directory-header-nav"
       >
-        <Link to="/" className="logo-container"><img src={uLogo}/></Link>
+        <Link to="/" className="logo-container">
+          <img src={config.assets.image.cirularLogo} />
+        </Link>
         <div className="search-container">
-          <input 
+          <input
             id="searchTextField"
-            value={currentLocation} 
-            type="text" 
+            value={currentLocation}
+            type="text"
             placeholder="Search by address or city"
-            onChange={(e) => this.props.onChange(e.target.value)}
+            onChange={e => this.props.onChange(e.target.value)}
             onKeyPress={this._handleKeyPress}
           />
-          <div 
-            onClick={this.props.onSubmit}
-            className="enter-button">
-            <img src={searchSvg}/>
+          <div onClick={this.props.onSubmit} className="enter-button">
+            <img src={searchSvg} />
           </div>
         </div>
 
-        <HeaderOverlay
-          isOpen={this.state.isHeaderOpen}
-        />
+        <HeaderOverlay isOpen={this.state.isHeaderOpen} />
       </div>
     )
   }
@@ -207,5 +212,5 @@ export default class DirectoryHeader extends React.Component {
 DirectoryHeader.propTypes = {
   currentLocation: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
-  onSubmit: PropTypes.func.isRequired
+  onSubmit: PropTypes.func.isRequired,
 }

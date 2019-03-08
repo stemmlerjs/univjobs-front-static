@@ -4,8 +4,7 @@ import Link from 'gatsby-link'
 
 class TagRoute extends React.Component {
   render() {
-
-    return <div/>
+    return <div />
 
     const posts = this.props.data.allMarkdownRemark.edges
     const postLinks = posts.map(post => (

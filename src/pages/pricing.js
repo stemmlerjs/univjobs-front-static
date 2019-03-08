@@ -7,9 +7,8 @@ import companies1 from '../img/companies-resized-2.png'
 import companies2 from '../img/companies-4-alt.png'
 import goodCompany from '../img/good-company.png'
 import desktopCompanies from '../img/pricing/desktop-companies.png'
-import uLogo from '../img/u-logo-circle.png'
 
-import { CallToAction } from '../components/shared';
+import { CallToAction } from '../components/shared'
 import LandingPage from '../components/LandingPage'
 
 import Divider from '../components/Divider'
@@ -22,10 +21,10 @@ import config from '../config'
 import { redirectTo } from '../helpers'
 import SEO from '../components/SEO'
 
-const ULogo = () => {
+const Logo = () => {
   return (
     <div className={styles.uLogo}>
-      <img src={uLogo} />
+      <img src={config.assets.image.cirularLogo} />
     </div>
   )
 }
@@ -174,12 +173,13 @@ class Pricing extends React.Component {
         <SEO
           isBlogPost={false}
           postData={{
-            title: 'Pricing @ Univjobs | Simplifying hiring post-secondary students',
+            title:
+              'Pricing @ Univjobs | Simplifying hiring post-secondary students',
             description:
               'Recruit students and recent-grads from any post-secondary school in Canada.',
           }}
         />
-        <ULogo />
+        <Logo />
 
         <div className={styles.heroFlex}>
           <Plans />

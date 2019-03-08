@@ -37,5 +37,5 @@ export default [
   { value: 36, label: 'Telecommunication' },
   { value: 37, label: 'Transportation' },
   { value: 38, label: 'Travel' },
-  { value: 39, label: 'Service' }
+  { value: 39, label: 'Service' },
 ]

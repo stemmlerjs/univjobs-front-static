@@ -2,23 +2,24 @@ import React from 'react'
 import Link from 'gatsby-link'
 import shortHero from '../styles/ShortHero.module.css'
 
-
 class ShortHero extends React.Component {
-    constructor () {
-      super();
-      this.state = {
-      };
-    }
+  constructor() {
+    super()
+    this.state = {}
+  }
 
-
-render = () => {
+  render = () => {
     return (
       <section className={shortHero.backgroundFallback}>
-        <div className={this.props.isFixedHero ? shortHero.fixedHero : shortHero.hero}>
-        <div className={shortHero.centeredHeroContainer}>
-          <h1 className={shortHero.title}>{this.props.heroTitle}</h1>
-          <div className={shortHero.subTitle}>{this.props.heroSubTitle}</div>
-        </div>
+        <div
+          className={
+            this.props.isFixedHero ? shortHero.fixedHero : shortHero.hero
+          }
+        >
+          <div className={shortHero.centeredHeroContainer}>
+            <h1 className={shortHero.title}>{this.props.heroTitle}</h1>
+            <div className={shortHero.subTitle}>{this.props.heroSubTitle}</div>
+          </div>
         </div>
       </section>
     )
@@ -26,9 +27,9 @@ render = () => {
 }
 
 ShortHero.defaultProps = {
-    heroTitle: '',
-    heroSubTitle: '',
-    image: '',
-    isFixedHero: false
-  };
+  heroTitle: '',
+  heroSubTitle: '',
+  image: '',
+  isFixedHero: false,
+}
 export default ShortHero

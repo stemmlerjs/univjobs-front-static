@@ -8,7 +8,7 @@ import DirectoryMap from '../../components/directory/components/DirectoryMap'
 import MobilePagePicture from '../../components/directory/components/MobilePagePicture'
 import Loading from '../../components/Loading'
 import { getCurrentCity, getCoordinates } from '../../utils/ip'
-import { CallToAction } from '../../components/shared';
+import { CallToAction } from '../../components/shared'
 import config from '../../config'
 import SEO from '../../components/SEO'
 import '../../styles/Directory/Directory.sass'
@@ -199,7 +199,7 @@ class Directory extends React.Component {
   componentDidMount() {
     // Get the initial position of the user.
     this.getInitialPosition(() => {
-      this._doFilter();
+      this._doFilter()
     })
 
     // Setup event listener on window dimensions
@@ -234,7 +234,7 @@ class Directory extends React.Component {
 
   handleSearchForLocation() {
     const { currentLocation } = this.state
-    const { Geocoder } = window;
+    const { Geocoder } = window
     Geocoder.geocode({ address: currentLocation }, geocodeResponse => {
       const lat = geocodeResponse[0].geometry.location.lat()
       const lng = geocodeResponse[0].geometry.location.lng()
@@ -262,13 +262,15 @@ class Directory extends React.Component {
         [filterName]: value,
         isSearching: true,
       },
-      isRebuildingMap: !this.isMobileUser() ? !this.state.isRebuildingMap : this.state.isRebuildingMap
+      isRebuildingMap: !this.isMobileUser()
+        ? !this.state.isRebuildingMap
+        : this.state.isRebuildingMap,
     })
   }
 
-  isMobileUser () {
-    const { width } = this.state;
-    return width < 675;
+  isMobileUser() {
+    const { width } = this.state
+    return width < 675
   }
 
   _doFilter() {
@@ -279,32 +281,35 @@ class Directory extends React.Component {
     let filteredCompanies = this.filterByCompanySize(
       this.filterByHiring(this.filterByIndustry(companies, industry), hiring),
       companySize
-    );
+    )
 
     this.setState({
       ...this.state,
       filteredCompanies: filteredCompanies,
       isSearching: false,
-      isRebuildingMap: this.isMobileUser() ? false : !this.state.isRebuildingMap
+      isRebuildingMap: this.isMobileUser()
+        ? false
+        : !this.state.isRebuildingMap,
     })
   }
 
-  sortByDistance (companies) {
+  sortByDistance(companies) {
     const { myLat, myLng } = this.state
-    return companies.map(company => {
-      const distance = calculateDistance(
-        myLat,
-        myLng,
-        company.position.lat,
-        company.position.lng,
-        'K'
-      )
-      company.distance = distance
-      return company
-    })
-    .sort((a, b) => {
-      return a.distance - b.distance
-    })
+    return companies
+      .map(company => {
+        const distance = calculateDistance(
+          myLat,
+          myLng,
+          company.position.lat,
+          company.position.lng,
+          'K'
+        )
+        company.distance = distance
+        return company
+      })
+      .sort((a, b) => {
+        return a.distance - b.distance
+      })
   }
 
   detectFiltersChange = previousFilters => {
@@ -323,15 +328,18 @@ class Directory extends React.Component {
     return false
   }
 
-  detectLocationChange (prevLat, prevLng) {
-    if (prevLat !== this.state.myLat) return true;
-    if (prevLng !== this.state.myLng) return true;
+  detectLocationChange(prevLat, prevLng) {
+    if (prevLat !== this.state.myLat) return true
+    if (prevLng !== this.state.myLng) return true
     return false
   }
 
   componentDidUpdate(prevProps, prevState) {
     const didFiltersChange = this.detectFiltersChange(prevState.filters)
-    const didLocationChange = this.detectLocationChange(prevState.myLat, prevState.myLng)
+    const didLocationChange = this.detectLocationChange(
+      prevState.myLat,
+      prevState.myLng
+    )
     if (didFiltersChange || didLocationChange) {
       this._doFilter()
     }
@@ -354,15 +362,15 @@ class Directory extends React.Component {
 
           // Use "some()", return "true" when you want it to break.
           industryFilters.some(industry => {
-            const filtered = company.industries.filter((i) => {
+            const filtered = company.industries.filter(i => {
               return i.industry_id === industry.value
-            });
+            })
 
             if (filtered.length !== 0) {
               show = true
               return true
             }
-            return false;
+            return false
           })
           console.log(show, 'show?')
 
@@ -417,7 +425,7 @@ class Directory extends React.Component {
   }
 
   getCompaniesFromProps = () => {
-    let { companies } = this.props.data;
+    let { companies } = this.props.data
     return this.shuffleFeatured(
       this.sortByDistance(companies.edges.map(c => c.node))
     )
@@ -425,37 +433,39 @@ class Directory extends React.Component {
 
   /**
    * shuffleFeatured
-   * 
-   * @desc This function places the featured companies towards the 
+   *
+   * @desc This function places the featured companies towards the
    * top of the list, shuffled every 3/4 companies.
    */
 
-  shuffleFeatured = (companies) => {
-    let featuredMap = [];
+  shuffleFeatured = companies => {
+    let featuredMap = []
     // Get all featured companies
     companies.filter((company, i) => {
       if (company.feature) {
         featuredMap.push({ index: i, company: company })
-        return true;
+        return true
       }
-      return false;
-    });
+      return false
+    })
 
     // Only begin shuffling if there were some featured companies
     // found.
     if (featuredMap.length !== 0) {
-      let shuffleIndex = 0;
+      let shuffleIndex = 0
       featuredMap.forEach((featured, ind) => {
         // Remove the featured company from the original list.
         companies.splice(featured.index, 1)
         // Insert featured company
         companies.splice(shuffleIndex, 0, featured.company)
         // Get next position of featured company
-        shuffleIndex = companies[(shuffleIndex + 3)] ? shuffleIndex + 3 : shuffleIndex + 1;
-      });
+        shuffleIndex = companies[shuffleIndex + 3]
+          ? shuffleIndex + 3
+          : shuffleIndex + 1
+      })
     }
-    
-    return companies;
+
+    return companies
   }
 
   updateWindowDimensions() {
@@ -475,7 +485,7 @@ class Directory extends React.Component {
       ? filteredCompanies
       : this.getCompaniesFromProps()
 
-      console.log(companies)
+    console.log(companies)
 
     return (
       <div className="directory-container">
@@ -506,7 +516,7 @@ class Directory extends React.Component {
                 style={{
                   margin: '0 auto',
                   textAlign: 'center',
-                  paddingTop: '10px'
+                  paddingTop: '10px',
                 }}
                 className="center"
               >
@@ -519,8 +529,8 @@ class Directory extends React.Component {
               <div>Try adjusting your search filters!</div>
             </div>
           ) : (
-            <DirectoryResultsList 
-              companies={companies ? companies : []} 
+            <DirectoryResultsList
+              companies={companies ? companies : []}
               isMobile={this.isMobileUser()}
             />
           )}

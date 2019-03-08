@@ -5,17 +5,19 @@ import styles from '../../styles/Press.module.css'
 
 /**
  * Mention
- * 
+ *
  * A single instance of a mention from the press.
  */
 
-const Mention = (props) => {
+const Mention = props => {
   return (
-    <a className={styles.mention} href={props.link}
-      style={{ textDecoration: 'none'}}
+    <a
+      className={styles.mention}
+      href={props.link}
+      style={{ textDecoration: 'none' }}
     >
       <div className={styles.mentionImageContainer}>
-        <img src={props.img}/>
+        <img src={props.img} />
       </div>
 
       <div className={styles.mentionsBody}>
@@ -30,12 +32,12 @@ Mention.propTypes = {
   title: PropTypes.string.isRequired,
   img: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
-  link: PropTypes.string.isRequired
+  link: PropTypes.string.isRequired,
 }
 
 /**
  * Mentions
- * 
+ *
  * Lists all of the press mentions that we have.
  */
 
@@ -43,28 +45,30 @@ const Mentions = ({ mentions }) => {
   return (
     <section>
       <h1>Press mentions</h1>
-      {
-        mentions.map((mention, index) => {
-          return <Mention 
+      {mentions.map((mention, index) => {
+        return (
+          <Mention
             key={index}
-            title={mention.title} 
+            title={mention.title}
             img={mention.image}
             author={mention.author}
             link={mention.link}
           />
-        })
-      }
+        )
+      })}
     </section>
   )
 }
 
 Mentions.propTypes = {
-  mentions: PropTypes.arrayOf(PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    author: PropTypes.string.isRequired,
-    link: PropTypes.string.isRequired
-  })).isRequired
+  mentions: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
+      author: PropTypes.string.isRequired,
+      link: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 }
 
-export default Mentions;
+export default Mentions

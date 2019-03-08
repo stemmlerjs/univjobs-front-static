@@ -1,7 +1,7 @@
 ---
 templateKey: blog-post
 title: 5 Perfect Jobs For The Introvert In Your Life
-author: Trevor Dewan
+author: Charles Javelona
 date: '2018-06-16T13:05:18-04:00'
 description: >+
   Introverts are people who prefer calm, minimally stimulating environments and
@@ -38,7 +38,7 @@ Just you, the footage, and your laptop. What can get any better than this? There
 
 You’re the life of the party — online. If you have a way with words and consider yourself an expert in a few areas, then let your personality shine online as a blogger/content writer. This position allows you to work from home & potentially make money doing it. Can you say "Dream Job"?
 
-**Social Media Manager**
+# Social Media Manager
 
 Oh, just your average introvert talking with hundreds of people. NBD. Social Media Managers connect with the online communities of brands and organizations. It allows for you to socialize without all the fuss of actually socializing. This job is always in demand with companies looking to pay a lot of money to get a good SMM .
 

@@ -1,56 +1,47 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { HTMLContent } from '../components/Content'
-import { CallToAction } from '../components/shared';
+import { CallToAction } from '../components/shared'
 import Link from 'gatsby-link'
 import SEO from '../components/SEO'
 
 import styles from '../styles/TeamMember.module.css'
 
-const Intro = (props) => {
+const Intro = props => {
   return (
     <div className={styles.introContainer}>
       <h1>{props.name}</h1>
       <div>{props.role}</div>
-      <img src={props.image}/>
+      <img src={props.image} />
     </div>
   )
 }
 
-export const TeamMemberPageTemplate = ({
-  image,
-  name,
-  role,
-  content
-}) => (
+export const TeamMemberPageTemplate = ({ image, name, role, content }) => (
   <div>
     <section className={styles.pageContainer}>
       <SEO
         isBlogPost={false}
         postData={{
           title: `${name} | Univjobs Team`,
-          description: role
+          description: role,
         }}
         postImage={image}
       />
-      <Intro
-        name={name}
-        role={role}
-        image={image}
-      />
+      <Intro name={name} role={role} image={image} />
       <div className={styles.content}>
         <HTMLContent content={content} />
-        <Link to="/about">
-          Learn about the rest of the Univjobs Team
-        </Link>
+        <Link to="/about">Learn about the rest of the Univjobs Team</Link>
       </div>
     </section>
     <CallToAction
       header={'Start Now!'}
-      subHeader={'Students are already applying to jobs. Create your profile and find meaningful work today!'}
+      subHeader={
+        'Students are already applying to jobs. Create your profile and find meaningful work today!'
+      }
       buttonText={'Sign up'}
       alt={false}
-      location={"https://app.univjobs.ca/register/"}
+      location={'https://app.univjobs.ca/register/'}
     />
   </div>
 )
@@ -58,7 +49,7 @@ export const TeamMemberPageTemplate = ({
 TeamMemberPageTemplate.propTypes = {
   image: PropTypes.string,
   role: PropTypes.string,
-  name: PropTypes.string
+  name: PropTypes.string,
 }
 
 const TeamMemberPage = ({ data }) => {
