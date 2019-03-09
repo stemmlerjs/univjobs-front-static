@@ -19,7 +19,7 @@ import styles from '../styles/Pricing.module.css'
 
 import config from '../config'
 import { redirectTo } from '../helpers'
-import SEO from '../components/SEO'
+import {SEO} from '../components/seo'
 
 const Logo = () => {
   return (
@@ -174,7 +174,7 @@ class Pricing extends React.Component {
           isBlogPost={false}
           postData={{
             title:
-              'Pricing @ Univjobs | Simplifying hiring post-secondary students',
+              'Univjobs Pricing',
             description:
               'Recruit students and recent-grads from any post-secondary school in Canada.',
           }}

@@ -10,7 +10,7 @@ import grad from '../img/gradphotos.jpeg'
 import LandingPage from '../components/LandingPage'
 
 import config from '../config'
-import SEO from '../components/SEO'
+import {SEO} from '../components/seo'
 
 import { Backers, AltFeature, StudentTestimonials } from '../components/landing'
 
@@ -42,7 +42,7 @@ const Index = () => (
       isBlogPost={false}
       postData={{
         title:
-          'Univjobs: Jobs, Internships & Work Study for College Students and Recent Grads',
+          'Jobs, internships, and work study for students and recent grads',
         description:
           'Find paid internship, remote work, part time, and entry-level jobs at startups and large companies',
       }}

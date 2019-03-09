@@ -5,7 +5,7 @@ import CategoriesHeader from './CategoriesHeader'
 import BlogPostTemplate from './BlogPostTemplate'
 import Post from './Post'
 import Link from 'gatsby-link'
-import SEO from '../../../components/SEO'
+import {SEO} from '../../seo'
 import '../styles/BlogIndex.sass'
 
 import popular from '../../../img/blog/ic_trending_up_24px.svg'
@@ -45,7 +45,7 @@ const BlogPageLayout = ({ post, posts, categories, category }) => (
           // Blog post page
           <SEO
             postData={{
-              title: `${post.title} | Univjobs Blog`,
+              title: `${post.title}`,
               description: post.description,
               slug: post.slug,
             }}

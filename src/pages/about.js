@@ -9,7 +9,7 @@ import pitch from '../img/about/pitch.png'
 import LandingPage from '../components/LandingPage'
 import { CallToAction } from '../components/shared'
 import Divider from '../components/Divider'
-import SEO from '../components/SEO'
+import {SEO} from '../components/seo'
 
 import styles from '../styles/About.module.css'
 import description from '../styles/About/Description.module.css'

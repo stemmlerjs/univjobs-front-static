@@ -2,7 +2,7 @@ import path from 'path'
 import React from 'react'
 import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
-import * as config from '../config'
+import * as config from '../../../config'
 
 const getSchemaOrgJSONLD = ({
   isBlogPost,
@@ -75,16 +75,18 @@ const getSchemaOrgJSONLD = ({
 
 const SEO = ({ postData, postImage, isBlogPost }) => {
   const postMeta = postData || {}
+  debugger
+
 
   const title = postMeta.title || config.title
   const description =
     postMeta.description || postData.excerpt || config.description
-  const image = `${config.url}${postImage}` || config.assets.image.circularLogo
+  const image = `${config.url}${postImage}` || config.assets.image.logo
   const url = postMeta.slug ? `${config.url}${postMeta.slug}` : config.url
   const datePublished = isBlogPost ? postMeta.date : false
   const keywords = postData.keywords
     ? postData.keywords
-    : 'student jobs, part time jobs, co-op jobs, univjobs, toronto, oakville, mississauga'
+    : 'student jobs, part time jobs, co-op, work study, univjobs'
   const { canonical } = postData
 
   const schemaOrgJSONLD = getSchemaOrgJSONLD({
@@ -96,9 +98,11 @@ const SEO = ({ postData, postImage, isBlogPost }) => {
     datePublished,
   })
 
+  debugger
   return (
     <Helmet>
       {/* General tags */}
+      <title>{title}</title>
       <meta name="description" content={description} />
       <meta name="image" content={image} />
 
@@ -124,6 +128,7 @@ const SEO = ({ postData, postImage, isBlogPost }) => {
       <meta name="twitter:image" content={image} />
 
       {canonical ? <link rel="canonical" href={canonical} /> : ''}
+      
     </Helmet>
   )
 }
@@ -141,7 +146,7 @@ SEO.propTypes = {
 
 SEO.defaultProps = {
   isBlogPost: false,
-  postImage: 'img/u.png',
+  postImage: config.assets.image.logo,
 }
 
 export default SEO

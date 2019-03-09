@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import config from '../config'
 import LandingPage from '../components/LandingPage'
-import SEO from '../components/SEO'
+import {SEO} from '../components/seo'
 import '../styles/LandingTemplate/LandingTemplate.sass'
 import features from '../styles/FeatureStyles.module.css'
 

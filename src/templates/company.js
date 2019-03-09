@@ -12,7 +12,7 @@ import OfficesSection from '../components/companies/OfficesSection'
 import CultureSection from '../components/companies/CultureSection'
 import helpers from '../helpers'
 import { logExploreCompanyView } from '../utils/logging'
-import SEO from '../components/SEO'
+import {SEO} from '../components/seo'
 import get from 'lodash/get'
 
 /**

@@ -24,7 +24,7 @@ import instacart from '../img/instacart.svg'
 import ymca from '../img/ymca.svg'
 import airmiles from '../img/airmiles.svg'
 import config from '../config'
-import SEO from '../components/SEO'
+import {SEO} from '../components/seo'
 
 const SmallBusiness = () => (
   <div>

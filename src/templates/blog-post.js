@@ -5,7 +5,7 @@ import Content, { HTMLContent } from '../components/Content'
 import { CategoriesHeader, BlogPageLayout } from '../components/blog'
 
 import { CallToAction } from '../components/shared'
-import SEO from '../components/SEO'
+import {SEO} from '../components/seo'
 import helpers from '../helpers'
 
 import styles from '../styles/Blog/BlogPostPage.module.css'

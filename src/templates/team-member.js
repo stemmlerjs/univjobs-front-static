@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { HTMLContent } from '../components/Content'
 import { CallToAction } from '../components/shared'
 import Link from 'gatsby-link'
-import SEO from '../components/SEO'
+import {SEO} from '../components/seo'
 
 import styles from '../styles/TeamMember.module.css'
 

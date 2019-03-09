@@ -21,7 +21,7 @@ import CountUp from 'react-countup'
 import Divider from '../components/Divider'
 import Mentions from '../components/press/Mentions'
 import Founders from '../components/press/Founders'
-import Mentors from '../components/press/Mentors'
+import {SEO} from '../components/seo'
 
 import styles from '../styles/Press.module.css'
 
@@ -151,6 +151,15 @@ class PressPage extends React.Component {
   render() {
     return (
       <div>
+        <SEO
+          isBlogPost={false}
+          postData={{
+            title:
+              'Univjobs Press',
+            description:
+              'The latest news, updates and resources on Univjobs',
+          }}
+        />
         <LandingPage
           heroTitle="Press and Media"
           heroSubTitle="The latest news, updates and resources on Univjobs"

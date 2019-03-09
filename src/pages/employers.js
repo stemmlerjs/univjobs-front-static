@@ -31,7 +31,7 @@ import icube from '../img/icube.png'
 import startupschool from '../img/startupschool.png'
 import edge from '../img/edge_hires-400x143.png'
 
-import SEO from '../components/SEO'
+import {SEO} from '../components/seo'
 
 import config from '../config'
 
@@ -40,9 +40,9 @@ const Employers = () => (
     <SEO
       isBlogPost={false}
       postData={{
-        title: 'Univjobs: Online campus recruitment solution for employers',
+        title: 'Online campus recruitment solution for employers',
         description:
-          'Reach and recruit college and university students and recent-grads on campus. Save time and money finding or hiring interns and recent grads.',
+          'Reach and recruit post-secondary students and recent-grads on campus.',
       }}
     />
     <LandingPage
