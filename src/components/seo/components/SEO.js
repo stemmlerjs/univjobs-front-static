@@ -73,6 +73,10 @@ const getSchemaOrgJSONLD = ({
     : schemaOrgJSONLD
 }
 
+//NOTE: Make this into a component where it only renders the component
+// Move the programmatic aspect to class
+// Seperate SEO Schema to it's own class
+// Only render SEOContainer aka SEO Component
 const SEO = ({ postData, postImage, isBlogPost }) => {
   const postMeta = postData || {}
   debugger

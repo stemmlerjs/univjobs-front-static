@@ -2,84 +2,13 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
 import * as config from '../../../config'
+import SEOSchema from './SEOSchema'
 
-/**
- * SEOComponent
- *
- * @class that returns the proper SEO header.
- */
 
-const getSchemaOrgJSONLD = ({
-    isBlogPost,
-    url,
-    title,
-    image,
-    description,
-    datePublished,
-  }) => {
-    const schemaOrgJSONLD = [
-      {
-        '@context': 'https://univjobs.ca',
-        '@type': 'Product',
-        url,
-        name: title,
-        alternateName: config.title,
-        logo: 'https://s3.amazonaws.com/assets.univjobs/svg/univjobs_full.svg',
-      },
-    ]
   
-    return isBlogPost
-      ? [
-          ...schemaOrgJSONLD,
-          {
-            '@context': 'https://univjobs.ca',
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              {
-                '@type': 'ListItem',
-                position: 1,
-                item: {
-                  '@id': url,
-                  name: title,
-                  image,
-                },
-              },
-            ],
-          },
-          {
-            '@context': 'https://univjobs.ca',
-            '@type': 'BlogPosting',
-            url,
-            name: title,
-            alternateName: config.title,
-            headline: title,
-            image: {
-              '@type': 'ImageObject',
-              url: image,
-            },
-            description,
-            author: {
-              '@type': 'Person',
-              name: 'Charles Javelona',
-            },
-            publisher: {
-              '@type': 'Organization',
-              url: 'https://univjobs.ca',
-              logo: config.assets.image.circularLogo,
-              name: 'Charles Javelona',
-            },
-            mainEntityOfPage: {
-              '@type': 'WebSite',
-              '@id': config.url,
-            },
-            datePublished,
-          },
-        ]
-      : schemaOrgJSONLD
-  }
-  
-  const SEOComponent = ({ postData, postImage, isBlogPost }) => {
+  const SEOContainer = ({ postData, postImage, isBlogPost }) => {
     const postMeta = postData || {}
+    const SEO = new SEOSchema
     
   
   
@@ -94,7 +23,7 @@ const getSchemaOrgJSONLD = ({
       : 'student jobs, part time jobs, co-op, work study, univjobs'
     const { canonical } = postData
   
-    const schemaOrgJSONLD = getSchemaOrgJSONLD({
+    const schemaOrgJSONLD = SEO.getSchemaOrgJSONLD({
       isBlogPost,
       url,
       title,
@@ -137,7 +66,7 @@ const getSchemaOrgJSONLD = ({
     )
   }
 
-SEOComponent.propTypes = {
+SEOContainer.propTypes = {
     isBlogPost: PropTypes.bool,
     postData: PropTypes.shape({
     title: PropTypes.string,
@@ -148,9 +77,9 @@ SEOComponent.propTypes = {
     postImage: PropTypes.string,
 }
       
-SEOComponent.defaultProps = {
+SEOContainer.defaultProps = {
     isBlogPost: false,
     postImage: config.assets.image.logo,
 }
 
-export default SEOComponent
+export default SEOContainer

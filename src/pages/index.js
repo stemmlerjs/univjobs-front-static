@@ -10,7 +10,7 @@ import grad from '../img/gradphotos.jpeg'
 import LandingPage from '../components/LandingPage'
 
 import config from '../config'
-import {SEOComponent} from '../components/seo'
+import {SEOContainer} from '../components/seo'
 
 import { Backers, AltFeature, StudentTestimonials } from '../components/landing'
 
@@ -29,17 +29,22 @@ import haltech from '../img/haltech.png'
 import icube from '../img/icube.png'
 import startupschool from '../img/startupschool.png'
 import edge from '../img/edge_hires-400x143.png'
+import SEOSchema from '../components/seo/class/SEOSchema'
+import SEOType from '../components/seo/class/SEOType'
 
 /**
  * @class Index
  * @desc This is the index page. It's the main page
  * for univjobs.ca.
  */
+const SEO = new SEOSchema;
+const Type = new SEOType
 
+debugger
 const Index = () => (
   <div>
-    <SEOComponent
-      isBlogPost={false}
+    <SEOContainer
+      isBlogPost={SEO.getSEOContainerDefinition(Type.getSeoType.landingPage).isBlogPost}
       postData={{
         title:
           'Jobs, internships, and work study for students and recent grads',
