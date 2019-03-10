@@ -10,7 +10,7 @@ import grad from '../img/gradphotos.jpeg'
 import LandingPage from '../components/LandingPage'
 
 import config from '../config'
-import {SEO} from '../components/seo'
+import {SEOComponent} from '../components/seo'
 
 import { Backers, AltFeature, StudentTestimonials } from '../components/landing'
 
@@ -38,7 +38,7 @@ import edge from '../img/edge_hires-400x143.png'
 
 const Index = () => (
   <div>
-    <SEO
+    <SEOComponent
       isBlogPost={false}
       postData={{
         title:
