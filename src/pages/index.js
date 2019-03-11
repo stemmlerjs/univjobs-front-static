@@ -37,20 +37,12 @@ import SEOType from '../components/seo/class/SEOType'
  * @desc This is the index page. It's the main page
  * for univjobs.ca.
  */
-const SEO = new SEOSchema;
-const Type = new SEOType
+const Type = SEOType
 
-debugger
 const Index = () => (
   <div>
     <SEOContainer
-      isBlogPost={SEO.getSEOContainerDefinition(Type.getSeoType.landingPage).isBlogPost}
-      postData={{
-        title:
-          'Jobs, internships, and work study for students and recent grads',
-        description:
-          'Find paid internship, remote work, part time, and entry-level jobs at startups and large companies',
-      }}
+      type={Type.landingPage} 
     />
     <LandingPage
       heroTitle="Apply to student and recent grad jobs"

@@ -97,17 +97,45 @@ class SEOSchema {
      *    
      * @return {Promise | Object}
      */
-    async getSEOContainerDefinition (type) {
+
+     //`${config.url}${postImage}`
+     // const url = postMeta.slug ? `${config.url}${postMeta.slug}` : config.url
+
+    getSEOContainerDefinition (type) {
         const definition = {
-            LANDING_PAGE: {
+            STUDENT_LANDING_PAGE: {
                 isBlogPost: false,
                 postData: {
                     title: 'Jobs, internships, and work study for students and recent grads',
                     description: 'Find paid internship, remote work, part time, and entry-level jobs at startups and large companies',
+                },
+                image: config.assets.image.logo,
+                url: config.url,
+                datePublished: false,
+                keywords: 'student jobs, part time jobs, co-op, work study, univjobs',
+                canonical: {
+                   title: 'Jobs, internships, and work study for students and recent grads',
+                    description: 'Find paid internship, remote work, part time, and entry-level jobs at startups and large companies', 
                 }
+            },
+            EMPLOYER_LANDING_PAGE: {
+                isBlogPost: false,
+                postData: {
+                    title: 'Online campus recruitment solution for employers',
+                    description: 'Reach, recruit post-secondary students and recent-grads on campus.',
+                },
+                image: config.assets.image.logo,
+                url: config.url,
+                datePublished: false,
+                keywords: 'hire students, campus recruitment, co-op, univjobs',
+                canonical: {
+                   title: 'Online campus recruitment solution for employers',
+                    description: 'Reach, recruit post-secondary students and recent-grads on campus.', 
+                } 
+                
             }
         }
-        return await definition[type] 
+        return definition[type] 
     }
 }
 

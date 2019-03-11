@@ -82,6 +82,7 @@ class LandingPageTemplate extends React.Component {
 
     return (
       <div className="landing-page-template-container">
+      {/*
         <SEO
           isBlogPost={false}
           postData={{
@@ -90,6 +91,7 @@ class LandingPageTemplate extends React.Component {
             canonical: 'https://univjobs.ca',
           }}
         />
+        */}
         <LandingPage
           heroTitle={heroTitle}
           heroSubTitle={heroSubTitle}

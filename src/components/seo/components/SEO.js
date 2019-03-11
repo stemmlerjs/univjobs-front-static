@@ -4,105 +4,23 @@ import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
 import * as config from '../../../config'
 
-const getSchemaOrgJSONLD = ({
-  isBlogPost,
-  url,
-  title,
-  image,
-  description,
-  datePublished,
-}) => {
-  const schemaOrgJSONLD = [
-    {
-      '@context': 'https://univjobs.ca',
-      '@type': 'Product',
-      url,
-      name: title,
-      alternateName: config.title,
-      logo: 'https://s3.amazonaws.com/assets.univjobs/svg/univjobs_full.svg',
-    },
-  ]
-
-  return isBlogPost
-    ? [
-        ...schemaOrgJSONLD,
-        {
-          '@context': 'https://univjobs.ca',
-          '@type': 'BreadcrumbList',
-          itemListElement: [
-            {
-              '@type': 'ListItem',
-              position: 1,
-              item: {
-                '@id': url,
-                name: title,
-                image,
-              },
-            },
-          ],
-        },
-        {
-          '@context': 'https://univjobs.ca',
-          '@type': 'BlogPosting',
-          url,
-          name: title,
-          alternateName: config.title,
-          headline: title,
-          image: {
-            '@type': 'ImageObject',
-            url: image,
-          },
-          description,
-          author: {
-            '@type': 'Person',
-            name: 'Charles Javelona',
-          },
-          publisher: {
-            '@type': 'Organization',
-            url: 'https://univjobs.ca',
-            logo: config.assets.image.circularLogo,
-            name: 'Charles Javelona',
-          },
-          mainEntityOfPage: {
-            '@type': 'WebSite',
-            '@id': config.url,
-          },
-          datePublished,
-        },
-      ]
-    : schemaOrgJSONLD
-}
 
 //NOTE: Make this into a component where it only renders the component
 // Move the programmatic aspect to class
 // Seperate SEO Schema to it's own class
 // Only render SEOContainer aka SEO Component
-const SEO = ({ postData, postImage, isBlogPost }) => {
-  const postMeta = postData || {}
-  debugger
-
-
-  const title = postMeta.title || config.title
-  const description =
-    postMeta.description || postData.excerpt || config.description
-  const image = `${config.url}${postImage}` || config.assets.image.logo
-  const url = postMeta.slug ? `${config.url}${postMeta.slug}` : config.url
-  const datePublished = isBlogPost ? postMeta.date : false
-  const keywords = postData.keywords
-    ? postData.keywords
-    : 'student jobs, part time jobs, co-op, work study, univjobs'
-  const { canonical } = postData
-
-  const schemaOrgJSONLD = getSchemaOrgJSONLD({
-    isBlogPost,
-    url,
-    title,
-    image,
-    description,
-    datePublished,
-  })
-
-  debugger
+const SEO = ({ 
+  title, 
+  description, 
+  image, 
+  schemaOrgJSONLD, 
+  url, 
+  isBlogPost,
+  keywords,
+  canonical
+ 
+}) => {
+  
   return (
     <Helmet>
       {/* General tags */}

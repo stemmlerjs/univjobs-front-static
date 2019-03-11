@@ -170,6 +170,7 @@ class Pricing extends React.Component {
   render() {
     return (
       <div>
+        {/*
         <SEO
           isBlogPost={false}
           postData={{
@@ -179,6 +180,7 @@ class Pricing extends React.Component {
               'Recruit students and recent-grads from any post-secondary school in Canada.',
           }}
         />
+        */}
         <Logo />
 
         <div className={styles.heroFlex}>

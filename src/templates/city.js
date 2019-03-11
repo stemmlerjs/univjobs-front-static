@@ -48,6 +48,7 @@ class CityTemplate extends React.Component {
 
     return (
       <div className="city-template-container">
+      {/*
         <SEO
           isBlogPost={false}
           postData={{
@@ -57,6 +58,7 @@ class CityTemplate extends React.Component {
             keywords: `student jobs ${city}, part-time jobs ${city}, co-op jobs ${city}`,
           }}
         />
+        */}
         <LandingPage
           heroTitle={`${city}`}
           subTitle=""

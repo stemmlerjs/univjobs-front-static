@@ -151,6 +151,7 @@ class PressPage extends React.Component {
   render() {
     return (
       <div>
+        {/*
         <SEO
           isBlogPost={false}
           postData={{
@@ -160,6 +161,7 @@ class PressPage extends React.Component {
               'The latest news, updates and resources on Univjobs',
           }}
         />
+        */}
         <LandingPage
           heroTitle="Press and Media"
           heroSubTitle="The latest news, updates and resources on Univjobs"

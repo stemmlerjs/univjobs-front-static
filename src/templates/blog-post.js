@@ -109,27 +109,6 @@ const BlogPost = ({ data }) => {
       category={post.category}
       categories={categories}
     />
-    // <BlogPostTemplate
-    //   content={post.html}
-    //   contentComponent={HTMLContent}
-    //   description={post.description}
-    //   helmet={
-    //     <SEO
-    //       isBlogPost={true}
-    //       postData={post}
-    //       postImage={post.image}
-    //       title={post.title}
-    //     />}
-    //   tags={post.tags}
-    //   title={post.title}
-    //   image={post.image}
-    //   timeToRead={post.timeToRead}
-    //   frontmatter={post}
-    //   category={post.category}
-    //   parentCategory={post.parentCategory}
-    //   author={post.author}
-    //   categories={categories}
-    // />
   )
 }
 

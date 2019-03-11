@@ -1,33 +1,19 @@
 /**
  * SEO  
  *
- * @class that contains enum types.
+ * @Object that contains enum types for landing page definitios.
  */
 
-class SEOType {
-  constructor() {
-  }
-
-  /**
-   * @function seoType
-   * @desc Returns all seo enum types
-   *
-   * @note landing page can be the about page, press, etc...
-   * 
-   * @return {Promise | Object}
-   */
-
-  async getSeoType() {
-      return await {
+const SEOType = {
         blog: 'BLOG',
         blogPost: 'BLOG_POST',
-        landingPage: 'LANDING_PAGE',
+        studentLandingPage: 'STUDENT_LANDING_PAGE',
+        employerLandingPage: 'EMPLOYER_LANDING_PAGE',
         city: 'CITY',
         directoryCompany: 'DIRECTORY_COMPANY',
         company: 'COMPANY'
-      }
-  }
 }
+
 
 export default SEOType
 

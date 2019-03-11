@@ -132,6 +132,7 @@ const AboutPage = ({ data }) => {
 
   return (
     <div>
+      {/*
       <SEO
         isBlogPost={false}
         postData={{
@@ -140,6 +141,7 @@ const AboutPage = ({ data }) => {
             'Follow us on helping college students recent grads get experience.',
         }}
       />
+      */}
       <LandingPage
         heroTitle="About"
         heroSubTitle="Learn more about the team behind Univjobs"

@@ -20,6 +20,7 @@ const Intro = props => {
 export const TeamMemberPageTemplate = ({ image, name, role, content }) => (
   <div>
     <section className={styles.pageContainer}>
+    {/*
       <SEO
         isBlogPost={false}
         postData={{
@@ -28,6 +29,7 @@ export const TeamMemberPageTemplate = ({ image, name, role, content }) => (
         }}
         postImage={image}
       />
+      */}
       <Intro name={name} role={role} image={image} />
       <div className={styles.content}>
         <HTMLContent content={content} />

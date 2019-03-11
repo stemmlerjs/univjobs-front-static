@@ -41,7 +41,8 @@ const BlogPageLayout = ({ post, posts, categories, category }) => (
   <section style={{ padding: 0 }}>
     <div className="blog-page-content-container">
       <div className="blog-page-content-container-inner">
-        {post ? (
+       
+        { /*post ? (
           // Blog post page
           <SEO
             postData={{
@@ -62,7 +63,7 @@ const BlogPageLayout = ({ post, posts, categories, category }) => (
             }}
             isBlogPost={false}
           />
-        )}
+          ) */}
         <CategoriesHeader categories={categories} currentCategory={category} />
         <div className="content-flex">
           {post ? (

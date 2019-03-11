@@ -31,19 +31,21 @@ import icube from '../img/icube.png'
 import startupschool from '../img/startupschool.png'
 import edge from '../img/edge_hires-400x143.png'
 
-import {SEO} from '../components/seo'
+import {SEOContainer} from '../components/seo'
+import SEOType from '../components/seo/class/SEOType'
 
 import config from '../config'
 
+
+const Type = SEOType
+
+debugger
+
 const Employers = () => (
+
   <div>
-    <SEO
-      isBlogPost={false}
-      postData={{
-        title: 'Online campus recruitment solution for employers',
-        description:
-          'Reach and recruit post-secondary students and recent-grads on campus.',
-      }}
+    <SEOContainer
+      type={Type.employerLandingPage} 
     />
     <LandingPage
       heroTitle="Find the best students and recent grads to hire"

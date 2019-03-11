@@ -28,6 +28,7 @@ import {SEO} from '../components/seo'
 
 const SmallBusiness = () => (
   <div>
+    {/*
     <SEO
       isBlogPost={false}
       postData={{
@@ -36,6 +37,8 @@ const SmallBusiness = () => (
           'Browse and connect with thousands of local students to help with your business',
       }}
     />
+    */}
+
     <LandingPage
       heroTitle="Easily access, and hire local young talent"
       heroSubTitle="We have thousands of candidates ready and waiting"

@@ -36,6 +36,7 @@ class Companies extends React.Component {
     console.log(this.props)
     return (
       <div>
+        {/*
         <SEO
           isBlogPost={false}
           postData={{
@@ -45,6 +46,7 @@ class Companies extends React.Component {
               'Look inside different companies to see what they offer, what they do, and apply for jobs.',
           }}
         />
+        */}
         <LandingPage
           heroTitle="Explore Companies"
           heroSubTitle={`Top companies are searching for candidates just like you.

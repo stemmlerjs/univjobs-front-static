@@ -59,6 +59,7 @@ class CompanyTemplate extends React.Component {
 
     return (
       <div>
+        {/*
         <SEO
           isBlogPost={false}
           postData={{
@@ -73,6 +74,7 @@ class CompanyTemplate extends React.Component {
               `,
           }}
         />
+        */}
         <LandingPage
           options={{
             alignment: 'center',

@@ -29,6 +29,7 @@ class DirectoryCompanyTemplate extends React.Component {
 
     return (
       <div>
+        {/*
         <SEO
           isBlogPost={false}
           postImage={company.logoUrl}
@@ -39,6 +40,7 @@ class DirectoryCompanyTemplate extends React.Component {
             }`,
           }}
         />
+        */}
         <LandingPage
           heroTitle={`${company.companyName}`}
           subTitle=""
