@@ -39,8 +39,6 @@ import config from '../config'
 
 const Type = SEOType
 
-debugger
-
 const Employers = () => (
 
   <div>

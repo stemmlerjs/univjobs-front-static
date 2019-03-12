@@ -9,7 +9,8 @@ import pitch from '../img/about/pitch.png'
 import LandingPage from '../components/LandingPage'
 import { CallToAction } from '../components/shared'
 import Divider from '../components/Divider'
-import {SEO} from '../components/seo'
+import {SEOContainer} from '../components/seo'
+import SEOType from '../components/seo/class/SEOType'
 
 import styles from '../styles/About.module.css'
 import description from '../styles/About/Description.module.css'
@@ -17,6 +18,9 @@ import meetTheTeam from '../styles/About/MeetTheTeam.module.css'
 import ourStory from '../styles/About/OurStory.module.css'
 import whoWeAre from '../styles/About/WhoWeAre.module.css'
 import memberStyles from '../styles/About/Members.module.css'
+
+const Type = SEOType
+
 
 const Description = props => {
   return (
@@ -132,16 +136,9 @@ const AboutPage = ({ data }) => {
 
   return (
     <div>
-      {/*
-      <SEO
-        isBlogPost={false}
-        postData={{
-          title: 'About Univjobs',
-          description:
-            'Follow us on helping college students recent grads get experience.',
-        }}
+       <SEOContainer
+        type={Type.about} 
       />
-      */}
       <LandingPage
         heroTitle="About"
         heroSubTitle="Learn more about the team behind Univjobs"

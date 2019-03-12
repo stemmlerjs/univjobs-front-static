@@ -9,6 +9,7 @@ import SEOSchema from './SEOSchema'
 
   const SEOContainer = ({ type }) => {
 
+    debugger
     const Schema = new SEOSchema
     const postMeta = Schema.getSEOContainerDefinition(type)
 
@@ -49,7 +50,7 @@ SEOContainer.propTypes = {
 }
       
 SEOContainer.defaultProps = {
-    type: 'LANDING_PAGE',
+    type: 'STUDENT_LANDING_PAGE',
     postImage: config.assets.image.logo,
 }
 
