@@ -5,3 +5,6 @@ export CategoriesHeader from './components/CategoriesHeader'
 export BlogCategoriesHeader from './components/BlogCategoriesHeader'
 export BlogPageLayout from './components/BlogPageLayout'
 export BlogPostTemplate from './components/BlogPostTemplate'
+export BlogPostContent from './components/BlogPostContent'
+export BlogPostHeader from './components/BlogPostHeader'
+
