@@ -53,14 +53,6 @@ const BlogTagItem = props => {
   )
 }
 
-/**
- * {
-        Tags.map((tag, index) => {
-          return <BlogTagItem key={index} tag={tag}/>
-        })
-      }
- */
-
 const MobileCategoriesNav = ({ categories, navOpen, handleToggleNav }) => {
   return (
     <div className={styles.mobileCategoriesNav}>

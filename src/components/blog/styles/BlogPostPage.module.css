@@ -43,6 +43,11 @@
     font-size: 18px;
     line-height: 1.7em;
   }
+
+  h1 > a {
+    font-size: 1.6rem;
+    text-decoration: none;
+  }
   
   .content blockquote > p {
         font-weight: bold;
