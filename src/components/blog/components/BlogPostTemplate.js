@@ -14,7 +14,9 @@ const postAuthors = {
   'Khalil Stemmler': {
     imageUrl: khalil,
     linkedIn: "https://www.linkedin.com/in/khalilstemmler/",
-    about: `JavaScript wizard, cat-lover and lifelong learner. Software consultant & prime hacker @ Univjobs.`
+    github: 'https://github.com/stemmlerjs',
+    instagram: 'https://instagram.com/stemmlerjs',
+    about: `Full-stack JavaScript'r wizard, cat-lover and lifelong learner. Software Consultant @ Aquent | Dev6 while helping students and recent-grads find their first jobs @ Univjobs.`
   },
   'Charles Javelona': {
     imageUrl: charles,
