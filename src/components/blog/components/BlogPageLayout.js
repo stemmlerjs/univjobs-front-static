@@ -91,6 +91,12 @@ const BlogPageLayout = ({ post, posts, categories, category }) => (
                 Popular
               </div>
               <Link
+                to="/blog/9-books-for-junior-developers-in-2019/"
+                className="sidebar-element"
+              >
+                9 Books For Junior Developers In 2019
+              </Link>
+              <Link
                 to="/blog/top-3-jobs-you-can-do-while-at-school-in-the-gta/"
                 className="sidebar-element"
               >
