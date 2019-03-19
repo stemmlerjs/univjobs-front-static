@@ -58,6 +58,16 @@
   margin-top: 40px;
 }
 
+.titleContainer {
+  text-align: center;
+  padding: 3em;
+}
+
+.titleName {
+  font-size: 1.4rem;
+  font-weight: bold
+}
+
 @media (max-width:600px) {
   .container {
     padding-left: 0px;
