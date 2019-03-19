@@ -6,6 +6,7 @@ import taxants from '../../../img/prizes/taxants.png'
 import google_home_mini from '../../../img/prizes/google_home_mini.jpg'
 import starbucks from '../../../img/prizes/starbucks.png'
 
+
 const prizeList = [
   {
     name: 'Tax Ants internship',
