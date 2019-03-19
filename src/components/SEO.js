@@ -141,7 +141,7 @@ SEO.propTypes = {
 
 SEO.defaultProps = {
   isBlogPost: false,
-  postImage: 'img/u.png',
+  postImage: 'https://s3.amazonaws.com/assets.univjobs/images/icons/unicorn-social.jpg',
 }
 
 export default SEO

@@ -6,6 +6,7 @@ import taxants from '../../../img/prizes/taxants.png'
 import google_home_mini from '../../../img/prizes/google_home_mini.jpg'
 import starbucks from '../../../img/prizes/starbucks.png'
 
+
 const prizeList = [
   {
     name: 'Tax Ants internship',
@@ -14,7 +15,7 @@ const prizeList = [
   },
   {
     name: 'Google home mini',
-    quote: `“Use Google Home Mini to listen to Spotify, set reminders, at the comforts of your home”`,
+    quote: `“Use Google home mini to listen to Spotify and set reminders from the comfort of your home.”`,
     picture: google_home_mini,
   },
   {
