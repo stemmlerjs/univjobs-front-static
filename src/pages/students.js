@@ -60,7 +60,7 @@ const Students = () => (
 
     <ReferralLandingPage
       heroTitle="Refer your friends to Univjobs"
-      heroSubTitle="Win free prizes by referring to friends!"
+      heroSubTitle="Refer your friends, earn free prizes!"
       options={{
         alignment: 'left',
         image: gift,
