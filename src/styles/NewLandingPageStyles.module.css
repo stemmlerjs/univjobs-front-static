@@ -65,17 +65,6 @@
   background: rgba(0, 0, 0, 0.5);
 }
 
-.lightMask {
-  position: absolute;
-  top: 0px;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-  z-index: 51;
-  opacity: .30;
-  background: rgba(0, 0, 0, 0.5);
-}
-
 .content {
   position: absolute;
   top: 0px;

@@ -33,7 +33,7 @@ function shouldShowMask(options) {
     }
 
     if (options.hero.showColorMask && options.hero.color) {
-      return styles.lightMask
+      return styles.mask
     }
   }
 

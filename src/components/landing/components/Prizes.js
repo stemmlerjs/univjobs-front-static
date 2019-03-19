@@ -43,10 +43,7 @@ const PrizesSection = ({ name, quote, picture }) => (
         <img src={picture} />
       </div>
       <div className="details-container">
-       { name.toLowerCase().includes('tax') 
-         ? <div className="name"><a href={'https://taxants.ca/'}>{name}</a></div>
-         : <div className="name">{name}</div>
-       }
+        <div className="name">{name}</div>
       </div>
     </div>
     <div className="quote">{quote}</div>
