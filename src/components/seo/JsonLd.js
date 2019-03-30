@@ -2,8 +2,9 @@ import * as config from '../../config'
 /**
  * JsonLd 
  * 
- * Returns the proper json-ld format.
+ * Returns the proper json-ld format based on type passed.
  * 
+ * Checkout PageType.js for more Pagetypes
  * 
  * Reference: 
  * https://jsonld.com/web-page/
@@ -11,16 +12,16 @@ import * as config from '../../config'
  * 
  */
 
- export function JsonLD(type, props) {
+ export function JsonLd(type, props, pageProps) {
      switch(type) {
         case type === 'BLOG_POST':
-        return [
+         return [
           {
-            "@context": config.staticUrl,
-            "@type": "NewsArticle",
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
             "mainEntityOfPage": {
               "@type": "WebPage",
-              "@id": props.articleUrl
+              "@id": props.url
             },
             "headline": props.title,
             "image": [
@@ -37,10 +38,10 @@ import * as config from '../../config'
               "name": "Univjobs",
               "logo": {
                 "@type": "ImageObject",
-                "url": config.assets.image.logo
+                "url": config.image.assets.logo
               }
             },
-            "description": config.description,
+            "description": config.description
           }
         ]
       default:
