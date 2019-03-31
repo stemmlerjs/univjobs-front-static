@@ -36,6 +36,7 @@ import edge from '../img/edge_hires-400x143.png'
 
 import Helmet from 'react-helmet'
 
+
 const Students = () => (
   <div>
     <SEO
@@ -79,7 +80,7 @@ const Students = () => (
       }}
     />
 
-    <Prizes />
+  <Prizes />
 
 
     <section className={features.container}>
@@ -93,7 +94,7 @@ const Students = () => (
         picture={socialShare}
       />
       <RightFeatures
-        header="2. Check your status on the leaderboard page."
+        header="2. Check your status on the leaderboard page"
         paragraphOne={`You will be able to see your status on the leaderboard page.`}
         paragraphTwo={``}
         picture={winners}
@@ -107,9 +108,9 @@ const Students = () => (
         <h3>How many prizes can I choose per month?</h3>
         <p>You can choose one prize per month.</p>
         <h3>What happens at the start of each contest?</h3>
-        <p>A new contest will start, everyones points goes back to 0.</p>
+        <p>A new contest will start, everyone`s points goes back to 0.</p>
         <h3>When do new prizes get announced?</h3>
-        <p>To be announced! Join as a user in our platform <a href="https://app.univjobs.ca/register" target="_blank" rel="noopener noreferrer">here</a> to stay notified of new prizes!</p>
+        <p>To be announced! Become a valued user in our platform <a href="https://app.univjobs.ca/register" target="_blank" rel="noopener noreferrer">here</a> to stay notified of new prizes!</p>
       </div>
     </section>
    
