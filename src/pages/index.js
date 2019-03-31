@@ -10,7 +10,7 @@ import grad from '../img/gradphotos.jpeg'
 import LandingPage from '../components/LandingPage'
 
 import config from '../config'
-import {SEOContainer} from '../components/seo'
+import {SEO, PageType} from '../components/seo'
 
 import { Backers, AltFeature, StudentTestimonials } from '../components/landing'
 
@@ -29,21 +29,26 @@ import haltech from '../img/haltech.png'
 import icube from '../img/icube.png'
 import startupschool from '../img/startupschool.png'
 import edge from '../img/edge_hires-400x143.png'
-import SEOSchema from '../components/seo/class/SEOSchema'
-import SEOType from '../components/seo/class/SEOType'
 
 /**
  * @class Index
  * @desc This is the index page. It's the main page
  * for univjobs.ca.
  */
-const Type = SEOType
 
 const Index = () => (
   <div>
-    <SEOContainer
-      type={Type.landingPage} 
-    />
+       <SEO
+        requiredProps={{
+          title: 'Jobs, internships, and work study for students and recent grads',
+          description: 'Find paid internship, remote work, part time, and entry-level jobs at startups and large companies.'
+        }}
+        type={PageType.REGULAR}
+        pageProps={{
+          url: window.location.href
+        }}
+      />
+    
     <LandingPage
       heroTitle="Apply to student and recent grad jobs"
       heroSubTitle="A marketplace to find part time, co-op, entry-level jobs and internships."

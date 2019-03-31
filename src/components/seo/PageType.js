@@ -4,4 +4,5 @@ const PageType = {
   BLOG_POST: 'BLOG_POST'
 }
 
-export default PageType;
+export default PageType
+

@@ -19,10 +19,8 @@ import styles from '../styles/Pricing.module.css'
 
 import config from '../config'
 import { redirectTo } from '../helpers'
-import {SEOContainer} from '../components/seo'
-import SEOType from '../components/seo/class/SEOType'
+import {SEO, PageType} from '../components/seo'
 
-const Type = SEOType
 
 const Logo = () => {
   return (
@@ -173,9 +171,16 @@ class Pricing extends React.Component {
   render() {
     return (
       <div>
-         <SEOContainer
-          type={Type.pricing} 
-        />
+         <SEO
+        requiredProps={{
+          title: 'Univjobs Pricing',
+          description: 'Recruit students and recent-grads from any post-secondary school in Canada.'
+        }}
+        type={PageType.REGULAR}
+        pageProps={{
+          url: window.location.href
+        }}
+      />
         <Logo />
 
         <div className={styles.heroFlex}>

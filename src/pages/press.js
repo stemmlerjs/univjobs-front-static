@@ -21,14 +21,12 @@ import CountUp from 'react-countup'
 import Divider from '../components/Divider'
 import Mentions from '../components/press/Mentions'
 import Founders from '../components/press/Founders'
-import {SEOContainer} from '../components/seo'
-import SEOType from '../components/seo/class/SEOType'
+import {SEO, PageType} from '../components/seo'
 
 import styles from '../styles/Press.module.css'
 
 import config from '../config'
 
-const Type = SEOType
 
 const Body = props => {
   return (
@@ -154,9 +152,16 @@ class PressPage extends React.Component {
   render() {
     return (
       <div>
-         <SEOContainer
-          type={Type.press} 
-        />
+       <SEO
+        requiredProps={{
+          title: 'Univjobs Press',
+          description: 'The latest news, updates and resources on Univjobs.'
+        }}
+        type={PageType.REGULAR}
+        pageProps={{
+          url: window.location.href
+        }}
+      />
       
         <LandingPage
           heroTitle="Press and Media"

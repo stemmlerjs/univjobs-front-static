@@ -489,14 +489,16 @@ class Directory extends React.Component {
 
     return (
       <div className="directory-container">
-        <SEO
-          isBlogPost={false}
-          postData={{
-            title: 'Univjobs: Find Work Nearby',
-            description:
-              'Work while studying as a college student or apply to jobs before graduating ',
-          }}
-        />
+         <SEO
+        requiredProps={{
+          title: 'Find Work Nearby',
+          description: 'Work while studying as a college student or apply to jobs before graduating.'
+        }}
+        type={PageType.REGULAR}
+        pageProps={{
+          url: window.location.href
+        }}
+      />
         <DirectoryHeader
           currentLocation={currentLocation}
           onChange={this.handleChangeLocationText}

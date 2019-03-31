@@ -10,7 +10,6 @@ import landingePageStyles from '../styles/StudentLandingPageStyles.module.css'
 import { CallToAction } from '../components/shared'
 import LeftFeatures from '../components/LeftFeatures'
 import RightFeatures from '../components/RightFeatures'
-import Slidy from '../components/Slidy'
 
 import features from '../styles/FeatureStyles.module.css'
 import productImage from '../img/student_invites.png'
@@ -31,20 +30,25 @@ import icube from '../img/icube.png'
 import startupschool from '../img/startupschool.png'
 import edge from '../img/edge_hires-400x143.png'
 
-import {SEOContainer} from '../components/seo'
-import SEOType from '../components/seo/class/SEOType'
+import {SEO, PageType} from '../components/seo'
 
 import config from '../config'
 
 
-const Type = SEOType
 
 const Employers = () => (
 
   <div>
-    <SEOContainer
-      type={Type.employerLandingPage} 
-    />
+    <SEO
+        requiredProps={{
+          title: 'Online campus recruitment solution for employers',
+          description: 'Reach, recruit post-secondary students and recent-grads on campus.'
+        }}
+        type={PageType.REGULAR}
+        pageProps={{
+          url: window.location.href
+        }}
+      />
     <LandingPage
       heroTitle="Find the best students and recent grads to hire"
       heroSubTitle="A network of young talent from different post secondary schools to source, recruit, and hire."

@@ -12,45 +12,46 @@ import * as config from '../../config'
  * 
  */
 
- export function JsonLd(type, props, pageProps) {
+const JsonLd = (type, props, pageProps) => {
+  debugger
      switch(type) {
-        case type === 'BLOG_POST':
-         return [
-          {
+        case "BLOG_POST":
+         return {
             "@context": "https://schema.org",
             "@type": "BlogPosting",
             "mainEntityOfPage": {
               "@type": "WebPage",
-              "@id": props.url
+              "@id": pageProps.url
             },
             "headline": props.title,
             "image": [
-              props.image
+              `${config.url}${pageProps.image}`
              ],
-            "datePublished": props.datePublished,
-            "dateModified": props.dateModified,
+            "datePublished": pageProps.datePublished,
+            "dateModified": pageProps.dateModified,
             "author": {
               "@type": "Person",
-              "name": props.authorName
+              "name": pageProps.authorName
             },
              "publisher": {
               "@type": "Organization",
               "name": "Univjobs",
               "logo": {
                 "@type": "ImageObject",
-                "url": config.image.assets.logo
+                "url": config.assets.image.logo
               }
             },
-            "description": config.description
-          }
-        ]
+            "description": props.description
+          } 
       default:
-        return [{
+        return {
           "@context": "http://schema.org", 
           "@type": "WebPage", 
-          "url": props.url, 
+          "url": pageProps.url, 
           "name": props.title,
           "description": props.description
-        }]
+        }
     }
  }
+
+ export default JsonLd

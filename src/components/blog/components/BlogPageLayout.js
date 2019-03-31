@@ -5,7 +5,7 @@ import CategoriesHeader from './CategoriesHeader'
 import BlogPostTemplate from './BlogPostTemplate'
 import Post from './Post'
 import Link from 'gatsby-link'
-import {SEO} from '../../../components/seo'
+import {SEO, PageType} from '../../../components/seo'
 import '../styles/BlogIndex.sass'
 
 import popular from '../../../img/blog/ic_trending_up_24px.svg'
@@ -42,28 +42,36 @@ const BlogPageLayout = ({ post, posts, categories, category }) => (
     <div className="blog-page-content-container">
       <div className="blog-page-content-container-inner">
        
-        { /*post ? (
-          // Blog post page
+        {post ? (
           <SEO
-            postData={{
-              title: `${post.title}`,
-              description: post.description,
-              slug: post.slug,
-            }}
-            postImage={post.image}
-            isBlogPost={true}
-          />
+            requiredProps={{
+            title: `${post.title}`,
+            description: post.description,
+          }}
+          type={PageType.BLOG_POST}
+          pageProps={{
+          url: window.location.href,
+          slug: post.slug,
+          image: post.image,
+          datePublished: post.date,
+          dateModified: post.date,
+          authorName: post.author
+        }}
+        />
         ) : (
           // Main blog page, categories pages, etc.
           <SEO
-            postData={{
+          requiredProps={{
               title: 'Univjobs Blog | Updates, Guides and Resources',
               description:
                 'Get the latest announcements from Univjobs. Stay up to date, get inspired, read tips and success stories.',
             }}
-            isBlogPost={false}
+            type={PageType.REGULAR}
+            pageProps={{
+              url: window.location.href,
+            }}
           />
-          ) */}
+          ) }
         <CategoriesHeader categories={categories} currentCategory={category} />
         <div className="content-flex">
           {post ? (

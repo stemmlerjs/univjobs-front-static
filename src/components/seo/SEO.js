@@ -5,13 +5,13 @@ import PropTypes from 'prop-types'
 // import * as config from '../../../config'
 import JsonLd from './JsonLd'
 
-const SEO = ({ requiredProps, type, pageProps }) => (
+export const SEO = ({ requiredProps, type, pageProps }) => (
   <Helmet>
     <title>{requiredProps.title}</title>
 
     <script type="application/ld+json">
     {
-       JsonLd(type, requiredProps)
+       JSON.stringify(JsonLd(type, requiredProps, pageProps))
     }
     </script>
 

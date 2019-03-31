@@ -24,16 +24,21 @@ import instacart from '../img/instacart.svg'
 import ymca from '../img/ymca.svg'
 import airmiles from '../img/airmiles.svg'
 import config from '../config'
-import {SEOContainer} from '../components/seo'
-import SEOType from '../components/seo/class/SEOType'
+import {SEO, PageType} from '../components/seo'
 
-const Type = SEOType
 
 const SmallBusiness = () => (
   <div>
-         <SEOContainer
-          type={Type.smallBusiness} 
-        />
+         <SEO
+        requiredProps={{
+          title: 'Find local help',
+          description: 'Browse and connect with thousands of local students to help with your business'
+        }}
+        type={PageType.REGULAR}
+        pageProps={{
+          url: window.location.href
+        }}
+      />
 
     <LandingPage
       heroTitle="Easily access, and hire local young talent"
