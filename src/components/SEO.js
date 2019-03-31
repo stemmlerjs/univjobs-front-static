@@ -79,7 +79,7 @@ const SEO = ({ postData, postImage, isBlogPost }) => {
   const title = postMeta.title || config.title
   const description =
     postMeta.description || postData.excerpt || config.description
-  const image = `${config.url}${postImage}` || config.assets.image.circularLogo
+  const image = `${postImage}` || config.assets.image.circularLogo
   const url = postMeta.slug ? `${config.url}${postMeta.slug}` : config.url
   const datePublished = isBlogPost ? postMeta.date : false
   const keywords = postData.keywords
@@ -141,7 +141,7 @@ SEO.propTypes = {
 
 SEO.defaultProps = {
   isBlogPost: false,
-  postImage: 'img/u.png',
+  postImage: 'https://s3.amazonaws.com/assets.univjobs/images/icons/unicorn-social.jpg',
 }
 
 export default SEO
