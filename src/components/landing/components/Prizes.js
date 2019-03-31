@@ -8,13 +8,13 @@ import starbucks from '../../../img/prizes/starbucks.png'
 
 const prizeList = [
   {
-    name: 'Tax Ants internship',
+    name: 'Taxants internship',
     quote: `“Work with the CEO to learn about sales and marketing skills.”`,
     picture: taxants,
   },
   {
     name: 'Google home mini',
-    quote: `“Use Google Home Mini to listen to Spotify, set reminders, at the comforts of your home”`,
+    quote: `“Use Google Home Mini to listen to Spotify, set reminders, at the comforts of your home.”`,
     picture: google_home_mini,
   },
   {
