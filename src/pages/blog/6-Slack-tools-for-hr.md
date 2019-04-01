@@ -32,7 +32,7 @@ Icebreaker is a tool that lets you get to know your team by asking icebreaker qu
 ![](https://d1ikbwk92wlcol.cloudfront.net/assets/integrations/slack/4.png?26ef31f0a9fc27ff0361b9ac29deceb1)
 
 
-Fond helps give and send recognition to your team members with points they can redeem for rewards.  Team members can send a recognition for birthdays, special occasions, and a job well done. The fond app will track the recognitions and send a personal message to the mentioned team member. Public recognitions are also enabled to give team wide recognitions. This tool promotes positive social relationships in the workplace by encouraging teams to recognize each team members value.
+Fond helps give and send recognition to your team members with points they can redeem for rewards. Team members can send a recognition such as birthdays, special occasions and a job well done. The Fond app will track the recognitions and send a personal message to the mentioned team member. Public recognitions are also enabled to give team wide recognitions. This tool promotes positive social relationships in the workplace by encouraging teams to recognize each team members value.
 
 
 
@@ -50,7 +50,7 @@ Moodbit helps track the emotional levels of employees through slack messages to 
 
 <iframe width="500" height="500" src="https://www.youtube.com/embed/I4Vm6SSgSAU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Duuoo improves relationships between managers and teams. It sets them to be successful in frequent 1-on-1 conversations for continuous coaching and feedback loop throughout the year. The slack integration uses notifications to help you keep track of meetings and agreements in a slack channel.
+Duuoo improves relationships between managers and teams. It sets them to be successful in frequent 1-on-1 conversations for continuous coaching and feedback loop throughout the year. The slack integration uses notifications to help you keep track of meetings and agreements in a Slack channel.
 
 
 
@@ -58,7 +58,7 @@ Duuoo improves relationships between managers and teams. It sets them to be succ
 
 ![](https://files.readme.io/ecf9c17-Screen_Recording_2017-05-21_at_09.02_PM.gif)
 
-Breezy HR is a recruiting software with an applicant tracking system. If you have Breezy HR, the BreezyHR Integration lets you streamline hiring and onboarding new hires to your team. It also allows you to discover, vet, and hire new candidates. Lastly, thee integration enables teams to rate candidates, view available positions, and get HR updates through Slack. 
+Breezy HR is a recruiting software with an applicant tracking system. If you have Breezy HR, the Breezy HR Integration lets you streamline hiring and onboarding new hires to your team. It also allows you to discover, vet and hire new candidates. Lastly, thee integration enables teams to rate candidates, view available positions and get hr updates through Slack. 
 
 
 
@@ -66,4 +66,4 @@ Breezy HR is a recruiting software with an applicant tracking system. If you hav
 
 ![](https://help.lever.co/hc/en-us/article_attachments/203267645/Slack_in_app-1.png)
 
-Lever is an HR software that streamlines the hiring process and simplifies the Applicant Tracking System, so recruiters and hiring managers can focus on their candidates. The Lever integration automatically post proactive interview reminders with candidate info, change plans quickly while a candidate is onsite, reminder interviews to leave feedback.  
+Lever is an hr software that streamlines the hiring process and simplifies the applicant tracking system, so recruiters and hiring managers can focus on their candidates. The Lever integration automatically post proactive interview reminders with candidate info, change plans quickly while a candidate is onsite and remind interviews to leave feedback. 
