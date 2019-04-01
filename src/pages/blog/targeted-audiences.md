@@ -3,7 +3,7 @@ templateKey: blog-post
 title: Introducing Targeted Audiences
 author: Khalil Stemmler
 date: '2018-11-27T17:08:31-04:00'
-description: >
+description: >-
   We've just released Targeted Audiences, a way for employers to specify exact criteria as to who can apply to their postings.
 tags:
   - Hiring

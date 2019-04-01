@@ -3,7 +3,8 @@ templateKey: blog-post
 title: '8 Great Jobs for Dog Lovers'
 author: Charles Javelona
 date: '2018-10-02T19:50:23-04:00'
-description: #Career Path For Dog Lovers
+description: >-
+ Career Path For Dog Lovers
 tags:
   - student
   - career

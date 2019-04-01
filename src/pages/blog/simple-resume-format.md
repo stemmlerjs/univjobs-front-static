@@ -3,7 +3,7 @@ templateKey: blog-post
 title: Here's a Simple Resume Format
 author: Charles Javelona
 date: '2018-06-16T11:34:18-04:00'
-description: >
+description: >-
   If you've ever googled "how to make a resume", you've probably felt
   overwhelmed by the amount of choices and conflicting advice. 
 tags:
