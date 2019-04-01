@@ -58,7 +58,7 @@ Duuoo improves relationships between managers and teams. It sets them to be succ
 
 ![](https://files.readme.io/ecf9c17-Screen_Recording_2017-05-21_at_09.02_PM.gif)
 
-Breezy HR is a recruiting software with an applicant tracking system. If you have Breezy HR, the Breezy HR Integration lets you streamline hiring and onboarding new hires to your team. It also allows you to discover, vet and hire new candidates. Lastly, thee integration enables teams to rate candidates, view available positions and get hr updates through Slack. 
+Breezy HR is a recruiting software with an applicant tracking system. If you have Breezy HR, the Breezy HR Integration lets you streamline hiring and onboarding new hires to your team. It also allows you to discover, vet and hire new candidates. Lastly, the integration enables teams to rate candidates, view available positions and get hr updates through Slack. 
 
 
 
