@@ -3,7 +3,8 @@ templateKey: blog-post
 title: '5 Perks Of Being A Sitter With Rover'
 author: Charles Javelona
 date: '2018-10-02T19:50:23-04:00'
-description: #Pet sitting perks
+description: >-
+  College is expensive, and between classes, extracurriculars, and social engagements, it can be difficult to find a gig that gives you flexible hours and allows you to pick and choose what you do.
 tags:
   - student
   - career

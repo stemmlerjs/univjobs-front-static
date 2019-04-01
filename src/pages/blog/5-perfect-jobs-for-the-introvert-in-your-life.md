@@ -3,7 +3,7 @@ templateKey: blog-post
 title: 5 Perfect Jobs For The Introvert In Your Life
 author: Charles Javelona
 date: '2018-06-16T13:05:18-04:00'
-description: >+
+description: >-
   Introverts are people who prefer calm, minimally stimulating environments and
   tend to feel drained after socializing. If you’re an introvert, you may need
   to take your personality into consideration when choosing a job. Here are 5

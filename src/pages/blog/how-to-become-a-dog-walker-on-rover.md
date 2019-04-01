@@ -3,7 +3,8 @@ templateKey: blog-post
 title: 'How to Become a Dog Walker on Rover'
 author: Charles Javelona
 date: '2018-10-02T19:50:23-04:00'
-description: ##Tips to become a successful dog walker
+description: >-
+  Tips to become a successful dog walker
 tags:
   - student
   - gigs
