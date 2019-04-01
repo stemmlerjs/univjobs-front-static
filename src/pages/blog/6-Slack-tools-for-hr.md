@@ -3,7 +3,8 @@ templateKey: blog-post
 title: '6 Slack Tools For HR'
 author: Charles Javelona
 date: '2019-05-01T19:50:23-04:00'
-description: 'Supercharge your productivity using these HR Slack tools.'
+description: >-
+ Supercharge your productivity using these HR Slack tools.
 tags:
   - recruitment tools
   - hr
