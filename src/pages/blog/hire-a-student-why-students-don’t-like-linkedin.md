@@ -3,7 +3,8 @@ templateKey: blog-post
 title: 'Hire A Student: Why Students Don’t Like LinkedIn'
 author: Charles Javelona
 date: '2018-07-12T19:50:23-04:00'
-description: Here's why LinkedIn may be obselete for millenials.
+description: >-
+ Here's why LinkedIn may be obselete for millenials and gen-z.
 tags:
   - linkedin
   - recruitment

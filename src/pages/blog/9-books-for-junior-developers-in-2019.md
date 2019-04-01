@@ -3,7 +3,9 @@ templateKey: blog-post
 title: '9 Books For Junior Developers In 2019'
 author: Khalil Stemmler
 date: '2019-03-12T19:50:23-04:00'
-description: 
+description: >-
+ Whether you’re a new developer or you’re fairly experienced as a programmer, you’ll come to realize that the amount of time you’ve worked at a job isn’t the best way to determine your skill and knowledge as a programmer (I know, tell that to the recruiters 🤫). 
+
 tags:
   - student
   - career

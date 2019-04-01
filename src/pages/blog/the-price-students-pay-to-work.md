@@ -3,7 +3,8 @@ templateKey: blog-post
 title: The Price Students Pay to Work
 author: Aria de Lima
 date: '2018-06-11T18:10:11-04:00'
-description: "\_“School is not all about academics, it’s about the whole social experience”."
+description: >-
+ School is not all about academics, it’s about the whole social experience.
 tags:
   - price
   - student
