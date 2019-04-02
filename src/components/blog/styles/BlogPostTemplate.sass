@@ -19,11 +19,21 @@
     ul 
       margin-left: 1rem;
   .post-content
-    p 
+    p,
+    p > a 
       font-size: 21px;
       line-height: 1.8em;
+
       @media (max-width: 500px)
         font-size: 18px;
+
+    iframe
+      height: 35vw;
+      width: 100%;
+
+      @media (max-width: 500px)
+        height: 55vw;
+
     blockquote
       p 
         font-style: italic;
