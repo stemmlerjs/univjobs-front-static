@@ -3,7 +3,8 @@ const PageType = {
   JOB: 'JOB',
   CITY: 'CITY', //NOTE: Cities may have different images or keywords 
   BLOG_POST: 'BLOG_POST',
-  COMPANY: 'COMPANY'
+  COMPANY: 'COMPANY',
+  PERSON: 'PERSON'
 }
 
 
@@ -21,6 +22,11 @@ const PageType = {
  *   - JSON-LD format
  *   - Twitter format
  *   - OG format
+ * - jobs
+ *   - JSON-LD format
+ *   - Twitter format
+ *   - OG format
+ * NOTE: We will only do basic formats for now. We had broken JSON-LD and meta tags not working properly
  */
 export default PageType
 

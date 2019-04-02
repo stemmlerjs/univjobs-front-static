@@ -25,7 +25,7 @@ export const SEO = ({ requiredProps, type, pageProps }) => (
       *   For now we will do a basic OG tag. 
       * 
     */}
-     <meta property="og:url" content={pageProps.url} />
+     <meta property="og:url" content={requiredProps.url} />
      <meta property="og:title" content={requiredProps.title} />
      <meta property="og:description" content={requiredProps.description} />
      <meta name="image" content={requiredProps.image} />
@@ -37,6 +37,16 @@ export const SEO = ({ requiredProps, type, pageProps }) => (
        <meta name="twitter:title" content={requiredProps.title} />
        <meta name="twitter:description" content={requiredProps.description} />
        <meta name="twitter:image" content={requiredProps.image} /> 
+
+      {/**Canonical Tags
+        TODO: 
+          - Monitor Google Search Console for the next few months this may get tricky.
+          - Add mobile variant at some point.
+            Refer to <link rel="alternate" media="only screen and (max-width: 640px)"  href="http://m.example.com/dresses/green-dresses">
+      */}
+       <link rel="canonical" href={requiredProps.url} />
+
+
   </Helmet>
 )
 

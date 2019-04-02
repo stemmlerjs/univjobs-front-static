@@ -52,7 +52,7 @@ class CityTemplate extends React.Component {
     return (
       <div className="city-template-container">
        <SEO
-          requiredProps={{
+        requiredProps={{
           title: `${city} student and grad jobs`,
           description: `Student jobs, part-time, co-op and recent-grad jobs at companies in ${city}.`,
           url: window.location.href,

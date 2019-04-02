@@ -53,10 +53,10 @@ const BlogPageLayout = ({ post, posts, categories, category }) => (
           }}
           type={PageType.BLOG_POST}
           pageProps={{
-          slug: post.slug,
-          datePublished: post.date,
-          dateModified: post.date,
-          authorName: post.author
+            slug: post.slug,
+            datePublished: post.date,
+            dateModified: post.date,
+            authorName: post.author
         }}
         />
         ) : (
