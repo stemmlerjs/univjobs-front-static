@@ -30,13 +30,14 @@ import {SEO, PageType} from '../components/seo'
 const SmallBusiness = () => (
   <div>
          <SEO
-        requiredProps={{
+          requiredProps={{
           title: 'Find local help',
-          description: 'Browse and connect with thousands of local students to help with your business'
+          description: 'Browse and connect with thousands of local students to help with your business',
+          url: window.location.href,
+          image: config.assets.image.logo
         }}
         type={PageType.REGULAR}
         pageProps={{
-          url: window.location.href
         }}
       />
 

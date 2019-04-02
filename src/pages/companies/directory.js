@@ -490,13 +490,14 @@ class Directory extends React.Component {
     return (
       <div className="directory-container">
          <SEO
-        requiredProps={{
+          requiredProps={{
           title: 'Find Work Nearby',
-          description: 'Work while studying as a college student or apply to jobs before graduating.'
+          description: 'Work while studying as a college student or apply to jobs before graduating.',
+          url: window.location.href,
+          image: config.assets.image.logo
         }}
         type={PageType.REGULAR}
         pageProps={{
-          url: window.location.href
         }}
       />
         <DirectoryHeader

@@ -137,11 +137,12 @@ const AboutPage = ({ data }) => {
       <SEO
         requiredProps={{
           title: 'About Univjobs',
-          description: 'Follow us on helping college students recent grads get experience.'
+          description: 'Follow us on helping college students recent grads get experience.',
+          url: window.location.href,
+          image: config.assets.image.logo
         }}
         type={PageType.REGULAR}
         pageProps={{
-          url: window.location.href
         }}
       />
       <LandingPage

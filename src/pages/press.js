@@ -155,11 +155,12 @@ class PressPage extends React.Component {
        <SEO
         requiredProps={{
           title: 'Univjobs Press',
-          description: 'The latest news, updates and resources on Univjobs.'
+          description: 'The latest news, updates and resources on Univjobs.',
+          url: window.location.href,
+          image: config.assets.image.logo
         }}
         type={PageType.REGULAR}
         pageProps={{
-          url: window.location.href
         }}
       />
       

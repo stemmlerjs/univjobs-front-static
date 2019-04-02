@@ -8,7 +8,10 @@ import brampton from '../img/cities/brampton.jpg'
 import oakville from '../img/cities/oakville.jpg'
 import mississauga from '../img/cities/mississauga.jpg'
 
-import {SEO} from '../components/seo'
+import {SEO, PageType} from '../components/seo'
+import config from '../config'
+
+
 import '../styles/City/CityTemplate.sass'
 
 const getLandingPageImage = city => {
@@ -48,17 +51,17 @@ class CityTemplate extends React.Component {
 
     return (
       <div className="city-template-container">
-      {/*
-        <SEO
-          isBlogPost={false}
-          postData={{
-            title: `${city} student and grad jobs`,
-            description: `Student jobs, part-time, co-op and recent-grad jobs at companies in ${city}. 
-              `,
-            keywords: `student jobs ${city}, part-time jobs ${city}, co-op jobs ${city}`,
-          }}
+       <SEO
+          requiredProps={{
+          title: `${city} student and grad jobs`,
+          description: `Student jobs, part-time, co-op and recent-grad jobs at companies in ${city}.`,
+          url: window.location.href,
+          image: config.assets.image.logo
+        }}
+        type={PageType.REGULAR}
+        pageProps={{
+        }}
         />
-        */}
         <LandingPage
           heroTitle={`${city}`}
           subTitle=""

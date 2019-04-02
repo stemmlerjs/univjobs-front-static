@@ -4,7 +4,7 @@ import LandingPage from '../components/LandingPage'
 import CompanyHeader from '../components/companies/CompanyHeader'
 import DirectoryMap from '../components/directory/components/DirectoryMap'
 
-import {SEO} from '../components/seo'
+import {SEO, PageType} from '../components/seo'
 import '../styles/Directory/DirectoryCompanyTemplate.sass'
 
 /**
@@ -29,18 +29,18 @@ class DirectoryCompanyTemplate extends React.Component {
 
     return (
       <div>
-        {/*
         <SEO
-          isBlogPost={false}
-          postImage={company.logoUrl}
-          postData={{
-            title: `${company.companyName}`,
-            description: `Apply to student, part-time and recent grad jobs at ${
-              company.companyName
-            }`,
+          requiredProps={{
+            title: `Jobs at ${company.companyName}` ,
+            description: `Apply to student and recent grad jobs at ${company.companyName}`,
+            url: window.location.href,
+            image: company.logoUrl
+          }}
+          type={PageType.REGULAR}
+          pageProps={{
           }}
         />
-        */}
+      
         <LandingPage
           heroTitle={`${company.companyName}`}
           subTitle=""

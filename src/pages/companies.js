@@ -39,11 +39,13 @@ class Companies extends React.Component {
          <SEO
         requiredProps={{
           title: 'Find companies that hire college students and recent grads',
-            description: 'Look inside different companies to see what they offer, what they do, and apply for jobs.',
+          description: 'Look inside different companies to see what they offer, what they do, and apply for jobs.',
+          url: window.location.href,
+          image: config.assets.image.logo
+
         }}
         type={PageType.REGULAR}
         pageProps={{
-          url: window.location.href
         }}
       />
         <LandingPage

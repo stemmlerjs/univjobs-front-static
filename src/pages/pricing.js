@@ -174,11 +174,12 @@ class Pricing extends React.Component {
          <SEO
         requiredProps={{
           title: 'Univjobs Pricing',
-          description: 'Recruit students and recent-grads from any post-secondary school in Canada.'
+          description: 'Recruit students and recent-grads from any post-secondary school in Canada.',
+          url: window.location.href,
+          image: config.assets.image.logo
         }}
         type={PageType.REGULAR}
         pageProps={{
-          url: window.location.href
         }}
       />
         <Logo />

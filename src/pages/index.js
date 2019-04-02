@@ -41,11 +41,12 @@ const Index = () => (
        <SEO
         requiredProps={{
           title: 'Jobs, internships, and work study for students and recent grads',
-          description: 'Find paid internship, remote work, part time, and entry-level jobs at startups and large companies.'
+          description: 'Find paid internship, remote work, part time, and entry-level jobs at startups and large companies.',
+          url: window.location.href,
+          image: config.assets.image.logo
         }}
         type={PageType.REGULAR}
         pageProps={{
-          url: window.location.href
         }}
       />
     

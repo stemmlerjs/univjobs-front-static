@@ -42,11 +42,12 @@ const Employers = () => (
     <SEO
         requiredProps={{
           title: 'Online campus recruitment solution for employers',
-          description: 'Reach, recruit post-secondary students and recent-grads on campus.'
+          description: 'Reach, recruit post-secondary students and recent-grads on campus.',
+          url: window.location.href,
+          image: config.assets.image.logo
         }}
         type={PageType.REGULAR}
         pageProps={{
-          url: window.location.href
         }}
       />
     <LandingPage

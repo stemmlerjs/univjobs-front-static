@@ -10,6 +10,7 @@ import '../styles/BlogIndex.sass'
 
 import popular from '../../../img/blog/ic_trending_up_24px.svg'
 import tools from '../../../img/blog/ic_tag_faces_24px.svg'
+import config from '../../../config';
 
 const NotFound = () => {
   return (
@@ -47,12 +48,12 @@ const BlogPageLayout = ({ post, posts, categories, category }) => (
             requiredProps={{
             title: `${post.title}`,
             description: post.description,
+            url: window.location.href,
+            image: `${config.staticUrl.substring(0, config.staticUrl.length-1)}${post.image}` //Remove trailing slash in url
           }}
           type={PageType.BLOG_POST}
           pageProps={{
-          url: window.location.href,
           slug: post.slug,
-          image: post.image,
           datePublished: post.date,
           dateModified: post.date,
           authorName: post.author

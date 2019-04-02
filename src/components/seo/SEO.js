@@ -4,10 +4,13 @@ import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
 // import * as config from '../../../config'
 import JsonLd from './JsonLd'
+import config from '../../config';
 
 export const SEO = ({ requiredProps, type, pageProps }) => (
   <Helmet>
     <title>{requiredProps.title}</title>
+    <meta name="description" content={requiredProps.description} />
+    <meta name="image" content={requiredProps.image} />
 
     <script type="application/ld+json">
     {
@@ -15,6 +18,25 @@ export const SEO = ({ requiredProps, type, pageProps }) => (
     }
     </script>
 
+    {/* OpenGraph tags 
+      * TODO: 
+      * - Create a module with returnable objects mapping to different OG tags such as articles, etc..
+      *   Refer to http://ogp.me/
+      *   For now we will do a basic OG tag. 
+      * 
+    */}
+     <meta property="og:url" content={pageProps.url} />
+     <meta property="og:title" content={requiredProps.title} />
+     <meta property="og:description" content={requiredProps.description} />
+     <meta name="image" content={requiredProps.image} />
+
+     {/* Twitter Card tags */}
+       <meta name="twitter:card" content="summary_large_image" />
+       <meta name="twitter:creator" content={config.twitter} />
+       <meta name="twitter:site" content={config.twitter} />
+       <meta name="twitter:title" content={requiredProps.title} />
+       <meta name="twitter:description" content={requiredProps.description} />
+       <meta name="twitter:image" content={requiredProps.image} /> 
   </Helmet>
 )
 
@@ -24,10 +46,13 @@ SEO.propTypes = {
   requiredProps: PropTypes.shape({
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired
   }).isRequired,
   type: PropTypes.string.isRequired,
   pageProps: PropTypes.object.isRequired
 }
+
 
 //NOTE: Make this into a component where it only renders the component
 // Move the programmatic aspect to class

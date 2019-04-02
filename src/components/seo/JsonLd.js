@@ -21,11 +21,11 @@ const JsonLd = (type, props, pageProps) => {
             "@type": "BlogPosting",
             "mainEntityOfPage": {
               "@type": "WebPage",
-              "@id": pageProps.url
+              "@id": props.url
             },
             "headline": props.title,
             "image": [
-              `${config.url}${pageProps.image}`
+              `${props.image}`
              ],
             "datePublished": pageProps.datePublished,
             "dateModified": pageProps.dateModified,
@@ -47,7 +47,7 @@ const JsonLd = (type, props, pageProps) => {
         return {
           "@context": "http://schema.org", 
           "@type": "WebPage", 
-          "url": pageProps.url, 
+          "url": props.url, 
           "name": props.title,
           "description": props.description
         }
