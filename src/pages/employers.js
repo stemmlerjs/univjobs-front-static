@@ -33,7 +33,6 @@ import edge from '../img/edge_hires-400x143.png'
 import {SeoLayout, PageType} from '../components/seo'
 
 import config from '../config'
-import { getUrl } from '../helpers'
 
 
 const Employers = () => (
@@ -43,7 +42,7 @@ const Employers = () => (
         requiredProps={{
           title: 'Online campus recruitment solution for employers',
           description: 'Reach, recruit post-secondary students and recent-grads on campus.',
-          url: getUrl(),
+          url: `${config.url}employers`,
           image: config.assets.image.logo
         }}
         type={PageType.REGULAR}

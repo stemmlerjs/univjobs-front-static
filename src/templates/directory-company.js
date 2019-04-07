@@ -4,7 +4,7 @@ import LandingPage from '../components/LandingPage'
 import CompanyHeader from '../components/companies/CompanyHeader'
 import DirectoryMap from '../components/directory/components/DirectoryMap'
 
-import {getUrl} from '../helpers'
+import config from '../config'
 import {SeoLayout, PageType} from '../components/seo'
 import '../styles/Directory/DirectoryCompanyTemplate.sass'
 
@@ -34,7 +34,7 @@ class DirectoryCompanyTemplate extends React.Component {
           requiredProps={{
             title: `Jobs at ${company.companyName}` ,
             description: `Apply to student and recent grad jobs at ${company.companyName}`,
-            url: getUrl(),
+            url: `${config.url}companies/${company.companyName}`,
             image: company.logoUrl
           }}
           type={PageType.REGULAR}

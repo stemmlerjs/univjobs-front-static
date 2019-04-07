@@ -15,8 +15,6 @@ import '../../styles/Directory/Directory.sass'
 import { calculateDistance } from '../../utils/navigation'
 import { ClipLoader } from 'react-spinners'
 
-import { getUrl} from '../../helpers'
-
 // Coordinates for Union Station in Toronto. A backup
 // in case we can't get the coordinates for this current
 // user.
@@ -495,7 +493,7 @@ class Directory extends React.Component {
           requiredProps={{
           title: 'Find Work Nearby',
           description: 'Work while studying as a college student or apply to jobs before graduating.',
-          url: getUrl(),
+          url: `${config.url}companies/directory`,
           image: config.assets.image.logo
         }}
         type={PageType.REGULAR}

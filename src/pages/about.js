@@ -18,8 +18,6 @@ import ourStory from '../styles/About/OurStory.module.css'
 import whoWeAre from '../styles/About/WhoWeAre.module.css'
 import memberStyles from '../styles/About/Members.module.css'
 
-import { getUrl } from '../helpers'
-
 
 const Description = props => {
   return (
@@ -139,7 +137,7 @@ const AboutPage = ({ data }) => {
         requiredProps={{
           title: 'About Univjobs',
           description: 'Follow us on helping college students recent grads get experience.',
-          url: getUrl(),
+          url: `${config.url}about`,
           image: config.assets.image.logo
         }}
         type={PageType.REGULAR}

@@ -6,7 +6,6 @@ import Link from 'gatsby-link'
 import {SeoLayout, PageType} from '../components/seo'
 import config from '../config'
 import styles from '../styles/TeamMember.module.css'
-import {getUrl} from '../helpers'
 
 const Intro = props => {
   return (
@@ -25,7 +24,7 @@ export const TeamMemberPageTemplate = ({ image, name, role, content }) => (
         requiredProps={{
           title: `${name} - Univjobs Team Member`,
           description: role,
-          url: getUrl(),
+          url: `${config.url}team/${name}`,
           image: `${config.staticUrl.substring(0, config.staticUrl.length-1)}${image}`
         }}
         type={PageType.REGULAR}

@@ -12,7 +12,6 @@ import popular from '../../../img/blog/ic_trending_up_24px.svg'
 import tools from '../../../img/blog/ic_tag_faces_24px.svg'
 import config from '../../../config';
 
-import { getUrl } from '../../../helpers'
 
 
 const NotFound = () => {
@@ -51,7 +50,7 @@ const BlogPageLayout = ({ post, posts, categories, category }) => (
             requiredProps={{
             title: `${post.title}`,
             description: post.description,
-            url: getUrl(),
+            url: `${config.url.substring(0, config.url.length-1)}${post.slug}`,
             image: `${config.staticUrl.substring(0, config.staticUrl.length-1)}${post.image}` //Remove trailing slash in url
           }}
           type={PageType.BLOG_POST}
@@ -69,7 +68,7 @@ const BlogPageLayout = ({ post, posts, categories, category }) => (
               title: 'Univjobs Blog | Updates, Guides and Resources',
               description:
                 'Get the latest announcements from Univjobs. Stay up to date, get inspired, read tips and success stories.',
-                url: getUrl(),
+                url: `${config.url}blog`,
                 image: config.assets.image.logo
             }}
             type={PageType.REGULAR}

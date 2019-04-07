@@ -2,21 +2,6 @@ import _ from 'underscore'
 import config from '../config'
 
 export default {
-  
-  /**
-   * getUrl
-   * 
-   * Gets the current url and returns it.
-   * 
-   * @param {void} 
-   * @return String
-   */
-   getUrl: () => {
-    return typeof window !== 'undefined' && window.location.href
-      ? typeof window !== 'undefined' && window.location.href
-      : 'https://nostalgic-bhaskara-eea0ad.netlify.com'
-   },
-
 
   /**
    * redirectTo

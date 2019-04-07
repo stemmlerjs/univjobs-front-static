@@ -25,7 +25,6 @@ import ymca from '../img/ymca.svg'
 import airmiles from '../img/airmiles.svg'
 import config from '../config'
 import {SeoLayout, PageType} from '../components/seo'
-import {getUrl} from '../helpers'
 
 const SmallBusiness = () => (
   <div>
@@ -33,7 +32,7 @@ const SmallBusiness = () => (
           requiredProps={{
           title: 'Find local help',
           description: 'Browse and connect with thousands of local students to help with your business',
-          url: getUrl(),
+          url: `${config.url}small-business`,
           image: config.assets.image.logo
         }}
         type={PageType.REGULAR}

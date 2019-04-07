@@ -27,7 +27,6 @@ import styles from '../styles/Press.module.css'
 
 import config from '../config'
 
-import { getUrl } from '../helpers'
 
 const Body = props => {
   return (
@@ -157,7 +156,7 @@ class PressPage extends React.Component {
         requiredProps={{
           title: 'Univjobs Press',
           description: 'The latest news, updates and resources on Univjobs.',
-          url: getUrl(),
+          url: `${config.url}press`,
           image: config.assets.image.logo
         }}
         type={PageType.REGULAR}

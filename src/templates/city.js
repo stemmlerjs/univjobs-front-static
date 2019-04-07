@@ -10,7 +10,6 @@ import mississauga from '../img/cities/mississauga.jpg'
 
 import {SeoLayout, PageType} from '../components/seo'
 import config from '../config'
-import { getUrl } from '../helpers'
 
 import '../styles/City/CityTemplate.sass'
 
@@ -55,7 +54,7 @@ class CityTemplate extends React.Component {
         requiredProps={{
           title: `${city} student and grad jobs`,
           description: `Student jobs, part-time, co-op and recent-grad jobs at companies in ${city}.`,
-          url: getUrl(),
+          url: `${config.url}jobs/student-jobs-in-${city}`,
           image: config.assets.image.logo
         }}
         type={PageType.REGULAR}

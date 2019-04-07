@@ -14,7 +14,6 @@ import {SeoLayout, PageType} from '../components/seo'
 
 import exploreCompanies from '../img/companies/explore-companies.png'
 
-import { getUrl } from '../helpers'
 
 /**
  * Companies
@@ -42,7 +41,7 @@ class Companies extends React.Component {
         requiredProps={{
           title: 'Find companies that hire college students and recent grads',
           description: 'Look inside different companies to see what they offer, what they do, and apply for jobs.',
-          url: getUrl,
+          url: `${config.url}companies`,
           image: config.assets.image.logo
 
         }}

@@ -18,7 +18,7 @@ import EmployerReviews from '../components/EmployerReviews'
 import styles from '../styles/Pricing.module.css'
 
 import config from '../config'
-import { redirectTo, getUrl } from '../helpers'
+import { redirectTo } from '../helpers'
 import {SeoLayout, PageType} from '../components/seo'
 
 
@@ -176,7 +176,7 @@ class Pricing extends React.Component {
         requiredProps={{
           title: 'Univjobs Pricing',
           description: 'Recruit students and recent-grads from any post-secondary school in Canada.',
-          url: getUrl(),
+          url: `${config.appUrl}pricing`,
           image: config.assets.image.logo
         }}
         type={PageType.REGULAR}

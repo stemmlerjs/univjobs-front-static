@@ -35,7 +35,6 @@ import startupschool from '../img/startupschool.png'
 import edge from '../img/edge_hires-400x143.png'
 
 import Helmet from 'react-helmet'
-import { getUrl } from '../helpers'
 
 const Students = () => (
   <div>
@@ -43,7 +42,7 @@ const Students = () => (
       requiredProps={{
       title: 'Jobs, internships, and work study for students and recent grads',
       description: 'Find paid internship, remote work, part time, and entry-level jobs at startups and large companies.',
-      url: getUrl(),
+      url: `${config.url}students`,
       image: config.assets.image.logo
     }}
       type={PageType.REGULAR}

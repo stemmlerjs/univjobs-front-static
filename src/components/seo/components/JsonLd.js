@@ -16,7 +16,6 @@ import * as config from '../../../config'
 
 
 const JsonLd = (type, props, pageProps) => {
-     props.url = new URL(props.url)
      switch(type) {
         case "BLOG_POST":
          return {
@@ -24,7 +23,7 @@ const JsonLd = (type, props, pageProps) => {
             "@type": "BlogPosting",
             "mainEntityOfPage": {
               "@type": "WebPage",
-              "@id": `${props.url.origin}${props.url.pathname}`
+              "@id": `${props.url}`
             },
             "headline": props.title,
             "image": [
@@ -50,7 +49,7 @@ const JsonLd = (type, props, pageProps) => {
         return {
           "@context": "http://schema.org", 
           "@type": "WebPage", 
-          "url": `${props.url.origin}${props.url.pathname}`, 
+          "url": `${props.url}`, 
           "name": props.title,
           "description": props.description
         }

@@ -3,13 +3,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
 import JsonLd from './JsonLd'
-import config from '../../../config';
-
-const returnBaseUrl = (url) => {
-  const t = new URL(url)
-  return `${t.origin}${t.pathname}`
-}  
-
+import config from '../../../config'
 
 const SeoLayout = ({ requiredProps, type, pageProps }) => (
   <Helmet>
@@ -49,7 +43,7 @@ const SeoLayout = ({ requiredProps, type, pageProps }) => (
           - Add mobile variant at some point.
             Refer to <link rel="alternate" media="only screen and (max-width: 640px)"  href="http://m.example.com/dresses/green-dresses">
       */}
-       <link rel="canonical" href={returnBaseUrl(requiredProps.url)} />
+       <link rel="canonical" href={requiredProps.url} />
 
 
   </Helmet>
