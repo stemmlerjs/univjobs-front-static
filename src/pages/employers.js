@@ -10,7 +10,6 @@ import landingePageStyles from '../styles/StudentLandingPageStyles.module.css'
 import { CallToAction } from '../components/shared'
 import LeftFeatures from '../components/LeftFeatures'
 import RightFeatures from '../components/RightFeatures'
-import Slidy from '../components/Slidy'
 
 import features from '../styles/FeatureStyles.module.css'
 import productImage from '../img/student_invites.png'
@@ -31,20 +30,26 @@ import icube from '../img/icube.png'
 import startupschool from '../img/startupschool.png'
 import edge from '../img/edge_hires-400x143.png'
 
-import SEO from '../components/SEO'
+import {SEO, PageType} from '../components/seo'
 
 import config from '../config'
 
+
+
 const Employers = () => (
+
   <div>
     <SEO
-      isBlogPost={false}
-      postData={{
-        title: 'Univjobs: Online campus recruitment solution for employers',
-        description:
-          'Reach and recruit college and university students and recent-grads on campus. Save time and money finding or hiring interns and recent grads.',
-      }}
-    />
+        requiredProps={{
+          title: 'Online campus recruitment solution for employers',
+          description: 'Reach, recruit post-secondary students and recent-grads on campus.',
+          url: window.location.href,
+          image: config.assets.image.logo
+        }}
+        type={PageType.REGULAR}
+        pageProps={{
+        }}
+      />
     <LandingPage
       heroTitle="Find the best students and recent grads to hire"
       heroSubTitle="A network of young talent from different post secondary schools to source, recruit, and hire."

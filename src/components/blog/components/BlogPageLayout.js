@@ -5,11 +5,12 @@ import CategoriesHeader from './CategoriesHeader'
 import BlogPostTemplate from './BlogPostTemplate'
 import Post from './Post'
 import Link from 'gatsby-link'
-import SEO from '../../../components/SEO'
+import {SEO, PageType} from '../../../components/seo'
 import '../styles/BlogIndex.sass'
 
 import popular from '../../../img/blog/ic_trending_up_24px.svg'
 import tools from '../../../img/blog/ic_tag_faces_24px.svg'
+import config from '../../../config';
 
 const NotFound = () => {
   return (
@@ -41,28 +42,37 @@ const BlogPageLayout = ({ post, posts, categories, category }) => (
   <section style={{ padding: 0 }}>
     <div className="blog-page-content-container">
       <div className="blog-page-content-container-inner">
+       
         {post ? (
-          // Blog post page
           <SEO
-            postData={{
-              title: `${post.title} | Univjobs Blog`,
-              description: post.description,
-              slug: post.slug,
-            }}
-            postImage={post.image}
-            isBlogPost={true}
-          />
+            requiredProps={{
+            title: `${post.title}`,
+            description: post.description,
+            url: window.location.href,
+            image: `${config.staticUrl.substring(0, config.staticUrl.length-1)}${post.image}` //Remove trailing slash in url
+          }}
+          type={PageType.BLOG_POST}
+          pageProps={{
+            slug: post.slug,
+            datePublished: post.date,
+            dateModified: post.date,
+            authorName: post.author
+        }}
+        />
         ) : (
           // Main blog page, categories pages, etc.
           <SEO
-            postData={{
+          requiredProps={{
               title: 'Univjobs Blog | Updates, Guides and Resources',
               description:
                 'Get the latest announcements from Univjobs. Stay up to date, get inspired, read tips and success stories.',
             }}
-            isBlogPost={false}
+            type={PageType.REGULAR}
+            pageProps={{
+              url: window.location.href,
+            }}
           />
-        )}
+          ) }
         <CategoriesHeader categories={categories} currentCategory={category} />
         <div className="content-flex">
           {post ? (

@@ -10,7 +10,7 @@ import grad from '../img/gradphotos.jpeg'
 import LandingPage from '../components/LandingPage'
 
 import config from '../config'
-import SEO from '../components/SEO'
+import {SEO, PageType} from '../components/seo'
 
 import { Backers, AltFeature, StudentTestimonials } from '../components/landing'
 
@@ -38,15 +38,18 @@ import edge from '../img/edge_hires-400x143.png'
 
 const Index = () => (
   <div>
-    <SEO
-      isBlogPost={false}
-      postData={{
-        title:
-          'Univjobs: Jobs, Internships & Work Study for College Students and Recent Grads',
-        description:
-          'Find paid internship, remote work, part time, and entry-level jobs at startups and large companies',
-      }}
-    />
+       <SEO
+        requiredProps={{
+          title: 'Jobs, internships, and work study for students and recent grads',
+          description: 'Find paid internship, remote work, part time, and entry-level jobs at startups and large companies.',
+          url: window.location.href,
+          image: config.assets.image.logo
+        }}
+        type={PageType.REGULAR}
+        pageProps={{
+        }}
+      />
+    
     <LandingPage
       heroTitle="Apply to student and recent grad jobs"
       heroSubTitle="A marketplace to find part time, co-op, entry-level jobs and internships."

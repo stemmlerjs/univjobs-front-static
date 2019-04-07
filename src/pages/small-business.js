@@ -24,18 +24,23 @@ import instacart from '../img/instacart.svg'
 import ymca from '../img/ymca.svg'
 import airmiles from '../img/airmiles.svg'
 import config from '../config'
-import SEO from '../components/SEO'
+import {SEO, PageType} from '../components/seo'
+
 
 const SmallBusiness = () => (
   <div>
-    <SEO
-      isBlogPost={false}
-      postData={{
-        title: 'Univjobs for Small Businesses | Find local help',
-        description:
-          'Browse and connect with thousands of local students to help with your business',
-      }}
-    />
+         <SEO
+          requiredProps={{
+          title: 'Find local help',
+          description: 'Browse and connect with thousands of local students to help with your business',
+          url: window.location.href,
+          image: config.assets.image.logo
+        }}
+        type={PageType.REGULAR}
+        pageProps={{
+        }}
+      />
+
     <LandingPage
       heroTitle="Easily access, and hire local young talent"
       heroSubTitle="We have thousands of candidates ready and waiting"
@@ -69,7 +74,7 @@ const SmallBusiness = () => (
     <CallToAction
       header="Get help and save money with Univjobs"
       subHeader="UnivJobs makes it easy to find affordable talent locally"
-      buttonText="Try it now!"
+      buttonText="Hire talent"
       alt={true}
       location={`${config.appUrl}register/employer`}
     />
@@ -78,8 +83,8 @@ const SmallBusiness = () => (
 
     <CallToAction
       header="Get local brand awareness virtually with Univjobs"
-      subHeader="UnivJobs shows your company logo in front of thousands of job seekers."
-      buttonText="Post a job now"
+      subHeader="UnivJobs shows your company in front of thousands of job seekers."
+      buttonText="Post a job"
       alt={true}
       location={`${config.appUrl}register/employer`}
     />

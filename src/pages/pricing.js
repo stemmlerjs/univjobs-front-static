@@ -19,7 +19,8 @@ import styles from '../styles/Pricing.module.css'
 
 import config from '../config'
 import { redirectTo } from '../helpers'
-import SEO from '../components/SEO'
+import {SEO, PageType} from '../components/seo'
+
 
 const Logo = () => {
   return (
@@ -170,15 +171,17 @@ class Pricing extends React.Component {
   render() {
     return (
       <div>
-        <SEO
-          isBlogPost={false}
-          postData={{
-            title:
-              'Pricing @ Univjobs | Simplifying hiring post-secondary students',
-            description:
-              'Recruit students and recent-grads from any post-secondary school in Canada.',
-          }}
-        />
+         <SEO
+        requiredProps={{
+          title: 'Univjobs Pricing',
+          description: 'Recruit students and recent-grads from any post-secondary school in Canada.',
+          url: window.location.href,
+          image: config.assets.image.logo
+        }}
+        type={PageType.REGULAR}
+        pageProps={{
+        }}
+      />
         <Logo />
 
         <div className={styles.heroFlex}>

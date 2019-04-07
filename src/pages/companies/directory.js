@@ -10,7 +10,7 @@ import Loading from '../../components/Loading'
 import { getCurrentCity, getCoordinates } from '../../utils/ip'
 import { CallToAction } from '../../components/shared'
 import config from '../../config'
-import SEO from '../../components/SEO'
+import {SEO, PageType} from '../../components/seo'
 import '../../styles/Directory/Directory.sass'
 import { calculateDistance } from '../../utils/navigation'
 import { ClipLoader } from 'react-spinners'
@@ -489,14 +489,17 @@ class Directory extends React.Component {
 
     return (
       <div className="directory-container">
-        <SEO
-          isBlogPost={false}
-          postData={{
-            title: 'Univjobs: Find Work Nearby',
-            description:
-              'Work while studying as a college student or apply to jobs before graduating ',
-          }}
-        />
+         <SEO
+          requiredProps={{
+          title: 'Find Work Nearby',
+          description: 'Work while studying as a college student or apply to jobs before graduating.',
+          url: window.location.href,
+          image: config.assets.image.logo
+        }}
+        type={PageType.REGULAR}
+        pageProps={{
+        }}
+      />
         <DirectoryHeader
           currentLocation={currentLocation}
           onChange={this.handleChangeLocationText}

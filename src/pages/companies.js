@@ -10,7 +10,7 @@ import { CallToAction } from '../components/shared'
 import DirectoryLink from '../components/companies/DirectoryLink'
 
 import config from '../config'
-import SEO from '../components/SEO'
+import {SEO, PageType} from '../components/seo'
 
 import exploreCompanies from '../img/companies/explore-companies.png'
 
@@ -36,15 +36,18 @@ class Companies extends React.Component {
     console.log(this.props)
     return (
       <div>
-        <SEO
-          isBlogPost={false}
-          postData={{
-            title:
-              'Univjobs: Find companies that hire college students and recent grads',
-            description:
-              'Look inside different companies to see what they offer, what they do, and apply for jobs.',
-          }}
-        />
+         <SEO
+        requiredProps={{
+          title: 'Find companies that hire college students and recent grads',
+          description: 'Look inside different companies to see what they offer, what they do, and apply for jobs.',
+          url: window.location.href,
+          image: config.assets.image.logo
+
+        }}
+        type={PageType.REGULAR}
+        pageProps={{
+        }}
+      />
         <LandingPage
           heroTitle="Explore Companies"
           heroSubTitle={`Top companies are searching for candidates just like you.

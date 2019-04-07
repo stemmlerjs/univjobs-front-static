@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { BlogPageLayout } from '../components/blog'
 import helpers from '../helpers'
 
