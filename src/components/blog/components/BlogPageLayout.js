@@ -5,12 +5,15 @@ import CategoriesHeader from './CategoriesHeader'
 import BlogPostTemplate from './BlogPostTemplate'
 import Post from './Post'
 import Link from 'gatsby-link'
-import {SEO, PageType} from '../../../components/seo'
+import {SeoLayout, PageType} from '../../../components/seo'
 import '../styles/BlogIndex.sass'
 
 import popular from '../../../img/blog/ic_trending_up_24px.svg'
 import tools from '../../../img/blog/ic_tag_faces_24px.svg'
 import config from '../../../config';
+
+import { getUrl } from '../../../helpers'
+
 
 const NotFound = () => {
   return (
@@ -44,11 +47,11 @@ const BlogPageLayout = ({ post, posts, categories, category }) => (
       <div className="blog-page-content-container-inner">
        
         {post ? (
-          <SEO
+          <SeoLayout
             requiredProps={{
             title: `${post.title}`,
             description: post.description,
-            url: window.location.href,
+            url: getUrl(),
             image: `${config.staticUrl.substring(0, config.staticUrl.length-1)}${post.image}` //Remove trailing slash in url
           }}
           type={PageType.BLOG_POST}
@@ -61,15 +64,16 @@ const BlogPageLayout = ({ post, posts, categories, category }) => (
         />
         ) : (
           // Main blog page, categories pages, etc.
-          <SEO
+          <SeoLayout
           requiredProps={{
               title: 'Univjobs Blog | Updates, Guides and Resources',
               description:
                 'Get the latest announcements from Univjobs. Stay up to date, get inspired, read tips and success stories.',
+                url: getUrl(),
+                image: config.assets.image.logo
             }}
             type={PageType.REGULAR}
             pageProps={{
-              url: window.location.href,
             }}
           />
           ) }

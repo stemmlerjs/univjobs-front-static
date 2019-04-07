@@ -9,7 +9,7 @@ import pitch from '../img/about/pitch.png'
 import LandingPage from '../components/LandingPage'
 import { CallToAction } from '../components/shared'
 import Divider from '../components/Divider'
-import {SEO, PageType} from '../components/seo'
+import {SeoLayout, PageType} from '../components/seo'
 
 import styles from '../styles/About.module.css'
 import description from '../styles/About/Description.module.css'
@@ -18,6 +18,7 @@ import ourStory from '../styles/About/OurStory.module.css'
 import whoWeAre from '../styles/About/WhoWeAre.module.css'
 import memberStyles from '../styles/About/Members.module.css'
 
+import { getUrl } from '../helpers'
 
 
 const Description = props => {
@@ -134,11 +135,11 @@ const AboutPage = ({ data }) => {
 
   return (
     <div>
-      <SEO
+      <SeoLayout
         requiredProps={{
           title: 'About Univjobs',
           description: 'Follow us on helping college students recent grads get experience.',
-          url: window.location.href,
+          url: getUrl(),
           image: config.assets.image.logo
         }}
         type={PageType.REGULAR}

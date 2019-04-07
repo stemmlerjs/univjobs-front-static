@@ -3,7 +3,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
 import JsonLd from './JsonLd'
-import config from '../../config';
+import config from '../../../config';
 
 const returnBaseUrl = (url) => {
   const t = new URL(url)
@@ -11,7 +11,7 @@ const returnBaseUrl = (url) => {
 }  
 
 
-const SEO = ({ requiredProps, type, pageProps }) => (
+const SeoLayout = ({ requiredProps, type, pageProps }) => (
   <Helmet>
     <title>{requiredProps.title}</title>
     <meta name="description" content={requiredProps.description} />
@@ -55,9 +55,7 @@ const SEO = ({ requiredProps, type, pageProps }) => (
   </Helmet>
 )
 
-export default SEO;
-
-SEO.propTypes = {
+SeoLayout.propTypes = {
   requiredProps: PropTypes.shape({
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
@@ -67,3 +65,5 @@ SEO.propTypes = {
   type: PropTypes.string.isRequired,
   pageProps: PropTypes.object.isRequired
 }
+
+export default SeoLayout;

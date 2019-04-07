@@ -3,9 +3,10 @@ import PropTypes from 'prop-types'
 import { HTMLContent } from '../components/Content'
 import { CallToAction } from '../components/shared'
 import Link from 'gatsby-link'
-import {SEO, PageType} from '../components/seo'
+import {SeoLayout, PageType} from '../components/seo'
 import config from '../config'
 import styles from '../styles/TeamMember.module.css'
+import {getUrl} from '../helpers'
 
 const Intro = props => {
   return (
@@ -20,11 +21,11 @@ const Intro = props => {
 export const TeamMemberPageTemplate = ({ image, name, role, content }) => (
   <div>
     <section className={styles.pageContainer}>
-      <SEO
+      <SeoLayout
         requiredProps={{
           title: `${name} - Univjobs Team Member`,
           description: role,
-          url: window.location.href,
+          url: getUrl(),
           image: `${config.staticUrl.substring(0, config.staticUrl.length-1)}${image}`
         }}
         type={PageType.REGULAR}

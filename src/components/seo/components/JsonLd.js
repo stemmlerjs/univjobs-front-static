@@ -1,4 +1,4 @@
-import * as config from '../../config'
+import * as config from '../../../config'
 
 
 /**
@@ -57,4 +57,4 @@ const JsonLd = (type, props, pageProps) => {
     }
  }
 
- export default JsonLd
+export default JsonLd;

@@ -30,20 +30,20 @@ import icube from '../img/icube.png'
 import startupschool from '../img/startupschool.png'
 import edge from '../img/edge_hires-400x143.png'
 
-import {SEO, PageType} from '../components/seo'
+import {SeoLayout, PageType} from '../components/seo'
 
 import config from '../config'
-
+import { getUrl } from '../helpers'
 
 
 const Employers = () => (
 
   <div>
-    <SEO
+    <SeoLayout
         requiredProps={{
           title: 'Online campus recruitment solution for employers',
           description: 'Reach, recruit post-secondary students and recent-grads on campus.',
-          url: window.location.href,
+          url: getUrl(),
           image: config.assets.image.logo
         }}
         type={PageType.REGULAR}

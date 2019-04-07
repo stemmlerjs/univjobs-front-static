@@ -18,8 +18,9 @@ import EmployerReviews from '../components/EmployerReviews'
 import styles from '../styles/Pricing.module.css'
 
 import config from '../config'
-import { redirectTo } from '../helpers'
-import {SEO, PageType} from '../components/seo'
+import { redirectTo, getUrl } from '../helpers'
+import {SeoLayout, PageType} from '../components/seo'
+
 
 
 const Logo = () => {
@@ -171,11 +172,11 @@ class Pricing extends React.Component {
   render() {
     return (
       <div>
-         <SEO
+         <SeoLayout
         requiredProps={{
           title: 'Univjobs Pricing',
           description: 'Recruit students and recent-grads from any post-secondary school in Canada.',
-          url: window.location.href,
+          url: getUrl(),
           image: config.assets.image.logo
         }}
         type={PageType.REGULAR}

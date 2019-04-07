@@ -24,16 +24,16 @@ import instacart from '../img/instacart.svg'
 import ymca from '../img/ymca.svg'
 import airmiles from '../img/airmiles.svg'
 import config from '../config'
-import {SEO, PageType} from '../components/seo'
-
+import {SeoLayout, PageType} from '../components/seo'
+import {getUrl} from '../helpers'
 
 const SmallBusiness = () => (
   <div>
-         <SEO
+         <SeoLayout
           requiredProps={{
           title: 'Find local help',
           description: 'Browse and connect with thousands of local students to help with your business',
-          url: window.location.href,
+          url: getUrl(),
           image: config.assets.image.logo
         }}
         type={PageType.REGULAR}

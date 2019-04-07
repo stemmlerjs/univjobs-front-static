@@ -21,12 +21,13 @@ import CountUp from 'react-countup'
 import Divider from '../components/Divider'
 import Mentions from '../components/press/Mentions'
 import Founders from '../components/press/Founders'
-import {SEO, PageType} from '../components/seo'
+import {SeoLayout, PageType} from '../components/seo'
 
 import styles from '../styles/Press.module.css'
 
 import config from '../config'
 
+import { getUrl } from '../helpers'
 
 const Body = props => {
   return (
@@ -152,11 +153,11 @@ class PressPage extends React.Component {
   render() {
     return (
       <div>
-       <SEO
+       <SeoLayout
         requiredProps={{
           title: 'Univjobs Press',
           description: 'The latest news, updates and resources on Univjobs.',
-          url: window.location.href,
+          url: getUrl(),
           image: config.assets.image.logo
         }}
         type={PageType.REGULAR}

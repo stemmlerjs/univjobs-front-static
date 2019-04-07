@@ -28,5 +28,5 @@ const PageType = {
  *   - OG format
  * NOTE: We will only do basic formats for now. We had broken JSON-LD and meta tags not working properly
  */
-export default PageType
 
+export default PageType;

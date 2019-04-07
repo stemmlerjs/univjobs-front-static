@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import config from '../config'
 import LandingPage from '../components/LandingPage'
-import {SEO} from '../components/seo'
+import {SeoLayout} from '../components/seo'
 import '../styles/LandingTemplate/LandingTemplate.sass'
 import features from '../styles/FeatureStyles.module.css'
 
@@ -83,7 +83,7 @@ class LandingPageTemplate extends React.Component {
     return (
       <div className="landing-page-template-container">
       {/*
-        <SEO
+        <SeoLayout
           isBlogPost={false}
           postData={{
             title: title,

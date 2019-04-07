@@ -10,10 +10,12 @@ import Loading from '../../components/Loading'
 import { getCurrentCity, getCoordinates } from '../../utils/ip'
 import { CallToAction } from '../../components/shared'
 import config from '../../config'
-import {SEO, PageType} from '../../components/seo'
+import {SeoLayout, PageType} from '../../components/seo'
 import '../../styles/Directory/Directory.sass'
 import { calculateDistance } from '../../utils/navigation'
 import { ClipLoader } from 'react-spinners'
+
+import { getUrl} from '../../helpers'
 
 // Coordinates for Union Station in Toronto. A backup
 // in case we can't get the coordinates for this current
@@ -489,11 +491,11 @@ class Directory extends React.Component {
 
     return (
       <div className="directory-container">
-         <SEO
+         <SeoLayout
           requiredProps={{
           title: 'Find Work Nearby',
           description: 'Work while studying as a college student or apply to jobs before graduating.',
-          url: window.location.href,
+          url: getUrl(),
           image: config.assets.image.logo
         }}
         type={PageType.REGULAR}

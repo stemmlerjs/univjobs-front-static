@@ -8,9 +8,9 @@ import brampton from '../img/cities/brampton.jpg'
 import oakville from '../img/cities/oakville.jpg'
 import mississauga from '../img/cities/mississauga.jpg'
 
-import {SEO, PageType} from '../components/seo'
+import {SeoLayout, PageType} from '../components/seo'
 import config from '../config'
-
+import { getUrl } from '../helpers'
 
 import '../styles/City/CityTemplate.sass'
 
@@ -51,11 +51,11 @@ class CityTemplate extends React.Component {
 
     return (
       <div className="city-template-container">
-       <SEO
+       <SeoLayout
         requiredProps={{
           title: `${city} student and grad jobs`,
           description: `Student jobs, part-time, co-op and recent-grad jobs at companies in ${city}.`,
-          url: window.location.href,
+          url: getUrl(),
           image: config.assets.image.logo
         }}
         type={PageType.REGULAR}

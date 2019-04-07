@@ -10,7 +10,7 @@ import grad from '../img/gradphotos.jpeg'
 import LandingPage from '../components/LandingPage'
 
 import config from '../config'
-import {SEO, PageType} from '../components/seo'
+import {SeoLayout, PageType} from '../components/seo'
 
 import { Backers, AltFeature, StudentTestimonials } from '../components/landing'
 
@@ -30,6 +30,7 @@ import icube from '../img/icube.png'
 import startupschool from '../img/startupschool.png'
 import edge from '../img/edge_hires-400x143.png'
 
+import { getUrl } from '../helpers'
 /**
  * @class Index
  * @desc This is the index page. It's the main page
@@ -38,11 +39,11 @@ import edge from '../img/edge_hires-400x143.png'
 
 const Index = () => (
   <div>
-       <SEO
+       <SeoLayout
         requiredProps={{
           title: 'Jobs, internships, and work study for students and recent grads',
           description: 'Find paid internship, remote work, part time, and entry-level jobs at startups and large companies.',
-          url: window.location.href,
+          url: getUrl(),
           image: config.assets.image.logo
         }}
         type={PageType.REGULAR}

@@ -29,7 +29,7 @@ const meta = [
     content: 'U22OVlRPWeMnqAw53R07dKFHh_6PdjYd9gJ7SJLXeqA',
   },
 
-  // SEO Keywords
+  // Seo Keywords
   {
     name: 'keywords',
     content: 'univjobs, studentjobs, internship, part-time work',
