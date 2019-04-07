@@ -1,7 +1,6 @@
 {
   "env": {
-    "amd": true,
-    "jest": true
+    "amd": true
   },
   "parser": "babel-eslint",
   "parserOptions": {
