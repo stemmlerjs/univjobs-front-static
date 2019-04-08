@@ -12,6 +12,8 @@ import LandingPage from '../components/LandingPage'
 import config from '../config'
 import SEO from '../components/SEO'
 
+import {Layout, PageType} from '../components/seoLayout'
+
 import { Backers, AltFeature, StudentTestimonials } from '../components/landing'
 
 import scribbleLive from '../img/scribble.svg'
@@ -38,13 +40,15 @@ import edge from '../img/edge_hires-400x143.png'
 
 const Index = () => (
   <div>
-    <SEO
-      isBlogPost={false}
-      postData={{
-        title:
-          'Univjobs: Jobs, Internships & Work Study for College Students and Recent Grads',
-        description:
-          'Find paid internship, remote work, part time, and entry-level jobs at startups and large companies',
+    <Layout
+      requiredProps={{
+        title: 'Jobs, internships, and work study for students and recent grads',
+        description: 'Find paid internship, remote work, part time, and entry-level jobs at startups and large companies.',
+        url: `${config.url}`,
+        image: config.assets.image.logo
+      }}
+      type={PageType.REGULAR}
+      pageProps={{
       }}
     />
     <LandingPage
