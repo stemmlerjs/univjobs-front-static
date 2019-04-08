@@ -15,7 +15,7 @@ category: Recruitment
 parentcategory: Recruitment
 public: true
 ---
-Slack has been around 2013 and it has taken the world of work by storm by hyper connecting teams through it’s powerful messaging platform. There are over [8 million daily active users, 9 million weekly active users, 3 million paid accounts](https://expandedramblings.com/index.php/slack-statistics/). From startups to big establish companies like Scotia Digital Factory(I worked their briefly), people rave about Slack and the numbers show it. This is why I believe that you as an HR member, Slack is the perfect tool to improve engagement, manage feedback loops, recognize wins(big or small) and improve team culture because people are already using it daily. The following tools I’m sharing are the ones curated to help you supercharge your productivity.
+Slack has been around 2013 and it has taken the world by storm. Hyper connecting teams through it’s powerful messaging platform. There are over [8 million daily active users, 9 million weekly active users, 3 million paid accounts](https://expandedramblings.com/index.php/slack-statistics/). From startups to big establish companies like Scotia Digital Factory(I worked their briefly), people rave about Slack and the numbers show it. This is why I believe that you as an HR member, Slack is the perfect tool to improve engagement, manage feedback loops, recognize wins(big or small) and improve team culture because people are already using it daily. The following tools I’m sharing are the ones curated to help you supercharge your productivity.
 
 
 
@@ -32,7 +32,7 @@ Icebreaker is a tool that lets you get to know your team by asking icebreaker qu
 ![](https://d1ikbwk92wlcol.cloudfront.net/assets/integrations/slack/4.png?26ef31f0a9fc27ff0361b9ac29deceb1)
 
 
-Fond helps give and send recognition to your team members with points they can redeem for rewards. Team members can send a recognition such as birthdays, special occasions and a job well done. The Fond app will track the recognitions and send a personal message to the mentioned team member. Public recognitions are also enabled to give team wide recognitions. This tool promotes positive social relationships in the workplace by encouraging teams to recognize each team members value.
+Fond provides an avenue to recognize the positive impact of your team members with points they can redeem for rewards. Team members can send a recognition such as birthdays, special occasions and a job well done. The Fond app will track the recognitions and send a personal message to the mentioned team member. Public recognitions are also enabled to give team wide recognitions. This tool promotes positive social relationships in the workplace by encouraging teams to recognize each team members value.
 
 
 
@@ -58,7 +58,7 @@ Duuoo improves relationships between managers and teams. It sets them to be succ
 
 ![](https://files.readme.io/ecf9c17-Screen_Recording_2017-05-21_at_09.02_PM.gif)
 
-Breezy HR is a recruiting software with an applicant tracking system. If you have Breezy HR, the Breezy HR Integration lets you streamline hiring and onboarding new hires to your team. It also allows you to discover, vet and hire new candidates. Lastly, the integration enables teams to rate candidates, view available positions and get hr updates through Slack. 
+Breezy HR is a recruiting software with an applicant tracking system. If you have Breezy HR, the Breezy HR Integration lets you streamline hiring and on-boarding new hires to your team. It also allows you to discover, vet and hire new candidates. Lastly, the integration enables teams to rate candidates, view available positions and get hr updates through Slack. 
 
 
 
