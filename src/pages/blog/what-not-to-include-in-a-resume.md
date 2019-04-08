@@ -26,7 +26,7 @@ If you cannot fit your resume onto two pages
 
 **Try:**
 
-To cut down your descriptions. Higlight more relevant tasks. Be clear and concise. It goes a long way.
+To cut down your descriptions. Highlight more relevant tasks. Be clear and concise. It goes a long way.
 
 _Formula (task-result-date)_
 
