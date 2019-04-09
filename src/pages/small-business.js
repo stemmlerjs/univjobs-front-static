@@ -24,16 +24,19 @@ import instacart from '../img/instacart.svg'
 import ymca from '../img/ymca.svg'
 import airmiles from '../img/airmiles.svg'
 import config from '../config'
-import SEO from '../components/SEO'
+import {SeoLayout, PageType} from '../components/seo'
 
 const SmallBusiness = () => (
   <div>
-    <SEO
-      isBlogPost={false}
-      postData={{
-        title: 'Univjobs for Small Businesses | Find local help',
-        description:
-          'Browse and connect with thousands of local students to help with your business',
+    <SeoLayout
+      requiredProps={{
+        title: 'Find local help',
+        description: 'Browse and connect with thousands of local students to help with your business',
+        url: `${config.url}small-business`,
+        image: config.assets.image.logo
+      }}
+      type={PageType.REGULAR}
+      pageProps={{
       }}
     />
     <LandingPage
