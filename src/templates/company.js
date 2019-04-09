@@ -59,17 +59,6 @@ class CompanyTemplate extends React.Component {
 
     return (
       <div>
-        <SeoLayout
-          requiredProps={{
-            title: `Jobs at ${company.companyName}` ,
-            description: `Apply to student and recent grad jobs at ${company.companyName}`,
-            url: `${config.url}companies/${company.companyName}`,
-            image: company.brandImageUrl
-          }}
-          type={PageType.REGULAR}
-          pageProps={{
-          }}
-        />
         <LandingPage
           options={{
             alignment: 'center',
