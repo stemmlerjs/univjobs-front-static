@@ -15,7 +15,7 @@ category: Recruitment
 parentcategory: Recruitment
 public: true
 ---
-Slack has been around 2013 and it has taken the world by storm. Hyper connecting teams through it’s powerful messaging platform. There are over [8 million daily active users, 9 million weekly active users, 3 million paid accounts](https://expandedramblings.com/index.php/slack-statistics/). From startups to big establish companies like Scotia Digital Factory(I worked their briefly), people rave about Slack and the numbers show it. This is why I believe that you as an HR member, Slack is the perfect tool to improve engagement, manage feedback loops, recognize wins(big or small) and improve team culture because people are already using it daily. The following tools I’m sharing are the ones curated to help you supercharge your productivity.
+Slack has been around 2013 and it has taken the world by storm. Hyper connecting teams through it’s powerful messaging platform. There are over [8 million daily active users, 9 million weekly active users, 3 million paid accounts](https://expandedramblings.com/index.php/slack-statistics/). From startups to big establish companies like Scotia Digital Factory(I worked there briefly), people rave about Slack and the numbers show it. This is why I believe that you as an HR member, Slack is the perfect tool to improve engagement, manage feedback loops, recognize wins(big or small) and improve team culture because people are already using it daily. The following tools I’m sharing are the ones curated to help you supercharge your productivity.
 
 
 
