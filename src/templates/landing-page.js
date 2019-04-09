@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import config from '../config'
 import LandingPage from '../components/LandingPage'
-import {SeoLayout, PageType} from '../components/seo'
 import '../styles/LandingTemplate/LandingTemplate.sass'
 import features from '../styles/FeatureStyles.module.css'
 
@@ -82,17 +81,6 @@ class LandingPageTemplate extends React.Component {
 
     return (
       <div className="landing-page-template-container">
-        <SeoLayout
-          requiredProps={{
-            title: title,
-            description: description,
-            url: `${config.url}`,
-            image: config.assets.image.logo
-          }}
-          type={PageType.REGULAR}
-          pageProps={{
-          }}
-        />
         <LandingPage
           heroTitle={heroTitle}
           heroSubTitle={heroSubTitle}
