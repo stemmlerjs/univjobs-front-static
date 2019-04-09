@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import config from '../config'
 import LandingPage from '../components/LandingPage'
-import SEO from '../components/SEO'
 import '../styles/LandingTemplate/LandingTemplate.sass'
 import features from '../styles/FeatureStyles.module.css'
 
@@ -82,14 +81,6 @@ class LandingPageTemplate extends React.Component {
 
     return (
       <div className="landing-page-template-container">
-        <SEO
-          isBlogPost={false}
-          postData={{
-            title: title,
-            description: description,
-            canonical: 'https://univjobs.ca',
-          }}
-        />
         <LandingPage
           heroTitle={heroTitle}
           heroSubTitle={heroSubTitle}

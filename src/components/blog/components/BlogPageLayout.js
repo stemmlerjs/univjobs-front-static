@@ -5,8 +5,9 @@ import CategoriesHeader from './CategoriesHeader'
 import BlogPostTemplate from './BlogPostTemplate'
 import Post from './Post'
 import Link from 'gatsby-link'
-import SEO from '../../../components/SEO'
+import {SeoLayout, PageType} from '../../../components/seo'
 import '../styles/BlogIndex.sass'
+import config from '../../../config'
 
 import popular from '../../../img/blog/ic_trending_up_24px.svg'
 import tools from '../../../img/blog/ic_tag_faces_24px.svg'
@@ -41,26 +42,35 @@ const BlogPageLayout = ({ post, posts, categories, category }) => (
   <section style={{ padding: 0 }}>
     <div className="blog-page-content-container">
       <div className="blog-page-content-container-inner">
-        {post ? (
-          // Blog post page
-          <SEO
-            postData={{
-              title: `${post.title} | Univjobs Blog`,
+      {post ? (
+          <SeoLayout
+            requiredProps={{
+              title: `${post.title}`,
               description: post.description,
-              slug: post.slug,
-            }}
-            postImage={post.image}
-            isBlogPost={true}
-          />
+              url: `${config.url.substring(0, config.url.length-1)}${post.slug}`,
+              image: `${config.staticUrl.substring(0, config.staticUrl.length-1)}${post.image}` //Remove trailing slash in url
+          }}
+          type={PageType.BLOG_POST}
+          pageProps={{
+            slug: post.slug,
+            datePublished: post.date,
+            dateModified: post.date,
+            authorName: post.author
+          }}
+        />
         ) : (
           // Main blog page, categories pages, etc.
-          <SEO
-            postData={{
-              title: 'Univjobs Blog | Updates, Guides and Resources',
+          <SeoLayout
+          requiredProps={{
+              title: 'Univjobs Updates, Guides and Resources',
               description:
                 'Get the latest announcements from Univjobs. Stay up to date, get inspired, read tips and success stories.',
+                url: `${config.url}blog`,
+                image: config.assets.image.logo
             }}
-            isBlogPost={false}
+            type={PageType.REGULAR}
+            pageProps={{
+            }}
           />
         )}
         <CategoriesHeader categories={categories} currentCategory={category} />
