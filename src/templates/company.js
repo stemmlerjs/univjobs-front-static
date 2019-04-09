@@ -13,6 +13,7 @@ import CultureSection from '../components/companies/CultureSection'
 import helpers from '../helpers'
 import { logExploreCompanyView } from '../utils/logging'
 import {SeoLayout, PageType} from '../components/seo'
+import config from '../config'
 import get from 'lodash/get'
 
 /**
@@ -59,6 +60,17 @@ class CompanyTemplate extends React.Component {
 
     return (
       <div>
+        <SeoLayout
+          requiredProps={{
+            title: `Jobs at ${company.companyName}` ,
+            description: `Apply to student and recent grad jobs at ${company.companyName}`,
+            url: `${config.url}companies/${company.companyName}`,
+            image: company.brandImageUrl
+          }}
+          type={PageType.REGULAR}
+          pageProps={{
+          }}
+        />
         <LandingPage
           options={{
             alignment: 'center',
