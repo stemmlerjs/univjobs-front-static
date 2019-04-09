@@ -19,7 +19,7 @@ import styles from '../styles/Pricing.module.css'
 
 import config from '../config'
 import { redirectTo } from '../helpers'
-import SEO from '../components/SEO'
+import {SeoLayout, PageType} from '../components/seo'
 
 const Logo = () => {
   return (
@@ -170,13 +170,15 @@ class Pricing extends React.Component {
   render() {
     return (
       <div>
-        <SEO
-          isBlogPost={false}
-          postData={{
-            title:
-              'Pricing @ Univjobs | Simplifying hiring post-secondary students',
-            description:
-              'Recruit students and recent-grads from any post-secondary school in Canada.',
+        <SeoLayout
+          requiredProps={{
+            title: 'Univjobs Pricing',
+            description: 'Recruit students and recent-grads from any post-secondary school in Canada.',
+            url: `${config.appUrl}pricing`,
+            image: config.assets.image.logo
+          }}
+          type={PageType.REGULAR}
+          pageProps={{
           }}
         />
         <Logo />

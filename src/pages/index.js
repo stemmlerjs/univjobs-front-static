@@ -10,9 +10,8 @@ import grad from '../img/gradphotos.jpeg'
 import LandingPage from '../components/LandingPage'
 
 import config from '../config'
-import SEO from '../components/SEO'
 
-import {Layout, PageType} from '../components/seoLayout'
+import {SeoLayout, PageType} from '../components/seo'
 
 import { Backers, AltFeature, StudentTestimonials } from '../components/landing'
 
@@ -40,9 +39,9 @@ import edge from '../img/edge_hires-400x143.png'
 
 const Index = () => (
   <div>
-    <Layout
+    <SeoLayout
       requiredProps={{
-        title: 'Jobs, internships, and work study for students and recent grads',
+        title: 'Jobs, internships and work study for students and recent grads',
         description: 'Find paid internship, remote work, part time, and entry-level jobs at startups and large companies.',
         url: `${config.url}`,
         image: config.assets.image.logo
