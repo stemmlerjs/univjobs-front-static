@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import { HTMLContent } from '../components/Content'
 import { CallToAction } from '../components/shared'
 import Link from 'gatsby-link'
-import SEO from '../components/SEO'
-
+import {SeoLayout, PageType} from '../components/seo'
+import config from '../config'
 import styles from '../styles/TeamMember.module.css'
 
 const Intro = props => {
@@ -20,13 +20,16 @@ const Intro = props => {
 export const TeamMemberPageTemplate = ({ image, name, role, content }) => (
   <div>
     <section className={styles.pageContainer}>
-      <SEO
-        isBlogPost={false}
-        postData={{
-          title: `${name} | Univjobs Team`,
+      <SeoLayout
+        requiredProps={{
+          title: `${name} - Univjobs Team Member`,
           description: role,
+          url: `${config.url}team/${name}`,
+          image: `${config.staticUrl.substring(0, config.staticUrl.length-1)}${image}`
         }}
-        postImage={image}
+        type={PageType.REGULAR}
+        pageProps={{    
+        }}
       />
       <Intro name={name} role={role} image={image} />
       <div className={styles.content}>

@@ -22,6 +22,8 @@ import Divider from '../components/Divider'
 import Mentions from '../components/press/Mentions'
 import Founders from '../components/press/Founders'
 import Mentors from '../components/press/Mentors'
+import {SeoLayout, PageType} from '../components/seo'
+
 
 import styles from '../styles/Press.module.css'
 
@@ -151,6 +153,17 @@ class PressPage extends React.Component {
   render() {
     return (
       <div>
+        <SeoLayout
+          requiredProps={{
+            title: 'Univjobs Press',
+            description: 'The latest news, updates and resources on Univjobs.',
+            url: `${config.url}press`,
+            image: config.assets.image.logo
+          }}
+          type={PageType.REGULAR}
+          pageProps={{
+          }}
+        />
         <LandingPage
           heroTitle="Press and Media"
           heroSubTitle="The latest news, updates and resources on Univjobs"

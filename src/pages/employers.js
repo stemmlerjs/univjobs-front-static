@@ -31,18 +31,21 @@ import icube from '../img/icube.png'
 import startupschool from '../img/startupschool.png'
 import edge from '../img/edge_hires-400x143.png'
 
-import SEO from '../components/SEO'
+import {SeoLayout, PageType} from '../components/seo'
 
 import config from '../config'
 
 const Employers = () => (
   <div>
-    <SEO
-      isBlogPost={false}
-      postData={{
-        title: 'Univjobs: Online campus recruitment solution for employers',
-        description:
-          'Reach and recruit college and university students and recent-grads on campus. Save time and money finding or hiring interns and recent grads.',
+     <SeoLayout
+      requiredProps={{
+        title: 'Online campus recruitment solution for employers',
+        description: 'Reach, recruit post-secondary students and recent-grads on campus.',
+        url: `${config.url}employers`,
+        image: config.assets.image.logo
+      }}
+      type={PageType.REGULAR}
+      pageProps={{
       }}
     />
     <LandingPage
