@@ -30,6 +30,9 @@ const SeoLayout = ({ requiredProps, type, pageProps }) => (
      <meta property="og:title" content={requiredProps.title} />
      <meta property="og:description" content={requiredProps.description} />
      <meta name="og:image" content={requiredProps.image} />
+     <meta name="og:image:width" content='200' />
+     <meta name="og:image:height" content='200' />
+
 
      {/* Twitter Card tags */}
        <meta name="twitter:card" content="summary_large_image" />
@@ -47,6 +50,10 @@ const SeoLayout = ({ requiredProps, type, pageProps }) => (
       */}
        <link rel="canonical" href={requiredProps.url} />
 
+       {/**
+        * Google site verification
+        */}
+        <meta name="google-site-verification" content="U22OVlRPWeMnqAw53R07dKFHh_6PdjYd9gJ7SJLXeqA" />
 
   </Helmet>
 )
