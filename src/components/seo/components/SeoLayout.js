@@ -24,6 +24,8 @@ const Layout = ({ requiredProps, type, pageProps }) => (
       *   For now we will do a basic OG tag. 
       * 
     */}
+     <meta property={'fb:app_id'} content={config.fbAppID} />
+     <meta property="og:type" content={type === 'BLOG_POST' ? 'article' : 'website'} />
      <meta property="og:url" content={requiredProps.url} />
      <meta property="og:title" content={requiredProps.title} />
      <meta property="og:description" content={requiredProps.description} />
