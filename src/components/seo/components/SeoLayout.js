@@ -29,7 +29,7 @@ const SeoLayout = ({ requiredProps, type, pageProps }) => (
      <meta property="og:url" content={requiredProps.url} />
      <meta property="og:title" content={requiredProps.title} />
      <meta property="og:description" content={requiredProps.description} />
-     <meta name="image" content={requiredProps.image} />
+     <meta name="og:image" content={requiredProps.image} />
 
      {/* Twitter Card tags */}
        <meta name="twitter:card" content="summary_large_image" />
