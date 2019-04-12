@@ -2,6 +2,7 @@ import config from '../config'
 
 const meta = [
   // Server side rendering meta data
+  /*
   { property: 'fb:app_id', content: '1897052653882765' },
   {
     property: 'og:title',
@@ -35,6 +36,7 @@ const meta = [
     content: 'univjobs, studentjobs, internship, part-time work',
   },
   { name: 'author', content: 'UnivJobs Team' },
+  */
 ]
 
 export default meta
