@@ -39,7 +39,7 @@ Fond provides an avenue to recognize the positive impact of your team members wi
 # [3. Moodbit](https://mymoodbit.com/)
 
 
-<iframe width="500" height="500" src="https://www.youtube.com/embed/y3YVfjmE-hY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/y3YVfjmE-hY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 Moodbit helps track the emotional levels of employees through slack messages to help prevent disengagements and turnovers. By being able to track feelings of individuals, teams can make adjustment to help increase employee retention and save money in the long run.
@@ -48,7 +48,7 @@ Moodbit helps track the emotional levels of employees through slack messages to 
 
 # [4. Duuoo](https://edge-community.slack.com/apps/A0Z4DE7E1-duuoo)
 
-<iframe width="500" height="500" src="https://www.youtube.com/embed/I4Vm6SSgSAU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/I4Vm6SSgSAU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Duuoo improves relationships between managers and teams. It sets them to be successful in frequent 1-on-1 conversations for continuous coaching and feedback loop throughout the year. The slack integration uses notifications to help you keep track of meetings and agreements in a Slack channel.
 

@@ -4,9 +4,19 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-// You can delete this file if you're not using it
+/**
+      __                 _                 _       _       
+  / /  ___   __ _  __| |  ___  ___ _ __(_)_ __ | |_ ___ 
+ / /  / _ \ / _` |/ _` | / __|/ __| '__| | '_ \| __/ __|
+/ /__| (_) | (_| | (_| | \__ \ (__| |  | | |_) | |_\__ \
+\____/\___/ \__,_|\__,_| |___/\___|_|  |_| .__/ \__|___/
+                                         |_|            
+ */
 
-// LOAD AMPLITUDE
+/**
+ * Load all the scripts that we need to globally import, here.
+ */
+
 ;(function(e, t) {
   var n = e.amplitude || { _q: [], _iq: {} }
   var r = t.createElement('script')
@@ -95,6 +105,15 @@
   e.amplitude = n
 })(window, document)
 
+// ===========================================
+// ===========================================
+// ... now that that's done and over with, here's the browser code.
+
+const currentEnv = process.env.CURRENT_ENV
+const amplitudeAPIKey = process.env.AMPLITUDE_API_KEY
+const isProd = currentEnv === 'production'
+let amplitudeLoaded = false;
+
 /**
  * @func setUserInfo
  * @desc We can set additional user information using this method.
@@ -102,12 +121,13 @@
  * @param {Object} info the details we want to set
  */
 
-function setUserInfo(info) {
+async function setUserInfo(info) {
   let identify = new amplitude.Identify()
   Object.keys(info).forEach(key => {
     identify = identify.set(key, info[key])
   })
-  getInstance().identify(identify)
+  const instance = await getInstance();
+  instance.identify(identify);
 }
 
 /**
@@ -116,8 +136,8 @@ function setUserInfo(info) {
  * to the analytics service.
  */
 
-function AnalyticsEvent(action, properties = {}) {
-  const amplitude = getInstance()
+async function AnalyticsEvent(action, properties = {}) {
+  const amplitude = await getInstance()
   console.log(`[Amplitude Analytics]: Dispatching event ${action}`)
   // if (!~actions.indexOf(action))
   //   throw new Error("Amplitude action not in action list");
@@ -130,47 +150,64 @@ function AnalyticsEvent(action, properties = {}) {
  * we can know who did what.
  */
 
-function IdentifyUser(email, props) {
-  const amplitude = getInstance()
+async function IdentifyUser(email, props) {
+  const amplitude = await getInstance()
   amplitude.setUserId(email)
   if (props) amplitude.setUserProperties(props)
 }
 
 function getInstance() {
-  if (!!window.amplitude == false) throw new Error('Amplitude not loaded')
-  return window.amplitude.getInstance()
+  return new Promise((resolve, reject) => {
+    wait(() => {
+      resolve(window.amplitude.getInstance())
+    })
+  })
 }
 
-/**
- * @func initializeAnalytics
- * @desc Sets the correct project for this instance based on the
- * environment.
- */
+function wait (promiseToResolve) {
+  if (amplitudeLoaded === true) {
+    promiseToResolve()
+  }
+  else {
+    setTimeout(wait.bind(null, promiseToResolve), 250);
+  }
+}
 
-const initializeAnalytics = (lib, apiKey) => {
-  lib.getInstance().init(
-    apiKey,
-    null,
-    {
-      // optional configuration options
-      saveEvents: true,
-      includeUtm: true,
-      includeReferrer: true,
+
+const initializeAnalytics = () => {
+  function afterAmplitudeLoaded () {
+    window.amplitude.getInstance()
+    .init(
+      amplitudeAPIKey,
+      null,
+      {
+        // optional configuration options
+        saveEvents: true,
+        includeUtm: true,
+        includeReferrer: true,
+      },
+      instance => {
+        //Contains core info. Can be reinitialized if needed.
+        window.AmplitudeInstance = instance
+        amplitudeLoaded = true;
+      }
+    )
+  }
+
+  Object.defineProperty(window, 'amplitude', {
+    configurable: true,
+    enumerable: true,
+    get: function() {
+      return this._amplitude;
     },
-    instance => {
-      //Contains core info. Can be reinitialized if needed.
-      window.AmplitudeInstance = instance
+    set: function(amplitude) {
+      this._amplitude = amplitude;
+      afterAmplitudeLoaded();
     }
-  )
+  });
 }
 
-const currentEnv = process.env.CURRENT_ENV
-const apiKey = process.env.AMPLITUDE_API_KEY
-const isProd = currentEnv === 'production'
-
-initializeAnalytics(window.amplitude, apiKey)
-
-window.AmplitudeInstance
+initializeAnalytics()
 window.AnalyticsEvent = AnalyticsEvent
 window.IdentifyUser = IdentifyUser
 window.SetUserInfo = setUserInfo
@@ -185,6 +222,7 @@ exports.onClientEntry = () => {
    * Yes, establish that this is a known user
    * No, establish a new user
    */
+
   window.AnalyticsEvent('Landing_page_view')
 
   if (isProd && typeof window !== undefined) {
