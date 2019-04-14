@@ -123,9 +123,9 @@ const BlogPageLayout = ({ post, posts, categories, category }) => (
                 <img src={tools} />
                 Tools for Students
               </div>
-              <Link to="/companies/directory" className="sidebar-element">
+              {/* <Link to="/companies/directory" className="sidebar-element">
                 Companies Near Me
-              </Link>
+              </Link> */}
               <Link
                 to="/blog/here-s-a-simple-resume-format"
                 className="sidebar-element"

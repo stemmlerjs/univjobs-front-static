@@ -77,9 +77,9 @@ class Companies extends React.Component {
             These companies are growing fast and looking for new grads to shape the future of their business.`}
           companies={companies}
         />
-        <DirectoryLink />
+        {/* <DirectoryLink /> */}
         <CallToAction
-          header="Get access to these company jobs"
+          header="Get access to student-friendly jobs"
           subHeader=""
           buttonText="Start applying"
           alt={true}
