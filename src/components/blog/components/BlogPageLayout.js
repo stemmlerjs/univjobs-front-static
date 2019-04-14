@@ -127,7 +127,7 @@ const BlogPageLayout = ({ post, posts, categories, category }) => (
                 Companies Near Me
               </Link> */}
               <Link
-                to="/blog/here-s-a-simple-resume-format"
+                to="/blog/simple-resume-format"
                 className="sidebar-element"
               >
                 Build a Resume
