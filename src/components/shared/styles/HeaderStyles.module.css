@@ -33,6 +33,7 @@
 
 .burgerMenuNavItem {
   display: none;
+  cursor: pointer;
 }
 
 .navItem {}
