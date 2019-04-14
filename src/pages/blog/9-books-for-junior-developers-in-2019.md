@@ -69,7 +69,7 @@ A book about professionalism.
 # [3. Refactoring](https://www.amazon.ca/gp/product/0134757599/ref=as_li_tl?ie=UTF8&tag=stemmlerjs09-20&camp=15121&creative=330641&linkCode=as2&creativeASIN=0134757599&linkId=cd665cc1a6483955a2d51dd2d1a576d1)
 ### by Martin Fowler
 
-Martin Fowler is one of my favourite authors. The first reason is because he’s hilarious. His approach to writing software books is unmistakably “Fowler”. The other reason is because he's incredibly good at explaining complex topics, and doing so very simply- in way that doesn’t fatigue you as a reader.
+Martin Fowler is one of my favourite authors. The first reason is because he’s hilarious. His approach to writing software books is unmistakably “Fowler”. The other reason is because he's incredibly good at explaining complex topics, and doing so very simply- in a way that doesn’t fatigue you as a reader.
 
 Refactoring is a book that the creator of Ruby on Rails once said that you should “read before you write another line of code”. Fowler guides you through refactoring a simple application, introducing you to a number of techniques that he’s accumulated and cataloged over his years of consulting.
 
@@ -103,7 +103,7 @@ DDD is incredibly important when a codebase gets sufficiently large. Large enter
 </b>
 <br/>
 
-Eric Evan’s coined the term “Ubiquitous Language”, which is the term for building a common, all-encompassing language between the developers, the domain experts and any other users or actors in the domain. By using this Ubiquitous Language, it ensures that the most important domain concepts are well understood and get modelled in the software.
+Eric Evan’s coined the term “Ubiquitous Language”, which is the term for building a common, all-encompassing language between the developers, the domain experts and any other users or actors in the domain. By using this Ubiquitous Language, it ensures that the most important domain concepts are well understood and get modeled in the software.
 
 The book is a little more technical and challenging than the others, but if you get familiar with these concepts, you’ll be very well off in understanding how today’s largest companies keep their codebases manageable and scalable.
 
@@ -124,6 +124,8 @@ What? Uncle Bob writes good books, ok?
 In school, there’s a lot of focus on algorithms and less focus on software design principles. I think it’s kind of unfortunate because in reality, you don’t encounter that many algorithm challenges too often. Instead, it’s more common that you’ll be faced with the challenge of structuring your code in a way that’s modular, flexible, readable and will allow you to add new features quickly when requirements change. 
 
 Clean Architecture is about the essential software design principles and patterns that you’ll be able to use in order to face these challenges.
+
+![Cleeeeeean](/img/clean-arch.png)
 
 Some of the best takeaways from this book are the cost of dependencies, stable vs. non-stable code and the SOLID principles: a way to write code so that it’s more understandable, flexible and maintainable.
 
@@ -153,7 +155,7 @@ It includes simple yet detailed advice that you should carry with you in the bac
 
 Books really are some of the best tools to improve your knowledge and skills as a new programmer or Junior Developer. Books tend to have a really high return on investment; did you know you can make a lot of money programming? 😉
 
-These are just a few of the best books out there right now in 2019! None of them are really new, but that’s because programming has maintained the same general philosophies and best practices for years. As a prof I once had use to say, **“you can make a lot of money in this industry, you just have to read the damn manual”**.
+These are just a few of the best books out there right now in 2019! None of them are really new, but that’s because programming has maintained the same general philosophies and best practices for years. As a prof I once had used to say, **“you can make a lot of money in this industry, you just have to read the damn manual”**.
 
 Have you read any of these books? What did you think? Any books not on this list that you think newer developers would really benefit from reading? Let us know in the comments!
 
