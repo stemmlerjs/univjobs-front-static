@@ -3,7 +3,6 @@ import React from 'react'
 import styles from '../styles/HeaderStyles.module.css'
 
 import config from '../../../config'
-import { redirectTo } from '../../../helpers'
 
 const routeConfig = [
   {
@@ -11,7 +10,7 @@ const routeConfig = [
     routes: [
       { name: 'Sign in', route: `${config.appUrl}login` },
       { name: 'Create account', route: `${config.appUrl}register` },
-      { name: 'Companies Near Me', route: '/companies/directory' },
+      // { name: 'Companies Near Me', route: '/companies/directory' },
       { name: 'Featured companies', route: '/companies' },
       { name: 'Blog & Resources', route: '/blog' },
     ],
