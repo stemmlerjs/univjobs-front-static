@@ -39,17 +39,6 @@ import Helmet from 'react-helmet'
 
 const Students = () => (
   <div>
-    <SeoLayout
-      requiredProps={{
-        title: 'Jobs, internships, and work study for students and recent grads',
-        description: 'Find paid internship, remote work, part time, and entry-level jobs at startups and large companies.',
-        url: `${config.url}students`,
-        image: config.assets.image.logo
-      }}
-      type={PageType.REGULAR}
-      pageProps={{
-      }}
-    />
     <Helmet>
     <script>
     {
