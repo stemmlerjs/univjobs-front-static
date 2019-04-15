@@ -45,7 +45,7 @@ const BlogPageLayout = ({ post, posts, categories, category }) => (
       {post ? (
           <SeoLayout
             requiredProps={{
-              title: `${post.title}`,
+              title: `${post.title} | Univjobs`,
               description: post.description,
               url: `${config.url.substring(0, config.url.length-1)}${post.slug}`,
               image: `${config.staticUrl.substring(0, config.staticUrl.length-1)}${post.image}` //Remove trailing slash in url

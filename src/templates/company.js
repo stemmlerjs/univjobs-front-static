@@ -62,7 +62,7 @@ class CompanyTemplate extends React.Component {
       <div>
         <SeoLayout
           requiredProps={{
-            title: `Jobs at ${company.companyName}` ,
+            title: `Jobs at ${company.companyName} | Univjobs` ,
             description: `Apply to student and recent grad jobs at ${company.companyName}`,
             url: `${config.url}companies/${company.companyName}`,
             image: company.brandImageUrl
