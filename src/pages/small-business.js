@@ -30,7 +30,7 @@ const SmallBusiness = () => (
   <div>
     <SeoLayout
       requiredProps={{
-        title: 'Find local help',
+        title: 'Find local help | Univjobs',
         description: 'Browse and connect with thousands of local students to help with your business',
         url: `${config.url}small-business`,
         image: config.assets.image.logo
