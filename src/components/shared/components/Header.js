@@ -191,7 +191,7 @@ class Header extends React.Component {
             href="javascript:void(0);"
             onClick={this.toggleBurgerMenu}
           >
-            <div>
+            <div className="burger-menu-x-container">
               <div
                 className={
                   this.state.menuOpen ? `${styles.change1} bar1` : 'bar1'

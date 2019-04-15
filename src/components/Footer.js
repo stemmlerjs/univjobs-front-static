@@ -61,7 +61,7 @@ const Footer = () => (
         <FooterMenuSection
           title={'Companies'}
           links={[
-            { name: 'Directory', url: '/companies/directory' },
+            // { name: 'Directory', url: '/companies/directory' },
             { name: 'Featured Companies', url: '/companies' },
           ]}
         />
