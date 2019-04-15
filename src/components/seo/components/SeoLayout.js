@@ -53,7 +53,7 @@ const SeoLayout = ({ requiredProps, type, pageProps }) => (
        {/**
         * Google site verification
         */}
-        <meta name="google-site-verification" content="U22OVlRPWeMnqAw53R07dKFHh_6PdjYd9gJ7SJLXeqA" />
+      <meta name="google-site-verification" content="U22OVlRPWeMnqAw53R07dKFHh_6PdjYd9gJ7SJLXeqA" />
 
   </Helmet>
 )
