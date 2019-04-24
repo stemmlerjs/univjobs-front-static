@@ -21,7 +21,7 @@ class Backers extends React.Component {
               .map((company, key) => (
                 <div key={key}>
                   <a href={company.link}>
-                    <img style={{ maxWidth: '220px' }} src={company.imageUrl} />
+                    <img src={company.imageUrl} />
                   </a>
                 </div>
               ))}
