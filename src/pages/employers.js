@@ -20,6 +20,7 @@ import mobileMarketing from '../img/undraw_mobile_marketing.svg'
 import gotJob from '../img/she-got-the-job.jpg'
 
 import scribbleLive from '../img/scribble.svg'
+import td from '../img/companies/td.jpg'
 import rover from '../img/companies/rover.svg'
 import instacart from '../img/companies/instacart.svg'
 import homeDepot from '../img/companies/homedepot.svg'
@@ -78,7 +79,7 @@ const Employers = () => (
 
     <Backers
       companies={[
-        { link: 'https://www.scribblelive.com/', imageUrl: scribbleLive },
+        { link: 'https://www.td.com/', imageUrl: td },
         { link: 'https://www.rover.com/ca/', imageUrl: rover },
         { link: 'https://www.homedepot.ca/en/home.html', imageUrl: homeDepot },
         { link: 'https://www.instacart.com/', imageUrl: instacart },
