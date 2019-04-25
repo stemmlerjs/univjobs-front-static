@@ -17,12 +17,13 @@ import haltech from '../img/haltech.png'
 import icube from '../img/icube.png'
 import startupSchool from '../img/startupschool.png'
 import sheridanEntrepreneurs from '../img/sheridanentrepreneurs.png'
-import scribble from '../img/scribble.svg'
-import rover from '../img/rover.png'
-import homedepot from '../img/homedepot.svg'
-import instacart from '../img/instacart.svg'
-import ymca from '../img/ymca.svg'
-import airmiles from '../img/airmiles.svg'
+import soti from '../img/companies/soti.png'
+import td from '../img/companies/td.svg'
+import rover from '../img/companies/rover.png'
+import homeDepot from '../img/companies/homedepot.png'
+import ymca from '../img/companies/ymca.svg'
+import airmiles from '../img/companies/airmiles.svg'
+
 import config from '../config'
 import {SeoLayout, PageType} from '../components/seo'
 
@@ -61,10 +62,10 @@ const SmallBusiness = () => (
     <SocialValidation
       header=""
       logos={{
-        one: ['https://www.scribblelive.com/', scribble],
+        one: ['https://www.td.com/', td],
         two: ['http://go.rover.com/univjobs', rover],
         three: ['https://www.homedepot.ca/en/home.html', homedepot],
-        four: ['https://www.instacart.com/', instacart],
+        four: ['https://www.soti.com/', soti],
         five: ['http://ymcaofoakville.org/', ymca],
         six: ['https://www.airmiles.ca/arrow/Home', airmiles],
       }}
