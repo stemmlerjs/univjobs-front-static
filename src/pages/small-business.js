@@ -64,7 +64,7 @@ const SmallBusiness = () => (
       logos={{
         one: ['https://www.td.com/', td],
         two: ['http://go.rover.com/univjobs', rover],
-        three: ['https://www.homedepot.ca/en/home.html', homedepot],
+        three: ['https://www.homedepot.ca/en/home.html', homeDepot],
         four: ['https://www.soti.com/', soti],
         five: ['http://ymcaofoakville.org/', ymca],
         six: ['https://www.airmiles.ca/arrow/Home', airmiles],
