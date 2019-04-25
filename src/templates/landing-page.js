@@ -11,8 +11,8 @@ import LeftFeatures from '../components/LeftFeatures'
 import RightFeatures from '../components/RightFeatures'
 
 import soti from '../img/companies/soti.png'
+import td from '../img/companies/td.svg'
 import rover from '../img/companies/rover.png'
-import instacart from '../img/companies/instacart.svg'
 import homeDepot from '../img/companies/homedepot.png'
 import ymca from '../img/companies/ymca.svg'
 import airmiles from '../img/companies/airmiles.svg'
@@ -102,7 +102,7 @@ class LandingPageTemplate extends React.Component {
 
         <Backers
           companies={[
-            { link: 'https://www.scribblelive.com/', imageUrl: scribbleLive },
+            { link: 'https://www.td.com/', imageUrl: td },
             { link: 'https://www.rover.com/ca/', imageUrl: rover },
             {
               link: 'https://www.homedepot.ca/en/home.html',
