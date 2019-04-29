@@ -97,7 +97,7 @@ const Employers = () => (
     <AltFeature
       header="Source candidates now"
       subHeader=""
-      paragraphOne="UnivJobs Source enables you to search for qualified candidates based on filters."
+      paragraphOne="Univjobs Source enables you to search for qualified candidates based on filters."
       paragraphTwo="Finding the right candidate doesn't have to be painful."
       paragraphThree="Message and notify candidates directly through SMS, email or real-time chat."
       picture={productImage}
