@@ -53,7 +53,7 @@ const WhoWeAre = props => {
           </p>
           <p>
             One of our founders, Charles, wanted to solve this problem, and so
-            UnivJobs was born. UnivJobs' mission is to connect students and
+            Univjobs was born. Univjobs' mission is to connect students and
             recent grads with meaningful opportunities.
           </p>
         </div>
@@ -72,10 +72,10 @@ const OurStory = props => {
 
         <div className={ourStory.textContainer}>
           <p>
-            UnivJobs was co-founded by Charles and Khalil, after they noticed
+            Univjobs was co-founded by Charles and Khalil, after they noticed
             that they and many of their friends experienced difficulty looking
             for work during school and after graduation. Upon realizing the
-            problem, they started building UnivJobs inbetween classes.
+            problem, they started building Univjobs inbetween classes.
           </p>
           <p>The platform launched early of September 2017.</p>
         </div>
