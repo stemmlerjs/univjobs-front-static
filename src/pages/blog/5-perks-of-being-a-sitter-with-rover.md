@@ -45,4 +45,4 @@ Chances are that if you’re a Rover sitter, you’re also a massive dog lover. 
 
 To make a difference, the company offers an excellent perk to sitters: When you’re a dog sitter for Rover, you can allocate a percentage of your earnings to go to [dog-related charities](https://www.rover.com/partners/?utm_source=univjobs&utm_campaign=rover-sponsored-post-2&utm_medium=blog) like Dogs for the Deaf.
 
-Sound like a company you can get behind? Rover is currently looking for dog sitters, so if you want playing with cute puppies to become part of your regular routine, you can apply for [Rover’s position on UnivJobs now](https://univjobs.ca/companies/rover/).
+Sound like a company you can get behind? Rover is currently looking for dog sitters, so if you want playing with cute puppies to become part of your regular routine, you can apply for [Rover’s position on Univjobs now](https://univjobs.ca/companies/rover/).
