@@ -88,10 +88,10 @@ const About = props => {
       </p>
 
       <p>
-        UnivJobs was co-founded by Charles Javelona and Khalil Stemmler, after
+        Univjobs was co-founded by Charles Javelona and Khalil Stemmler, after
         they noticed that many of their friends experienced difficulty looking
         for work during school and after graduating. Upon realizing the problem,
-        they started UnivJobs while at school. The platform launched early of{' '}
+        they started Univjobs while at school. The platform launched early of{' '}
         <b>September 2017</b>, building the platform in between classes.
       </p>
     </section>

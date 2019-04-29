@@ -4,7 +4,7 @@ title: 11 Must Have Apps For Students
 author: Charles Javelona
 date: '2018-06-16T21:15:49-04:00'
 description: >-
-  I know you're headed back to school and dreading the idea of taking notes after a summer of playing Fortnite and other Gen Z things. Here at UnivJobs, we decided to curate a list of useful tools to make your first week of school waaaay easier. 
+  I know you're headed back to school and dreading the idea of taking notes after a summer of playing Fortnite and other Gen Z things. Here at Univjobs, we decided to curate a list of useful tools to make your first week of school waaaay easier. 
 tags:
   - Productivity tools
   - Back to school

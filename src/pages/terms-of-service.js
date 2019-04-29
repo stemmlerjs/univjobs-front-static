@@ -13,7 +13,7 @@ const Terms = () => (
     <div>
       <h2>Terms & Conditions</h2>
       <p>
-        Welcome to UnivJobs, operated by DCommons, Inc. (“UnivJobs” and
+        Welcome to Univjobs, operated by DCommons, Inc. (“Univjobs” and
         sometimes referred to as “our”) and located at Mississauaga, Ontario.
         Thank you for using or visiting our products and services (“Services”).
         Our Services are a platform through which current and former students at
@@ -23,18 +23,18 @@ const Terms = () => (
         “Business”).
       </p>
       <p>
-        UnivJobs does not take part in, nor is DCommons, Inc in any way
+        Univjobs does not take part in, nor is DCommons, Inc in any way
         responsible for, any interactions between Students and Businesses,
         except to the extent necessary to maintain our Services. Any interaction
         between you and any other individual or entity through our Services or
         arising out of your use of our Services, including any interactions
         between Businesses and Students, is solely between you and that other
-        individual or entity. UnivJobs expressly disclaims any responsibility
+        individual or entity. Univjobs expressly disclaims any responsibility
         for any interactions between Students and Businesses. For avoidance of
-        doubt, UnivJobs disclaims any responsibility for any employment or
+        doubt, Univjobs disclaims any responsibility for any employment or
         contracting opportunities, employment or contracting services, or any
         other services or products acquired or made available through our
-        Services, even if UnivJobs investigates or attempts to verify any
+        Services, even if Univjobs investigates or attempts to verify any
         information in connection therewith. You agree that you must evaluate
         and bear all risks associated with the use of our Services, including
         the Services Materials and the User Content, and that you may not rely
@@ -44,7 +44,7 @@ const Terms = () => (
         The following terms and conditions (“Terms”) govern your use of our
         Services. These Terms are deemed to include all other operating rules,
         conditions, policies and procedures that are referred to herein or that
-        may otherwise be published by UnivJobs from time to time ("Policies"),
+        may otherwise be published by Univjobs from time to time ("Policies"),
         at our website or via any App (including without limitation, our Privacy
         Policy). By accessing, viewing, or using our Services, you indicate that
         you have read and understand these Terms, that you agree to them and
@@ -66,15 +66,15 @@ const Terms = () => (
           under these Terms may vary depending on whether you registered as a
           Student or a Business. Also as part of the registration process, you
           may be asked to select a username and password, and may be required to
-          provide UnivJobs with certain information about yourself, including
+          provide Univjobs with certain information about yourself, including
           some types of personally identifying information such as your email
           and postal addresses, your telephone number and your employer or
           educational institution. You agree that the information that you
           provide to us on registration and at all other times will be true,
           accurate, current and complete. You also agree that you will ensure
           that this information is kept accurate and up to date at all times.
-          Any information that you provide to UnivJobs through our Services or
-          email is subject to UnivJobs' Privacy Policy, which is hereby
+          Any information that you provide to Univjobs through our Services or
+          email is subject to Univjobs' Privacy Policy, which is hereby
           incorporated into these Terms by reference as if set forth fully
           herein.
           <p>
@@ -103,13 +103,13 @@ const Terms = () => (
 
         <li>
           <b>Verification.</b> By registering with our Services, you hereby
-          authorize UnivJobs to verify any representations and warranties you
+          authorize Univjobs to verify any representations and warranties you
           make either pursuant to these Terms or within any materials submitted
           during the registration process, including conducting background
           checks, contacting any provided references, and reviewing public
-          records. You acknowledge that while UnivJobs reserves the right to
-          verify these representations and warranties, UnivJobs is not obligated
-          to do so, and may choose not to do so, at UnivJobs' sole discretion.
+          records. You acknowledge that while Univjobs reserves the right to
+          verify these representations and warranties, Univjobs is not obligated
+          to do so, and may choose not to do so, at Univjobs' sole discretion.
         </li>
 
         <li>
@@ -122,35 +122,35 @@ const Terms = () => (
           at a minimum, the following information: start date, position title
           and job description. Upon submission of a Job Posting, the submitting
           Business may fix typographical errors within the Job Posting, but may
-          not make any substantial changes to the Job Posting. UnivJobs may also
+          not make any substantial changes to the Job Posting. Univjobs may also
           fix typographical errors within the Job Posting, but is not obligated
           to.
           <p>
             You agree not to use our Services to promote or further the
             commercial activities, including by submitting a Job Posting in
             connection with those activities, of any of the businesses,
-            activities, or practices set forth in UnivJobs list of Prohibited
+            activities, or practices set forth in Univjobs list of Prohibited
             Business, as incorporated into these Terms by reference as if set
             forth fully herein. For avoidance of doubt, each Job Posting must
             comply with all restrictions hereunder, including those governing
             the submission of User Content and general use of our Services.
-            UnivJobs may, but is not obligated to, make an independent
+            Univjobs may, but is not obligated to, make an independent
             investigation of the Job Posting to ensure full compliance with
-            these Terms. If UnivJobs determines, in its sole discretion, that
+            these Terms. If Univjobs determines, in its sole discretion, that
             any representation or warranty made by you pursuant to these Terms
-            is in any way false, incomplete, or inaccurate, UnivJobs may, at any
+            is in any way false, incomplete, or inaccurate, Univjobs may, at any
             time, reject, remove, or suspend or delay the posting of your Job
-            Posting, in whole or in part. UnivJobs may, but is not obligated to,
+            Posting, in whole or in part. Univjobs may, but is not obligated to,
             provide you with an explanation for the rejection or removal of any
             of your Job Postings from our Services.
           </p>
           <p>
-            All jobs posted on UnivJobs will be automatically transferred into a
+            All jobs posted on Univjobs will be automatically transferred into a
             publicly-viewable job listing page. These pages are indexed to
             various third parties, and are not taken down after being filled;
             however, the job page will not accept applicants once a listing is
             closed (and the page will act as informational only, with links
-            bringing a user back to the UnivJobs default homepages.)
+            bringing a user back to the Univjobs default homepages.)
           </p>
         </li>
 
@@ -161,15 +161,15 @@ const Terms = () => (
           necessarily involve the collection and use of personally identifiable
           information and other personal data (‘Personal Data’). The most
           current Privacy Policy will apply to any and all use of the Services.
-          UnivJobs will not intentionally edit, modify, delete or disclose the
+          Univjobs will not intentionally edit, modify, delete or disclose the
           contents of your Personal Data in connection with the Services except
-          (a) as reasonably necessary for UnivJobs (or its service providers) to
+          (a) as reasonably necessary for Univjobs (or its service providers) to
           provide the Services, including processing and responding to your
           inputs, (b) to communicate with you, (c) as otherwise permitted under
-          the Privacy Policy or elsewhere in these Terms, (d) when UnivJobs
+          the Privacy Policy or elsewhere in these Terms, (d) when Univjobs
           reasonably believes that such action is necessary to conform or comply
           with any legal, regulatory, law enforcement or similar requirement or
-          investigation, to protect or defend the rights or property of UnivJobs
+          investigation, to protect or defend the rights or property of Univjobs
           or any third party or to enforce the Terms or (e) as otherwise
           authorized by you.
         </li>
@@ -180,25 +180,25 @@ const Terms = () => (
           Business to post an employment opportunity, will be available for
           purchase. You are responsible for all charges incurred under your
           account, whether made by you or another person using your account. If
-          for any reason UnivJobs does not receive payment for a purchase,
-          UnivJobs may exercise its rights in law and equity, including (a)
+          for any reason Univjobs does not receive payment for a purchase,
+          Univjobs may exercise its rights in law and equity, including (a)
           immediately suspending or terminating your account; (b) seeking
           collection of the outstanding amount owed; and/or (c) seeking legal
           action against you for the breach of these Terms. You are also
           responsible for paying any governmental taxes imposed in connection
           with use or purchase of any of our Services, including sales, use, and
-          excise taxes (excluding only taxes on UnivJobs net income). To the
-          extent that UnivJobs is obligated to collect such taxes, the
+          excise taxes (excluding only taxes on Univjobs net income). To the
+          extent that Univjobs is obligated to collect such taxes, the
           applicable tax will be added to your billing account. All sales are
-          final. UnivJobs is not responsible for any costs or expenses in
+          final. Univjobs is not responsible for any costs or expenses in
           connection with any interactions between Students and Businesses.
         </li>
 
         <li>
           <p />
-          <b>Proprietary Rights.</b> Unless UnivJobs explicitly states otherwise
-          in an agreement between you and UnivJobs, as between you and UnivJobs,
-          UnivJobs owns or licenses and retains all rights,title and interests
+          <b>Proprietary Rights.</b> Unless Univjobs explicitly states otherwise
+          in an agreement between you and Univjobs, as between you and Univjobs,
+          Univjobs owns or licenses and retains all rights,title and interests
           in and to all Apps, data, content, graphics, forms, artwork, images,
           photographs, functional components and any software concepts and
           documentation and other material on, in or made available through our
@@ -206,9 +206,9 @@ const Terms = () => (
           coordination, arrangement, and organization and enhancement of the
           Services Materials. All Services Materials are protected pursuant to
           copyright, trademark, patent and other applicable laws. As between any
-          user of the Services and UnivJobs, all names, trademarks, service
+          user of the Services and Univjobs, all names, trademarks, service
           marks, certification marks, symbols, slogans or logos appearing on the
-          Services are proprietary to UnivJobs or its affiliates, licensors
+          Services are proprietary to Univjobs or its affiliates, licensors
           (including Businesses), or suppliers. Use or misuse of these
           trademarks is expressly prohibited and may violate federal and state
           trademark law. Under no circumstances will you have any rights of any
@@ -252,7 +252,7 @@ const Terms = () => (
             You retain all right, title and interest in and to the User Content
             that you submit and all intellectual property rights embodied
             therein. Upon your submission of User Content or other material or
-            information to UnivJobs, you grant UnivJobs a worldwide, perpetual,
+            information to Univjobs, you grant Univjobs a worldwide, perpetual,
             irrevocable, transferable, license to access, use, distribute,
             reproduce, display, modify, host, communicate, publish, publicly
             perform, publicly distribute, and create derivative works based
@@ -278,16 +278,16 @@ const Terms = () => (
           to collect any information from our Services, including any
           information related to the Job Postings, except to the extent our
           Services are indexed by general purpose public search engines; (e)
-          promoting any effort to compete with UnivJobs, including using our
+          promoting any effort to compete with Univjobs, including using our
           Services to provide, alone or in combination with any other product or
           service, any service to any third party or any use that causes a
-          reduction or loss of business for UnivJobs as related to an existing
+          reduction or loss of business for Univjobs as related to an existing
           or potential customer; (f) modifying, copying, distributing,
           displaying, performing, reproducing, publishing, licensing, creating
           derivative works from, transferring, selling any of our Services
           Materials, unless otherwise authorized by these Terms or in a separate
-          written agreement with UnivJobs; (g) attempting to gain unauthorized
-          access to UnivJobs' computer system or engaging in any activity that
+          written agreement with Univjobs; (g) attempting to gain unauthorized
+          access to Univjobs' computer system or engaging in any activity that
           interferes with the performance of, or impairs the functionality of
           our Services; (h) any resale or commercial use of our Services, the
           Services Materials, or the User Content; (i) using our Services to
@@ -304,18 +304,18 @@ const Terms = () => (
           inclusion and it may not use our Services to unlawfully discriminate
           against any Student. Any other use of our Services or Services
           Materials, including but not limited to the aforementioned
-          unauthorized uses, without prior written permission of UnivJobs is
+          unauthorized uses, without prior written permission of Univjobs is
           strictly prohibited. You acknowledge and agree that the unauthorized
           use of our Services or the Services Materials could cause irreparable
-          harm to UnivJobs and that in the event of such unauthorized use,
-          UnivJobs shall be entitled to an injunction in addition to any other
+          harm to Univjobs and that in the event of such unauthorized use,
+          Univjobs shall be entitled to an injunction in addition to any other
           remedies available at law or in equity.
         </li>
 
         <li>
           <p />
           <b>Third Party Web Sites and Content.</b>Our Services are available
-          for informational purposes only. UnivJobs is a private company, and is
+          for informational purposes only. Univjobs is a private company, and is
           not affiliated with any Business or educational institution, including
           any university or college. Our Services may contain links to other
           Internet Web sites for the convenience of users in locating
@@ -324,28 +324,28 @@ const Terms = () => (
           parties, such as payment processing. Use of such third party links,
           features, and services, our Services and the Services Materials, and
           any other material or content on and made available through our
-          Services is entirely at your own risk. UnivJobs does not recommend and
+          Services is entirely at your own risk. Univjobs does not recommend and
           expressly disclaims any responsibility for the content, the accuracy
           of the information, or quality of products or services provided by or
           advertised on third party sites or the transactions you conduct or
           enter into with third parties. Your use of any third party’s website
           is at your own risk, and subject to the terms and conditions of such
-          other websites, including the terms and conditions of UnivJobs third
-          party payment processors. UnivJobs does not endorse any product,
+          other websites, including the terms and conditions of Univjobs third
+          party payment processors. Univjobs does not endorse any product,
           service, or treatment provided on a third party website or advertised
           or provided on our Services.
         </li>
 
         <li>
           <p />
-          <b>Availability of the Services.</b> UnivJobs uses reasonable efforts
+          <b>Availability of the Services.</b> Univjobs uses reasonable efforts
           to ensure that our Services are generally available. However, there
           will be occasions when access to our Services will be interrupted or
-          unavailable. UnivJobs will use reasonable efforts to minimize such
+          unavailable. Univjobs will use reasonable efforts to minimize such
           disruption where it is within its reasonable control. You agree that
-          UnivJobs shall not be liable for any modification, suspension, or
+          Univjobs shall not be liable for any modification, suspension, or
           discontinuance of our Services and that all amounts paid under these
-          Terms are non-refundable. In addition, UnivJobs may update, modify,
+          Terms are non-refundable. In addition, Univjobs may update, modify,
           suspend or terminate the Services, in whole or in part, at any time.
         </li>
 
@@ -353,15 +353,15 @@ const Terms = () => (
           <p />
           <b>Disclaimer.</b> The information on our Services is for
           informational purposes only. Without limiting anything else in these
-          Terms or otherwise, UnivJobs is not responsible for any errors or
-          omissions in our Services or the Services Materials. UnivJobs, its
+          Terms or otherwise, Univjobs is not responsible for any errors or
+          omissions in our Services or the Services Materials. Univjobs, its
           subsidiaries, and affiliates, are not responsible for and do not
           guarantee the accuracy or completeness of any Services Materials, User
-          Content, products, data, services (whether performed by UnivJobs, any
+          Content, products, data, services (whether performed by Univjobs, any
           Student or Business, or any third party), links, advertisements, or
-          other items contained within our Services. UnivJobs reserves the right
+          other items contained within our Services. Univjobs reserves the right
           to immediately remove any Services Materials or User Content for any
-          reason or for no reason. UnivJobs cannot and does not review all
+          reason or for no reason. Univjobs cannot and does not review all
           communications or products made available on or through our Services,
           but, although not obligated to, may review, verify, make changes to or
           remove any User Content, Services Materials, the products or services
@@ -413,15 +413,15 @@ const Terms = () => (
           LIABILITY IS FOUND TO BE INVALID OR UNENFORCEABLE FOR ANY REASON, THEN
           THE TOTAL LIABILITY OF UNIVJOBS AND ITS LICENSORS SHALL NOT EXCEED TEN
           DOLLARS ($10). If you are dissatisfied with our Services or with any
-          of these Terms, or feel UnivJobs has breached these Terms, your sole
+          of these Terms, or feel Univjobs has breached these Terms, your sole
           and exclusive remedy is to discontinue using the Services.
         </li>
 
         <li>
           <p />
-          <b>Indemnification.</b> You shall indemnify UnivJobs and its
+          <b>Indemnification.</b> You shall indemnify Univjobs and its
           directors, officers, employees, agents, contractors and licensors
-          (“UnivJobs Indemnitees”) against all claims, actions, suits, and other
+          (“Univjobs Indemnitees”) against all claims, actions, suits, and other
           proceedings (each, a “Claim”) arising out of or incurred in connection
           with our Services and your use of our Services, the Services Materials
           or any services, product or data obtained through our Services, your
@@ -429,19 +429,19 @@ const Terms = () => (
           use of our Services, the User Content, the Services Materials, the
           services, products, information and other materials on, in and made
           available through our Services, except to the extent attributable to
-          UnivJobs, or any breach by you of these Terms and shall indemnify and
-          hold UnivJobs Indemnitees harmless from and against all judgments,
+          Univjobs, or any breach by you of these Terms and shall indemnify and
+          hold Univjobs Indemnitees harmless from and against all judgments,
           losses, liabilities, damages, costs, and expenses (including
           reasonable attorneys’ fees and attorneys’ disbursements) arising out
           of or incurred in connection with such Claims. You may not settle any
-          Claim without the prior written consent of UnivJobs. UnivJobs or its
+          Claim without the prior written consent of Univjobs. Univjobs or its
           licensors may assume the defense of any Claim, at your sole cost and
           expense, and you shall cooperate in all reasonable respects in such
           defense. You shall have the right to employ separate counsel in any
-          Claim and to participate in the defense thereof. If UnivJobs or its
+          Claim and to participate in the defense thereof. If Univjobs or its
           licensors do not notify you that it elects to undertake the defense
           thereof, you shall have the right to defend the Claim with counsel
-          reasonably acceptable to UnivJobs, subject to the right of UnivJobs to
+          reasonably acceptable to Univjobs, subject to the right of Univjobs to
           assume, at our sole cost and expense, the defense of any Claim at any
           time prior to the settlement or final determination thereof.
         </li>
@@ -450,7 +450,7 @@ const Terms = () => (
           <p />
           <b>Complaint Procedures.</b> If you believe that any content or
           postings on our Services violates your intellectual property or other
-          rights, please notify UnivJobs by email at contact@univjobs.ca a
+          rights, please notify Univjobs by email at contact@univjobs.ca a
           comprehensive detailed message setting forth the following
           information: (a) your name and the name of your company, if any; (b)
           your contact information, including your email address; (c) the nature
@@ -461,7 +461,7 @@ const Terms = () => (
           true, complete, and accurate and I have the full legal authority to
           make each and every such statement, representation, and assertion and
           to make and be granted any demand made in this message.” Termination.
-          UnivJobs may immediately terminate your access to all or any part of
+          Univjobs may immediately terminate your access to all or any part of
           the Services (including without limitation, any App) at any time, with
           or without cause, with or without notice.
           <p>
@@ -480,7 +480,7 @@ const Terms = () => (
             accessing and using the Services, except that (a) all obligations
             that accrued prior to the effective date of termination (including
             payment obligations, if any) and all remedies for breach of these
-            Terms shall survive, (b) UnivJobs may retain and use User Content
+            Terms shall survive, (b) Univjobs may retain and use User Content
             and other data and business records resulting from your use of the
             Services (but not in a manner that discloses your identity) and (c)
             the provisions of those sections of these Terms that should
@@ -496,7 +496,7 @@ const Terms = () => (
           <b>Channel Partner Teams.</b> The term “Channel Partner” means any
           distribution platform operator or other third party who is authorized
           to make our Apps available for distribution pursuant to arrangements
-          with UnivJobs. Currently, the only Channel Partners are Apple Inc. for
+          with Univjobs. Currently, the only Channel Partners are Apple Inc. for
           iOS devices via the App Store, and Google Inc. for Android devices via
           Google Play. In the event that you obtain an App from one of our
           Channel Partners, then the following shall apply:
@@ -514,8 +514,8 @@ const Terms = () => (
             following the process described above in this provision.
           </p>
           <p>
-            Both you and UnivJobs acknowledge that the agreements in these Terms
-            are concluded between you and UnivJobs only, and not with any
+            Both you and Univjobs acknowledge that the agreements in these Terms
+            are concluded between you and Univjobs only, and not with any
             Channel Partner, and that the Channel Partner is not responsible for
             the App or any content;
           </p>
@@ -536,14 +536,14 @@ const Terms = () => (
             purchase price, if any, paid for the App;
           </p>
           <p>
-            You acknowledge and agree that UnivJobs, and not the Channel
+            You acknowledge and agree that Univjobs, and not the Channel
             Partner, is responsible for addressing any claims you or any third
             party may have in relation to the App;
           </p>
           <p>
             You acknowledge and agree that, in the event of any third party
             claim that the App or your possession and use of the App infringes
-            that third party's intellectual property rights, UnivJobs, and not
+            that third party's intellectual property rights, Univjobs, and not
             the Channel Partner, will be responsible for the investigation,
             defense, settlement and discharge of any such infringement claim;
           </p>
@@ -555,12 +555,12 @@ const Terms = () => (
             of prohibited or restricted parties;
           </p>
           <p>
-            Both you and UnivJobs acknowledge and agree that, in using the App
+            Both you and Univjobs acknowledge and agree that, in using the App
             and content, you will comply with any applicable third party terms
             of agreement which may affect or be affected by such use;
           </p>
           <p>
-            Both you and UnivJobs acknowledge and agree that the applicable
+            Both you and Univjobs acknowledge and agree that the applicable
             Channel Partner and its subsidiaries are third party beneficiaries
             of these Terms, and that upon your acceptance of these Terms, the
             applicable Channel Partner will have the right (and will be deemed
@@ -576,17 +576,17 @@ const Terms = () => (
 
         <li>
           <p />
-          <b>Changes to these Terms.</b> UnivJobs reserves the right at any time
+          <b>Changes to these Terms.</b> Univjobs reserves the right at any time
           to modify, alter, or update these Terms. Your use of our Services
           following any changes means that you agree to follow and be bound by
           the terms as changed. Any change to these Terms shall be effective as
           to any visitor who has visited our Services before the change was
           made. It is the obligation of users using our Services before the
           change to learn of changes to the Terms since their last visit.
-          UnivJobs may suspend or terminate your account and/or your ability to
+          Univjobs may suspend or terminate your account and/or your ability to
           use our Services, for failure to comply with these Terms, for
-          inactivity on our Services, for providing UnivJobs with untrue or
-          inaccurate information about yourself, for infringement upon UnivJobs
+          inactivity on our Services, for providing Univjobs with untrue or
+          inaccurate information about yourself, for infringement upon Univjobs
           proprietary rights, or for any other reason whatsoever or for no
           reason.
         </li>
@@ -602,7 +602,7 @@ const Terms = () => (
         <li>
           <p />
           <b>Governing Law and Jurisdiction.</b> These Terms represent the
-          entire agreement between you and UnivJobs with respect to the subject
+          entire agreement between you and Univjobs with respect to the subject
           matter hereof, and supersede all prior and contemporaneous written and
           oral representations, understandings, and agreements, express and
           implied, and will be governed by and construed in accordance with the
@@ -626,7 +626,7 @@ const Terms = () => (
             proceedings based upon or relating to these Terms (including any
             Policy) to the same extent and subject to the same conditions as
             other business documents and records originally generated and
-            maintained in printed form. You and UnivJobs agree that any claim or
+            maintained in printed form. You and Univjobs agree that any claim or
             cause of action arising out of or related to the Services must be
             commenced within 1 year after the claim or cause of action arose.
             Otherwise, such claim or cause of action is permanently barred.
@@ -643,14 +643,14 @@ const Terms = () => (
         <li>
           <p />
           <b>Miscellaneous</b>. Our Services are controlled and operated from
-          within the Canada. Without limiting anything else, UnivJobs makes no
+          within the Canada. Without limiting anything else, Univjobs makes no
           representation that our Services, Services Materials, User Content,
           services, products, information or other materials available on, in,
           or through our Services is appropriate or available for use in other
           locations, and access to them from territories where they are illegal
           is prohibited. Those who choose to access our Services from other
           locations do so on their own volition and are responsible for
-          compliance with applicable laws. The waiver or failure of UnivJobs to
+          compliance with applicable laws. The waiver or failure of Univjobs to
           exercise in any respect any right provided hereunder shall not be
           deemed a waiver of such right in the future or a waiver of any of
           other rights established under these Terms.Headings used in these

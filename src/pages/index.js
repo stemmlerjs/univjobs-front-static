@@ -114,7 +114,7 @@ const Index = () => (
       <RightFeatures
         header="Track all your job applications"
         paragraphOne={`Going to career fairs can be time-consuming and costly, especially when you have limited time and budget.`}
-        paragraphTwo={`UnivJobs can reduce this anxiety by showing you the "progress" of your job applications whether you're being considered, whether you're invited for an interview or whether you get hired.`}
+        paragraphTwo={`Univjobs can reduce this anxiety by showing you the "progress" of your job applications whether you're being considered, whether you're invited for an interview or whether you get hired.`}
         picture={jobs}
       />
     </section>

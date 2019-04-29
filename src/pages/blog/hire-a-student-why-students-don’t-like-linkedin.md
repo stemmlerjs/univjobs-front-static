@@ -20,7 +20,7 @@ It’s interesting that LinkedIn shut down their app for students because in an 
 
 This is alarming for employers who need to hire young talent to help grow their company.
 
-Based on our own research at UnivJobs **where we are a few users away from hitting 2000 student and employer signups**, I'd like to share with you a list of the main reasons why students don't use LinkedIn. 
+Based on our own research at Univjobs **where we are a few users away from hitting 2000 student and employer signups**, I'd like to share with you a list of the main reasons why students don't use LinkedIn. 
 
 # LinkedIn premium is too expensive for students
 
@@ -84,4 +84,4 @@ While the numbers confirm that there is quite a sizable amount of early career t
 
 LinkedIn may be at risk of being outpaced or becoming obsolete for the younger generation.
 
-If you'd like me to write more stuff about Gen-Z and millennials please let me know. I’d be happy to share with you all the things we’ve learned so far. We’ve managed to organically gather a sizable amount of students on our platform at [UnivJobs ](https://univjobs.ca/employers)where we help employers connect students from any post-secondary school in Canada through part-time work, internships, and entry-level jobs (co-ops as well)!
+If you'd like me to write more stuff about Gen-Z and millennials please let me know. I’d be happy to share with you all the things we’ve learned so far. We’ve managed to organically gather a sizable amount of students on our platform at [Univjobs ](https://univjobs.ca/employers)where we help employers connect students from any post-secondary school in Canada through part-time work, internships, and entry-level jobs (co-ops as well)!

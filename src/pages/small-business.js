@@ -72,7 +72,7 @@ const SmallBusiness = () => (
     />
     <CallToAction
       header="Get help and save money with Univjobs"
-      subHeader="UnivJobs makes it easy to find affordable talent locally"
+      subHeader="Univjobs makes it easy to find affordable talent locally"
       buttonText="Try it now!"
       alt={true}
       location={`${config.appUrl}register/employer`}
@@ -82,7 +82,7 @@ const SmallBusiness = () => (
 
     <CallToAction
       header="Get local brand awareness virtually with Univjobs"
-      subHeader="UnivJobs shows your company logo in front of thousands of job seekers."
+      subHeader="Univjobs shows your company logo in front of thousands of job seekers."
       buttonText="Post a job now"
       alt={true}
       location={`${config.appUrl}register/employer`}

@@ -35,7 +35,7 @@ const meta = [
     name: 'keywords',
     content: 'univjobs, studentjobs, internship, part-time work',
   },
-  { name: 'author', content: 'UnivJobs Team' },
+  { name: 'author', content: 'Univjobs Team' },
   */
 ]
 
