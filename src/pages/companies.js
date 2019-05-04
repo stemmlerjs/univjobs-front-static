@@ -2,17 +2,17 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import helpers from '../helpers'
+import { univjobsAPI } from '../api'
 
 import LandingPage from '../components/LandingPage'
 import FeaturedSlider from '../components/companies/FeaturedSlider'
 import CompaniesShowcase from '../components/companies/CompaniesShowcase'
 import { CallToAction } from '../components/shared'
-import DirectoryLink from '../components/companies/DirectoryLink'
 
 import config from '../config'
 import {SeoLayout, PageType} from '../components/seo'
 
-import exploreCompanies from '../img/companies/explore-companies.png'
+import exploreCompaniesImage from '../img/companies/explore-companies.png'
 
 /**
  * Companies
@@ -23,17 +23,80 @@ import exploreCompanies from '../img/companies/explore-companies.png'
 
 class Companies extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
+
+    this.state = {
+      isFetchingCompanies: false,
+      isFetchingCompaniesSuccess: false,
+      isFetchingCompaniesFailure: false,
+      exploreCompanies: [],
+      featuredCompanies: [],
+    }
+  }
+
+  updateFetchStatus (isFetchingCompanies,
+    isFetchingCompaniesSuccess,
+    isFetchingCompaniesFailure) {
+      this.setState({
+        ...this.state,
+        isFetchingCompanies,
+        isFetchingCompaniesSuccess,
+        isFetchingCompaniesFailure
+      })
+  }
+  
+  async componentDidMount () {
+    try {
+      this.updateFetchStatus(true, false, false)
+      const [ exploreCompanies, featuredCompanies ] = await Promise.all([
+        univjobsAPI.getAllExploreCompanies(),
+        univjobsAPI.getAllFeaturedCompanies()
+      ])
+
+      this.setState({
+        ...this.state,
+        exploreCompanies,
+        featuredCompanies
+      });
+
+      this.updateFetchStatus(false, true, false)
+    } catch (err) {
+      this.updateFetchStatus(false, false, true)
+    }
+  }
+
+  getFeaturedCompanies () {
+    const { data } = this.props
+    const featuredCompaniesFromProps = helpers.companies.getCompaniesFromQuery(
+      data.featuredCompanies
+    )
+    const featuredCompaniesFromState = this.state.featuredCompanies;
+    return featuredCompaniesFromState.length !== 0 ? featuredCompaniesFromState : featuredCompaniesFromProps;
+  }
+
+  getExploreCompanies () {
+    const { data } = this.props
+    const exploreCompaniesFromProps = helpers.companies.getCompaniesFromQuery(data.companies)
+    const exploreCompaniesFromState = this.state.exploreCompanies;
+    return exploreCompaniesFromProps.map((exploreCompany) => {
+      let companyFromState = exploreCompaniesFromState.filter((e) => e.employer_id === exploreCompany.companyId)
+      const companyFound = companyFromState.length !== 0;
+
+      if (companyFound) {
+        companyFromState = companyFromState[0];
+        exploreCompany.brandImageUrl = companyFromState.brand_image_url;
+        exploreCompany.logoUrl = companyFromState.logo_url;
+        exploreCompany.industries = companyFromState.CompanyIndustries;
+      }
+      
+      return exploreCompany;
+    })
   }
 
   render() {
-    const { data } = this.props
-    const companies = helpers.companies.getCompaniesFromQuery(data.companies)
-    const featuredCompanies = helpers.companies.getCompaniesFromQuery(
-      data.featureCompanies
-    )
-    console.log(data)
-    console.log(this.props)
+    const exploreCompanies  = this.getExploreCompanies();
+    const featuredCompanies = this.getFeaturedCompanies();
+
     return (
       <div>
        <SeoLayout
@@ -54,7 +117,7 @@ class Companies extends React.Component {
           Discover their company culture and the careers they offer.`}
           options={{
             alignment: 'center',
-            image: exploreCompanies,
+            image: exploreCompaniesImage,
             hasPolygon: false,
             hero: {
               showHeroMask: false,
@@ -70,12 +133,14 @@ class Companies extends React.Component {
             },
           }}
         />
-        <FeaturedSlider companies={featuredCompanies} />
+        <FeaturedSlider 
+          companies={featuredCompanies} 
+        />
         <CompaniesShowcase
           title={'Growing companies'}
           subTitle={`Looking for an opportunity to make an impact? 
             These companies are growing fast and looking for new grads to shape the future of their business.`}
-          companies={companies}
+          companies={exploreCompanies}
         />
         {/* <DirectoryLink /> */}
         <CallToAction
@@ -105,7 +170,7 @@ export default Companies
 
 export const companiesPageQuery = graphql`
   query CompaniesQuery {
-    featureCompanies: allCompany(filter: { featured: { eq: true } }) {
+    featuredCompanies: allCompany(filter: { featured: { eq: true } }) {
       edges {
         node {
           id
