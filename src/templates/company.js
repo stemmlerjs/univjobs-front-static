@@ -139,8 +139,7 @@ class CompanyTemplate extends React.Component {
     const { data } = this.props
     const company = this.getCompany();
     const articlesFromProps = helpers.companies.getCompaniesFromQuery(data.posts)
-    const articlesFromState = this.state.articles;
-    let articles = articlesFromState || articlesFromProps;
+    let articles = articlesFromProps;
 
     if (articles.length !== 0) {
       articles = articles.filter(
