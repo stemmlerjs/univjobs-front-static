@@ -84,7 +84,12 @@ class CompanyTemplate extends React.Component {
 
   getCompanyFromQuery () {
     const { data } = this.props
-    return helpers.companies.getCompaniesFromQuery(data.company);
+    const companies = helpers.companies.getCompaniesFromQuery(data.company);
+    if (companies.length !== 0) {
+      return companies[0]
+    } else {
+      return null;
+    }
   }
 
   getCompanyName () {
