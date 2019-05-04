@@ -10,6 +10,6 @@ export function logExploreCompanyView(companyId, cb) {
       cb ? cb() : ''
     })
     .catch(err => {
-      console.log(err)
+
     })
 }

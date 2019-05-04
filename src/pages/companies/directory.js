@@ -485,8 +485,6 @@ class Directory extends React.Component {
       ? filteredCompanies
       : this.getCompaniesFromProps()
 
-    console.log(companies)
-
     return (
       <div className="directory-container">
         <SeoLayout

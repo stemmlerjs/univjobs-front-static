@@ -42,21 +42,14 @@ class Processor {
   }
 
   processAndCreateCompanyNodesBulk (companies) {
-    console.log("\n\n======================================")
-    console.log('Every <CompanyNode/>');
-
     for(let company of companies) {
-      console.log('Start @ => Comp')
-      console.log(company);
       if (company) this.processAndCreateCompanyNode(company)
-      console.log('End @ => Comp\n\n\n')
     }
   }
 
 
   processAndCreateCityNode (cityData) {
     const { createNode } = this;
-    console.log('creating city node', cityData.name)
     // We can't index empty arrays. If the city has no jobs,
     // delete the empty array.
     if (cityData.jobs.length === 0) {
@@ -68,7 +61,6 @@ class Processor {
       'City'
     );
     createNode(nodeData);
-    console.log(cityData);
     // console.log("Created city node");
   }
 

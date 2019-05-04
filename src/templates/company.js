@@ -83,12 +83,12 @@ class CompanyTemplate extends React.Component {
   }
 
   getCompanyFromQuery () {
-    const { data } = this.props
+    const { data } = this.props;
     const companies = helpers.companies.getCompaniesFromQuery(data.company);
     if (companies.length !== 0) {
       return companies[0]
     } else {
-      return null;
+      return {};
     }
   }
 
@@ -217,8 +217,6 @@ class CompanyTemplate extends React.Component {
 
   render() {
     const { data } = this.props
-    
-    const staticBrandImageUrl = this.getStaticProps().brandImageUrl;
 
     const companyName   = this.getCompanyName();
     const brandImageUrl = this.getCompanyBrandImage();
@@ -246,7 +244,7 @@ class CompanyTemplate extends React.Component {
             title: `Jobs at ${companyName}` ,
             description: `Apply to student and recent grad jobs at ${companyName}`,
             url: `${config.url}companies/${companyName}`,
-            image: staticBrandImageUrl
+            image: brandImageUrl
           }}
           type={PageType.REGULAR}
           pageProps={{

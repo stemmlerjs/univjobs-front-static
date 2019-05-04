@@ -31,8 +31,6 @@ class SocialMediaSection extends React.Component {
 
   render() {
     const { links } = this.props
-    console.log('<SocialMediaSection>', links)
-
     return (
       <div className="list-section">
         {links

@@ -30,7 +30,6 @@ class ExploreCompanyService {
       `${this.url}/api/v1/public/companies/explore`
     )
     const exploreCompanies = response.data.companies;
-    this.log(exploreCompanies);
     return exploreCompanies.map(company => {
       return {
         companyId: company.employer_id,

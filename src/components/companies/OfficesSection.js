@@ -36,7 +36,6 @@ class OfficesSection extends React.Component {
 
   render() {
     const { offices } = this.props
-    console.log('<OfficesSection/>', offices)
 
     return (
       <div className="list-section">

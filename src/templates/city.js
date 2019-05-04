@@ -43,9 +43,13 @@ class CityTemplate extends React.Component {
   componentDidMount() {}
 
   render() {
-    console.log(this.props)
     const { city } = this.props.pathContext
-    const companies = this.props.data.companies.edges.map(c => c.node)
+    const companies = this.props.data.companies ? this.props.data.companies.edges.map(c => c.node) : null;
+
+    // TODO: Look into what's going on here.
+    if (!!companies === false) {
+      return <div></div>;
+    }
 
     return (
       <div className="city-template-container">

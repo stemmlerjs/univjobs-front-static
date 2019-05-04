@@ -48,7 +48,7 @@ class DirectoryMap extends React.Component {
    */
 
   componentDidMount() {
-    console.log('<DirectoryMap/> Loaded')
+
   }
 
   /**

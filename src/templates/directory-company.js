@@ -26,7 +26,6 @@ class DirectoryCompanyTemplate extends React.Component {
   render() {
     const company = this.props.data.allDirectoryCompany.edges[0].node
     const { lat, lng } = company.position
-    console.log(company)
 
     return (
       <div>

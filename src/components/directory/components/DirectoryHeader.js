@@ -143,7 +143,6 @@ export default class DirectoryHeader extends React.Component {
         ...this.state,
         hideUp: true,
       })
-      console.log('scroll down')
     } else {
       // Scroll Up
       if (st + window.innerHeight < documentHeight) {
@@ -152,7 +151,6 @@ export default class DirectoryHeader extends React.Component {
           ...this.state,
           hideUp: false,
         })
-        console.log('scroll up')
       }
     }
 
