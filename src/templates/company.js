@@ -88,9 +88,10 @@ class CompanyTemplate extends React.Component {
   }
 
   getCompanyName () {
+    // We need to always return this from props in order to build
+    // things for SEO.
     const companyFromProps = this.getCompanyFromQuery();
-    const companyFromState = this.state.company;
-    return companyFromState.companyName || companyFromProps.companyName;
+    return companyFromProps.companyName;
   }
 
   getCompanyBrandImage () {
