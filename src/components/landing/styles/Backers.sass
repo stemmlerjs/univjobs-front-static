@@ -1,5 +1,5 @@
 .backers-container 
-  background: #f6f6f6;
+  background: white;
   padding: 3em;
   padding-bottom: 1em;
 
@@ -41,10 +41,11 @@
         width: 15%;
 
         img 
-          width: 100%;
+          max-width: 100px;
+          min-width: 100px;
 
 
-  @media (max-width: 770px) 
+  @media (max-width: 970px) 
     background: #f6f6f6;
     padding: 1em;
     border-bottom: 1px solid #d8d8d8;
@@ -63,4 +64,14 @@
 
       > div 
         width: 30% !important;
+
+  @media (max-width: 500px) 
+    .backers-list 
+      
+      > div 
+
+        img 
+          max-width: 70px!important;
+          min-width: 70px!important;
+
   

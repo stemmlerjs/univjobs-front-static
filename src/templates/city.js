@@ -51,7 +51,7 @@ class CityTemplate extends React.Component {
       <div className="city-template-container">
         <SeoLayout
           requiredProps={{
-            title: `${city} student and grad jobs`,
+            title: `${city} student and grad jobs | Univjobs`,
             description: `Student jobs, part-time, co-op and recent-grad jobs at companies in ${city}.`,
             url: `${config.url}jobs/student-jobs-in-${city}`,
             image: config.assets.image.logo

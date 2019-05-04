@@ -10,7 +10,6 @@ import landingePageStyles from '../styles/StudentLandingPageStyles.module.css'
 import { CallToAction } from '../components/shared'
 import LeftFeatures from '../components/LeftFeatures'
 import RightFeatures from '../components/RightFeatures'
-import Slidy from '../components/Slidy'
 
 import features from '../styles/FeatureStyles.module.css'
 import productImage from '../img/student_invites.png'
@@ -19,10 +18,10 @@ import invite from '../img/undraw_invite.svg'
 import mobileMarketing from '../img/undraw_mobile_marketing.svg'
 import gotJob from '../img/she-got-the-job.jpg'
 
-import scribbleLive from '../img/scribble.svg'
-import rover from '../img/companies/rover.svg'
-import instacart from '../img/companies/instacart.svg'
-import homeDepot from '../img/companies/homedepot.svg'
+import soti from '../img/companies/soti.png'
+import td from '../img/companies/td.svg'
+import rover from '../img/companies/rover.png'
+import homeDepot from '../img/companies/homedepot.png'
 import ymca from '../img/companies/ymca.svg'
 import airmiles from '../img/companies/airmiles.svg'
 
@@ -78,10 +77,10 @@ const Employers = () => (
 
     <Backers
       companies={[
-        { link: 'https://www.scribblelive.com/', imageUrl: scribbleLive },
-        { link: 'https://www.rover.com/ca/', imageUrl: rover },
+        { link: 'https://www.td.com/', imageUrl: td },
+        { link: 'https://go.rover.com/univjobs/', imageUrl: rover },
         { link: 'https://www.homedepot.ca/en/home.html', imageUrl: homeDepot },
-        { link: 'https://www.instacart.com/', imageUrl: instacart },
+        { link: 'https://www.soti.com/', imageUrl: soti },
         { link: 'http://ymca.ca/', imageUrl: ymca },
         { link: 'https://www.airmiles.ca/arrow/Home', imageUrl: airmiles },
       ]}
@@ -98,7 +97,7 @@ const Employers = () => (
     <AltFeature
       header="Source candidates now"
       subHeader=""
-      paragraphOne="UnivJobs Source enables you to search for qualified candidates based on filters."
+      paragraphOne="Univjobs Source enables you to search for qualified candidates based on filters."
       paragraphTwo="Finding the right candidate doesn't have to be painful."
       paragraphThree="Message and notify candidates directly through SMS, email or real-time chat."
       picture={productImage}

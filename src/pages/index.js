@@ -15,10 +15,10 @@ import {SeoLayout, PageType} from '../components/seo'
 
 import { Backers, AltFeature, StudentTestimonials } from '../components/landing'
 
-import scribbleLive from '../img/scribble.svg'
-import rover from '../img/companies/rover.svg'
-import instacart from '../img/companies/instacart.svg'
-import homeDepot from '../img/companies/homedepot.svg'
+import soti from '../img/companies/soti.png'
+import td from '../img/companies/td.svg'
+import rover from '../img/companies/rover.png'
+import homeDepot from '../img/companies/homedepot.png'
 import ymca from '../img/companies/ymca.svg'
 import airmiles from '../img/companies/airmiles.svg'
 
@@ -73,10 +73,10 @@ const Index = () => (
     />
     <Backers
       companies={[
-        { link: 'https://www.scribblelive.com/', imageUrl: scribbleLive },
+        { link: 'https://www.td.com/', imageUrl: td },
         { link: 'https://www.rover.com/ca/', imageUrl: rover },
         { link: 'https://www.homedepot.ca/en/home.html', imageUrl: homeDepot },
-        { link: 'https://www.instacart.com/', imageUrl: instacart },
+        { link: 'https://www.soti.com/', imageUrl: soti },
         { link: 'http://ymca.ca/', imageUrl: ymca },
         { link: 'https://www.airmiles.ca/arrow/Home', imageUrl: airmiles },
       ]}
@@ -114,7 +114,7 @@ const Index = () => (
       <RightFeatures
         header="Track all your job applications"
         paragraphOne={`Going to career fairs can be time-consuming and costly, especially when you have limited time and budget.`}
-        paragraphTwo={`UnivJobs can reduce this anxiety by showing you the "progress" of your job applications whether you're being considered, whether you're invited for an interview or whether you get hired.`}
+        paragraphTwo={`Univjobs can reduce this anxiety by showing you the "progress" of your job applications whether you're being considered, whether you're invited for an interview or whether you get hired.`}
         picture={jobs}
       />
     </section>

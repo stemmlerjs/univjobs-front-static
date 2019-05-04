@@ -17,12 +17,13 @@ import haltech from '../img/haltech.png'
 import icube from '../img/icube.png'
 import startupSchool from '../img/startupschool.png'
 import sheridanEntrepreneurs from '../img/sheridanentrepreneurs.png'
-import scribble from '../img/scribble.svg'
-import rover from '../img/rover.png'
-import homedepot from '../img/homedepot.svg'
-import instacart from '../img/instacart.svg'
-import ymca from '../img/ymca.svg'
-import airmiles from '../img/airmiles.svg'
+import soti from '../img/companies/soti.png'
+import td from '../img/companies/td.svg'
+import rover from '../img/companies/rover.png'
+import homeDepot from '../img/companies/homedepot.png'
+import ymca from '../img/companies/ymca.svg'
+import airmiles from '../img/companies/airmiles.svg'
+
 import config from '../config'
 import {SeoLayout, PageType} from '../components/seo'
 
@@ -30,7 +31,7 @@ const SmallBusiness = () => (
   <div>
     <SeoLayout
       requiredProps={{
-        title: 'Find local help',
+        title: 'Find local help | Univjobs',
         description: 'Browse and connect with thousands of local students to help with your business',
         url: `${config.url}small-business`,
         image: config.assets.image.logo
@@ -61,17 +62,17 @@ const SmallBusiness = () => (
     <SocialValidation
       header=""
       logos={{
-        one: ['https://www.scribblelive.com/', scribble],
+        one: ['https://www.td.com/', td],
         two: ['http://go.rover.com/univjobs', rover],
-        three: ['https://www.homedepot.ca/en/home.html', homedepot],
-        four: ['https://www.instacart.com/', instacart],
+        three: ['https://www.homedepot.ca/en/home.html', homeDepot],
+        four: ['https://www.soti.com/', soti],
         five: ['http://ymcaofoakville.org/', ymca],
         six: ['https://www.airmiles.ca/arrow/Home', airmiles],
       }}
     />
     <CallToAction
       header="Get help and save money with Univjobs"
-      subHeader="UnivJobs makes it easy to find affordable talent locally"
+      subHeader="Univjobs makes it easy to find affordable talent locally"
       buttonText="Try it now!"
       alt={true}
       location={`${config.appUrl}register/employer`}
@@ -81,7 +82,7 @@ const SmallBusiness = () => (
 
     <CallToAction
       header="Get local brand awareness virtually with Univjobs"
-      subHeader="UnivJobs shows your company logo in front of thousands of job seekers."
+      subHeader="Univjobs shows your company logo in front of thousands of job seekers."
       buttonText="Post a job now"
       alt={true}
       location={`${config.appUrl}register/employer`}

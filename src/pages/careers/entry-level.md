@@ -42,7 +42,7 @@ featureThreeHeader: Track job applications
 featureThreeSubTitle: ""
 featureThreeParagraphOne: No more excel spreadsheets to keep track of your job applications. 
 featureThreeParagraphTwo: > 
-  UnivJobs can help anxiety and stay organized 
+  Univjobs can help anxiety and stay organized 
   by keeping you up to date with the progress of 
   your applications and whether you’re being
   considered, whether you’ve been invited
