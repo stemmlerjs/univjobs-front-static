@@ -15,6 +15,7 @@ import { logExploreCompanyView } from '../utils/logging'
 import {SeoLayout, PageType} from '../components/seo'
 import config from '../config'
 import get from 'lodash/get'
+import { univjobsAPI } from '../api'
 
 /**
  * CompanyTemplate
@@ -29,7 +30,39 @@ import get from 'lodash/get'
  */
 
 class CompanyTemplate extends React.Component {
-  componentDidMount() {
+
+  constructor (props) {
+    super(props);
+    this.state = {
+      isFetchingCompanyProfile: false,
+      isFetchingCompanyProfileSuccess: false,
+      isFetchingCompanyProfileFailure: false,
+      company: {}
+    }
+  }
+
+  updateFetchStatus (isFetchingCompanyProfile, isFetchingCompanyProfileSuccess, isFetchingCompanyProfileFailure) {
+    this.setState({
+      ...this.state,
+      isFetchingCompanyProfile,
+      isFetchingCompanyProfileSuccess,
+      isFetchingCompanyProfileFailure
+    })
+  }
+
+  async fetchCompanyProfile (companyId) {
+    try {
+      this.updateFetchStatus(true, false, false)
+      const company = await univjobsAPI.getCompanyByCompanyId(companyId);
+      this.setState({ ...this.state, company })
+      this.updateFetchStatus(false, true, false)
+    } catch (err) {
+      console.error(err);
+      this.updateFetchStatus(false, false, true)
+    }
+  }
+
+  componentDidMount () {
     const { data } = this.props
     let company = helpers.companies.getCompaniesFromQuery(data.company)
 
@@ -38,34 +71,172 @@ class CompanyTemplate extends React.Component {
     }
 
     const companyId = company.companyId
-    logExploreCompanyView(companyId)
+    logExploreCompanyView(companyId);
+    this.fetchCompanyProfile(companyId)
+  }
+
+  getCompany () {
+    const companyFromProps = this.getCompanyFromQuery();
+    const companyFromState = this.state.company;
+
+    return Object.keys(companyFromState) !== 0 ? companyFromState : companyFromProps;
+  }
+
+  getCompanyFromQuery () {
+    const { data } = this.props
+    return helpers.companies.getCompaniesFromQuery(data.company);
+  }
+
+  getCompanyName () {
+    const companyFromProps = this.getCompanyFromQuery();
+    const companyFromState = this.state.company;
+    return companyFromState.companyName || companyFromProps.companyName;
+  }
+
+  getCompanyBrandImage () {
+    const companyFromProps = this.getCompanyFromQuery();
+    const companyFromState = this.state.company;
+    return companyFromState.brandImageUrl || companyFromProps.brandImageUrl;
+  }
+
+  getCompanyIndustries () {
+    const companyFromProps = this.getCompanyFromQuery();
+    const companyFromState = this.state.company;
+    return companyFromState.industries || companyFromProps.industries;
+  }
+
+  getCompanySlogan () {
+    const companyFromProps = this.getCompanyFromQuery();
+    const companyFromState = this.state.company;
+    return companyFromState.slogan || companyFromProps.slogan;
+  }
+
+  getLogoUrl () {
+    const companyFromProps = this.getCompanyFromQuery();
+    const companyFromState = this.state.company;
+    return companyFromState.logoUrl || companyFromProps.logoUrl;
+  }
+
+  getCompanyNumEmployees () {
+    const companyFromProps = this.getCompanyFromQuery();
+    const companyFromState = this.state.company;
+    return companyFromState.numEmployees || companyFromProps.numEmployees;
+  }
+
+  getSocialLinks () {
+    const companyFromProps = this.getCompanyFromQuery();
+    const companyFromState = this.state.company;
+    return companyFromState.socialLinks || companyFromProps.socialLinks;
+  }
+
+  getJobs () {
+    const companyFromProps = this.getCompanyFromQuery();
+    const companyFromState = this.state.company;
+    return companyFromState.jobs || companyFromProps.jobs;
+  }
+
+  getArticles () {
+    const { data } = this.props
+    const company = this.getCompany();
+    const articlesFromProps = helpers.companies.getCompaniesFromQuery(data.posts)
+    const articlesFromState = this.state.articles;
+    let articles = articlesFromState || articlesFromProps;
+
+    if (articles.length !== 0) {
+      articles = articles.filter(
+        article =>
+          get(article, 'frontmatter.employerId') === company.companyId
+      )
+    }
+
+    return articles;
+  }
+
+  getAboutUs () {
+    const companyFromProps = this.getCompanyFromQuery();
+    const companyFromState = this.state.company;
+    return companyFromState.aboutUs || companyFromProps.aboutUs;
+  }
+
+  getFunFacts () {
+    const companyFromProps = this.getCompanyFromQuery();
+    const companyFromState = this.state.company;
+    return companyFromState.funFacts || companyFromProps.funFacts;
+  }
+
+  getVideos () {
+    const companyFromProps = this.getCompanyFromQuery();
+    const companyFromState = this.state.company;
+    return companyFromState.videos || companyFromProps.videos;
+  }
+
+  getCompanyVision () {
+    const companyFromProps = this.getCompanyFromQuery();
+    const companyFromState = this.state.company;
+    return companyFromState.vision || companyFromProps.vision;
+  }
+
+  getCompanyMission () {
+    const companyFromProps = this.getCompanyFromQuery();
+    const companyFromState = this.state.company;
+    return companyFromState.mission || companyFromProps.mission;
+  }
+
+  getCompanyPerks () {
+    const companyFromProps = this.getCompanyFromQuery();
+    const companyFromState = this.state.company;
+    return companyFromState.perks || companyFromProps.perks;
+  }
+
+  getCompanyValues () {
+    const companyFromProps = this.getCompanyFromQuery();
+    const companyFromState = this.state.company;
+    return companyFromState.companyValues || companyFromProps.companyValues;
+  }
+
+  getOffices () {
+    const companyFromProps = this.getCompanyFromQuery();
+    const companyFromState = this.state.company;
+    return companyFromState.offices || companyFromProps.offices;
+  }
+
+  getCultureItems () {
+    const companyFromProps = this.getCompanyFromQuery();
+    const companyFromState = this.state.company;
+    return companyFromState.cultureItems || companyFromProps.cultureItems;
   }
 
   render() {
     const { data } = this.props
-
     let company = helpers.companies.getCompaniesFromQuery(data.company)
-    let articles = helpers.companies.getCompaniesFromQuery(data.posts)
 
-    if (company.length !== 0) {
-      company = company[0]
-
-      if (articles.length !== 0) {
-        company.articles = articles.filter(
-          article =>
-            get(article, 'frontmatter.employerId') === company.companyId
-        )
-      }
-    }
+    const companyName   = this.getCompanyName();
+    const brandImageUrl = this.getCompanyBrandImage();
+    const industries    = this.getCompanyIndustries();
+    const slogan        = this.getCompanySlogan();
+    const logoUrl       = this.getLogoUrl();
+    const numEmployees  = this.getCompanyNumEmployees();
+    const socialLinks   = this.getSocialLinks();
+    const jobs          = this.getJobs();
+    const articles      = this.getArticles();
+    const aboutUs       = this.getAboutUs();
+    const funFacts      = this.getFunFacts();
+    const videos        = this.getVideos();
+    const vision        = this.getCompanyVision();
+    const mission       = this.getCompanyMission();
+    const perks         = this.getCompanyPerks();
+    const companyValues = this.getCompanyValues();
+    const offices       = this.getOffices();
+    const cultureItems  = this.getCultureItems();
 
     return (
       <div>
         <SeoLayout
           requiredProps={{
-            title: `Jobs at ${company.companyName}` ,
-            description: `Apply to student and recent grad jobs at ${company.companyName}`,
-            url: `${config.url}companies/${company.companyName}`,
-            image: company.brandImageUrl
+            title: `Jobs at ${companyName}` ,
+            description: `Apply to student and recent grad jobs at ${companyName}`,
+            url: `${config.url}companies/${companyName}`,
+            image: brandImageUrl
           }}
           type={PageType.REGULAR}
           pageProps={{
@@ -74,7 +245,7 @@ class CompanyTemplate extends React.Component {
         <LandingPage
           options={{
             alignment: 'center',
-            image: company.brandImageUrl,
+            image: brandImageUrl,
             hasPolygon: false,
             hero: {
               showHeroMask: false,
@@ -91,96 +262,97 @@ class CompanyTemplate extends React.Component {
           }}
         />
         <CompanyHeader
-          companyName={company.companyName}
-          industries={company.industries}
-          slogan={company.slogan}
-          logoUrl={company.logoUrl}
-          numEmployees={company.numEmployees}
-          socialLinks={company.socialLinks}
+          companyName={companyName}
+          industries={industries}
+          slogan={slogan}
+          logoUrl={logoUrl}
+          numEmployees={numEmployees}
+          socialLinks={socialLinks}
         />
 
-        {!company.jobs || company.jobs.length === 0 ? (
+        {!jobs || jobs.length === 0 ? (
           ''
         ) : (
-          <CompanyJobs companyName={company.companyName} jobs={company.jobs} />
+          <CompanyJobs companyName={companyName} jobs={jobs} />
         )}
-        {!company.articles || company.articles.length === 0 ? (
+
+        {!articles || articles.length === 0 ? (
           ''
         ) : (
           <CompanyArticles
-            companyName={company.companyName}
-            articles={company.articles}
+            companyName={companyName}
+            articles={articles}
           />
         )}
         <section className="company-sections-container">
-          <TextSection title="About us" text={company.aboutUs} size="half" />
-          {!company.funFacts || company.funFacts.length === 0 ? (
+          <TextSection title="About us" text={aboutUs} size="half" />
+          {!funFacts || funFacts.length === 0 ? (
             ''
           ) : (
             <ListSection
               title="Fun facts"
-              list={company.funFacts}
+              list={funFacts}
               size="half"
             />
           )}
-          {!company.videos || company.videos.length === 0 ? (
+          {!videos || videos.length === 0 ? (
             ''
           ) : (
-            <Videos title="Videos" urls={company.videos} size="full" />
+            <Videos title="Videos" urls={videos} size="full" />
           )}
-          {!company.vision || company.vision === 0 ? (
+          {!vision || vision === 0 ? (
             ''
           ) : (
-            <TextSection title="Vision" text={company.vision} size="half" />
+            <TextSection title="Vision" text={vision} size="half" />
           )}
-          {!company.mission || company.mission === 0 ? (
+          {!mission || mission === 0 ? (
             ''
           ) : (
-            <TextSection title="Mission" text={company.mission} size="half" />
+            <TextSection title="Mission" text={mission} size="half" />
           )}
-          {!company.perks || company.perks.length === 0 ? (
+          {!perks || perks.length === 0 ? (
             ''
           ) : (
             <ListSection
               title="Company perks"
-              list={company.perks}
+              list={perks}
               size="half"
               alt="true"
             />
           )}
-          {!company.companyValues || company.companyValues.length === 0 ? (
+          {!companyValues || companyValues.length === 0 ? (
             ''
           ) : (
             <ListSection
               title="Company values"
-              list={company.companyValues}
+              list={companyValues}
               size="half"
             />
           )}
-          {!company.socialLinks || company.socialLinks.length === 0 ? (
+          {!socialLinks || socialLinks.length === 0 ? (
             ''
           ) : (
             <SocialMediaSection
               title="Social Media"
-              links={company.socialLinks}
+              links={socialLinks}
               size="half"
             />
           )}
-          {!company.offices || company.offices.length === 0 ? (
+          {!offices || offices.length === 0 ? (
             ''
           ) : (
             <OfficesSection
               title="Offices"
-              offices={company.offices}
+              offices={offices}
               size="half"
             />
           )}
-          {!company.cultureItems || company.cultureItems.length === 0 ? (
+          {!cultureItems || cultureItems.length === 0 ? (
             ''
           ) : (
             <CultureSection
-              title={`Life at ${company.companyName}`}
-              cultureItems={company.cultureItems}
+              title={`Life at ${companyName}`}
+              cultureItems={cultureItems}
               size="half"
             />
           )}
