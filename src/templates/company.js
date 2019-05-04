@@ -88,9 +88,10 @@ class CompanyTemplate extends React.Component {
   }
 
   getCompanyName () {
+    // We need to always return this from props in order to build
+    // things for SEO.
     const companyFromProps = this.getCompanyFromQuery();
-    const companyFromState = this.state.company;
-    return companyFromState.companyName || companyFromProps.companyName;
+    return companyFromProps.companyName;
   }
 
   getCompanyBrandImage () {
@@ -205,9 +206,14 @@ class CompanyTemplate extends React.Component {
     return companyFromState.cultureItems || companyFromProps.cultureItems;
   }
 
+  getStaticProps () {
+    return this.getCompanyFromQuery();
+  }
+
   render() {
     const { data } = this.props
-    let company = helpers.companies.getCompaniesFromQuery(data.company)
+    
+    const staticBrandImageUrl = this.getStaticProps().brandImageUrl;
 
     const companyName   = this.getCompanyName();
     const brandImageUrl = this.getCompanyBrandImage();
@@ -235,7 +241,7 @@ class CompanyTemplate extends React.Component {
             title: `Jobs at ${companyName}` ,
             description: `Apply to student and recent grad jobs at ${companyName}`,
             url: `${config.url}companies/${companyName}`,
-            image: brandImageUrl
+            image: staticBrandImageUrl
           }}
           type={PageType.REGULAR}
           pageProps={{
