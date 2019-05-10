@@ -17,7 +17,7 @@ export default ({ data }) => {
 
   return (
     <div>
-      <HotCompaniesExitModal/>
+      {/* <HotCompaniesExitModal/> */}
       <BlogPageLayout
         post={post}
         category={post.category}
