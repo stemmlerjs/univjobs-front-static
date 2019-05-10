@@ -1,25 +1,20 @@
 import React from 'react'
-import Link from 'gatsby-link'
 
 import woman from '../img/pricing/woman-mask.jpg'
 import womanMobile from '../img/pricing/business-woman-mobile.jpg'
 import companies1 from '../img/companies-resized-2.png'
 import companies2 from '../img/companies-4-alt.png'
-import goodCompany from '../img/good-company.png'
 import desktopCompanies from '../img/pricing/desktop-companies.png'
 
-import { CallToAction } from '../components/shared'
-import LandingPage from '../components/LandingPage'
+import { CallToAction } from '../components/shared/cta'
 
-import Divider from '../components/Divider'
-
-import EmployerReviews from '../components/EmployerReviews'
+import { EmployerReviews } from '../components/landing-page'
 
 import styles from '../styles/Pricing.module.css'
 
 import config from '../config'
 import { redirectTo } from '../helpers'
-import {SeoLayout, PageType} from '../components/seo'
+import { SeoLayout, PageType } from '../components/seo'
 
 const Logo = () => {
   return (

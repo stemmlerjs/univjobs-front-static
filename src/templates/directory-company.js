@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import LandingPage from '../components/LandingPage'
+import LandingPageHero from '../components/landing-page/components/LandingPageHero'
 import CompanyHeader from '../components/companies/CompanyHeader'
 import DirectoryMap from '../components/directory/components/DirectoryMap'
 
-import {SeoLayout, PageType} from '../components/seo'
+import { SeoLayout, PageType } from '../components/seo'
 import config from '../config'
 import '../styles/Directory/DirectoryCompanyTemplate.sass'
 
@@ -40,7 +40,7 @@ class DirectoryCompanyTemplate extends React.Component {
           pageProps={{
           }}
         />
-        <LandingPage
+        <LandingPageHero
           heroTitle={`${company.companyName}`}
           subTitle=""
           options={{

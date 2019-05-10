@@ -2,8 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import ReactDisqusComments from 'react-disqus-comments'
 import moment from 'moment'
-import { HTMLContent } from '../../../components/Content'
-import Link from 'gatsby-link'
+import { HTMLContent } from '../../shared/content'
 import "../styles/BlogPostTemplate.sass"
 
 import charles from '../../../img/authors/charles.png'

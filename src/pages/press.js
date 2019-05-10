@@ -13,15 +13,12 @@ import canindiaNews from '../img/press/canindiaNews.png'
 import torontoGuardian from '../img/press/torontoGuardian.jpg'
 import buzzfeed from '../img/press/buzzfeed.png'
 
-import { CallToAction } from '../components/shared'
-import LandingPage from '../components/LandingPage'
+import { CallToAction } from '../components/shared/cta'
+import { LandingPageHero } from '../components/landing-page'
 
-import CountUp from 'react-countup'
-
-import Divider from '../components/Divider'
+import { Divider } from '../components/landing-page'
 import Mentions from '../components/press/Mentions'
 import Founders from '../components/press/Founders'
-import Mentors from '../components/press/Mentors'
 import {SeoLayout, PageType} from '../components/seo'
 
 
@@ -106,11 +103,11 @@ const Figures = props => {
       <div className={styles.milestonesContainer}>
         <div className={styles.milestoneItem}>
           <h3>7000+</h3>
-          <div>Active students and recent grads using the platform</div>
+          <div>Active students and recent grads find employment through the platform</div>
         </div>
         <div className={styles.milestoneItem}>
           <h3>250+</h3>
-          <div>Forward thinking employers who have used the platform</div>
+          <div>Forward thinking employers use the platform</div>
         </div>
         <div className={styles.milestoneItem}>
           <h3>59%</h3>
@@ -118,7 +115,7 @@ const Figures = props => {
         </div>
         <div className={styles.milestoneItem}>
           <h3>60%</h3>
-          <div>Are from a under represented minority group</div>
+          <div>Are from an under represented minority group</div>
         </div>
       </div>
     </section>
@@ -164,7 +161,7 @@ class PressPage extends React.Component {
           pageProps={{
           }}
         />
-        <LandingPage
+        <LandingPageHero
           heroTitle="Press and Media"
           heroSubTitle="The latest news, updates and resources on Univjobs"
           options={{

@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import LandingPage from '../components/LandingPage'
+import LandingPageHero from '../components/landing-page/components/LandingPageHero'
 import DirectoryResultsList from '../components/directory/components/DirectoryResultsList'
 
 import toronto from '../img/cities/toronto.jpg'
@@ -64,7 +64,7 @@ class CityTemplate extends React.Component {
           pageProps={{
           }}
         />
-        <LandingPage
+        <LandingPageHero
           heroTitle={`${city}`}
           subTitle=""
           options={{

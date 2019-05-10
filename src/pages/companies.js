@@ -4,10 +4,10 @@ import Link from 'gatsby-link'
 import helpers from '../helpers'
 import { univjobsAPI } from '../api'
 
-import LandingPage from '../components/LandingPage'
+import { LandingPageHero } from '../components/landing-page'
 import FeaturedSlider from '../components/companies/FeaturedSlider'
 import CompaniesShowcase from '../components/companies/CompaniesShowcase'
-import { CallToAction } from '../components/shared'
+import { CallToAction } from '../components/shared/cta'
 
 import config from '../config'
 import {SeoLayout, PageType} from '../components/seo'
@@ -111,7 +111,7 @@ class Companies extends React.Component {
         pageProps={{
         }}
        />
-        <LandingPage
+        <LandingPageHero
           heroTitle="Explore Companies"
           heroSubTitle={`Top companies are searching for candidates just like you.
           Discover their company culture and the careers they offer.`}

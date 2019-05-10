@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { CallToAction } from '../../shared'
+import { CallToAction } from '../../shared/cta'
 import CategoriesHeader from './CategoriesHeader'
 import BlogPostTemplate from './BlogPostTemplate'
 import Post from './Post'
