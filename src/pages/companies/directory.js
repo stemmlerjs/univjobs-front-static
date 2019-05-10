@@ -6,7 +6,7 @@ import DirectoryFilters from '../../components/directory/components/DirectoryFil
 import DirectoryResultsList from '../../components/directory/components/DirectoryResultsList'
 import DirectoryMap from '../../components/directory/components/DirectoryMap'
 import MobilePagePicture from '../../components/directory/components/MobilePagePicture'
-import Loading from '../../components/Loading'
+import { Loading } from '../../components/shared/loading'
 import { getCurrentCity, getCoordinates } from '../../utils/ip'
 import { CallToAction } from '../../components/shared/cta'
 import config from '../../config'
