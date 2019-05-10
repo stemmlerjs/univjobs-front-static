@@ -433,7 +433,8 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
      * Create slugs
      */
 
-    let value = createFilePath({ node, getNode })
+    let value = createFilePath({ node, getNode });
+    console.log(value);
 
     /**
      * Create category slugs.
@@ -556,6 +557,10 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
         rules: [
           {
             test: /univjobs-ui-components/,
+            use: loaders.null(),
+          },
+          {
+            test: /react-exit-modal/,
             use: loaders.null(),
           },
         ],

@@ -11,7 +11,6 @@ import PropTypes from 'prop-types'
  */
 
 const CategoriesHeader = ({ categories, currentCategory }) => {
-  console.log(categories, 'categories')
   return (
     <div className="categories-header-container">
       {categories.map((category, i) => (

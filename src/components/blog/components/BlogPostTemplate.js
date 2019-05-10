@@ -7,8 +7,10 @@ import Link from 'gatsby-link'
 import "../styles/BlogPostTemplate.sass"
 
 import charles from '../../../img/authors/charles.png'
-import khalil from '../../../img/authors/khalil.jpg'
+import khalil from '../../../img/authors/khalil.png'
 import trevor from '../../../img/authors/trevor.jpeg'
+import Tag from '../../shared/tags/components/Tag';
+import Tags from '../../shared/tags/components/Tags';
 
 const postAuthors = {
   'Khalil Stemmler': {
@@ -16,7 +18,7 @@ const postAuthors = {
     linkedIn: "https://www.linkedin.com/in/khalilstemmler/",
     github: 'https://github.com/stemmlerjs',
     instagram: 'https://instagram.com/stemmlerjs',
-    about: `Full-stack JavaScript'r wizard, cat-lover and lifelong learner. Software Consultant @ Aquent | Dev6 while helping students and recent-grads find their first jobs @ Univjobs.`
+    about: `Full-stack JavaScript'r wizard, cat-lover and lifelong learner. Helping students and recent-grads find their first jobs @ Univjobs.`
   },
   'Charles Javelona': {
     imageUrl: charles,
@@ -97,10 +99,13 @@ const BlogPostContent = props => {
       <div className="post-header">
         {/* <div className="post-category">{props.category}</div> */}
         <h1>{props.title}</h1>
+        <Tags tags={props.tags}/>
         <PostAuthor date={props.date} author={props.author} />
+        
       </div>
       <br/>
       <img src={props.image}/>
+
       <div className="post-description">{props.description}</div>
       <br/>
       <HTMLContent className="post-content" content={props.html}/>      

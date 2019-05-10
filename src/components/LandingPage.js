@@ -40,7 +40,6 @@ function shouldShowMask(options) {
   return ''
 }
 const LandingPageButtons = ({ buttons }) => {
-  console.log('landing page buttons', buttons)
   return (
     <div className={styles.ctaContainer}>
       <div className={styles.buttonContainer}>

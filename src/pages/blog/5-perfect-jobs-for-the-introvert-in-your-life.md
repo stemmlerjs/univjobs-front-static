@@ -13,7 +13,6 @@ tags:
   - Blogger
   - Graphic Designer
   - Social Media Manager
-  - Top 5 Perfect Jobs For Introverts
   - Video Editor
   - Web Developer
 featured: false

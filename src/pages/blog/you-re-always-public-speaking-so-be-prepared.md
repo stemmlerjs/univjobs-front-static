@@ -10,7 +10,6 @@ description: >-
   on a day-to-day basis IS public speaking.
 tags:
   - public speaking
-  - ''
 featured: false
 image: /img/conversation-1262311_960_720.png
 category: Career

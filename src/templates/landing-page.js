@@ -75,7 +75,6 @@ class LandingPageTemplate extends React.Component {
       ctaThreeButtonText,
     } = frontmatter
 
-    console.log(fields, frontmatter)
     // const { city } = this.props.pathContext;
     // const companies = this.props.data.companies.edges.map(c => c.node);
 

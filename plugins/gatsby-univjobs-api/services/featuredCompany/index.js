@@ -41,10 +41,6 @@ class FeaturedCompanyService {
 
     // Add the dummy company
     featuredCompanies.concat([dummyFeaturedCompany])
-
-    console.log('))))))) featured companies')
-    console.log(dummyFeaturedCompany);
-    console.log('))))))) featured companies')
     return featuredCompanies;
   }
 
@@ -53,7 +49,7 @@ class FeaturedCompanyService {
   }
 
   log (message) {
-    console.log(`[FeaturedCompanyService]: ${message}`)
+    // console.log(`[FeaturedCompanyService]: ${message}`)
   } 
 
 }

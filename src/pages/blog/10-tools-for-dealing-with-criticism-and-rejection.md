@@ -15,7 +15,6 @@ description: >-
 tags:
   - rejection
   - criticism
-  - ''
 featured: false
 image: /img/blur-close-up-color-850216-1-.jpg
 category: Career

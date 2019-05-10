@@ -5,7 +5,6 @@ import SocialLinks from '../SocialLinks'
 import CompanyLogo from './CompanyLogo'
 
 const Industries = ({ industries }) => {
-  console.log('=========innn', industries)
   if (!industries) return <div />
   if (industries.length === 1) return <span>{industries[0].industry_text}</span>
 

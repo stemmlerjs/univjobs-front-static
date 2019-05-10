@@ -24,16 +24,9 @@ class DirectoryCompanyService {
     )
     // Get all companies from the backend.
     let companies = response.data.directory;
-    console.log('**** directory')
-    console.log(companies)
-    console.log('**** directory')
     // Add the dummy company so that it can build.
     companies = companies.concat([dummy])
     // Log it out
-
-    console.log('**** directory after dummy')
-    console.log(companies)
-    console.log('**** directory after dummy')
     this.log(`Retrieved ${companies.length} companies.\n`)
     return companies;
   }
