@@ -1,38 +1,27 @@
 import React from 'react'
 
-import LandingPage from '../components/LandingPage'
-import { Backers, AltFeature, StudentTestimonials } from '../components/landing'
+import config from '../config'
+import { LandingPageHero } from '../components/landing-page'
+import { Backers, AltFeature, StudentTestimonials, LeftFeatures, RightFeatures } from '../components/landing-page'
+import { CallToAction } from '../components/shared/cta'
+import { SeoLayout, PageType } from '../components/seo'
 
-import SocialValidation from '../components/SocialValidation'
-
-import landingePageStyles from '../styles/StudentLandingPageStyles.module.css'
-
-import { CallToAction } from '../components/shared'
-import LeftFeatures from '../components/LeftFeatures'
-import RightFeatures from '../components/RightFeatures'
-
-import features from '../styles/FeatureStyles.module.css'
 import productImage from '../img/student_invites.png'
-
 import invite from '../img/undraw_invite.svg'
 import mobileMarketing from '../img/undraw_mobile_marketing.svg'
 import gotJob from '../img/she-got-the-job.jpg'
-
 import soti from '../img/companies/soti.png'
 import td from '../img/companies/td.svg'
 import rover from '../img/companies/rover.png'
 import homeDepot from '../img/companies/homedepot.png'
 import ymca from '../img/companies/ymca.svg'
 import airmiles from '../img/companies/airmiles.svg'
-
 import haltech from '../img/haltech.png'
 import icube from '../img/icube.png'
 import startupschool from '../img/startupschool.png'
 import edge from '../img/edge_hires-400x143.png'
 
-import {SeoLayout, PageType} from '../components/seo'
-
-import config from '../config'
+import features from '../components/landing-page/styles/FeatureStyles.module.css'
 
 const Employers = () => (
   <div>
@@ -47,7 +36,7 @@ const Employers = () => (
       pageProps={{
       }}
     />
-    <LandingPage
+    <LandingPageHero
       heroTitle="Find the best students and recent grads to hire"
       heroSubTitle="A network of young talent from different post secondary schools to source, recruit, and hire."
       options={{

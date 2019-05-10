@@ -1,10 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Link from 'gatsby-link'
 import withSection from './withSection'
 import '../../styles/company/ListSection.sass'
 
-import SocialLink from '../SocialLink'
+import { SocialLink } from '../shared/social'
 
 const SocialMedia = props => (
   <div className="list-section-item">

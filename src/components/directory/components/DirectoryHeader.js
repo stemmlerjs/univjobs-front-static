@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import searchSvg from '../../../img/directory/search.svg'
 import '../styles/DirectoryHeader.sass'
-import { HeaderOverlay } from '../../shared'
+// import { HeaderOverlay } from '../../shared'
 
 import config from '../../../config'
 
@@ -201,7 +201,7 @@ export default class DirectoryHeader extends React.Component {
           </div>
         </div>
 
-        <HeaderOverlay isOpen={this.state.isHeaderOpen} />
+        {/* <HeaderOverlay isOpen={this.state.isHeaderOpen} /> */}
       </div>
     )
   }

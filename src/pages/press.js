@@ -13,15 +13,12 @@ import canindiaNews from '../img/press/canindiaNews.png'
 import torontoGuardian from '../img/press/torontoGuardian.jpg'
 import buzzfeed from '../img/press/buzzfeed.png'
 
-import { CallToAction } from '../components/shared'
-import LandingPage from '../components/LandingPage'
+import { CallToAction } from '../components/shared/cta'
+import { LandingPageHero } from '../components/landing-page'
 
-import CountUp from 'react-countup'
-
-import Divider from '../components/Divider'
+import { Divider } from '../components/landing-page'
 import Mentions from '../components/press/Mentions'
 import Founders from '../components/press/Founders'
-import Mentors from '../components/press/Mentors'
 import {SeoLayout, PageType} from '../components/seo'
 
 
@@ -164,7 +161,7 @@ class PressPage extends React.Component {
           pageProps={{
           }}
         />
-        <LandingPage
+        <LandingPageHero
           heroTitle="Press and Media"
           heroSubTitle="The latest news, updates and resources on Univjobs"
           options={{

@@ -1,14 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import config from '../config'
-import LandingPage from '../components/LandingPage'
+import LandingPageHero from '../components/landing-page/components/LandingPageHero'
 import '../styles/LandingTemplate/LandingTemplate.sass'
-import features from '../styles/FeatureStyles.module.css'
+import features from '../components/landing-page/styles/FeatureStyles.module.css' // TODO: fix this
 
-import { Backers, AltFeature, StudentTestimonials } from '../components/landing'
-import { CallToAction } from '../components/shared'
-import LeftFeatures from '../components/LeftFeatures'
-import RightFeatures from '../components/RightFeatures'
+import { Backers, AltFeature, StudentTestimonials, LeftFeatures } from '../components/landing-page'
+import { CallToAction } from '../components/shared/cta'
+import RightFeatures from '../components/landing-page/components/RightFeatures'
 
 import soti from '../img/companies/soti.png'
 import td from '../img/companies/td.svg'
@@ -80,7 +79,7 @@ class LandingPageTemplate extends React.Component {
 
     return (
       <div className="landing-page-template-container">
-        <LandingPage
+        <LandingPageHero
           heroTitle={heroTitle}
           heroSubTitle={heroSubTitle}
           options={{

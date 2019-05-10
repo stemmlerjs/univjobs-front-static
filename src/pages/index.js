@@ -1,19 +1,22 @@
 import React from 'react'
-import { CallToAction } from '../components/shared'
-import LeftFeatures from '../components/LeftFeatures'
-import RightFeatures from '../components/RightFeatures'
-
+import { CallToAction } from '../components/shared/cta'
 import landingePageStyles from '../styles/StudentLandingPageStyles.module.css'
-import features from '../styles/FeatureStyles.module.css'
+import features from '../components/landing-page/styles/FeatureStyles.module.css'
 
 import grad from '../img/gradphotos.jpeg'
-import LandingPage from '../components/LandingPage'
+import { LandingPageHero } from '../components/landing-page'
 
 import config from '../config'
 
-import {SeoLayout, PageType} from '../components/seo'
+import { SeoLayout, PageType } from '../components/seo'
 
-import { Backers, AltFeature, StudentTestimonials } from '../components/landing'
+import { 
+  Backers, 
+  AltFeature, 
+  StudentTestimonials, 
+  LeftFeatures, 
+  RightFeatures 
+} from '../components/landing-page'
 
 import soti from '../img/companies/soti.png'
 import td from '../img/companies/td.svg'
@@ -50,7 +53,7 @@ const Index = () => (
       pageProps={{
       }}
     />
-    <LandingPage
+    <LandingPageHero
       heroTitle="Apply to student and recent grad jobs"
       heroSubTitle="A marketplace to find part time, co-op, entry-level jobs and internships."
       options={{

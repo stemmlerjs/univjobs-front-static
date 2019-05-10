@@ -6,9 +6,9 @@ import config from '../config/'
 import aboutImage from '../img/about/hero.png'
 import pitch from '../img/about/pitch.png'
 
-import LandingPage from '../components/LandingPage'
-import { CallToAction } from '../components/shared'
-import Divider from '../components/Divider'
+import LandingPageHero from '../components/landing-page/components/LandingPageHero'
+import { CallToAction } from '../components/shared/cta'
+import { Divider } from '../components/landing-page'
 import {SeoLayout, PageType} from '../components/seo'
 
 
@@ -144,7 +144,7 @@ const AboutPage = ({ data }) => {
         pageProps={{
         }}
       />
-      <LandingPage
+      <LandingPageHero
         heroTitle="About"
         heroSubTitle="Learn more about the team behind Univjobs"
         showHeroMask={false}
