@@ -5,14 +5,8 @@ author: Edmund Ng
 date: '2018-05-31T18:21:43-04:00'
 description: >-
   Use these 6 tips to improve your chances at getting your "million dollar job".
-tags:
-  - get million dollar jobs
-  - how do you get your resume noticed
-  - if you don't have a good and professional resume
-  - it will kill you
-  - resume help
-  - strike interest and gain the HR executive's attention
-  - univjobs.ca
+tags: 
+  - resumes
 featured: false
 image: /img/hr-2308519_960_720.png
 category: Career

@@ -4,6 +4,7 @@ import Link from 'gatsby-link'
 import postStyles from '../../../styles/Blog/Post.module.css'
 import '../styles/Post.sass'
 import moment from 'moment'
+import Tags from '../../shared/tags/components/Tags';
 
 const TimeToRead = props => {
   if (!!props.timeToRead == false) return <div />
@@ -80,6 +81,7 @@ const Post = props => {
           By <span className="author-name">{props.author}</span>{' '}
           <span className="date">• {moment(date).format('MMM Do, YYYY')}</span>{' '}
         </div>
+        <Tags tags={props.tags}/>
       </div>
     </Link>
   )

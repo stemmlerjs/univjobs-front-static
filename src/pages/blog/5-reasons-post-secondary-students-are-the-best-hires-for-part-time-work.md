@@ -8,10 +8,9 @@ description: >-
   a number of benefits for your business. Here are the top 5 reasons that
   post-secondary students are the best hires for part-time positions.
 tags:
-  - Hiring students
-  - Post Secondary Hiring
-  - 5 Reasons Post-Secondary Students Are the Best Hires for Part-Time Work
-  - ''
+  - part-time work
+  - early-career talent
+  - hiring students
 featured: false
 image: /img/business-women-shaking-hands_4460x4460.jpg
 category: Recruitment

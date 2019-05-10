@@ -9,6 +9,9 @@ description: >-
 tags:
   - student
   - career
+  - books
+  - resource
+  - developers
 featured: false
 image: /img/9-books-mountain.jpg
 category: Resources

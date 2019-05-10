@@ -9,6 +9,8 @@ import "../styles/BlogPostTemplate.sass"
 import charles from '../../../img/authors/charles.png'
 import khalil from '../../../img/authors/khalil.jpg'
 import trevor from '../../../img/authors/trevor.jpeg'
+import Tag from '../../shared/tags/components/Tag';
+import Tags from '../../shared/tags/components/Tags';
 
 const postAuthors = {
   'Khalil Stemmler': {
@@ -97,10 +99,13 @@ const BlogPostContent = props => {
       <div className="post-header">
         {/* <div className="post-category">{props.category}</div> */}
         <h1>{props.title}</h1>
+        <Tags tags={props.tags}/>
         <PostAuthor date={props.date} author={props.author} />
+        
       </div>
       <br/>
       <img src={props.image}/>
+
       <div className="post-description">{props.description}</div>
       <br/>
       <HTMLContent className="post-content" content={props.html}/>      
