@@ -30,7 +30,7 @@ const HotCompaniesExitModal = () => (
         <div className="more">+ 100’s more</div>
       </div>
 
-      <a href="https://app.univjobs.ca/register">Get matched with hot jobs</a>
+      <a href="https://app.univjobs.ca/register">Get matched with jobs</a>
       <div className="free-for-students">Free for students and recent-grads. Always.</div>
     </div>
   </ExitModal>
