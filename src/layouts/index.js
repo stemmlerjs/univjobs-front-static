@@ -13,6 +13,7 @@ import links from './links'
 import scripts from './scripts'
 
 import './styles.sass'
+import '../styles/rodal.css'
 
 /**
  * Layout
