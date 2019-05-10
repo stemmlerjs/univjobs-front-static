@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: 'The Ultimate Guide For Success At Your First Junior Developer Job [GUIDE]'
+title: 'Surviving Your First Junior Developer Job [Guide]'
 author: Khalil Stemmler
 date: '2019-05-09T19:50:23-04:00'
 description: >-
@@ -156,7 +156,7 @@ Boy, did I ever get an earfull that day...
 
 Don't be like me, make sure that you manually test that your features work! Test the **happy paths** and even more importantly, test the **non-happy paths**.
 
-Maliciously try to break your own code. If there's something I've learned by putting code into production, it's that if you've written bugs, your users will eventually find them.
+_Maliciously_ try to break your own code. If there's something I've learned by putting code into production, it's that if you've written bugs, your users will eventually find them.
 
 Even if you have a QA team, aim for QA to find **nothing**.
 

@@ -45,6 +45,7 @@
     "react": "^16.2.0",
     "react-countup": "^3.0.3",
     "react-disqus-comments": "^1.2.0",
+    "react-exit-modal": "^1.0.3",
     "react-google-maps": "^9.4.5",
     "react-helmet": "^5.2.0",
     "react-mapbox-gl": "^3.9.2",

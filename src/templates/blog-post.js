@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { BlogPageLayout } from '../components/blog'
 import helpers from '../helpers'
+import { HotCompaniesExitModal } from '../components/shared/hot-companies-exit-modal';
 
 /**
  * @class BlogPost
@@ -15,11 +16,15 @@ export default ({ data }) => {
   categories = helpers.blog.getCategoriesFromQuery(categories)
 
   return (
-    <BlogPageLayout
-      post={post}
-      category={post.category}
-      categories={categories}
-    />
+    <div>
+      <HotCompaniesExitModal/>
+      <BlogPageLayout
+        post={post}
+        category={post.category}
+        categories={categories}
+      />
+    </div>
+   
   )
 }
 

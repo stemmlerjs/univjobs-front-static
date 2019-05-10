@@ -5983,6 +5983,21 @@
       "resolved": "https://registry.npmjs.org/exif-parser/-/exif-parser-0.1.12.tgz",
       "integrity": "sha1-WKnS1ywCwfbwKg70qRZicrd2CSI="
     },
+    "exit-intent": {
+      "version": "1.1.0",
+      "resolved": "https://registry.npmjs.org/exit-intent/-/exit-intent-1.1.0.tgz",
+      "integrity": "sha512-ImLeWSDKMOE8dnGvYXdUiymKjw7CRFbByEJ4uq+vbIfRK1U+GRmQ4/ZQ6WZLz7iGkGoUdBc2IoZFUpw6AsWd2g==",
+      "requires": {
+        "lodash": "4.17.4"
+      },
+      "dependencies": {
+        "lodash": {
+          "version": "4.17.4",
+          "resolved": "https://registry.npmjs.org/lodash/-/lodash-4.17.4.tgz",
+          "integrity": "sha1-eCA6TRwyiuHYbcpkYONptX9AVa4="
+        }
+      }
+    },
     "expand-brackets": {
       "version": "0.1.5",
       "resolved": "https://registry.npmjs.org/expand-brackets/-/expand-brackets-0.1.5.tgz",
@@ -19815,6 +19830,15 @@
       "resolved": "https://registry.npmjs.org/react-error-overlay/-/react-error-overlay-3.0.0.tgz",
       "integrity": "sha512-XzgvowFrwDo6TWcpJ/WTiarb9UI6lhA4PMzS7n1joK3sHfBBBOQHUc0U4u57D6DWO9vHv6lVSWx2Q/Ymfyv4hw=="
     },
+    "react-exit-modal": {
+      "version": "1.0.3",
+      "resolved": "https://registry.npmjs.org/react-exit-modal/-/react-exit-modal-1.0.3.tgz",
+      "integrity": "sha512-z/omVRUMaQPvTQt/AdfMMRq5/nYxuOWZd+TAuL7sg3S3T58ZOZrtvXqaN8w3F0zCpTAX2zdJaUbuW2dJROiMZg==",
+      "requires": {
+        "exit-intent": "^1.1.0",
+        "rodal": "^1.6.3"
+      }
+    },
     "react-frame-component": {
       "version": "2.0.2",
       "resolved": "https://registry.npmjs.org/react-frame-component/-/react-frame-component-2.0.2.tgz",
@@ -21172,6 +21196,11 @@
       "version": "1.1.5",
       "resolved": "https://registry.npmjs.org/rn-host-detect/-/rn-host-detect-1.1.5.tgz",
       "integrity": "sha512-ufk2dFT3QeP9HyZ/xTuMtW27KnFy815CYitJMqQm+pgG3ZAtHBsrU8nXizNKkqXGy3bQmhEoloVbrfbvMJMqkg=="
+    },
+    "rodal": {
+      "version": "1.6.3",
+      "resolved": "https://registry.npmjs.org/rodal/-/rodal-1.6.3.tgz",
+      "integrity": "sha512-OWry49Kga2lRUqPiSimPaowdNjZlX/kwfVQZNpkwf5NayROFioPmhawA9lQ8MDILFiIh777WspqsmrV2jSUn0Q=="
     },
     "rollup": {
       "version": "0.58.2",
