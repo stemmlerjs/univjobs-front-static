@@ -559,6 +559,10 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
             test: /univjobs-ui-components/,
             use: loaders.null(),
           },
+          {
+            test: /react-exit-modal/,
+            use: loaders.null(),
+          },
         ],
       },
     })

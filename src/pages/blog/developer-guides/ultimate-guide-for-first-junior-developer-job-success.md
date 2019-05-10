@@ -39,7 +39,7 @@ When you start working on a team, you'll be introduced to concepts strategies li
 -  **squashing commits** and
 - **Semver (semantic versioning)** 
 
-During my first week as a developer, I actually couldn't stop sweating because I was so nervous that I was going to deletdeveloper job how hard I was sweating thinking that I was going to **delete the entire company by accident** when presented with options in Git that I wasn't familiar with how to deal with.
+My first week as a developer, I actually couldn't stop sweating due to being so nervous thinking that I was going to **delete the entire company by accident** when presented with options in Git I wasn't familiar with how to deal with.
 
 ![](/img/blog/ultimate-guide-for-success/delete-prod.png)
 
