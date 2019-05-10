@@ -47,7 +47,7 @@ const Layout = ({ children, data }) => (
     <div
       style={{
         margin: '0px auto',
-        paddingTop: '71px',
+        paddingTop: '91px',
       }}
     >
       {children()}

@@ -103,11 +103,11 @@ const Figures = props => {
       <div className={styles.milestonesContainer}>
         <div className={styles.milestoneItem}>
           <h3>7000+</h3>
-          <div>Active students and recent grads using the platform</div>
+          <div>Active students and recent grads find employment through the platform</div>
         </div>
         <div className={styles.milestoneItem}>
           <h3>250+</h3>
-          <div>Forward thinking employers who have used the platform</div>
+          <div>Forward thinking employers use the platform</div>
         </div>
         <div className={styles.milestoneItem}>
           <h3>59%</h3>
@@ -115,7 +115,7 @@ const Figures = props => {
         </div>
         <div className={styles.milestoneItem}>
           <h3>60%</h3>
-          <div>Are from a under represented minority group</div>
+          <div>Are from an under represented minority group</div>
         </div>
       </div>
     </section>
