@@ -2,7 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { BlogPageLayout } from '../components/blog'
 import helpers from '../helpers'
-import { HotCompaniesExitModal } from '../components/shared/hot-companies-exit-modal';
+import { 
+  HotCompaniesExitModal 
+} from '../components/shared/hot-companies-exit-modal';
 
 /**
  * @class BlogPost
