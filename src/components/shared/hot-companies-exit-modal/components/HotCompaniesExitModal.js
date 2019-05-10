@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import "../styles/HotCompaniesExitModal.sass"
-import 'rodal/lib/rodal.css';
 import hotCompanies from '../../../../img/exit-modals/hot-companies.svg'
 
 let ExitModal = ({ children }) => (
