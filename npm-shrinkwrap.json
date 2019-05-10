@@ -19831,9 +19831,9 @@
       "integrity": "sha512-XzgvowFrwDo6TWcpJ/WTiarb9UI6lhA4PMzS7n1joK3sHfBBBOQHUc0U4u57D6DWO9vHv6lVSWx2Q/Ymfyv4hw=="
     },
     "react-exit-modal": {
-      "version": "1.0.3",
-      "resolved": "https://registry.npmjs.org/react-exit-modal/-/react-exit-modal-1.0.3.tgz",
-      "integrity": "sha512-z/omVRUMaQPvTQt/AdfMMRq5/nYxuOWZd+TAuL7sg3S3T58ZOZrtvXqaN8w3F0zCpTAX2zdJaUbuW2dJROiMZg==",
+      "version": "1.0.4",
+      "resolved": "https://registry.npmjs.org/react-exit-modal/-/react-exit-modal-1.0.4.tgz",
+      "integrity": "sha512-g+EpcYKdlY7gfU+rWWXSLdw0oIE68xPclP5fFSqhhe3pD/dBd7eoPLO8pQMlvg32iMEYbppCgrrCUbrd+0953w==",
       "requires": {
         "exit-intent": "^1.1.0",
         "rodal": "^1.6.3"
