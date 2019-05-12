@@ -7,13 +7,19 @@
 .container div {
   font-size: 18px;
   color: #506c80;
-  margin-bottom: 15px;
+  max-width: 500px;
+  margin: 0 auto;
+  padding-bottom: 1rem;
 }
 
 .container h3 {
-  font-size: 2em;
-  color: #1C46DA;
+  color: #000000b3;
   margin-bottom: 15px;
+  font-weight: 400;
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  padding-bottom: 0.5rem;
 }
 
 .header {}

@@ -1,3 +1,4 @@
+export FrontPagePromotedCompanies from "./components/FrontPagePromotedCompanies";
 export SocialValidation from "./components/SocialValidation";
 export Divider from "./components/Divider";
 export EmployerReviews from "./components/EmployerReviews";
