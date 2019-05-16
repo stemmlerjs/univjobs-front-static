@@ -39,7 +39,7 @@ const CompanyHeader = props => {
           <div>Company size</div>
           <div>{props.numEmployees}</div>
         </div>
-        <SocialLinks links={props.socialLinks} />
+        {/* <SocialLinks links={props.socialLinks} /> */}
       </div>
     </div>
   )

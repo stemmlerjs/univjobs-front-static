@@ -119,14 +119,11 @@ const createCompanyPages = (companies, createPage) => {
   companies.forEach(edge => {
     const companyId = edge.node.companyId
 
-    // TODO: Ensure that none of the company names are taken. They need to be unique,
-    // or we use the company handle.
-
     createPage({
       path: edge.node.fields.slug,
       component: path.resolve(`src/templates/company.js`),
       context: {
-        companyId,
+        companyId
       },
     })
   })
@@ -216,6 +213,36 @@ const getAllTagsFromPosts = posts => {
 exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators
 
+  /**
+   *       directoryCompanies: allDirectoryCompany(limit: 1000) {
+        edges {
+          node {
+            fields {
+              slug
+              exploreSlug
+            }
+            companyId
+            companyName
+            feature
+            exploreSlug
+            hiring
+          }
+        }
+      }
+
+      cities: allCity(limit: 1000) {
+        edges {
+          node {
+            name
+            id
+            fields {
+              slug
+            }
+          }
+        }
+      }
+   */
+
   return graphql(`
     {
       landingPages: allMarkdownRemark(
@@ -229,34 +256,6 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
             }
             frontmatter {
               title
-              description
-              templateKey
-              targetUserType
-              heroTitle
-              heroSubTitle
-              heroButtonText
-              heroImage
-              ctaOneHeader
-              ctaOneSubText
-              ctaOneButtonText
-              featureOneHeader
-              featureOneSubTitle
-              featureOneParagraphOne
-              featureOneParagraphTwo
-              featureTwoHeader
-              featureTwoSubTitle
-              featureTwoParagraphOne
-              featureTwoParagraphTwo
-              featureThreeHeader
-              featureThreeSubTitle
-              featureThreeParagraphOne
-              featureThreeParagraphTwo
-              ctaTwoHeader
-              ctaTwoSubText
-              ctaTwoButtonText
-              ctaThreeHeader
-              ctaThreeSubText
-              ctaThreeButtonText
             }
           }
         }
@@ -277,112 +276,14 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         }
       }
 
-      directoryCompanies: allDirectoryCompany(limit: 1000) {
-        edges {
-          node {
-            fields {
-              slug
-              exploreSlug
-            }
-            id
-            industries {
-              industry_id
-              industry_text
-            }
-            jobs {
-              title
-              slug
-              active
-            }
-            companyId
-            companyName
-            about
-            logoUrl
-            address
-            companySize {
-              value
-              label
-            }
-            feature
-            exploreSlug
-            position {
-              lat
-              lng
-            }
-            hiring
-          }
-        }
-      }
-
-      cities: allCity(limit: 1000) {
-        edges {
-          node {
-            name
-            id
-            fields {
-              slug
-            }
-          }
-        }
-      }
-
       companies: allCompany(limit: 1000) {
         edges {
           node {
             id
-            aboutUs
-            brandImageUrl
-            companyId
-            companyName
-            featured
-            funFacts
-            logoUrl
-            numEmployees
-            industries {
-              industry_text
-              industry_id
-            }
-            mission
-            perks
-            companyValues
-            cultureItems {
-              image
-              title
-              description
-            }
-            slogan
-            socialLinks {
-              url
-              type
-            }
-            jobs {
-              title
-              location
-              slug
-              jobTypeId
-              jobType
-            }
             articles {
               companyName
               employerId
-              title
-              sponsored
-              sponsoredCompanyName
-              sponsoredCompanyImage
-              timeToRead
-              slug
-              image
             }
-            offices {
-              name
-              street
-              headquarters
-              provinceOrState
-              city
-              country
-            }
-            videos
-            vision
             fields {
               slug
             }
@@ -412,13 +313,13 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     createCompanyPages(result.data.companies.edges, createPage)
 
     // Create directory company pages
-    createDirectoryCompanyPages(
-      result.data.directoryCompanies.edges,
-      createPage
-    )
+    // createDirectoryCompanyPages(
+    //   result.data.directoryCompanies.edges,
+    //   createPage
+    // )
 
-    // Create city pages
-    createCityPages(result.data.cities.edges, createPage)
+    // // Create city pages
+    // createCityPages(result.data.cities.edges, createPage)
 
     // Create landing pages
     createLandingPages(result.data.landingPages.edges, createPage)
@@ -452,11 +353,12 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
       node,
       value,
     })
-  } else if (node.internal.type === 'Company') {
+  } 
+  else if (node.internal.type === 'Company') {
     createNodeField({
       name: 'slug',
       node,
-      value: `/companies/${_.kebabCase(node.companyName)}/`,
+      value: `/companies/${node.companySlug}/`,
     })
   } else if (node.internal.type === 'DirectoryCompany') {
     createNodeField({

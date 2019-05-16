@@ -1,0 +1,33 @@
+@import '../../../styles/variables.sass'
+
+.recent-blog-posts
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .posts-container
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+
+    @media (max-width: 600px)
+      flex-direction: column;
+
+      .post-container
+        width: 100%;
+        max-width: unset;
+
+  p 
+    margin: 0;
+
+  a 
+    color: $primary-color-teal;
+    text-decoration: none;
+
+    img 
+      max-width: 17px;
+      margin: 0;
+      transform: rotate(180deg);
+      position: relative;
+      top: 5px;

@@ -1,6 +1,5 @@
 
-import axios from 'axios'
-import config from '../config'
+const axios = require('axios')
 
 /**
  * @class UnivjobsAPI
@@ -11,6 +10,22 @@ import config from '../config'
 class UnivjobsAPI {
   constructor (baseUrl) {
     this.baseUrl = baseUrl;
+  }
+
+  async getCompanyList () {
+    const response = await axios({
+      method: "GET",
+      url: `${this.baseUrl}/api/v1/public/v2/company/list`,
+    });
+    return response.data.list;
+  }
+
+  async getCompanyBySlugOrId (companySlugOrId) {
+    const response = await axios({
+      method: 'GET',
+      url: `${this.baseUrl}/api/v1/public/companies/${companySlugOrId}`,
+    })
+    return response.data.company;
   }
 
   async getCompanySummary (companyName) {
@@ -83,8 +98,6 @@ class UnivjobsAPI {
   }
 }
 
-const univjobsAPI = new UnivjobsAPI(config.apiUrl);
-
-export {
-  univjobsAPI
-} 
+module.exports = (url) => {
+  return new UnivjobsAPI(url);
+}

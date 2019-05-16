@@ -16,7 +16,7 @@ export default ({ data }) => {
 
   post = Object.assign({}, post, post.fields, post.frontmatter)
   categories = helpers.blog.getCategoriesFromQuery(categories)
-
+  
   return (
     <div>
       <HotCompaniesExitModal/>
@@ -26,7 +26,6 @@ export default ({ data }) => {
         categories={categories}
       />
     </div>
-   
   )
 }
 

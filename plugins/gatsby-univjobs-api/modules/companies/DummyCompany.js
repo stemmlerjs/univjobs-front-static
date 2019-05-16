@@ -1,4 +1,5 @@
 module.exports = {
+  companySlug: '/uneedjobs-938383',
   companyId: 100001,
   companyName: 'UneedJobs',
   brandImageUrl:

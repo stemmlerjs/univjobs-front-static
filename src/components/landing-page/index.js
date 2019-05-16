@@ -1,4 +1,5 @@
-export FrontPagePromotedCompanies from "./components/FrontPagePromotedCompanies";
+
+export RecentBlogPosts from "./components/RecentBlogPosts";
 export SocialValidation from "./components/SocialValidation";
 export Divider from "./components/Divider";
 export EmployerReviews from "./components/EmployerReviews";

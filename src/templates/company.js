@@ -53,7 +53,7 @@ class CompanyTemplate extends React.Component {
   async fetchCompanyProfile (companyId) {
     try {
       this.updateFetchStatus(true, false, false)
-      const company = await univjobsAPI.getCompanyByCompanyId(companyId);
+      const company = await univjobsAPI.getCompanyByCompanyId(companySlug);
       this.setState({ ...this.state, company })
       this.updateFetchStatus(false, true, false)
     } catch (err) {
@@ -65,14 +65,15 @@ class CompanyTemplate extends React.Component {
   componentDidMount () {
     const { data } = this.props
     let company = helpers.companies.getCompaniesFromQuery(data.company)
+    debugger;
 
     if (company.length !== 0) {
       company = company[0]
     }
 
-    const companyId = company.companyId
-    logExploreCompanyView(companyId);
-    this.fetchCompanyProfile(companyId)
+    const companySlug = company.companySlug
+    logExploreCompanyView(companySlug);
+    this.fetchCompanyProfile(companySlug)
   }
 
   getCompany () {
@@ -217,6 +218,7 @@ class CompanyTemplate extends React.Component {
 
   render() {
     const { data } = this.props
+    console.log(this)
 
     const companyName   = this.getCompanyName();
     const brandImageUrl = this.getCompanyBrandImage();
@@ -236,6 +238,8 @@ class CompanyTemplate extends React.Component {
     const companyValues = this.getCompanyValues();
     const offices       = this.getOffices();
     const cultureItems  = this.getCultureItems();
+
+    console.log(jobs);
 
     return (
       <div>
@@ -375,15 +379,16 @@ CompanyTemplate.propTypes = {}
 export default CompanyTemplate
 
 export const pageQuery = graphql`
-  query blogsPageAndCompanyTemplateQuery($companyId: Int) {
+  query blogsPageAndCompanyTemplateQuery($companySlug: String) {
     company: allCompany(
-      filter: { companyId: { eq: $companyId }, hidden: { eq: false } }
+      filter: { companySlug: { eq: $companySlug }, hidden: { eq: false } }
     ) {
       edges {
         node {
           id
           aboutUs
           brandImageUrl
+          companySlug
           companyId
           companyName
           featured

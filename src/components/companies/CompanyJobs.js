@@ -66,6 +66,7 @@ class CompanyJobs extends React.Component {
   render() {
     const { jobs, companyName } = this.props
     const { filteredJobs } = this.state
+    console.log(this.props);
 
     const currentJobs = filteredJobs.length !== 0 ? filteredJobs : jobs
 

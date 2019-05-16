@@ -104,4 +104,14 @@ export default {
       return []
     },
   },
+
+  jobs: {
+    getJobsFromQuery: (jobs) => {
+      if (jobs) {
+        return jobs.edges.map((edge) => edge.node)
+      } else {
+        return []
+      }
+    }
+  }
 }

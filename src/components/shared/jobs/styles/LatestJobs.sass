@@ -3,6 +3,16 @@
   padding-top: 3rem;
   padding-bottom: 3rem;
 
+  .results-count
+    text-align: center;
+    
+    span, a
+      font-size: 16px;
+
+    a 
+      text-decoration: none;
+      font-weight: bold;
+
   h3 
     text-align: center;
 
@@ -12,55 +22,21 @@
     display: flex;
     flex-wrap: wrap;
 
+    @media (max-width: 900px)
+      flex-direction: column;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      
+
     > div 
-      width: 50%;
+      width: 48%;
 
-      .minimal-job-listing
-        display: flex;
-        flex-direction: row;
-        margin-bottom: 2.2rem;
-        flex: 1;
+      @media (max-width: 900px)
+        width: 100%;
 
-        .minimal-job-listing--logo-container
+  .results-count
+    padding-left: 2rem
+    padding-right: 2rem;
 
-        .minimal-job-listing--body-container
-
-          .header
-            display: flex;
-            
-            .summary
-            
-              .title
-                font-weight: bold;
-                line-height: 0.3rem;
-
-              .company-name
-                text-decoration: none;
-                font-weight: bold;
-              
-              .cities,
-              .company-name,
-              .job-type
-                font-size: 14px; 
-
-              .job-type
-                color: white;
-                background: blue;
-                border-radius: 3px;
-                display: inline-block;
-                padding-left: 0.2rem;
-                padding-right: 0.2rem;
-                margin-bottom: 0.4rem;
-
-
-            .salary
-              font-size: 14px; 
-              opacity: 0.5;
-              font-weight: 600;
-
-          .description
-            font-size: 14px; 
-            opacity: 0.7;
-            font-family: 'Roboto'
 
 

@@ -1,5 +1,5 @@
 const axios = require('axios');
-const dummyFeaturedCompany = require('./dummy');
+const dummyFeaturedCompany = require('../../modules/companies/DummyCompany');
 
 // console.log("=FEATURED DUMMY=")
 // console.log(dummyFeaturedCompany)

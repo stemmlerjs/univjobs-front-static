@@ -33,8 +33,12 @@ import haltech from '../img/haltech.png'
 import icube from '../img/icube.png'
 import startupschool from '../img/startupschool.png'
 import edge from '../img/edge_hires-400x143.png'
-import FrontPagePromotedCompanies from '../components/landing-page/components/FrontPagePromotedCompanies';
 import LatestJobs from '../components/shared/jobs/components/LatestJobs';
+import RecentBlogPosts from '../components/landing-page/components/RecentBlogPosts';
+import LatestJobsFragment from '../components/shared/jobs/fragments/LatestJobsFragment'
+import helpers from '../helpers';
+import FeaturedCompanies from '../components/shared/company/components/FeaturedCompanies';
+import FeaturedCompanyFragment from '../components/shared/company/fragments/FeaturedCompanyFragment';
 
 /**
  * @class Index
@@ -42,153 +46,193 @@ import LatestJobs from '../components/shared/jobs/components/LatestJobs';
  * for univjobs.ca.
  */
 
-const Index = () => (
-  <div>
-    <SeoLayout
-      requiredProps={{
-        title: 'Jobs, internships and work study for students and recent grads',
-        description: 'Find paid internship, remote work, part time, and entry-level jobs at startups and large companies.',
-        url: `${config.url}`,
-        image: config.assets.image.logo
-      }}
-      type={PageType.REGULAR}
-      pageProps={{
-      }}
-    />
-    <LandingPageHero
-      heroTitle="Get a student or recent grad job"
-      heroSubTitle="The marketplace to find part time, co-op, entry-level jobs and internships."
-      options={{
-        alignment: 'left',
-        image: grad,
-        buttons: {
-          hasButtons: true,
-          mainButtonText: 'Get hired',
-          mainButtonLocation: `${config.appUrl}register?button_id=hero`,
-          reRouteButtonText: "I'm an employer",
-          reRouteButtonLocation: '/employers?button_id=reroute_hero',
-          alreadyOnComponentActive: false,
-        },
-        hero: {
-          showColorMask: true,
-          color: '#1C46DA',
-        },
-        overrideClass: landingePageStyles.overrideLandingPage,
-      }}
-    />
-    <FrontPagePromotedCompanies
-      companies={[
-        { 
-          companyName: 'TD Bank',
-          companySlug: '/companies/4242-td-bank',
-          numOpenJobs: 23,
-          logoUrl: td,
-          cities: ['Toronto', 'Mississauga']
-        },
-        { 
-          companyName: 'Rover',
-          companySlug: '/companies/4242-rover',
-          numOpenJobs: 12,
-          logoUrl: rover,
-          cities: ['Brampton', 'Toronto', "Richmond Hill"]
-        },
-        { 
-          companyName: 'Home Depot',
-          companySlug: '/companies/4242-td-bank',
-          numOpenJobs: 0,
-          logoUrl: homeDepot,
-          cities: ['Brampton', 'Toronto', "Richmond Hill"]
-        },
-        { 
-          companyName: 'SOTI',
-          companySlug: '/companies/4242-soti',
-          numOpenJobs: 3,
-          logoUrl: soti,
-          cities: ['Toronto']
-        },
-        { 
-          companyName: 'YMCA',
-          companySlug: '/companies/4242-td-bank',
-          numOpenJobs: 0,
-          logoUrl: ymca,
-          cities: ['Toronto']
-        },
-        { 
-          companyName: 'Air Miles',
-          companySlug: '/companies/4242-air-miles',
-          numOpenJobs: 1,
-          logoUrl: airmiles,
-          cities: ['Toronto']
-        }
-      ]}
-    />
-    <CallToAction
-      header="Get matched with hundreds of 🔥 companies"
-      subHeader={`Apply to student and recent-grad jobs with a single profile ·
-      Find a job for you · Get daily job recommendations`}
-      buttonText="Apply to student-friendly jobs"
-      alt={false}
-      location={`${config.appUrl}register?button_id=cta1`}
-    />
+class IndexPage extends React.Component {
+  constructor (props) {
+    super(props);
+  }
 
-    <AltFeature
-      header="One profile, one resume"
-      subHeader="No more cover letters"
-      paragraphOne="Making multiple cover letters and 
-        resumes, while balancing exams and
-        projects is stressful and time
-        consuming."
-      paragraphTwo="Next time you need a job, you can relax. 
-        Univjobs eliminates you having to create multiple cover 
-        letters and resumes. That way, you can get back 
-        to your studies."
-      paragrapThree=""
-      picture={productImage}
-    />
+  getLatestJobs () {
+    const { props } = this;
+    const { data } = props;
+    const { latestJobs } = data;
+    return helpers.jobs.getJobsFromQuery(latestJobs);
+  }
 
-    <section className={features.container}>
-      <LeftFeatures
-        header="Get personally invited to jobs by employers"
-        paragraphOne="Your next job is right around the corner."
-        paragraphTwo="We encourage employers to invite you to jobs and let you build meaningful connections, fast."
-        picture={mail}
-      />
-      <RightFeatures
-        header="Track all your job applications"
-        paragraphOne={`Going to career fairs can be time-consuming and costly, especially when you have limited time and budget.`}
-        paragraphTwo={`Univjobs can reduce this anxiety by showing you the "progress" of your job applications whether you're being considered, whether you're invited for an interview or whether you get hired.`}
-        picture={jobs}
-      />
-    </section>
+  getFeaturedCompanies () {
+    const { props } = this;
+    const { data } = props;
+    const { featuredCompanies } = data;
+    return helpers.jobs.getJobsFromQuery(featuredCompanies);
+  }
+
+  render () {
+    const { props } = this;
+    const { data } = props;
+    const { recentPosts } = data;
+    const latestJobs = this.getLatestJobs()
+    const featuredCompanies = this.getFeaturedCompanies();
     
-    <LatestJobs/>
+    return (
+      <div>
+        <SeoLayout
+          requiredProps={{
+            title: 'Jobs, internships and work study for students and recent grads',
+            description: 'Find paid internship, remote work, part time, and entry-level jobs at startups and large companies.',
+            url: `${config.url}`,
+            image: config.assets.image.logo
+          }}
+          type={PageType.REGULAR}
+          pageProps={{
+          }}
+        />
+        <LandingPageHero
+          heroTitle="Get a student or recent grad job"
+          heroSubTitle="The marketplace to find part time, co-op, entry-level jobs and internships."
+          options={{
+            alignment: 'left',
+            image: grad,
+            buttons: {
+              hasButtons: true,
+              mainButtonText: 'Get hired',
+              mainButtonLocation: `${config.appUrl}register?button_id=hero`,
+              reRouteButtonText: "I'm an employer",
+              reRouteButtonLocation: '/employers?button_id=reroute_hero',
+              alreadyOnComponentActive: false,
+            },
+            hero: {
+              showColorMask: true,
+              color: '#1C46DA',
+            },
+            overrideClass: landingePageStyles.overrideLandingPage,
+          }}
+        />
+        <FeaturedCompanies
+          companies={featuredCompanies}
+        />
+        <CallToAction
+          header="Get matched with hundreds of 🔥 companies"
+          subHeader={`Apply to student and recent-grad jobs with a single profile ·
+          Find a job for you · Get daily job recommendations`}
+          buttonText="Apply to student-friendly jobs"
+          alt={false}
+          location={`${config.appUrl}register?button_id=cta1`}
+        />
 
-    <CallToAction
-      header="Start your career journey now"
-      alt={true}
-      subHeader=""
-      buttonText="Browse jobs"
-      location={`${config.appUrl}register?button_id=cta2`}
-    />
-    <StudentTestimonials />
-    <Backers
-      header="Our community support"
-      subHeader="Thank you for supporting us in changing the way students find meaningful employment."
-      companies={[
-        { link: 'http://haltech.ca/', imageUrl: haltech },
-        { link: 'http://icubeutm.ca/', imageUrl: icube },
-        { link: 'https://www.startupschool.org/', imageUrl: startupschool },
-        { link: 'https://edge.sheridancollege.ca/', imageUrl: edge },
-      ]}
-    />
-    <CallToAction
-      header="Explore new job opportunities meant for students and recent grads"
-      alt={true}
-      subHeader=""
-      buttonText="Start applying"
-      location={`${config.appUrl}register?button_id=cta3`}
-    />
-  </div>
-)
+        <LatestJobs latestJobs={latestJobs}/>
 
-export default Index
+        <AltFeature
+          header="One profile, one resume"
+          subHeader="No more cover letters"
+          paragraphOne="Making multiple cover letters and 
+            resumes, while balancing exams and
+            projects is stressful and time
+            consuming."
+          paragraphTwo="Next time you need a job, you can relax. 
+            Univjobs eliminates you having to create multiple cover 
+            letters and resumes. That way, you can get back 
+            to your studies."
+          paragrapThree=""
+          picture={productImage}
+        />
+
+        <section className={features.container}>
+          <LeftFeatures
+            header="Get personally invited to jobs by employers"
+            paragraphOne="Your next job is right around the corner."
+            paragraphTwo="We encourage employers to invite you to jobs and let you build meaningful connections, fast."
+            picture={mail}
+          />
+          <RightFeatures
+            header="Track all your job applications"
+            paragraphOne={`Going to career fairs can be time-consuming and costly, especially when you have limited time and budget.`}
+            paragraphTwo={`Univjobs can reduce this anxiety by showing you the "progress" of your job applications whether you're being considered, whether you're invited for an interview or whether you get hired.`}
+            picture={jobs}
+          />
+        </section>
+        
+        <hr/>
+        <RecentBlogPosts
+          rawPosts={recentPosts}
+        />
+
+        <CallToAction
+          header="Start your career journey now"
+          alt={true}
+          subHeader=""
+          buttonText="Browse jobs"
+          location={`${config.appUrl}register?button_id=cta2`}
+        />
+        <StudentTestimonials />
+        <Backers
+          header="Our community support"
+          subHeader="Thank you for supporting us in changing the way students find meaningful employment."
+          companies={[
+            { link: 'http://haltech.ca/', imageUrl: haltech },
+            { link: 'http://icubeutm.ca/', imageUrl: icube },
+            { link: 'https://www.startupschool.org/', imageUrl: startupschool },
+            { link: 'https://edge.sheridancollege.ca/', imageUrl: edge },
+          ]}
+        />
+        <CallToAction
+          header="Explore new job opportunities meant for students and recent grads"
+          alt={true}
+          subHeader=""
+          buttonText="Start applying"
+          location={`${config.appUrl}register?button_id=cta3`}
+        />
+      </div>
+    )
+  }
+}
+
+export default IndexPage
+
+export const indexQuery = graphql`
+  query IndexQuery {
+    latestJobs: allLatestJob {
+      edges {
+        node {
+          ...LatestJobProps
+        }
+      }
+    }
+
+    featuredCompanies: allFeaturedCompany {
+      edges {
+        node {
+          ...FeaturedCompanyProps
+        }
+      }
+    }
+
+    recentPosts: allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      filter: {
+        frontmatter: { 
+          templateKey: { eq: "blog-post" }, 
+          public: { eq: true } 
+        }
+      }
+    ) {
+      edges {
+        node {
+          excerpt(pruneLength: 250)
+          timeToRead
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            date
+            description
+            tags
+            featured
+            image
+            category
+            author
+          }
+        }
+      }
+    }
+  }
+`

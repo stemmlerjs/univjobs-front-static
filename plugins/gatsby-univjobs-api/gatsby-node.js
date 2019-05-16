@@ -7,6 +7,13 @@ const _ = require('lodash')
 const services = require('./services')
 const Processor = require('./Processor')
 
+const JobsDataGateway = require('./modules/jobs/JobsDataGateway');
+const JobsNodeProcessor = require('./modules/jobs/JobsNodeProcessor');
+const CompaniesDataGateway = require('./modules/companies/CompaniesDataGateway');
+const CompaniesNodeProcessor = require('./modules/companies/CompaniesNodeProcessor')
+const UnivjobsAPI = require('./api')
+
+
 /**
  * @desc combineCompanies
  * This function combines all companies.
@@ -34,12 +41,21 @@ async function combineCompanies (exploreCompanies, featuredCompanies, ExploreCom
 
 exports.sourceNodes = async ({ boundActionCreators, createNodeId }, configOptions) => {
   // plugin code goes here...
-  console.log("Univjobs Datasource API Plugin starting with options", configOptions);
-
   const { createNode } = boundActionCreators;
   const { url } = configOptions;
   // Gatsby adds a configOption that's not needed for this plugin, delete it
   delete configOptions.plugins;
+  console.log("Univjobs Datasource API Plugin starting with options", configOptions);
+
+  const api = UnivjobsAPI(url);
+  const jobsDataGateway   = JobsDataGateway(api);
+  const jobsNodeProcessor = JobsNodeProcessor(createNodeId, createNode, jobsDataGateway)
+  const companiesDataGateway = CompaniesDataGateway(api);
+  const companiesNodeProcessor = CompaniesNodeProcessor(createNodeId, createNode, companiesDataGateway)
+  
+  await jobsNodeProcessor.createLatestJobNodes();
+  await companiesNodeProcessor.createFeaturedCompanies();
+  await companiesNodeProcessor.createCompanyNodes();
 
   // Create all of the services for creating nodes.
   const {
@@ -61,28 +77,28 @@ exports.sourceNodes = async ({ boundActionCreators, createNodeId }, configOption
      * pages.
      */
 
-    const exploreCompanies = await ExploreCompanyService.getCompanies();
-    const featuredCompanies = await FeaturedCompanyService.getCompanies();
-    // Combine all of the companies
-    const allCompanies = await combineCompanies(exploreCompanies, featuredCompanies, ExploreCompanyService, FeaturedCompanyService);
+    // const exploreCompanies = await ExploreCompanyService.getCompanies();
+    // const featuredCompanies = await FeaturedCompanyService.getCompanies();
+    // // Combine all of the companies
+    // const allCompanies = await combineCompanies(exploreCompanies, featuredCompanies, ExploreCompanyService, FeaturedCompanyService);
     
-    // 1. Create all CompanyNodes
-    ProcessorInstance.processAndCreateCompanyNodesBulk(allCompanies);
+    // // 1. Create all CompanyNodes
+    // ProcessorInstance.processAndCreateCompanyNodesBulk(allCompanies);
 
-    // 2. Create all DirectoryNodes
-    const directoryCompanies = await DirectoryCompanyService.getCompanies();
-    ProcessorInstance.processAndCreateDirectoryCompanyNodesBulk(directoryCompanies)
+    // // 2. Create all DirectoryNodes
+    // const directoryCompanies = await DirectoryCompanyService.getCompanies();
+    // ProcessorInstance.processAndCreateDirectoryCompanyNodesBulk(directoryCompanies)
 
     // 3. Create all of the different City Nodes.
-    const uniqueCities  = _.uniq(directoryCompanies.map((dc) => dc.city)).sort();
-    const cityMap = CitiesService.getCities(uniqueCities, directoryCompanies);
+    // const uniqueCities  = _.uniq(directoryCompanies.map((dc) => dc.city)).sort();
+    // const cityMap = CitiesService.getCities(uniqueCities, directoryCompanies);
 
-    // ======================
-    // Create city nodes
-    for (let cityKey of Object.keys(cityMap)) {
-      const cityJobs = cityMap[cityKey];
-      ProcessorInstance.processAndCreateCityNode({ name: cityKey, jobs: cityJobs })
-    }
+    // // ======================
+    // // Create city nodes
+    // for (let cityKey of Object.keys(cityMap)) {
+    //   const cityJobs = cityMap[cityKey];
+    //   ProcessorInstance.processAndCreateCityNode({ name: cityKey, jobs: cityJobs })
+    // }
   } 
   
   catch (err) {
