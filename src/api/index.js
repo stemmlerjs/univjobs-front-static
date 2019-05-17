@@ -13,6 +13,45 @@ class UnivjobsAPI {
     this.baseUrl = baseUrl;
   }
 
+  async getCompanySummary () {
+
+  }
+
+  async getLatestJobs () {
+    const response = await axios({
+      method: "GET",
+      url: `${this.baseUrl}/api/v1/public/v2/jobs/recent`
+    });
+    return response.data.jobs;
+  }
+
+  async getLatestJobsBySkill (skill) {
+    const response = await axios({
+      method: "GET",
+      url: `${this.baseUrl}/api/v1/public/v2/jobs/recent`,
+      params: { skill }
+    });
+    return response.data.jobs;
+  }
+
+  async getLatestJobsByCity (city) {
+    const response = await axios({
+      method: "GET",
+      url: `${this.baseUrl}/api/v1/public/v2/jobs/recent`,
+      params: { city }
+    });
+    return response.data.jobs;
+  }
+
+  async getLatestJobsBySkillAndCity (skill, city) {
+    const response = await axios({
+      method: "GET",
+      url: `${this.baseUrl}/api/v1/public/v2/jobs/recent`,
+      params: { city, skill }
+    });
+    return response.data.jobs;
+  }
+
   async getCompanyByCompanyId (companyId) {
     const response = await axios({
       method: "GET",
