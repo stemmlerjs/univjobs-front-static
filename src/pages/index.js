@@ -1,19 +1,22 @@
 import React from 'react'
-import { CallToAction } from '../components/shared'
-import LeftFeatures from '../components/LeftFeatures'
-import RightFeatures from '../components/RightFeatures'
-
+import { CallToAction } from '../components/shared/cta'
 import landingePageStyles from '../styles/StudentLandingPageStyles.module.css'
-import features from '../styles/FeatureStyles.module.css'
+import features from '../components/landing-page/styles/FeatureStyles.module.css'
 
 import grad from '../img/gradphotos.jpeg'
-import LandingPage from '../components/LandingPage'
+import { LandingPageHero } from '../components/landing-page'
 
 import config from '../config'
 
-import {SeoLayout, PageType} from '../components/seo'
+import { SeoLayout, PageType } from '../components/seo'
 
-import { Backers, AltFeature, StudentTestimonials } from '../components/landing'
+import { 
+  Backers, 
+  AltFeature, 
+  StudentTestimonials, 
+  LeftFeatures, 
+  RightFeatures 
+} from '../components/landing-page'
 
 import soti from '../img/companies/soti.png'
 import td from '../img/companies/td.svg'
@@ -30,6 +33,11 @@ import haltech from '../img/haltech.png'
 import icube from '../img/icube.png'
 import startupschool from '../img/startupschool.png'
 import edge from '../img/edge_hires-400x143.png'
+import FrontPagePromotedCompanies from '../components/landing-page/components/FrontPagePromotedCompanies';
+import LatestJobs from '../components/shared/jobs/components/LatestJobs';
+import { SocialValidation } from '../components/landing-page';
+
+
 
 /**
  * @class Index
@@ -50,9 +58,9 @@ const Index = () => (
       pageProps={{
       }}
     />
-    <LandingPage
-      heroTitle="Apply to student and recent grad jobs"
-      heroSubTitle="A marketplace to find part time, co-op, entry-level jobs and internships."
+    <LandingPageHero
+      heroTitle="Get a student or recent grad job"
+      heroSubTitle="The marketplace to find part time, co-op, entry-level jobs and internships."
       options={{
         alignment: 'left',
         image: grad,
@@ -81,9 +89,59 @@ const Index = () => (
         { link: 'https://www.airmiles.ca/arrow/Home', imageUrl: airmiles },
       ]}
     />
+    {
+      /*
+    <FrontPagePromotedCompanies
+      companies={[
+        { 
+          companyName: 'TD Bank',
+          companySlug: '/companies/4242-td-bank',
+          numOpenJobs: 23,
+          logoUrl: td,
+          cities: ['Toronto', 'Mississauga']
+        },
+        { 
+          companyName: 'Rover',
+          companySlug: '/companies/4242-rover',
+          numOpenJobs: 12,
+          logoUrl: rover,
+          cities: ['Brampton', 'Toronto', "Richmond Hill"]
+        },
+        { 
+          companyName: 'Home Depot',
+          companySlug: '/companies/4242-td-bank',
+          numOpenJobs: 0,
+          logoUrl: homeDepot,
+          cities: ['Brampton', 'Toronto', "Richmond Hill"]
+        },
+        { 
+          companyName: 'SOTI',
+          companySlug: '/companies/4242-soti',
+          numOpenJobs: 3,
+          logoUrl: soti,
+          cities: ['Toronto']
+        },
+        { 
+          companyName: 'YMCA',
+          companySlug: '/companies/4242-td-bank',
+          numOpenJobs: 0,
+          logoUrl: ymca,
+          cities: ['Toronto']
+        },
+        { 
+          companyName: 'Air Miles',
+          companySlug: '/companies/4242-air-miles',
+          numOpenJobs: 1,
+          logoUrl: airmiles,
+          cities: ['Toronto']
+        }
+      ]}
+    />*/
+    }
     <CallToAction
-      header="Get access to student-friendly jobs"
-      subHeader=""
+      header="Get matched with hundreds of 🔥 companies"
+      subHeader={`Apply to student and recent-grad jobs with a single profile ·
+      Find a job for you · Get daily job recommendations`}
       buttonText="Apply to student-friendly jobs"
       alt={false}
       location={`${config.appUrl}register?button_id=cta1`}
@@ -118,6 +176,9 @@ const Index = () => (
         picture={jobs}
       />
     </section>
+    
+    {/* <LatestJobs/> */}
+
     <CallToAction
       header="Start your career journey now"
       alt={true}

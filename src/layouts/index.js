@@ -2,11 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
-// import { Header } from '../components/shared'
 import { Header } from 'univjobs-ui-components'
 import 'univjobs-ui-components/build/index.css'
 
-import Footer from '../components/Footer'
+import { Footer } from '../components/shared/layout'
 import config from '../config'
 import meta from './meta'
 import links from './links'
@@ -48,7 +47,7 @@ const Layout = ({ children, data }) => (
     <div
       style={{
         margin: '0px auto',
-        paddingTop: '71px',
+        paddingTop: '91px',
       }}
     >
       {children()}
