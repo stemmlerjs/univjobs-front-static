@@ -83,14 +83,20 @@ class CompanyTemplate extends React.Component {
   }
 
   getCompanyFromQuery () {
-    const { data } = this.props
-    return helpers.companies.getCompaniesFromQuery(data.company);
+    const { data } = this.props;
+    const companies = helpers.companies.getCompaniesFromQuery(data.company);
+    if (companies.length !== 0) {
+      return companies[0]
+    } else {
+      return {};
+    }
   }
 
   getCompanyName () {
+    // We need to always return this from props in order to build
+    // things for SEO.
     const companyFromProps = this.getCompanyFromQuery();
-    const companyFromState = this.state.company;
-    return companyFromState.companyName || companyFromProps.companyName;
+    return companyFromProps.companyName;
   }
 
   getCompanyBrandImage () {
@@ -203,6 +209,10 @@ class CompanyTemplate extends React.Component {
     const companyFromProps = this.getCompanyFromQuery();
     const companyFromState = this.state.company;
     return companyFromState.cultureItems || companyFromProps.cultureItems;
+  }
+
+  getStaticProps () {
+    return this.getCompanyFromQuery();
   }
 
   render() {
