@@ -35,6 +35,9 @@ import startupschool from '../img/startupschool.png'
 import edge from '../img/edge_hires-400x143.png'
 import FrontPagePromotedCompanies from '../components/landing-page/components/FrontPagePromotedCompanies';
 import LatestJobs from '../components/shared/jobs/components/LatestJobs';
+import { SocialValidation } from '../components/landing-page';
+
+
 
 /**
  * @class Index
@@ -76,6 +79,18 @@ const Index = () => (
         overrideClass: landingePageStyles.overrideLandingPage,
       }}
     />
+    <Backers
+      companies={[
+        { link: 'https://www.td.com/', imageUrl: td },
+        { link: 'https://www.rover.com/ca/', imageUrl: rover },
+        { link: 'https://www.homedepot.ca/en/home.html', imageUrl: homeDepot },
+        { link: 'https://www.soti.com/', imageUrl: soti },
+        { link: 'http://ymca.ca/', imageUrl: ymca },
+        { link: 'https://www.airmiles.ca/arrow/Home', imageUrl: airmiles },
+      ]}
+    />
+    {
+      /*
     <FrontPagePromotedCompanies
       companies={[
         { 
@@ -121,7 +136,8 @@ const Index = () => (
           cities: ['Toronto']
         }
       ]}
-    />
+    />*/
+    }
     <CallToAction
       header="Get matched with hundreds of 🔥 companies"
       subHeader={`Apply to student and recent-grad jobs with a single profile ·
@@ -161,7 +177,7 @@ const Index = () => (
       />
     </section>
     
-    <LatestJobs/>
+    {/* <LatestJobs/> */}
 
     <CallToAction
       header="Start your career journey now"
