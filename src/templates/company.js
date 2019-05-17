@@ -381,7 +381,7 @@ export default CompanyTemplate
 export const pageQuery = graphql`
   query blogsPageAndCompanyTemplateQuery($companySlug: String) {
     company: allCompany(
-      filter: { companySlug: { eq: $companySlug }, hidden: { eq: false } }
+      filter: { companySlug: { eq: $companySlug } }
     ) {
       edges {
         node {

@@ -59,7 +59,9 @@ class FeaturedCompanies extends React.Component {
   getCompanyMessage (company) {
     const hasOpenJobs = company.numOpenJobs !== 0;
     if (hasOpenJobs) {
-      return `${company.numOpenJobs} open jobs`
+      return company.numOpenJobs === 1 
+        ? "1 job"
+        : `${company.numOpenJobs} jobs`
     }
     return `Hiring in ${company.city}`;
   }
@@ -80,7 +82,6 @@ class FeaturedCompanies extends React.Component {
             />
             <p className="company-name">{company.companyName}</p>
             <p className="company-message">{this.getCompanyMessage(company)}</p>
-
           </div>
         ))}
       </div>

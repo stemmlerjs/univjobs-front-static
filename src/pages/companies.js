@@ -94,8 +94,10 @@ class Companies extends React.Component {
   }
 
   render() {
-    const exploreCompanies  = this.getExploreCompanies();
-    const featuredCompanies = this.getFeaturedCompanies();
+    const featuredCompanies  = this.getExploreCompanies();
+    const exploreCompanies = this.getFeaturedCompanies();
+
+    console.log(this.props)
 
     return (
       <div>

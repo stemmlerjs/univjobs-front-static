@@ -117,13 +117,14 @@ const createDirectoryCompanyPages = (companies, createPage) => {
 
 const createCompanyPages = (companies, createPage) => {
   companies.forEach(edge => {
-    const companyId = edge.node.companyId
+    const companyId = edge.node.companyId;
+    const companySlug = edge.node.companySlug;
 
     createPage({
       path: edge.node.fields.slug,
       component: path.resolve(`src/templates/company.js`),
       context: {
-        companyId
+        companySlug
       },
     })
   })
@@ -280,6 +281,8 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         edges {
           node {
             id
+            companyId
+            companySlug
             articles {
               companyName
               employerId
@@ -335,7 +338,6 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
      */
 
     let value = createFilePath({ node, getNode });
-    console.log(value);
 
     /**
      * Create category slugs.
@@ -394,7 +396,7 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
     }
 
     // We're also going to keep it basic.
-    console.log(`/jobs/student-jobs-in-${_.kebabCase(node.name)}/`)
+    // console.log(`/jobs/student-jobs-in-${_.kebabCase(node.name)}/`)
     createNodeField({
       name: 'slug',
       node,

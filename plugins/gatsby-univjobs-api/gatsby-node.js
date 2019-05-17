@@ -58,50 +58,50 @@ exports.sourceNodes = async ({ boundActionCreators, createNodeId }, configOption
   await companiesNodeProcessor.createCompanyNodes();
 
   // Create all of the services for creating nodes.
-  const {
-    DirectoryCompanyService,
-    FeaturedCompanyService,
-    ExploreCompanyService,
-    CitiesService
-  } = services.createServices(url);
+  // const {
+  //   DirectoryCompanyService,
+  //   FeaturedCompanyService,
+  //   ExploreCompanyService,
+  //   CitiesService
+  // } = services.createServices(url);
 
-  // The processor will actually allow us to create Nodes in Gatsby
-  // from our data models.
-  const ProcessorInstance = Processor.createProcessor(createNodeId, createNode);
+  // // The processor will actually allow us to create Nodes in Gatsby
+  // // from our data models.
+  // const ProcessorInstance = Processor.createProcessor(createNodeId, createNode);
 
-  try {
+  // try {
 
-    /**
-     * In this section, we create all of the Explore Companies and 
-     * Featured Companies which are shown on the /companies and companies/explore
-     * pages.
-     */
+  //   /**
+  //    * In this section, we create all of the Explore Companies and 
+  //    * Featured Companies which are shown on the /companies and companies/explore
+  //    * pages.
+  //    */
 
-    // const exploreCompanies = await ExploreCompanyService.getCompanies();
-    // const featuredCompanies = await FeaturedCompanyService.getCompanies();
-    // // Combine all of the companies
-    // const allCompanies = await combineCompanies(exploreCompanies, featuredCompanies, ExploreCompanyService, FeaturedCompanyService);
+  //   // const exploreCompanies = await ExploreCompanyService.getCompanies();
+  //   // const featuredCompanies = await FeaturedCompanyService.getCompanies();
+  //   // // Combine all of the companies
+  //   // const allCompanies = await combineCompanies(exploreCompanies, featuredCompanies, ExploreCompanyService, FeaturedCompanyService);
     
-    // // 1. Create all CompanyNodes
-    // ProcessorInstance.processAndCreateCompanyNodesBulk(allCompanies);
+  //   // // 1. Create all CompanyNodes
+  //   // ProcessorInstance.processAndCreateCompanyNodesBulk(allCompanies);
 
-    // // 2. Create all DirectoryNodes
-    // const directoryCompanies = await DirectoryCompanyService.getCompanies();
-    // ProcessorInstance.processAndCreateDirectoryCompanyNodesBulk(directoryCompanies)
+  //   // // 2. Create all DirectoryNodes
+  //   // const directoryCompanies = await DirectoryCompanyService.getCompanies();
+  //   // ProcessorInstance.processAndCreateDirectoryCompanyNodesBulk(directoryCompanies)
 
-    // 3. Create all of the different City Nodes.
-    // const uniqueCities  = _.uniq(directoryCompanies.map((dc) => dc.city)).sort();
-    // const cityMap = CitiesService.getCities(uniqueCities, directoryCompanies);
+  //   // 3. Create all of the different City Nodes.
+  //   // const uniqueCities  = _.uniq(directoryCompanies.map((dc) => dc.city)).sort();
+  //   // const cityMap = CitiesService.getCities(uniqueCities, directoryCompanies);
 
-    // // ======================
-    // // Create city nodes
-    // for (let cityKey of Object.keys(cityMap)) {
-    //   const cityJobs = cityMap[cityKey];
-    //   ProcessorInstance.processAndCreateCityNode({ name: cityKey, jobs: cityJobs })
-    // }
-  } 
+  //   // // ======================
+  //   // // Create city nodes
+  //   // for (let cityKey of Object.keys(cityMap)) {
+  //   //   const cityJobs = cityMap[cityKey];
+  //   //   ProcessorInstance.processAndCreateCityNode({ name: cityKey, jobs: cityJobs })
+  //   // }
+  // } 
   
-  catch (err) {
-     return Promise.reject(err);
-  }
+  // catch (err) {
+  //    return Promise.reject(err);
+  // }
 };

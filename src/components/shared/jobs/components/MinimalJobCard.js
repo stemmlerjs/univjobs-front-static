@@ -25,8 +25,8 @@ const JobCitiesList = ({ cities }) => (
 const MinimalJobCard = ({ job }) => (
   <div className="minimal-job-listing">
     <div className="minimal-job-listing--logo-container">
-      <LogoCard 
-        companySlug={job.companySlug}
+      <LogoCard
+        companySlug={`/companies/${job.companySlug}`}
         logoUrl={job.logoUrl}
       />
     </div>
@@ -34,7 +34,7 @@ const MinimalJobCard = ({ job }) => (
       <div className="header">
         <div className="summary">
           <a href={`${config.appUrl}${job.slug}`} className="title">{job.title}</a>
-          <Link className="company-name" to={job.companySlug}>{job.companyName}</Link> - <JobCitiesList cities={job.cities}/>
+          <Link className="company-name" to={`/companies/${job.companySlug}`}>{job.companyName}</Link> - <JobCitiesList cities={job.cities}/>
           <div>
           <div className="job-type">{job.jobType.name}</div>
           </div>

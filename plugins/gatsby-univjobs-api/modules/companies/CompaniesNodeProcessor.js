@@ -37,7 +37,6 @@ class CompaniesNodeProcessor extends BaseNodeProcessor {
     for (let companySlug of companiesList) {
       try {
         const company = await this.companiesDataGateway.getCompanyBySlugOrId(companySlug);
-        console.log(company)
         this.create(company, this.makeUniqueCompanyId(company, 'all'), nodeDisplayName);
       } catch(err) {
         console.log(`[CompaniesNodeProcessor]: Error creating company ${companySlug}`)

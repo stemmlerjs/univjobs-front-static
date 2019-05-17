@@ -61,7 +61,7 @@ class UnivjobsAPI {
   async getCompanyByCompanyId (companyId) {
     const response = await axios({
       method: "GET",
-      url: `${this.baseUrl}/api/v1/public/companies/${companyId}`
+      url: `${this.baseUrl}/api/v1/public/v2/company/details/${companyId}`,
     });
     return response.data.company;
   }
