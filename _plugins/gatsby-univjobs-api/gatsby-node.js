@@ -4,7 +4,6 @@
 // https://www.gatsbyjs.org/docs/create-source-plugin/
 
 const _ = require('lodash')
-const PublicCompanies = require('./PublicCompanies')
 const services = require('./services')
 const Processor = require('./Processor')
 
