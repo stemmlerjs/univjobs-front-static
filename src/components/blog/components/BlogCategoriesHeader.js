@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Divider from '../../Divider'
+import Divider from '../../landing-page/components/Divider'
 import Link from 'gatsby-link'
 
 import styles from '../../../styles/Blog/Header.module.css'

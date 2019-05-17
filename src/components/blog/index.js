@@ -1,3 +1,4 @@
+export FeaturedBlogPost from "./components/FeaturedBlogPost";
 export Posts from './components/Posts'
 export Post from './components/Post'
 export FeaturedPost from './components/FeaturedPost'
@@ -7,4 +8,3 @@ export BlogPageLayout from './components/BlogPageLayout'
 export BlogPostTemplate from './components/BlogPostTemplate'
 export BlogPostContent from './components/BlogPostContent'
 export BlogPostHeader from './components/BlogPostHeader'
-

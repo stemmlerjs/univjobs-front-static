@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import LandingPage from '../components/LandingPage'
+import LandingPageHero from '../components/landing-page/components/LandingPageHero'
 import CompanyHeader from '../components/companies/CompanyHeader'
 import CompanyJobs from '../components/companies/CompanyJobs'
 import CompanyArticles from '../components/companies/CompanyArticles'
@@ -250,7 +250,7 @@ class CompanyTemplate extends React.Component {
           pageProps={{
           }}
         />
-        <LandingPage
+        <LandingPageHero
           options={{
             alignment: 'center',
             image: brandImageUrl,

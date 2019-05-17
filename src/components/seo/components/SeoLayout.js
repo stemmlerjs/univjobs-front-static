@@ -32,6 +32,7 @@ const SeoLayout = ({ requiredProps, type, pageProps }) => (
      <meta property="og:image" content={requiredProps.image} />
      <meta property="og:image:width" content='200' />
      <meta property="og:image:height" content='200' />
+     <meta property="og:site_name" content="Univjobs"/>
 
 
      {/* Twitter Card tags */}
@@ -41,6 +42,7 @@ const SeoLayout = ({ requiredProps, type, pageProps }) => (
        <meta name="twitter:title" content={requiredProps.title} />
        <meta name="twitter:description" content={requiredProps.description} />
        <meta name="twitter:image" content={requiredProps.image} /> 
+       <meta name="twitter:site" content={config.twitter}/>
 
       {/**Canonical Tags
         TODO: 

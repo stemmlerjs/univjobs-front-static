@@ -1,22 +1,11 @@
 import React from 'react'
-import Link from 'gatsby-link'
 
-import LandingPage from '../components/LandingPage'
-import Benefits from '../components/Benefits'
-import { CallToAction } from '../components/shared'
-import LeftFeatures from '../components/LeftFeatures'
-import RightFeatures from '../components/RightFeatures'
-import Slidy from '../components/Slidy'
-import SocialValidation from '../components/SocialValidation'
-
-import features from '../styles/FeatureStyles.module.css'
+import LandingPageHero from '../components/landing-page/components/LandingPageHero'
+import { Benefits } from '../components/landing-page'
+import { CallToAction } from '../components/shared/cta'
+import { SocialValidation } from '../components/landing-page'
 
 import merchant from '../img/merchant.jpg'
-import leftSide from '../img/leftside.png'
-import haltech from '../img/haltech.png'
-import icube from '../img/icube.png'
-import startupSchool from '../img/startupschool.png'
-import sheridanEntrepreneurs from '../img/sheridanentrepreneurs.png'
 import soti from '../img/companies/soti.png'
 import td from '../img/companies/td.svg'
 import rover from '../img/companies/rover.png'
@@ -25,7 +14,7 @@ import ymca from '../img/companies/ymca.svg'
 import airmiles from '../img/companies/airmiles.svg'
 
 import config from '../config'
-import {SeoLayout, PageType} from '../components/seo'
+import { SeoLayout, PageType } from '../components/seo'
 
 const SmallBusiness = () => (
   <div>
@@ -40,7 +29,7 @@ const SmallBusiness = () => (
       pageProps={{
       }}
     />
-    <LandingPage
+    <LandingPageHero
       heroTitle="Easily access, and hire local young talent"
       heroSubTitle="We have thousands of candidates ready and waiting"
       options={{
@@ -87,8 +76,6 @@ const SmallBusiness = () => (
       alt={true}
       location={`${config.appUrl}register/employer`}
     />
-
-    <Slidy />
   </div>
 )
 

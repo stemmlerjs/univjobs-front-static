@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import SocialLinks from '../SocialLinks'
+import { SocialLinks } from '../shared/social/components/SocialLinks'
 import CompanyLogo from './CompanyLogo'
 
 const Industries = ({ industries }) => {
