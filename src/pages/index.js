@@ -35,9 +35,6 @@ import startupschool from '../img/startupschool.png'
 import edge from '../img/edge_hires-400x143.png'
 import FrontPagePromotedCompanies from '../components/landing-page/components/FrontPagePromotedCompanies';
 import LatestJobs from '../components/shared/jobs/components/LatestJobs';
-import { SocialValidation } from '../components/landing-page';
-
-
 
 /**
  * @class Index
@@ -79,14 +76,50 @@ const Index = () => (
         overrideClass: landingePageStyles.overrideLandingPage,
       }}
     />
-    <Backers
+    <FrontPagePromotedCompanies
       companies={[
-        { link: 'https://www.td.com/', imageUrl: td },
-        { link: 'https://www.rover.com/ca/', imageUrl: rover },
-        { link: 'https://www.homedepot.ca/en/home.html', imageUrl: homeDepot },
-        { link: 'https://www.soti.com/', imageUrl: soti },
-        { link: 'http://ymca.ca/', imageUrl: ymca },
-        { link: 'https://www.airmiles.ca/arrow/Home', imageUrl: airmiles },
+        { 
+          companyName: 'TD Bank',
+          companySlug: '/companies/4242-td-bank',
+          numOpenJobs: 23,
+          logoUrl: td,
+          cities: ['Toronto', 'Mississauga']
+        },
+        { 
+          companyName: 'Rover',
+          companySlug: '/companies/4242-rover',
+          numOpenJobs: 12,
+          logoUrl: rover,
+          cities: ['Brampton', 'Toronto', "Richmond Hill"]
+        },
+        { 
+          companyName: 'Home Depot',
+          companySlug: '/companies/4242-td-bank',
+          numOpenJobs: 0,
+          logoUrl: homeDepot,
+          cities: ['Brampton', 'Toronto', "Richmond Hill"]
+        },
+        { 
+          companyName: 'SOTI',
+          companySlug: '/companies/4242-soti',
+          numOpenJobs: 3,
+          logoUrl: soti,
+          cities: ['Toronto']
+        },
+        { 
+          companyName: 'YMCA',
+          companySlug: '/companies/4242-td-bank',
+          numOpenJobs: 0,
+          logoUrl: ymca,
+          cities: ['Toronto']
+        },
+        { 
+          companyName: 'Air Miles',
+          companySlug: '/companies/4242-air-miles',
+          numOpenJobs: 1,
+          logoUrl: airmiles,
+          cities: ['Toronto']
+        }
       ]}
     />
     {
