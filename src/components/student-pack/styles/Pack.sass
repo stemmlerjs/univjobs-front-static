@@ -1,0 +1,64 @@
+.pack
+  padding-top: 2rem;
+
+  h3 
+    text-align: center;
+
+  .pack-container
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    position: relative;
+
+    .hidden-transparency
+      background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), white);
+      height: 100%;
+      width: 100%;
+      position: absolute;
+
+    .pack-item
+      max-width: 300px;
+      box-shadow: 4px 4px 12px rgba(0,0,0,.04);
+      padding: 1rem;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+      text-decoration: none;
+      color: inherit;
+
+      .logo-container
+        height: 80px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+
+        img 
+          margin: 0;
+          max-height: 75px;
+
+
+      .description
+        min-height: 125px;
+        font-size: 16px;
+
+      .offering-container
+        font-size: 16px;
+
+        .offering-description
+          opacity: 0.5;
+          font-size: 16px;
+
+        .offering
+          margin-top: 0.5rem;
+          background: #42c93f;
+          color: white;
+          font-family: 'Roboto';
+          display: inline-block;
+          border-radius: 3px;
+          font-size: 16px;
+          padding: 4px 8px 4px 8px;

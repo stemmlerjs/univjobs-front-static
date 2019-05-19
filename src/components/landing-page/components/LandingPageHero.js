@@ -90,13 +90,15 @@ const LandingPageContent = ({ title, subTitle, alignment, buttons }) => {
   return (
     <div
       className={
-        alignment == 'center'
-          ? `${styles.content} ${styles.centeredContent}`
-          : styles.content
+        `landing-page-content ${
+            alignment == 'center'
+            ? `${styles.content} ${styles.centeredContent}`
+            : styles.content
+        }`
       }
     >
-      <h1 className={styles.title}>{title}</h1>
-      {subTitle ? <div className={styles.subTitle}>{subTitle}</div> : ''}
+      <h1 className={`landing-page-title ${styles.title}`}>{title}</h1>
+      {subTitle ? <div className={`landing-page-sub-title ${styles.subTitle}`}>{subTitle}</div> : ''}
 
       {buttons ? <LandingPageButtons buttons={buttons} /> : ''}
     </div>
@@ -162,7 +164,7 @@ class LandingPageHero extends React.Component {
     return (
       <div
         style={get(settings, 'options.styles.container')}
-        className={styles.container}
+        className={`landing-page-container ${styles.container}`}
       >
         <div
           style={{
