@@ -96,6 +96,13 @@ const plugins = [
   'gatsby-plugin-react-helmet',
   'gatsby-plugin-sass',
   {
+    resolve: "gatsby-plugin-mailchimp",
+    options: {
+      endpoint:
+        "https://univjobs.us20.list-manage.com/subscribe/post?u=9655a49a0c0e721e604467019&amp;id=fdb31fc33c"
+    }
+  },
+  {
     resolve: 'gatsby-source-filesystem',
     options: {
       path: `${__dirname}/src/pages`,
