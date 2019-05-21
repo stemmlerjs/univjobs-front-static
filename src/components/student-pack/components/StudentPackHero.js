@@ -10,8 +10,9 @@ const StudentPackHero = ({ onSubmitEmail, onUpdateEmail, email, registered, url 
   return (
     <div className="student-pack-hero" style={{ backgroundImage: `url(${packImage})`}}>
       <div className="content-container">
-        <h1>Get the <b>student discount pack</b></h1>
-        <h2>18 discounts & resources for students from companies that ❤️ students</h2>
+        <h1>Want the best deals & discounts for students? <b>We’ve got you ❤️</b></h1>
+        <br/>
+        <h2>Save money with our growing list of discounts & deals <u>for students and new grads</u>. From the coolest companies that ❤️ students.</h2>
         <div className="buttons">
           {!registered ? (
             <div>

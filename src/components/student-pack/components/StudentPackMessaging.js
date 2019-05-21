@@ -12,9 +12,8 @@ const StudentPackMessaging = () => (
     <h1>So we've done it for you.</h1>
 
     <div>
-    Univjobs is proud to provide a constantly updated package
-    of the best free resources and discounts that we could 
-    get for students and recent-grads. 
+      We're compiling a list of the <b>best deals & discounts</b> out there for students and recent-grads.
+      Check back often, the list keeps growing 🌱
     </div>
   </div>
 )
