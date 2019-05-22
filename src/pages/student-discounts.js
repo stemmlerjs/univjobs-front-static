@@ -87,9 +87,18 @@ class StudentDiscounts extends React.Component {
     }
   }
 
+  getUrl () {
+    if (typeof window !== "undefined") {
+      //
+      return window.location.href
+    } else {
+      return ""
+    }
+  }
+
   render () {
     const { registered } = this.state;
-    const url = typeof window !== "undefined" ? window.location.href : '';
+    const url = this.getUrl();
 
     return (
       <div className="student-discounts">
