@@ -233,12 +233,12 @@ exports.onClientEntry = () => {
   }
 }
 
-function setCookie (name, value) {
+window.setCookie = function setCookie (name, value) {
   document.cookie = name + "=" + (value || "") + ";domain=.univjobs.ca";
 }
 
 
-function getCookie (name) {
+window.getCookie = function getCookie (name) {
   var nameEQ = name + "=";
   var ca = document.cookie.split(';');
   for(var i=0;i < ca.length;i++) {
@@ -249,7 +249,6 @@ function getCookie (name) {
   return null;
 }
 
-
-function eraseCookie (name) {   
+window.eraseCookie = function eraseCookie (name) {   
   document.cookie = name+'=; Max-Age=-99999999;';  
 }
