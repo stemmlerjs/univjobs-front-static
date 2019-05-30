@@ -232,3 +232,11 @@ exports.onClientEntry = () => {
     require('./gatsby-prod-scripts')
   }
 }
+
+window.onmessage = function(e) {
+  if (e.origin !== "https://app.univjobs.ca") {
+    return;
+  }
+  var payload = JSON.parse(e.data);
+  localStorage.setItem(payload.key, JSON.stringify(payload.data));
+};
