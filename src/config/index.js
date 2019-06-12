@@ -1,3 +1,5 @@
+
+
 let config = {
   title: 'Univjobs | Entry level jobs for Students and Recent Grads',
   description:
@@ -16,6 +18,9 @@ let config = {
   apiUrl: process.env.UNIVJOBS_DATASOURCE_URL
     ? process.env.UNIVJOBS_DATASOURCE_URL
     : 'https://api.01-staging.univjobs.ca/',
+  domain: process.env.GATSBY_APP_DOMAIN
+    ? process.env.GATSBY_APP_DOMAIN 
+    : 'univjobs.ca',
   assets: {
     image: {
       logo:
@@ -27,13 +32,14 @@ let config = {
       univjobsLogo:
         'https://s3.amazonaws.com/assets.univjobs/svg/univjobs_full.svg',
     },
-  },
+  }
 }
-
-export default config
-
-console.log(process.env.BRANCH)
 
 if (typeof window !== 'undefined') {
   window.config = config
 }
+
+import '../utils/cookies';
+
+export default config
+

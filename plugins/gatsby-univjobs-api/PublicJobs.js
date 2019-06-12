@@ -31,7 +31,7 @@ const axios = require('axios');
     return(
       {
         "job_id": 1000001,
-        "employer_id": 100001,
+        "employer_id": 'khalily',
         "title": "Social Media Marketing Interns",
         "job_type_id": 6,
         "paid": false,
