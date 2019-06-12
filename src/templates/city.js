@@ -43,17 +43,17 @@ class CityTemplate extends React.Component {
   componentDidMount() {}
 
   render() {
-    const { city } = this.props.pathContext
-    const companies = this.props.data.companies ? this.props.data.companies.edges.map(c => c.node) : null;
+    // const { city } = this.props.pathContext
+    // const companies = this.props.data.companies ? this.props.data.companies.edges.map(c => c.node) : null;
 
-    // TODO: Look into what's going on here.
-    if (!!companies === false) {
-      return <div></div>;
-    }
+    // // TODO: Look into what's going on here.
+    // if (!!companies === false) {
+    //   return <div></div>;
+    // }
 
     return (
       <div className="city-template-container">
-        <SeoLayout
+        {/* <SeoLayout
           requiredProps={{
             title: `${city} student and grad jobs | Univjobs`,
             description: `Student jobs, part-time, co-op and recent-grad jobs at companies in ${city}.`,
@@ -94,7 +94,7 @@ class CityTemplate extends React.Component {
         <DirectoryResultsList
           companies={companies ? companies : []}
           isMobile={false}
-        />
+        /> */}
       </div>
     )
   }
@@ -104,43 +104,43 @@ CityTemplate.propTypes = {}
 
 export default CityTemplate
 
-export const pageQuery = graphql`
-  query CompaniesByCity($city: String) {
-    companies: allDirectoryCompany(
-      filter: { city: { eq: $city } }
-      sort: { fields: [companyName] }
-    ) {
-      edges {
-        node {
-          fields {
-            slug
-          }
-          id
-          industries {
-            industry_text
-          }
-          jobs {
-            title
-            slug
-          }
-          companyId
-          companyName
-          about
-          logoUrl
-          address
-          companySize {
-            value
-            label
-          }
-          feature
-          exploreSlug
-          position {
-            lat
-            lng
-          }
-          hiring
-        }
-      }
-    }
-  }
-`
+// export const pageQuery = graphql`
+//   query CompaniesByCity($city: String) {
+//     companies: allDirectoryCompany(
+//       filter: { city: { eq: $city } }
+//       sort: { fields: [companyName] }
+//     ) {
+//       edges {
+//         node {
+//           fields {
+//             slug
+//           }
+//           id
+//           industries {
+//             industry_text
+//           }
+//           jobs {
+//             title
+//             slug
+//           }
+//           companyId
+//           companyName
+//           about
+//           logoUrl
+//           address
+//           companySize {
+//             value
+//             label
+//           }
+//           feature
+//           exploreSlug
+//           position {
+//             lat
+//             lng
+//           }
+//           hiring
+//         }
+//       }
+//     }
+//   }
+// `

@@ -374,7 +374,7 @@ CompanyTemplate.propTypes = {}
 export default CompanyTemplate
 
 export const pageQuery = graphql`
-  query blogsPageAndCompanyTemplateQuery($companyId: Int) {
+  query blogsPageAndCompanyTemplateQuery($companyId: String) {
     company: allCompany(
       filter: { companyId: { eq: $companyId }, hidden: { eq: false } }
     ) {

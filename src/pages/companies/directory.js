@@ -197,16 +197,16 @@ class Directory extends React.Component {
   }
 
   componentDidMount() {
-    // Get the initial position of the user.
-    this.getInitialPosition(() => {
-      this._doFilter()
-    })
+    // // Get the initial position of the user.
+    // this.getInitialPosition(() => {
+    //   this._doFilter()
+    // })
 
-    // Setup event listener on window dimensions
-    this.updateWindowDimensions()
-    if (typeof window !== undefined) {
-      window.addEventListener('resize', this.updateWindowDimensions)
-    }
+    // // Setup event listener on window dimensions
+    // this.updateWindowDimensions()
+    // if (typeof window !== undefined) {
+    //   window.addEventListener('resize', this.updateWindowDimensions)
+    // }
   }
 
   /**
@@ -335,14 +335,14 @@ class Directory extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    const didFiltersChange = this.detectFiltersChange(prevState.filters)
-    const didLocationChange = this.detectLocationChange(
-      prevState.myLat,
-      prevState.myLng
-    )
-    if (didFiltersChange || didLocationChange) {
-      this._doFilter()
-    }
+    // const didFiltersChange = this.detectFiltersChange(prevState.filters)
+    // const didLocationChange = this.detectLocationChange(
+    //   prevState.myLat,
+    //   prevState.myLng
+    // )
+    // if (didFiltersChange || didLocationChange) {
+    //   this._doFilter()
+    // }
   }
 
   /**
@@ -475,19 +475,19 @@ class Directory extends React.Component {
   }
 
   render() {
-    const {
-      filteredCompanies,
-      currentLocation,
-      width,
-      isSearching,
-    } = this.state
-    const companies = this.areFiltersApplied()
-      ? filteredCompanies
-      : this.getCompaniesFromProps()
+    // const {
+    //   filteredCompanies,
+    //   currentLocation,
+    //   width,
+    //   isSearching,
+    // } = this.state
+    // const companies = this.areFiltersApplied()
+    //   ? filteredCompanies
+    //   : this.getCompaniesFromProps()
 
     return (
       <div className="directory-container">
-        <SeoLayout
+        {/* <SeoLayout
           requiredProps={{
             title: 'Find Work Nearby',
             description: 'Work while studying as a college student or apply to jobs before graduating.',
@@ -562,7 +562,7 @@ class Directory extends React.Component {
           buttonText="Create account"
           alt={true}
           location={`${config.appUrl}register/employer`}
-        />
+        /> */}
       </div>
     )
   }
@@ -570,45 +570,45 @@ class Directory extends React.Component {
 
 export default Directory
 
-export const directoryQuery = graphql`
-  query DirectoryCompanies {
-    companies: allDirectoryCompany(
-      sort: { order: DESC, fields: [companyName] }
-      filter: { hidden: { ne: true } }
-    ) {
-      edges {
-        node {
-          id
-          jobs {
-            title
-            slug
-            active
-          }
-          industries {
-            industry_text
-            industry_id
-          }
-          companyId
-          companyName
-          about
-          logoUrl
-          address
-          companySize {
-            value
-            label
-          }
-          feature
-          position {
-            lat
-            lng
-          }
-          hiring
-          fields {
-            slug
-            exploreSlug
-          }
-        }
-      }
-    }
-  }
-`
+// export const directoryQuery = graphql`
+//   query DirectoryCompanies {
+//     companies: allDirectoryCompany(
+//       sort: { order: DESC, fields: [companyName] }
+//       filter: { hidden: { ne: true } }
+//     ) {
+//       edges {
+//         node {
+//           id
+//           jobs {
+//             title
+//             slug
+//             active
+//           }
+//           industries {
+//             industry_text
+//             industry_id
+//           }
+//           companyId
+//           companyName
+//           about
+//           logoUrl
+//           address
+//           companySize {
+//             value
+//             label
+//           }
+//           feature
+//           position {
+//             lat
+//             lng
+//           }
+//           hiring
+//           fields {
+//             slug
+//             exploreSlug
+//           }
+//         }
+//       }
+//     }
+//   }
+// `

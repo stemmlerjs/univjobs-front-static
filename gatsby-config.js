@@ -99,7 +99,7 @@ const plugins = [
     resolve: "gatsby-plugin-mailchimp",
     options: {
       endpoint:
-        "https://univjobs.us20.list-manage.com/subscribe/post?u=9655a49a0c0e721e604467019&amp;id=fdb31fc33c"
+        "https://univjobs.us16.list-manage.com/subscribe/post?u=2e6e428ab7c1031ddbc5e069a&amp;id=358d25a1d2"
     }
   },
   {

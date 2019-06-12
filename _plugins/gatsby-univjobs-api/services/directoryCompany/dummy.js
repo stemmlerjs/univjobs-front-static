@@ -6,7 +6,7 @@ module.exports = {
   industries: [
     { industry_text: 'hi', industry_id: 2 }
   ],
-  companyId: 1,
+  companyId: '99dhjbkjiubibidsbbhjbhjsjbh',
   companyName: "IBM", 
   about: "nahh", 
   address: "12 Echo Villa Avenue Brantford N3S 6X7", 

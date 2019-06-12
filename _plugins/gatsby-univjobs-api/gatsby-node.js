@@ -41,6 +41,8 @@ exports.sourceNodes = async ({ boundActionCreators, createNodeId }, configOption
   // Gatsby adds a configOption that's not needed for this plugin, delete it
   delete configOptions.plugins;
 
+  debugger;
+
   // Create all of the services for creating nodes.
   const {
     DirectoryCompanyService,
@@ -65,7 +67,6 @@ exports.sourceNodes = async ({ boundActionCreators, createNodeId }, configOption
     const featuredCompanies = await FeaturedCompanyService.getCompanies();
     // Combine all of the companies
     const allCompanies = await combineCompanies(exploreCompanies, featuredCompanies, ExploreCompanyService, FeaturedCompanyService);
-    
     // 1. Create all CompanyNodes
     ProcessorInstance.processAndCreateCompanyNodesBulk(allCompanies);
 
