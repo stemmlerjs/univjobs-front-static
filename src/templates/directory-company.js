@@ -100,7 +100,7 @@ DirectoryCompanyTemplate.propTypes = {}
 export default DirectoryCompanyTemplate
 
 export const pageQuery = graphql`
-  query DirectoryCompanyQuery($companyId: Int) {
+  query DirectoryCompanyQuery($companyId: String) {
     allDirectoryCompany(filter: { companyId: { eq: $companyId } }) {
       edges {
         node {

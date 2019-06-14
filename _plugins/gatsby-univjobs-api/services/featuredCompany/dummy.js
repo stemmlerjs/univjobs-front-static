@@ -1,5 +1,5 @@
 module.exports = {
-  companyId: 100001,
+  companyId: 'hellomon',
   companyName: 'UneedJobs',
   brandImageUrl:
     'https://user-images.githubusercontent.com/6892666/44449999-c2c6a380-a5bd-11e8-8a96-6b01c2020fb3.png',
