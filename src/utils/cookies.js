@@ -51,6 +51,7 @@ if (typeof window !== 'undefined') {
       setTimeout(saveReferralTokenIfExists, 200);
     }
   }
+  
   setTimeout(saveReferralTokenIfExists, 0);
 }
 
