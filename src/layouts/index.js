@@ -10,6 +10,7 @@ import config from '../config'
 import meta from './meta'
 import links from './links'
 import scripts from './scripts'
+import "../utils/cookies";
 
 import './styles.sass'
 import '../styles/rodal.css'

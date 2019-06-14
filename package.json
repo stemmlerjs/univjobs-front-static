@@ -43,6 +43,7 @@
     "netlify-cms": "^1.8.4",
     "prerender-node": "^3.2.1",
     "prop-types": "^15.6.0",
+    "query-string": "^6.7.0",
     "react": "^16.2.0",
     "react-countup": "^3.0.3",
     "react-disqus-comments": "^1.2.0",
