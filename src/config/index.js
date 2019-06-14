@@ -16,6 +16,9 @@ let config = {
   apiUrl: process.env.UNIVJOBS_DATASOURCE_URL
     ? process.env.UNIVJOBS_DATASOURCE_URL
     : 'https://api.01-staging.univjobs.ca/',
+  domain: process.env.GATSBY_APP_DOMAIN
+    ? process.env.GATSBY_APP_DOMAIN 
+    : 'univjobs.ca',
   assets: {
     image: {
       logo:

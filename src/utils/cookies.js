@@ -40,6 +40,7 @@ if (typeof window !== 'undefined') {
     try {
       const referralCodeCookieName = 'referral_code';
       const values = queryString.parse(window.location.search)
+      debugger;
       if (values.referral_code) {
         const code = values.referral_code;
         console.log('[Referrals]: Referral code found. Saving to cookies', code);
