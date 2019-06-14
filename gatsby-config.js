@@ -25,6 +25,12 @@ const plugins = [
     },
   },
   {
+    resolve: `gatsby-plugin-compile-es6-packages`,
+    options: {
+      modules: [`query-string`]
+    }
+  },
+  {
     resolve: `gatsby-plugin-google-analytics`,
     options: {
       trackingId: 'UA-101892655-1',

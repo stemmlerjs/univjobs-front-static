@@ -5123,6 +5123,11 @@
         "minimalistic-crypto-utils": "1.0.1"
       }
     },
+    "email-validator": {
+      "version": "2.0.4",
+      "resolved": "https://registry.npmjs.org/email-validator/-/email-validator-2.0.4.tgz",
+      "integrity": "sha512-gYCwo7kh5S3IDyZPLZf6hSS0MnZT8QmJFqYvbqlDZSbwdZlY6QZWxJ4i/6UhITOJ4XzyI647Bm2MXKCLqnJ4nQ=="
+    },
     "emoji-regex": {
       "version": "6.1.1",
       "resolved": "https://registry.npmjs.org/emoji-regex/-/emoji-regex-6.1.1.tgz",
@@ -8371,6 +8376,15 @@
         "@babel/runtime": "7.2.0"
       }
     },
+    "gatsby-plugin-compile-es6-packages": {
+      "version": "1.1.0",
+      "resolved": "https://registry.npmjs.org/gatsby-plugin-compile-es6-packages/-/gatsby-plugin-compile-es6-packages-1.1.0.tgz",
+      "integrity": "sha512-YjB9LDyUBcWfVVF8mN+t4OziYghys08nb2vpYgW+sqXO4giHRLWpANFmVUXW+H2c1g8fAwPlKYcwDXyqNunibw==",
+      "requires": {
+        "@babel/runtime": "7.2.0",
+        "regex-escape": "3.4.9"
+      }
+    },
     "gatsby-plugin-compression": {
       "version": "0.0.1",
       "resolved": "https://registry.npmjs.org/gatsby-plugin-compression/-/gatsby-plugin-compression-0.0.1.tgz",
@@ -8399,6 +8413,14 @@
       "integrity": "sha1-6vFuGAlGGxC63xLAUDjEKXRXg8A=",
       "requires": {
         "babel-runtime": "6.26.0"
+      }
+    },
+    "gatsby-plugin-mailchimp": {
+      "version": "git+https://github.com/benjaminhoffman/gatsby-plugin-mailchimp.git#943c5e5541825458a3d3bb8a0e75cb3206641a67",
+      "requires": {
+        "email-validator": "2.0.4",
+        "jsonp": "0.2.1",
+        "webpack": "1.15.0"
       }
     },
     "gatsby-plugin-netlify": {
@@ -19515,20 +19537,13 @@
       "integrity": "sha512-eRzhrN1WSINYCDCbrz796z37LOe3m5tmW7RQf6oBntukAG1nmovJvhnwHHRMAfeoItc1m2Hk02WER2aQ/iqs+A=="
     },
     "query-string": {
-      "version": "6.7.0",
-      "resolved": "https://registry.npmjs.org/query-string/-/query-string-6.7.0.tgz",
-      "integrity": "sha512-oQ01H1jrgDRbPq5SjtJF470S418GOrKkds+fpvAt6DQatHXl7bmkaJulHbTIM+QNGtoPpa8f5k9W3Zk50zXRPQ==",
+      "version": "5.1.1",
+      "resolved": "https://registry.npmjs.org/query-string/-/query-string-5.1.1.tgz",
+      "integrity": "sha512-gjWOsm2SoGlgLEdAGt7a6slVOk9mGiXmPFMqrEhLQ68rhQuBnpfs3+EmlvqKyxnCo9/PPlF+9MtY02S1aFg+Jw==",
       "requires": {
         "decode-uri-component": "0.2.0",
-        "split-on-first": "1.1.0",
-        "strict-uri-encode": "2.0.0"
-      },
-      "dependencies": {
-        "strict-uri-encode": {
-          "version": "2.0.0",
-          "resolved": "https://registry.npmjs.org/strict-uri-encode/-/strict-uri-encode-2.0.0.tgz",
-          "integrity": "sha1-ucczDHBChi9rFC3CdLvMWGbONUY="
-        }
+        "object-assign": "4.1.1",
+        "strict-uri-encode": "1.1.0"
       }
     },
     "querystring": {
@@ -20564,6 +20579,11 @@
       "requires": {
         "is-equal-shallow": "0.1.3"
       }
+    },
+    "regex-escape": {
+      "version": "3.4.9",
+      "resolved": "https://registry.npmjs.org/regex-escape/-/regex-escape-3.4.9.tgz",
+      "integrity": "sha512-Cv9rjwyQwVhn3L097ysanWsEElurmxDj6Cc4Ut23z7e6hzRbrNvF3Le7yAciMfuzyb0sZwSr0ZHunMNCIoy2/g=="
     },
     "regex-not": {
       "version": "1.0.2",
@@ -22590,11 +22610,6 @@
       "requires": {
         "through": "2.3.8"
       }
-    },
-    "split-on-first": {
-      "version": "1.1.0",
-      "resolved": "https://registry.npmjs.org/split-on-first/-/split-on-first-1.1.0.tgz",
-      "integrity": "sha512-43ZssAJaMusuKWL8sKUBQXHWOpq8d6CfN/u1p4gUzfJkM05C8rxTmYrkIPTXapZpORA6LkkzcUulJ8FqA7Uudw=="
     },
     "split-string": {
       "version": "3.1.0",
