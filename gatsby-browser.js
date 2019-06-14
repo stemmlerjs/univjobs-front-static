@@ -1,5 +1,6 @@
 
 require('./src/styles/rodal.css')
+require('./src/utils/cookies')
 
 /**
  * Implement Gatsby's Browser APIs in this file.
