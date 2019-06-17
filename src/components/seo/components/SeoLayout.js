@@ -41,7 +41,7 @@ const SeoLayout = ({ requiredProps, type, pageProps }) => (
        <meta name="twitter:site" content={config.twitter} />
        <meta name="twitter:title" content={requiredProps.title} />
        <meta name="twitter:description" content={requiredProps.description} />
-       <meta name="twitter:image" content={requiredProps.image} /> 
+       <meta name="twitter:image" content={`https://univjobs.ca${requiredProps.image}`} /> 
        <meta name="twitter:site" content={config.twitter}/>
 
       {/**Canonical Tags
