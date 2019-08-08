@@ -39,9 +39,10 @@ if (typeof window !== 'undefined') {
   const saveReferralTokenIfExists = () => {
     try {
       const referralCodeCookieName = 'referral_code';
-      const values = queryString.parse(window.location.search)
-      if (values.referral_code) {
-        const code = values.referral_code;
+      const values = queryString.parse(window.location.search);
+      debugger;
+      if (values.r) {
+        const code = values.r;
         console.log('[Referrals]: Referral code found. Saving to cookies', code);
         const domain = window.config.domain;
         window.setCookie(referralCodeCookieName, code, domain);
