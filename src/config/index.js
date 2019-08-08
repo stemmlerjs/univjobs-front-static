@@ -1,3 +1,5 @@
+
+
 let config = {
   title: 'Univjobs | Entry level jobs for Students and Recent Grads',
   description:
@@ -30,13 +32,14 @@ let config = {
       univjobsLogo:
         'https://s3.amazonaws.com/assets.univjobs/svg/univjobs_full.svg',
     },
-  },
+  }
 }
-
-export default config
-
-console.log(process.env.BRANCH)
 
 if (typeof window !== 'undefined') {
   window.config = config
 }
+
+import '../utils/cookies';
+
+export default config
+

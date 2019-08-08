@@ -87,6 +87,10 @@ class StudentDiscounts extends React.Component {
     }
   }
 
+  getUrl () {
+    return "https://univjobs.ca/student-discounts"
+  }
+
   render () {
     const { registered } = this.state;
     const url = typeof window !== "undefined" ? window.location.href : '';

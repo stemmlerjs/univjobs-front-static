@@ -30,8 +30,8 @@ const axios = require('axios');
   async createDummyJob () {
     return(
       {
-        "job_id": 1000001,
-        "employer_id": 'hellomon',
+        "job_id": 'hello-lkasjdlkj',
+        "employer_id": 'hello-21laksjdkl',
         "title": "Social Media Marketing Interns",
         "job_type_id": 6,
         "paid": false,

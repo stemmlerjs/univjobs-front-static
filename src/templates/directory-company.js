@@ -24,12 +24,12 @@ class DirectoryCompanyTemplate extends React.Component {
   componentDidMount() {}
 
   render() {
-    const company = this.props.data.allDirectoryCompany.edges[0].node
-    const { lat, lng } = company.position
+    // const company = this.props.data.allDirectoryCompany.edges[0].node
+    // const { lat, lng } = company.position
 
     return (
       <div>
-        <SeoLayout
+        {/* <SeoLayout
           requiredProps={{
             title: `Jobs at ${company.companyName} | Univjobs` ,
             description: `Apply to student and recent grad jobs at ${company.companyName}`,
@@ -89,7 +89,7 @@ class DirectoryCompanyTemplate extends React.Component {
               width: '100%',
             }}
           />
-        </div>
+        </div> */}
       </div>
     )
   }
@@ -99,40 +99,40 @@ DirectoryCompanyTemplate.propTypes = {}
 
 export default DirectoryCompanyTemplate
 
-export const pageQuery = graphql`
-  query DirectoryCompanyQuery($companyId: String) {
-    allDirectoryCompany(filter: { companyId: { eq: $companyId } }) {
-      edges {
-        node {
-          fields {
-            slug
-          }
-          id
-          industries {
-            industry_text
-          }
-          jobs {
-            title
-            slug
-          }
-          companyId
-          companyName
-          about
-          logoUrl
-          address
-          companySize {
-            value
-            label
-          }
-          feature
-          exploreSlug
-          position {
-            lat
-            lng
-          }
-          hiring
-        }
-      }
-    }
-  }
-`
+// export const pageQuery = graphql`
+//   query DirectoryCompanyQuery($companyId: String) {
+//     allDirectoryCompany(filter: { companyId: { eq: $companyId } }) {
+//       edges {
+//         node {
+//           fields {
+//             slug
+//           }
+//           id
+//           industries {
+//             industry_text
+//           }
+//           jobs {
+//             title
+//             slug
+//           }
+//           companyId
+//           companyName
+//           about
+//           logoUrl
+//           address
+//           companySize {
+//             value
+//             label
+//           }
+//           feature
+//           exploreSlug
+//           position {
+//             lat
+//             lng
+//           }
+//           hiring
+//         }
+//       }
+//     }
+//   }
+// `

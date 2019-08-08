@@ -70,19 +70,19 @@ exports.sourceNodes = async ({ boundActionCreators, createNodeId }, configOption
     ProcessorInstance.processAndCreateCompanyNodesBulk(allCompanies);
 
     // 2. Create all DirectoryNodes
-    const directoryCompanies = await DirectoryCompanyService.getCompanies();
-    ProcessorInstance.processAndCreateDirectoryCompanyNodesBulk(directoryCompanies)
+    // const directoryCompanies = await DirectoryCompanyService.getCompanies();
+    // ProcessorInstance.processAndCreateDirectoryCompanyNodesBulk(directoryCompanies)
 
     // 3. Create all of the different City Nodes.
-    const uniqueCities  = _.uniq(directoryCompanies.map((dc) => dc.city)).sort();
-    const cityMap = CitiesService.getCities(uniqueCities, directoryCompanies);
+    // const uniqueCities  = _.uniq(directoryCompanies.map((dc) => dc.city)).sort();
+    // const cityMap = CitiesService.getCities(uniqueCities, directoryCompanies);
 
     // ======================
     // Create city nodes
-    for (let cityKey of Object.keys(cityMap)) {
-      const cityJobs = cityMap[cityKey];
-      ProcessorInstance.processAndCreateCityNode({ name: cityKey, jobs: cityJobs })
-    }
+    // for (let cityKey of Object.keys(cityMap)) {
+    //   const cityJobs = cityMap[cityKey];
+    //   ProcessorInstance.processAndCreateCityNode({ name: cityKey, jobs: cityJobs })
+    // }
   } 
   
   catch (err) {

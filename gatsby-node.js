@@ -277,55 +277,6 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         }
       }
 
-      directoryCompanies: allDirectoryCompany(limit: 1000) {
-        edges {
-          node {
-            fields {
-              slug
-              exploreSlug
-            }
-            id
-            industries {
-              industry_id
-              industry_text
-            }
-            jobs {
-              title
-              slug
-              active
-            }
-            companyId
-            companyName
-            about
-            logoUrl
-            address
-            companySize {
-              value
-              label
-            }
-            feature
-            exploreSlug
-            position {
-              lat
-              lng
-            }
-            hiring
-          }
-        }
-      }
-
-      cities: allCity(limit: 1000) {
-        edges {
-          node {
-            name
-            id
-            fields {
-              slug
-            }
-          }
-        }
-      }
-
       companies: allCompany(limit: 1000) {
         edges {
           node {
@@ -412,13 +363,13 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     createCompanyPages(result.data.companies.edges, createPage)
 
     // Create directory company pages
-    createDirectoryCompanyPages(
-      result.data.directoryCompanies.edges,
-      createPage
-    )
+    // createDirectoryCompanyPages(
+    //   result.data.directoryCompanies.edges,
+    //   createPage
+    // )
 
-    // Create city pages
-    createCityPages(result.data.cities.edges, createPage)
+    // // Create city pages
+    // createCityPages(result.data.cities.edges, createPage)
 
     // Create landing pages
     createLandingPages(result.data.landingPages.edges, createPage)
